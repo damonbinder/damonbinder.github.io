@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Site Title
-locale: en_US
-description: Describe your website here.
+title: Damon Binder
+locale: en_AUS
+description: My personal website.
 logo: site-logo.png
 search: true
 url: https://damonbinder.github.io
@@ -36,13 +36,13 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: Damon Binder
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: damon_binder@hotmail.com
   disqus-shortname:
-  twitter: #username
+  twitter:  #username
   facebook: #username
-  github: #username
+  github:   #username
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: #username

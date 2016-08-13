@@ -9,4 +9,4 @@ image:
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
-I am honours student
+I am honours student at the nuclear deparment at the ANU.

@@ -2,7 +2,11 @@
 layout: page
 title: About Me
 excerpt: "About me"
-modified: 2016-08-13T19:44:38.564948-04:00
+modified: 2016-08-08T19:44:38.564948-04:00
+image:
+  feature: so-simple-sample-image-4.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
 Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the follow up to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes.com).

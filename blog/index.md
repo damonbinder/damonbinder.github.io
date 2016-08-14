@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Writing
+title: Blog
 excerpt: "Things I've written sorted by date."
 search_omit: true
 image:

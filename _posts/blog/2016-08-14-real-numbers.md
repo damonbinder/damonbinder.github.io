@@ -44,10 +44,15 @@ We could repeat the same exercise with other objects. Say for instance we had st
 The idea behind measurement is that it is a homomorphism from a preordered semigroup to a totally ordered semigroup. This is the abstract way of saying that measurement is a way of totally ordering sets, compatible with the preexisting order and semigroup structures. To understand the role of the real numbers, we need to understand where they fit into the bigger picture of totally ordered semigroups. 
 
 We now state the axioms for a totally ordered semigroup. It is a set \\(S\\) with a binary relation \\(<\\) and a law of composition so that for every \\(x,y,z\in S\\),
+
 1. If \\(x < y \\) and \\(y < z \\), then \\(x < z \\).
+
 2. Exactly one of the following holds: \\(x < y\\) or \\(x = y\\) or \\(y < x\\)
+
 3. \\((xy)z=x(yz)\\)
+
 4. If \\(x < y\\), then \\(xz < yz\\) and \\(zx < zy\\)
+
 We have dropped the requirement that addition is commutative; as well shall see, this can derived from other assumptions.
 
 ## Removing Infinities

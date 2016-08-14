@@ -4,7 +4,7 @@ title: Blog
 excerpt: "An archive of blog posts sorted by date."
 search_omit: true
 image:
-  feature: fire.jpg
+  feature: fire.bmp
 ---
 
 <ul class="post-list">

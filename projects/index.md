@@ -3,6 +3,8 @@ layout: page
 title: Sample Articles
 excerpt: "An archive of articles sorted by date."
 search_omit: true
+image:
+  feature: ions.jpg
 ---
 
 <ul class="post-list">

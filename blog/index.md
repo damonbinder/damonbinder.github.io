@@ -4,7 +4,7 @@ title: Blog
 excerpt: "Things I've written sorted by date."
 search_omit: true
 image:
-  feature: fire.bmp
+  feature: ising.bmp
 ---
 
 <ul class="post-list">

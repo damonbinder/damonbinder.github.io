@@ -16,7 +16,7 @@ Take the axiomatic approach for instance, which defines the reals as the complet
 
 My third issue is that our definition is quite difficult to relate real numbers to measurement. Again multiplication is the worst offender here. If we had a collection of weights, it is intuitive that they can be ordered, and that weights can be combined ("added"). But what does multiplying two weights mean? It is hard to say, and we reflect this with the units we use. Adding kilograms gives us kilograms, yet multiplying gives us Mg\\(^2\\). We can't combine nor order kg with Mg\\(^2\\). The technical way of saying this is there is no "canonical" isomorphism between our two copies of the reals.
 
-I have written a paper exploring these issues. You can find it on the arxiv at https://arxiv.org/abs/1607.05997. The paper gets quite formal, since it presents a definition of the reals ab initio. Here I will give a less formal, but hopefully more understandable, overview of the paper. Of course, all the details can be found in the paper.
+I have written a paper exploring these issues. You can find it on the arxiv at <https://arxiv.org/abs/1607.05997>. The paper gets quite formal, since it presents a definition of the reals ab initio. Here I will give a less formal, but hopefully more understandable, overview of the paper. Of course, all the details can be found in the paper.
 
 ## Measuring Stuff
 How do we measure stuff? I'll start with a very naive approach, taken directly from my paper:

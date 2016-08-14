@@ -12,7 +12,7 @@ Here is a list of all the papers, essays and notes I've written.
 ## Honours - 2016
 * [**Non-Anomalous Semigroups and Real Numbers**](/documents/RealNumbers.pdf). A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
 
-* [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance. The diphoton resonance now appears to have be a statistical fluctuation, so my notes are no longer particularly useful. They stand as a testament to this curious time in particle physics history.
+* [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance, while I was at Melbourne University. The diphoton resonance now appears to have be a statistical fluctuation, so my notes are no longer particularly useful. They stand as a testament to this curious time in particle physics history.
 
 ## Undergraduate
 
@@ -21,6 +21,7 @@ Here is a list of all the papers, essays and notes I've written.
 * [**The Quantum Zeno Effect**](/documents/QuantumZeno.pdf). In this essay I show that the quantum Zeno effect is non-physical in the sense that any system which can perform the necessary arbitrarily quick measurements requires infinite energy. I wrote this as part of a measurement theory course run by Matt James, which heavily influenced my thinking on the measurement problem.
 
 * I did a reading course on general relativity with Susan Scott. My [**final report**](/documents/GRReport.pdf) was a collation of various tasks I completed through the semester. The most interesting parts are a discussion of the energy conditions in FRW cosmology, and a book review of *Quantum Field Theory: The Why, What and How* by Thanu Padmanabhan. My [**final presentation**](/documents/GRPresentation.pdf) was on the singularity theorems.
+
 * I also did a reading course on quantum field theory with Vladimir Bazhanov. My [**final report**](/documents/WKBReport.pdf) was on higher order corrections to the WKB method, as was my [**final presentation**](/documents/WKBPresentation.pdf).
 
 * My [**PHYS 3033 lab report**](/documents/PHYS3033Lab.pdf), which was on neutron activation analysis. This mainly serves as proof (to myself mostly) that I *can* do labs, and I had a lot of fun automating peak detection and statistical analysis. The most fun part about this was the background peak identification, as I managed to detect both the \\(^{238}\\)U and \\(^{232}\\)Th sequences, along with a few other harder to identify peaks.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What are to Real Numbers?"
+title: "What are the Real Numbers?"
 modified:
 categories: blog
 excerpt:
@@ -19,14 +19,14 @@ My third issue is that our definition is quite difficult to relate real numbers 
 I have written a paper exploring these issues. You can find it on the arxiv at https://arxiv.org/abs/1607.05997. The paper gets quite formal, since it presents a definition of the reals ab initio. Here I will give a less formal, but hopefully more understandable, overview of the paper.
 
 ## Measuring Stuff
-How do we measure stuff? 
+How do we measure stuff? I'll start with a very naive approach, taken directly from my paper:
 
-Our first task is to justify the relation between quantities and totally ordered semigroups. To make the discussion concrete, consider a collection of weights along with a balance scale. Placing weights \\(X)\\ and \\(Y)\\ on either sides of the scale, we find that the weight X always rises. This seems important, so we decide to introduce a symbol \\(<)\\  and write \\( X < Y)\\ if \\(X)\\ rises and \\(Y)\\ falls when both are placed on a scale. Obviously, if \\(X < Y)\\ we know that \\(Y < X)\\ does not hold. If neither \\(X < Y)\\ and \\(Y < X)\\, then the scale we have cannot distinguish the two weights, and so we decide to say that they are copies of the same weight, \\(X = Y)\\.
+>Consider a collection of weights along with a balance scale. Placing weights \\(X\\) and \\(Y\\) on either sides of the scale, we find that the weight X always rises. This seems important, so we decide to introduce a symbol \\(<\\)  and write \\( X < Y\\) if \\(X\\) rises and \\(Y\\) falls when both are placed on a scale. Obviously, if \\(X < Y\\) we know that \\(Y < X\\) does not hold. If neither \\(X < Y\\) and \\(Y < X\\), then the scale we have cannot distinguish the two weights, and so we decide to say that they are copies of the same weight, \\(X = Y\\).
 
-Comparing more weights, we notice a pattern; if \\(X < Y)\\ and \\(Y < Z)\\ we find that \\(X < Z)\\. So our weights are in fact totally ordered.
+Comparing more weights, we notice a pattern; if \\(X < Y\\) and \\(Y < Z\\) we find that \\(X < Z\\). So our weights are in fact totally ordered.
 
-We then discover that we can glue weights together, treating them as a single weight. So given weights \\(X)\\ and \\(Y)\\, we write \\(X + Y)\\ to mean the weight gained by sticking \\(X)\\ and \\(Y)\\ together. We notice that the order we stick our weights together does not matter:
-\\[X + Y = Y + X,\ \ \ \ (X + Y ) + Z = X + (Y + Z)].\\
-We also find that if \\(Y < Z)\\, then gluing a weight \\(X)\\ on to both these weights will preserve this fact
-\\[Y < Z \implies Y + X < Z + X]\\
+We then discover that we can glue weights together, treating them as a single weight. So given weights \\(X\\) and \\(Y\\), we write \\(X + Y\\) to mean the weight gained by sticking \\(X\\) and \\(Y\\) together. We notice that the order we stick our weights together does not matter:
+\\[X + Y = Y + X,\ \ \ \ (X + Y ) + Z = X + (Y + Z).\\]
+We also find that if \\(Y < Z\\), then gluing a weight \\(X\\) on to both these weights will preserve this fact
+\\[Y < Z \implies Y + X < Z + X\\].
 By considering empirical properties of weights, we have discovered many facts about them. Pithily, we can say that our collection of weights forms a totally ordered commutative semigroup, with the above equation governing the interaction of the two structures.

@@ -10,7 +10,7 @@ image:
 Here is a list of all the papers, essays and notes I've written.
 
 ## Honours - 2016
-* **Non-Anomalous Semigroups and Real Numbers**. A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
+* [**Non-Anomalous Semigroups and Real Numbers**](/documents/RealNumbers.pdf). A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
 
 * [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance. The diphoton resonance now appears to have be a statistical fluctuation, so my notes now stand as a testament to this curious time in particle physics history.
 
@@ -25,7 +25,7 @@ Here is a list of all the papers, essays and notes I've written.
 
 * My [**PHYS 3033 lab report**](/documents/PHYS3033Lab.pdf), which was on neutron activation analysis. This mainly serves as proof (to myself mostly) that I *can* do labs, and I had a lot of fun automating peak detection and statistical analysis. The most fun part about this was the background peak identification, as I managed to detect both the \\(^{238}\\)U and \\(^{232}\\)Th sequences, along with a few other harder to identify peaks.
 
-* Here are my (terse) notes for [**Algebraic Topology**](/documents/AlgebraicTopologyRN.pdf) and for [**Algebra 3**](/documents/Algebra3.pdf) (which was on Lie algebras and representation theory).
+* Here are my (terse) notes for [**Algebraic Topology**](/documents/AlgebraicTopologyRN.pdf) and for [**Algebra 3**](/documents/Algebra3.pdf) (on Lie algebras and representation theory).
 
 ### 2014
 * [**Supersymmetric Quantum Mechanics**](/documents/SUSYQM.pdf), an essay I wrote for PHYS3001. Pretty much every single solvable model in quantum mechanics can be understood in this framework.
@@ -34,5 +34,5 @@ Here is a list of all the papers, essays and notes I've written.
 
 * [**Stochastic Simulation of a Two-Level Quantum System**](/documents/OpenQuant1.pdf) and [**Truncated Wigner Simulation of Squeezing in an Anharmonic Oscillator**](/documents/OpenQuant2.pdf). I wrote these as part of an open quantum systems project undertaken with Joseph Hope. My [**final presentation**](/documents/Wigner.pdf) was on Wigner functions.
 
-## High school
+## High school  (2002-2013)
 In years 11 and 12 I studied for the International Baccalaureate, which requires students to write an extended essay on a topic of their choosing. Against pretty much all advice I read I decided to do one in maths. Since I struggled to find good maths extended essays, I have uploaded mine [**here**](/documents/ExtendedEssay.pdf) in the hope it will prove useful to future students (and also to prove you don't *have* to do cryptography as your topic if you do a maths extended essay).

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Blog
-excerpt: "An archive of blog posts sorted by date."
+title: Writing
+excerpt: "Things I've written sorted by date."
 search_omit: true
 image:
   feature: fire.bmp

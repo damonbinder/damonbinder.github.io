@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Sample Articles
-excerpt: "An archive of articles sorted by date."
+title: Projects
+excerpt: "Coding and other projects I have worked on."
 search_omit: true
 image:
   feature: ions.jpg

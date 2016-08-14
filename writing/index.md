@@ -26,7 +26,7 @@ Here is a list of all the papers, essays and notes I've written.
 
 * My [**PHYS 3033 lab report**](/documents/PHYS3033Lab.pdf), which was on neutron activation analysis. This mainly serves as proof (to myself mostly) that I *can* do labs, and I had a lot of fun automating peak detection and statistical analysis. The most fun part about this was the background peak identification, as I managed to detect both the \\(^{238}\\)U and \\(^{232}\\)Th sequences, along with a few other harder to identify peaks.
 
-* Here are my (terse) notes for [**Algebraic Topology**](/documents/AlgebraicTopologyRN.pdf) and for [**Algebra 3**](/documents/Algebra3.pdf) (on Lie algebras and representation theory).
+* Here are my (terse) notes for [**Algebraic Topology**](/documents/AlgebraicTopologyRN.pdf) and for [**Algebra 3**](/documents/Algebra3RN.pdf) (on Lie algebras and representation theory).
 
 ### 2014
 * [**Supersymmetric Quantum Mechanics**](/documents/SUSYQM.pdf), an essay I wrote for PHYS3001. Pretty much every single solvable model in quantum mechanics can be understood in this framework.

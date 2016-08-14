@@ -7,4 +7,12 @@ image:
   feature: fire.bmp
 ---
 
-[get the PDF](/documents/SUSYQM.pdf)
+Here is a list of all the papers, essays and notes I've written.
+
+## 2016
+* \bo{Non-Anomalous Semigroups and Real Numbers}. A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
+
+## 2015
+
+## 2014
+* [get the PDF](/documents/SUSYQM.pdf)

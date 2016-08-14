@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-excerpt: "Things I've written sorted by date."
+excerpt: "A Blog."
 search_omit: true
 image:
   feature: ising.bmp

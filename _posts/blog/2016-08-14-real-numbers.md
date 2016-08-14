@@ -18,7 +18,7 @@ My third issue is that our definition is quite difficult to relate real numbers 
 
 I have written a paper exploring these issues. You can find it on the arxiv at https://arxiv.org/abs/1607.05997. The paper gets quite formal, since it presents a definition of the reals ab initio. Here I will give a less formal, but hopefully more understandable, overview of the paper. Of course, all the details can be found in the paper.
 
-##Measuring Stuff
+## Measuring Stuff
 How do we measure stuff? I'll start with a very naive approach, taken directly from my paper:
 
 >Consider a collection of weights along with a balance scale. Placing weights \\(X\\) and \\(Y\\) 
@@ -50,21 +50,21 @@ We now state the axioms for a totally ordered semigroup. It is a set \\(S\\) wit
 4. If \\(x < y\\), then \\(xz < yz\\) and \\(zx < zy\\)
 We have dropped the requirement that addition is commutative; as well shall see, this can derived from other assumptions.
 
-##Removing Infinities
+## Removing Infinities
 There are all sorts of wild totally ordered semigroups. When we measure things however, we expect our results to be finite. What does this mean for a totally ordered semigroup?
 
-The Archimedean property states that for any given positive \\(a,b\in S}\\), no matter how big \\(b\\) is if you add \\(a\\) to itself enough times the sum \\(a+a+...+a\\) will eventually be larger than \\(b\\). This definition works well for groups, but we are interested in semigroups, which are more general. The basic problem is that whilst the Archimedean property prevents elements from being "infinitely" big, it doesn't prevent elements from being "infinitessimally" close. The notion of an anomalous pair, due to Alimov, is what is needed to capture this.
+The Archimedean property states that for any given positive \\(a,b\in S\\), no matter how big \\(b\\) is if you add \\(a\\) to itself enough times the sum \\(a+a+...+a\\) will eventually be larger than \\(b\\). This definition works well for groups, but we are interested in semigroups, which are more general. The basic problem is that whilst the Archimedean property prevents elements from being "infinitely" big, it doesn't prevent elements from being "infinitessimally" close. The notion of an anomalous pair, due to Alimov, is what is needed to capture this.
 
 Given \\(x,y\in S\\) with \\(x>y\\), we say that \\(x\\) and \\(y\\) form an anomalous pair if for every \\(n\in\mathbb N\\), either
 \\[x^n < y^{n=1}\text{  or  }y^n > y^{n+1}.\\]
 We now define a non-anomalous semigroup to be a totally ordered semigroup with no anomalous pairs. All non-anomalous semigroups are Archimedean. However, the converse of this statement holds only for Archimedean groups. A very interesting result, due to Alimov, is that all non-anomalous semigroups are commutative. This is why we dropped the assumption of commutativity previously. 
 
-##The Reals are the biggest Non-Anomalous Semigroup
+## The Reals are the biggest Non-Anomalous Semigroup
 The main point of the paper is to show that the real numbers are the biggest non-anomalous semigroup. The notion of what it means to be "the biggest" non-anomalous semigroup is formally encoded in category theory as the notion of a terminal object. The main difficulty of the paper is showing that such a terminal object exists: all the gory details can be found in the paper.
 
 Informally, what we show is that any non-anomalous semigroup \\(S\\) can be embedded into the reals. Furthermore this embedding is unique up to the choice of a single (non-identity) element in \\(S\\). This makes clear the relationship between the real numbers and measurement. If we are measuring stuff using some non-anomalous semigroup \\(S\\), then we can always embed \\(S\\) into \\(\mathbb{R}\\) in a unique way, and then record our measurements as real numbers. In other words, we always have the freedom to use real numbers when measuring things. 
 
-##What about the Other Properties of the Reals?
+## What about the Other Properties of the Reals?
 In essense, the rest of the paper focusses on proving that the reals have all the properties we expect of them. First we show that the reals are dense, complete and form a group. In this context, a dense total order \\(T\\) is one so that for every \\(x,y\in T\\) with \\(x < y\\), there exists some \\(z\in T\\) with \\(x< z< y\\). In fact, the reals are the only dense and complete totally ordered group. This explains why there are so many different constructions of the reals, using everything from decimals to Cauchy sequences to continued fractions. The point is that if you start with a totally ordered group (usually \\(\mathbb Z\\)), you make it dense (usuall by constructing \\(\mathbb Q\\)), and then you complete it, then you get the reals.
 
 The origin of multiplication in this approach is more interesting. Basically, if we take any copy of the reals with some distinguished element \\(1\\), then we can embed it uniquely into any other copy of the reals with some distinguished element \\(p\\) via some mapping \\(\alpha_p\\). The idea is to define multiplication using this function, writing

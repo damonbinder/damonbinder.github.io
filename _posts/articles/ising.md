@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "2D Ising Model"
 modified:
 categories: articles

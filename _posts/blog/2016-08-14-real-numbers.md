@@ -3,7 +3,7 @@ layout: post
 title: "What are the Real Numbers?"
 modified:
 categories: blog
-excerpt:
+excerpt: I wrote a paper trying to give a simple answer!
 tags: []
 image:
   feature:

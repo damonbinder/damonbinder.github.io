@@ -35,5 +35,5 @@ Here is a list of all the papers, essays and notes I've written.
 
 * [**Stochastic Simulation of a Two-Level Quantum System**](/documents/OpenQuant1.pdf) and [**Truncated Wigner Simulation of Squeezing in an Anharmonic Oscillator**](/documents/OpenQuant2.pdf). I wrote these as part of an open quantum systems project undertaken with Joseph Hope. My [**final presentation**](/documents/Wigner.pdf) was on Wigner functions.
 
-## High school  (2002-2013)
+## High School  (2002-2013)
 In years 11 and 12 I studied for the International Baccalaureate, which requires students to write an extended essay on a topic of their choosing. Against pretty much all advice I read I decided to do one in maths. Since I struggled to find good maths extended essays, I have uploaded mine [**here**](/documents/ExtendedEssay.pdf) in the hope it will prove useful to future students (and also to prove you don't *have* to do cryptography as your topic if you do a maths extended essay).

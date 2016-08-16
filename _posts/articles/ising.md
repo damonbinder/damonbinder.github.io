@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "2D Ising Model"
+title: "Test"
 modified:
 categories: articles
 excerpt:
@@ -10,7 +10,7 @@ image:
 date: 2016-08-16T08:08:50-04:00
 ---
 
-test writing
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 

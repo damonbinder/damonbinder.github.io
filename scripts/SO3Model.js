@@ -93,9 +93,9 @@
 					new_1 =  Math.acos(1-2*Math.random());//Math.PI*Math.random();
 					n = neighbours(x0,y0,grid);
 					
-					deltaU  = n[0]*(Math.cos(new_1)-Math.cos(state[1]));
+					deltaU  = (n[0]+magnetism)*(Math.cos(new_1)-Math.cos(state[1]));
 					deltaU += n[1]*(Math.sin(new_1)*Math.sin(new_0)-Math.sin(state[1])*Math.sin(state[0]));
-					deltaU += (n[2]+magnetism)*(Math.sin(new_1)*Math.cos(new_0)-Math.sin(state[1])*Math.cos(state[0]));
+					deltaU += n[2]*(Math.sin(new_1)*Math.cos(new_0)-Math.sin(state[1])*Math.cos(state[0]));
 					deltaU  = -deltaU/(0.25*temperature);
 					if (deltaU<0.0 || Math.random()<Math.exp(-deltaU)){
 						grid[x0][y0] = [new_0,new_1];

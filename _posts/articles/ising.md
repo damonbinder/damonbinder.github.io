@@ -20,4 +20,4 @@ date: 2016-08-16T08:08:50-04:00
 	<label>Magnetism: </label><span id="magdisplay"></span><br><input style="width:400px;" type="range" name="magnetism" id="magnetism" min="-3" max="3" value="0" step="0.01"><br>
 </div>
 
-<script type="text/javascript" src="./boltzmann.js"></script>
+<script type="text/javascript" src="boltzmann.js"></script>

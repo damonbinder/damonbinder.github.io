@@ -9,6 +9,13 @@
 					margin:0;
 					font-family:'Merriweather Sans', Tahoma, sans-serif;
 					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
 				#canvas {
 					margin-top:100px;
 				}
@@ -16,8 +23,10 @@
 			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	</head>
 	<body>
-		<h1 style="position:absolute; left:10px;">Boltzmann</h1>
-		<h2 style="position:absolute; top:35px; left:30px;">Based on Damon Binder's magnetism simulation</h2>
+		<br>
+		<br>
+		<h1>2D Ising Model: A Metropolis Algorithm</h1>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
 		<canvas id="canvas">
 			You need a modern browser which supports HTML5 canvas to view this.
 		</canvas>

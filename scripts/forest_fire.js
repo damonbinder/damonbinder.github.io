@@ -51,9 +51,9 @@
 
 		// Update slider-based variables.
 
-		temperature = 10**($("#temperature").val());
+		temperature = Math.pow(10,$("#temperature").val());
 		$("#tempdisplay").html(Math.round(1000*temperature)/1000+"");
-		speed = 10**($("#speed").val());
+		speed = Math.pow(10,$("#speed").val());
 		$("#speeddisplay").html(Math.round(speed)+"");
 
 		// Run simulation step.

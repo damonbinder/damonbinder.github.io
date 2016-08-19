@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Logarithmic Gravity</title>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<style>
+				* {
+					padding:0;
+					margin:0;
+					font-family:'Merriweather Sans', Tahoma, sans-serif;
+					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
+				#canvas {
+					margin-top:100px;
+				}
+			</style>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	</head>
+	<body>
+		<br>
+		<br>
+		<h1>2D Gravity Simulation: Logarithmic Gravity</h1>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
+		<h3>Click on the square to start.</a></h3>
+		<canvas id="canvas">
+			You need a modern browser which supports HTML5 canvas to view this.
+		</canvas>
+
+		<div>
+			<label>Simulation Speed: </label><span id="speeddisplay"></span><br><input style="width:400px;" type="range" name="speed" id="speed" min="0" max="3" value="2" step="0.05"><br>
+		</div>
+
+		<input id="Reset" type="button" style = "color: black; font_size: large" value="Reset" onclick="location.reload()"/>
+
+		<script type="text/javascript" src="./LogGrav.js"></script>
+	</body>
+</html>

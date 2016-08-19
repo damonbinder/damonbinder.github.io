@@ -81,10 +81,11 @@
 					accel_x += -drag*particles[i][2] + drift*(2*Math.random()-1) - central * (particles[i][0] - width/2)
 					accel_y += -drag*particles[i][3] + drift*(2*Math.random()-1) - central * (particles[i][1] - width/2)
 
-					pos_x = particles[i][0] + step*particles[i][2] + step*step/2*accel_x;
-					pos_y = particles[i][1] + step*particles[i][3] + step*step/2*accel_y;
 					vel_x = particles[i][2] + step*accel_x;
 					vel_y = particles[i][3] + step*accel_y;
+					pos_x = particles[i][0] + step*vel_x;
+					pos_y = particles[i][1] + step*vel_y;
+					
 					new_particles.push([pos_x,pos_y,vel_x,vel_y])
 				}
 				particles = new_particles

@@ -25,22 +25,23 @@
 
 	var particles = randomParticles();
 	var step = 0.01;
-	var soft = 1;
 	var drag = 0.0;
 	var drift = 0;
 	var central = 0.0;
 	var new_point = true;
 
+	var t2 = 100;
+	var s2 = 1600;
 	function force_on_r(r2){
-		if (r2>soft*soft){
-			return -100/(r2*Math.sqrt(r2));
+		if (r2>10){
+			return (50-100*Math.exp(-r2/s2)+200*Math.exp(-r2/t2))/(r2*Math.sqrt(r2));
 		} else {
-			return -100/soft;
+			return (50-100*Math.exp(-10/s2)+200*Math.exp(-10/t2))/(10*Math.sqrt(10));
 		}
 	};
 
 	function mainLoop() {
-		var accel_x, accel_y, new_particles, rel_force, pos_x, pos_y, vel_x, vel_y;
+		var accel_x, accel_y, new_particles, rel_force, pos_x, pos_y, vel_x, vel_y, r2;
 		context.fillStyle = "rgb(0, 0, 0)";
 		context.fillRect(0, 0, width, height);
 
@@ -61,6 +62,27 @@
 		});
 
 		// Update slider-based variables.
+		if ($("#drift").val() < 0){
+			drift = Math.pow($("#drift").val(),1) + 1;
+			debugger
+		} else {
+			drift = Math.pow(10,$("#drift").val());
+		}
+		$("#driftdisplay").html(Math.round(10*drift)+"");
+		if ($("#drag").val() < 0){
+			drag = Math.pow($("#drag").val(),1) + 1;
+			debugger
+		} else {
+			drag = Math.pow(10,$("#drag").val());
+		}
+		$("#dragdisplay").html(Math.round(10*drag)+"");
+		if ($("#central").val() < 0){
+			central = Math.pow($("#central").val(),1) + 1;
+			debugger
+		} else {
+			central = Math.pow(10,$("#central").val());
+		}
+		$("#centraldisplay").html(Math.round(10*central)+"");
 		speed = Math.pow(10,$("#speed").val());
 		$("#speeddisplay").html(Math.round(speed)+"");
 
@@ -73,18 +95,20 @@
 					accel_y = 0;
 					for(var j = 0; j<particles.length; j++){
 						if (j != i){
-							rel_force = force_on_r((particles[i][0]-particles[j][0])*(particles[i][0]-particles[j][0])+(particles[i][1]-particles[j][1])*(particles[i][1]-particles[j][1]));
+							r2 = (particles[i][0]-particles[j][0])*(particles[i][0]-particles[j][0])+(particles[i][1]-particles[j][1])*(particles[i][1]-particles[j][1])
+							rel_force = force_on_r(r2);
 							accel_x += rel_force*(particles[i][0]-particles[j][0]);
 							accel_y += rel_force*(particles[i][1]-particles[j][1]);
 						}
 					}
-					accel_x += -drag*particles[i][2] + drift*(2*Math.random()-1) - central * (particles[i][0] - width/2)
-					accel_y += -drag*particles[i][3] + drift*(2*Math.random()-1) - central * (particles[i][1] - width/2)
-					
+					accel_x += -drag*particles[i][2]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][0] - width/2)/100000;
+					accel_y += -drag*particles[i][3]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][1] - width/2)/100000;
+
 					vel_x = particles[i][2] + step*accel_x;
 					vel_y = particles[i][3] + step*accel_y;
 					pos_x = particles[i][0] + step*vel_x;
 					pos_y = particles[i][1] + step*vel_y;
+					
 					new_particles.push([pos_x,pos_y,vel_x,vel_y])
 				}
 				particles = new_particles

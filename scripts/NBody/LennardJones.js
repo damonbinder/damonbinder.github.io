@@ -24,7 +24,7 @@
 	};
 
 	var particles = randomParticles();
-	var step = 0.01;
+	var step = 0.04;
 	var drag = 0.0;
 	var drift = 0;
 	var central = 0.0;

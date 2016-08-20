@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lattice Gas</title>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<style>
+				* {
+					padding:0;
+					margin:0;
+					font-family:'Merriweather Sans', Tahoma, sans-serif;
+					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
+				#canvas {
+					margin-top:100px;
+				}
+			</style>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	</head>
+	<body>
+		<br>
+		<br>
+		<h1>2D Lattice Gas: A Metropolis Algorithm</h1>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
+		<canvas id="canvas">
+			You need a modern browser which supports HTML5 canvas to view this.
+		</canvas>
+
+		<div>
+			<label>Temperature: </label><span id="tempdisplay"></span><br><input style="width:400px;" type="range" name="temperature" id="temperature" min="0" max="2" value="1" step="0.001"><br>
+			<label>Gravity: </label><span id="magdisplay"></span><br><input style="width:400px;" type="range" name="magnetism" id="magnetism" min="0" max="10" value="0" step="0.01"><br>
+		</div>
+
+		<script type="text/javascript" src="./LatGas.js"></script>
+	</body>
+</html>

@@ -1,7 +1,7 @@
 (function() {
 
-	var width = 500, height = 500; // Width and height of simulation in pixels. Each pixel is 10km by 10km
-	var cellSize = 5; // Size of a cell in pixels.
+	var width = 600, height = 600; // Width and height of simulation in pixels. Each pixel is 10km by 10km
+	var cellSize = 6; // Size of a cell in pixels.
 	var yCellCount = Math.floor(height/cellSize); // Number of cells in the up-down direction.
 	var xCellCount = Math.floor(width/cellSize); // Number of cells in the left-right direction.
 
@@ -59,12 +59,16 @@
 	}
 	death_chance[40] = 1;
 	birth_chance[40] = 0;
+	birth_chance[1]  = 0;
 
 	function drawGrid(grid) {
 		context.fillStyle = "rgb(255, 255, 255)";
 		for (var y = 0; y < yCellCount; y++) {
 			for (var x = 0; x < xCellCount; x++) {
-				color = Math.round(255*grid[x][y]/40);
+				color = Math.round(255*grid[x][y]/22);
+				if (color>255){
+					color = 255;
+				}
 				context.fillStyle = "rgb("+color+","+color+","+color+")";
 				context.fillRect(x*cellSize, y*cellSize, cellSize, cellSize);
 			}

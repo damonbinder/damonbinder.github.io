@@ -37,6 +37,7 @@
 
 	var grid = makeBlankGrid();
 	var humans = [];
+	var history = [];
 	
 	var paused = false;
 	var new_point = true;
@@ -44,6 +45,11 @@
 	var population = 0;
 	var year = 0;
 	var kill_rate = 20;
+
+	var climate   = 0;
+	var speed = 1;
+	var variance = 1;
+	var climate_multiplier = 1+climate**2-variance**2;
 	
 	var death_chance = [];
 	var birth_chance = [];
@@ -55,6 +61,7 @@
 		death_chance[i] = i*(1/1200+(i-20)*(i-20)/400*1/120);
 		birth_chance[i] = i*1/1200;
 	}
+	death_chance[0]  = -1;
 	death_chance[40] = 1;
 	birth_chance[40] = 0;
 	birth_chance[1]  = 0;
@@ -101,16 +108,25 @@
 		while (human_num<humans.length){
 			humans.shift();
 		}
+		speed = $("#speed").val();
+		$("#climspd").html(Math.round(Math.pow(10,speed))+"");
+		speed = 1/Math.pow(10,speed);
+		variance = $("#variance").val();
+		$("#climvar").html(variance+"");
+
+
 
 		//Update counters.
 		$("#popdisplay").html(population+"");
 		$("#year").html(Math.round(year/12)+"");
+		$("#climatedisplay").html(Math.round(climate_multiplier*100)/100+"");
 
 		// Run simulation step.
 		if (!paused) {
 			var new_grid = makeBlankGrid();
 			population = 0;
 			year += 1;
+			climate_multiplier = Math.max(0.75,1+climate**2-variance**2);
 
 			for (var y = 0; y < yCellCount; y++) {
 				for (var x = 0; x < xCellCount; x++) {
@@ -125,7 +141,7 @@
 					if (Math.random()<birth_chance[new_amount]){
 						new_amount += 1;
 					}
-					if (Math.random()<death_chance[new_amount]){
+					if (Math.random()<death_chance[new_amount]*climate_multiplier){
 						new_amount += -1;
 					}
 					new_grid[x][y] = new_amount;
@@ -141,6 +157,15 @@
 				if (Math.random()<kill_rate && grid[new_x][new_y]>0){
 					grid[new_x][new_y] += -1;
 				}
+			}
+
+			if (year%12 == 0){
+				climate += 6*(Math.random()-0.5)*variance*Math.sqrt(speed) - speed*climate;
+				history.push([population,climate_multiplier]);
+				if (population>0){
+					console.log(population+"	"+climate_multiplier);
+				}
+				debugger
 			}
 		}
 

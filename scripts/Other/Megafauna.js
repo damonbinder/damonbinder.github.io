@@ -43,6 +43,7 @@
 	
 	var population = 0;
 	var year = 0;
+	var kill_rate = 20;
 	
 	var mouse_x = -1;
 	var mouse_y = -1;
@@ -65,11 +66,12 @@
 		context.fillStyle = "rgb(255, 255, 255)";
 		for (var y = 0; y < yCellCount; y++) {
 			for (var x = 0; x < xCellCount; x++) {
-				color = Math.round(255*grid[x][y]/22);
-				if (color>255){
-					color = 255;
+				val = Math.min(grid[x][y],22);
+				if (val != 0){
+					context.fillStyle = "hsl("+Math.round(120/22*val)+",100%,"+(50-2*Math.abs(val-10))+"%)";
+				} else {
+					context.fillStyle = "black"
 				}
-				context.fillStyle = "rgb("+color+","+color+","+color+")";
 				context.fillRect(x*cellSize, y*cellSize, cellSize, cellSize);
 			}
 		}
@@ -95,26 +97,22 @@
 			mouse_y = Math.round((event.pageY-canvas.offsetTop) /cellSize);
 		});
 
-		// Makes new humans
-		$(document).mousedown(function (event){
-			if (new_point){
-				var new_x = Math.round((event.pageX-canvas.offsetLeft)/cellSize);
-				var new_y = Math.round((event.pageY-canvas.offsetTop) /cellSize);
-				if (new_x > 0 && new_y > 0 && new_x < xCellCount && new_y < yCellCount){
-					humans.push([new_x,new_y]);
-					new_point = false
-				}
-			}
-		});
 
-		$(document).mouseup(function (event){
-			new_point = true
-		});
+		//Update sliders
+		kill_rate = $("#kill").val()/100;
+		$("#killrate").html(kill_rate+"");
+		human_num = $("#human").val();
+		$("#humandisplay").html(human_num+"");
+		while (human_num>humans.length){
+			humans.push([Math.round(xCellCount*Math.random()),Math.round(yCellCount*Math.random())]);
+		}
+		while (human_num<humans.length){
+			humans.shift();
+		}
 
-		// Update counters.
+		//Update counters.
 		$("#popdisplay").html(population+"");
 		$("#year").html(Math.round(year/12)+"");
-		$("#humans").html(humans.length+"");
 
 		// Run simulation step.
 		if (!paused) {
@@ -125,10 +123,17 @@
 			var new_grid = makeBlankGrid();
 			population = 0;
 			year += 1;
+
 			for (var y = 0; y < yCellCount; y++) {
 				for (var x = 0; x < xCellCount; x++) {
-					new_amount = Math.floor((neighbours(x,y,grid)+5*Math.random())/5);
-					debugger
+					//diffusion
+					if (year%4 == 0){
+						new_amount = Math.floor((neighbours(x,y,grid)+5*Math.random())/5);
+					} else {
+						new_amount = grid[x][y];
+					}
+
+					//birth and death
 					if (Math.random()<birth_chance[new_amount]){
 						new_amount += 1;
 					}
@@ -145,7 +150,7 @@
 				new_x = (humans[i][0] + randomMove()+xCellCount)%xCellCount;
 				new_y = (humans[i][1] + randomMove()+xCellCount)%xCellCount;
 				humans[i] = [new_x,new_y];
-				if (grid[new_x][new_y]>0){
+				if (Math.random()<kill_rate && grid[new_x][new_y]>0){
 					grid[new_x][new_y] += -1;
 				}
 			}

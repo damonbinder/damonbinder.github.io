@@ -27,10 +27,11 @@
 		<br>
 		<h1>Megafauna Extinction Simulator 2016</h1>
 		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
-		<h3>Each square represents a 10km by 10km area.</h3>
-		<h3>The total area is a million square kilometers.</h3>
+		<h3>Each square represents about an 8km by 8km area.</h3>
+		<h3>The total area is about 640 000 square kilometers.</h3>
 		<h3>The colour represents the number of megafauna, which in ideal conditions are around 20 per square.</h3>
-		<h3>Click to add humans which hunt the meafauna.</h3>
+		<h3>Each human group represents a band of about 30 people.</h3>
+		<h3>From population estimates an area this size could support about 25000 people, or about 800 groups.</h3>
 		<canvas id="canvas">
 			You need a modern browser which supports HTML5 canvas to view this.
 		</canvas>
@@ -40,10 +41,12 @@
 		<div>
 			<label>Megafauna Population: </label><span id="popdisplay"></span>
 		</div>
+		</br>		
 		<div>
-			<label>Human Groups: </label><span id="humans"></span>
+			<label>Human Groups: </label><span id="humandisplay"></span><br><input style="width:400px;" type="range" name="human" id="human" min="0" max="1600" value="0" step="1"><br>
 		</div>
-
+		<div>
+			<label>Megafauna kill rate per month: </label><span id="killrate"></span><br><input style="width:400px;" type="range" name="kill" id="kill" min="0" max="100" value="50" step="1"><br>
 		<script type="text/javascript" src="./Megafauna.js"></script>
 	</body>
 </html>

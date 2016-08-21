@@ -45,9 +45,6 @@
 	var year = 0;
 	var kill_rate = 20;
 	
-	var mouse_x = -1;
-	var mouse_y = -1;
-	
 	var death_chance = [];
 	var birth_chance = [];
 	for (var i = 0; i < 20; i++) {
@@ -92,11 +89,6 @@
 		context.fillStyle = "rgb(0, 0, 0)";
 		context.fillRect(0, 0, width, height);
 
-		$(document).mousemove(function (event){
-			mouse_x = Math.round((event.pageX-canvas.offsetLeft)/cellSize);
-			mouse_y = Math.round((event.pageY-canvas.offsetTop) /cellSize);
-		});
-
 
 		//Update sliders
 		kill_rate = $("#kill").val()/100;
@@ -116,10 +108,6 @@
 
 		// Run simulation step.
 		if (!paused) {
-			if (mouse_x > 0 && mouse_y > 0 && mouse_x < width/cellSize && mouse_y < height/cellSize){
-				grid[mouse_x][mouse_y] += 0.5;
-
-			}
 			var new_grid = makeBlankGrid();
 			population = 0;
 			year += 1;

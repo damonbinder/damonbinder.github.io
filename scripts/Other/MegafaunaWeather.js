@@ -49,7 +49,7 @@
 	var climate   = 0;
 	var speed = 1;
 	var variance = 1;
-	var climate_multiplier = 1+climate**2-variance**2;
+	var climate_multiplier = 1+climate*climate-variance*variance;
 	
 	var death_chance = [];
 	var birth_chance = [];

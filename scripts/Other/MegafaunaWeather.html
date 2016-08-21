@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Megafauna</title>
-			<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
 			<style>
 				* {
 					padding:0;
@@ -42,12 +41,24 @@
 		<div>
 			<label>Megafauna Population: </label><span id="popdisplay"></span>
 		</div>
-		</br>		
+		<div>
+			<label>Climate Death Rate Multiplier: </label><span id="climatedisplay"></span>
+		</div>
+		</br>
+
 		<div>
 			<label>Human Groups: </label><span id="humandisplay"></span><br><input style="width:400px;" type="range" name="human" id="human" min="0" max="1600" value="0" step="1"><br>
 		</div>
 		<div>
 			<label>Megafauna kill rate per month: </label><span id="killrate"></span><br><input style="width:400px;" type="range" name="kill" id="kill" min="0" max="100" value="50" step="1"><br>
-		<script type="text/javascript" src="./Megafauna.js"></script>
+		</div>
+
+		<div>
+			<label>Climate Variance: </label><span id="climvar"></span><br><input style="width:400px;" type="range" name="variance" id="variance" min="0" max="1" value="0" step="0.01"><br>
+		</div>
+		<div>
+			<label>Climate Timescale: </label><span id="climspd"></span><br><input style="width:400px;" type="range" name="speed" id="speed" min="0" max="3" value="1" step="0.01"><br>
+		</div>
+		<script type="text/javascript" src="./MegafaunaWeather.js"></script>
 	</body>
 </html>

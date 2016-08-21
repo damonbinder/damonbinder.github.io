@@ -126,7 +126,7 @@
 			var new_grid = makeBlankGrid();
 			population = 0;
 			year += 1;
-			climate_multiplier = Math.max(0.75,1+climate**2-variance**2);
+			climate_multiplier = Math.max(0.75,1+climate*climate-variance*variance);
 
 			for (var y = 0; y < yCellCount; y++) {
 				for (var x = 0; x < xCellCount; x++) {

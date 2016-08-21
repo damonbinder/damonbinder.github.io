@@ -142,6 +142,13 @@
 					grid[new_x][new_y] += -1;
 				}
 			}
+
+			if (year%12 == 0){
+				if (population>0){
+					console.log(population);
+				}
+				debugger
+			}
 		}
 
 

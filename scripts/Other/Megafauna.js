@@ -48,12 +48,12 @@
 	var death_chance = [];
 	var birth_chance = [];
 	for (var i = 0; i < 20; i++) {
-		death_chance[i] = i*1/1200
-		birth_chance[i] = 20*Math.pow(i/20,0.4)*1/1200;
+		death_chance[i] = i*1/360;
+		birth_chance[i] = i*1/360+(20-i)/20*0.007;
 	}
 	for (var i = 20; i < 40; i++) {
-		death_chance[i] = i*(1/1200+(i-20)*(i-20)/400*1/120);
-		birth_chance[i] = i*1/1200;
+		death_chance[i] = i*1/360+(20-i)/20*0.007;
+		birth_chance[i] = i*1/360;
 	}
 	death_chance[40] = 1;
 	birth_chance[40] = 0;

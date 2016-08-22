@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Heat Equation</title>
+		<title>Standing Waves</title>
 			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
 			<style>
 				* {
@@ -25,17 +25,23 @@
 	<body>
 		<br>
 		<br>
-		<h1>Heat Equation</h1>
+		<h1>Standing Waves</h1>
 		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
-		<h3>Move your mouse over the blue square to heat it.</h3>
+		<h3>The edge of the simulation oscillates periodically, creating standing waves.</h3>
 		<canvas id="canvas">
 			You need a modern browser which supports HTML5 canvas to view this.
 		</canvas>
 
 		<div>
-			<label>Diffusion Constant: </label><span id="magdisplay"></span><br><input style="width:400px;" type="range" name="magnetism" id="magnetism" min="0" max="800" value="100" step="1"><br>
+			<label>Speed: </label><span id="speeddisplay"></span><br><input style="width:400px;" type="range" name="speed" id="speed" min="-2" max="0" value="0" step="0.01"><br>
+		</div>
+		<div>
+			<label>Dissipation Constant: </label><span id="disdisplay"></span><br><input style="width:400px;" type="range" name="dissipation" id="dissipation" min="0" max="1" value="0" step="0.01"><br>
+		</div>
+		<div>
+			<label>Oscillation Speed: </label><span id="oscdisplay"></span><br><input style="width:400px;" type="range" name="oscillation" id="oscillation" min="-1" max="1" value="0" step="0.01"><br>
 		</div>
 
-		<script type="text/javascript" src="./Diffusion.js"></script>
+		<script type="text/javascript" src="./Waves.js"></script>
 	</body>
 </html>

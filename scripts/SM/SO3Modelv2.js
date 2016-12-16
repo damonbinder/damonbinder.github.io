@@ -1,7 +1,7 @@
 (function() {
 
-	var width = 600, height = 600; // Width and height of simulation in pixels.
-	var cellSize = 8; // Size of a cell in pixels.
+	var width = 500, height = 500; // Width and height of simulation in pixels.
+	var cellSize = 5; // Size of a cell in pixels.
 	var yCellCount = Math.floor(height/cellSize); // Number of cells in the up-down direction.
 	var xCellCount = Math.floor(width/cellSize); // Number of cells in the left-right direction.
 

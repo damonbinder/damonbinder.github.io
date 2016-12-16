@@ -1,6 +1,6 @@
 (function() {
 
-	var width = 600, height = 600; // Width and height of simulation in pixels.
+	var width = 500, height = 500; // Width and height of simulation in pixels.
 	var cellSize = 2; // Size of a cell in pixels.
 	var yCellCount = Math.floor(height/cellSize); // Number of cells in the up-down direction.
 	var xCellCount = Math.floor(width/cellSize); // Number of cells in the left-right direction.
@@ -28,14 +28,14 @@
 
 	function rand_particles() {
 		particles = []
-		for (var i = 0; i < width*height/(8*cellSize*cellSize); i++) {
+		for (var i = 0; i < width*height/(6*cellSize*cellSize); i++) {
 			particles.push([randcellx(),randcelly(),0]);
 		}
 		return particles
 	}
 
 	function rand_element() {
-		return Math.floor(Math.random()*width*height/(8*cellSize*cellSize))
+		return Math.floor(Math.random()*width*height/(6*cellSize*cellSize))
 	}
 
 	function makeGrid(oil,water) {
@@ -102,7 +102,7 @@
 
 		// Update slider-based variables.
 
-		temperature = Math.pow(6, parseFloat($("#temperature").val()))-1;
+		temperature = Math.pow(4, parseFloat($("#temperature").val()))-1;
 		$("#tempdisplay").html(Math.round(1000*temperature)/1000+"");
 		gravity = parseFloat($("#magnetism").val());
 		$("#magdisplay").html(gravity+"");
@@ -114,11 +114,14 @@
 			for (var i = 0; i < water.length; i++) {
 				x0 = randcellx();
 				y0 = randcelly();
+
+				x1 = water[i][0]
+				y1 = water[i][1]
 				if (grid[x0][y0] == 0){
-					n = neighbours(x0,y0,grid);
-					deltaU = water[i][2] - n + gravity*(water[i][1]-y0)/10;
+					n = neighbours(x1,y1,grid)-neighbours(x0,y0,grid);
+					deltaU = n + gravity*(water[i][1]-y0)/10;
 					if (deltaU < 0 || Math.random() < Math.exp(-deltaU/temperature)){
-						water[i] = [x0,y0,n]
+						water[i] = [x0,y0,0]
 					}				
 				}
 			}
@@ -139,7 +142,10 @@
 				x0 = oil[oil_p][0];
 				y0 = oil[oil_p][1];
 				n = neighbours(x0,y0,grid);
-				deltaU = water[i][2] - n ;
+
+				x1 = water[water_p][0];
+				y1 = water[water_p][1];
+				deltaU = neighbours(x1,y1,grid)-neighbours(x0,y0,grid) //water[i][2] - n ;
 				if (deltaU < 0 || Math.random() < Math.exp(-deltaU/temperature)){
 					oil[oil_p] = [water[water_p][0],water[water_p][1],0]
 					water[water_p] = [x0,y0,n]

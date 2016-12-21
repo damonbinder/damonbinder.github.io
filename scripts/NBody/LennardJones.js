@@ -1,5 +1,5 @@
 (function() {
-	var width = 800, height = 800; // Width and height of simulation in pixels.
+	var width = 500, height = 500; // Width and height of simulation in pixels.
 	var context = $("#canvas").get(0).getContext("2d");
 	var paused = false;
 	context.canvas.width = width;

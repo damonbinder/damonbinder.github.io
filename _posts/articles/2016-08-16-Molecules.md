@@ -35,7 +35,6 @@ To play around with the gas, I've added three sliders:
 
 
 
-
 [Here is a gas simulator. It uses a Lennard-Jones potential to simulate the dynamics of atoms.](/scripts/NBody/LennardJones.html)
 
 [Here is an ion simulator.](/scripts/NBody/Ions.html)

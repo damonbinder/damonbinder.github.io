@@ -30,7 +30,7 @@ To play around with the gas, I've added three sliders:
 
 * **Central**: If left alone, the molecules have a tendency to spread out and move away from the centre of the system. To prevent the molecules from moving too far, we can add an attractive force which pushes all of the molecules toward the centre. The stronger this force, the more strongly trapped the molecules are. We can think of this force as similar to pressure.
 
-
+## [Salts](/scripts/NBody/Ions.html)
 
 
 

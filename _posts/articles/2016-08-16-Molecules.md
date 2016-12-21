@@ -18,13 +18,13 @@ How can we understand this behaviour? A simple thing we could try is simulating 
 
 When two molecules are near each other, they exert forces on each other. A simple model to describe this it the [Lennard-Jones Potential](https://en.wikipedia.org/wiki/Lennard-Jones_potential):
 
-$$V(r) = A\left(\frac{r^{12}}{r_0^{12}}-\frac{r^{6}{r_0^{6}}\right).$$
+$$V(r) = A\left(\frac{r^{12}}{r_0^{12}}-\frac{r^{6}}{r_0^{6}}\right).$$
 
 This potential causes the molecules to attract to each other at medium distances, but the molecules repel if they get to close.
 
 To play around with the gas, I've added three sliders:
 
-* **Drift**: This adds some random movement to each molecule, increasing the energy and efectively heating the system.
+* **Drift**: This adds some random movement to each molecule, increasing the energy and effectively heating the system.
 
 * **Drag**: This causes the molecules to slow down and loose energy. It has the opposite effect of drift, cooling the system.
 

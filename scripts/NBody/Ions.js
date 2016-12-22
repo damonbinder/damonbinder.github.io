@@ -34,8 +34,8 @@
 	var central = 0.0;
 	var new_point = true;
 
-	var soft2 = 100;
-	var s2 = 900;
+	var soft2 = 400;
+	var s2 = 2500;
 	function ion_force(r2){
 		if (r2>soft2){
 			return 0.01*Math.pow(s2/r2,1.5);
@@ -88,18 +88,9 @@
 			drift = Math.pow(10,$("#drift").val());
 		}
 		$("#driftdisplay").html(Math.round(10*drift)+"");
-		if ($("#drag").val() < 0){
-			drag = Math.pow($("#drag").val(),1) + 1;
-		} else {
-			drag = Math.pow(10,$("#drag").val());
-		}
+		
+		drag =$("#drag").val();
 		$("#dragdisplay").html(Math.round(10*drag)+"");
-		if ($("#central").val() < 0){
-			central = Math.pow($("#central").val(),1) + 1;
-		} else {
-			central = Math.pow(10,$("#central").val());
-		}
-		$("#centraldisplay").html(Math.round(10*central)+"");
 		speed = Math.pow(10,$("#speed").val());
 		$("#speeddisplay").html(Math.round(speed)+"");
 
@@ -120,11 +111,19 @@
 							accel_y += particles[i][4]*particles[j][4]*rel_force1*(particles[i][1]-particles[j][1]) + rel_force2*(particles[i][1]-particles[j][1]);
 						}
 					}
-					accel_x += -drag*particles[i][2]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][0] - width/2)/100000;
-					accel_y += -drag*particles[i][3]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][1] - width/2)/100000;
+					accel_x += -drag*particles[i][2]/100 + drift*(2*Math.random()-1);
+					accel_y += -drag*particles[i][3]/100 + drift*(2*Math.random()-1);
 
 					vel_x = particles[i][2] + step*accel_x;
 					vel_y = particles[i][3] + step*accel_y;
+
+					if (particles[i][0]>width || particles[i][0]<0){
+						vel_x = - vel_x
+					}
+					if (particles[i][1]>width || particles[i][1]<0){
+						vel_y = - vel_y
+					}
+
 					pos_x = particles[i][0] + step*vel_x;
 					pos_y = particles[i][1] + step*vel_y;
 					

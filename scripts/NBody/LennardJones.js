@@ -1,3 +1,5 @@
+//attempting boundary conditions
+
 (function() {
 	var width = 500, height = 500; // Width and height of simulation in pixels.
 	var context = $("#canvas").get(0).getContext("2d");
@@ -27,7 +29,6 @@
 	var step = 0.04;
 	var drag = 0.0;
 	var drift = 0;
-	var central = 0.0;
 	var new_point = true;
 
 	var soft2 = 400;
@@ -69,20 +70,10 @@
 			drift = Math.pow(10,$("#drift").val());
 		}
 		$("#driftdisplay").html(Math.round(10*drift)+"");
-		if ($("#drag").val() < 0){
-			drag = Math.pow($("#drag").val(),1) + 1;
-			debugger
-		} else {
-			drag = Math.pow(10,$("#drag").val());
-		}
+		
+		drag =$("#drag").val();
 		$("#dragdisplay").html(Math.round(10*drag)+"");
-		if ($("#central").val() < 0){
-			central = Math.pow($("#central").val(),1) + 1;
-			debugger
-		} else {
-			central = Math.pow(10,$("#central").val());
-		}
-		$("#centraldisplay").html(Math.round(10*central)+"");
+		
 		speed = Math.pow(10,$("#speed").val());
 		$("#speeddisplay").html(Math.round(speed)+"");
 
@@ -103,11 +94,18 @@
 							}
 						}
 					}
-					accel_x += -drag*particles[i][2]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][0] - width/2)/100000;
-					accel_y += -drag*particles[i][3]/10000 + drift*(2*Math.random()-1)/100 - central * (particles[i][1] - width/2)/100000;
+					theta = 2*Math.PI*Math.random();
+					accel_x += -drag*particles[i][2]/100 + drift*Math.sin(theta);
+					accel_y += -drag*particles[i][3]/100 + drift*Math.cos(theta);
 
 					vel_x = particles[i][2] + step*accel_x;
 					vel_y = particles[i][3] + step*accel_y;
+					if (particles[i][0]>width || particles[i][0]<0){
+						vel_x = - vel_x
+					}
+					if (particles[i][1]>width || particles[i][1]<0){
+						vel_y = - vel_y
+					}
 					pos_x = particles[i][0] + step*vel_x;
 					pos_y = particles[i][1] + step*vel_y;
 					

@@ -22,21 +22,16 @@ $$V(r) = A\left(\frac{r^{12}}{r_0^{12}}-\frac{r^{6}}{r_0^{6}}\right).$$
 
 This potential causes the molecules to attract to each other at medium distances, but the molecules repel if they get to close.
 
-To play around with the gas, I've added three sliders:
+To play around with the gas, I've added two sliders:
 
 * **Drift**: This adds some random movement to each molecule, increasing the energy and effectively heating the system.
 
 * **Drag**: This causes the molecules to slow down and loose energy. It has the opposite effect of drift, cooling the system.
 
-* **Central**: If left alone, the molecules have a tendency to spread out and move away from the centre of the system. To prevent the molecules from moving too far, we can add an attractive force which pushes all of the molecules toward the centre. The stronger this force, the more strongly trapped the molecules are. We can think of this force as similar to pressure.
+When the gas of particles is hot, the particles bounce around chaotically, just like in a real gas. If we add some drag however, the particles slow down and begin to interact with each other. They begin to cling together in clusters, like droplets of a liquid. Further cooling the particles and we find that they stop moving altogether. The particles arrange themselves into a crystal --- a hexagonal lattice.
+
 
 ## [Salts](/scripts/NBody/Ions.html)
+Salt, NaCl, is made of positively charged sodium ions interacting with negatively charged chlorine ions. According to Coulomb's law, like ions repel and opposite ions attract. Just like the molecules in the previous section, ions will repel each other if they get too close. I have made a simulation of this, which you can play around with [here](/scripts/NBody/Ions.html). 
 
-
-
-
-[Here is a gas simulator. It uses a Lennard-Jones potential to simulate the dynamics of atoms.](/scripts/NBody/LennardJones.html)
-
-[Here is an ion simulator.](/scripts/NBody/Ions.html)
-
-[Here is a nuclei simulations, assuming that nuclei are classical and two-dimensional.](/scripts/NBody/Nuclear.html)
+Just like the Lennard-Jones potential, we will get gas, liquid, and solid-like behaviour depending on the energy of the particles. Because there are two types of ions, we can get more intricate clusters of ions forming --- long chains and circles, square lattices, trees. Eventually the ions will settle down into a square lattice, akin to the cubic lattice we observe in real salt!

@@ -1,7 +1,7 @@
 (function() {
 
-	var width = 500, height = 500; // Width and height of simulation in pixels.
-	var cellSize = 5; // Size of a cell in pixels.
+	var width = 462, height = 462; // Width and height of simulation in pixels.
+	var cellSize = 3; // Size of a cell in pixels.
 	var yCellCount = Math.floor(height/cellSize); // Number of cells in the up-down direction.
 	var xCellCount = Math.floor(width/cellSize); // Number of cells in the left-right direction.
 
@@ -38,10 +38,8 @@
 	var rho = 1;
 	var speed = 1;
 	var dissipation = 0;
-	var oscillation = 1;
 	var h = 0.5;
-	var time = 0;
-	var new_point = false;
+	var new_point = true;
 
 	var paused = false;
 
@@ -66,19 +64,11 @@
 				var new_x = Math.round((event.pageX-canvas.offsetLeft)/cellSize);
 				var new_y = Math.round((event.pageY-canvas.offsetTop)/cellSize);
 				if (new_x > 0 && new_y > 0 && new_x < xCellCount && new_y < yCellCount){
-					displacement[new_x][new_y] = 100;
-					displacement[new_x+1][new_y] = 50;
-					displacement[new_x-1][new_y] = 50;
-					displacement[new_x][new_y+1] = 50;
-					displacement[new_x][new_y-1] = 50;
-					displacement[new_x+1][new_y+1] = 20;
-					displacement[new_x-1][new_y+1] = 20;
-					displacement[new_x+1][new_y-1] = 20;
-					displacement[new_x-1][new_y-1] = 20;
-					displacement[new_x+2][new_y] = 10;
-					displacement[new_x-2][new_y] = 10;
-					displacement[new_x][new_y+2] = 10;
-					displacement[new_x][new_y-2] = 10;
+					for (var y = 1; y+1 < yCellCount; y++) {
+						for (var x = 1; x+1 < xCellCount; x++) {
+							displacement[x][y] += 4*Math.exp(-(x-new_x)*(x-new_x)*0.25-(y-new_y)*(y-new_y)*0.25)
+						}
+					}
 				}
 			}
 		});
@@ -91,17 +81,16 @@
 		// Update slider-based variables.
 		speed = Math.pow(10,parseFloat($("#speed").val()));
 		$("#speeddisplay").html(Math.round(speed*100)/100+"");
+		
 		dissipation = parseFloat($("#dissipation").val());
 		$("#disdisplay").html(dissipation+"");
-		oscillation = Math.pow(10,parseFloat($("#oscillation").val()));
-		$("#oscdisplay").html(Math.round(oscillation*100)/100+"");
 
 		// Run simulation step.
 		if (!paused) {
 			var left, mid;
 			var new_displacement = makeBlankGrid();
 			var new_velocity = makeBlankGrid();
-			var h = 0.5*speed;
+			var h = 0.7*speed;
 			for (var y = 1; y+1 < yCellCount; y++) {
 				left = displacement[0][y];
 				mid  = displacement[1][y];
@@ -115,15 +104,6 @@
 			}
 			displacement = new_displacement;
 			velocity = new_velocity;
-			time += 0.1*speed;
-			for (var y = 0; y < yCellCount; y++) {
-				// if ((Math.abs(y-2*yCellCount/5)<4) || (Math.abs(y-3*yCellCount/5)<4)){
-				// 	displacement[0][y]            = Math.sin(oscillation*time);
-				// }
-				// displacement[xCellCount-1][y] = Math.sin(oscillation*time);
-				// displacement[y][0]            = Math.sin(oscillation*time);
-				// displacement[y][yCellCount-1] = Math.sin(oscillation*time);
-			}
 		}
 
 		drawGrid(displacement);

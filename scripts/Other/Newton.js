@@ -88,8 +88,8 @@
 				} else {
 					zoom = zoom/4;
 				}
-				can_change = false
-				iteration = 0
+				can_change = false;
+				iteration = 0;
 				grid = makeBlankGrid()
 			}
 

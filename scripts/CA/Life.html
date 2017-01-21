@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Life-Like Cellular Automata</title>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<style>
+				* {
+					padding:0;
+					margin:0;
+					font-family:'source-sans-pro',sans-serif;
+					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
+				#canvas {
+					margin-top:20px;
+				}
+			</style>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	</head>
+	<body>
+		<body oncontextmenu="return false;">
+		<br>
+		<h1>Life-Like Cellular Automata</h1>
+		<br>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
+		<canvas id="canvas">
+			You need a modern browser which supports HTML5 canvas to view this.
+		</canvas>
+
+		<div>
+			<label>Speed: </label><span id="speedDisplay"></span><br><input style="width:400px;" type="range" name="speed" id="speed" min="0" max="100" value="100" step="1"><br>
+		</div>
+
+		<input id="clear" type="button" style = "color: black; font_size: large" value="Clear Grid"/>
+		<input id="random" type="button" style = "color: black; font_size: large" value="Randomise Grid"/>
+		<br>
+		<br>
+		<table style="margin: 0px auto;"">
+			<tr>
+				<th><P ALIGN="right">Birth: &nbsp</P></th>
+				<td><input type="checkbox" id="b0">0</td>
+				<td><input type="checkbox" id="b1">1</td>
+				<td><input type="checkbox" id="b2">2</td>
+				<td><input type="checkbox" id="b3" checked=true>3</td>
+				<td><input type="checkbox" id="b4">4</td>
+				<td><input type="checkbox" id="b5">5</td>
+				<td><input type="checkbox" id="b6">6</td>
+				<td><input type="checkbox" id="b7">7</td>
+				<td><input type="checkbox" id="b8">8</td>
+			</tr>
+			<tr>
+				<th><P ALIGN="right">Survive: &nbsp </P></th>
+				<td><input type="checkbox" id="s0">0</td>
+				<td><input type="checkbox" id="s1">1</td>
+				<td><input type="checkbox" id="s2" checked=true>2</td>
+				<td><input type="checkbox" id="s3" checked=true>3</td>
+				<td><input type="checkbox" id="s4">4</td>
+				<td><input type="checkbox" id="s5">5</td>
+				<td><input type="checkbox" id="s6">6</td>
+				<td><input type="checkbox" id="s7">7</td>
+				<td><input type="checkbox" id="s8">8</td>
+			</tr>
+		</table>
+		<script type="text/javascript" src="./Life.js"></script>
+
+	</body>
+</html>

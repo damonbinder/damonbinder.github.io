@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Newton Fractal</title>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<style>
+				* {
+					padding:0;
+					margin:0;
+					font-family:'source-sans-pro',sans-serif;
+					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
+				#canvas {
+					margin-top:20px;
+				}
+			</style>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	</head>
+	<body>
+		<br>
+		<br>
+		<h1>Newton Fractal</h1>
+		<br>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
+		<canvas id="canvas">
+			You need a modern browser which supports HTML5 canvas to view this.
+		</canvas>
+		<br>
+		<label>Number of steps: </label><span id="interations"></span>
+
+		<body oncontextmenu="return false;">
+
+		<script type="text/javascript" src="./Newton.js"></script>
+	</body>
+</html>

@@ -94,7 +94,7 @@
 
 		drawPoints(particles);
 
-		setTimeout(mainLoop, 0); // Run, run, as fast as you can!
+		setTimeout(mainLoop, 1); // Run, run, as fast as you can!
 	};
 			
 

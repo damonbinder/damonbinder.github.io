@@ -155,7 +155,7 @@
 
 		// sim speed
 		speed = $("#speed").val();
-		$("#speedDisplay").html(speed+"");
+		$("#speedDisplay").html("Speed:"+speed+"");
 		if (speed<1){
 			$("#speedDisplay").html("Paused");
 		}
@@ -164,7 +164,7 @@
 		// Run simulation step.
 		if (counter<100/speed){
 			counter += 1
-		} else {
+		} else if(!take_square && !add_square) {
 			var new_grid = makeBlankGrid();
 			for (var y = 0; y < yCellCount; y++) {
 				for (var x = 0; x < xCellCount; x++) {

@@ -182,7 +182,7 @@
 		
 		drawGrid(grid);
 
-		setTimeout(mainLoop,0);
+		setTimeout(mainLoop,1);
 	};
 			
 

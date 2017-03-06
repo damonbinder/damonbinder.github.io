@@ -7,7 +7,7 @@ image:
   feature: logforce.jpg
 ---
 
-I am **Damon Binder**. I study physics at the Australian National University, and this year completed my honours year. My [honours project](/documents/HonoursThesis.pdf) was on theoretical nuclear physics, researching into how high-energy physics such as meson exchange can give rise to time-odd and tensor forces in nuclear many-body problems. I am a [John Monash scholar](https://johnmonash.com/), and will use the scholarship to help fund a PhD in theoretical physics.
+I am **Damon Binder**. I am a physicist, and last year completed my honours at the Australian National University. My [honours project](/documents/HonoursThesis.pdf) was on theoretical nuclear physics, researching into how high-energy physics such as meson exchange can give rise to time-odd and tensor forces in nuclear many-body problems. This year I will begin a PhD at Princeton University in September, working on high-energy theory. I am a [John Monash scholar](https://johnmonash.com/), and will use the scholarship to help fund my PhD.
 
 
 My main interests are in theoretical physics and its mathematical underpinnings. You can read some of my papers and essays [here](https://damonbinder.github.io/writing/). I also enjoy [coding](https://damonbinder.github.io/projects/) (especially physics simulations), and am an avid reader of history books, especially quantitative history.

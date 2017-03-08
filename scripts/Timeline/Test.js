@@ -84,7 +84,7 @@ function epoch_length(era){
 			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale)
 		}
 
-		setTimeout(mainLoop, 1); // Run, run, as fast as you can!
+		setTimeout(mainLoop, 1); // Run, run, as fast as you can! 
 	};
 			
 

@@ -36,7 +36,6 @@ function epoch_length(era){
 		names.push(new PIXI.Text(epoch[i][4]))
 		names[i].x = year(epoch[i][0]);
 		names[i].y = height-epoch_height*epoch[i][3];
-		names[i].width = epoch_length(epoch[i])
 		app.stage.addChild(names[i]);
 	}
 
@@ -78,8 +77,8 @@ function epoch_length(era){
 		for(var i = 0; i < epoch.length; i++){
 			names[i].x = year(epoch[i][0])*Math.pow(10,scale)
 			era[i].x   = year(epoch[i][0])*Math.pow(10,scale)
-
-			names[i].width = epoch_length(epoch[i])*Math.pow(10,scale)
+			
+			names[i].width = Math.min(names[i].width,epoch_length(epoch[i])*Math.pow(10,scale))
 			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale)
 		}
 

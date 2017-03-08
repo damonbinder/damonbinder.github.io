@@ -33,11 +33,15 @@ function epoch_length(era){
 
 	names = []
 	names_width = []
+	names_height = []
 	for(var i = 0; i < epoch.length; i++){
 		names.push(new PIXI.Text(epoch[i][4]))
 		names[i].x = year(epoch[i][0]);
 		names[i].y = height-epoch_height*epoch[i][3];
-		names_width[i] = names[i].width
+		
+		names_width[i] = names[i].width;
+		names_height[i] = names[i].height;
+		
 		app.stage.addChild(names[i]);
 	}
 
@@ -77,11 +81,16 @@ function epoch_length(era){
 
 		//drawing
 		for(var i = 0; i < epoch.length; i++){
-			names[i].x = year(epoch[i][0])*Math.pow(10,scale)
-			era[i].x   = year(epoch[i][0])*Math.pow(10,scale)
+			// scale x values
+			names[i].x = year(epoch[i][0])*Math.pow(10,scale);
+			era[i].x   = year(epoch[i][0])*Math.pow(10,scale);
 			
-			names[i].width = Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale))
-			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale)
+			// scale name width and height
+			names[i].width  = Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale));
+			names[i].height = names_height[i]*names[i].width/names_width[i];
+
+			// scale era widths
+			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale);
 		}
 
 		setTimeout(mainLoop, 1); // Run, run, as fast as you can! 

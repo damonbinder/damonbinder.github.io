@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Black Hole</title>
+			<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+			<style>
+				* {
+					padding:0;
+					margin:0;
+					font-family:'source-sans-pro',sans-serif;
+					color:#EFEFEF;
+				}
+				body, html {
+					min-height:100%;
+					overflow:auto;
+					background-color:#222222;
+					text-align:center;
+				}
+				#canvas {
+					margin-top:20px;
+				}
+			</style>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	</head>
+	<body>
+		<body oncontextmenu="return false;">
+		<br>
+		<br>
+		<h1>Schwarzchild Black Hole</h1>
+		<h3>By <a href="https://damonbinder.github.io/">Damon Binder</a></h3>
+		<h3>This simulates a supermassive black hole, with a mass of 10 million suns</a></h3>
+		<canvas id="canvas">
+			You need a modern browser which supports HTML5 canvas to view this.
+		</canvas>
+		<body oncontextmenu="return false;">
+
+		<br>
+		<center>
+		<table>
+  			<tr>
+  				<td align="right">Your time: &nbsp  </td>
+  				<td> <span id="your_time"></span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </td>
+  			</tr>
+  			<tr>
+  				<td align="right">Universe time:  &nbsp </td>
+  				<td> <span id="un_time"></span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </td>
+  			</tr>
+  		</table>
+		<br>
+
+		<input id="Reset" type="button" style = "color: black; font_size: large" value="Reset" onclick="location.reload()"/>
+		
+		<script type="text/javascript" src="./Black_Hole.js"></script>
+	</body>
+</html>

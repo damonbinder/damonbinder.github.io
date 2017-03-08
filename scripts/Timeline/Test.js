@@ -7,7 +7,7 @@ document.body.appendChild(app.view);
 
 epoch_height = 100
 // [log end,log start,color,level,name]
-epoch = [[0,1,0xFF700B,1,'steve'],[1,2,0x993300,1,'jerry'],[0,2,0x003300,2,'named eras']]
+epoch = [[0,1,0xFF700B,1,'steve'],[1,2,0x993300,1,'jerry'],[2,2.1,0x0000ff,1,'tim'],[0,2,0x003300,2,'named eras']]
 
 function year(log_year){
 	return Math.pow(10,log_year)-1
@@ -21,12 +21,13 @@ function epoch_length(era){
 
 (function() {
 	// epoch colourings
-	era = new PIXI.Graphics();
+	era = []
 	for(var i = 0; i < epoch.length; i++){
-		era.beginFill(epoch[i][2], 1);
-		era.drawRect(year(epoch[i][0]), height-epoch_height*epoch[i][3],epoch_length(epoch[i]), epoch_height);
+		era.push(new PIXI.Graphics());
+		era[i].beginFill(epoch[i][2], 1);
+		era[i].drawRect(0, height-epoch_height*epoch[i][3],epoch_length(epoch[i]), epoch_height); // drawRect(year(epoch[i][0]), height-epoch_height*epoch[i][3],epoch_length(epoch[i]), epoch_height);
+		app.stage.addChild(era[i]);
 	}
-	app.stage.addChild(era);
 	
 	// epoch names
 
@@ -48,11 +49,11 @@ function epoch_length(era){
 
 		//check how we should be scaling
 		$(document).keydown(function (event){
-			if (event.keyCode == 39 && right_change){
+			if (event.keyCode == 68 && right_change){
 				scroll += 1
 				right_change = false
 			};
-			if (event.keyCode == 37 && left_change){
+			if (event.keyCode == 65 && left_change){
 				scroll += -1
 				left_change = false
 			};
@@ -62,11 +63,11 @@ function epoch_length(era){
 		scale += scroll*0.005
 
 		$(document).keyup(function (event){
-			if (event.keyCode == 39 && !right_change){
+			if (event.keyCode == 68 && !right_change){
 				scroll += -1
 				right_change = true
 			};
-			if (event.keyCode == 37 && !left_change){
+			if (event.keyCode == 65 && !left_change){
 				scroll += 1
 				left_change = true
 			};
@@ -74,9 +75,12 @@ function epoch_length(era){
 
 
 		//drawing
-		era.width = Math.pow(10,scale)
 		for(var i = 0; i < epoch.length; i++){
-			names[i].width = Math.pow(10,scale)
+			names[i].x = year(epoch[i][0])*Math.pow(10,scale)
+			era[i].x   = year(epoch[i][0])*Math.pow(10,scale)
+
+			names[i].width = epoch_length(epoch[i])*Math.pow(10,scale)
+			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale)
 		}
 
 		setTimeout(mainLoop, 1); // Run, run, as fast as you can!

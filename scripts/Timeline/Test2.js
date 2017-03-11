@@ -14,9 +14,17 @@ var stage = new PIXI.Container();
 
 // global variables //////////////////////////////////////////////////////////////////////
 
+
 // initialize view
 var scale  = 3
 var x_offset = 100000 // very big will force it to the minimum
+
+// mouseover text
+var horizontal_gap = 20
+var vertical_gap = 10
+var middle_gap = 15
+var mo_width = 300
+
 
 // epoch data ////////////////////////////////////////////////////////////////////////////
 
@@ -111,9 +119,17 @@ date_style = new PIXI.TextStyle({
 
 mo_style = new PIXI.TextStyle({
 	fontFamily: 'Helvetica',
-	fontSize: 16,
+	fontSize: 14,
 	wordWrap: true,
-	wordWrapWidth: 400,
+	wordWrapWidth: mo_width,
+});
+
+mo_head = new PIXI.TextStyle({
+	fontFamily: 'Helvetica',
+	fontSize: 18,
+	wordWrap: true,
+	wordWrapWidth: mo_width,
+	fontWeight: 'bold',
 });
 
 
@@ -172,22 +188,34 @@ var main = (function() {
 	mo_overtext.y = 200;
 	stage.addChild(mo_overtext);
 
-	function era_description(i){
-		mo_overtext.text = epoch[i]["description"]+" ";
-		if (name_horizontal(i)){
-			mo_overtext.x = this.x+this.height
-			mo_overtext.y = this.y + 8
-		} else {
-			mo_overtext.x = this.x+this.width+20
-			mo_overtext.y = this.y+10
-		}
+	var mo_heading = new PIXI.Text('',mo_head);
+		mo_heading.x = 200;
+		mo_heading.y = 200;
+		stage.addChild(mo_heading);
 
+	function era_description(i){
+		// sets heading text
+		mo_heading.text = epoch[i]["header"]+" ";
+		if (name_horizontal(i)){
+			mo_heading.x = this.x+this.height;
+			mo_heading.y = this.y + vertical_gap;
+		} else {
+			mo_heading.x = this.x+this.width + horizontal_gap;
+			mo_heading.y = this.y+10 + vertical_gap;
+		}
+		
+		// sets body text
+		mo_overtext.text = epoch[i]["description"]+" ";
+		mo_overtext.x = mo_heading.x;
+		mo_overtext.y = mo_heading.y + mo_heading.height + middle_gap;
+		
+		//sets textbox
 		mo_background.clear()
 		mo_background.lineStyle(4, 0x444444, 1);
 		mo_background.beginFill(0xffffff, 1);
-		mo_background.drawRoundedRect(mo_overtext.x-20,mo_overtext.y-10,mo_overtext.width+40,mo_overtext.height+20,5);
+		mo_background.drawRoundedRect(mo_heading.x-horizontal_gap,mo_heading.y-vertical_gap,Math.max(mo_overtext.width,mo_heading.width)+2*horizontal_gap,mo_overtext.height+mo_heading.height+2*vertical_gap+middle_gap,5);
 
-		mo_background.alpha = 0.7;
+		mo_background.alpha = 1;
 		mo_background.blur = 10000;
 	}
 
@@ -293,6 +321,7 @@ var main = (function() {
 		if (offset_change != 0 || scale_change != 0){
 			mo_background.alpha = 0;
 			mo_overtext.text = " ";
+			mo_heading.text = " ";
 		}
 
 

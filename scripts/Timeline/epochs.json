@@ -4,6 +4,7 @@
 		"start": "10.13987909",
 		"level": 1,
 		"name": "Stelliferous",
+		"header": "Modern Era (1800 – Present)",
 		"description": " stars"
 	},
 	{
@@ -11,6 +12,7 @@
 		"start": "9.6599162",
 		"level": 2,
 		"name": "Hadean",
+		"header": "Modern Era (1800 – Present)",
 		"description": " earth stuff"
 	},
 	{
@@ -18,6 +20,7 @@
 		"start": "9.605305046",
 		"level": 2,
 		"name": "Archaen",
+		"header": "Modern Era (1800 – Present)",
 		"description": " earth stuff"
 	},
 	{
@@ -25,6 +28,7 @@
 		"start": "9.383815366",
 		"level": 2,
 		"name": "Proterozoic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " earth stuff"
 	},
 	{
@@ -32,6 +36,7 @@
 		"start": "8.733197266",
 		"level": 2,
 		"name": "Phanerozoic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " earth stuff"
 	},
 	{
@@ -39,149 +44,174 @@
 		"start": "8.733197266",
 		"level": 3,
 		"name": "Paleozoic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " earth stuff"
 	},{
 		"end": "7.819543942",
 		"start": "8.401400543",
 		"level": 3,
 		"name": "Mesozoic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "-1.17609125",
 		"start": "7.819543942",
 		"level": 3,
 		"name": "Cenozoic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " Early in the Cenozoic, following the K-Pg event, the planet was dominated by relatively small fauna, including small mammals, birds, reptiles, and amphibians. From a geological perspective, it did not take long for mammals and birds to greatly diversify in the absence of the dinosaurs that had dominated during the Mesozoic. Some flightless birds grew larger than humans. "
 	},{
 		"end": "8.685741739",
 		"start": "8.733197266",
 		"level": 4,
 		"name": "Cambrian",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.646403727",
 		"start": "8.685741739",
 		"level": 4,
 		"name": "Ordovician",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.622214024",
 		"start": "8.646403727",
 		"level": 4,
 		"name": "Silurian",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.55509445",
 		"start": "8.622214024",
 		"level": 4,
 		"name": "Devonian",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.47567119",
 		"start": "8.55509445",
 		"level": 4,
 		"name": "Carboniferous",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.401400543",
 		"start": "8.47567119",
 		"level": 4,
 		"name": "Permian",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.30319606",
 		"start": "8.401400543",
 		"level": 4,
 		"name": "Triassic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "8.161368005",
 		"start": "8.30319606",
 		"level": 4,
 		"name": "Jurassic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "7.819543942",
 		"start": "8.161368005",
 		"level": 4,
 		"name": "Cretaceous",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "7.361727855",
 		"start": "7.819543942",
 		"level": 4,
 		"name": "Paleogene",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "6.301030213",
 		"start": "7.361727855",
 		"level": 4,
 		"name": "Neogene",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "-1.17609125",
 		"start": "6.301030213",
 		"level": 4,
 		"name": "Quaternary",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "5.477122702",
 		"start": "6.518514071",
 		"level": 5,
 		"name": "Lower Paleolithic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "4.69897869 ",
 		"start": "5.477122702",
 		"level":"5",
 		"name": "Middle Paleolithic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "4.086395427",
 		"start": "4.69897869" ,
 		"level":"5",
 		"name": "Upper Paleolithic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "3.724357804",
 		"start": "4.086395427",
 		"level":"5",
 		"name": "Neolithic",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "3.505285674",
 		"start": "3.724357804",
 		"level":"5",
 		"name": "Bronze Age",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "3.398113692",
 		"start": "3.505285674",
 		"level":"5",
 		"name": "Iron Age",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "3.176380692",
 		"start": "3.398113692",
 		"level":"5",
 		"name": "Classical Era",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "2.699837726",
 		"start": "3.176380692",
 		"level":"5",
 		"name": "Medieval",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "2.303196057",
 		"start": "2.699837726",
 		"level":"5",
 		"name": "Early Modern",
+		"header": "Modern Era (1800 – Present)",
 		"description": " not stars"
 	},{
 		"end": "-1.17609125",
 		"start": "2.303196057",
 		"level":"5",
 		"name": "Modern",
-		"description": "Modern Era (1800 – Present) \n\nToday. Not tomorrow. Not yesterday. Today. Does this help your comprehension of this difficult, tedious concept of modernity? If not, I cannot help."
+		"header": "Modern Era (1800 – Present)",
+		"description":  "Today. Not tomorrow. Not yesterday. Today. Does this help your comprehension of this difficult, tedious concept of modernity? If not, I cannot help."
 	}]

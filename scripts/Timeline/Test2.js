@@ -114,6 +114,8 @@ date_style = new PIXI.TextStyle({
 mo_style = new PIXI.TextStyle({
 	fontFamily: 'Helvetica',
 	fontSize: 16,
+	wordWrap: true,
+	wordWrapWidth: 400,
 });
 
 
@@ -173,21 +175,22 @@ var main = (function() {
 	stage.addChild(mo_overtext);
 
 	function era_description(i){
-		mo_overtext.text = " " + epoch[i]["description"]+"  ";
+		mo_overtext.text = epoch[i]["description"]+" ";
 		if (name_horizontal(i)){
-			mo_overtext.x = this.x+this.height-20
+			mo_overtext.x = this.x+this.height
 			mo_overtext.y = this.y + 8
 		} else {
-			mo_overtext.x = this.x+this.width+10
-			mo_overtext.y = this.y+5
+			mo_overtext.x = this.x+this.width+20
+			mo_overtext.y = this.y+10
 		}
 
 		mo_background.clear()
 		mo_background.lineStyle(4, 0x444444, 1);
 		mo_background.beginFill(0xffffff, 1);
-		mo_background.drawRoundedRect(mo_overtext.x,mo_overtext.y-5,mo_overtext.width,mo_overtext.height+10,5);
+		mo_background.drawRoundedRect(mo_overtext.x-20,mo_overtext.y-10,mo_overtext.width+40,mo_overtext.height+20,5);
 
 		mo_background.alpha = 0.5;
+		mo_background.blur = 1;
 	}
 
 	// marker set up  ////////////////////////////////////////////////////////////////////////////	

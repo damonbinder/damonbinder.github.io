@@ -1,7 +1,10 @@
 //basic set up ////////////////////////////////////////////////////////////////////////////
 
-height = $(document).height()-5
-width  = $(document).width()
+var height = $(document).height()-5;
+var width  = $(document).width();
+
+var cursorX = 0;
+var cursorY = 0;
 
 var renderer = PIXI.autoDetectRenderer(width, height, {backgroundColor: 0xeeeeee});
 
@@ -19,11 +22,15 @@ var x_offset = 100000 // very big will force it to the minimum
 
 // epoch data ////////////////////////////////////////////////////////////////////////////
 
+var epoch;
+fetch("epochs.json")
+	.then(r=>r.json())
+	.then(j=>{
+		epoch = j;
+		main();})
 
-// [log end,log start,level,name]
-epoch = [[-1.17609125,10.13987909,1,'Stelliferous'],[9.605305046,9.6599162,2,'Hadean'],[9.383815366,9.605305046,2,'Archean'],[8.733197266,9.383815366,2,'Proterozoic'],[-1.17609125,8.733197266,2,'Phanerozoic'],[8.401400543,8.733197266,3,'Paleozoic'],[7.819543942,8.401400543,3,'Mesozoic'],[-1.17609125,7.819543942,3,'Cenozoic'],[8.685741739,8.733197266,4,'Cambrian'],[8.646403727,8.685741739,4,'Ordovician'],[8.622214024,8.646403727,4,'Silurian'],[8.55509445,8.622214024,4,'Devonian'],[8.47567119,8.55509445,4,'Carboniferous'],[8.401400543,8.47567119,4,'Permian'],[8.30319606,8.401400543,4,'Triassic'],[8.161368005,8.30319606,4,'Jurassic'],[7.819543942,8.161368005,4,'Cretaceous'],[7.361727855,7.819543942,4,'Paleogene'],[6.301030213,7.361727855,4,'Neogene'],[-1.17609125,6.301030213,4,'Quaternary'],[5.477122702,6.518514071,5,'Lower Paleolithic'],[4.69897869,5.477122702,5,'Middle Paleolithic'],[4.086395427,4.69897869,5,'Upper Paleolithic'],[3.724357804,4.086395427,5,'Neolithic'],[3.505285674,3.724357804,5,'Bronze Age'],[3.398113692,3.505285674,5,'Iron Age'],[3.176380692,3.398113692,5,'Classical Era'],[2.699837726,3.176380692,5,'Medieval'],[2.303196057,2.699837726,5,'Early Modern'],[-1.17609125,2.303196057,5,'Modern']]
-e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100]
-e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]]
+e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100];
+e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]];
 
 
 
@@ -44,7 +51,7 @@ function lyear_pxl(log_year){
 
 
 function epoch_length(era){
-	return (year(era[1])-year(era[0]))
+	return (year(era["start"])-year(era["end"]))
 }
 
 function name_year(year,level){
@@ -80,7 +87,7 @@ function separation(level,scale){
 
 // checks whether an epoch name should be displayed horizontally or vertically
 function name_horizontal(i){
-	return e_lvl_strt[epoch[i][2]]-0.001<epoch[i][0]
+	return e_lvl_strt[epoch[i]["level"]]-0.001<epoch[i]["end"]
 }
 
 
@@ -104,16 +111,20 @@ date_style = new PIXI.TextStyle({
 	fontWeight: 'bold',
 });
 
+mo_style = new PIXI.TextStyle({
+	fontFamily: 'Helvetica',
+	fontSize: 16,
+});
 
 
-(function() {
-
+var main = (function() {
 	// epoch setup ////////////////////////////////////////////////////////////////////////////	
 	era = []
 	for(var i = 0; i < epoch.length; i++){
 		era.push(new PIXI.Graphics());
-		era[i].beginFill(e_colors[epoch[i][2]-1][i%2], 1);
-		era[i].drawRect(0, epoch_height*(epoch[i][2]-1),epoch_length(epoch[i]),height);
+		era[i].beginFill(e_colors[epoch[i]["level"]-1][i%2], 1);
+		era[i].drawRect(0, epoch_height*(epoch[i]["level"]-1),epoch_length(epoch[i]),height);
+
 		stage.addChild(era[i]);
 	}
 	
@@ -122,13 +133,24 @@ date_style = new PIXI.TextStyle({
 	names_width = []
 	names_height = []
 	for(var i = 0; i < epoch.length; i++){
-		names.push(new PIXI.Text(" "+epoch[i][3]+" ",epoch_style))
-		names[i].x = year(epoch[i][0]);
-		names[i].y = epoch_height*(epoch[i][2]-1);
+		names.push(new PIXI.Text(" "+epoch[i]["name"]+" ",epoch_style))
+		names[i].x = year(epoch[i]["end"]);
+		names[i].y = epoch_height*(epoch[i]["level"]-1);
 		
 		names_width[i] = names[i].width;
-		names_height[i] = names[i].height;		
-		
+		names_height[i] = names[i].height;
+
+
+		names[i].interactive = true;
+
+		// black magic //
+		var index = i;
+		names[i].on('mousedown', (function(that,index) {
+					era_description.call(that,index);
+				}).bind(this,names[i],index));
+		// names[i].on('mouseout', kill_description())
+
+
 		if (name_horizontal(i)){
 			names[i].anchor.set(0);
 			names[i].rotation = 1.570796;			
@@ -138,6 +160,35 @@ date_style = new PIXI.TextStyle({
 	}
 
 
+	// mouse over text ////////////////////////////////////////////////////////
+	var mo_background = new PIXI.Graphics()
+	mo_background.beginFill(0xffffff, 1);
+	mo_background.drawRect(0,0,10,10);
+	mo_background.alpha = 0;
+	stage.addChild(mo_background);
+
+	var mo_overtext = new PIXI.Text('',mo_style);
+	mo_overtext.x = 200;
+	mo_overtext.y = 200;
+	stage.addChild(mo_overtext);
+
+	function era_description(i){
+		mo_overtext.text = " " + epoch[i]["description"]+"  ";
+		if (name_horizontal(i)){
+			mo_overtext.x = this.x+this.height-20
+			mo_overtext.y = this.y + 8
+		} else {
+			mo_overtext.x = this.x+this.width+10
+			mo_overtext.y = this.y+5
+		}
+
+		mo_background.clear()
+		mo_background.lineStyle(4, 0x444444, 1);
+		mo_background.beginFill(0xffffff, 1);
+		mo_background.drawRoundedRect(mo_overtext.x,mo_overtext.y-5,mo_overtext.width,mo_overtext.height+10,5);
+
+		mo_background.alpha = 0.5;
+	}
 
 	// marker set up  ////////////////////////////////////////////////////////////////////////////	
 	var line_level = 5
@@ -237,6 +288,11 @@ date_style = new PIXI.TextStyle({
 			};
 		});
 
+		// get rid of info
+		if (offset_change != 0 || scale_change != 0){
+			mo_background.alpha = 0;
+			mo_overtext.text = " ";
+		}
 
 
 
@@ -246,16 +302,16 @@ date_style = new PIXI.TextStyle({
 			if (name_horizontal(i)){
 				names[i].height  = Math.min(names_height[i],epoch_length(epoch[i])*Math.pow(10,scale));
 				names[i].width = names_width[i]*names[i].height/names_height[i];
-				names[i].x = lyear_pxl(epoch[i][0])+epoch_name_offset*names[i].height/names_height[i];
+				names[i].x = lyear_pxl(epoch[i]["end"])+epoch_name_offset*names[i].height/names_height[i];
 			} else {
-				names[i].x = (year(epoch[i][0]))*Math.pow(10,scale)+x_offset;
+				names[i].x = (year(epoch[i]["end"]))*Math.pow(10,scale)+x_offset;
 				names[i].width  = Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale));
 				names[i].height = names_height[i]*names[i].width/names_width[i];
 			}
 
 			// scale eras
 			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale);
-			era[i].x   = lyear_pxl(epoch[i][0]);
+			era[i].x   = lyear_pxl(epoch[i]["end"]);
 			
 		}
 
@@ -285,11 +341,18 @@ date_style = new PIXI.TextStyle({
 		}
 
 
-		//rendering ////////////////////////////////////////////////////////////////////////////		
+		// mouse x y ////////////////////////////////////////////////////////////////////////////
+		document.onmousemove = function(e){
+		    cursorX = e.pageX;
+		    cursorY = e.pageY;
+		}
+
+
+		// rendering ////////////////////////////////////////////////////////////////////////////		
 		renderer.render(stage)
-		setTimeout(mainLoop, 1); // Run, run, as fast as you can! 
+		setTimeout(mainLoop, 1); 
 	};
 			
 
 	mainLoop();
-}).call();
+});

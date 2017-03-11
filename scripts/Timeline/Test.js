@@ -3,7 +3,7 @@
 height = $(document).height()-5
 width  = $(document).width()
 
-var renderer = PIXI.autoDetectRenderer(width, height, {backgroundColor: 0xffffff});
+var renderer = PIXI.autoDetectRenderer(width, height, {backgroundColor: 0xeeeeee});
 
 document.body.appendChild(renderer.view);
 
@@ -14,7 +14,7 @@ var stage = new PIXI.Container();
 epoch_height = 40
 
 // [log end,log start,color,level,name]
-epoch = [[-1.17609125,10.13987909,0x000080,1,'Stelliferous'],[9.605305046,9.6599162,0xcc0000,2,'Hadean'],[9.383815366,9.605305046,0xcc0099,2,'Archean'],[8.733197266,9.383815366,0x6699ff,2,'Proterozoic'],[-1.17609125,8.733197266,0x00cc00,2,'Phanerozoic'],[8.401400543,8.733197266,0xcc0000,3,'Paleozoic'],[7.819543942,8.401400543,0xff9933,3,'Mesozoic'],[-1.17609125,7.819543942,0xffff99,3,'Cenozoic'],[8.685741739,8.733197266,0x0066ff,4,'Cambrian'],[8.646403727,8.685741739,0x9999ff,4,'Ordovician'],[8.622214024,8.646403727,0xff99cc,4,'Silurian'],[8.55509445,8.622214024,0xff9966,4,'Devonian'],[8.47567119,8.55509445,0xffcc00,4,'Carboniferous'],[8.401400543,8.47567119,0xcc9900,4,'Permian'],[8.30319606,8.401400543,0x99cc00,4,'Triassic'],[8.161368005,8.30319606,0x009933,4,'Jurassic'],[7.819543942,8.161368005,0x669999,4,'Cretaceous'],[7.361727855,7.819543942,0x33ccff,4,'Paleogene'],[6.301030213,7.361727855,0xff99ff,4,'Neogene'],[-1.17609125,6.301030213,0xff9966,4,'Quaternary'],[5.477122702,6.518514071,0x0066ff,5,'Lower Paleolithic'],[4.69897869,5.477122702,0x33cccc,5,'Middle Paleolithic'],[4.086395427,4.69897869,0x00cc66,5,'Upper Paleolithic'],[3.724357804,4.086395427,0x669900,5,'Neolithic'],[3.505285674,3.724357804,0x996633,5,'Bronze Age'],[3.398113692,3.505285674,0xcc6600,5,'Iron Age'],[3.176380692,3.398113692,0xffcc66,5,'Classical Era'],[2.699837726,3.176380692,0x99ff99,5,'Medieval'],[2.303196057,2.699837726,0x66ccff,5,'Early Modern'],[-1.17609125,2.303196057,0xff99ff,5,'Modern']]
+epoch = [[-1.17609125,10.13987909,0x0033cc,1,'Stelliferous'],[9.605305046,9.6599162,0xcc0000,2,'Hadean'],[9.383815366,9.605305046,0xcc0099,2,'Archean'],[8.733197266,9.383815366,0x6699ff,2,'Proterozoic'],[-1.17609125,8.733197266,0x00cc00,2,'Phanerozoic'],[8.401400543,8.733197266,0xcc0000,3,'Paleozoic'],[7.819543942,8.401400543,0xff9933,3,'Mesozoic'],[-1.17609125,7.819543942,0xffff99,3,'Cenozoic'],[8.685741739,8.733197266,0x0066ff,4,'Cambrian'],[8.646403727,8.685741739,0x9999ff,4,'Ordovician'],[8.622214024,8.646403727,0xff99cc,4,'Silurian'],[8.55509445,8.622214024,0xff9966,4,'Devonian'],[8.47567119,8.55509445,0xffcc00,4,'Carboniferous'],[8.401400543,8.47567119,0xcc9900,4,'Permian'],[8.30319606,8.401400543,0x99cc00,4,'Triassic'],[8.161368005,8.30319606,0x009933,4,'Jurassic'],[7.819543942,8.161368005,0x669999,4,'Cretaceous'],[7.361727855,7.819543942,0x33ccff,4,'Paleogene'],[6.301030213,7.361727855,0xff99ff,4,'Neogene'],[-1.17609125,6.301030213,0xff9966,4,'Quaternary'],[5.477122702,6.518514071,0x0066ff,5,'Lower Paleolithic'],[4.69897869,5.477122702,0x33cccc,5,'Middle Paleolithic'],[4.086395427,4.69897869,0x00cc66,5,'Upper Paleolithic'],[3.724357804,4.086395427,0x669900,5,'Neolithic'],[3.505285674,3.724357804,0x996633,5,'Bronze Age'],[3.398113692,3.505285674,0xcc6600,5,'Iron Age'],[3.176380692,3.398113692,0xffcc66,5,'Classical Era'],[2.699837726,3.176380692,0xFF8C00,5,'Medieval'],[2.303196057,2.699837726,0xFF4500,5,'Early Modern'],[-1.17609125,2.303196057,0x68B0000,5,'Modern']]
 
 
 //useful functions ////////////////////////////////////////////////////////////////////////////
@@ -63,14 +63,18 @@ function name_year(year,level){
 
 //font settings ////////////////////////////////////////////////////////////////////////////
 epoch_style = new PIXI.TextStyle({
-	fontFamily: 'Arial',
+	fontFamily: 'Helvetica',
 	fontSize: 36,
+	fill: '#0000',
+	fontWeight: 'bold',
+
 });
 
 date_style = new PIXI.TextStyle({
-	fontFamily: 'Arial',
+	fontFamily: 'Helvetica',
 	fontSize: 36,
 	fill: '#444444',
+	fontWeight: 'bold',
 });
 
 
@@ -125,14 +129,22 @@ date_style = new PIXI.TextStyle({
 	var down_change = true
 	var up_change = true
 	var scale_change = 0
-	var scale  = 2.5
+	var scale  = 0
 
 	var left_change = true
 	var right_change = true
 	var x_offset = 100000 // very big will force it to the minimum
 	var offset_change = 0
 
-
+	// adding horizontal lines /////////////////////////////////////////////////////////////////////////////
+	// h_lines = []
+	// for(var i = 0; i < 6; i++){
+	// 	h_lines.push(new PIXI.Graphics());
+	// 	h_lines[i].beginFill(0x444444, 1);
+	// 	h_lines[i].drawRect(0, height-epoch_height*i,width,2);
+	// 	stage.addChild(h_lines[i]);
+	// }
+	
 	function mainLoop() {
 
 		// change scaling ////////////////////////////////////////////////////////////////////////////	
@@ -148,11 +160,11 @@ date_style = new PIXI.TextStyle({
 		});
 
 		//change the scale
-		scale += scale_change*0.005
+		scale += scale_change*0.01
 		scale = Math.max(scale,-Math.log10(13.7/width*Math.pow(10,9)))
 		scale = Math.min(scale,2.5)
 
-		x_offset = x_offset*Math.pow(10,scale_change*0.005)
+		x_offset = x_offset*Math.pow(10,scale_change*0.01)
 
 		$(document).keyup(function (event){
 			if (event.keyCode == 87 && !up_change){
@@ -179,7 +191,7 @@ date_style = new PIXI.TextStyle({
 		});
 
 		//change the x position
-		x_offset += offset_change
+		x_offset += 4*offset_change
 		x_offset = Math.min(x_offset,16*Math.pow(10,scale))
 
 		$(document).keyup(function (event){
@@ -225,9 +237,9 @@ date_style = new PIXI.TextStyle({
 		}
 
 
-		//rednering ////////////////////////////////////////////////////////////////////////////		
+		//rendering ////////////////////////////////////////////////////////////////////////////		
 		renderer.render(stage)
-		setTimeout(mainLoop, 1); // Run, run, as fast as you can! 
+		setTimeout(mainLoop, 10); // Run, run, as fast as you can! 
 	};
 			
 

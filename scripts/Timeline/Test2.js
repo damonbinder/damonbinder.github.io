@@ -18,8 +18,6 @@ var stage = new PIXI.Container();
 var scale  = 3
 var x_offset = 100000 // very big will force it to the minimum
 
-
-
 // epoch data ////////////////////////////////////////////////////////////////////////////
 
 var epoch;
@@ -189,8 +187,8 @@ var main = (function() {
 		mo_background.beginFill(0xffffff, 1);
 		mo_background.drawRoundedRect(mo_overtext.x-20,mo_overtext.y-10,mo_overtext.width+40,mo_overtext.height+20,5);
 
-		mo_background.alpha = 0.5;
-		mo_background.blur = 1;
+		mo_background.alpha = 0.7;
+		mo_background.blur = 10000;
 	}
 
 	// marker set up  ////////////////////////////////////////////////////////////////////////////	

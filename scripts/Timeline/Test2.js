@@ -16,8 +16,12 @@ var stage = new PIXI.Container();
 
 
 // initialize view
-var scale  = -1
+var scale  = 2
 var x_offset = 100000 // very big will force it to the minimum
+var start_up = 0
+
+//determines when events shrink
+var event_scale = 200
 
 // mouseover text
 var horizontal_gap = 10
@@ -25,8 +29,26 @@ var vertical_gap = 10
 var middle_gap = 15
 var mo_width = 300
 
+var picture_number = -1
 
 // epoch data ////////////////////////////////////////////////////////////////////////////
+
+e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100];
+e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]];
+
+
+// fetch the necessary assets ///////////////////////////////////////////////////////////
+function get_next() {
+	picture_number += 1
+	if (picture_number<events.length){
+		PIXI.loader
+			.add("images/"+events[picture_number]["image"])
+			.load(get_next);
+	} else {
+		main();
+	}
+}
+
 
 var epoch, events;
 fetch("epochs.json")
@@ -37,16 +59,13 @@ fetch("epochs.json")
 			.then(t=>t.json())
 			.then(u=>{
 				events = u;
-				main();
+				images = [];
+				get_next();
 			})
 		})
 
-e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100];
-e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]];
 
-
-
-//useful functions ////////////////////////////////////////////////////////////////////////////
+// useful functions ////////////////////////////////////////////////////////////////////////////
 
 function year(log_year){
 	if (log_year>0){
@@ -172,7 +191,6 @@ var main = (function() {
 		names[i].on('mousedown', (function(that,index) {
 					era_description.call(that,index);
 				}).bind(this,names[i],index));
-		// names[i].on('mouseout', kill_description())
 
 
 		if (name_horizontal(i)){
@@ -183,11 +201,27 @@ var main = (function() {
 		stage.addChild(names[i]);
 	}
 
+
+
+	// event setup ////////////////////////////////////////////////////////////////////////////	
 	ev_picture = []
+	ev_width  = []
+	ev_height = []
 	for(var i = 0; i < events.length; i++){
-		ev_picture.push(new PIXI.Sprite.fromImage("images/"+events[i]["image"]));
-		ev_picture[i].x = 200;
+		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["images/"+events[i]["image"]].texture));
 		ev_picture[i].y = 200;
+
+		ev_width[i]  = ev_picture[i].width;
+		ev_height[i] = ev_picture[i].height;
+
+		ev_picture[i].interactive = true;
+
+		// black magic //
+		var index = i;
+		ev_picture[i].on('mousedown', (function(that,index) {
+					event_description.call(that,index);
+				}).bind(this,ev_picture[i],index));
+		
 		stage.addChild(ev_picture[i]);
 	}
 
@@ -209,6 +243,7 @@ var main = (function() {
 		mo_heading.y = 200;
 		stage.addChild(mo_heading);
 
+	// makes the mouseover text for eras
 	function era_description(i){
 		// sets heading text
 		mo_heading.text = epoch[i]["header"]+" ";
@@ -217,11 +252,26 @@ var main = (function() {
 			mo_heading.y = Math.floor(this.y + vertical_gap);
 		} else {
 			mo_heading.x = Math.floor(this.x+this.width + horizontal_gap);
-			mo_heading.y = Math.floor(this.y+10 + vertical_gap);
+			mo_heading.y = Math.floor(this.y + vertical_gap);
 		}
 		
+		complete_description(epoch[i])
+	}
+
+	// makes the mouseover text for events 
+	function event_description(i){
+		// sets heading text
+		mo_heading.text = events[i]["header"]+" ";
+		mo_heading.x = Math.floor(this.x+this.width + 20);
+		mo_heading.y = Math.floor(this.y+10 + vertical_gap);
+		
+		complete_description(events[i])
+	}
+
+	// this finishes the job of producing the mouseover text
+	function complete_description(object){
 		// sets body text
-		mo_overtext.text = epoch[i]["description"]+" ";
+		mo_overtext.text = object["description"]+" ";
 		mo_overtext.x = mo_heading.x;
 		mo_overtext.y = mo_heading.y + mo_heading.height + middle_gap;
 		
@@ -232,8 +282,10 @@ var main = (function() {
 		mo_background.drawRoundedRect(mo_heading.x-horizontal_gap,mo_heading.y-vertical_gap,Math.max(mo_overtext.width,mo_heading.width)+2*horizontal_gap,mo_overtext.height+mo_heading.height+2*vertical_gap+middle_gap,5);
 
 		mo_background.alpha = 1;
-		mo_background.blur = 10000;
+		renderer.render(stage) // this makes sure that the textbox renders!
 	}
+
+
 
 	// marker set up  ////////////////////////////////////////////////////////////////////////////	
 	var line_level = 5
@@ -336,71 +388,83 @@ var main = (function() {
 			};
 		});
 
-		// get rid of info
-		if (offset_change != 0 || scale_change != 0){
+		if (offset_change != 0 || scale_change != 0 || start_up<10){
+			start_up += 1; // this needs to run at start_up multiple times for some reason???
+
+			// get rid of info ///////////////////////////////////////////////////////////////////////////
 			mo_background.alpha = 0;
 			mo_overtext.text = " ";
-			mo_heading.text = " ";
-		}
+			mo_heading.text  = " ";
 
 
-
-		// drawing epochs ////////////////////////////////////////////////////////////////////////////	
-		for(var i = 0; i < epoch.length; i++){
-			// scale names
-			if (name_horizontal(i)){
-				names[i].height = Math.floor(Math.min(names_height[i],epoch_length(epoch[i])*Math.pow(10,scale)));
-				names[i].width  = Math.floor(names_width[i]*names[i].height/names_height[i]);
-				names[i].x      = Math.floor(lyear_pxl(epoch[i]["end"])+epoch_name_offset*names[i].height/names_height[i]);
-			} else {
-				names[i].x      = Math.floor((year(epoch[i]["end"]))*Math.pow(10,scale)+x_offset);
-				names[i].width  = Math.floor(Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale)));
-				names[i].height = Math.floor(names_height[i]*names[i].width/names_width[i]);
+			// drawing epochs ////////////////////////////////////////////////////////////////////////////	
+			for(var i = 0; i < epoch.length; i++){
+				// scale names
+				if (name_horizontal(i)){
+					names[i].height = Math.floor(Math.min(names_height[i],epoch_length(epoch[i])*Math.pow(10,scale)));
+					names[i].width  = Math.floor(names_width[i]*names[i].height/names_height[i]);
+					names[i].x      = Math.floor(lyear_pxl(epoch[i]["end"])+epoch_name_offset*names[i].height/names_height[i]);
+				} else {
+					names[i].x      = Math.floor((year(epoch[i]["end"]))*Math.pow(10,scale)+x_offset);
+					names[i].width  = Math.floor(Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale)));
+					names[i].height = Math.floor(names_height[i]*names[i].width/names_width[i]);
+				}
+	
+				// scale eras
+				era[i].width = Math.floor(epoch_length(epoch[i])*Math.pow(10,scale));
+				era[i].x     = Math.floor(lyear_pxl(epoch[i]["end"]));
 			}
-
-			// scale eras
-			era[i].width = Math.floor(epoch_length(epoch[i])*Math.pow(10,scale));
-			era[i].x     = Math.floor(lyear_pxl(epoch[i]["end"]));
 			
+	
+			// draw events ///////////////////////////////////////////////////////////////////////////////
+			for(var i = 0; i < ev_picture.length; i++){
+				center_x = Math.floor((year(events[i]["time"]))*Math.pow(10,scale)+x_offset)
+				if (center_x<event_scale) {
+					ratio = center_x/event_scale;
+					ev_picture[i].width  = ev_width[i]*ratio;
+					ev_picture[i].height = ev_height[i]*ratio;
+				}
+				ev_picture[i].x  = Math.floor(center_x-ev_picture[i].width/2);
+			}
+	
+	
+			//drawing lines ////////////////////////////////////////////////////////////////////////////	
+			if (line_sep<150){
+				line_level += 1;
+			}else if(line_sep>150*5){
+				line_level -= 1;
+			}
+	
+			line_sep  = separation(line_level,scale);
+			sline_sep = separation(line_level-1,scale);
+	
+			line_start = x_offset%line_sep;
+			sline_start = x_offset%sline_sep;
+	
+			for(var i = 0; i < 50; i++){
+				x_pos = (i-20)*line_sep+line_start;
+				b_marks[i].x = x_pos;
+				mark_text[i].x = x_pos-10;
+				mark_text[i].text = name_year((x_pos-x_offset)/Math.pow(10,scale),line_level)+" ";
+			}
+	
+			for(var i = 0; i < 100; i++){
+				x_pos = (i-20)*sline_sep+sline_start
+				s_marks[i].x = x_pos
+			}
+	
+	
+			// mouse x y ////////////////////////////////////////////////////////////////////////////
+			document.onmousemove = function(e){
+			    cursorX = e.pageX;
+			    cursorY = e.pageY;
+			}
+	
+	
+			// rendering ////////////////////////////////////////////////////////////////////////////		
+			renderer.render(stage)
 		}
-
-
-		//drawing lines ////////////////////////////////////////////////////////////////////////////	
-		if (line_sep<150){
-			line_level += 1;
-		}else if(line_sep>150*5){
-			line_level -= 1;
-		}
-
-		line_sep  = separation(line_level,scale);
-		sline_sep = separation(line_level-1,scale);
-
-		line_start = x_offset%line_sep;
-		sline_start = x_offset%sline_sep;
-
-		for(var i = 0; i < 50; i++){
-			x_pos = (i-20)*line_sep+line_start;
-			b_marks[i].x = x_pos;
-			mark_text[i].x = x_pos-10;
-			mark_text[i].text = name_year((x_pos-x_offset)/Math.pow(10,scale),line_level)+" ";
-		}
-
-		for(var i = 0; i < 100; i++){
-			x_pos = (i-20)*sline_sep+sline_start
-			s_marks[i].x = x_pos
-		}
-
-
-		// mouse x y ////////////////////////////////////////////////////////////////////////////
-		document.onmousemove = function(e){
-		    cursorX = e.pageX;
-		    cursorY = e.pageY;
-		}
-
-
-		// rendering ////////////////////////////////////////////////////////////////////////////		
-		renderer.render(stage)
-		setTimeout(mainLoop, 1); 
+		setTimeout(mainLoop, 10); 
 	};
 			
 

@@ -1,8 +1,13 @@
 [
 	{
 		"time": -1,
-		"header": "7 Billion People (2011 AD)",
-		"description": "The world population is estimated to have reached 7 billion.",
+		"header": "7 Billion People (2011)",
+		"description": "The world population is estimated to have reached 7 billion in 2011",
 		"image": "7billion.png"
+	},{
+		"time": 2.294466226,
+		"header": "1 Billion People (1804)",
+		"description": "The world population is estimated to have reached 1 billion in 1804",
+		"image": "1billion.png"
 	}
 ]

@@ -16,11 +16,11 @@ var stage = new PIXI.Container();
 
 
 // initialize view
-var scale  = 3
+var scale  = -1
 var x_offset = 100000 // very big will force it to the minimum
 
 // mouseover text
-var horizontal_gap = 20
+var horizontal_gap = 10
 var vertical_gap = 10
 var middle_gap = 15
 var mo_width = 300
@@ -28,12 +28,18 @@ var mo_width = 300
 
 // epoch data ////////////////////////////////////////////////////////////////////////////
 
-var epoch;
+var epoch, events;
 fetch("epochs.json")
 	.then(r=>r.json())
 	.then(j=>{
 		epoch = j;
-		main();})
+		fetch("events.json")
+			.then(t=>t.json())
+			.then(u=>{
+				events = u;
+				main();
+			})
+		})
 
 e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100];
 e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]];
@@ -122,6 +128,7 @@ mo_style = new PIXI.TextStyle({
 	fontSize: 14,
 	wordWrap: true,
 	wordWrapWidth: mo_width,
+	fill: '#444444',
 });
 
 mo_head = new PIXI.TextStyle({
@@ -130,6 +137,7 @@ mo_head = new PIXI.TextStyle({
 	wordWrap: true,
 	wordWrapWidth: mo_width,
 	fontWeight: 'bold',
+	fill: '#444444',
 });
 
 
@@ -175,6 +183,14 @@ var main = (function() {
 		stage.addChild(names[i]);
 	}
 
+	ev_picture = []
+	for(var i = 0; i < events.length; i++){
+		ev_picture.push(new PIXI.Sprite.fromImage("images/"+events[i]["image"]));
+		ev_picture[i].x = 200;
+		ev_picture[i].y = 200;
+		stage.addChild(ev_picture[i]);
+	}
+
 
 	// mouse over text ////////////////////////////////////////////////////////
 	var mo_background = new PIXI.Graphics()
@@ -197,11 +213,11 @@ var main = (function() {
 		// sets heading text
 		mo_heading.text = epoch[i]["header"]+" ";
 		if (name_horizontal(i)){
-			mo_heading.x = this.x+this.height;
-			mo_heading.y = this.y + vertical_gap;
+			mo_heading.x = Math.floor(this.x+this.height);
+			mo_heading.y = Math.floor(this.y + vertical_gap);
 		} else {
-			mo_heading.x = this.x+this.width + horizontal_gap;
-			mo_heading.y = this.y+10 + vertical_gap;
+			mo_heading.x = Math.floor(this.x+this.width + horizontal_gap);
+			mo_heading.y = Math.floor(this.y+10 + vertical_gap);
 		}
 		
 		// sets body text
@@ -274,9 +290,12 @@ var main = (function() {
 		//change the scale
 		scale += scale_change*0.01
 		scale = Math.max(scale,-Math.log10(13.7/width*Math.pow(10,9)))
-		scale = Math.min(scale,2.5)
-
-		x_offset = x_offset*Math.pow(10,scale_change*0.01)
+		
+		if (scale>2.5){
+			scale = 2.5;
+		} else {
+			x_offset = x_offset*Math.pow(10,scale_change*0.01);
+		}
 
 		$(document).keyup(function (event){
 			if (event.keyCode == 87 && !up_change){
@@ -330,43 +349,44 @@ var main = (function() {
 		for(var i = 0; i < epoch.length; i++){
 			// scale names
 			if (name_horizontal(i)){
-				names[i].height  = Math.min(names_height[i],epoch_length(epoch[i])*Math.pow(10,scale));
-				names[i].width = names_width[i]*names[i].height/names_height[i];
-				names[i].x = lyear_pxl(epoch[i]["end"])+epoch_name_offset*names[i].height/names_height[i];
+				names[i].height = Math.floor(Math.min(names_height[i],epoch_length(epoch[i])*Math.pow(10,scale)));
+				names[i].width  = Math.floor(names_width[i]*names[i].height/names_height[i]);
+				names[i].x      = Math.floor(lyear_pxl(epoch[i]["end"])+epoch_name_offset*names[i].height/names_height[i]);
 			} else {
-				names[i].x = (year(epoch[i]["end"]))*Math.pow(10,scale)+x_offset;
-				names[i].width  = Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale));
-				names[i].height = names_height[i]*names[i].width/names_width[i];
+				names[i].x      = Math.floor((year(epoch[i]["end"]))*Math.pow(10,scale)+x_offset);
+				names[i].width  = Math.floor(Math.min(names_width[i],epoch_length(epoch[i])*Math.pow(10,scale)));
+				names[i].height = Math.floor(names_height[i]*names[i].width/names_width[i]);
 			}
 
 			// scale eras
-			era[i].width   = epoch_length(epoch[i])*Math.pow(10,scale);
-			era[i].x   = lyear_pxl(epoch[i]["end"]);
+			era[i].width = Math.floor(epoch_length(epoch[i])*Math.pow(10,scale));
+			era[i].x     = Math.floor(lyear_pxl(epoch[i]["end"]));
 			
 		}
 
 
 		//drawing lines ////////////////////////////////////////////////////////////////////////////	
 		if (line_sep<150){
-			line_level += 1
+			line_level += 1;
 		}else if(line_sep>150*5){
-			line_level -= 1
+			line_level -= 1;
 		}
 
-		line_sep = separation(line_level,scale)
-		sline_sep = separation(line_level-1,scale)
+		line_sep  = separation(line_level,scale);
+		sline_sep = separation(line_level-1,scale);
 
-		line_start = line_sep*Math.floor(x_offset/line_sep) + x_offset
+		line_start = x_offset%line_sep;
+		sline_start = x_offset%sline_sep;
 
 		for(var i = 0; i < 50; i++){
-			x_pos = (i-20)*line_sep+line_start
-			b_marks[i].x = x_pos
-			mark_text[i].x = x_pos-10
-			mark_text[i].text = name_year((x_pos-x_offset)/Math.pow(10,scale),line_level)+" "
+			x_pos = (i-20)*line_sep+line_start;
+			b_marks[i].x = x_pos;
+			mark_text[i].x = x_pos-10;
+			mark_text[i].text = name_year((x_pos-x_offset)/Math.pow(10,scale),line_level)+" ";
 		}
 
 		for(var i = 0; i < 100; i++){
-			x_pos = (i-20)*sline_sep+line_start
+			x_pos = (i-20)*sline_sep+sline_start
 			s_marks[i].x = x_pos
 		}
 

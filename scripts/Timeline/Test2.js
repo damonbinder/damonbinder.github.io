@@ -206,12 +206,14 @@ var main = (function() {
 	ev_picture = []
 	ev_width  = []
 	ev_height = []
+	ev_y = []
 	for(var i = 0; i < events.length; i++){
 		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["Images/"+events[i]["image"]].texture));
-		ev_picture[i].y = 200;
+		ev_picture[i].y = 400;
 
 		ev_width[i]  = ev_picture[i].width;
 		ev_height[i] = ev_picture[i].height;
+		ev_y[i] = 400;
 
 		ev_picture[i].interactive = true;
 
@@ -424,6 +426,7 @@ var main = (function() {
 					ev_picture[i].height = ev_height[i]*ratio;
 				}
 				ev_picture[i].x  = Math.floor(center_x-ev_picture[i].width/2);
+				ev_picture[i].y  = Math.floor(ev_y[i]-ev_picture[i].width/2);
 			}
 	
 	

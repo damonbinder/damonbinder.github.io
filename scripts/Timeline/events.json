@@ -2,12 +2,27 @@
 	{
 		"time": -1,
 		"header": "7 Billion People (2011)",
-		"description": "The world population is estimated to have reached 7 billion in 2011",
+		"description": "The world population is estimated to have reached 7 billion in 2011.",
 		"image": "7billion.png"
 	},{
 		"time": 2.294466226,
 		"header": "1 Billion People (1804)",
-		"description": "The world population is estimated to have reached 1 billion in 1804",
+		"description": "The world population is estimated to have reached 1 billion in 1804.",
 		"image": "1billion.png"
+	},{
+		"time": 3.301247089,
+		"header": "Birth of Christ (1 AD)",
+		"description": "Traditionally, Jesus was believed to have been born in 1 AD, although modern day scholars believe a more likely date is between 6 and 4 BC.",
+		"image": "cross.png"
+	},{
+		"time": 3.13956,
+		"header": "Hegira (622 AD)",
+		"description": "The Hegira was the flight of Mohammed from Mecca to Medina. This year is the first year of the Islamic calendar.",
+		"image": "crescent.png"
+	},{
+		"time": 3.3893433,
+		"header": "Enlightenment of Buddha (c. 450 BC)",
+		"description": "Buddha enlightened",
+		"image": "Dharma_Wheel.png"
 	}
 ]

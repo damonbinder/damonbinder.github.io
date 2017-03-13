@@ -42,7 +42,7 @@ function get_next() {
 	picture_number += 1
 	if (picture_number<events.length){
 		PIXI.loader
-			.add("images/"+events[picture_number]["image"])
+			.add("Images/"+events[picture_number]["image"])
 			.load(get_next);
 	} else {
 		main();
@@ -59,7 +59,6 @@ fetch("epochs.json")
 			.then(t=>t.json())
 			.then(u=>{
 				events = u;
-				images = [];
 				get_next();
 			})
 		})
@@ -208,7 +207,7 @@ var main = (function() {
 	ev_width  = []
 	ev_height = []
 	for(var i = 0; i < events.length; i++){
-		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["images/"+events[i]["image"]].texture));
+		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["Images/"+events[i]["image"]].texture));
 		ev_picture[i].y = 200;
 
 		ev_width[i]  = ev_picture[i].width;

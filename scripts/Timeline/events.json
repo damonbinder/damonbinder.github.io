@@ -1,28 +1,128 @@
 [
 	{
-		"time": -1,
+		"time": 2011.8,
 		"header": "7 Billion People (2011)",
 		"description": "The world population is estimated to have reached 7 billion in 2011.",
 		"image": "7billion.png"
 	},{
-		"time": 2.294466226,
+		"time": 2011,
+		"header": "Arab Spring (2011)",
+		"description": "TBD.",
+		"image": "arab_spring.png"
+	},{
+		"time": 2004.9,
+		"header": "Boxing Day Tsunami (24/12/2004)",
+		"description": "TBD",
+		"image": "boxing_tsunami.png"
+	},{
+		"time": 2001.8,
+		"header": "9/11 Attacks (11/09/2001)",
+		"description": "TBD",
+		"image": "911.png"
+	},{
+		"time": 1969,
+		"header": "Apollo 11 (1969)",
+		"description": "TBD.",
+		"image": "apollo11.jpg"
+	},{
+		"time": 1945,
+		"header": "Atomic bomb dropped on Hiroshima",
+		"description": "TBD.",
+		"image": "Hiroshima.jpg"
+	},{
+		"time": 1804,
 		"header": "1 Billion People (1804)",
 		"description": "The world population is estimated to have reached 1 billion in 1804.",
 		"image": "1billion.png"
 	},{
-		"time": 3.301247089,
-		"header": "Birth of Christ (1 AD)",
-		"description": "Traditionally, Jesus was believed to have been born in 1 AD, although modern day scholars believe a more likely date is between 6 and 4 BC.",
-		"image": "cross.png"
-	},{
-		"time": 3.13956,
+		"time": 622,
 		"header": "Hegira (622 AD)",
 		"description": "The Hegira was the flight of Mohammed from Mecca to Medina. This year is the first year of the Islamic calendar.",
 		"image": "crescent.png"
 	},{
-		"time": 3.3893433,
+		"time": 1,
+		"header": "Birth of Christ (1 AD)",
+		"description": "Traditionally, Jesus was believed to have been born in 1 AD, although modern day scholars believe a more likely date is between 6 and 4 BC.",
+		"image": "cross.png"
+	},{
+		"time": -27,
+		"header": "Augustus becomes First Roman Emperor (27 BC)",
+		"description": "TBR",
+		"image": "augustus.jpg"
+	},{
+		"time": -450,
 		"header": "Enlightenment of Buddha (c. 450 BC)",
 		"description": "Buddha enlightened",
 		"image": "Dharma_Wheel.png"
+	},{
+		"time": -66000000,
+		"header": "Extinction of Dinosaurs (66 million years ago)",
+		"description": "TBW",
+		"image": "Tyrannoskull.png"
+	},{
+		"time": -252000000,
+		"header": "Permian Extinction (252 million years ago)",
+		"description": "TBW",
+		"image": "Trilobite.png"
+	},{
+		"time": -430000000,
+		"header": "First Jawed Fishes (c. 430 million years ago)",
+		"description": "TBW",
+		"image": "Interm.png"
+	},{
+		"time": -470000000,
+		"header": "First Plants Appear on Land (c. 470 million years ago)",
+		"description": "TBW",
+		"image": "firstplant.png"
+	},{
+		"time": -541000000,
+		"header": "Cambrian Explosion (541 million years ago)",
+		"description": "TBW",
+		"image": "waptia.png"
+	},{
+		"time": -575000000,
+		"header": "Edicarian Life (575 million years ago)",
+		"description": "TBW",
+		"image": "Edicarian.png"
+	},{
+		"time": -700000000,
+		"header": "Snowball Earth (c. 700 million years ago)",
+		"description": "TBW",
+		"image": "iceearth.png"
+	},{
+		"time": -1500000000,
+		"header": "First Multicellular Life (c. 1.5 billion years ago)",
+		"description": "TBW",
+		"image": "multicell.png"
+	},{
+		"time": -2000000000,
+		"header": "First Eukaryotes (c. 2 billion years ago)",
+		"description": "TBW",
+		"image": "amoeba.png"
+	},{
+		"time": -2300000000,
+		"header": "Great Oxygenation Event (c. 2.3 billion years ago)",
+		"description": "TBD",
+		"image": "cyanobacteria.png"
+	},{
+		"time": -3500000000,
+		"header": "Earliest Know Life (c. 3.5 billion years ago)",
+		"description": "The earliest evidence we have for life is at least 3.5 billion years old, but rocks as old as 4.28 billion years old may contain evidence for even early life.",
+		"image": "bacteria.png"
+	},{
+		"time": -4000000000,
+		"header": "Late Heavy Bombardment (3.8 to 4.1 billion years ago)",
+		"description": "TBD",
+		"image": "asteroid.png"
+	},{
+		"time": -4450000000,
+		"header": "Moon formed (c. 4.45 billion years ago)",
+		"description": "TBD",
+		"image": "moonform.png"
+	},{
+		"time": -4550000000,
+		"header": "Earth forms (c. 4.55 billion years ago)",
+		"description": "The Earth formed around 4.55 billion years ago, along with the Sun and the other planets in the solar system",
+		"image": "earlyearth.png"
 	}
 ]

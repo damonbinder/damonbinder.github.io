@@ -16,18 +16,23 @@ var stage = new PIXI.Container();
 
 
 // initialize view
-var scale  = 2
+var scale  = -9
 var x_offset = 100000 // very big will force it to the minimum
 var start_up = 0
 
-//determines when events shrink
-var event_scale = 200
+
+//event parameters
+var event_scale = 2*width // determines when events shrink
+var event_start = 300
+var event_gap = (height-event_start)/6
+var event_h_order = [0,2,4,1,3]
+var current_event = 0
 
 // mouseover text
-var horizontal_gap = 10
+var horizontal_gap = 20
 var vertical_gap = 10
 var middle_gap = 15
-var mo_width = 300
+var mo_width = 350
 
 var picture_number = -1
 
@@ -37,32 +42,6 @@ e_lvl_strt = [10.13987909,9.6599162,8.733197266,8.733197266,6.518514071,-100];
 e_colors = [[0xffdd99,0xffeecc],[0xffccff,0xffe6ff],[0xccd6ff,0xe6ebff],[0xe6ff99,0xf2ffcc],[0xf2f2f2,0xffffff]];
 
 
-// fetch the necessary assets ///////////////////////////////////////////////////////////
-function get_next() {
-	picture_number += 1
-	if (picture_number<events.length){
-		PIXI.loader
-			.add("Images/"+events[picture_number]["image"])
-			.load(get_next);
-	} else {
-		main();
-	}
-}
-
-
-var epoch, events;
-fetch("epochs.json")
-	.then(r=>r.json())
-	.then(j=>{
-		epoch = j;
-		fetch("events.json")
-			.then(t=>t.json())
-			.then(u=>{
-				events = u;
-				get_next();
-			})
-		})
-
 
 // useful functions ////////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +50,15 @@ function year(log_year){
 		return Math.pow(10,log_year)-1
 	} else {
 		return -Math.pow(10,-log_year)-1
+	}
+	
+}
+
+function log_year(year){
+	if (year>2000){
+		return -Math.log10(year-2001,10)
+	} else {
+		return Math.log10(2001-year,10)
 	}
 	
 }
@@ -122,6 +110,38 @@ function name_horizontal(i){
 
 
 
+// fetch the necessary assets ///////////////////////////////////////////////////////////
+function get_next() {
+	picture_number += 1
+	if (picture_number<events.length){
+		PIXI.loader
+			.add("Images/"+events[picture_number]["image"])
+			.load(get_next);
+	} else {
+		main();
+	}
+}
+
+
+var epoch, events;
+fetch("epochs.json")
+	.then(r=>r.json())
+	.then(j=>{
+		epoch = j;
+		fetch("events.json")
+			.then(t=>t.json())
+			.then(u=>{
+				events = u;
+				for(var i = 0; i < events.length; i++){
+					events[i]["time"] = log_year(events[i]["time"])	
+				}
+				get_next();
+			})
+		})
+
+
+
+
 //font settings ////////////////////////////////////////////////////////////////////////////
 epoch_style = new PIXI.TextStyle({
 	fontFamily: 'Helvetica',
@@ -169,7 +189,7 @@ var main = (function() {
 
 		stage.addChild(era[i]);
 	}
-	
+
 	// epoch names
 	names = []
 	names_width = []
@@ -201,93 +221,6 @@ var main = (function() {
 	}
 
 
-
-	// event setup ////////////////////////////////////////////////////////////////////////////	
-	ev_picture = []
-	ev_width  = []
-	ev_height = []
-	ev_y = []
-	for(var i = 0; i < events.length; i++){
-		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["Images/"+events[i]["image"]].texture));
-		ev_picture[i].y = 400;
-
-		ev_width[i]  = ev_picture[i].width;
-		ev_height[i] = ev_picture[i].height;
-		ev_y[i] = 400;
-
-		ev_picture[i].interactive = true;
-
-		// black magic //
-		var index = i;
-		ev_picture[i].on('mousedown', (function(that,index) {
-					event_description.call(that,index);
-				}).bind(this,ev_picture[i],index));
-		
-		stage.addChild(ev_picture[i]);
-	}
-
-
-	// mouse over text ////////////////////////////////////////////////////////
-	var mo_background = new PIXI.Graphics()
-	mo_background.beginFill(0xffffff, 1);
-	mo_background.drawRect(0,0,10,10);
-	mo_background.alpha = 0;
-	stage.addChild(mo_background);
-
-	var mo_overtext = new PIXI.Text('',mo_style);
-	mo_overtext.x = 200;
-	mo_overtext.y = 200;
-	stage.addChild(mo_overtext);
-
-	var mo_heading = new PIXI.Text('',mo_head);
-		mo_heading.x = 200;
-		mo_heading.y = 200;
-		stage.addChild(mo_heading);
-
-	// makes the mouseover text for eras
-	function era_description(i){
-		// sets heading text
-		mo_heading.text = epoch[i]["header"]+" ";
-		if (name_horizontal(i)){
-			mo_heading.x = Math.floor(this.x+this.height);
-			mo_heading.y = Math.floor(this.y + vertical_gap);
-		} else {
-			mo_heading.x = Math.floor(this.x+this.width + horizontal_gap);
-			mo_heading.y = Math.floor(this.y + vertical_gap);
-		}
-		
-		complete_description(epoch[i])
-	}
-
-	// makes the mouseover text for events 
-	function event_description(i){
-		// sets heading text
-		mo_heading.text = events[i]["header"]+" ";
-		mo_heading.x = Math.floor(this.x+this.width + 20);
-		mo_heading.y = Math.floor(this.y+10 + vertical_gap);
-		
-		complete_description(events[i])
-	}
-
-	// this finishes the job of producing the mouseover text
-	function complete_description(object){
-		// sets body text
-		mo_overtext.text = object["description"]+" ";
-		mo_overtext.x = mo_heading.x;
-		mo_overtext.y = mo_heading.y + mo_heading.height + middle_gap;
-		
-		//sets textbox
-		mo_background.clear()
-		mo_background.lineStyle(4, 0x444444, 1);
-		mo_background.beginFill(0xffffff, 1);
-		mo_background.drawRoundedRect(mo_heading.x-horizontal_gap,mo_heading.y-vertical_gap,Math.max(mo_overtext.width,mo_heading.width)+2*horizontal_gap,mo_overtext.height+mo_heading.height+2*vertical_gap+middle_gap,5);
-
-		mo_background.alpha = 1;
-		renderer.render(stage) // this makes sure that the textbox renders!
-	}
-
-
-
 	// marker set up  ////////////////////////////////////////////////////////////////////////////	
 	var line_level = 5
 	var line_sep = 100
@@ -314,6 +247,181 @@ var main = (function() {
 		s_marks[i].drawRect(0, height-epoch_height/2,4,epoch_height/2);
 		stage.addChild(s_marks[i]);
 	}
+
+
+	// event setup ////////////////////////////////////////////////////////////////////////////	
+	ev_picture = []
+	ev_width  = []
+	ev_height = []
+	ev_y = []
+	for(var i = 0; i < events.length; i++){
+		ev_picture.push(new PIXI.Sprite(PIXI.loader.resources["Images/"+events[i]["image"]].texture));
+		ev_picture[i].y = event_start+event_gap*event_h_order[i%5];
+
+		ev_width[i]  = ev_picture[i].width;
+		ev_height[i] = ev_picture[i].height;
+		ev_y[i] = ev_picture[i].y+ev_picture[i].height/2;
+
+		ev_picture[i].interactive = true;
+
+		// black magic //
+		var index = i;
+
+		ev_picture[i].on('mouseover', (function(that,index) {
+					event_grow.call(that,index);
+				}).bind(this,ev_picture[i],index));
+		
+		stage.addChild(ev_picture[i]);
+	}
+
+
+	// allows events to grow/shrink on mouseover//////////////////////////////////////////////////////////////
+	var mo_background = new PIXI.Graphics()
+	var mo_overtext = new PIXI.Text('',mo_style);
+	var mo_heading = new PIXI.Text('',mo_head);
+
+	display_background = new PIXI.Graphics();
+	display_background.beginFill(0xeeeeee, 1);
+	display_background.drawRect(0,0,10,10);
+	display_background.alpha = 0
+
+	display_image = new PIXI.Sprite(PIXI.loader.resources["Images/"+events[0]["image"]].texture);
+	display_image.alpha = 0;
+	display_image.interactive = true;
+	display_image.on('mousedown',event_description);
+	display_image.on('mouseout',event_shrink);
+	
+
+	display_marker = new PIXI.Graphics();
+	display_marker.beginFill(0x000000, 1);
+	for(var i = 0; i < 20; i++){
+		display_marker.drawRect(0,100*i,2,50);
+	}
+	display_marker.alpha = 0;
+
+	display_border = new PIXI.Graphics();
+	display_border.beginFill(0x444444, 1);
+	display_border.drawRect(0,0,10,10);
+	
+	stage.addChild(display_marker);
+	stage.addChild(display_border);
+	stage.addChild(display_background);
+	stage.addChild(display_image);
+	stage.addChild(mo_background);
+	stage.addChild(mo_overtext);
+	stage.addChild(mo_heading);
+
+
+
+	function event_grow(i){
+		event_shrink();
+		current_event = i;
+
+		display_image.texture = PIXI.loader.resources["Images/"+events[i]["image"]].texture;
+		display_image.x      = this.x+1;
+		display_image.y      = this.y-this.height/2;
+		display_image.width  = this.width*200/this.height;
+		display_image.height = 200;
+
+		display_background.x = display_image.x;
+		display_background.y = display_image.y;
+		display_background.width  = display_image.width;
+		display_background.height = display_image.height;
+
+		display_marker.x = this.x-1;
+		
+		display_border.x = display_background.x - 2;
+		display_border.y = display_background.y - 2;
+		display_border.width  = display_background.width + 4;
+		display_border.height = display_background.height + 4;
+
+		display_image.alpha      = 1;
+		display_background.alpha = 1;
+		display_border.alpha = 1;
+		display_marker.alpha = 0.8;
+
+		renderer.render(stage);
+	}
+
+	function event_shrink(){
+		display_background.x = -1000;
+		display_image.x = -1000;
+
+		display_image.alpha = 0;
+		display_marker.alpha = 0;
+		display_border.alpha = 0;
+
+		mo_heading.alpha = 0;
+		mo_overtext.alpha = 0;
+		mo_background.clear();
+	
+		renderer.render(stage);
+	}
+
+	// mouse over text for events ////////////////////////////////////////////////////////
+
+	// makes the mouseover text for events 
+	function event_description(){
+		mo_heading.alpha = 1;
+		mo_overtext.alpha = 1;
+		mo_background.alpha = 1;
+
+		// sets heading text
+		mo_heading.text = events[current_event]["header"]+" ";
+		mo_heading.x = Math.floor(display_background.x+display_background.width + horizontal_gap);
+		mo_heading.y = Math.floor(display_background.y + 10);
+		
+		// sets body text
+		mo_overtext.text = events[current_event]["description"]+" ";
+		mo_overtext.x = mo_heading.x;
+		mo_overtext.y = mo_heading.y + mo_heading.height + middle_gap;
+
+		// sets background
+		mo_background.clear();
+		mo_background.beginFill(0xffffff, 1);
+		mo_background.drawRect(display_background.x+display_background.width,display_background.y,Math.max(mo_overtext.width,mo_heading.width)+2*horizontal_gap,display_background.height);
+	
+		display_border.width = display_background.width + 4 + mo_background.width;
+		renderer.render(stage);
+	}
+
+	// makes the mouseover text for eras
+	//function era_description(i){
+	//	event_shrink(i);
+	//	event_grow(i);
+//
+	//	// sets heading text
+	//	var mo_heading = new PIXI.Text(epoch[i]["header"]+" ",mo_head);
+	//	if (name_horizontal(i)){
+	//		mo_heading.x = Math.floor(this.x+this.height);
+	//		mo_heading.y = Math.floor(this.y + vertical_gap);
+	//	} else {
+	//		mo_heading.x = Math.floor(this.x+this.width + horizontal_gap);
+	//		mo_heading.y = Math.floor(this.y + vertical_gap);
+	//	}
+	//	
+	//	complete_description(epoch[i])
+	//}
+
+	// this finishes the job of producing the mouseover text
+	//function complete_description(object){
+	//	// sets body text
+	//	mo_overtext.text = object["description"]+" ";
+	//	
+	//	//sets textbox
+	//	mo_background.clear()
+	//	mo_background.lineStyle(4, 0x444444, 1);
+	//	mo_background.beginFill(0xffffff, 1);
+	//	mo_background.drawRoundedRect(,5);
+//
+	//	mo_background.alpha = 1;
+	//	renderer.render(stage) // this makes sure that the textbox renders!
+	//}
+
+
+
+
+
 
 
 	// set up the timeline navigation ////////////////////////////////////////////////////////////////////////////	
@@ -393,9 +501,7 @@ var main = (function() {
 			start_up += 1; // this needs to run at start_up multiple times for some reason???
 
 			// get rid of info ///////////////////////////////////////////////////////////////////////////
-			mo_background.alpha = 0;
-			mo_overtext.text = " ";
-			mo_heading.text  = " ";
+			event_shrink();
 
 
 			// drawing epochs ////////////////////////////////////////////////////////////////////////////	
@@ -421,12 +527,12 @@ var main = (function() {
 			for(var i = 0; i < ev_picture.length; i++){
 				center_x = Math.floor((year(events[i]["time"]))*Math.pow(10,scale)+x_offset)
 				if (center_x<event_scale) {
-					ratio = center_x/event_scale;
+					ratio = Math.max(0,center_x/event_scale);
 					ev_picture[i].width  = ev_width[i]*ratio;
-					ev_picture[i].height = ev_height[i]*ratio;
+					ev_picture[i].height = ev_height[i]*ratio;						
 				}
-				ev_picture[i].x  = Math.floor(center_x-ev_picture[i].width/2);
-				ev_picture[i].y  = Math.floor(ev_y[i]-ev_picture[i].width/2);
+				ev_picture[i].x  = center_x;
+				ev_picture[i].y  = Math.floor(ev_y[i]-ev_picture[i].height/2);
 			}
 	
 	

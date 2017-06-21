@@ -48,15 +48,18 @@
 	var death_chance = [];
 	var birth_chance = [];
 	for (var i = 0; i < 20; i++) {
-		death_chance[i] = i*1/360;
-		birth_chance[i] = i*1/360+(20-i)/20*0.007;
+		death_chance[i] = i*1/120;
+		birth_chance[i] = i*1/120+(20-i)/20*0.02;
 	}
 	for (var i = 20; i < 40; i++) {
-		death_chance[i] = i*1/360+(20-i)/20*0.007;
-		birth_chance[i] = i*1/360;
+		death_chance[i] = i*1/120+(20-i)/20*0.02;
+		birth_chance[i] = i*1/120;
 	}
 	death_chance[40] = 1;
 	birth_chance[40] = 0;
+
+	birth_chance[0]  = 0;
+	death_chance[0]  = 0;
 	birth_chance[1]  = 0;
 
 	function drawGrid(grid) {
@@ -115,7 +118,7 @@
 			for (var y = 0; y < yCellCount; y++) {
 				for (var x = 0; x < xCellCount; x++) {
 					//diffusion
-					if (year%4 == 0){
+					if (year%6 == 0){
 						new_amount = Math.floor((neighbours(x,y,grid)+5*Math.random())/5);
 					} else {
 						new_amount = grid[x][y];
@@ -143,12 +146,11 @@
 				}
 			}
 
-			if (year%12 == 0){
-				if (population>0){
-					console.log(population);
-				}
-				debugger
-			}
+			//if (year%12 == 0){
+			//	if (population>0){
+			//		console.log(population);
+			//	}
+			//}
 		}
 
 

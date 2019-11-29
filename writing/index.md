@@ -9,19 +9,24 @@ image:
 
 Here is a list of all the papers, essays and notes I've written.
 
-## Semester 1 2017
-* [**Notes on Quantum Field Theory**](/documents/QFTNotes.pdf). I have written course notes for an introductory quantum field theory course. This will be a third year undergraduate course at the Australian National University, and will first run in 2018. The aim is to create a course which provides a solid conceptual and computation foundation for undergraduate students, whilst developing the basics of topics in both particle physics and condensed matter theory. The notes cover canonical quantization, path-integrals, Feynman diagrams, fermions, tree-level QED and the basics of spontaneous symmetry breaking.
 
-## Honours - 2016
-* [**Honours Thesis**](/documents/HonoursThesis.pdf). My honours project studied the emergence of nuclear interaction from higher energy physics. In particular, I was aiming to relate the phenomenological Energy Density Functionals used in nuclear many-body simulations to underlying mesonic physics. My supervisor was [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
+
+
+
+## Semester 1 2017
+* [**Notes on Quantum Field Theory**](/documents/QFTNotes.pdf). I have written course notes for an introductory quantum field theory course, aimed at third year undergraduate course at the Australian National University. The aim is to create a course which provides a solid conceptual and computation foundation for undergraduate students, whilst developing the basics of topics in both particle physics and condensed matter theory. The notes cover canonical quantization, path-integrals, Feynman diagrams, fermions, tree-level QED and the basics of spontaneous symmetry breaking.
+
+## Undergraduate
+
+### Honours - 2016
+* [**Honours Thesis**](/documents/HonoursThesis.pdf). My honours project studied the emergence of nuclear interaction from higher energy physics. In particular, I was aiming to relate the phenomenological energy density functionals used in nuclear many-body simulations to underlying mesonic physics. My supervisor was [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
 
 * I gave two presentations on my honours thesis. The [mid-year](/documents/MidHonoursTalk.pdf) was delivered after I had completed my preliminary research, and the [final](/documents/FinalHonoursTalk.pdf) was given after my thesis had been written.
 
-* [**Non-Anomalous Semigroups and Real Numbers**](/documents/RealNumbers.pdf). A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
+* [**Non-Anomalous Semigroups and Real Numbers**](/documents/RealNumbers.pdf). A paper presenting a novel definition of the real numbers, which I wrote as part of a course on category theory. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
 
 * [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance, while I was at Melbourne University. The diphoton resonance now appears to have been a statistical fluctuation, so my notes are no longer useful for anything.
 
-## Undergraduate
 
 ### 2015
 

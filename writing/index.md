@@ -13,10 +13,12 @@ Here is a list of all the papers, essays and notes I've written.
 
 
 
-## Semester 1 2017
-* [**Notes on Quantum Field Theory**](/documents/QFTNotes.pdf). I have written course notes for an introductory quantum field theory course, aimed at third year undergraduate course at the Australian National University. The aim is to create a course which provides a solid conceptual and computation foundation for undergraduate students, whilst developing the basics of topics in both particle physics and condensed matter theory. The notes cover canonical quantization, path-integrals, Feynman diagrams, fermions, tree-level QED and the basics of spontaneous symmetry breaking.
+
 
 ## Undergraduate
+
+### Semester 1 2017
+* [**Notes on Quantum Field Theory**](/documents/QFTNotes.pdf). I have written course notes for an introductory quantum field theory course, aimed at third year undergraduate course at the Australian National University. The aim is to create a course which provides a solid conceptual and computation foundation for undergraduate students, whilst developing the basics of topics in both particle physics and condensed matter theory. The notes cover canonical quantization, path-integrals, Feynman diagrams, fermions, tree-level QED and the basics of spontaneous symmetry breaking.
 
 ### Honours - 2016
 * [**Honours Thesis**](/documents/HonoursThesis.pdf). My honours project studied the emergence of nuclear interaction from higher energy physics. In particular, I was aiming to relate the phenomenological energy density functionals used in nuclear many-body simulations to underlying mesonic physics. My supervisor was [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.

@@ -19,7 +19,7 @@ Here is a list of all the papers, essays and notes I've written.
 
 * [**Non-Anomalous Semigroups and Real Numbers**](/documents/RealNumbers.pdf). A paper presenting a novel definition of the real numbers. I wrote a [blog post](https://damonbinder.github.io/blog/real-numbers/) explaining the basic ideas. The paper can be found on the arxiv at <https://arxiv.org/abs/1607.05997>.
 
-* [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance, while I was at Melbourne University. The diphoton resonance now appears to have been a statistical fluctuation, so my notes are no longer particularly useful. They stand as a testament to this curious time in particle physics history.
+* [**Dark Matter and the Diphoton Excess**](/documents/DiphotonResonance.pdf). Some notes I wrote in January on the 750 GeV diphoton resonance, while I was at Melbourne University. The diphoton resonance now appears to have been a statistical fluctuation, so my notes are no longer useful for anything.
 
 ## Undergraduate
 

@@ -12,10 +12,7 @@ Here is a list of all the papers, essays and notes I've written.
 
 
 
-
-
-
-## Undergraduate
+## Undergraduate: ANU
 
 ### Semester 1 2017
 * [**Notes on Quantum Field Theory**](/documents/QFTNotes.pdf). I have written course notes for an introductory quantum field theory course, aimed at third year undergraduate course at the Australian National University. The aim is to create a course which provides a solid conceptual and computation foundation for undergraduate students, whilst developing the basics of topics in both particle physics and condensed matter theory. The notes cover canonical quantization, path-integrals, Feynman diagrams, fermions, tree-level QED and the basics of spontaneous symmetry breaking.

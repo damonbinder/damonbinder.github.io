@@ -35,15 +35,15 @@ Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense o
 As an undergraduate, I studied at the Australian National University. For my honour year I worked with [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
 
 **Nuclear Interaction from Effective Field Theory**  
-	Honours thesis
+	Honours thesis  
 	[pdf](/documents/HonoursThesis.pdf)
 
-**Non-Anomalous Semigroups and Real Numbers**
-	An essay I wrote for a category theory course
+**Non-Anomalous Semigroups and Real Numbers**  
+	An essay I wrote for a category theory course  
 	[pdf](https://arxiv.org/pdf/1607.05997.pdf) · [arxiv](https://arxiv.org/abs/1607.05997)
 
-**The Quantum Zeno Effect**
-	An essay I wrote for a course on quantum measurement
+**The Quantum Zeno Effect**  
+	An essay I wrote for a course on quantum measurement  
 	[pdf](/documents/QuantumZeno.pdf)
 
 I also wrote [course notes](/documents/QFTNotes.pdf) for an introductory quantum field theory course, aimed at third year undergraduates. The course is now run as [PHYS3201](https://programsandcourses.anu.edu.au/2020/course/PHYS3201).

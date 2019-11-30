@@ -13,8 +13,8 @@ I study conformal field theories. These are special class of quantum field theor
 
 
 **Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense of *O(N)* Symmetry with Non-integer *N***  
-	Joint with Slava Rychkov  
-	[pdf](https://arxiv.org/pdf/1911.07895.pdf) · [arxiv](https://arxiv.org/abs/1911.07895)
+    Joint with Slava Rychkov  
+    [pdf](https://arxiv.org/pdf/1911.07895.pdf) · [arxiv](https://arxiv.org/abs/1911.07895)
 
 **AdS<sub>4</sub>/CFT<sub>3</sub> from Weak to Strong String Coupling**
 	Joint with Slava Rychkov

@@ -16,14 +16,14 @@ I study conformal field theories. These are special class of quantum field theor
     Joint with Slava Rychkov  
     [pdf](https://arxiv.org/pdf/1911.07895.pdf) · [arxiv](https://arxiv.org/abs/1911.07895)
 
-**AdS<sub>4</sub>/CFT<sub>3</sub> from Weak to Strong String Coupling**
-    Joint with Shai Chester and Silviu Pufu
+**AdS<sub>4</sub>/CFT<sub>3</sub> from Weak to Strong String Coupling**  
+    Joint with Shai Chester and Silviu Pufu  
     [pdf](https://arxiv.org/pdf/1906.07195.pdf) · [arxiv](https://arxiv.org/abs/1906.07195)
 
-***N=4* Super-Yang-Mills Correlators at Strong Coupling from String Theory and Localization**
-    Joint with Shai Chester, Silviu Pufu, and Yifan Wang
+***N=4* Super-Yang-Mills Correlators at Strong Coupling from String Theory and Localization**  
+    Joint with Shai Chester, Silviu Pufu, and Yifan Wang  
     [pdf](https://arxiv.org/pdf/1902.06263.pdf) · [arxiv](https://arxiv.org/abs/1902.06263)
 
-**Absence of *D<sup>4</sup>R<sup>4</sup>* in M-Theory From ABJM**
-    Joint with Shai Chester and Silviu Pufu
+**Absence of *D<sup>4</sup>R<sup>4</sup>* in M-Theory From ABJM**  
+    Joint with Shai Chester and Silviu Pufu  
     [pdf](https://arxiv.org/pdf/1808.10554.pdf) · [arxiv](https://arxiv.org/abs/1808.10554)

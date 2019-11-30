@@ -27,3 +27,6 @@ I study conformal field theories. These are special class of quantum field theor
 **Absence of *D<sup>4</sup>R<sup>4</sup>* in M-Theory From ABJM**  
     Joint with Shai Chester and Silviu Pufu  
     [pdf](https://arxiv.org/pdf/1808.10554.pdf) · [arxiv](https://arxiv.org/abs/1808.10554)
+
+
+In my final year of undergrad, my honours thesis [**Honours Thesis**](/documents/HonoursThesis.pdf) studied the emergence of nuclear interaction from higher energy physics. My supervisor was [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.

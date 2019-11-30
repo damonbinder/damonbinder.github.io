@@ -12,7 +12,7 @@ I study conformal field theories. These are special class of quantum field theor
 ### Papers
 
 
-**Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense of *O(N)* Symmetry with Non-integer *N***  
+Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense of *O(N)* Symmetry with Non-integer *N***  
     Joint with Slava Rychkov  
     [pdf](https://arxiv.org/pdf/1911.07895.pdf) · [arxiv](https://arxiv.org/abs/1911.07895)
 
@@ -30,4 +30,20 @@ I study conformal field theories. These are special class of quantum field theor
 
 ---
 
-In my final year of undergrad, my [**Honours Thesis**](/documents/HonoursThesis.pdf) studied the emergence of nuclear interaction from higher energy physics. My supervisor was [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
+### Undergraduate
+
+As an undergraduate, I studied at the Australian National University. For my honour year I worked with [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
+
+**Nuclear Interaction from Effective Field Theory**  
+	Honours thesis
+	[pdf](/documents/HonoursThesis.pdf)
+
+**Non-Anomalous Semigroups and Real Numbers**
+	An essay I wrote for a category theory course
+	[pdf](https://arxiv.org/pdf/1607.05997.pdf) · [arxiv](https://arxiv.org/abs/1607.05997)
+
+**The Quantum Zeno Effect**
+	An essay I wrote for a course on quantum measurement
+	[pdf](/documents/QuantumZeno.pdf)
+
+I also wrote [course notes](/documents/QFTNotes.pdf) for an introductory quantum field theory course, aimed at third year undergraduates. The course is now run as [PHYS3201](https://programsandcourses.anu.edu.au/2020/course/PHYS3201).

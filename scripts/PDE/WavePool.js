@@ -66,7 +66,7 @@
 				if (new_x > 0 && new_y > 0 && new_x < xCellCount && new_y < yCellCount){
 					for (var y = 1; y+1 < yCellCount; y++) {
 						for (var x = 1; x+1 < xCellCount; x++) {
-							displacement[x][y] += 4*Math.exp(-(x-new_x)*(x-new_x)*0.25-(y-new_y)*(y-new_y)*0.25)
+							displacement[x][y] += 2*Math.exp(-(x-new_x)*(x-new_x)*0.25-(y-new_y)*(y-new_y)*0.25)
 						}
 					}
 				}

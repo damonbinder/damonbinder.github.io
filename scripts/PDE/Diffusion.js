@@ -33,7 +33,7 @@
 	}
 
 	var grid = makeBlankGrid();
-	var diffusion = 0;
+	var diffusion = 2
 	var mouse_x = -1;
 	var mouse_y = -1;
 
@@ -67,7 +67,7 @@
 		});
 
 		// Update slider-based variables.
-		diffusion = parseFloat($("#magnetism").val());
+		diffusion = 2*parseFloat($("#magnetism").val());
 		$("#magdisplay").html(diffusion+"");
 
 		// Run simulation step.

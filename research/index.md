@@ -7,7 +7,7 @@ image:
   feature: fire.bmp
 ---
 
-I study conformal field theories. These are special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My advisor is Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
+I study conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My advisor is Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
 
 ### Papers
 

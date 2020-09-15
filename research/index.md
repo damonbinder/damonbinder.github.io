@@ -11,6 +11,9 @@ I study conformal field theories. These are a special class of quantum field the
 
 ### Papers
 
+**A Bispinor Formalism for Spinning Witten Diagrams**  
+    Joint with Daniel Freedman and Silviu Pufu  
+    [pdf](https://arxiv.org/pdf/2003.07448.pdf) · [arxiv](https://arxiv.org/abs/2003.07448)
 
 **Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense of *O(N)* Symmetry with Non-integer *N***  
     Joint with Slava Rychkov  

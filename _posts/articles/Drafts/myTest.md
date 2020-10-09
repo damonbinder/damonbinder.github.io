@@ -1,0 +1,42 @@
+---
+layout: page
+title: "Conway's Life and Related Cellular Automata"
+modified:
+categories: articles
+excerpt:
+tags: []
+image:
+  feature:
+date: 2020-00-10T08:08:50-04:00
+---
+
+I have made a simple program to simulate Life-Like cellular auomata. [**Click here to play around with it.**](/scripts/CA/Life.html) 
+
+
+These are a family of cellular automata with the following properties:
+
+* They live on a two dimensional square grid,
+* Each cell is either alive (white) or dead (black)
+* Each step, whether a cell is born or dies depends on how many alive cells are in the eight cells adjacent to it, as well as the current cell state.
+
+The most famous such automata is Conway's Life, which has the following rules:
+
+* If a dead cell has three neighbours, it becomes alive
+* If an alive cell has two or three neighbours, it survives; otherwise it dies.
+
+We can label life as B3/S23, meaning that a cell is born if it has three neighbours, and a live cell survives if it has two or there neighbours.
+
+There are 262144 possible Life-like rules. Each can be labelled by a list of of numbers for which a cell is born, and dies. Of these, only a few rules have been explored in any details. Here are some interesting ones to play around with:
+
+| Rule | Name | Description  |
+|---|---|---|
+| B3/S23 | [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) | The original ruleset, with highly complex behaviour.|
+| B3/S012345678 | [Life without Death](https://en.wikipedia.org/wiki/Life_without_Death) | Exactly what it says on the tin.|
+| B36/S23 | [Highlife](https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)) | Close relative of Life, with a tendancy to constantly expand.|
+| B35678/S5678 | Diamoeba | Creates cell-like structures. |
+| B3678/S34678 | [Day and Night](https://en.wikipedia.org/wiki/Day_and_Night_(cellular_automaton)) | Treats living and dead cells symmetrically.  |
+| B4678/S35678 | Anneal | Close relative of the Ising Model at zero temperature. |
+| B1357/S1357 | Replicator | Everything eventually replicates. |
+| B3/S01234 | Mazes | Makes maze-like patterns. |
+
+A systematic study of life-like cellular automata can be found [here](https://arxiv.org/pdf/0911.2890.pdf); many further rule sets can be found in this paper.

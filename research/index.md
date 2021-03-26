@@ -7,9 +7,17 @@ image:
   feature: fire.bmp
 ---
 
-I study conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My advisor is Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
+I study conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation is titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. My advisor is Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
 
 ### Papers
+
+**ABJ Correlators with Weakly Broken Higher Spin Symmetry**  
+    Joint with Shai Chester and Max Jerdee
+    [pdf](https://arxiv.org/pdf/2103.01969.pdf) · [arxiv](https://arxiv.org/abs/2103.01969)
+
+**The 3d *N=6* Bootstrap: From Higher Spins to Strings to Membranes**  
+    Joint with Shai Chester, Max Jerdee, and Silviu Pufu
+    [pdf](https://arxiv.org/abs/2011.05728) · [arxiv](https://arxiv.org/pdf/2011.05728.pdf)
 
 **A Bispinor Formalism for Spinning Witten Diagrams**  
     Joint with Daniel Freedman and Silviu Pufu  

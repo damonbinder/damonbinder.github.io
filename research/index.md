@@ -12,11 +12,11 @@ I study conformal field theories. These are a special class of quantum field the
 ### Papers
 
 **ABJ Correlators with Weakly Broken Higher Spin Symmetry**  
-    Joint with Shai Chester and Max Jerdee
+    Joint with Shai Chester and Max Jerdee  
     [pdf](https://arxiv.org/pdf/2103.01969.pdf) · [arxiv](https://arxiv.org/abs/2103.01969)
 
 **The 3d *N=6* Bootstrap: From Higher Spins to Strings to Membranes**  
-    Joint with Shai Chester, Max Jerdee, and Silviu Pufu
+    Joint with Shai Chester, Max Jerdee, and Silviu Pufu  
     [pdf](https://arxiv.org/abs/2011.05728) · [arxiv](https://arxiv.org/pdf/2011.05728.pdf)
 
 **A Bispinor Formalism for Spinning Witten Diagrams**  

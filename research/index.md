@@ -9,7 +9,7 @@ image:
 
 ## PhD
 
-In my PhD I studied conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation is titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. You can read it [here](https://physics.princeton.edu/archives/theses/lib/upload/Damon_Binder_thesis.pdf). My advisor was Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
+In my PhD I studied conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation, titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. You can read it [here](https://physics.princeton.edu/archives/theses/lib/upload/Damon_Binder_thesis.pdf). My advisor was Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
 
 ### Publications
 

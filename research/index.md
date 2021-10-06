@@ -7,9 +7,16 @@ image:
   feature: fire.bmp
 ---
 
-I study conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation is titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. My advisor is Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
+## PhD
 
-### Papers
+In my PhD I studied conformal field theories. These are a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation is titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. You can read it [here](https://physics.princeton.edu/archives/theses/lib/upload/Damon_Binder_thesis.pdf). My advisor was Silviu Pufu, who is a member of the [bootstrap collaboration](https://bootstrapcollaboration.com/).
+
+### Publications
+
+#### 2021
+
+**The Cubic Fixed Point at Large *N***  
+    [pdf](https://arxiv.org/pdf/2106.03493v2.pdf) · [arxiv](https://arxiv.org/abs/2106.03493)
 
 **ABJ Correlators with Weakly Broken Higher Spin Symmetry**  
     Joint with Shai Chester and Max Jerdee  
@@ -19,9 +26,7 @@ I study conformal field theories. These are a special class of quantum field the
     Joint with Shai Chester, Max Jerdee, and Silviu Pufu  
     [pdf](https://arxiv.org/abs/2011.05728) · [arxiv](https://arxiv.org/pdf/2011.05728.pdf)
 
-**A Bispinor Formalism for Spinning Witten Diagrams**  
-    Joint with Daniel Freedman and Silviu Pufu  
-    [pdf](https://arxiv.org/pdf/2003.07448.pdf) · [arxiv](https://arxiv.org/abs/2003.07448)
+#### 2020
 
 **Deligne Categories in Lattice Models and Quantum Field Theory, or Making Sense of *O(N)* Symmetry with Non-integer *N***  
     Joint with Slava Rychkov  
@@ -39,9 +44,18 @@ I study conformal field theories. These are a special class of quantum field the
     Joint with Shai Chester and Silviu Pufu  
     [pdf](https://arxiv.org/pdf/1808.10554.pdf) · [arxiv](https://arxiv.org/abs/1808.10554)
 
+### Preprints
+**The Holographic Contributions to the Sphere Free Energy**  
+    Joint with Daniel Freedman, Silviu Pufu, and Bernardo Zan  
+    [pdf](https://arxiv.org/pdf/2107.12382.pdf) · [arxiv](https://arxiv.org/abs/2107.12382)
+
+**A Bispinor Formalism for Spinning Witten Diagrams**  
+    Joint with Daniel Freedman and Silviu Pufu  
+    [pdf](https://arxiv.org/pdf/2003.07448.pdf) · [arxiv](https://arxiv.org/abs/2003.07448)
+
 ---
 
-### Undergraduate
+## Undergraduate
 
 As an undergraduate, I studied at the Australian National University. For my honour year I worked with [Cedric Simenel](https://physics.anu.edu.au/people/profile.php?ID=709&tab=publications), a nuclear theorist specializing in nuclear dynamics.
 

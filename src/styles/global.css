@@ -1,0 +1,190 @@
+:root {
+  --font-body: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --bg: #fbfaf7;
+  --fg: #1c1b19;
+  --muted: #6b6862;
+  --rule: #e5e2db;
+  --accent: #7a1f2b;
+  --accent-hover: #9a2836;
+  --card: #ffffff;
+  --tag-bg: #f0ede6;
+
+  --measure: 44rem;
+}
+
+/* Layout-heavy pages (home, research) opt into more width;
+   prose pages keep the narrower reading measure above. */
+body.wide-layout { --measure: 58rem; }
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+.site-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--fg);
+  text-decoration: none;
+}
+.site-nav {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  display: flex;
+  gap: 1.1rem;
+  margin-left: auto;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* Main */
+main { padding: 2.5rem 0 3rem; }
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  font-weight: 700;
+}
+h1 { font-size: 2rem; margin: 0 0 0.6rem; }
+h2 { font-size: 1.35rem; margin: 2.4rem 0 0.8rem; }
+h3 { font-size: 1.08rem; margin: 1.6rem 0 0.4rem; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--fg);
+}
+.muted { color: var(--muted); }
+
+/* Writing river */
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-item {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-item h3 { margin: 0 0 0.25rem; font-size: 1.15rem; }
+.post-item h3 a { color: var(--fg); text-decoration: none; }
+.post-item h3 a:hover { color: var(--accent); }
+.post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+.source-badge {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+}
+.external-arrow { font-family: var(--font-sans); }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--tag-bg);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  text-decoration: none;
+}
+.tag:hover { color: var(--accent); }
+
+/* Project cards */
+.project-grid { display: grid; gap: 1.1rem; padding: 0; list-style: none; margin: 0; }
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+}
+.project-card h3 { margin: 0 0 0.4rem; }
+.project-card .status {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.project-card .status.live { color: #2e7d4f; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.site-footer .wrap {
+  padding-top: 1.6rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* Home hero */
+.hero { margin-bottom: 1rem; }
+.hero h1 { font-size: 2.4rem; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 2.6rem 0 0.4rem;
+}
+.section-head h2 { margin: 0; }
+.section-head a { font-family: var(--font-sans); font-size: 0.85rem; }

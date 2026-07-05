@@ -1,8 +1,15 @@
-_site
+# build output
+dist/
+# generated types & cache
+.astro/
+# dependencies
+node_modules/
+# environment
+.env
+.env.production
+# macOS
 .DS_Store
-*.sublime-project
-*.sublime-workspace
-codekit-config.json
-node_modules
-.sass-cache
-.jekyll-metadata
+# local editor config
+.obsidian/
+# logs
+npm-debug.log*

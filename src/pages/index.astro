@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { getRiver } from '../lib/river.ts';
+import { projects } from '../data/projects.ts';
+
+const posts = (await getRiver()).slice(0, 3);
+const featured = projects.slice(0, 3);
+---
+<Base wide description="Damon Binder — AI safety, writing, and side projects.">
+  <section class="intro">
+    <img class="portrait" src="/face.jpg" alt="Damon Binder" width="837" height="1005" />
+    <div class="intro-text">
+      <h1>Damon Binder</h1>
+      <p class="lead">
+        [Placeholder — brief description. A few lines about who I am and what I
+        work on, then a link to the about page.]
+      </p>
+      <p><a href="/about/">More about →</a></p>
+    </div>
+  </section>
+
+  <div class="home-cols">
+    <section class="home-col">
+      <h2><a href="/blog/">Latest posts</a></h2>
+      {posts.map((p) => (
+        <div class="home-col-item">
+          {p.external ? (
+            <a href={p.external}>{p.title} <span class="external-arrow">↗</span></a>
+          ) : (
+            <a href={`/blog/${p.id}/`}>{p.title}</a>
+          )}
+          {p.excerpt && <p class="muted">{p.excerpt}</p>}
+        </div>
+      ))}
+      <a class="col-more" href="/blog/">See more →</a>
+    </section>
+
+    <section class="home-col">
+      <h2><a href="/projects/">Projects</a></h2>
+      {featured.map((proj) => (
+        <div class="home-col-item">
+          {proj.href ? <a href={proj.href}>{proj.title}</a> : <span>{proj.title}</span>}
+          <p class="muted">{proj.blurb}</p>
+        </div>
+      ))}
+    </section>
+
+    <section class="home-col">
+      <h2>Other stuff</h2>
+      <div class="home-col-item">
+        <a href="/books/">Book recommendations</a>
+        <p class="muted">Non-fiction books that I like, organized by topic.</p>
+      </div>
+      <div class="home-col-item">
+        <a href="/research/">Physics research</a>
+        <p class="muted">My PhD dissertation and earlier physics work.</p>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .intro {
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .portrait {
+    flex: 0 0 auto;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+  }
+  .intro-text { flex: 1; min-width: 0; }
+  .intro-text h1 { margin: 0 0 0.5rem; }
+  .intro-text .lead { margin: 0 0 0.9rem; }
+
+  .home-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    row-gap: 1.5rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.75rem;
+  }
+  .home-col h2 { margin: 0 0 1rem; font-size: 1.4rem; }
+  .home-col h2 a { color: inherit; text-decoration: none; }
+  .home-col h2 a:hover { color: var(--accent); }
+  .home-col-item { margin-bottom: 1.3rem; }
+  .home-col-item > a {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.08rem;
+    color: var(--fg);
+    text-decoration: none;
+    line-height: 1.3;
+    display: inline-block;
+  }
+  .home-col-item > a:hover { color: var(--accent); }
+  .home-col-item p { margin: 0.3rem 0 0; font-size: 0.95rem; }
+  .col-more {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+
+  @media (max-width: 680px) {
+    .intro { flex-direction: column; }
+    .home-cols { grid-template-columns: 1fr; gap: 0.5rem 0; }
+  }
+</style>

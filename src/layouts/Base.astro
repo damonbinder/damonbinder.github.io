@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import 'katex/dist/katex.min.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  wide?: boolean;
+}
+const { title, description, wide } = Astro.props;
+const fullTitle = title ? `${title} · Damon Binder` : 'Damon Binder';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.png" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+  </head>
+  <body class:list={[wide && 'wide-layout']}>
+    <Header />
+    <main>
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

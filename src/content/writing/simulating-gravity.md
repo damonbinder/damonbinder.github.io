@@ -1,0 +1,32 @@
+---
+title: "Simulating Gravity"
+date: 2017-03-21
+excerpt: "Solving the N-body problem."
+tags: ["physics", "simulations"]
+---
+
+I have simulated gravity in both three and two dimensions. You can play with these simulations here:
+* [Newtonian Gravity](/scripts/NBody/Gravity.html)
+* [2D Gravity](/scripts/NBody/LogGrav.html)
+
+Explanations of these simulations can be found below.
+
+
+## [The *N*-Body Problem](/scripts/NBody/Gravity.html)
+
+Newton's law of universal gravitation states that objects attract each other via the inverse-square law:
+
+$$F = \frac{Gm_1m_2}{R^2}$$
+
+Here $F$ is the force experience by one of the objects, $m_1$ and $m_2$ are the masses of the objects, $R$ is the distance between the objects, and $G$ is a constant. We can use this rule to predict the motion of stars and planets. For the case of two planets, this motion can be found explicitly, from which we can derive [Kepler's Laws](https://en.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion) describing orbital motion. When we have three or more planets, the motion becomes chaotic and we cannot solve the problem exactly. This problem is known as the *N*-body problem, and has troubled mathematicians for centuries.
+
+
+When trying to simulate more than two bodies, we have to use approximate, numerical methods to solve the problem. These are used to study all sorts of physical systems --- the motion of planets around a star, the motion of stars in a galaxy, or the motion of galaxies through the universe. I have made my own [*N*-Body simulation](/scripts/NBody/Gravity.html).
+
+## [2D Gravity](/scripts/NBody/LogGrav.html)
+
+If the universe had two, rather than three, spatial directions, then gravity would act very differently. Newton's law of universal gravitation would be modified to:
+
+$$F = \frac{Gm_1m_2}{R^1}$$
+
+This may not look so different from our previous equation, but the inverse, rather than the inverse-square, makes all the difference. In a 2D universe, it takes an infinite amount of energy too escape from the gravitational field of a planet. You can observe this fact by playing around with my simulation [here](/scripts/NBody/LogGrav.html). Because the planets cannot escape, you can watch the simulation run forever!

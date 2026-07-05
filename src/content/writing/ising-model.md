@@ -1,0 +1,74 @@
+---
+title: "The Ising Model and its Cousins"
+date: 2018-01-25
+excerpt: "The Ising Model is a simple system which can be used to study all sorts of physics."
+tags: ["physics", "simulations"]
+---
+
+## The Simulations
+Statistical mechanics studies how microscopic laws give rise to macroscopic behaviours. Why do we see liquids, solids and gases? Why do magnets exist? How can we manufacture new materials with novel properties?
+
+To answer these questions, we can make computer simulations. Here we will talk about 2D lattice simulations --- these are simulations done on a grid. Below, I will explain the interesting behaviour present in these simulations. If you want to play around with them yourself, here is a list of them:
+### N-Vector Models
+* [*Ising Model*](/scripts/SM/ising.html)
+* [*XY Model*](/scripts/SM/U1.html)
+* [*Heisenberg Model*](/scripts/SM/SO%283%29.html)
+
+### Lattice Gases
+* [*Lattice Gas with Gravity*](/scripts/SM/LatGas.html)
+* [*Oil and Water*](/scripts/SM/OilWater.html)
+
+### Advanced Models
+* [*Tricritical Ising Model*](/scripts/SM/tricritical.html)
+* [*Potts Model*](/scripts/SM/qPotts.html)
+
+## What is the [*Ising Model*](/scripts/SM/ising.html)?
+
+The Ising Model, named after [Ernst Ising](https://en.wikipedia.org/wiki/Ernst_Ising), is a simple model that can be used to describe all sort of complicated behaviour. The basic idea is that we have a grid, and at each point on that grid we have an arrow that points either up, or down. We will represent the up arrows by white squares, and the down arrows by black squares. This is a basic model of a magnet: each square in the grid can be thought of as a little bar magnet, with the north side facing either up or down.
+
+The behaviour of the system is governed by three basic principles:
+
+* Arrows want to align with their neighbours
+
+* Heat causes the arrows to flip randomly --- the higher the temperature, the more likely a flip and the more randomly the system acts
+
+* An external magnetic field makes the arrows favour a direction. The bigger and more positive the magnetic field, the more the arrows want to point up.
+
+I have made a simulation of the two-dimensional Ising Model. You can play around with it [here](/scripts/SM/ising.html) By changing the temperature and the magnetic field, you can see all sorts of interesting behaviour:
+
+* **Phase Transition:** At high temperatures, the grid looks very chaotic, an even mix of white and black squares. Yet as we lower the temperature, we get clusters, regions where every square is black or white. If you leave the simulation long enough, the whole grid will become either black or white. This is a [*phase transition*](https://en.wikipedia.org/wiki/Phase_transition), from a state of disorder to a state of order, and is analogous to the liquid--gas phase transition.
+
+* **Spontaneous Symmetry Breaking:** The Ising Model has a symmetry: if we flip every arrow, changing every black square to a white square and every white square to a black square, then the system is identical. At low temperatures though, we see that the grid divides into regions of all black or all white. These regions are not symmetric when we flip arrows, and so this is known as [*spontaneous symmetry breaking*](https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking). This phenomenon is important throughout modern physics, and is responsible for both [superconductivity](https://en.wikipedia.org/wiki/Superconductivity) and the [Higgs mechanism](https://en.wikipedia.org/wiki/Higgs_mechanism).
+
+* **False Vacuums:** Set the temperature to be very low and then increase the magnetic field. The whole grid will become white. Next lower the magnetic field so that it is negative. Now if all the arrows were flipped, the energy of the system would be lower. But each individual arrow cannot flip, because it wants to align with all of its neighbours. The grid is now in a [*false vacuum*](https://en.wikipedia.org/wiki/False_vacuum). Eventually, enough arrows will flip and the whole grid will flip to black. But this process can take a long time --- for a small enough magnetic field, it may take many times the age of the universe!
+
+I first learnt about the Ising Model from [*An Introduction to Thermal Physics*](https://www.amazon.com/Introduction-Thermal-Physics-Daniel-Schroeder/dp/0201380277) by D. Schroeder; this book gives a very clear introduction to the topic. More advanced material can be found in these [lecture notes](http://www.damtp.cam.ac.uk/user/tong/statphys.html) by David Tong.
+
+## More Complicated Models: The [*XY Model*](/scripts/SM/U1.html) and The [*Heisenberg Model*](/scripts/SM/SO%283%29.html)
+
+A simple to way to extend the Ising model is to allow the arrows not just to point up or down, but to point in different directions. We could for instance allow the arrows to take a direction on the circle, like the hands of a clock. We use colour to represent the direction --- 12 o'clock is red, 4 o'clock is green and 8 o'clock is blue. You can play around with this model [*here*](/scripts/SM/U1.html).
+
+One interesting feature of the XY model is that it has [*topologically defects*](http://www.damtp.cam.ac.uk/research/gr/public/cs_top.html), such as vortices and domain walls. These defects are important both in cosmology, but also in more down-to-earth applications such as liquid crystals and protein folding.
+
+We can extend our model even further, allowing our arrows to point on a sphere, rather than a circle. We will colour the north pole white and the south pole black. Walking around the equator, we shall colour red to green to blue and back to red again. This is known as a [*color sphere*](https://galactic.ink/sphere). The model can be found [*here*](/scripts/SM/SO%283%29.html).
+
+These two models are examples of [*n-vector models*](https://en.wikipedia.org/wiki/N-vector_model). They closely related to the more general [*non-linear sigma models*](http://www.scholarpedia.org/article/Nonlinear_Sigma_model), which are important in many fields of physics and mathematics.
+
+## [Lattice Gases](/scripts/SM/LatGas.html)
+
+So far we have thought of our simulations as describing magnets. But, if we make a few modifications, we can instead think of our simulations as describing liquids and gases.
+
+The idea is simple. We can think of each white square as representing a molecule, and each black square as empty space. The molecules repel at short distances, so there can only ever be one molecule in each square. But, at medium distances the molecules attract each others, and so the white squares want to be neighbours. In a gas, the number of molecules remains constant, so the number of white squares remains constant in our simulation.
+
+At high temperatures the white squares (ie the molecules), spread themselves randomly throughout the space. But, as we lower the temperature, the molecules clump together into droplets --- the gas condenses into a liquid!
+
+One way to make the simulation more interesting is to add gravity --- a force attracting the molecules to the bottom of the page. You can play with the lattice gas [*here*](/scripts/SM/LatGas.html)
+
+## [Oil and Water](/scripts/SM/OilWater.html)
+
+Oil and water do not mix. We can simulate this using two different types of molecules. The white squares are water molecules, and they attract each other. On the other hand, the yellow squares are oil molecules, and they do not feel any attraction towards the water nor other oil molecules. You can mess around with the system [*here*](/scripts/SM/OilWater.html). We can now see that the oil and water molecules tend to separate, just like in real life!
+
+## Advanced Models
+A lot of statistical mechanics models exist, many with interesting properties. The [*Tricritical Ising Model*](/scripts/SM/tricritical.html) is a modification of the Ising Model, where lattice sites are allowed to be empty. This means that the number of atoms can vary in the model. There are three different phases, which can coexist at the critical temperature --- hence the name.
+
+The [*Potts Models*](/scripts/SM/qPotts.html) are a family of models which generalize the Ising model. In these models, there are *q* possible values at each point in the lattice; when *q* is two this gives the Ising model.

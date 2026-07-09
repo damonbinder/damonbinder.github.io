@@ -159,6 +159,51 @@ a:hover { color: var(--accent-hover); }
 }
 .project-card .status.live { color: #2e7d4f; }
 
+/* Recipe card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0;
+}
+
+/* Recipes hub — browse lists */
+.recipes-hub .dev-note {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--tag-bg);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+}
+.recipes-hub .live-dot { color: #2e7d4f; }
+.recipes-hub .draft-dot { color: #c79a3a; }
+.recipes-hub .chip-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.8rem 0 0;
+}
+.recipes-hub .chip-list a {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  color: var(--fg);
+}
+.recipes-hub .chip-list a:hover { border-color: var(--accent); color: var(--accent); }
+.recipes-hub .chip-list .count { color: var(--muted); font-size: 0.78rem; }
+.recipes-hub .cat-list { list-style: none; margin: 0.8rem 0 0; padding: 0; }
+.recipes-hub .cat-list li { padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+.recipes-hub .cat-list li > a { font-family: var(--font-sans); font-weight: 600; font-size: 1.1rem; }
+.recipes-hub .cat-list .count { font-family: var(--font-sans); font-size: 0.8rem; color: var(--muted); margin-left: 0.5rem; }
+.recipes-hub .cat-list .subs { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--rule);

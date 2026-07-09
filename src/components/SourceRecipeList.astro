@@ -1,0 +1,68 @@
+---
+import { catSlug, showingDrafts } from '../lib/recipes.ts';
+
+interface Props { list: any[]; work: string }
+const { list, work } = Astro.props;
+const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+---
+<ol class="source-list">
+  {list.map((r) => (
+    <li>
+      <a href={`/recipes/${catSlug(work)}/${r.id}/`}>
+        <span class="cite">{r.data.source}</span>
+        <span class="title" set:html={em(r.data.title)}></span>
+        {showingDrafts && r.data.status === 'draft' && <span class="rc-tag draft">Draft</span>}
+      </a>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .source-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: item;
+  }
+  .source-list li {
+    counter-increment: item;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-list li:first-child { border-top: 1px solid var(--rule); }
+  .source-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0.1rem;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .source-list a:hover .title { color: var(--accent); }
+  .source-list .cite {
+    flex: 0 0 6.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .source-list .title {
+    flex: 1 1 auto;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+  .rc-tag {
+    flex: 0 0 auto;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+  }
+  .rc-tag.draft { color: #8a5a00; background: #fbf0d8; border: 1px solid #e8d29a; }
+
+  @media (max-width: 500px) {
+    .source-list a { flex-wrap: wrap; gap: 0.15rem 1rem; }
+    .source-list .cite { flex-basis: 100%; order: 2; }
+  }
+</style>

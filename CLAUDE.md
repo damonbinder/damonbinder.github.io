@@ -21,20 +21,33 @@ All content is in markdown/data files — **do not hardcode content inside `.ast
 | Physics simulations | `src/data/simulations.md` (intro + list) + the apps in `public/scripts/` |
 | About page | `src/data/about.md` |
 | Home blurb + portrait | `src/pages/index.astro` — the blurb is inline here (it's part of the hero layout); photo at `public/face.jpg` |
+| Recipes | `src/content/recipes/*.md` (one file per recipe) + `src/data/sources/*.ts` (complete source texts) |
 
 Note: the blog posts folder is still named `writing/` (leftover from before the section was renamed "Blog"). Renaming it to `blog/` is on the TODO.
 
 ## Architecture
 
 - **Blog is a unified "river"**: native posts (in `src/content/writing/`) plus link-posts pulled at build time by `src/loaders/external.ts` and merged in `src/lib/river.ts`. Sources: Defenses in Depth (author-filtered RSS) and Random Lives (HTML scrape). Podcasts are native link-post `.md` files. The internal content-collection name is `writing` (not user-facing).
-- **Layout**: `src/layouts/Base.astro`. It takes a `wide` prop — wide pages (`home`, `research`) use a 58rem measure; the rest (Blog, Projects, Books, About) use a 44rem reading measure (`--measure` in `src/styles/global.css`). Blog, Projects, and About share the reading width.
+- **Layout**: `src/layouts/Base.astro`. It takes a `wide` prop — wide pages (`home`, `research`, recipe source pages) use a 58rem measure; the rest (Blog, Projects, Books, About, individual recipe pages) use a 44rem reading measure (`--measure` in `src/styles/global.css`).
 - **Nav** (in `src/components/Header.astro`): Blog · Projects · About. Books and Physics research are reached from the home page "Other stuff" column, deliberately **not** in the nav. The "Damon Binder" site-title is hidden on the home page (redundant with the hero).
 - **Math**: `remark-math` + `rehype-katex`, rendered at build time; KaTeX CSS imported in `Base.astro`. Use `$$…$$` for display math.
+
+## Recipes
+
+Damon's personal collection of historical recipes he's actually cooked — classical (Apicius, Vinidarius, etc.) and Mānasollāsa (medieval Indian) so far. Not a comprehensive reconstruction reference; the bar for a recipe to go live is **Damon cooked it and it was good.**
+
+- **Content collection**: `recipes`, schema in `src/content.config.ts`. Key fields: `source` (citation, e.g. "Vinidarius 20"), `work` (source name, or derived from `source` — see `workOf()`), `originalLang`/`original`/`translation`, `description` (optional — see guardrail below), `status: draft | published`. `category`/`subcategory`/`order` are **legacy** from an abandoned category-based taxonomy (see `src/data/recipe-sections.json`) — don't design new features around them; sources are now the organizing axis.
+- **Publish gating**: `showingDrafts` (`src/lib/recipes.ts`) is true in dev or with `SHOW_DRAFTS=1`; the public build shows only `status: published`. Everything not yet cooked stays a backstage draft — this is how the site can go live before the whole backlog is done.
+- **Routing is source-based**: `/recipes/[source]/` (the source's page) and `/recipes/[source]/[slug]/` (a recipe) — not by dish category. `citationNumber()` in `src/lib/recipes.ts` sorts recipes within a source by their actual position in the text (parsed from `source`), which is what page ordering and prev/next navigation use — **not** the legacy `order` field.
+- **Full source text** (`src/data/sources/<work>.ts`, registered in `src/data/sources/index.ts`): the complete surviving text of a source — Latin/Sanskrit/etc. plus English — independent of which entries have become recipe pages yet. Rendered as a collapsed `<details>` on the source's page, each entry linking through to its recipe page when one exists. `periodOf()`/`blurbOf()` in `src/lib/recipes.ts` hold source-level metadata (date, intro blurb) until a proper per-source content collection exists.
+- **Loan words**: untranslated source-language terms (*caccabina*, *ofellae*, *patina*, *sextarius*...) are marked with `*asterisks*` in `title`/`translation`/`description` fields and rendered as `<em>` via a small `em()` helper on each page — **not** for modern ingredient substitutes named in an ingredient list (e.g. tejpat).
+- **Editorial/uncertainty notes inside translations use square brackets**, e.g. `[the name is obscure]` — not parentheses.
+- **Never fabricate original-language source text.** Only transcribe from a verified source Damon provides. Translations for recipes Damon hasn't personally checked may be AI-drafted, but say so explicitly when reporting the work — they haven't been reviewed the way his own are.
 
 ## Site-copy guardrails
 
 - Keep copy **plain and factual** — no performative or salesy framing.
-- **Bio and home blurb are Damon's to write.** Use explicit `[Placeholder]` text; do not invent them.
+- **Bio and home blurb are Damon's to write.** Use explicit `[Placeholder]` text; do not invent them. **Do not write placeholder or filler prose anywhere on the site** — this extends to recipe descriptions/notes (see Recipes above): if there's nothing non-obvious to say, leave the optional field empty rather than restating the title or ingredients.
 - Preserve Damon's exact wording; don't silently reword or re-case (headers are sentence case).
 
 ## Verify workflow

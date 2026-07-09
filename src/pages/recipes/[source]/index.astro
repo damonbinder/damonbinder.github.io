@@ -1,0 +1,130 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SourceRecipeList from '../../../components/SourceRecipeList.astro';
+import { getRecipes, catSlug, workOf, citationNumber, periodOf, blurbOf } from '../../../lib/recipes.ts';
+import { sourceTexts } from '../../../data/sources/index.ts';
+
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  const byWork = new Map<string, typeof recipes>();
+  for (const r of recipes) {
+    const w = workOf(r.data);
+    if (!byWork.has(w)) byWork.set(w, []);
+    byWork.get(w)!.push(r);
+  }
+  return [...byWork.entries()].map(([work, list]) => ({
+    params: { source: catSlug(work) },
+    props: { work, list: list.sort((a, b) => citationNumber(a.data) - citationNumber(b.data)) },
+  }));
+}
+
+const { work, list } = Astro.props;
+const period = periodOf(work);
+const blurb = blurbOf(work);
+const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+// The complete surviving text (independent of which entries have become
+// cooked recipe pages), linked through to a recipe page where one exists.
+const fullText = sourceTexts[work];
+const bySourceCitation = new Map(list.map((r) => [r.data.source, r]));
+const textEntries = (fullText ?? []).map((entry) => ({
+  ...entry,
+  recipe: bySourceCitation.get(entry.ref),
+}));
+---
+<Base title={work} description={`Recipes from ${work}.`} wide>
+  <p class="crumb"><a href="/recipes/">Recipes</a> › {work}</p>
+  <h1>{work}</h1>
+  <p class="meta">
+    {period && <span>{period}</span>}
+    {period && <span class="dot">·</span>}
+    <span>{list.length} recipe{list.length === 1 ? '' : 's'}</span>
+  </p>
+
+  {blurb ? (
+    <div class="source-grid">
+      <div class="blurb" set:html={blurb}></div>
+      <SourceRecipeList list={list} work={work} />
+    </div>
+  ) : (
+    <SourceRecipeList list={list} work={work} />
+  )}
+
+  {textEntries.length > 0 && (
+    <details class="full-text">
+      <summary>Show full text ({textEntries.length} entries)</summary>
+      <div class="text-rows">
+        {textEntries.map((entry) => (
+          <div class="text-row">
+            <span class="ref">
+              {entry.recipe
+                ? <a href={`/recipes/${catSlug(work)}/${entry.recipe.id}/`}>{entry.ref}</a>
+                : entry.ref}
+            </span>
+            <p class="latin" set:html={`<em>${em(entry.latin)}</em>`}></p>
+            <p class="english" set:html={em(entry.english)}></p>
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+</Base>
+
+<style>
+  .crumb { font-family: var(--font-sans); font-size: 0.85rem; margin: 0 0 0.6rem; }
+  .meta {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0.2rem 0 2rem;
+  }
+  .meta .dot { margin: 0 0.4rem; }
+
+  .source-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .blurb { font-size: 1.05rem; line-height: 1.65; }
+  .blurb :global(p) { margin: 0 0 1rem; }
+  .blurb :global(p:last-child) { margin-bottom: 0; }
+
+  @media (max-width: 780px) {
+    .source-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  .full-text { margin-top: 3rem; }
+  .full-text summary {
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .full-text summary:hover { color: var(--accent); }
+  .full-text[open] summary { border-bottom: 1px solid var(--rule); margin-bottom: 1.4rem; }
+
+  .text-rows { display: flex; flex-direction: column; gap: 1.6rem; }
+  .text-row {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+  .text-row .ref {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .text-row .ref a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  .text-row .ref a:hover { color: var(--accent-hover); border-color: var(--accent-hover); }
+  .text-row p { margin: 0; font-size: 0.95rem; line-height: 1.55; }
+
+  @media (max-width: 700px) {
+    .text-row { grid-template-columns: 1fr; gap: 0.4rem; }
+    .text-row .ref { order: -1; }
+  }
+</style>

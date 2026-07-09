@@ -1,0 +1,39 @@
+---
+title: Bhaditraka Skewers
+source: Mānasollāsa 3.13.1462–1465
+work: Mānasollāsa
+originalLang: Sanskrit
+original: >-
+  पृष्ठवंशसमुद्भूतं शुद्धं मांसं प्रगृह्य च । घनसारप्रमाणानि कृत्वा खण्डानि मूषकैः ॥ ६२ ॥ विध्वा तु बहुशस्तानि बहुरन्ध्राणि कारयेत् । हिङ्ग्वार्द्रकरसैर्युक्तं सैन्धवेन च पेषयेत् ॥ ६३ ॥ शूलपोतानि कृत्वा तान्यङ्गारेषु प्रतापयेत् । घृतेन सिञ्चेत्पाकज्ञो वारं वारं विवर्तयेत् ॥ ६४ ॥ सिद्धेषु मरिचं चूर्णं विकिरेत्सैन्धवान्वितम् । नाम्ना भडित्रकं रुच्यं लघु पथ्यं मनोहरम् ॥ ६५ ॥
+translation: >-
+  Take clean meat from beside the spine, cut it into pieces, and pierce the pieces many times. Rub them with asafoetida-water, ginger juice, and rock salt. Thread them on skewers and roast over embers, turning repeatedly and basting with ghee. When cooked, scatter ground black pepper and rock salt over them. This preparation is called bhaditraka.
+description: >-
+  Tender loin or backstrap is punctured to take up a ginger-and-asafoetida marinade, then repeatedly basted over charcoal.
+tradition: Indian
+category: Mānasollāsa
+subcategory: Meat, offal & sausages
+order: 1026
+status: draft
+---
+
+**Ingredients**
+
+* 750 g lamb loin, goat loin, or pork tenderloin, cut into 4 cm pieces  
+* 30 ml fresh ginger juice  
+* ¼ tsp asafoetida dissolved in 30 ml warm water  
+* 1½ tsp rock salt, divided  
+* 40 g ghee, melted  
+* 1 tsp ground black pepper
+
+**Method**
+
+1. Pierce each piece of meat repeatedly with a skewer or fork.  
+2. Mix the ginger juice, asafoetida-water, and half the salt. Rub into the meat and refrigerate for 2–4 hours.  
+3. Thread onto skewers and grill over medium-hot charcoal, turning and basting frequently with ghee.  
+4. Cook to the appropriate safe temperature for the chosen meat, then rest for 5 minutes.  
+5. Sprinkle with pepper and the remaining salt.
+
+**Notes**
+
+* The exact size comparison in the Sanskrit is uncertain.  
+* The source calls the dish light and wholesome, suggesting a relatively lean cut.

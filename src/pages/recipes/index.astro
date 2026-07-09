@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getRecipes, catSlug, workOf, showingDrafts } from '../../lib/recipes.ts';
+
+const recipes = await getRecipes();
+
+// By source (the primary organizing axis).
+const workCounts = new Map<string, number>();
+for (const r of recipes) {
+  const w = workOf(r.data);
+  workCounts.set(w, (workCounts.get(w) ?? 0) + 1);
+}
+const works = [...workCounts.entries()].sort((a, b) => b[1] - a[1]);
+
+const total = recipes.length;
+const published = recipes.filter((r) => r.data.status === 'published').length;
+---
+<Base title="Recipes" description="Reconstructed historical recipes, adapted for a modern kitchen.">
+  <div class="recipes-hub">
+    <h1>Recipes</h1>
+    <p class="lead">
+      Historical dishes I've cooked — classical Greek and Roman, and beyond —
+      adapted for a modern kitchen. Each recipe gives its original source text
+      and a translation.
+    </p>
+
+    {showingDrafts && (
+      <p class="dev-note">
+        Working view — showing all {total} recipes ({published} published, {total - published} draft).
+        The public site shows only published ones.
+      </p>
+    )}
+
+    <h2>By source</h2>
+    <ul class="chip-list">
+      {works.map(([work, n]) => (
+        <li><a href={`/recipes/${catSlug(work)}/`}>{work} <span class="count">{n}</span></a></li>
+      ))}
+    </ul>
+  </div>
+</Base>

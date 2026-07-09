@@ -1,0 +1,252 @@
+[
+  {
+    "category": "Dips and Relishes",
+    "anchor": "dips-and-relishes",
+    "intro": "",
+    "subcategories": []
+  },
+  {
+    "category": "Eggs and Patinas",
+    "anchor": "eggs-and-patinas",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Vegetable Patinas",
+        "anchor": "vegetable-patinas",
+        "intro": "**Recipes recreated:** *Apicius* 4.2.3,  4.2.36; *Vinidarius* 1  \n**Recipes to try:** *Apicius* 4.2.5, 4.2.6, 4.2.7; *Vinidarius* 1a, 2  \n**Other recipes:** *Apicius*"
+      },
+      {
+        "subcategory": "Fish Patinas",
+        "anchor": "fish-patinas",
+        "intro": "**Recipes recreated:** *Apicius* 4.2.20  \n**Recipes to try:** *Apicius* 4.2.12, 4.2.17, 4.2.27, 4.2.31  \n**Other recipes:** *Apicius* 4.2.21, 4.2.26, 4.2.28; *Vinidarius* 19"
+      },
+      {
+        "subcategory": "Other Patinas",
+        "anchor": "other-patinas",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Isicia",
+    "anchor": "isicia",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Meatballs",
+        "anchor": "meatballs",
+        "intro": ""
+      },
+      {
+        "subcategory": "Sausages",
+        "anchor": "sausages",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Meat",
+    "anchor": "meat",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Minutals",
+        "anchor": "minutals",
+        "intro": "**Recipes recreated:** *Apicius* 4.3.4, 4.3.6  \n**Recipes to try:** *Apicius* 4.3.1, 4.3.5, 4.3.7b-8  \n**Other recipes:** *Apicius* 4.3.2, 4.3.3, 8.8.5"
+      },
+      {
+        "subcategory": "Ofellae",
+        "anchor": "ofellae",
+        "intro": "*Ofellae* is a Latin word referring to marinated bite-sized pieces of meat that have been cooked in a richly-flavoured sauce. We have ten surviving recipes for *ofellae*—six from Apicius, Book 7, and a further four from Vinidarius. While some of the recipes are vague, they seem to involve a two-step cooking process. The meat is first slowly roasted or boiled, and then afterwards quickly “fried” in a flavorful sauce. The final dish should be succulent and tender, somewhat similar to modern BBQ or braised dishes; one of Martial’s epigrams mentions *ofellae* so tender that they do not need a carver to slice the meat.\n\n*Ofellae* were a staple of taverns, and the Emperor Claudius even rhetorically asked “Who can life without *offulae*?” in a Senate discussion on cookshops. Given the two-step nature of the cooking process, my guess is that in these taverns the slow cooked meat would have been prepared ahead of time, and when *offellae* was ordered the simple reheated in the sauce. This method also works well with these recipes below. \n\n**Recipes recreated:** *Apicius* 7.4.1-4; *Vinidarius* 6  \n**Recipes to try:** *Apicius* 7.4.6  \n**Other recipes:** *Apicius* 7.4.5; *Vinidarius* 3–5"
+      },
+      {
+        "subcategory": "Pork",
+        "anchor": "pork",
+        "intro": ""
+      },
+      {
+        "subcategory": "Lamb and Goat",
+        "anchor": "lamb-and-goat",
+        "intro": ""
+      },
+      {
+        "subcategory": "Beef and Veal",
+        "anchor": "beef-and-veal",
+        "intro": ""
+      },
+      {
+        "subcategory": "Salted Meat",
+        "anchor": "salted-meat",
+        "intro": ""
+      },
+      {
+        "subcategory": "Unclassified",
+        "anchor": "unclassified",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Poultry",
+    "anchor": "poultry",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Chicken",
+        "anchor": "chicken",
+        "intro": ""
+      },
+      {
+        "subcategory": "Duck",
+        "anchor": "duck",
+        "intro": ""
+      },
+      {
+        "subcategory": "Unclassified",
+        "anchor": "unclassified-1",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Seafood",
+    "anchor": "seafood",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Apician Sauces for Fish",
+        "anchor": "apician-sauces-for-fish",
+        "intro": "Between *Apicius* Books 9 and 10 and *Vinidarius* there are about 45 distinct recipes for specific fish sauces. \n\n**Recipes recreated:** *Apicius* 10.1.1, 10.1.2, 10.2.4/10.3.1"
+      },
+      {
+        "subcategory": "Greek Fish",
+        "anchor": "greek-fish",
+        "intro": ""
+      },
+      {
+        "subcategory": "Unclassified",
+        "anchor": "unclassified-2",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Vegetables",
+    "anchor": "vegetables",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Salads",
+        "anchor": "salads",
+        "intro": "Leafy greens were eaten at the start of meals. All three menus included in Martial’s epigrams, for instance, open with lettuce accompanied by leeks, as does Pliny the Younger’s menu. Though they don’t state whether the lettuce was dressed, recipes from *Apicius* and comments from Galen imply that dressing with olive oil, vinegar, honey and/or *liquamen* was common. \n\nLettuce was considered potentially indigestible. *Apicius 3.18.2* recommends an *oxyporium,* a highly-spiced mixture served with *oxygarum*, that is, vinegar and *liquamen*, in order to aid digestion. Columella includes another two recipes for *oxyporium*. \n\n**Recipes recreated:** *Apicius* 3.16, 3.18.1a, 3.18.2; *De Agricultura* 127;  *Columella* 12.59f  \n**Recipes to try:**   \n**Other recipes:** *Apicius* 1.34a, 1.34b, 3.18.1b; *Columella* 12.59e"
+      },
+      {
+        "subcategory": "Gourds, Cucumbers, and Melons",
+        "anchor": "gourds-cucumbers-and-melons",
+        "intro": "**Recipes recreated:** *Apicius* 3.4.1–3, 3.6.3, 3.7  \n**Recipes to try:** *Apicius* 3.4.7  \n**Other recipes:** *Apicius* 3.4.4–6, 3.5, 3.6.1–2, 4.2.10; *Pliny* 20.12"
+      },
+      {
+        "subcategory": "Cabbage",
+        "anchor": "cabbage",
+        "intro": ""
+      },
+      {
+        "subcategory": "Unclassified",
+        "anchor": "unclassified-3",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Legumes",
+    "anchor": "legumes",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Peas",
+        "anchor": "peas",
+        "intro": "**Recipes recreated:** *Apicius* 5.3.6-7  \n**Recipes to try:** *Apicius* 5.3.1, 5.3.2 (?), 5.3.3 (?), 5.3.4, 5.3.5, 5.3.9 (?)  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Conchicla",
+        "anchor": "conchicla",
+        "intro": "**Recipes recreated:**   \n**Recipes to try:** *Apicius* 5.4.2, 5.4.3, 5.4.4, 5.4.5, 5.4.6 (?)  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Lentils",
+        "anchor": "lentils",
+        "intro": ""
+      },
+      {
+        "subcategory": "Other Legumes",
+        "anchor": "other-legumes",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Grains",
+    "anchor": "grains",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Bread",
+        "anchor": "bread",
+        "intro": ""
+      },
+      {
+        "subcategory": "Wheat porridge",
+        "anchor": "wheat-porridge",
+        "intro": "**Recipes recreated:** *Apicius* 5.1.1/4, 5.1.2, 5.1.3; Cato 85  \n**Recipes to try:** Cato 86; Galen *On the Powers of Food* R3  \n**Other recipes:** Cato 87"
+      },
+      {
+        "subcategory": "Barley",
+        "anchor": "barley",
+        "intro": ""
+      }
+    ]
+  },
+  {
+    "category": "Dessert",
+    "anchor": "dessert",
+    "intro": "",
+    "subcategories": [
+      {
+        "subcategory": "Cakes",
+        "anchor": "cakes",
+        "intro": "**Recipes recreated:**   \n**Recipes to try:**  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Pancakes and Fritters",
+        "anchor": "pancakes-and-fritters",
+        "intro": "**Recipes recreated:** *Apicius* 7.11.3, 7.11.6  \n**Recipes to try:** Cato 79, 80; Galen *Power* R2; Athenaeus 646b  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Sweet Patinas",
+        "anchor": "sweet-patinas",
+        "intro": "**Recipes recreated:** *Apicius* 4.2.2/4.2.16, 7.11.7, 7.11.8  \n**Recipes to try:** *Apicius* 4.2.8, 4.2.9, 4.2.35  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Pudding",
+        "anchor": "pudding",
+        "intro": "**Recipes recreated:** *Apicius* 2.2.10, 7.11.4, 7.11.5  \n**Recipes to try:** Cato 85, 86, 87; Galen *On the Powers of Food* R3  \n**Other recipes:**"
+      },
+      {
+        "subcategory": "Cream, Curds, and Cheese",
+        "anchor": "cream-curds-and-cheese",
+        "intro": "**Recipes recreated:**   \n**Recipes to try:** *Apicius* 7.11.9; Chrysippus 2.5, 2.6, *Geoponica* 18.19, 18.21  \n**Other recipes:** Galen *On the Powers of Food* R16"
+      },
+      {
+        "subcategory": "Fruit",
+        "anchor": "fruit",
+        "intro": "**Recipes recreated:**   \n**Recipes to try:**  \n**Other recipes:**"
+      }
+    ]
+  },
+  {
+    "category": "Beverages",
+    "anchor": "beverages",
+    "intro": "",
+    "subcategories": []
+  }
+]

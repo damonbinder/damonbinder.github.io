@@ -1,0 +1,224 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { render } from 'astro:content';
+import { getRecipes, catSlug, workOf, citationNumber, periodOf, showingDrafts } from '../../../lib/recipes.ts';
+
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  const link = (x: (typeof recipes)[number] | undefined) =>
+    x ? { title: x.data.title, href: `/recipes/${catSlug(workOf(x.data))}/${x.id}/` } : null;
+
+  // Group by source, ordered by citation number, so prev/next steps through
+  // recipes in the order they appear within that source.
+  const bySource = new Map<string, typeof recipes>();
+  for (const r of recipes) {
+    const w = workOf(r.data);
+    if (!bySource.has(w)) bySource.set(w, []);
+    bySource.get(w)!.push(r);
+  }
+  for (const group of bySource.values()) {
+    group.sort((a, b) => citationNumber(a.data) - citationNumber(b.data));
+  }
+
+  const paths = [];
+  for (const group of bySource.values()) {
+    group.forEach((r, i) => {
+      paths.push({
+        params: { source: catSlug(workOf(r.data)), slug: r.id },
+        props: { recipe: r, prev: link(group[i - 1]), next: link(group[i + 1]) },
+      });
+    });
+  }
+  return paths;
+}
+
+const { recipe, prev, next } = Astro.props;
+const d = recipe.data;
+const { Content } = await render(recipe);
+
+const work = workOf(d);
+const workHref = `/recipes/${catSlug(work)}/`;
+const period = periodOf(work);
+const langCode = { Latin: 'la', Greek: 'grc', Sanskrit: 'sa' }[d.originalLang ?? ''] ?? undefined;
+
+// Foreign untranslated terms are italicised with *asterisks* in the source text
+// and translation/description strings; render those as emphasis. stripEm gives
+// the plain-text form for the <title> tag and other markup-free contexts.
+const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
+---
+<Base title={stripEm(d.title)} description={stripEm(d.description ?? `${d.title} — a historical recipe.`)}>
+  <p class="crumb">
+    <a href="/recipes/">Recipes</a> ›
+    <a href={workHref}>{work}</a>
+  </p>
+
+  <article class="recipe">
+    <header class="rhead">
+      <h1 set:html={em(d.title)}></h1>
+      {showingDrafts && d.status === 'draft' && <span class="draft-badge">Draft</span>}
+    </header>
+
+    <p class="meta">
+      {d.source && <a href={workHref}>{d.source}</a>}
+      {period && <span class="dot">·</span>}
+      {period && <span>{period}</span>}
+      {d.tradition && <span class="dot">·</span>}
+      {d.tradition && <span>{d.tradition}</span>}
+    </p>
+
+    {(d.original || d.translation) && (
+      <div class="original">
+        {d.original && (
+          <div class="og">
+            <span class="og-label">{d.originalLang ?? 'Original'}</span>
+            <p lang={langCode}><em>{d.original}</em></p>
+          </div>
+        )}
+        {d.translation && (
+          <div class="og">
+            <span class="og-label">English</span>
+            <p set:html={em(d.translation)}></p>
+          </div>
+        )}
+      </div>
+    )}
+
+    {d.description && <p class="description" set:html={em(d.description)}></p>}
+
+    <div class="recipe-body">
+      <Content />
+    </div>
+  </article>
+
+  <nav class="recipe-nav">
+    {prev ? <a class="prev" href={prev.href}>← <Fragment set:html={em(prev.title)} /></a> : <span></span>}
+    {next && <a class="next" href={next.href}><Fragment set:html={em(next.title)} /> →</a>}
+  </nav>
+</Base>
+
+<style>
+  .crumb { font-family: var(--font-sans); font-size: 0.85rem; margin: 0 0 0.8rem; }
+
+  .rhead { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .rhead h1 { margin: 0; }
+  .draft-badge {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8a5a00;
+    background: #fbf0d8;
+    border: 1px solid #e8d29a;
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+  }
+
+  .meta {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0.4rem 0 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .meta a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .meta a:hover { color: var(--accent); border-color: var(--accent); }
+  .meta .dot { color: var(--muted); }
+
+  /* Original / translation pairing — the scholarly heart, full-width stacked. */
+  .original {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin: 0 0 1.6rem;
+  }
+  .og + .og {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .og-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .og p { margin: 0; font-size: 0.98rem; line-height: 1.6; }
+
+  .description {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    margin: 0 0 1.8rem;
+  }
+
+  /* Recipe body — Ingredients / Method / Notes as clean section labels. */
+  .recipe-body :global(h2) {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+    margin: 2.2rem 0 1rem;
+  }
+  .recipe-body :global(ul),
+  .recipe-body :global(ol) { margin: 0; padding-left: 1.3rem; }
+  .recipe-body :global(ul li) { margin: 0.25rem 0; }
+
+  /* Ingredients (the list right after the Ingredients heading): two columns
+     once the list runs long, single column when it's short. */
+  .recipe-body :global(#ingredients + ul:has(li:nth-child(5))) {
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+  .recipe-body :global(#ingredients + ul li) { break-inside: avoid; }
+
+  /* Method — numbered steps. */
+  .recipe-body :global(ol) { list-style: none; counter-reset: step; padding-left: 0; }
+  .recipe-body :global(ol li) {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.2rem;
+    margin: 0.7rem 0;
+    line-height: 1.6;
+  }
+  .recipe-body :global(ol li)::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--tag-bg);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recipe-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+  .recipe-nav a { text-decoration: none; color: var(--muted); }
+  .recipe-nav a:hover { color: var(--accent); }
+  .recipe-nav .next { text-align: right; margin-left: auto; }
+</style>

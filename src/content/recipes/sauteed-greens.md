@@ -3,7 +3,7 @@ title: Sauteed Greens
 source: Apicius 3.16b
 originalLang: Latin
 original: >-
-
+  liquamine oleo aceto a manu uel in patina piper cumino bacis lentisci.
 translation: >-
   XVI. WILD HERBS. With fish sauce, oil, and vinegar, either by hand [i.e.
   dressed raw] or in a *patina*, with pepper, cumin, and mastic berries.

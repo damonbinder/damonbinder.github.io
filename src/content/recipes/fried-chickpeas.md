@@ -3,7 +3,9 @@ title: Fried Chickpeas
 source: Apicius 5.8.2a
 originalLang: Latin
 original: >-
-
+  aliter faseolus siue cicer: frictos ex oenogaro et pipere gustabis. et
+  elixati sumpto semine cum ouis in patella, feniculo uiride piper et
+  liquamine et careno modico pro salso inferuntur, uel simpliciter, ut solet.
 translation: >-
   Beans or chickpeas another way: fried, you will taste them with *oenogarum*
   and pepper. And when boiled, once the seed is taken up, [they are served]

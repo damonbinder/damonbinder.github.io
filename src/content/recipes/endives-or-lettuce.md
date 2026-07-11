@@ -3,7 +3,8 @@ title: Endives or Lettuce
 source: Apicius 3.18.1a
 originalLang: Latin
 original: >-
-
+  intuba ex liquamine et oleo modico medere cepa concisa. pro lactucis uero
+  hieme intibe ex enbammate uel melle et aceto acri.
 translation: >-
   Dress endives with fish sauce and a little oil, and finish with chopped
   onion. In winter, in place of lettuces, dress endive with a sauce

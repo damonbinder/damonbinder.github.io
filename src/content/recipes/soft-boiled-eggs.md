@@ -1,9 +1,10 @@
 ---
 title: Soft-boiled Eggs
-source: Apicius 7.18.3
+source: Apicius 7.17.3
 originalLang: Latin
 original: >-
-
+  in ouis apalis: piper ligusticum nucleos infusos; suffundes mel acetum,
+  liquamine temperabis.
 translation: >-
   For soft-boiled eggs: pepper, lovage, soaked pine nuts; pour on honey and
   vinegar, blend with fish sauce.

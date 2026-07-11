@@ -3,7 +3,14 @@ title: Rose-coloured Minutal
 source: Apicius 4.3.7–8
 originalLang: Latin
 original: >-
-
+  minutal ex iecineribus et pulmonibus leporis: inuenies inter lepores
+  quemadmodum facies. <aliter minutal dulce>: adicies <in> caccabum liquamen
+  uinum oleum cocturam, porrum et coriandrum concisum. esicia minuta, spatulam
+  porcinam coctam tessellatim concisam et in eundem caccabum inmities. dum
+  coquitur teres piper ligusticum origanum; ius de suo sibi uino et passo
+  temperabis. facies ut ferueat; cum ferbuerit tractam confringes et ex ea
+  obligas; piper aspargis et inferes. minutal ex rosis: eodem iure supra
+  scripto sed passum plus adicies.
 translation: >-
   *Minutal* of hare's liver and lungs: you will find, among the hare recipes,
   how to make it. <Another way, a sweet *minutal*>: put into a pot fish sauce,

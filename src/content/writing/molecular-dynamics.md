@@ -2,7 +2,6 @@
 title: "Molecular Dynamics"
 date: 2017-05-21
 excerpt: "How do molecules interact with each other in gases, liquids and solids?"
-tags: ["physics", "simulations"]
 ---
 
 Ice, water, and water vapour are three very different substance. Ice is a crystal, it is hard and will shatter if you hit it hard enough. Water is a liquid, it flows and forms droplets. Water vapour is a gas, which is dispersed throughout the atmosphere. Yet for all this varied behaviour, we know that these three substance are actually made of the same thing --- water molecules. These are tiny particles which are constantly whizzing around and interacting with each other. Out of the interaction of trillions and trillions of these molecules emerges the behaviour of water we see in everyday life.

@@ -2,8 +2,6 @@
 
 Last updated June 2026  
 
-The order is arbitrary.
-
 ## Science and Technology
 
 - _Power, Sex, Suicide_ by Nick Lane (2005)

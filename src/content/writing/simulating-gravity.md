@@ -2,7 +2,6 @@
 title: "Simulating Gravity"
 date: 2017-03-21
 excerpt: "Solving the N-body problem."
-tags: ["physics", "simulations"]
 ---
 
 I have simulated gravity in both three and two dimensions. You can play with these simulations here:

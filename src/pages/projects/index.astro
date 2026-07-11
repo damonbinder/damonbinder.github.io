@@ -4,12 +4,12 @@ import { projects } from '../../data/projects.ts';
 ---
 <Base title="Projects" description="Things I've built on the side.">
   <h1>Projects</h1>
-  <ul class="project-grid" style="margin-top: 1.5rem;">
+  <ul class="post-list">
     {projects.map((proj) => (
-      <li class="project-card">
-        <p class="post-meta">
+      <li class="post-item">
+        <div class="post-meta">
           <time>{proj.date}</time>
-        </p>
+        </div>
         <h3>{proj.href ? <a href={proj.href}>{proj.title}</a> : proj.title}</h3>
         <p class="muted">{proj.blurb}</p>
       </li>

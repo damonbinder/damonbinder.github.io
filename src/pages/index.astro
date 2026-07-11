@@ -12,10 +12,10 @@ const featured = projects.slice(0, 3);
     <div class="intro-text">
       <h1>Damon Binder</h1>
       <p class="lead">
-        [Placeholder — brief description. A few lines about who I am and what I
-        work on, then a link to the about page.]
+        I'm a researcher at Coefficient Giving, working on risks from AI and biology,
+        with a background in theoretical physics.
       </p>
-      <p><a href="/about/">More about →</a></p>
+      <p class="more-link"><a href="/about/">More about →</a></p>
     </div>
   </section>
 
@@ -48,12 +48,12 @@ const featured = projects.slice(0, 3);
     <section class="home-col">
       <h2>Other stuff</h2>
       <div class="home-col-item">
-        <a href="/books/">Book recommendations</a>
-        <p class="muted">Non-fiction books that I like, organized by topic.</p>
+        <a href="/recipes/">Historical recipes</a>
+        <p class="muted">Reconstructing dishes from the ancient and medieval world.</p>
       </div>
       <div class="home-col-item">
-        <a href="/recipes/">Classical recipes</a>
-        <p class="muted">Reconstructed dishes from the ancient Greek and Roman world.</p>
+        <a href="/books/">Book recommendations</a>
+        <p class="muted">Non-fiction books that I like, organized by topic.</p>
       </div>
       <div class="home-col-item">
         <a href="/research/">Physics research</a>
@@ -82,6 +82,11 @@ const featured = projects.slice(0, 3);
   .intro-text { flex: 1; min-width: 0; }
   .intro-text h1 { margin: 0 0 0.5rem; }
   .intro-text .lead { margin: 0 0 0.9rem; }
+  .more-link {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    margin: 0;
+  }
 
   .home-cols {
     display: grid;

@@ -1,6 +1,6 @@
 # Physics research
 
-Prior to shifting to working global catastrophic risks, I studied theoretical physics. In my PhD I studied conformal field theories, a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation, titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. You can read it [here](https://physics.princeton.edu/archives/theses/lib/upload/Damon_Binder_thesis.pdf).
+Prior to shifting to working global catastrophic risks, I studied theoretical physics. In my PhD I studied conformal field theories, a special class of quantum field theories that arise in the study of phase transitions, string theory and particle physics. My dissertation, titled *N=6 Superconformal Field Theories*, and studies conformal field theories in three spacetime dimensions with extended supersymmetry. You can read it [here](https://dataspace.princeton.edu/handle/88435/dsp01pr76f6551).
 
 ## Publications
 

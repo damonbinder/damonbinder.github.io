@@ -8,7 +8,6 @@ export interface RiverItem {
   title: string;
   date: Date;
   excerpt?: string;
-  tags: string[];
   external?: string;
   source?: string;
   native: boolean; // true => rendered at /blog/{id}/
@@ -23,7 +22,6 @@ export async function getRiver(): Promise<RiverItem[]> {
       title: p.data.title,
       date: p.data.date,
       excerpt: p.data.excerpt,
-      tags: p.data.tags,
       external: p.data.external,
       source: p.data.source,
       native: !p.data.external,
@@ -34,7 +32,6 @@ export async function getRiver(): Promise<RiverItem[]> {
     title: p.data.title,
     date: p.data.date,
     excerpt: p.data.excerpt,
-    tags: p.data.tags,
     external: p.data.external,
     source: p.data.source,
     native: false,

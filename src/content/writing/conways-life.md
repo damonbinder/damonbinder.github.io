@@ -2,7 +2,6 @@
 title: "Conway's Life and Related Cellular Automata"
 date: 2017-01-21
 excerpt: "Simulating Conway's Game of Life and other life-like cellular automata in the browser."
-tags: ["physics", "simulations"]
 ---
 
 I have made a simple program to simulate Life-Like cellular auomata. [**Click here to play around with it.**](/scripts/CA/Life.html)

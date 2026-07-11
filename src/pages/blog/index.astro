@@ -4,38 +4,19 @@ import { getRiver } from '../../lib/river.ts';
 
 const posts = await getRiver();
 
-// Collect tags for the filter row.
-const tagCounts = new Map<string, number>();
-for (const p of posts) for (const t of p.tags) {
-  tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
-}
-const tags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
-
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-AU', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 <Base title="Blog" description="Essays, notes, and links.">
   <h1>Blog</h1>
 
-  {tags.length > 0 && (
-    <p class="tags" style="margin: 1.2rem 0 0.5rem;">
-      {tags.map(([t, n]) => (
-        <a class="tag" href={`/tags/${t}/`}>{t} · {n}</a>
-      ))}
-    </p>
-  )}
-
   <ul class="post-list">
     {posts.map((p) => (
       <li class="post-item">
         <div class="post-meta">
           <time datetime={p.date.toISOString()}>{fmt(p.date)}</time>
+          {p.source && <span class="meta-divider">|</span>}
           {p.source && <span class="source-badge">{p.source}</span>}
-          {p.tags.length > 0 && (
-            <span class="tags">
-              {p.tags.map((t) => <a class="tag" href={`/tags/${t}/`}>{t}</a>)}
-            </span>
-          )}
         </div>
         <h3>
           {p.external ? (

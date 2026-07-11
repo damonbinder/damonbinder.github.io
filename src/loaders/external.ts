@@ -9,7 +9,6 @@ interface RawPost {
   excerpt?: string;
   external: string;
   source: string;
-  tags: string[];
 }
 
 function decode(s: string): string {
@@ -65,7 +64,6 @@ async function fetchDefensesInDepth(): Promise<RawPost[]> {
       excerpt: it.description ? String(it.description) : undefined,
       external: link,
       source: 'Defenses in Depth',
-      tags: [],
     });
   }
   return out;
@@ -96,7 +94,6 @@ async function fetchRandomLives(): Promise<RawPost[]> {
       excerpt: excerpt ? decode(excerpt) : undefined,
       external: abs,
       source: 'Random Lives',
-      tags: [],
     });
   }
   return out;

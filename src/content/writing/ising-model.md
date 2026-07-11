@@ -2,7 +2,6 @@
 title: "The Ising Model and its Cousins"
 date: 2018-01-25
 excerpt: "The Ising Model is a simple system which can be used to study all sorts of physics."
-tags: ["physics", "simulations"]
 ---
 
 ## The Simulations

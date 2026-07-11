@@ -1,6 +1,14 @@
 ---
 title: Tarpeian Lamb
 source: Apicius 8.6.8
+originalLang: Latin
+original: >-
+  hedus siue agnus crudus: oleo piper fricabis et asparges fores salem purum
+  multo cum coriandri semen, in furnum mittis, assatum inferes.
+translation: >-
+  Tarpeian kid or lamb, raw: rub it with oil and pepper, and sprinkle the
+  outside with pure salt together with plenty of coriander seed, put it in the
+  oven, and serve it roasted.
 category: Meat
 subcategory: Lamb and Goat
 order: 51

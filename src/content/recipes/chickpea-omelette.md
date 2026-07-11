@@ -1,6 +1,15 @@
 ---
 title: Chickpea omelette
 source: Apicius 5.8.2b
+originalLang: Latin
+original: >-
+
+translation: >-
+  Beans or chickpeas, another way: fried, you taste them with *oenogarum*
+  [wine and fish sauce] and pepper. And when boiled, with the seed [pulses]
+  taken and cooked with eggs in a pan, they are served with fresh fennel,
+  pepper, fish sauce, and a little *caroenum* in place of salt — or plainly,
+  as usual.
 category: Legumes
 subcategory: Other Legumes
 order: 158

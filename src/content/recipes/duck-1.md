@@ -1,6 +1,15 @@
 ---
 title: Duck
 source: Apicius 6.8.1
+originalLang: Latin
+original: >-
+  elixo ius crudum: adicies in mortarium aneti semen mentam siccam laseris
+  radicem; suffundis acetum; adicies careo tam, refundis liquamen senapis
+  modicum et oleum, defrito temperas et sic mittis.
+translation: >-
+  Raw sauce for boiled [fowl]: put into a mortar dill seed, dried mint, and
+  root of *laser*; moisten with vinegar; add date, pour in fish sauce, a
+  little mustard, and oil, temper with *defrutum*, and serve thus.
 category: Poultry
 subcategory: Duck
 order: 83

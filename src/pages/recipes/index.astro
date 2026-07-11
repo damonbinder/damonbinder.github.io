@@ -1,41 +1,160 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getRecipes, catSlug, workOf, showingDrafts } from '../../lib/recipes.ts';
+import { getCollection, render } from 'astro:content';
+import {
+  catSlug, getWorkCounts, getWorkTotalCounts, getWorkPublishedCounts,
+  getSourceEntry, showingDrafts,
+} from '../../lib/recipes.ts';
 
-const recipes = await getRecipes();
+const eras = (await getCollection('eras')).sort((a, b) => a.data.order - b.data.order);
+const workCounts = await getWorkCounts();
+const totalCounts = await getWorkTotalCounts();
+const publishedCounts = await getWorkPublishedCounts();
 
-// By source (the primary organizing axis).
-const workCounts = new Map<string, number>();
-for (const r of recipes) {
-  const w = workOf(r.data);
-  workCounts.set(w, (workCounts.get(w) ?? 0) + 1);
-}
-const works = [...workCounts.entries()].sort((a, b) => b[1] - a[1]);
-
-const total = recipes.length;
-const published = recipes.filter((r) => r.data.status === 'published').length;
+const eraSections = await Promise.all(eras.map(async (era) => {
+  const { Content } = await render(era);
+  const sources = await Promise.all(
+    era.data.sources
+      .filter((name) => (totalCounts.get(name) ?? 0) > 0)
+      .map(async (name) => {
+        const total = totalCounts.get(name) ?? 0;
+        const published = publishedCounts.get(name) ?? 0;
+        const hasPage = (workCounts.get(name) ?? 0) > 0;
+        const period = (await getSourceEntry(name))?.data.period;
+        return { name, total, published, hasPage, period };
+      }),
+  );
+  const publishedSourceCount = sources.filter((s) => s.published > 0).length;
+  return { era, Content, sources, publishedSourceCount };
+}));
 ---
-<Base title="Recipes" description="Reconstructed historical recipes, adapted for a modern kitchen.">
+<Base title="Historical Recipes" description="Historical recipes I've cooked, reconstructing dishes from the ancient and medieval world.">
   <div class="recipes-hub">
-    <h1>Recipes</h1>
+    <h1>Historical Recipes</h1>
     <p class="lead">
-      Historical dishes I've cooked — classical Greek and Roman, and beyond —
-      adapted for a modern kitchen. Each recipe gives its original source text
-      and a translation.
+      I've cooked hundreds of historical recipes — mostly from ancient Greece and Rome,
+      but also from a range of other ancient and medieval cuisines, which I'm steadily
+      adding. Recipes here are ones I've actually cooked, so this is my active list in
+      my own kitchen. The originals rarely give quantities, so taste and adjust as you
+      go, the way any ancient cook would have.
     </p>
+    <p class="browse-all-link"><a href="/recipes/all/">Browse all recipes by tradition and category →</a></p>
 
-    {showingDrafts && (
-      <p class="dev-note">
-        Working view — showing all {total} recipes ({published} published, {total - published} draft).
-        The public site shows only published ones.
-      </p>
-    )}
-
-    <h2>By source</h2>
-    <ul class="chip-list">
-      {works.map(([work, n]) => (
-        <li><a href={`/recipes/${catSlug(work)}/`}>{work} <span class="count">{n}</span></a></li>
-      ))}
-    </ul>
+    {eraSections.map(({ era, Content, sources, publishedSourceCount }) => (
+      <details class="era-accordion" open={era.data.order === 0}>
+        <summary>
+          <span>{era.data.name}</span>
+          <span class="era-count">{publishedSourceCount} of {sources.length} sources published</span>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="accordion-body">
+          <div class="blurb"><Content /></div>
+          <ul class="source-list">
+            {sources.map((s) => (
+              <li class="source-row">
+                {s.hasPage ? (
+                  <a class="name" href={`/recipes/${catSlug(s.name)}/`}>{s.name}</a>
+                ) : (
+                  <span class="name muted-name">{s.name}</span>
+                )}
+                <span class="count">
+                  {s.period && <>{s.period} · </>}
+                  {s.hasPage
+                    ? (s.published < s.total
+                        ? <>{s.published} of {s.total} recipe{s.total === 1 ? '' : 's'} published</>
+                        : <>{s.total} recipe{s.total === 1 ? '' : 's'}</>)
+                    : <>{s.total} drafted, not yet published</>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </details>
+    ))}
   </div>
 </Base>
+
+<style>
+  .recipes-hub .lead {
+    font-size: 1.1rem;
+    max-width: 42rem;
+  }
+  .browse-all-link {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    margin: 0 0 2rem;
+  }
+
+  .era-accordion {
+    border-top: 1px solid var(--rule);
+  }
+  .era-accordion:last-of-type { border-bottom: 1px solid var(--rule); }
+  .era-accordion summary {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--fg);
+    padding: 1rem 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .era-accordion summary::-webkit-details-marker,
+  .era-accordion summary::marker { display: none; content: ''; }
+  .era-accordion summary .chevron {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+  }
+  .era-accordion[open] summary .chevron { transform: rotate(90deg); }
+  .era-accordion summary:hover { color: var(--accent); }
+  .era-accordion summary .era-count {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-right: auto;
+  }
+
+  .accordion-body { padding: 0 0 1.6rem; }
+  .blurb {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    max-width: 40rem;
+    margin: 0 0 1.1rem;
+  }
+  .blurb :global(p) { margin: 0 0 1rem; }
+  .blurb :global(p:last-child) { margin-bottom: 0; }
+
+  .source-list { list-style: none; margin: 0; padding: 0; }
+  .source-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-row:last-child { border-bottom: none; }
+  .source-row .name {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .source-row a.name { color: var(--fg); text-decoration: none; }
+  .source-row a.name:hover { color: var(--accent); }
+  .source-row .name.muted-name { color: var(--muted); font-weight: 600; }
+  .source-row .count {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 500px) {
+    .source-row { flex-wrap: wrap; }
+  }
+</style>

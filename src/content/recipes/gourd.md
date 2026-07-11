@@ -1,6 +1,20 @@
 ---
 title: Gourd
 source: Apicius 3.4.1
+originalLang: Latin
+original: >-
+  callosiores reddes gustum ad cucurbitas: coctas expressas in patinam
+  conpones. adicies in mortarium pipere cuminum silfi modice (id est laseris
+  radicem), rutam modicum; liquamine et aceto temperabis; mittes defreto
+  modicum ut coloretur; ius exinanies in patenam. cum ferbuerit iterum ac
+  tertio, depones et piper minutum asparges.
+translation: >-
+  To give gourds a firmer bite, a relish for gourds: arrange the cooked and
+  drained gourds in a *patina*. Put into a mortar pepper, cumin, a little
+  *silphium* (that is, the root of *laser*), and a little rue; blend with fish
+  sauce and vinegar; add a little *defrutum* to give it color; pour the sauce
+  out into the *patina*. When it has boiled a second and third time, take it
+  off and sprinkle with ground pepper.
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 113

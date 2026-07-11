@@ -1,6 +1,14 @@
 ---
 title: Cabbage with Leek
 source: Apicius 3.9.3
+originalLang: Latin
+original: >-
+  aliter: cauliculi elixati in patina conpositi condiuntur liquamine oleo mero
+  cumino. piper asparges; porrum cuminum coriandrum uiridem super concides.
+translation: >-
+  Another way: boiled cabbage shoots arranged in a dish are seasoned with fish
+  sauce, oil, neat wine, and cumin. Sprinkle on pepper; cut leek, cumin, and
+  fresh coriander over the top.
 category: Vegetables
 subcategory: Cabbage
 order: 120

@@ -1,6 +1,15 @@
 ---
 title: Patina of Sardines
-source: Patina de Apua, Apicius 4.2.30
+source: Apicius 4.2.30
+originalLang: Latin
+original: >-
+  patina de pisciculis: uuam passam piper ligusticum origanum cepam uinum
+  liquamen oleum; transferes in patellam; cum cocta fuerit adicies in ipsam
+  pisciculos coctos; amulo obligas et inferes.
+translation: >-
+  A *patina* of little fish: raisins, pepper, lovage, oregano, onion, wine,
+  fish sauce, oil; transfer to a pan; when it is cooked, add to it the cooked
+  little fish; bind with starch and serve.
 category: Seafood
 subcategory: Unclassified
 order: 96

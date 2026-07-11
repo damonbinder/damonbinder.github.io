@@ -1,6 +1,16 @@
 ---
 title: Sala Cattabia
 source: Apicius 4.1.3
+originalLang: Latin
+original: >-
+  aliter sala cattabia: panem Alexandrinum excauabis; in posca macerabis.
+  adicies in mortarium piper mel mentam alium coriandrum uiridem caseum
+  bubulum sale conditum aquam oleum; insuper niuem et inferes.
+translation: >-
+  Sala cattabia, another way: hollow out Alexandrian bread and steep it in
+  *posca* [vinegar-water]. Put into a mortar pepper, honey, mint, garlic,
+  fresh coriander, salted cow's-milk cheese, water, oil; add snow on top and
+  serve.
 category: Dips and Relishes
 order: 2
 ---

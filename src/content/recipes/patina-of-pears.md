@@ -1,6 +1,15 @@
 ---
 title: Patina of Pears
 source: From Apicius 4.2.35
+originalLang: Latin
+original: >-
+  patina de piris: pira elixa et purgata e medio; teres cum pipere cumino
+  melle passo liquamine oleo modico. ouis missis patinam facies; piper super
+  aspargis et inferes.
+translation: >-
+  *Patina* of pears: [take] pears, boiled and cored; grind them with pepper,
+  cumin, honey, *passum*, fish sauce, and a little oil. Add eggs, make a
+  *patina*; sprinkle pepper over the top and serve.
 category: Dessert
 subcategory: Sweet Patinas
 order: 178

@@ -1,7 +1,8 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import SourceRecipeList from '../../../components/SourceRecipeList.astro';
-import { getRecipes, catSlug, workOf, citationNumber, periodOf, blurbOf } from '../../../lib/recipes.ts';
+import { render } from 'astro:content';
+import { getRecipes, catSlug, workOf, citationNumber, getSourceEntry } from '../../../lib/recipes.ts';
 import { sourceTexts } from '../../../data/sources/index.ts';
 
 export async function getStaticPaths() {
@@ -19,9 +20,10 @@ export async function getStaticPaths() {
 }
 
 const { work, list } = Astro.props;
-const period = periodOf(work);
-const blurb = blurbOf(work);
-const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const sourceEntry = await getSourceEntry(work);
+const period = sourceEntry?.data.period;
+const Blurb = sourceEntry ? (await render(sourceEntry)).Content : undefined;
+const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
 
 // The complete surviving text (independent of which entries have become
 // cooked recipe pages), linked through to a recipe page where one exists.
@@ -41,9 +43,9 @@ const textEntries = (fullText ?? []).map((entry) => ({
     <span>{list.length} recipe{list.length === 1 ? '' : 's'}</span>
   </p>
 
-  {blurb ? (
+  {Blurb ? (
     <div class="source-grid">
-      <div class="blurb" set:html={blurb}></div>
+      <div class="blurb"><Blurb /></div>
       <SourceRecipeList list={list} work={work} />
     </div>
   ) : (
@@ -62,7 +64,9 @@ const textEntries = (fullText ?? []).map((entry) => ({
                 : entry.ref}
             </span>
             <p class="latin" set:html={`<em>${em(entry.latin)}</em>`}></p>
-            <p class="english" set:html={em(entry.english)}></p>
+            {entry.english
+              ? <p class="english" set:html={em(entry.english)}></p>
+              : <p class="english untranslated">—</p>}
           </div>
         ))}
       </div>
@@ -82,7 +86,7 @@ const textEntries = (fullText ?? []).map((entry) => ({
 
   .source-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     gap: 3rem;
     align-items: start;
   }
@@ -122,6 +126,7 @@ const textEntries = (fullText ?? []).map((entry) => ({
   .text-row .ref a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
   .text-row .ref a:hover { color: var(--accent-hover); border-color: var(--accent-hover); }
   .text-row p { margin: 0; font-size: 0.95rem; line-height: 1.55; }
+  .text-row .untranslated { color: var(--muted); }
 
   @media (max-width: 700px) {
     .text-row { grid-template-columns: 1fr; gap: 0.4rem; }

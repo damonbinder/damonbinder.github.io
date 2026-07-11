@@ -1,6 +1,15 @@
 ---
 title: Boiled Chicken and Gourd with Peach Sauce
 source: Apicius 3.4.8
+originalLang: Latin
+original: >-
+  aliter cucurbitas cum gallina: duracina tubera piper careum cuminum silfi,
+  condimenta uiridia: mentam apium coriandrum puleium caroetam mel uinum
+  liquamen oleum et acetum.
+translation: >-
+  Gourds with chicken another way: [take] hard-fleshed peaches, pepper,
+  caraway, cumin, *silphium*, and green seasonings: mint, celery, coriander,
+  pennyroyal, carrot, honey, wine, fish sauce, oil, and vinegar.
 category: Poultry
 subcategory: Chicken
 order: 80

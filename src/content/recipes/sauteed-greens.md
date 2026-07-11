@@ -1,6 +1,12 @@
 ---
 title: Sauteed Greens
-source: Rapas, Apicius 3.16b
+source: Apicius 3.16b
+originalLang: Latin
+original: >-
+
+translation: >-
+  XVI. WILD HERBS. With fish sauce, oil, and vinegar, either by hand [i.e.
+  dressed raw] or in a *patina*, with pepper, cumin, and mastic berries.
 category: Vegetables
 subcategory: Unclassified
 order: 133

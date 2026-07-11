@@ -1,6 +1,16 @@
 ---
 title: Roast Lamb
 source: Apicius 8.6.4
+originalLang: Latin
+original: >-
+  hedum siue agnum assum: edi cocturam: ubi eum ex liquamine et oleo coxeris,
+  incisum infundes in pipere lasere liquamine oleo modice. et in graticula
+  assabis: eodem iure continges. piper asparges et inferes.
+translation: >-
+  Roast kid or lamb: for cooking the kid: when you have cooked it in fish
+  sauce and oil, score it and soak it in a little pepper, *laser*, fish sauce,
+  and oil. Then roast it on a gridiron; baste it with the same sauce. Sprinkle
+  on pepper and serve.
 category: Meat
 subcategory: Lamb and Goat
 order: 48

@@ -1,6 +1,13 @@
 ---
 title: Carrots
 source: Apicius 3.21.3
+originalLang: Latin
+original: >-
+  aliter caroetas: elixatas concisas in cuminato oleo modico quoques et
+  inferes; cuminatum coliculorum facies.
+translation: >-
+  Another way, carrots: cook the boiled and chopped carrots in a cumin sauce
+  with a little oil, and serve; make the cumin sauce as for cabbage shoots.
 category: Vegetables
 subcategory: Unclassified
 order: 135

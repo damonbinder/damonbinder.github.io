@@ -1,6 +1,17 @@
 ---
 title: Cold Peas
 source: Apicius 5.3.4
+originalLang: Latin
+original: >-
+  pisum: coques, agitabis et mittis in frigidam. cum refrigrauerit, deinde
+  agitabis. concidis cepam minutatim et albamentum oui, oleo et sale condies,
+  aceti modicum adicies. in boletari uitellum oui cocti colas, insuper oleum
+  uiridem mittis et inferes.
+translation: >-
+  Peas: cook them, stir, and put into cold [water]. When it has cooled, stir
+  again. Chop an onion finely, and the white of an egg, season with oil and
+  salt, add a little vinegar. In a serving-dish strain the yolk of a cooked
+  egg, pour green [fresh] oil over the top and serve.
 category: Legumes
 subcategory: Peas
 order: 139

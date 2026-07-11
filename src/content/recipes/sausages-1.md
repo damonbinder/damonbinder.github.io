@@ -1,6 +1,16 @@
 ---
 title: Sausages
 source: Apicius 2.5.2
+originalLang: Latin
+original: >-
+  aliter: coctam alicam et tritam cum pulpa concisa et trita una cum piper et
+  liquamine et nucleis. farcies intestinum et elixabis, deinde cum sale
+  assabis et cum senapi inferes, uel sic concisum in disco.
+translation: >-
+  Another way: [take] emmer groats, cooked and pounded, together with meat
+  that has been chopped and pounded, along with pepper, fish sauce, and pine
+  nuts. Stuff a gut [casing] and boil it, then roast it with salt and serve
+  with mustard; or serve it thus, sliced up on a dish.
 category: Isicia
 subcategory: Sausages
 order: 26

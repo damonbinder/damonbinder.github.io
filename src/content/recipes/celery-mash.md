@@ -1,6 +1,15 @@
 ---
 title: Celery Mash
 source: Apicius 3.15.2
+originalLang: Latin
+original: >-
+  aliter olus molle: apium quoques ex aqua nitrata, exprimes et concides
+  minutatim. in mortario teres piper ligusticum origanum cepam uinum liquamen
+  et oleum. quoques in pultario et sic apium commissces.
+translation: >-
+  Another soft vegetable dish: cook celery in nitrated water, squeeze it out,
+  and chop it small. In a mortar grind pepper, lovage, oregano, onion, wine,
+  fish sauce, and oil. Cook it in a pot and then mix in the celery.
 category: Vegetables
 subcategory: Unclassified
 order: 131

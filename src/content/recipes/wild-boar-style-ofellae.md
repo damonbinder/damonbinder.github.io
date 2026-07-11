@@ -1,6 +1,21 @@
 ---
 title: Wild-Boar Style Ofellae
 source: Apicius 7.4.3
+originalLang: Latin
+original: >-
+  ofellae aprogeneo more: ex oleo liquamine condiuntur et mittitur eis
+  condimentum cum cocte fuerint. et super adicitur his cum in foco sunt
+  conditura, et denuo bulliunt: piper tritum condimentum mel liquamen; amulum
+  cum iam bulliunt. et sine liquamine et oleo elixantur; cocuntur et sic piper
+  <inferuntur>, perfunduntur ius supra scriptum et sic bulliunt.
+translation: >-
+  *Ofellae* in the wild-boar manner: they are seasoned with oil and fish
+  sauce, and the seasoning is added to them once they are cooked. The dressing
+  is put over them while they are on the hearth, and they boil again: [with]
+  ground pepper, seasoning, honey, fish sauce; [add] starch once they are
+  boiling. Or else they are boiled without fish sauce and oil; they are cooked
+  and thus <served> with pepper, drenched with the sauce written above, and
+  boiled thus.
 category: Meat
 subcategory: Ofellae
 order: 33

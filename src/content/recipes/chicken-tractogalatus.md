@@ -1,6 +1,27 @@
 ---
 title: Chicken Tractogalatus
-source: Pullus Tractogalatus - Apicius 6.8.13
+source: Apicius 6.8.13
+originalLang: Latin
+original: >-
+  pullus tractogalatus: pullum quoques liquamine oleo uino, cui mittis
+  fasciculum coriandri, cepam. deinde cum coctus fuerit leuabis eum de iure
+  suo et mittis in caccabum nouum lac et salem modicum, mel et aquae minimum,
+  id est tertiam partem. ponis ad ignem lentum ut tepescat; tractum confringis
+  et mittis paulatim; assidue agitas ne uratur. pullum illic mittis integrum
+  uel carptum, uersabis in lance, quem perfundis ius tale: piper ligusticum
+  origanum; suffundis mel et defritum modicum et ius de suo sibi. temperas. in
+  caccabulo facies ut bulliat. cum bullierit, amulo obligas et inferes.
+translation: >-
+  Chicken *tractogalatus*: cook the chicken in fish sauce, oil, and wine, into
+  which you put a bundle of coriander and an onion. Then when it is cooked,
+  lift it out of its broth and put into a new pot milk, a little salt, honey,
+  and a very little water, that is, a third part. Set over a slow fire so it
+  warms; break up the *tracta* [pastry sheet] and add it a little at a time;
+  stir constantly so it does not scorch. Put the chicken in there, whole or in
+  pieces, turn it out onto a platter, and pour over it this sauce: pepper,
+  lovage, oregano; add honey and a little *defrutum* and its own cooking
+  juice. Blend. In a little pot bring it to a boil. When it has boiled, bind
+  with starch and serve.
 category: Poultry
 subcategory: Chicken
 order: 78

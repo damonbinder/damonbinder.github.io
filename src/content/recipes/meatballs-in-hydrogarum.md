@@ -1,6 +1,22 @@
 ---
 title: Meatballs in hydrogarum
 source: Apicius 2.2.1/2
+originalLang: Latin
+original: >-
+  esicia plena: accipies adipes fasiani recentes, preduras et facis ex eo
+  tessellas. cum pipere liquamine caroeno in esicio includes; et idrogaro
+  quoques et inferes. idrogarata esicia sic facies: teres piper ligusticum
+  piretrum minimum. suffundes liquamen, temperas aquam cisterninam. dum
+  inducet exinanies in caccabo, et cum esicia ad uaporem ignis pones et caleat
+  et sic sorbendum inferes.
+translation: >-
+  Stuffed *isicia*: take fresh pheasant fat, brown it lightly, and make little
+  cubes of it. Enclose them in the forcemeat with pepper, fish sauce, and
+  *caroenum*; cook in *hydrogarum* and serve. Make the *isicia* in
+  *hydrogarum* thus: grind pepper, lovage, and a very little pellitory.
+  Moisten with fish sauce and thin with cistern water. When it comes to a
+  boil, empty it into a pot, and put it with the *isicia* over the heat of the
+  fire; let it warm, and so serve it to be sipped.
 category: Isicia
 subcategory: Meatballs
 order: 21

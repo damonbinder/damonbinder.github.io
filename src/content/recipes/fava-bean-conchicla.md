@@ -1,6 +1,15 @@
 ---
 title: Fava Bean Conchicla
 source: Apicius 5.4.1
+originalLang: Latin
+original: >-
+  cum faba: coques. teres piper ligusticum cuminum coriandrum uiridem;
+  suffundis liquamen; uino et liquamen in ea temperabis, mittis in caccabum,
+  adicies oleum. lento igni ferueat et inferes.
+translation: >-
+  With fava beans: cook them. Grind pepper, lovage, cumin, and fresh
+  coriander; moisten with fish sauce; temper it with wine and fish sauce, put
+  it into a *caccabus*, and add oil. Let it simmer over a low fire and serve.
 category: Legumes
 subcategory: Other Legumes
 order: 152

@@ -1,6 +1,12 @@
 ---
 title: Tripe
 source: Apicius 7.1.5
+originalLang: Latin
+original: >-
+  callum, libelli, coticulæ, ungelle: cum piper liquamine lasere adponis.
+translation: >-
+  Callus, tripe pieces, trotters, and pig's knuckles: serve with pepper, fish
+  sauce, and *laser*.
 category: Meat
 subcategory: Unclassified
 order: 64

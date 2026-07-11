@@ -1,6 +1,16 @@
 ---
 title: Chicken in Sour Sauce
 source: Apicius 6.8.4
+originalLang: Latin
+original: >-
+  pullum oxizomum: olei acetabulum maiorem, <uini> satis modice, liquaminis
+  acetabulum minorem, aceti acetabulum perquam minorem, piperis scripulos sex,
+  petrosilinum scripulum, porros fasciculum.
+translation: >-
+  Chicken in sour sauce: [take] a larger measure of oil, a fairly modest
+  amount of <wine>, a smaller measure of fish sauce, a very much smaller
+  measure of vinegar, six scruples of pepper, a scruple of parsley, and a
+  bundle of leeks.
 category: Poultry
 subcategory: Chicken
 order: 73

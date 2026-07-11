@@ -1,6 +1,19 @@
 ---
 title: Boiled Chicken with Gourd
 source: Apicius 6.8.8-9
+originalLang: Latin
+original: >-
+  pullum elixum ex iure suo: teres piper cuminum timi modicum feniculi semen
+  mentam rutam laseris radicem; suffundis acetum, adicies careotam et teres.
+  melle aceto liquamine et oleo temperabis. pullum refrigeratum et mittis
+  siccatum, quem perfusum inferes. pullum elixum cum cucurbitis elixis: iure
+  supra scripto, addito sinape, perfundis et inferes.
+translation: >-
+  Boiled chicken in its own sauce: grind pepper, cumin, a little thyme, fennel
+  seed, mint, rue, root of *laser*; pour on vinegar, add date and grind. Blend
+  with honey, vinegar, fish sauce, and oil. [Add] the cooled and dried
+  chicken, which you serve doused with the sauce. Boiled chicken with boiled
+  gourds: with the sauce written above, adding mustard, douse it and serve.
 category: Poultry
 subcategory: Chicken
 order: 75

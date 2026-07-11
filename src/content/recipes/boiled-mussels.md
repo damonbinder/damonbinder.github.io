@@ -1,6 +1,16 @@
 ---
 title: Boiled Mussels
 source: Apicius 3.20.3
+originalLang: Latin
+original: >-
+  aliter sfondilos elixos: perfundes ammulato infra scripto: apii semen rutam
+  mel piper; teres; passum liquamen et oleum modice; amulo obligas; piper
+  asparges et inferes.
+translation: >-
+  Another way, boiled *sfondili* [a kind of shellfish]: pour over them the
+  starch sauce written below: celery seed, rue, honey, pepper; grind;
+  *passum*, fish sauce, and a little oil; bind with starch; sprinkle with
+  pepper and serve.
 category: Seafood
 subcategory: Unclassified
 order: 104

@@ -1,6 +1,15 @@
 ---
 title: Turnips
-source: Rapas, Apicius 3.13.1
+source: Apicius 3.13.1
+originalLang: Latin
+original: >-
+  rapas siue napos elixatos exprimes. deinde teres cuminum plurimum rutam
+  minus laser Particum mel acetum liquamen defritum et oleum modice; feruere
+  facies et inferes.
+translation: >-
+  Press out boiled turnips or navews. Then grind plenty of cumin, less rue,
+  Parthian *laser*, honey, vinegar, fish sauce, *defrutum*, and a little oil;
+  bring to a boil and serve.
 category: Vegetables
 subcategory: Unclassified
 order: 129

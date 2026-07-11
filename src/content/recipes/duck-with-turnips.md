@@ -1,6 +1,27 @@
 ---
 title: Duck with Turnips
 source: Apicius 6.2.3
+originalLang: Latin
+original: >-
+  gruem uel anatem ex rapis: lauas, ornas et in olla elixabis cum aqua sale et
+  aneto dimidia coctura. rapas quoque, ut exbromari possint, leuabis de olla
+  et iterum lauabis, et in caccabum mittis anatem cum oleo et liquamine et
+  fasciculo porri et coriandri. rapam lotam et minutatim concisam desuper
+  mittis, facies ut quoquatur. modica coctura mittis defritum ut coloret. ius
+  tale parabis: piper cuminum coriandrum laseris radicem; suffundis acetum et
+  ius de suo sibi; reexinanies super anatem ut ferueat. cum ferbuerit, amulo
+  obligabis et super rapas adicies. piper aspargis et adponis.
+translation: >-
+  Crane or duck with turnips: wash and dress it, and boil it in a pot with
+  water, salt, and dill until half cooked. Also lift the turnips out of the
+  pot so they can lose their bitterness, wash them again, and put the duck
+  into a pan with oil and fish sauce and a bundle of leek and coriander. Put
+  the washed and finely chopped turnip on top, and let it cook. When it is
+  nearly cooked, add *defrutum* to give it colour. Prepare the sauce thus:
+  pepper, cumin, coriander, root of *laser*; pour on vinegar and the juice
+  from the dish itself; empty it back over the duck so it boils. When it has
+  boiled, thicken with starch and pour it over the turnips. Sprinkle with
+  pepper and serve.
 category: Poultry
 subcategory: Duck
 order: 85

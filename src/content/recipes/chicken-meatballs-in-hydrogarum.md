@@ -1,6 +1,14 @@
 ---
 title: Chicken meatballs in hydrogarum
 source: Apicius 2.2.4
+originalLang: Latin
+original: >-
+  aliter de pullo: piperis grana XXX conteres, mittis liquaminis optimi
+  calicem, careni tantundem, aquae undecim mittes et ad uaporem ignis pones.
+translation: >-
+  Chicken another way: grind thirty peppercorns, add a cup of the best fish
+  sauce, the same amount of *caroenum*, and add eleven [cups] of water; set
+  over the steam of the fire.
 category: Isicia
 subcategory: Meatballs
 order: 23

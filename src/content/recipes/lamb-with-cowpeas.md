@@ -1,6 +1,14 @@
 ---
 title: Lamb with Cowpeas
 source: Apicius 8.6.1
+originalLang: Latin
+original: >-
+  copadia hedina siue agnina: pipere liquamine coques, cum faseolis faratariis
+  liquamine pipere lasere, cum inbracto bocellas panis et oleo modico.
+translation: >-
+  Cuts of kid or lamb: cook them with pepper and fish sauce, together with
+  cowpeas and spelt-groats [prepared] with fish sauce, pepper, and *laser*,
+  [and serve] with the broth, morsels of bread, and a little oil.
 category: Meat
 subcategory: Lamb and Goat
 order: 45

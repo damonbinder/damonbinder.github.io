@@ -1,6 +1,19 @@
 ---
 title: Chicken rissoles
 source: Apicius 2.2.9
+originalLang: Latin
+original: >-
+  amulatum aliter: ossucula de pullis exbromas, deinde mittis in caccabum
+  porros anetum salem. cum cocta fuerit, addes piper, apii semen; deinde
+  oridiam infusam teres, addes liquamen et passum uel defritum, omnia misces
+  et cum esiciis inferes.
+translation: >-
+  Another dish with starch sauce: strip the little bones from chickens, then
+  put into a pot leeks, dill, and salt. When it is cooked, add pepper and
+  celery seed; then grind soaked barley [oridiam appears to be a scribal
+  error, likely for hordeum, barley], add fish sauce and *passum* or
+  *defrutum*, mix everything together, and serve with forcemeat balls
+  (*isicia*).
 category: Isicia
 subcategory: Meatballs
 order: 24

@@ -1,6 +1,13 @@
 ---
 title: Fava Beans
 source: Apicius 5.6.3
+originalLang: Latin
+original: >-
+  aliter: fabaciae ex sinapi trito melle nucleis ruta cumino; ex aceto
+  inferuntur.
+translation: >-
+  Another way: fava beans with ground mustard, honey, pine nuts, rue, and
+  cumin; they are served up with vinegar.
 category: Legumes
 subcategory: Other Legumes
 order: 155

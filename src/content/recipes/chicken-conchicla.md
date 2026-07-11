@@ -1,6 +1,27 @@
 ---
 title: Chicken Conchicla
 source: Apicius 5.4.5
+originalLang: Latin
+original: >-
+  aliter conciclam sic facies: concidis pullum minutatim, liquamine oleo et
+  uino ferueat. concidis cepam coriandrum minutum, cerebella eneruas, mittes
+  in eundem pullum. cum coctus fuerit, leuas et exossas. concides minutatim
+  cepam et coriandrum, colas ibi pisam coctam non conditam. accipies
+  conciclarem, pro modo conponis uarie. deinde teres piper, cuminum, suffundis
+  ius de suo sibi. item in mortario oua duo dissolues; temperas, ius de suo
+  sibi suffundis. pise integre elixe uel nucleis adornabis, et lento igni
+  feruere facies et inferes.
+translation: >-
+  Another way to make *conchicla*: chop the chicken into small pieces and let
+  it boil in fish sauce, oil, and wine. Chop onion and coriander small, remove
+  the membrane from calf brains, and put them into the same chicken. When it
+  is cooked, take it out and bone it. Chop onion and coriander small, and
+  strain in there cooked peas that have not been seasoned. Take a
+  *conchicla*-dish and arrange [everything] variously to size. Then grind
+  pepper and cumin, and moisten with the dish's own juice. Likewise dissolve
+  two eggs in the mortar; temper them, and moisten with the dish's own juice.
+  Garnish with whole boiled peas or pine nuts, bring to a boil over a gentle
+  fire, and serve.
 category: Legumes
 subcategory: Conchicla
 order: 145

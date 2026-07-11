@@ -1,6 +1,13 @@
 ---
 title: Fried Veal
-source: Vitellina Fricta - Apicius 8.5.1
+source: Apicius 8.5.1
+originalLang: Latin
+original: >-
+  uitellina fricta: piper ligusticum apii semen cuminum origanum cepam siccam
+  uuam passam mel acetum uinum liquamen oleum defritum.
+translation: >-
+  Fried veal: [take] pepper, lovage, celery seed, cumin, oregano, dried onion,
+  raisins, honey, vinegar, wine, fish sauce, oil, and *defrutum*.
 category: Meat
 subcategory: Beef and Veal
 order: 55

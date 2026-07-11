@@ -1,6 +1,13 @@
 ---
 title: Mushrooms
 source: Apicius 7.13.4
+originalLang: Latin
+original: >-
+  boletos fungos: carenum, fasciculum coriandri uiridis. ubi ferbuerint,
+  exempto fasciculo inferes.
+translation: >-
+  Boletus mushrooms: *caroenum*, a bundle of fresh coriander. When they have
+  boiled, remove the bundle and serve.
 category: Vegetables
 subcategory: Unclassified
 order: 137

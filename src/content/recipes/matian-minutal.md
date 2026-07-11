@@ -1,6 +1,25 @@
 ---
 title: Matian Minutal
 source: Apicius 4.3.4
+originalLang: Latin
+original: >-
+  minutal Matianum: adicies in caccabum oleum liquamen cocturam; concides
+  porrum coriandrum, esicia minuta; spatulam porcinam coctam tessellim
+  concides cum sua sibi tergilla. facies ut simul quoquantur; media coctura
+  mala Maziana purgata intrinsecus concisa tessellatim mittes; dum coquitur
+  teres piper cuminum coriandrum uiridem uel semen mentam laseris radicem;
+  suffundis acetum mel liquamen defritum modice et ius de suo sibi; aceto
+  modico temperabis, facies ut ferueat; cum ferbuerit, tractam confringes et
+  ex ea obligas; piper aspargis et inferes.
+translation: >-
+  *Matian minutal*: put oil, fish sauce, and stock into a pot; chop leek and
+  coriander, [add] small forcemeat balls; cut a cooked shoulder of pork into
+  cubes with its own rind. Let them cook together; at mid-cooking add peeled
+  Matian apples cut into cubes on the inside. While it cooks, grind pepper,
+  cumin, green coriander or its seed, mint, and *laser* root; moisten with
+  vinegar, honey, fish sauce, a little *defrutum*, and the dish's own juice;
+  temper with a little vinegar and let it boil. When it has boiled, crumble in
+  pastry sheet and bind it with that; sprinkle with pepper and serve.
 category: Meat
 subcategory: Minutals
 order: 28

@@ -1,6 +1,14 @@
 ---
 title: Stuffed Chard
 source: Apicius 3.11.1
+originalLang: Latin
+original: >-
+  concides porrum coriandrum; cuminum uuam passam farinam et omnia in medullam
+  mittes; ligabis et <elixas>. ita inferes ex liquamine oleo et aceto.
+translation: >-
+  Chop leek and coriander; put cumin, raisins, and flour, and all of it, into
+  the pith [of the chard stalks]; tie them up and <boil>. Serve thus with fish
+  sauce, oil, and vinegar.
 category: Vegetables
 subcategory: Unclassified
 order: 127

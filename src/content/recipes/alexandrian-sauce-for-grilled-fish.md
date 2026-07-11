@@ -1,6 +1,13 @@
 ---
 title: Alexandrian Sauce for Grilled Fish
 source: Apicius 10.1.7
+originalLang: Latin
+original: >-
+  aliter ius Alexandrinum in pisce asso: piper ligusticum coriandrum uiridem,
+  uuam passam enycleatam, uinum passum liquamen oleum, et coques.
+translation: >-
+  Another way, Alexandrian sauce for grilled fish: pepper, lovage, fresh
+  coriander, seeded raisins, *passum*, fish sauce, oil, and cook it.
 category: Seafood
 subcategory: Apician Sauces for Fish
 order: 89

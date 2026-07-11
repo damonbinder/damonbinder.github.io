@@ -1,6 +1,12 @@
 ---
 title: Soft-boiled Eggs
 source: Apicius 7.18.3
+originalLang: Latin
+original: >-
+
+translation: >-
+  For soft-boiled eggs: pepper, lovage, soaked pine nuts; pour on honey and
+  vinegar, blend with fish sauce.
 category: Eggs and Patinas
 order: 7
 ---

@@ -1,6 +1,13 @@
 ---
 title: Cabbage with Onion
 source: Apicius 3.9.2
+originalLang: Latin
+original: >-
+  aliter: culiculos elixatos mediabiis; summa foliarum teres cum coriandro
+  cepa cumino piper passo uel careno et oleo modico.
+translation: >-
+  Another way: boil cabbage sprouts halfway; grind the tips of the leaves with
+  coriander, onion, cumin, pepper, *passum* or *caroenum*, and a little oil.
 category: Vegetables
 subcategory: Cabbage
 order: 119

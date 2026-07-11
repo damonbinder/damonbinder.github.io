@@ -1,6 +1,18 @@
 ---
 title: Ham Shoulder in Pastry
 source: Apicius 7.9.1
+originalLang: Latin
+original: >-
+  pernam, ubi eam cum caricis plurimis elixaueris et tribus lauri foliis,
+  detracta cute tessellatim incidis et melle conplebis. deinde farinam oleo
+  subactam contexes et ei coreum reddis ut, cum farina cocta fuerit, eximas
+  furno et ut est inferes.
+translation: >-
+  Ham: once you have boiled it with plenty of dried figs and three bay leaves,
+  strip off the skin, cut it in a diamond pattern, and fill it with honey.
+  Then make a dough kneaded with oil and wrap it around, giving it a crust, so
+  that when the pastry is cooked you take it from the oven and serve it as it
+  is.
 category: Meat
 subcategory: Salted Meat
 order: 59

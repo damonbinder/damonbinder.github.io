@@ -1,6 +1,12 @@
 ---
 title: Radishes
 source: Apicius 3.14
+originalLang: Latin
+original: >-
+  XIIII. RAFANOS. rafanos cum piperato ita ut piper cum liquamine teras.
+translation: >-
+  Radishes. Radishes with a peppered dressing, prepared by grinding pepper
+  with fish sauce.
 category: Vegetables
 subcategory: Salads
 order: 112

@@ -1,6 +1,13 @@
 ---
 title: Cold sauce for wild sheep
 source: Apicius 8.4.3
+originalLang: Latin
+original: >-
+  ius frigidum in ouifero: piper ligusticum thimum cuminum frictum nucleos
+  tostos mel acetum liquamen et oleum. piper aspergis.
+translation: >-
+  Cold sauce for wild sheep: pepper, lovage, thyme, roasted cumin, toasted
+  pine nuts, honey, vinegar, fish sauce, and oil. Sprinkle with pepper.
 category: Meat
 subcategory: Unclassified
 order: 68

@@ -1,6 +1,15 @@
 ---
 title: Pine Nut Pudding
 source: Apicius 7.11.5
+originalLang: Latin
+original: >-
+  aliter dulcia: piper nucleos mel rutam et passum teres; cum lacte et tractam
+  coques. coagulum coque cum modicis ouis. perfusum melle, <pipere> aspersum
+  inferes.
+translation: >-
+  Another sweet dish: grind pepper, pine nuts, honey, rue, and *passum*; cook
+  with milk and a sheet of pastry (*tracta*). Cook the custard with a few
+  eggs. Serve doused with honey and sprinkled with <pepper>.
 category: Dessert
 subcategory: Pudding
 order: 181

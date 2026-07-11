@@ -1,6 +1,15 @@
 ---
 title: Poached Fish
 source: Apicius 10.1.5
+originalLang: Latin
+original: >-
+  aliter ius in pisce elixo: cum curaueris piscem, adicies in sartaginem
+  <piper liquamen coriandri> semen aquam anetum uiridem et ipsum piscem. cum
+  coctus fuerit, asperges aceto et inferes.
+translation: >-
+  Another sauce for poached fish: when you have prepared the fish, put into a
+  pan <pepper, fish sauce, coriander> seed, water, green dill, and the fish
+  itself. When it is cooked, sprinkle with vinegar and serve.
 category: Seafood
 subcategory: Unclassified
 order: 99

@@ -1,6 +1,14 @@
 ---
 title: Leeks
 source: Apicius 3.10.1
+originalLang: Latin
+original: >-
+  porros maturos fieri: pugnum salis aquam et oleum mixtum facies et ibi
+  quoques et eximes. cum oleo liquamine mero et inferes.
+translation: >-
+  To prepare mature leeks: make a mixture of a fistful of salt, water, and
+  oil, cook the leeks in it, and take them out. Serve with oil, fish sauce,
+  and neat wine.
 category: Vegetables
 subcategory: Unclassified
 order: 126

@@ -1,6 +1,25 @@
 ---
 title: Salted Shoulder of Pork
 source: Apicius 7.9.3
+originalLang: Latin
+original: >-
+  petasonem ex musteis: petasonem elixas cum bilibre ordei et caricis XXV. cum
+  elixatus fuerit, decarnas et aruillam illius candenti uatillo uris et melle
+  contingis. quod melius, missum in furnum, melle oblinas. cum colorauerit,
+  mittis in caccabum passum piper fasciculum rute merum, temperas; cum fuerit
+  temperatum, dimidium in petasonem perfundis et aliam partem piperati,
+  buccellas musteorum fractas perfundis. cum sorbuerint, quod mustei
+  recusauerint petasoni refundis.
+translation: >-
+  Shoulder of pork with must-cakes: boil the shoulder with two pounds of
+  barley and twenty-five dried figs. When it is boiled, take off the skin and
+  scorch the fat with a red-hot iron shovel, and coat it with honey. Better
+  still, put into the oven and smear with honey. When it has taken color, put
+  into a *caccabum* *passum*, pepper, a bundle of rue, and unmixed wine;
+  blend. When it is blended, pour half over the shoulder, and with the other
+  part of the pepper-sauce soak broken pieces of must-cake. When they have
+  soaked it up, whatever the must-cakes have refused [not absorbed] pour back
+  over the shoulder.
 category: Meat
 subcategory: Salted Meat
 order: 60

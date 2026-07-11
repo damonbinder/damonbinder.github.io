@@ -1,6 +1,13 @@
 ---
 title: Fried Bread
 source: Apicius 7.11.3
+originalLang: Latin
+original: >-
+  aliter dulcia: siligineos rasos frangis et buccellas maiores facies, in
+  lacte infundis, frigis [et] in oleo, mel superfundis et inferes.
+translation: >-
+  Another sweet: break scraped fine-wheat rolls and make rather large pieces;
+  soak them in milk, fry them in oil, pour honey over them, and serve.
 category: Dessert
 subcategory: Pancakes and Fritters
 order: 171

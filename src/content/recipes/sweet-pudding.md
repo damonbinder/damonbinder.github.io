@@ -1,6 +1,15 @@
 ---
 title: Sweet Pudding
 source: Apicius 7.11.4
+originalLang: Latin
+original: >-
+  dulcia piperata: <teres piper,> mittis mel merum passum rutam, eo mittis
+  nucleos nuces alicam elixatam. concisas nuces auellanas tostas adicies et
+  inferes.
+translation: >-
+  Peppered sweets: <grind pepper,> add honey, neat wine, *passum*, and rue;
+  into this put pine nuts, walnuts, and boiled emmer. Add chopped toasted
+  hazelnuts and serve.
 category: Dessert
 subcategory: Pudding
 order: 180

@@ -1,6 +1,18 @@
 ---
 title: Peas with Basil
 source: Apicius 5.3.1
+originalLang: Latin
+original: >-
+  pisum: coques. cum despumauerit, porrum coriandrum et cuminum supra mittis.
+  teres piper ligusticum careum [hoc est carauitam] careum anetum ocymum
+  uiridem; suffundis liquamen, uino et liquamine temperabis, facies ut
+  ferueat. cum ferbuerit, agitabis. si quid defuerit mittis, et inferes.
+translation: >-
+  Peas: cook them. When they have frothed up, put in leek, coriander, and
+  cumin over them. Grind pepper, lovage, caraway [that is, carauita], caraway,
+  dill, and green basil; pour on fish sauce, blend with wine and fish sauce,
+  and let it boil. When it has boiled, stir. If anything is lacking, add it,
+  and serve.
 category: Legumes
 subcategory: Peas
 order: 138

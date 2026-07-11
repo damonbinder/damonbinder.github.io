@@ -1,6 +1,18 @@
 ---
 title: Patina of Sole
 source: Apicius 4.2.28
+originalLang: Latin
+original: >-
+  patina solearum: soleas battues et curatas conpones in patina; adicies oleum
+  liquamen uinum; dum quoquitur teres piper ligusticum origanum; fricabis;
+  suffundes ius, oua cruda, ut unum corpus facias; super soleas refundes,
+  lento igni quoques. cum duxerit piper aspargis et inferes.
+translation: >-
+  *Patina* of sole: beat and clean the soles and arrange them in a *patina*;
+  add oil, fish sauce, and wine. While it cooks, grind pepper, lovage, and
+  oregano; rub them together; moisten with stock and raw eggs, so that you
+  make a single mass; pour it over the soles and cook over a gentle fire. When
+  it has set, sprinkle with pepper and serve.
 category: Eggs and Patinas
 subcategory: Fish Patinas
 order: 17

@@ -1,6 +1,18 @@
 ---
 title: Boiled Pork in Cold Apician Sauce
 source: Apicius 8.7.6
+originalLang: Latin
+original: >-
+  porcellum lacte pastum elixum calidum iure frigido crudo Apiciano: adicies
+  in mortarium piper ligusticum coriandri semen mentam rutam, fricabis;
+  suffundes liquamen, adicies mel uinum et liquamine <temperabis>. porcellum
+  elixum feruentem sauano mundo siccatum perfundes et inferes.
+translation: >-
+  A suckling pig fed on milk, boiled and served hot in a cold raw Apician
+  sauce: put into a mortar pepper, lovage, coriander seed, mint, and rue, and
+  rub them; moisten with fish sauce, add honey and wine, and <temper> with
+  fish sauce. Pour it over the boiling boiled pig, dried off with a clean
+  cloth, and serve.
 category: Meat
 subcategory: Pork
 order: 36

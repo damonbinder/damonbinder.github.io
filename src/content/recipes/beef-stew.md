@@ -1,6 +1,13 @@
 ---
 title: Beef Stew
 source: Apicius 8.5.2
+originalLang: Latin
+original: >-
+  uitulinam siue bubulam cum porris <uel> cidoneis uel cepis uel colocaseis:
+  liquamen piper laser et olei modicum.
+translation: >-
+  Veal or beef with leeks <or> quinces or onions or taro: fish sauce, pepper,
+  *laser*, and a little oil.
 category: Meat
 subcategory: Beef and Veal
 order: 56

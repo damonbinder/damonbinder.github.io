@@ -1,6 +1,13 @@
 ---
 title: Patina of Lettuce
 source: Apicius 4.2.3
+originalLang: Latin
+original: >-
+  aliter patina: tyrsum lactuce teres cum pipere liquamine careno aquam oleo;
+  quoques; ouis obligabis; piper asparges et inferes.
+translation: >-
+  Another *patina*: grind lettuce stalk with pepper, fish sauce, *caroenum*,
+  water, and oil; cook it; bind it with eggs; sprinkle with pepper and serve.
 category: Eggs and Patinas
 subcategory: Vegetable Patinas
 order: 10

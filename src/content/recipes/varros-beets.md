@@ -1,6 +1,17 @@
 ---
 title: Varro’s Beets
-source: Rapas, Apicius 3.2.3
+source: Apicius 3.2.3
+originalLang: Latin
+original: >-
+  aliter betacios Varrones: Varro: betacios sed nigros quorum detegsas radices
+  et mulsu decoctas cum sale modico et oleo, uel sale aqua et oleo in se
+  coctas; iusculum facere et potari; melius etiam si in eo pullus sit
+  decoctus.
+translation: >-
+  Another way, Varro's beets: Varro says: take beets, but the dark ones, whose
+  roots you strip bare and cook down in honeyed wine with a little salt and
+  oil, or cook in their own juices with salt, water, and oil; make a broth of
+  it and drink it; better still if a chicken has been cooked in it.
 category: Vegetables
 subcategory: Unclassified
 order: 124

@@ -1,6 +1,18 @@
 ---
 title: Sweet Nut Patina
 source: Apicius 4.2.2/4.2.16
+originalLang: Latin
+original: >-
+  aliter patina uersatilis: nucleos nuces fractas; torres eas et teres cum
+  melle pipere liquamine lacte et obis; olei modicum. patina uersatilis uice
+  dulci: nucleos pineos nuces fractas et purgatas attorrebis. eas teres cum
+  melle pipere liquamine lacte ouis modico mero et oleo.
+translation: >-
+  A *patina* to be turned out, another way: [take] pine nuts and broken
+  walnuts; roast them and grind them with honey, pepper, fish sauce, milk, and
+  eggs; a little oil. A *patina* to be turned out, serving as a sweet dish:
+  roast pine nuts and shelled, broken walnuts. Grind them with honey, pepper,
+  fish sauce, milk, eggs, a little unmixed wine, and oil.
 category: Dessert
 subcategory: Sweet Patinas
 order: 175

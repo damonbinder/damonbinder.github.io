@@ -1,6 +1,18 @@
 ---
 title: Commodian Conchicla
 source: Apicius 5.4.4
+originalLang: Latin
+original: >-
+  concicla Commodiana: pisam quoques. cum dispumauerit, teres piper ligusticum
+  anetum cepam siccam; suffundis liquamen; uino et liquamine temperabis.
+  mittis in caccabum ut cumbibat. deinde oua IIII solues, in sextarium pise
+  mittis, agitas, mittis in cumana, ad ignem ponis ut ducat, et inferes.
+translation: >-
+  Commodian *conchicla*: cook the peas. When they have been skimmed, grind
+  pepper, lovage, dill, and dried onion; pour on fish sauce; blend with wine
+  and fish sauce. Put into a pot so that it soaks it up. Then beat four eggs,
+  add them to a *sextarius* of peas, stir, put into a Cuman dish, set over the
+  fire so that it sets, and serve.
 category: Legumes
 subcategory: Conchicla
 order: 144

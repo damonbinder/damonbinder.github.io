@@ -1,6 +1,21 @@
 ---
 title: Duck in Prune Sauce
 source: Apicius 6.2.2
+originalLang: Latin
+original: >-
+  in grue in anate uel in pullo: piper cepam siccam ligusticum cuminum apii
+  semen pruna uel damascena enucleata mustum acetum liquamen defritum oleum et
+  coques. gruem cum coquis, caput eius aquam non contingat, sed sit foris ab
+  aqua. cum cocta fuerit, de sauano calido inuolues gruem et caput eius trahe
+  cum neruis: sequetur ut pulpe uel ossa remaneant; cum neruis enim manducare
+  non potest.
+translation: >-
+  For crane, duck, or chicken: pepper, dried onion, lovage, cumin, celery
+  seed, pitted plums or damsons, must, vinegar, fish sauce, *defrutum*, oil —
+  and cook. When you cook the crane, keep its head from touching the water;
+  let it be outside the water. When it is cooked, wrap the crane in a warm
+  cloth and pull its head off along with the sinews: the result is that the
+  flesh and bones remain, since with the sinews [in it] it cannot be eaten.
 category: Poultry
 subcategory: Duck
 order: 84

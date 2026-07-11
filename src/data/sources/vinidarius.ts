@@ -38,7 +38,7 @@ export const vinidariusText: VinidariusEntry[] = [
   {
     ref: 'Vinidarius 4',
     latin: 'ofellas assas: exbromabis diligenter et in sartagine mittis. friges inogaru, postea simul cum ipsu inogaru inferes et piper aspargis.',
-    english: "Roasted *ofellae*: blanch them thoroughly [*exbromabis* is uncertain — possibly related to Greek *embrochē*, \"soak/steep\"; this is a plausible guess, not a settled reading] and put them in a frying pan. Fry them in *oenogarum*, then serve them together with that same *oenogarum* and sprinkle with pepper.",
+    english: "Roasted *ofellae*: blanch [?] them thoroughly and put them in a frying pan. Fry them in *oenogarum*, then serve them together with that same *oenogarum* and sprinkle with pepper.",
   },
   {
     ref: 'Vinidarius 5',
@@ -73,7 +73,7 @@ export const vinidariusText: VinidariusEntry[] = [
   {
     ref: 'Vinidarius 11',
     latin: 'pisces inotocano: friges pisces; teres piper ligisticum rutam condimenta uiridia cepa sicca. adicies oleo <uinum> liquamen et inferes.',
-    english: 'Fish *inotocano* [the name is obscure — likely a corrupted Greek "wine-" title, given the wine in the ingredients]: fry the fish; grind pepper, lovage, rue, fresh herbs, and dried onion. Add oil, wine, and fish sauce, and serve.',
+    english: 'Fish in a wine pan sauce: fry the fish; grind pepper, lovage, rue, fresh herbs, and dried onion. Add oil, wine, and fish sauce, and serve.',
   },
   {
     ref: 'Vinidarius 12',
@@ -83,7 +83,7 @@ export const vinidariusText: VinidariusEntry[] = [
   {
     ref: 'Vinidarius 13',
     latin: 'pisces inotogono: a crudo pisces quos uolueris labas, conponis in patinam; mittis oleum liquamen uinum fasciculos porri et coriandri; coquitur. teres piper origanu ligisticum et fasciculos quos elixasti teres et suffundes inpesa de patina. facis ut obliget. cum bene tenuerit, piper asparso inferebis.',
-    english: 'Fish *inotogono* [the name is obscure — likely the same corrupted Greek "wine-" title as *inotocano* above]: wash whichever raw fish you like and lay them in a dish; add oil, fish sauce, wine, and bundles of leek and coriander; let it cook. Grind pepper, oregano, and lovage, along with the bundles you boiled, and moisten with some of the sauce mixture from the dish. Let it thicken. Once it has set well, sprinkle with pepper and serve.',
+    english: 'Fish in a wine pan sauce: wash whichever raw fish you like and lay them in a dish; add oil, fish sauce, wine, and bundles of leek and coriander; let it cook. Grind pepper, oregano, and lovage, along with the bundles you boiled, and moisten with some of the sauce mixture from the dish. Let it thicken. Once it has set well, sprinkle with pepper and serve.',
   },
   {
     ref: 'Vinidarius 14',

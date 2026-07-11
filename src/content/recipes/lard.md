@@ -1,6 +1,13 @@
 ---
 title: Lard
 source: Apicius 7.9.4
+originalLang: Latin
+original: >-
+  laridi coctura: tectum aqua cum multo aneto coques, oleum modicum
+  distillabis et modicum salis.
+translation: >-
+  Cooking of lard: covered with water, cook it with plenty of dill, drip in a
+  little oil and a little salt.
 category: Meat
 subcategory: Salted Meat
 order: 61

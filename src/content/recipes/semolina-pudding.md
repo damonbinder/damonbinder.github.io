@@ -1,6 +1,18 @@
 ---
 title: Semolina Pudding
-source: Apotermum sic facies - Apicius 2.2.10
+source: Apicius 2.2.10
+originalLang: Latin
+original: >-
+  apotermum sic facies: alicam elixa cum nucleis et amindalis depilatis et in
+  aqua infusis et lotis ex creta argentaria ut ad candorem pariter
+  perducantur; cui iam miscebis uuam passam carenum uel passum; desuper
+  <piper> confractum asparges et in uolitari inferes.
+translation: >-
+  *Apothermum* you make thus: boil emmer groats with pine nuts and almonds
+  that have been skinned and soaked in water, then washed with silversmith's
+  chalk so that they are brought together to a white color. To this you will
+  now mix raisins and *caroenum* or *passum*; sprinkle crushed <pepper> over
+  the top and serve in a shallow bowl.
 category: Dessert
 subcategory: Pudding
 order: 179

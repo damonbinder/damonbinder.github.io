@@ -1,6 +1,19 @@
 ---
 title: Rose-coloured Minutal
 source: Apicius 4.3.7–8
+originalLang: Latin
+original: >-
+
+translation: >-
+  *Minutal* of hare's liver and lungs: you will find, among the hare recipes,
+  how to make it. <Another way, a sweet *minutal*>: put into a pot fish sauce,
+  wine, oil, cooking stock, chopped leek and coriander. Add small forcemeat
+  balls (*isicia*) and a cooked pork shoulder cut into small cubes, and drop
+  them into the same pot. While it cooks, grind pepper, lovage, oregano; blend
+  the sauce with its own wine and *passum*. Bring it to the boil; when it has
+  boiled, crumble in a sheet of pastry (*tracta*) and thicken it with that;
+  sprinkle with pepper and serve. *Minutal* of roses: use the same sauce as
+  written above, but add more *passum*.
 category: Meat
 subcategory: Minutals
 order: 30

@@ -1,6 +1,18 @@
 ---
 title: Parthian Chicken
 source: Apicius 6.8.3
+originalLang: Latin
+original: >-
+  pullum Particum: pullum aperies a naui et in quadrato ornas. teres piper
+  ligusticum carei modicum, suffunde liquamen, uino temperas. componis in
+  cumana pullum et condituram super pullum facies. laser uiuum in tepida
+  dissoluis, et in pullum mittis simul et quoques, piper aspersum inferes.
+translation: >-
+  Parthian chicken: open the chicken from the back and lay it out flat in a
+  square. Grind pepper, lovage, a little caraway, pour on fish sauce, blend
+  with wine. Arrange the chicken in a Cuman dish and put the seasoning over
+  the chicken. Dissolve fresh *laser* in warm water and add it to the chicken,
+  and cook it; serve sprinkled with pepper.
 category: Poultry
 subcategory: Chicken
 order: 72

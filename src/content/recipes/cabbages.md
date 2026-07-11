@@ -1,6 +1,13 @@
 ---
 title: Cabbages
 source: Apicius 3.9.1a
+originalLang: Latin
+original: >-
+  si uoles, addes piper et ligusticum mentam rutam coriandrum folia coliclorum
+  liquamen uinum oleum.
+translation: >-
+  If you like, add pepper and lovage, mint, rue, coriander, cabbage leaves,
+  fish sauce, wine, and oil.
 category: Vegetables
 subcategory: Cabbage
 order: 118

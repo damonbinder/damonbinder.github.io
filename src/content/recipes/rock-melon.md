@@ -1,6 +1,13 @@
 ---
 title: Rock Melon
 source: Apicius 3.7
+originalLang: Latin
+original: >-
+  VII. PEPONES ET MELONES. piper puleium mel uel passum liquamen acetum.
+  interdum et silfi accedit.
+translation: >-
+  VII. PUMPKINS AND MELONS. [Take] pepper, pennyroyal, honey or *passum*, fish
+  sauce, vinegar. Sometimes *silphium* is also added.
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 117

@@ -1,6 +1,17 @@
 ---
 title: Frontonian Chicken
 source: Apicius 6.8.12
+originalLang: Latin
+original: >-
+  pullum Frontonianum: pullum praedura, condies liquamine oleo mixto, cui
+  mittis fasciculum aneti porri satureiae et coriandri uiridis, et quoques. u
+  coctus fuerit leuabis eum, in lance defrito perungues, piper aspargis et
+  inferes.
+translation: >-
+  Frontonian chicken: brown the chicken, season it with fish sauce mixed with
+  oil, to which you add a bundle of dill, leek, savory, and fresh coriander,
+  and cook it. When it is cooked, lift it out, coat it in *defrutum* on a
+  platter, sprinkle with pepper, and serve.
 category: Poultry
 subcategory: Chicken
 order: 77

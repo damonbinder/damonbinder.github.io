@@ -1,6 +1,15 @@
 ---
 title: Lamb Stew
 source: Apicius 8.6.2
+originalLang: Latin
+original: >-
+  aliter hedinam siue agninam excaldatam: mittes in caccabum copadia. cepam
+  coriandrum minutum succides; teres piper ligusticum cuminum liquamen oleum
+  uinum. coques; exinanies in patina; amulo obligas.
+translation: >-
+  Another way, stewed kid or lamb: put pieces [of meat] into a *caccabus*. Cut
+  up onion and finely chopped coriander; grind pepper, lovage, cumin, fish
+  sauce, oil, and wine. Cook it; turn it out into a dish; thicken with starch.
 category: Meat
 subcategory: Lamb and Goat
 order: 46

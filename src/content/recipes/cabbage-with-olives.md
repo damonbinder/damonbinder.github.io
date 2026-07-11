@@ -1,6 +1,13 @@
 ---
 title: Cabbage with Olives
 source: Apicius 3.9.5
+originalLang: Latin
+original: >-
+  aliter: cauliculos condies ut supra admisces olibas uirides et simul
+  ferueant.
+translation: >-
+  Another way: dress cabbage shoots as above, mix in green olives, and let
+  them boil together.
 category: Vegetables
 subcategory: Cabbage
 order: 121

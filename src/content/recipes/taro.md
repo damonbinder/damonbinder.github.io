@@ -1,6 +1,13 @@
 ---
 title: Taro
 source: Apicius 7.15
+originalLang: Latin
+original: >-
+  XV. IN COLOCASIO. in colocasio: piper cuminum rutam mel liquamen, olei
+  modicum. cum ferbuerit, amulo obligas.
+translation: >-
+  For taro: pepper, cumin, rue, honey, fish sauce, a little oil. When it has
+  boiled, bind with starch.
 category: Vegetables
 subcategory: Unclassified
 order: 136

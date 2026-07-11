@@ -1,6 +1,21 @@
 ---
 title: Flaccian Piglet
 source: Apicius 8.7.8
+originalLang: Latin
+original: >-
+  porcellum Flacianum: porcellum ornas in modum apri, sale asperges et in
+  furnum mittes. dum coquitur adicies in mortarium piper ligusticum careum
+  apii semen laseris radicem rutam uiridem, fricabis; suffundes liquamen, uino
+  et passo temperabis, in caccabum; cum olei modicum ferueat; amulo obligas.
+  porcellum coctum ab ossibus tanges, apii semen teres ita ut fiat puluis,
+  asperges et inferes.
+translation: >-
+  Flaccian piglet: dress the piglet in the manner of a wild boar, sprinkle
+  with salt, and put it in the oven. While it cooks, put into a mortar pepper,
+  lovage, caraway, celery seed, root of *laser*, fresh rue, and grind; moisten
+  with fish sauce, temper with wine and raisin wine, and put into a pot; let
+  it boil with a little oil; bind with starch. Anoint the cooked piglet down
+  to the bones, grind celery seed to a powder, sprinkle it on, and serve.
 category: Meat
 subcategory: Pork
 order: 37

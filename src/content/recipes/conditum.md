@@ -1,6 +1,6 @@
 ---
 title: Conditum
-source: Konditon, Orisbasius 5.33i
+source: Oribasius 5.33i
 category: Beverages
 order: 185
 ---

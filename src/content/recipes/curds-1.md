@@ -1,6 +1,11 @@
 ---
 title: Curds
 source: Apicius 7.11.9b
+originalLang: Latin
+original: >-
+
+translation: >-
+  Curds: with pepper and fish sauce, or salt, oil, and coriander.
 category: Dips and Relishes
 order: 6
 ---

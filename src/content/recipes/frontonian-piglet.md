@@ -1,6 +1,23 @@
 ---
 title: Frontonian Piglet
 source: Apicius 8.7.11
+originalLang: Latin
+original: >-
+  porcellum oenococtum: porcellum preduras, ornas. adicies in caccabum oleum
+  liquamen uinum aquam; obligas fasciculum porri coriandri; media coctura
+  colorabis defrito. adicies in mortarium piper ligusticum careum origanum
+  apii semen laseris radicem, fricabis; suffundes liquamen, ius de suo sibi;
+  uino et passo temperabis. exinanies in caccabum, facies ut ferueat; cum
+  ferbuerit amulo obligas. porcellum compositum in patina perfundes, piper
+  asparges et inferes.
+translation: >-
+  Piglet cooked in wine: sear the piglet and dress it. Put into a pot oil,
+  fish sauce, wine, and water; tie up a bundle of leek and coriander; halfway
+  through cooking, color it with *defrutum*. Put into a mortar pepper, lovage,
+  caraway, oregano, celery seed, and root of *laser*; blend; pour on fish
+  sauce and its own cooking juice; season with wine and *passum*. Empty into
+  the pot, bring to a boil; when it has boiled, bind with starch. Arrange the
+  piglet in a *patina*, pour over it, sprinkle with pepper and serve.
 category: Meat
 subcategory: Pork
 order: 38

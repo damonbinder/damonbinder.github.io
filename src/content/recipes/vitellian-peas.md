@@ -1,6 +1,20 @@
 ---
 title: Vitellian Peas
 source: Apicius 5.3.5
+originalLang: Latin
+original: >-
+  pisam Vitellianam siue fabam: pisam coques, lias. teres piper ligusticum
+  gengiber, et super condimenta mittis uitella ouorum quę dura coxeris; mellis
+  uncias III, teres, liquamen uinum et acetum. haec omnia mittis in caccabum
+  et condimenta quae triuisti. adiecto oleo ponis ut ferueat. condies pisam,
+  lias; si aspera fuerit melle mittis et inferes.
+translation: >-
+  Vitellian peas or beans: cook the peas and mash them smooth. Grind pepper,
+  lovage, and ginger, and over the seasonings put the yolks of eggs you have
+  hard-boiled; three ounces of honey, and grind; fish sauce, wine, and
+  vinegar. Put all this into a pot along with the seasonings you have ground.
+  With oil added, set it to boil. Season the peas, mash them smooth; if it
+  comes out sharp, add honey, and serve.
 category: Legumes
 subcategory: Peas
 order: 140

@@ -1,6 +1,15 @@
 ---
 title: Prawn rissoles with sauce for after bathing
 source: Apicius 2.1.3 and 2.2.7
+originalLang: Latin
+original: >-
+  esicia de iscillis uel de cammaris amplis: cammari uel iscille de testa sua
+  eximuntur et in mortario teruntur cum pipere et liquamine optimo. pulpe
+  esicia plassantur.
+translation: >-
+  *Isicia* of prawns or of large crayfish: the crayfish or prawns are taken
+  out of their shells and pounded in a mortar with pepper and the best fish
+  sauce. Rissoles (*isicia*) are shaped from the flesh.
 category: Isicia
 subcategory: Meatballs
 order: 22

@@ -1,6 +1,17 @@
 ---
 title: Roast Lamb with Date Sauce
 source: Apicius 8.6.7
+originalLang: Latin
+original: >-
+  aliter hedus siue agnus syringiatus: lactis sextarium unum, mellis uncias
+  IIII, piperis unciam I, salis modicum laseris modicum. ius [in] ipsius:
+  oleum acetabulum liquaminis acetabulum mellis acetabulum dactilos tritos
+  octo, uini boni eminam, amulum modice.
+translation: >-
+  Another way, kid or lamb *syringiatus* [injected/piped with the stuffing]:
+  one *sextarius* of milk, four ounces of honey, one ounce of pepper, a little
+  salt, a little *laser*. Its own sauce: a cup of oil, a cup of fish sauce, a
+  cup of honey, eight ground dates, a *hemina* of good wine, a little starch.
 category: Meat
 subcategory: Lamb and Goat
 order: 49

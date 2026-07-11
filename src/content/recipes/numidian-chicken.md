@@ -1,6 +1,18 @@
 ---
 title: Numidian Chicken
 source: Apicius 6.8.5
+originalLang: Latin
+original: >-
+  pullum Numidicum: pullum curas, elixas, leuas, laser ac piper <aspergis> et
+  assas. teres piper cuminum coriandri semen laseris radicem rutam careotam
+  nucleos; suffundis acetum mel liquamen et oleum; temperabis. cum ferbuerit,
+  amulo obligas, pullum perfundis, piper aspergis et inferes.
+translation: >-
+  Numidian chicken: clean the chicken, boil it, take it out, <sprinkle> with
+  *laser* and pepper, and roast it. Grind pepper, cumin, coriander seed,
+  *laser* root, rue, date, and pine nuts; pour on vinegar, honey, fish sauce,
+  and oil; blend together. When it has boiled, thicken with starch, pour it
+  over the chicken, sprinkle with pepper and serve.
 category: Poultry
 subcategory: Chicken
 order: 74

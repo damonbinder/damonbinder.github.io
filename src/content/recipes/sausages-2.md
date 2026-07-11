@@ -1,6 +1,20 @@
 ---
 title: Sausages
 source: Apicius 2.5.3
+originalLang: Latin
+original: >-
+  aliter: alicam purgas et cum liquamine intestini et albamine porri concisi
+  minutatim simul elixas. elixa tolles, pinguedinem concides, et copadia pulpe
+  in se omnia conmisces. teres piper ligusticum oua tria; haec omnia in
+  mortario permisces cum nucleis et piper integro. liquamen suffundes,
+  intestina imples, elixas et subassas, uel elixa tantum appones.
+translation: >-
+  Another way: clean the emmer grits and boil them together with fish sauce,
+  intestine, and finely chopped white of leek. Take the boiled mixture, chop
+  the fat, and mix in all the pieces of meat. Grind pepper, lovage, and three
+  eggs; mix all this in a mortar with pine nuts and whole pepper. Pour in fish
+  sauce, fill the intestines, boil them and lightly roast them, or simply
+  serve them boiled.
 category: Isicia
 subcategory: Sausages
 order: 27

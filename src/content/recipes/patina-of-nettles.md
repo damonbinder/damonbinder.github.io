@@ -1,6 +1,23 @@
 ---
 title: Patina of Nettles
 source: Apicius 4.2.36
+originalLang: Latin
+original: >-
+  patina urticarum calida et frigida: urticam accipies, lauas, colas per
+  colum, exsiccabis in tabula; eam concides. teres piperis scripulos X,
+  suffundes liquamen, fricabis. postea adicies liquaminis ciatos duos, olei
+  uncias VI. caccabus ferueat; cum ferbuerit coctam tolles ut refrigescat;
+  postea patinam mundam perungues, franges oua octo et agitabis. perfundes,
+  subtus supra cinerem calidam habeat. coctam piper minutum asparges et
+  inferes.
+translation: >-
+  *Patina* of nettles, hot and cold: take nettles, wash them, strain through a
+  colander, dry them on a board; chop them. Grind 10 *scripula* of pepper,
+  moisten with fish sauce, and work it. Then add 2 *cyathi* of fish sauce and
+  6 ounces of oil. Let the pot boil; when it has boiled, take the cooked
+  nettles off to cool; then grease a clean dish, break in eight eggs and stir.
+  Pour it over, with hot ash below and above. When cooked, sprinkle with fine
+  pepper and serve.
 category: Eggs and Patinas
 subcategory: Vegetable Patinas
 order: 12

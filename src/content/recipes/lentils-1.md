@@ -1,6 +1,20 @@
 ---
 title: Lentils
 source: Apicius 5.2.3
+originalLang: Latin
+original: >-
+  aliter lenticulam: coquis. cum despumauerit, porrum et coriandrum uiridem
+  supermittis. <teres> coriandri semen puleium laseris radicem, mentam et rute
+  semen, suffundis acetum, adicies melle, liquamine, uino, defrito temperabis,
+  adicies oleum, agitabis. si quid opus fuerit, mittis. amulo obligas. insuper
+  oleum uiridem mittis, piper aspargis et inferes.
+translation: >-
+  Another way with lentils: cook them. When they have thrown off their scum,
+  add leek and fresh coriander over them. <Grind> coriander seed, pennyroyal,
+  root of *laser*, mint, and rue seed; moisten with vinegar; add honey; temper
+  with fish sauce, wine, and *defrutum*; add oil and stir. If anything more is
+  needed, add it. Thicken with starch. Pour fresh oil over the top, sprinkle
+  on pepper, and serve.
 category: Legumes
 subcategory: Lentils
 order: 146

@@ -1,6 +1,16 @@
 ---
 title: Pork Ribs
 source: Apicius 7.4.4
+originalLang: Latin
+original: >-
+  aliter ofelle: recte friguntur ut pene ossa rodantur. liquaminis summi
+  ciatum, aquae ciatum, aceti ciatum, olei ciatum. simul mixtis et inmissis in
+  patellam fictilem frigis et inferes.
+translation: >-
+  *Ofellae* [meat pieces], another way: they are properly fried until the
+  bones are nearly gnawed clean. A *cyathus* of best fish sauce, a *cyathus*
+  of water, a *cyathus* of vinegar, a *cyathus* of oil. Mix them together, put
+  them into an earthenware pan, fry, and serve.
 category: Meat
 subcategory: Ofellae
 order: 34

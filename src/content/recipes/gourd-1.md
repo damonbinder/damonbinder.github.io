@@ -1,6 +1,19 @@
 ---
 title: Gourd
 source: Apicius 3.4.2
+originalLang: Latin
+original: >-
+  aliter cucurbitas iure colocesiorum: cucurbitas quoques ex aqua in modum
+  colocasiorum; teres piper cuminum rutam; suffundes acetum, liquamen
+  temperabis in caccabum cui adicies <oleum modicum> et eas cucurbitas incisas
+  expressas; in ius mittes ut ferueant; amulo obligas; piper asparges et
+  inferes.
+translation: >-
+  Gourds another way, in the manner of taro: cook the gourds in water as you
+  would taro; grind pepper, cumin, and rue; pour on vinegar, and blend in fish
+  sauce in a *caccabum* to which you add <a little oil> and the gourds, cut up
+  and pressed dry; put them into the sauce and let them boil; thicken with
+  starch; sprinkle with pepper and serve.
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 114

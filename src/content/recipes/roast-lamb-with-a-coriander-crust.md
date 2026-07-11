@@ -1,6 +1,14 @@
 ---
 title: Roast Lamb with a Coriander Crust
 source: Apicius 8.6.8
+originalLang: Latin
+original: >-
+  hedus siue agnus crudus: oleo piper fricabis et asparges fores salem purum
+  multo cum coriandri semen, in furnum mittis, assatum inferes.
+translation: >-
+  Kid or lamb, uncooked: rub with oil and pepper, and sprinkle the outside
+  with pure salt together with plenty of coriander seed; put into the oven,
+  and serve roasted.
 category: Meat
 subcategory: Lamb and Goat
 order: 50

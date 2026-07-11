@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { render } from 'astro:content';
-import { getRecipes, catSlug, workOf, citationNumber, periodOf, showingDrafts } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, workOf, citationNumber, getSourceEntry, showingDrafts } from '../../../lib/recipes.ts';
 
 export async function getStaticPaths() {
   const recipes = await getRecipes();
@@ -38,7 +38,7 @@ const { Content } = await render(recipe);
 
 const work = workOf(d);
 const workHref = `/recipes/${catSlug(work)}/`;
-const period = periodOf(work);
+const period = (await getSourceEntry(work))?.data.period;
 const langCode = { Latin: 'la', Greek: 'grc', Sanskrit: 'sa' }[d.originalLang ?? ''] ?? undefined;
 
 // Foreign untranslated terms are italicised with *asterisks* in the source text

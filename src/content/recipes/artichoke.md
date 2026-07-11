@@ -1,6 +1,11 @@
 ---
 title: Artichoke
 source: Apicius 3.19.3
+originalLang: Latin
+original: >-
+  aliter carduos elixos: piper cuminum liquamen et oleum.
+translation: >-
+  Another way with boiled cardoons: pepper, cumin, fish sauce, and oil.
 category: Vegetables
 subcategory: Unclassified
 order: 134

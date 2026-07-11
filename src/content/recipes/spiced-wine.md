@@ -1,6 +1,34 @@
 ---
 title: Spiced Wine
-source: Conditum Paradoxum - Apicius 1.1
+source: Apicius 1.1
+originalLang: Latin
+original: >-
+  I. CONDITVM PARADOXVM. conditi paradoxi conpositio: mellis pondo XV in eneum
+  uas mittuntur, praemissis uini sextariis duobus, ut in cocturam mellis uinum
+  dequoquas. quod igni lento et aridis lignis calefactum, commotum ferola dum
+  quoquitur. si efferuere coeperit, uini rore conpescitur, praeter quod
+  subtracto igni in se redit. cum perfrixerit rursus accenditur. hoc secundo
+  ac tertio fiet, ac tum demum remotum a foco postridie despumatur, tum
+  <mittes> piperis uncias quattuor iam triti, masticis scripulos III, folii et
+  croci dragme singulae. dactilorum ossibus torridis quinque, isdemque
+  dactilis uino mollitis, intercedente prius suffusionem uini de suo modo ac
+  numero, ut tritura lenis habeatur. his omnibus paratis supermittis uini
+  lenis sextaria XVIII; carbones perfecto aderunt duo milia.
+translation: >-
+  Spiced wine, the surprising kind. Recipe for the surprising spiced wine
+  (*conditum paradoxum*): 15 pounds of honey are put into a bronze vessel,
+  having first added 2 *sextarii* of wine, so that you boil down the wine
+  while the honey cooks. Heat it over a slow fire of dry wood, stirring with a
+  stick while it cooks. If it begins to boil over, it is checked with a splash
+  of wine, and besides, once the fire is drawn back it settles of itself. When
+  it has cooled it is heated again. Do this a second and a third time, and
+  only then take it off the hearth; the next day skim off the froth. Then
+  <add> 4 ounces of pepper already ground, 3 *scripula* of mastic, one dram
+  each of *folium* [malabathrum leaf] and saffron, five toasted date-stones,
+  and the same dates softened in wine — first pouring wine over them in the
+  right amount and number so that a smooth paste is obtained. When all this is
+  prepared, pour over 18 *sextarii* of mild wine. If it turns out bitter, two
+  thousand coals will set it right [text uncertain].
 category: Beverages
 order: 184
 ---

@@ -1,6 +1,14 @@
 ---
 title: Mushroom Patina
 source: Apicius 7.13.6
+originalLang: Latin
+original: >-
+  boletos aliter: tirsos eorum concisos in patellam, ouam perfundis addito
+  pipere ligustico modico melle; liquamine temperabis. oleum modice.
+translation: >-
+  Mushrooms another way: chop their stalks into a pan, pour eggs over them
+  with a little pepper and lovage and honey added; blend with fish sauce. A
+  little oil.
 category: Eggs and Patinas
 subcategory: Vegetable Patinas
 order: 15

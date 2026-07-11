@@ -1,6 +1,14 @@
 ---
 title: Hipotrimma
 source: Apicius 1.33
+originalLang: Latin
+original: >-
+  XXXIII. YPOTRIMA: piper ligusticum mentam aridam nucleos pineos uuam passam
+  cariotam caseum dulcem mel acetum liquamen oleum uinum defritum aut
+  caroenum.
+translation: >-
+  *Hypotrimma*: pepper, lovage, dried mint, pine nuts, raisins, date, sweet
+  cheese, honey, vinegar, fish sauce, oil, wine, *defrutum* or *caroenum*.
 category: Dips and Relishes
 order: 1
 ---

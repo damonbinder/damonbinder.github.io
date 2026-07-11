@@ -1,6 +1,20 @@
 ---
 title: Herb Sauce for Fried Fish
 source: Apicius 10.1.1
+originalLang: Latin
+original: >-
+  ius diabotanon in pisce frixo: piscem quemlibet curas, lauas, friges. teres
+  piper cuminum coriandri semen laseris radicem origanum rutam, fricabis;
+  suffundes acetum, adicies careotam mel defritum oleum, liquamen temperabis;
+  refundes in caccabum, facies ut ferueat; cum ferbuerit, piscem frictum
+  perfundes, piper asperges et inferes.
+translation: >-
+  *Ius diabotanon* [herb sauce] on fried fish: prepare, wash, and fry any fish
+  you like. Grind pepper, cumin, coriander seed, root of *laser*, oregano, and
+  rue, and rub them; moisten with vinegar, add date, honey, *defrutum*, and
+  oil, and temper with fish sauce; pour it back into a *caccabus* and bring it
+  to a boil; when it has boiled, pour it over the fried fish, sprinkle on
+  pepper, and serve.
 category: Seafood
 subcategory: Apician Sauces for Fish
 order: 87

@@ -1,6 +1,13 @@
 ---
 title: Endives or Lettuce
 source: Apicius 3.18.1a
+originalLang: Latin
+original: >-
+
+translation: >-
+  Dress endives with fish sauce and a little oil, and finish with chopped
+  onion. In winter, in place of lettuces, dress endive with a sauce
+  (*embamma*), or with honey and sharp vinegar.
 category: Vegetables
 subcategory: Salads
 order: 107

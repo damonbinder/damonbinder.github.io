@@ -1,6 +1,6 @@
 ---
 title: Carthaginian porridge
-source: Puls punica, Cato 85
+source: Cato 85
 category: Grains
 subcategory: Wheat porridge
 order: 162

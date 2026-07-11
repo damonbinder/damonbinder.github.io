@@ -1,6 +1,17 @@
 ---
 title: Whitebait Patina
-source: Patina de apua fricta, Apicius 4.2.20
+source: Apicius 4.2.20
+originalLang: Latin
+original: >-
+  patina de apua fricata: apua lauas oua confringes et cum apua commisces.
+  adicies liquamen uinum oleum, facies ut ferueat, et cum ferbuerit, mittes
+  apuam. cum duxerit subtiliter uersas. facies ut coloet, oenogarum simplex
+  perfundes, piper asparges et inferes.
+translation: >-
+  A *patina* of pounded anchovy: wash the anchovy, break eggs and mix them
+  with the anchovy. Add fish sauce, wine, oil, bring it to a boil, and when it
+  has boiled, add the anchovy. When it has set, turn it out carefully. Let it
+  brown, pour over plain *oenogarum*, sprinkle with pepper and serve.
 category: Eggs and Patinas
 subcategory: Fish Patinas
 order: 16

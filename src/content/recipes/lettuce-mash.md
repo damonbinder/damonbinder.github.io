@@ -1,6 +1,15 @@
 ---
 title: Lettuce Mash
-source: Holus molle ex foliis lactucarum, Apicius 3.15.3
+source: Apicius 3.15.3
+originalLang: Latin
+original: >-
+  aliter holus molle ex foliis lactucarum: cum cepis quoques ex aqua nitrata;
+  expressum concides minutatim; in mortario teres piper ligusticum apii semen
+  mentam siccam cepam liquamen oleum et uinum.
+translation: >-
+  Another way, a soft dish from lettuce leaves: cook them with onions in soda
+  water [nitre water]; squeeze them out and chop finely; in a mortar grind
+  pepper, lovage, celery seed, dried mint, onion, fish sauce, oil, and wine.
 category: Vegetables
 subcategory: Unclassified
 order: 132

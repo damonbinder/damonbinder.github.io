@@ -1,6 +1,19 @@
 ---
 title: Oxyporium
 source: Apicius 1.32 and 3.18.2
+originalLang: Latin
+original: >-
+  XXXII. OXYPORIVM: cumini uncias II; zingiberis unciam I; rutae uiridis
+  unciam I; nitri iscripulos VI; dactilorum pinguium iscripulos XII; piperis
+  unciam I; mellis uncias VIIII; cuminum uel Ethiopicum aut Siriacum aut
+  Libicum aceto infundes, sicca, et sic tundes. postea melle conprehendis. cum
+  necesse fuerit oxygaro uteris.
+translation: >-
+  *Oxyporium*: two ounces of cumin; one ounce of ginger; one ounce of green
+  rue; six *scripuli* of natron; twelve *scripuli* of plump dates; one ounce
+  of pepper; nine ounces of honey. Soak the cumin — whether Ethiopian, Syrian,
+  or Libyan — in vinegar, dry it, and pound it thus. Afterwards bind it with
+  the honey. When needed, use it with *oxygarum* [vinegar-and-fish-sauce].
 category: Vegetables
 subcategory: Salads
 order: 108

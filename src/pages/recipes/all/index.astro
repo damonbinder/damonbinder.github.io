@@ -1,0 +1,250 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getRecipes, catSlug, workOf, getWorkToEra, showingDrafts } from '../../../lib/recipes.ts';
+import { getCollection } from 'astro:content';
+
+const recipes = await getRecipes();
+const workToEra = await getWorkToEra();
+const eraOrder = new Map(
+  (await getCollection('eras')).map((e) => [e.data.name, e.data.order]),
+);
+
+// A recipe's "category" is the chapter it came from. Legacy values are folded
+// into the canonical set: Isicia (Roman forcemeats/sausages) lives under Meat,
+// and "Eggs and Patinas" is shown simply as Eggs. The placeholder value equal
+// to the work name (e.g. "Mānasollāsa" on Indian recipes) isn't a real chapter
+// — treat it as unset until those chapters are backfilled.
+const CATEGORY_ORDER = [
+  'Meat', 'Poultry', 'Seafood', 'Eggs', 'Vegetables',
+  'Legumes', 'Grains', 'Dips and relishes', 'Dessert', 'Beverages',
+];
+const CATEGORY_MAP: Record<string, string> = {
+  Isicia: 'Meat',
+  'Eggs and Patinas': 'Eggs',
+  'Dips and Relishes': 'Dips and relishes',
+};
+const realCategory = (d: { category?: string; work?: string; source?: string }) => {
+  const c = d.category;
+  if (!c || c === workOf(d)) return null;
+  return CATEGORY_MAP[c] ?? c;
+};
+
+const cards = recipes.map((r) => ({
+  id: r.id,
+  work: workOf(r.data),
+  title: r.data.title,
+  source: r.data.source ?? '',
+  era: workToEra.get(workOf(r.data)) ?? null,
+  category: realCategory(r.data),
+  language: r.data.originalLang ?? null,
+  status: r.data.status,
+}));
+
+// Facet option lists. Traditions in era order; categories and languages in
+// their fixed order (filtered to those present), with unlisted values appended.
+const LANGUAGE_ORDER = ['Latin', 'Greek', 'Sanskrit'];
+const ordered = (order: string[], present: Set<string>) => [
+  ...order.filter((v) => present.has(v)),
+  ...[...present].filter((v) => !order.includes(v)),
+];
+const traditions = [...new Set(cards.map((c) => c.era).filter(Boolean))]
+  .sort((a, b) => (eraOrder.get(a!) ?? 99) - (eraOrder.get(b!) ?? 99)) as string[];
+const categories = ordered(CATEGORY_ORDER, new Set(cards.map((c) => c.category).filter(Boolean) as string[]));
+const languages = ordered(LANGUAGE_ORDER, new Set(cards.map((c) => c.language).filter(Boolean) as string[]));
+
+const total = recipes.length;
+const published = recipes.filter((r) => r.data.status === 'published').length;
+---
+<Base title="All recipes" description="Every historical recipe I've cooked, filterable by tradition, category, and language.">
+  <div class="recipes-all">
+    <p class="crumb"><a href="/recipes/">Recipes</a> › All</p>
+    <h1>All recipes</h1>
+    <p class="lead">Every recipe I've cooked, in one list.</p>
+
+    {showingDrafts && (
+      <p class="dev-note">
+        Working view — showing all {total} recipes ({published} published, {total - published} draft).
+        The public site shows only published ones.
+      </p>
+    )}
+
+    <div class="filter-group">
+      <span class="filter-label">Tradition</span>
+      <div class="pill-row" id="pills-tradition">
+        <button type="button" class="pill" data-tradition="all" aria-pressed="true">All</button>
+        {traditions.map((t) => (
+          <button type="button" class="pill" data-tradition={t} aria-pressed="false">{t}</button>
+        ))}
+      </div>
+    </div>
+
+    {categories.length > 0 && (
+      <div class="filter-group">
+        <span class="filter-label">Category</span>
+        <div class="pill-row" id="pills-category">
+          <button type="button" class="pill" data-category="all" aria-pressed="true">All</button>
+          {categories.map((c) => (
+            <button type="button" class="pill" data-category={c} aria-pressed="false">{c}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {languages.length > 0 && (
+      <div class="filter-group">
+        <span class="filter-label">Language</span>
+        <div class="pill-row" id="pills-language">
+          <button type="button" class="pill" data-language="all" aria-pressed="true">All</button>
+          {languages.map((l) => (
+            <button type="button" class="pill" data-language={l} aria-pressed="false">{l}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <ul class="recipe-grid" id="recipe-grid">
+      {cards.map((c) => (
+        <li
+          class="recipe-card"
+          data-tradition={c.era ?? '__none'}
+          data-category={c.category ?? '__none'}
+          data-language={c.language ?? '__none'}
+        >
+          <a href={`/recipes/${catSlug(c.work)}/${c.id}/`}>
+            <h3 set:html={c.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}></h3>
+            <p class="cite">{c.source}</p>
+            <div class="chips">
+              {c.era && <span class="chip">{c.era}</span>}
+              {c.category && <span class="chip">{c.category}</span>}
+              {c.language && <span class="chip">{c.language}</span>}
+              {showingDrafts && c.status === 'draft' && <span class="chip draft">Draft</span>}
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-family: var(--font-sans); font-size: 0.85rem; margin: 0 0 0.6rem; }
+  .recipes-all .lead {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0 0 1.2rem;
+  }
+  .dev-note {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    background: var(--tag-bg);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    margin: 0 0 1.4rem;
+  }
+
+  .filter-group { margin: 0 0 0.9rem; }
+  .filter-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    display: block;
+    margin: 0 0 0.4rem;
+  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .pill {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--fg);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.28rem 0.75rem;
+    cursor: pointer;
+  }
+  .pill[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .pill:not([aria-pressed="true"]):hover { border-color: var(--accent); color: var(--accent); }
+
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 0.9rem;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .recipe-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  .recipe-card a {
+    display: block;
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .recipe-card h3 {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+  }
+  .recipe-card a:hover h3 { color: var(--accent); }
+  .recipe-card .cite {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .recipe-card .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .chip {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: var(--tag-bg);
+    border-radius: 999px;
+    padding: 0.08rem 0.5rem;
+  }
+  .chip.draft { color: #8a5a00; background: #fbf0d8; border: 1px solid #e8d29a; }
+
+  .recipe-card[data-hidden="true"] { display: none; }
+</style>
+
+<script>
+  let activeTradition = 'all';
+  let activeCategory = 'all';
+  let activeLanguage = 'all';
+
+  function applyFilters() {
+    document.querySelectorAll<HTMLElement>('.recipe-card').forEach((card) => {
+      const matchesTradition = activeTradition === 'all' || card.dataset.tradition === activeTradition;
+      const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const matchesLanguage = activeLanguage === 'all' || card.dataset.language === activeLanguage;
+      card.dataset.hidden = String(!(matchesTradition && matchesCategory && matchesLanguage));
+    });
+  }
+
+  function wire(groupId: string, dataKey: string, set: (v: string) => void) {
+    document.getElementById(groupId)?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.pill');
+      if (!btn) return;
+      document.querySelectorAll(`#${groupId} .pill`).forEach((p) => p.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      set(btn.dataset[dataKey]!);
+      applyFilters();
+    });
+  }
+
+  wire('pills-tradition', 'tradition', (v) => (activeTradition = v));
+  wire('pills-category', 'category', (v) => (activeCategory = v));
+  wire('pills-language', 'language', (v) => (activeLanguage = v));
+</script>

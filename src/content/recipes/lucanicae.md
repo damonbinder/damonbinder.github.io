@@ -1,6 +1,21 @@
 ---
 title: Lucanicae
 source: Apicius 2.4
+originalLang: Latin
+original: >-
+  IV. LVCANICAE. lucanicas similiter ut supra scriptum est. [lucanicarum
+  confectio]: teritur piper cuminum satureja ruta petrosilenu condimentum
+  bacae lauri liquamen et admiscetur pulpa bene tunsa ita ut denuo bene cum
+  ipso subtrito fricetur; cum liquamine admixto pipere integro et abundanti
+  pinguedine et nucleis inicies in intestinum perquam tenuatim productum et
+  sic ad fumum suspenditur.
+translation: >-
+  *Lucanicae* (Lucanian sausages): make the Lucanian sausages as described
+  above. [Making the sausages]: grind pepper, cumin, savory, rue, parsley,
+  spice mixture, and bay berries; add fish sauce and mix in well-pounded meat,
+  working it again thoroughly with the ground mixture. Then, with fish sauce
+  mixed in along with whole peppercorns, plenty of fat, and pine nuts, stuff
+  it into an intestine drawn out very thinly, and hang it up in the smoke.
 category: Isicia
 subcategory: Sausages
 order: 25

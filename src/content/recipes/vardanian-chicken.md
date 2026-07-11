@@ -1,6 +1,22 @@
 ---
 title: Vardanian Chicken
 source: Apicius 6.8.11
+originalLang: Latin
+original: >-
+  pullus Vardanus: pullum quoques iure hoc: liquamine oleo uino fasciculum
+  porri coriandri satureiae; cum coctus fuerit teres piper; nucleos ciatos
+  duos et ius de suo sibi subfundis et fasciculos proicies. lac temperas et
+  reexinanies [in] mortarium supra pullum, ut ferueat. obligas eundem
+  aluamentis ouorum tritis, ponis in lance et iure supra scripto perfundis.
+  hoc ius candidum appellatur.
+translation: >-
+  Vardanian chicken: cook the chicken in this sauce — fish sauce, oil, wine,
+  and a bundle of leek, coriander, and savory. When it is cooked, grind
+  pepper; add two ladles of pine nuts and the dish's own juice, and throw out
+  the bundles. Blend in milk and empty it back into the mortar over the
+  chicken, and let it boil. Bind it with ground egg whites, place it on a
+  platter, and pour over the sauce described above. This is called white
+  sauce.
 category: Poultry
 subcategory: Chicken
 order: 76

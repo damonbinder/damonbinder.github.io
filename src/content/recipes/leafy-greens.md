@@ -1,6 +1,12 @@
 ---
 title: Leafy greens
 source: Apicius 3.16a
+originalLang: Latin
+original: >-
+
+translation: >-
+  *Herbae rusticae* (wild greens): with fish sauce, oil, and vinegar, whether
+  raw by hand or in a dish, [dress with] pepper, cumin, and mastic berries.
 category: Vegetables
 subcategory: Salads
 order: 106

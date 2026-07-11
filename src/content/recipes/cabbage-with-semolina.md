@@ -1,6 +1,13 @@
 ---
 title: Cabbage with Semolina
 source: Apicius 3.9.6
+originalLang: Latin
+original: >-
+  aliter: culiculis conditis ut supra; superfundes alicam elixam cum nucleis
+  et uua passa super asparges.
+translation: >-
+  Another way: with cabbage shoots dressed as above; pour over boiled *alica*
+  [emmer groats/semolina] with pine nuts and sprinkle raisins on top.
 category: Vegetables
 subcategory: Cabbage
 order: 122

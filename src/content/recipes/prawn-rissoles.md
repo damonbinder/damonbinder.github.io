@@ -1,6 +1,14 @@
 ---
 title: Prawn rissoles
 source: Apicius 2.1.1
+originalLang: Latin
+original: >-
+  isicia fiunt marina de cammaris et astacis de lolligine de sepia de lucusta.
+  esicium condies pipere ligustico cumino laseris radice.
+translation: >-
+  Seafood *isicia* [forcemeats] are made from prawns and lobsters, from squid,
+  from cuttlefish, from spiny lobster. Season the forcemeat with pepper,
+  lovage, cumin, and root of *laser*.
 category: Isicia
 subcategory: Meatballs
 order: 20

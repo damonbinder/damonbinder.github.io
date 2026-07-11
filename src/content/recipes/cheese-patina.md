@@ -1,6 +1,18 @@
 ---
 title: Cheese Patina
 source: Tiropatinam — Apicius 7.11.7
+originalLang: Latin
+original: >-
+  tiropatina: accipies lac, aduersus quod patinam estimabis, temperabis lac
+  cum melle quasi ad lactantia, oua quinque ad sextarium mittis, si ad eminam,
+  oua tria. in lacte dissoluis ita ut unum corpus facias, in cumana colas et
+  igni lento coques. cum duxerit ad se, piper adspargis et inferes.
+translation: >-
+  *Tiropatina* [cheese custard]: take milk, judging the amount against the
+  dish; temper the milk with honey as for milk puddings, and add five eggs per
+  *sextarius*, or, if to a *hemina*, three eggs. Dissolve them in the milk so
+  that you make a single body, strain it into a Cuman [earthenware] dish, and
+  cook over a slow fire. When it has set, sprinkle with pepper and serve.
 category: Dessert
 subcategory: Sweet Patinas
 order: 176

@@ -1,6 +1,14 @@
 ---
 title: Fried Chickpeas
 source: Apicius 5.8.2a
+originalLang: Latin
+original: >-
+
+translation: >-
+  Beans or chickpeas another way: fried, you will taste them with *oenogarum*
+  and pepper. And when boiled, once the seed is taken up, [they are served]
+  with eggs in a pan, with green fennel, pepper, fish sauce, and a little
+  *caroenum* in place of the salted [seasoning]; or simply, as is customary.
 category: Legumes
 subcategory: Other Legumes
 order: 157

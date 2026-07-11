@@ -1,6 +1,16 @@
 ---
 title: Tuna Salad
 source: Apicius 9.10.2
+originalLang: Latin
+original: >-
+  sarda ita fit: coquitur sarda et exossatur. teritur pipere ligustico timo
+  origano ruta careota melle, et in uasculo ouis incisis. ornatur inpensa:
+  uinum modice acetum defritum et oleum uiridem.
+translation: >-
+  Tuna is made thus: the tuna is cooked and boned. It is ground with pepper,
+  lovage, thyme, oregano, rue, date, and honey, and [served] in a small vessel
+  with chopped eggs. It is garnished with a dressing: a little wine, vinegar,
+  *defrutum*, and green [fresh] oil.
 category: Seafood
 subcategory: Unclassified
 order: 98

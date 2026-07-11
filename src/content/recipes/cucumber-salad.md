@@ -1,6 +1,13 @@
 ---
 title: Cucumber Salad
 source: Apicius 3.6.3
+originalLang: Latin
+original: >-
+  aliter cucumeres: piper puleium mel uel passum liquamen et acetum. interdum
+  et silfi accedit.
+translation: >-
+  Another way with cucumbers: pepper, pennyroyal, honey or *passum*, fish
+  sauce, and vinegar. Sometimes *silphium* is added too.
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 116

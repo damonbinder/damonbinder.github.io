@@ -1,6 +1,13 @@
 ---
 title: Peas
 source: Apicius 5.3.7
+originalLang: Latin
+original: >-
+  aliter pisam siue fabam: despumatam subtrito lasare Partico liquamen et
+  careno condies. oleum modice superfundis et inferes.
+translation: >-
+  Peas or beans, another way: skim them, then season with ground Parthian
+  *laser*, fish sauce, and *caroenum*. Pour a little oil over and serve.
 category: Legumes
 subcategory: Peas
 order: 142

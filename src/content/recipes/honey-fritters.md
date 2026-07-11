@@ -1,6 +1,18 @@
 ---
 title: Honey Fritters
-source: Dulcia - Apicius 7.11.6
+source: Apicius 7.11.6
+originalLang: Latin
+original: >-
+  aliter dulcia: accipies similam, coques in aquam calidam ita ut durissimam
+  pultem facias, deinde in patellam expandis. cum refrixerit, concidis quasi
+  dulcia et frigis in oleo optimo. leuas, perfundis mel, piper aspargis et
+  inferes. melius feceris, si lac pro aquam miseris.
+translation: >-
+  Sweets, another way: take fine flour, cook it in hot water so that you make
+  a very stiff porridge, then spread it out on a plate. When it has cooled,
+  cut it up like sweets and fry in the best oil. Lift them out, pour honey
+  over, sprinkle with pepper, and serve. You will do better if you use milk
+  instead of water.
 category: Dessert
 subcategory: Pancakes and Fritters
 order: 172

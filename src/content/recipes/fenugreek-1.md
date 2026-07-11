@@ -1,6 +1,11 @@
 ---
 title: Fenugreek
 source: Apicius 5.7, see also Galen
+originalLang: Latin
+original: >-
+  VII. FENUM GRECUM. fenum Grecum ex liquamine oleo et uino.
+translation: >-
+  Fenugreek. Fenugreek with fish sauce, oil, and wine.
 category: Legumes
 subcategory: Other Legumes
 order: 156

@@ -1,6 +1,14 @@
 ---
 title: Sauce for Fish
 source: Apicius 10.2.4 and 10.3.1
+originalLang: Latin
+original: >-
+  aliter ius in morena elixa: piper ligusticum anetum apii semen rus Syriacum
+  careotam mel acetum liquamen oleum sinape defritum.
+translation: >-
+  Another sauce for boiled moray eel: [take] pepper, lovage, dill, celery
+  seed, Syrian sumac, date, honey, vinegar, fish sauce, oil, mustard, and
+  *defrutum*.
 category: Seafood
 subcategory: Apician Sauces for Fish
 order: 90

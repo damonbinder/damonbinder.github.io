@@ -10,7 +10,6 @@ const writing = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string().optional(),
-    tags: z.array(z.string()).default([]),
     external: z.string().url().optional(),
     source: z.string().optional(),
     draft: z.boolean().default(false),
@@ -27,7 +26,6 @@ const links = defineCollection({
     excerpt: z.string().optional(),
     external: z.string().url(),
     source: z.string(),
-    tags: z.array(z.string()).default([]),
   }),
 });
 
@@ -61,4 +59,27 @@ const recipes = defineCollection({
   }),
 });
 
-export const collections = { writing, links, recipes };
+// One file per recipe source (cookbook/author) — the intro blurb shown on
+// its /recipes/[source]/ page, plus a rough date. Only sources with
+// something to say need an entry; pages without one just skip the blurb.
+const sources = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/sources' }),
+  schema: z.object({
+    name: z.string(),        // display name, matches `work` on recipes, e.g. "Vinidarius"
+    period: z.string().optional(),  // rough date, e.g. "c. 500"
+  }),
+});
+
+// One file per historical era/region (e.g. "Ancient Mediterranean"), shown
+// as an expandable section on the /recipes/ hub page — a blurb plus the
+// sources grouped under it. `sources` lists work names in display order.
+const eras = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/eras' }),
+  schema: z.object({
+    name: z.string(),
+    order: z.number().default(0),
+    sources: z.array(z.string()),
+  }),
+});
+
+export const collections = { writing, links, recipes, sources, eras };

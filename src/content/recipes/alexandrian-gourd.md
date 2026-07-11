@@ -1,6 +1,20 @@
 ---
 title: Alexandrian Gourd
 source: Apicius 3.4.3
+originalLang: Latin
+original: >-
+  cucurbitas more Alexandrino: elixatas cucurbitas exprimis; sale asparges; in
+  patina conpones. teres piper cuminum coriandri semen mentam uiridem lasaris
+  radicem; suffundes acetum; adicies cariotam nucleum, teres; melle acetum
+  liquamine defrito et oleum temperabis et cucurbitas perfundes. cum
+  ferbuerint piper asparges et inferes.
+translation: >-
+  Gourds in the Alexandrian manner: boil the gourds and press them out;
+  sprinkle with salt; arrange them in a *patina*. Grind pepper, cumin,
+  coriander seed, green mint, and *laser* root; moisten with vinegar; add date
+  and pine nuts, and grind. Blend with honey, vinegar, fish sauce, *defrutum*,
+  and oil, and pour over the gourds. When they have boiled, sprinkle with
+  pepper and serve.
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 115

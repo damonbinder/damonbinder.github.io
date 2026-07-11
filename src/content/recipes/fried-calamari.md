@@ -1,6 +1,13 @@
 ---
 title: Fried calamari
 source: Apicius 9.3.1
+originalLang: Latin
+original: >-
+  in lolligine in patina: teres piper rutam mel modicum liquamen carenum, olei
+  guttas.
+translation: >-
+  Squid in a *patina*: grind pepper, rue, a little honey, fish sauce,
+  *caroenum*, and drops of oil.
 category: Seafood
 subcategory: Unclassified
 order: 101

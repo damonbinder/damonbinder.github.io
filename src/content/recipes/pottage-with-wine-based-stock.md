@@ -1,6 +1,15 @@
 ---
 title: Pottage with Wine-based Stock
 source: Apicius 5.1.2
+originalLang: Latin
+original: >-
+  pultes cum iure oenocoti: pultes oenococti iure condies; copadia similam
+  siue alicam coctam hoc iure condies, et cum copadiis porcinis adponis
+  oenocoti iure conditis.
+translation: >-
+  Pottage with *oenococtum* [wine-based] stock: season the pottage with the
+  *oenococtum* stock; season slices of fine wheat or cooked emmer with this
+  stock, and serve with pieces of pork seasoned with the *oenococtum* stock.
 category: Grains
 subcategory: Wheat porridge
 order: 164

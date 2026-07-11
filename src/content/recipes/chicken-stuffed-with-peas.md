@@ -1,6 +1,26 @@
 ---
 title: Chicken stuffed with peas
 source: Apicius 5.4.6
+originalLang: Latin
+original: >-
+  aliter concicla: conciclatus pullus uel porcellus: exossas pullum a pectore,
+  femora eius iungis in porrectum, surculo alligas, et inpensam [concicla
+  farsilis] paras, et farcies alternis pisam lotam, cerebella, lucanicas et
+  cetera. teres piper ligusticum origanum et gengiber; liquamen suffundis;
+  passo et uino temperabis, facies ut ferueat, et cum ferbuerit, mittis
+  modice; et inpensam cum condieris, alternis in pullo conponis, omento tegis
+  et in operculo deponis et in furnum mittis ut coquantur paulatim, et
+  inferes.
+translation: >-
+  Another *concicla*: chicken or suckling pig with peas: bone the chicken from
+  the breast, join its thighs stretched out straight, tie them with a skewer,
+  and prepare the stuffing [a *concicla* stuffing], and stuff it in alternate
+  layers with washed peas, brains, sausages (*lucanicae*), and the rest. Grind
+  pepper, lovage, oregano, and ginger; pour in fish sauce; blend with *passum*
+  and wine, bring it to the boil, and when it has boiled, add it a little at a
+  time; and once you have seasoned the stuffing, arrange it in layers in the
+  chicken, cover it with caul fat, set it in a covered dish, and put it in the
+  oven so that it cooks gradually, and serve.
 category: Poultry
 subcategory: Chicken
 order: 81

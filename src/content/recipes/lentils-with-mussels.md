@@ -1,6 +1,20 @@
 ---
 title: Lentils with mussels
 source: Apicius 5.2.3
+originalLang: Latin
+original: >-
+  aliter lenticulam: coquis. cum despumauerit, porrum et coriandrum uiridem
+  supermittis. <teres> coriandri semen puleium laseris radicem, mentam et rute
+  semen, suffundis acetum, adicies melle, liquamine, uino, defrito temperabis,
+  adicies oleum, agitabis. si quid opus fuerit, mittis. amulo obligas. insuper
+  oleum uiridem mittis, piper aspargis et inferes.
+translation: >-
+  Another way with lentils: cook them. When they have thrown off their scum,
+  add leek and green coriander on top. <Grind> coriander seed, pennyroyal,
+  *laser* root, mint, and rue seed, moisten with vinegar, add honey, and
+  temper with fish sauce, wine, and *defrutum*; add oil and stir. Add more if
+  needed. Bind with starch. Pour fresh green oil over the top, sprinkle with
+  pepper, and serve.
 category: Legumes
 subcategory: Lentils
 order: 147

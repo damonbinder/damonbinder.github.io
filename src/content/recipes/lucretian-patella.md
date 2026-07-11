@@ -1,6 +1,20 @@
 ---
 title: Lucretian Patella
 source: Apicius 4.2.25
+originalLang: Latin
+original: >-
+  patellam Lucretianam: cepas pallachanas purgas; uiridia earum proicies; in
+  patinam concides; liquaminis modicum oleum et aquam. dum quoquitur salsum
+  crudum in medium ponis; at ubi cum salso prope cocta fuerit melle coclearae
+  asparges, aceti et defreti pusillum; gustas; si fatuum fuerit liquamen
+  adicies; si salsum, mellis modicum, et coronam bubulam aspergis et bulliat.
+translation: >-
+  A Lucretian *patella*: clean spring onions; discard their green parts; cut
+  them into a dish; [add] a little fish sauce, oil, and water. While it cooks,
+  place raw salt fish in the middle; and when it is nearly cooked along with
+  the salt fish, sprinkle on honey by the spoonful, and a little vinegar and
+  *defrutum*; taste it; if it is bland, add fish sauce; if it is salty, a
+  little honey; then sprinkle on ox-eye herb and let it boil.
 category: Seafood
 subcategory: Unclassified
 order: 97

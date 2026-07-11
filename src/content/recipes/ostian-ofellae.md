@@ -1,6 +1,25 @@
 ---
 title: Ostian Ofellae
 source: Apicius 7.4.1
+originalLang: Latin
+original: >-
+  ofellas Ostienses [in ofillam]: designas ofellas in cute, ita ut cutis sic
+  remaneat. teres piper ligusticum anetum cuminum silflum bacam lauri unam;
+  suffundis liquamen, fricas; in angularem refundis simul cum obellis. ubi
+  requieuerint in condimentis biduo uel triduo, ponis, surclas decussatim, et
+  in furnum mittis. cum coxeris, ofellas quas designaueras separabis, et teres
+  piper ligusticum, suffundis liquamen et passum modicum ut dulce fiat. cum
+  ferbuerit, ius amulo obligas, ofellas satias et inferes.
+translation: >-
+  Ostian *ofellae*: score the *ofellae* through the skin so that the skin
+  stays on. Grind pepper, lovage, dill, cumin, *silphium*, and one bay berry;
+  moisten with fish sauce and rub it in; put it into a square dish together
+  with the *ofellae*. When they have rested in the seasonings two or three
+  days, set them out, skewer them crosswise, and put them in the oven. When
+  you have cooked them, separate the *ofellae* you had scored, and grind
+  pepper and lovage; moisten with fish sauce and a little *passum* so that it
+  turns sweet. When it has boiled, bind the sauce with starch, coat the
+  *ofellae*, and serve.
 category: Meat
 subcategory: Ofellae
 order: 31

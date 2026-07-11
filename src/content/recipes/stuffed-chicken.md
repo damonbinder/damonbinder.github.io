@@ -1,6 +1,22 @@
 ---
 title: Stuffed Chicken
 source: Apicius 6.8.14
+originalLang: Latin
+original: >-
+  pullus farsilis: pullum sicut in iure cuminato. a ceruice expedies. teres
+  piper ligusticum gengiber pulpam cesam aliquam elixam, teres cerebellum ex
+  iure coctum. oua confringis et commiscis ut unum corpus efficias. liquamine
+  temperas et oleum modice; mittis piper integrum, nucleos abundantes. fac
+  inpensam et imples pullum uel porcellum ita ut laxamentum habeat. similiter
+  in capo facies. ossibus eiectis coques.
+translation: >-
+  Stuffed chicken: [prepare] the chicken as for cumin sauce. Bone it from the
+  neck. Grind pepper, lovage, ginger, chopped meat, some boiled emmer, and
+  grind brain cooked in stock. Break in eggs and mix so that you make a single
+  mass. Temper with fish sauce and a little oil; add whole peppercorns and
+  plenty of pine nuts. Make the stuffing and fill the chicken or suckling pig
+  so that there is room to spare. You may do the same with a capon. Cook it
+  with the bones removed.
 category: Poultry
 subcategory: Chicken
 order: 79

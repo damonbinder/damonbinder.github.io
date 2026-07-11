@@ -1,6 +1,15 @@
 ---
 title: Parthian Lamb
 source: Apicius 8.6.10
+originalLang: Latin
+original: >-
+  hedum siue agnum Particum: mittes in furnum; teres piper rutam cepam
+  satureiam damascena enucleata laseris modicum uinum liquamen et oleum
+  [uinum]. feruens colluitur in disco, ex aceto sumitur.
+translation: >-
+  Parthian kid or lamb: put it in the oven; grind pepper, rue, onion, savory,
+  stoned Damascene plums, a little *laser*, wine, fish sauce, and oil. While
+  hot it is basted in the dish, and served with vinegar.
 category: Meat
 subcategory: Lamb and Goat
 order: 52

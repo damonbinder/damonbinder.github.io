@@ -1,6 +1,15 @@
 ---
 title: White Sauce for Boiled Meat
 source: Apicius 7.6.4
+originalLang: Latin
+original: >-
+  ius candidum in elixam: piper liquamen uinum rutam cepam nucleos conditum,
+  modicum de buccellis maceratis unde stringat, oleum. cum coxerit, ius
+  perfundis.
+translation: >-
+  White sauce for boiled meat: pepper, fish sauce, wine, rue, onion, pine
+  nuts, *conditum* [spiced wine], a little soaked bread to thicken it, and
+  oil. When it has cooked, pour the sauce over.
 category: Meat
 subcategory: Unclassified
 order: 63

@@ -1,6 +1,12 @@
 ---
 title: Boiled Chard
-source: Rapas, Apicius 3.11.2
+source: Apicius 3.11.2
+originalLang: Latin
+original: >-
+  aliter betas elixas: ex sinapi oleo modico et aceto bene inferuntur.
+translation: >-
+  Boiled beets [chard], another way: they are served up well with mustard, a
+  little oil, and vinegar.
 category: Vegetables
 subcategory: Unclassified
 order: 128

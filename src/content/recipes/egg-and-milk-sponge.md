@@ -1,6 +1,19 @@
 ---
 title: Egg and Milk Sponge
-source: Oua sfongia ex lacte — Apicius 7.11.8
+source: Apicius 7.11.8
+originalLang: Latin
+original: >-
+  oua sfongia ex lacte: oua quattuor, lactis eminam, olei unciam in se
+  dissoluis, ita ut unum corpus facias. in patellam subtilem adicies olei
+  modicum; facies ut bulliat, et adicies inpensam quam comparasti. una parte
+  cum fuerit coctum, in disco uertes, melle perfundis, piper adspargis et
+  inferes.
+translation: >-
+  Egg sponge with milk: dissolve together four eggs, a *hemina* of milk, and
+  an ounce of oil, so that you make a single mass. Put a little oil into a
+  fine pan; bring it to a boil, and add the mixture you have prepared. When it
+  is cooked on one side, turn it out onto a plate, pour honey over it,
+  sprinkle on pepper, and serve.
 category: Dessert
 subcategory: Sweet Patinas
 order: 177

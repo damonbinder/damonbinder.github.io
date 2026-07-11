@@ -35,37 +35,90 @@ const WORKS = [
 ];
 
 // The source work a recipe belongs to (explicit `work`, else derived from the
-// citation string). Used for the "by source" browse.
+// citation string). Used for the "by source" browse. When a citation names
+// more than one work (e.g. "Archestratus 14, preserved in Athenaeus 325f"),
+// the one mentioned first wins — that's the actual attributed source, not
+// just whichever happens to be first in the WORKS list above.
 export function workOf(d: { work?: string; source?: string }): string {
   if (d.work) return d.work;
   const s = d.source ?? '';
-  for (const w of WORKS) if (s.includes(w)) return w;
-  return 'Other';
+  let best: { w: string; idx: number } | null = null;
+  for (const w of WORKS) {
+    const idx = s.indexOf(w);
+    if (idx !== -1 && (best === null || idx < best.idx)) best = { w, idx };
+  }
+  return best ? best.w : 'Other';
 }
 
-// Rough date for each source work, shown alongside the citation. Only the
-// sources we've actually published recipes from need an entry.
-const PERIODS: Record<string, string> = {
-  Vinidarius: 'c. 500',
-};
-export const periodOf = (work: string): string | undefined => PERIODS[work];
+// Recipe counts per work, respecting showingDrafts (so the hub page can show
+// "coming soon" for sources with drafts but nothing published yet, without
+// pretending they don't exist).
+export async function getWorkCounts(): Promise<Map<string, number>> {
+  const recipes = await getRecipes();
+  const counts = new Map<string, number>();
+  for (const r of recipes) {
+    const w = workOf(r.data);
+    counts.set(w, (counts.get(w) ?? 0) + 1);
+  }
+  return counts;
+}
 
-// Short blurb on what the source is, shown on its page. Left empty until
-// written — no placeholder text; the page just skips the block until then.
-// TEMP: Vinidarius is filled with lorem ipsum so we can eyeball the two-column
-// layout — swap for the real blurb (or delete the entry) before this goes live.
-const BLURBS: Record<string, string> = {
-  Vinidarius: `
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat.</p>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  `,
-};
-export const blurbOf = (work: string): string | undefined => BLURBS[work];
+// Total counts per work regardless of draft status — used only for "N
+// drafted, not yet published" context on sources with no published recipes
+// yet, not for deciding what's visible.
+export async function getWorkTotalCounts(): Promise<Map<string, number>> {
+  const all = await getCollection('recipes');
+  const counts = new Map<string, number>();
+  for (const r of all) {
+    const w = workOf(r.data);
+    counts.set(w, (counts.get(w) ?? 0) + 1);
+  }
+  return counts;
+}
+
+// Published-only counts per work, regardless of showingDrafts — paired with
+// getWorkTotalCounts() for "N of M recipes published" display, independent
+// of whether the current build happens to be showing drafts.
+export async function getWorkPublishedCounts(): Promise<Map<string, number>> {
+  const all = await getCollection('recipes');
+  const counts = new Map<string, number>();
+  for (const r of all) {
+    if (r.data.status !== 'published') continue;
+    const w = workOf(r.data);
+    counts.set(w, (counts.get(w) ?? 0) + 1);
+  }
+  return counts;
+}
+
+// Named, specialized dish forms (caccabina, patina, ofella, cakkalikā, ...) —
+// as opposed to generic ingredient words like "pork" or "fish", which live
+// under `category` instead. `dishType` currently mixes both; this is the
+// allowlist of values that actually belong in a "dish type" browse facet.
+// Extend as more specialized forms get tagged.
+const SPECIALIZED_DISH_TYPES = new Set([
+  'caccabina', 'ofella', 'patina', 'minutal', 'cakkalika',
+]);
+export const isSpecializedDishType = (dishType?: string): boolean =>
+  !!dishType && SPECIALIZED_DISH_TYPES.has(dishType);
+
+// Work -> era/cuisine name, built from the `sources` lists in the eras
+// collection. This is the top browse axis ("Tradition"): Ancient Mediterranean,
+// Medieval India, ... — a work belongs to whichever era lists it. Recipes whose
+// work isn't listed under any era get no era (null).
+export async function getWorkToEra(): Promise<Map<string, string>> {
+  const eras = await getCollection('eras');
+  const m = new Map<string, string>();
+  for (const e of eras) for (const w of e.data.sources) m.set(w, e.data.name);
+  return m;
+}
+
+// Source-level metadata (rough date + intro blurb), one markdown file per
+// source in src/content/sources/. Only sources with something to say need an
+// entry — pages without one just skip the blurb block.
+export async function getSourceEntry(work: string) {
+  const sources = await getCollection('sources');
+  return sources.find((s) => s.data.name === work);
+}
 
 // The recipe's position within its source, e.g. "Vinidarius 20" -> 20,
 // "Vinidarius 21–22" -> 21, "Ofellas garaton - Vinidarius 6" -> 6. This is

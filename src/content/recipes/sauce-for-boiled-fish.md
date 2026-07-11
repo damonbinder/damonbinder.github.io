@@ -1,6 +1,15 @@
 ---
 title: Sauce for Boiled Fish
 source: Apicius 10.1.2
+originalLang: Latin
+original: >-
+  ius in pisce elixo: piper ligusticum cuminum cepulam origanum nucleos
+  careotam mel acetum liquamen sinapi oleum modice. ius calidum. si uelis,
+  uuam passam.
+translation: >-
+  Sauce for boiled fish: pepper, lovage, cumin, small onion, oregano, pine
+  nuts, date, honey, vinegar, fish sauce, mustard, a little oil. Serve the
+  sauce hot. If you like, add raisins.
 category: Seafood
 subcategory: Apician Sauces for Fish
 order: 88

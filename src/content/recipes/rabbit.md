@@ -1,6 +1,19 @@
 ---
 title: Rabbit
 source: Apicius 8.8.1
+originalLang: Latin
+original: >-
+  leporem madidum: in aqua precoquitur modice, deinde conponitur in patina ac
+  coquendus oleo in furno et cum prope sit coctus ex alio oleo. pertangito de
+  conditura infra scripta: teres piper <ligusticum> satureiam cepam rutam apii
+  semen liquamen laser uinum et modice olei. aliquotiens uersatur, in ipsa
+  percoquitur conditura.
+translation: >-
+  Moist hare: it is parboiled a little in water, then arranged in a dish and
+  cooked with oil in the oven, and when it is nearly done, [basted] with more
+  oil. Baste it with the dressing written below: grind pepper, <lovage>,
+  savory, onion, rue, celery seed, fish sauce, *laser*, wine, and a little
+  oil. It is turned several times and cooked through in this dressing itself.
 category: Meat
 subcategory: Unclassified
 order: 66

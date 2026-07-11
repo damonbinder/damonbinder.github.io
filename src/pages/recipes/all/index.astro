@@ -102,6 +102,13 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
       </div>
     )}
 
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    <p class="empty-state" id="empty-state" hidden>
+      No recipes match these filters.
+      <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
+    </p>
+
     <ul class="recipe-grid" id="recipe-grid">
       {cards.map((c) => (
         <li
@@ -173,11 +180,34 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
   }
   .pill:not([aria-pressed="true"]):hover { border-color: var(--accent); color: var(--accent); }
 
+  .result-count {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 1.4rem 0 0;
+  }
+  .empty-state {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 1.4rem 0 0;
+  }
+  .clear-filters {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
   .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: 0.9rem;
-    margin: 1.4rem 0 0;
+    margin: 0.6rem 0 0;
     padding: 0;
     list-style: none;
   }
@@ -225,12 +255,29 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
   let activeLanguage = 'all';
 
   function applyFilters() {
+    let visible = 0;
     document.querySelectorAll<HTMLElement>('.recipe-card').forEach((card) => {
       const matchesTradition = activeTradition === 'all' || card.dataset.tradition === activeTradition;
       const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
       const matchesLanguage = activeLanguage === 'all' || card.dataset.language === activeLanguage;
-      card.dataset.hidden = String(!(matchesTradition && matchesCategory && matchesLanguage));
+      const match = matchesTradition && matchesCategory && matchesLanguage;
+      card.dataset.hidden = String(!match);
+      if (match) visible++;
     });
+    const count = document.getElementById('result-count');
+    if (count) count.textContent = visible === 1 ? '1 recipe' : `${visible} recipes`;
+    const empty = document.getElementById('empty-state');
+    if (empty) empty.hidden = visible !== 0;
+    const grid = document.getElementById('recipe-grid');
+    if (grid) grid.hidden = visible === 0;
+  }
+
+  function clearFilters() {
+    activeTradition = activeCategory = activeLanguage = 'all';
+    document.querySelectorAll<HTMLButtonElement>('.pill').forEach((p) =>
+      p.setAttribute('aria-pressed', String(p.dataset.tradition === 'all' || p.dataset.category === 'all' || p.dataset.language === 'all')),
+    );
+    applyFilters();
   }
 
   function wire(groupId: string, dataKey: string, set: (v: string) => void) {
@@ -247,4 +294,7 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
   wire('pills-tradition', 'tradition', (v) => (activeTradition = v));
   wire('pills-category', 'category', (v) => (activeCategory = v));
   wire('pills-language', 'language', (v) => (activeLanguage = v));
+  document.getElementById('clear-filters')?.addEventListener('click', clearFilters);
+
+  applyFilters(); // initialize the result count on load
 </script>

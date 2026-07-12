@@ -59,7 +59,6 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
   <div class="recipes-all">
     <p class="crumb"><a href="/recipes/">Recipes</a> › All</p>
     <h1>All recipes</h1>
-    <p class="lead">Every recipe I've cooked, in one list.</p>
 
     {showingDrafts && (
       <p class="dev-note">
@@ -135,12 +134,6 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
 
 <style>
   .crumb { font-family: var(--font-sans); font-size: 0.85rem; margin: 0 0 0.6rem; }
-  .recipes-all .lead {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    color: var(--muted);
-    margin: 0 0 1.2rem;
-  }
   .dev-note {
     font-family: var(--font-sans);
     font-size: 0.82rem;

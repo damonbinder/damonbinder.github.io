@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import SourceRecipeList from '../../../components/SourceRecipeList.astro';
+import SourceRecipeBrowser from '../../../components/SourceRecipeBrowser.astro';
 import { render } from 'astro:content';
 import { getRecipes, catSlug, workOf, citationNumber, getSourceEntry } from '../../../lib/recipes.ts';
 import { sourceTexts } from '../../../data/sources/index.ts';
@@ -46,10 +46,10 @@ const textEntries = (fullText ?? []).map((entry) => ({
   {Blurb ? (
     <div class="source-grid">
       <div class="blurb"><Blurb /></div>
-      <SourceRecipeList list={list} work={work} />
+      <SourceRecipeBrowser list={list} work={work} />
     </div>
   ) : (
-    <SourceRecipeList list={list} work={work} />
+    <SourceRecipeBrowser list={list} work={work} />
   )}
 
   {textEntries.length > 0 && (

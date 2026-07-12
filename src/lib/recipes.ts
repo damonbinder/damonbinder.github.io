@@ -132,3 +132,16 @@ export function citationNumber(d: { work?: string; source?: string; order: numbe
   const m = tail.match(/\d+/);
   return m ? parseInt(m[0], 10) : d.order;
 }
+
+// The book a recipe belongs to, for sources cited as book.chapter.recipe
+// (e.g. "Apicius 4.2.9" -> 4). Returns null when the citation isn't
+// book-structured (e.g. "Vinidarius 20"), so single-book or flat-numbered
+// sources don't get a spurious per-book grouping.
+export function citationBook(d: { work?: string; source?: string }): number | null {
+  const work = workOf(d);
+  const s = d.source ?? '';
+  const idx = s.lastIndexOf(work);
+  const tail = idx >= 0 ? s.slice(idx + work.length) : s;
+  const m = tail.match(/(\d+)\.\d+/); // needs at least book.chapter
+  return m ? parseInt(m[1], 10) : null;
+}

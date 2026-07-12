@@ -1,0 +1,77 @@
+---
+import SourceRecipeList from './SourceRecipeList.astro';
+import { citationBook } from '../lib/recipes.ts';
+
+// Renders a source's recipe list. If the source spans more than one book
+// (Apicius has ten), the list would be very long, so group it into
+// collapsed-by-default "Book N" sections. Single-book or flat-numbered
+// sources (Vinidarius, Mānasollāsa) fall back to a plain list.
+interface Props { list: any[]; work: string }
+const { list, work } = Astro.props;
+
+const books = new Map<number, any[]>();
+const noBook: any[] = [];
+for (const r of list) {
+  const b = citationBook(r.data);
+  if (b == null) { noBook.push(r); continue; }
+  if (!books.has(b)) books.set(b, []);
+  books.get(b)!.push(r);
+}
+const useBooks = books.size >= 2;
+const bookEntries = [...books.entries()].sort((a, b) => a[0] - b[0]);
+---
+{useBooks ? (
+  <div class="book-list">
+    {bookEntries.map(([book, recipes]) => (
+      <details class="book">
+        <summary>
+          <span class="book-name">Book {book}</span>
+          <span class="book-count">{recipes.length} recipe{recipes.length === 1 ? '' : 's'}</span>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="book-body"><SourceRecipeList list={recipes} work={work} /></div>
+      </details>
+    ))}
+    {noBook.length > 0 && (
+      <details class="book">
+        <summary>
+          <span class="book-name">Other</span>
+          <span class="book-count">{noBook.length} recipe{noBook.length === 1 ? '' : 's'}</span>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="book-body"><SourceRecipeList list={noBook} work={work} /></div>
+      </details>
+    )}
+  </div>
+) : (
+  <SourceRecipeList list={list} work={work} />
+)}
+
+<style>
+  .book { border-top: 1px solid var(--rule); }
+  .book:last-child { border-bottom: 1px solid var(--rule); }
+  .book summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.85rem 0.1rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-sans);
+  }
+  .book summary::-webkit-details-marker,
+  .book summary::marker { display: none; content: ''; }
+  .book .book-name { font-weight: 700; font-size: 1.02rem; color: var(--fg); }
+  .book .book-count { font-size: 0.8rem; color: var(--muted); margin-right: auto; }
+  .book .chevron {
+    font-size: 0.7rem;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+  }
+  .book[open] summary .chevron { transform: rotate(90deg); }
+  .book summary:hover .book-name { color: var(--accent); }
+  .book-body { padding: 0 0 0.6rem; }
+  /* Don't rely on UA collapse alone — force it, so a closed book truly hides
+     its recipes. */
+  .book:not([open]) .book-body { display: none; }
+</style>

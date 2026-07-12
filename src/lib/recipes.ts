@@ -133,6 +133,25 @@ export function citationNumber(d: { work?: string; source?: string; order: numbe
   return m ? parseInt(m[0], 10) : d.order;
 }
 
+// English names for the books of multi-book sources, shown alongside "Book N"
+// in the by-book browse. Keyed by work, then book number. Apicius's ten books
+// each carry a Greek title and a Latin subject gloss in the manuscript; these
+// are the conventional English renderings.
+export const BOOK_NAMES: Record<string, Record<number, string>> = {
+  Apicius: {
+    1: 'The Careful Cook',
+    2: 'The Meat-Mincer',
+    3: 'The Gardener',
+    4: 'The Miscellany',
+    5: 'Pulses',
+    6: 'Fowl',
+    7: 'The Gourmet',
+    8: 'Quadrupeds',
+    9: 'The Sea',
+    10: 'The Fisherman',
+  },
+};
+
 // The book a recipe belongs to, for sources cited as book.chapter.recipe
 // (e.g. "Apicius 4.2.9" -> 4). Returns null when the citation isn't
 // book-structured (e.g. "Vinidarius 20"), so single-book or flat-numbered

@@ -1,6 +1,6 @@
 ---
 import SourceRecipeList from './SourceRecipeList.astro';
-import { citationBook } from '../lib/recipes.ts';
+import { citationBook, BOOK_NAMES } from '../lib/recipes.ts';
 
 // Renders a source's recipe list. If the source spans more than one book
 // (Apicius has ten), the list would be very long, so group it into
@@ -19,13 +19,14 @@ for (const r of list) {
 }
 const useBooks = books.size >= 2;
 const bookEntries = [...books.entries()].sort((a, b) => a[0] - b[0]);
+const bookName = (n: number) => BOOK_NAMES[work]?.[n];
 ---
 {useBooks ? (
   <div class="book-list">
     {bookEntries.map(([book, recipes]) => (
       <details class="book">
         <summary>
-          <span class="book-name">Book {book}</span>
+          <span class="book-name">Book {book}{bookName(book) ? `: ${bookName(book)}` : ''}</span>
           <span class="book-count">{recipes.length} recipe{recipes.length === 1 ? '' : 's'}</span>
           <span class="chevron">▶</span>
         </summary>

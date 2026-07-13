@@ -1,6 +1,7 @@
 ---
 title: Boiled Cabbage with Spiced “Dry Soup”
-source: From Hierophilus, January
+source: Hierophilus, January 2
+work: Hierophilus
 category: Vegetables
 subcategory: Cabbage
 order: 123

@@ -1,6 +1,7 @@
 ---
 title: Baked Horse-Mackerel
-source: Athenaeus 322c-d, quoting a lost play by Alexis
+source: Alexis, in Athenaeus 322c-d
+work: Athenaeus
 category: Seafood
 subcategory: Greek Fish
 order: 92

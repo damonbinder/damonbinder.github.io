@@ -1,6 +1,7 @@
 ---
 title: Stewed Prunes
-source: Galen R11
+source: Galen, On the Powers of Food R11
+work: Galen
 category: Dessert
 subcategory: Fruit
 order: 183

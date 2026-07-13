@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A strained sour grain drink seasoned with salt, cumin, and asafoetida.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1060
 status: draft

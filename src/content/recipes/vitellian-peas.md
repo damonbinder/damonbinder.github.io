@@ -1,6 +1,7 @@
 ---
 title: Vitellian Peas
 source: Apicius 5.3.5
+work: Apicius
 originalLang: Latin
 original: >-
   pisam Vitellianam siue fabam: pisam coques, lias. teres piper ligusticum

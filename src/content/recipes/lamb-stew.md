@@ -1,6 +1,7 @@
 ---
 title: Lamb Stew
 source: Apicius 8.6.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter hedinam siue agninam excaldatam: mittes in caccabum copadia. cepam

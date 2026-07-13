@@ -1,6 +1,7 @@
 ---
 title: Patina of Sardines
 source: Apicius 4.2.30
+work: Apicius
 originalLang: Latin
 original: >-
   patina de pisciculis: uuam passam piper ligusticum origanum cepam uinum

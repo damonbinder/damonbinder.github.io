@@ -1,6 +1,7 @@
 ---
 title: Lamb with Cowpeas
 source: Apicius 8.6.1
+work: Apicius
 originalLang: Latin
 original: >-
   copadia hedina siue agnina: pipere liquamine coques, cum faseolis faratariis

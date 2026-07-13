@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A clarified sugar-and-milk confection cooked to a firm stage and strongly perfumed. Modern food-grade camphor is optional and should be used only in an extremely small quantity.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1019
 status: draft

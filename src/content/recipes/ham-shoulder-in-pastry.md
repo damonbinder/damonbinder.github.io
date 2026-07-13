@@ -1,6 +1,7 @@
 ---
 title: Ham Shoulder in Pastry
 source: Apicius 7.9.1
+work: Apicius
 originalLang: Latin
 original: >-
   pernam, ubi eam cum caricis plurimis elixaueris et tribus lauri foliis,

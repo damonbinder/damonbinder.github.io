@@ -1,6 +1,7 @@
 ---
 title: Kandaulos
 source: Hegesippus of Tarentum, in Athenaeus 516d–517a
+work: Athenaeus
 category: Meat
 subcategory: Beef and Veal
 order: 58

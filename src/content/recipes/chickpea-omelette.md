@@ -1,6 +1,7 @@
 ---
 title: Chickpea omelette
 source: Apicius 5.8.2b
+work: Apicius
 originalLang: Latin
 original: >-
   aliter faseolus siue cicer: frictos ex oenogaro et pipere gustabis. et

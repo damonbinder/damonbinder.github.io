@@ -1,6 +1,7 @@
 ---
 title: Mushrooms
 source: Apicius 7.13.4
+work: Apicius
 originalLang: Latin
 original: >-
   boletos fungos: carenum, fasciculum coriandri uiridis. ubi ferbuerint,

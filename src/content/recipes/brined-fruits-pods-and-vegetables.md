@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This is a general brining method rather than a single fixed pickle. Small firm fruits and vegetables work best.
 tradition: Indian
-category: Mānasollāsa
+category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1049
 status: draft

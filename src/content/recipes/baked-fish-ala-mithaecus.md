@@ -1,6 +1,7 @@
 ---
 title: Baked Fish ala Mithaecus
-source: Athenaeus 325f, quoting the cookbook of Mithaecus
+source: Mithaecus, in Athenaeus 325f
+work: Athenaeus
 category: Seafood
 subcategory: Greek Fish
 order: 93

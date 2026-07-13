@@ -1,6 +1,7 @@
 ---
 title: Peas with Basil
 source: Apicius 5.3.1
+work: Apicius
 originalLang: Latin
 original: >-
   pisum: coques. cum despumauerit, porrum coriandrum et cuminum supra mittis.

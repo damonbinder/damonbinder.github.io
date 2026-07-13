@@ -1,6 +1,7 @@
 ---
 title: Apician Conchicla
 source: Apicius 5.4.2
+work: Apicius
 originalLang: Latin
 original: >-
   conciclam Apicianam: accipies cumanam mundam, ubi quoques pisum, cui mittis

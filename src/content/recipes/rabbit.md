@@ -1,6 +1,7 @@
 ---
 title: Rabbit
 source: Apicius 8.8.1
+work: Apicius
 originalLang: Latin
 original: >-
   leporem madidum: in aqua precoquitur modice, deinde conponitur in patina ac

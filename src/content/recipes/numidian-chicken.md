@@ -1,6 +1,7 @@
 ---
 title: Numidian Chicken
 source: Apicius 6.8.5
+work: Apicius
 originalLang: Latin
 original: >-
   pullum Numidicum: pullum curas, elixas, leuas, laser ac piper <aspergis> et

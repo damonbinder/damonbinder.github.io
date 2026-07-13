@@ -1,6 +1,7 @@
 ---
 title: Turnips with bacon
-source: Anthimus 52
+source: Anthimus, On the Observance of Foods 52
+work: Anthimus
 category: Vegetables
 subcategory: Unclassified
 order: 130

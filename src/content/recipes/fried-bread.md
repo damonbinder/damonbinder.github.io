@@ -1,6 +1,7 @@
 ---
 title: Fried Bread
 source: Apicius 7.11.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter dulcia: siligineos rasos frangis et buccellas maiores facies, in

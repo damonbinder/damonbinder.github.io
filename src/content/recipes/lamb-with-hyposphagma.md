@@ -1,6 +1,7 @@
 ---
 title: Lamb with Hyposphagma
-source: Athenaeus 516c, quoting Erasistratus
+source: Erasistratus, in Athenaeus 516c
+work: Athenaeus
 category: Meat
 subcategory: Lamb and Goat
 order: 53

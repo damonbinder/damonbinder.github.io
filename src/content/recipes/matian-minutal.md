@@ -1,6 +1,7 @@
 ---
 title: Matian Minutal
 source: Apicius 4.3.4
+work: Apicius
 originalLang: Latin
 original: >-
   minutal Matianum: adicies in caccabum oleum liquamen cocturam; concides

@@ -1,6 +1,7 @@
 ---
 title: Sauteed Greens
 source: Apicius 3.16b
+work: Apicius
 originalLang: Latin
 original: >-
   liquamine oleo aceto a manu uel in patina piper cumino bacis lentisci.

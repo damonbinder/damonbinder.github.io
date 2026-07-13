@@ -1,6 +1,7 @@
 ---
 title: Patina of Sole
 source: Apicius 4.2.28
+work: Apicius
 originalLang: Latin
 original: >-
   patina solearum: soleas battues et curatas conpones in patina; adicies oleum

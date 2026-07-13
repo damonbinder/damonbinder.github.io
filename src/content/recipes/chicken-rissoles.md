@@ -1,6 +1,7 @@
 ---
 title: Chicken rissoles
 source: Apicius 2.2.9
+work: Apicius
 originalLang: Latin
 original: >-
   amulatum aliter: ossucula de pullis exbromas, deinde mittis in caccabum

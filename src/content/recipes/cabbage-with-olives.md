@@ -1,6 +1,7 @@
 ---
 title: Cabbage with Olives
 source: Apicius 3.9.5
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: cauliculos condies ut supra admisces olibas uirides et simul

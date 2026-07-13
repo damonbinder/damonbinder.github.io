@@ -1,6 +1,7 @@
 ---
 title: Sauce for Boiled Fish
 source: Apicius 10.1.2
+work: Apicius
 originalLang: Latin
 original: >-
   ius in pisce elixo: piper ligusticum cuminum cepulam origanum nucleos

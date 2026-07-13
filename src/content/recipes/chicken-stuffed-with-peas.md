@@ -1,6 +1,7 @@
 ---
 title: Chicken stuffed with peas
 source: Apicius 5.4.6
+work: Apicius
 originalLang: Latin
 original: >-
   aliter concicla: conciclatus pullus uel porcellus: exossas pullum a pectore,

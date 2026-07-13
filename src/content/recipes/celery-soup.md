@@ -1,6 +1,7 @@
 ---
 title: Celery Soup
 source: Apicius 3.2.4
+work: Apicius
 originalLang: Latin
 original: >-
   aliter ad uentrem: apios uirides cum suis radicibus lauabis et siccabis ad

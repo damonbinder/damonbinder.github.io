@@ -1,6 +1,7 @@
 ---
 title: Oenogaraum for fish
 source: Apicius 10.2.17/18
+work: Apicius
 originalLang: Latin
 original: >-
   in pisce oenogarum: teres piper rutam, mel commissces, passum liquamen

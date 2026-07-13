@@ -1,6 +1,7 @@
 ---
 title: Lucanicae
 source: Apicius 2.4
+work: Apicius
 originalLang: Latin
 original: >-
   IV. LVCANICAE. lucanicas similiter ut supra scriptum est. [lucanicarum

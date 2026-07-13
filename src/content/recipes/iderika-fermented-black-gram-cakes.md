@@ -10,7 +10,7 @@ translation: >-
 description: >-
   These resemble steamed fermented urad cakes. The paired moulds are most easily represented by an idli tray or covered ramekins.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1014
 status: draft

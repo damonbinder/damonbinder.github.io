@@ -1,6 +1,7 @@
 ---
 title: Globi
-source: De Agricultura 79
+source: Cato, De agricultura 79
+work: Cato
 category: Dessert
 subcategory: Pancakes and Fritters
 order: 174

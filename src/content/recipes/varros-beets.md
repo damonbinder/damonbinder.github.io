@@ -1,6 +1,7 @@
 ---
 title: Varro’s Beets
 source: Apicius 3.2.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter betacios Varrones: Varro: betacios sed nigros quorum detegsas radices

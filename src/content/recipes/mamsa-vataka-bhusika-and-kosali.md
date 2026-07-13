@@ -10,7 +10,7 @@ translation: >-
 description: >-
   One seasoned meat paste produces three dishes: pan-cooked balls, fried balls, and dough-wrapped baked parcels.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1030
 status: draft

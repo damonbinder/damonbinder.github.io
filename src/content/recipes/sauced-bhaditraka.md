@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This variant turns the pierced meat into a reduced sour sauté. Shredding the surface helps the sauce cling.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1027
 status: draft

@@ -1,6 +1,7 @@
 ---
 title: Boiled Chicken and Gourd with Peach Sauce
 source: Apicius 3.4.8
+work: Apicius
 originalLang: Latin
 original: >-
   aliter cucurbitas cum gallina: duracina tubera piper careum cuminum silfi,

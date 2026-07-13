@@ -1,6 +1,7 @@
 ---
 title: Flaccian Piglet
 source: Apicius 8.7.8
+work: Apicius
 originalLang: Latin
 original: >-
   porcellum Flacianum: porcellum ornas in modum apri, sale asperges et in

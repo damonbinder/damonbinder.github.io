@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A reduced mustard offal stew combining intestine, dark organ meat, fat, and muscle meat. Liver is used as the most plausible practical interpretation of kālakhaṇḍa.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1033
 status: draft

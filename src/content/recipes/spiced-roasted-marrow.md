@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Roasted marrow is removed from the bone and briefly cooked with sourness and spices into a rich relish.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1040
 status: draft

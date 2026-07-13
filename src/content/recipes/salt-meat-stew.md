@@ -1,6 +1,7 @@
 ---
 title: Salt Meat Stew
-source: From the Heidelberg papyrus
+source: Heidelberg papyrus R.2
+work: Heidelberg
 category: Meat
 subcategory: Salted Meat
 order: 62

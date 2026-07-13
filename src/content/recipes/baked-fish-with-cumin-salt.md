@@ -1,6 +1,7 @@
 ---
 title: Baked Fish with Cumin Salt
-source: Archestratus 14, preserved in Athenaeus
+source: Archestratus 14, in Athenaeus
+work: Archestratus
 category: Seafood
 subcategory: Greek Fish
 order: 94

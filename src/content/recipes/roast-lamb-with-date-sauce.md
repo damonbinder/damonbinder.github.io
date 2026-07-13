@@ -1,6 +1,7 @@
 ---
 title: Roast Lamb with Date Sauce
 source: Apicius 8.6.7
+work: Apicius
 originalLang: Latin
 original: >-
   aliter hedus siue agnus syringiatus: lactis sextarium unum, mellis uncias

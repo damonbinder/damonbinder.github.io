@@ -8,7 +8,7 @@ original: >-
 translation: >-
   Take clean meat from beside the spine, cut it into pieces, and pierce the pieces many times. Rub them with asafoetida-water, ginger juice, and rock salt. Thread them on skewers and roast over embers, turning repeatedly and basting with ghee. When cooked, scatter ground black pepper and rock salt over them. This preparation is called bhaditraka.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1026
 status: published

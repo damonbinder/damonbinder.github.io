@@ -1,6 +1,7 @@
 ---
 title: Roast Lamb with a Coriander Crust
 source: Apicius 8.6.8
+work: Apicius
 originalLang: Latin
 original: >-
   hedus siue agnus crudus: oleo piper fricabis et asparges fores salem purum

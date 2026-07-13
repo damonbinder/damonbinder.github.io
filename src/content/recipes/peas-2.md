@@ -1,6 +1,7 @@
 ---
 title: Peas
 source: Apicius 5.3.7
+work: Apicius
 originalLang: Latin
 original: >-
   aliter pisam siue fabam: despumatam subtrito lasare Partico liquamen et

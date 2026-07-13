@@ -1,6 +1,7 @@
 ---
 title: Roast Lamb Shoulder with Spiced Zōmos
-source: From Hierophilus, January
+source: Hierophilus, January 1
+work: Hierophilus
 category: Meat
 subcategory: Lamb and Goat
 order: 54

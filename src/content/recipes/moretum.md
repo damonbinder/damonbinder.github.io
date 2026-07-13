@@ -1,6 +1,7 @@
 ---
 title: Moretum
-source: Pseudo-Virgil
+source: Pseudo-Virgil, Moretum
+work: Pseudo-Virgil
 category: Dips and Relishes
 order: 4
 ---

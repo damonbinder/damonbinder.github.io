@@ -1,6 +1,7 @@
 ---
 title: Sauce for game
 source: Apicius 8.4.2
+work: Apicius
 originalLang: Latin
 original: >-
   ius in uenationibus omnibus elixis et assis: piperis scripulos VIII, rutam

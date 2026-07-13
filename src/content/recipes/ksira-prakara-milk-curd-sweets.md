@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Fresh acid-set curds are kneaded with rice flour, fried, and syruped. The result falls between a fried paneer sweet and a rice-flour fritter.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1018
 status: draft

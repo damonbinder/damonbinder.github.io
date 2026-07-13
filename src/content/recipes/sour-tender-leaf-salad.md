@@ -15,7 +15,7 @@ description: >-
   principle is simple: tender leaves dressed sharply with tamarind, citrus, or
   yoghurt, and salt.
 tradition: Indian
-category: Mānasollāsa
+category: Vegetables
 subcategory: Vegetables & pickles
 order: 1048
 status: published

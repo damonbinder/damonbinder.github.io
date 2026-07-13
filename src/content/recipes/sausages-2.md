@@ -1,6 +1,7 @@
 ---
 title: Sausages
 source: Apicius 2.5.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: alicam purgas et cum liquamine intestini et albamine porri concisi

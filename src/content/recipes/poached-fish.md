@@ -1,6 +1,7 @@
 ---
 title: Poached Fish
 source: Apicius 10.1.5
+work: Apicius
 originalLang: Latin
 original: >-
   aliter ius in pisce elixo: cum curaueris piscem, adicies in sartaginem

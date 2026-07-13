@@ -1,6 +1,7 @@
 ---
 title: Lentils with chard
-source: Galen On the Powers of Food, R1
+source: Galen, On the Powers of Food R1
+work: Galen
 category: Legumes
 subcategory: Lentils
 order: 148

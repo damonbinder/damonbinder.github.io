@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A coiled blood sausage scented with citrus, ginger, cumin, coriander, and asafoetida.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1035
 status: draft

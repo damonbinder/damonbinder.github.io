@@ -1,6 +1,7 @@
 ---
 title: Fish Broth
-source: From the Heidelberg papyrus
+source: Heidelberg papyrus R.1
+work: Heidelberg
 category: Seafood
 subcategory: Unclassified
 order: 103

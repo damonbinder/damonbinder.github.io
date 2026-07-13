@@ -1,6 +1,7 @@
 ---
 title: Artichoke
 source: Apicius 3.19.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter carduos elixos: piper cuminum liquamen et oleum.

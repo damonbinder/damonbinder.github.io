@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A finely chopped warm meat salad sharpened with citrus, ginger, allium, cumin, and pepper.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1029
 status: draft

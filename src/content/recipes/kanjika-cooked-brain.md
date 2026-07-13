@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Brain is first poached in a sour fermented liquid and then fried with spices. Commercially cleaned calf or lamb brain avoids the source’s whole-head preparation.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1041
 status: draft

@@ -1,6 +1,7 @@
 ---
 title: Alexandrian Gourd
 source: Apicius 3.4.3
+work: Apicius
 originalLang: Latin
 original: >-
   cucurbitas more Alexandrino: elixatas cucurbitas exprimis; sale asparges; in

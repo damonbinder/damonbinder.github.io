@@ -1,6 +1,7 @@
 ---
 title: Beef Stew a la Anthimus
-source: Anthimus 3
+source: Anthimus, On the Observance of Foods 3
+work: Anthimus
 category: Meat
 subcategory: Beef and Veal
 order: 57

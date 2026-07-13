@@ -1,6 +1,7 @@
 ---
 title: Lard
 source: Apicius 7.9.4
+work: Apicius
 originalLang: Latin
 original: >-
   laridi coctura: tectum aqua cum multo aneto coques, oleum modicum

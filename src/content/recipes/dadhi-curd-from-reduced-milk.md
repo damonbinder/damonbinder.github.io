@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A very rich cultured curd made from milk concentrated to half its volume before inoculation.
 tradition: Indian
-category: Mānasollāsa
+category: Dips and relishes
 subcategory: Dairy, drinks & condiments
 order: 1053
 status: draft

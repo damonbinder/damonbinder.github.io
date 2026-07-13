@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The animal identification is uncertain and may denote a large field or water rodent. Rabbit provides a practical, regulated proxy for the described small dark-fleshed animal.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Fish & other animals
 order: 1047
 status: draft

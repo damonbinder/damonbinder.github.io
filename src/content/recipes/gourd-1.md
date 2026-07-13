@@ -1,6 +1,7 @@
 ---
 title: Gourd
 source: Apicius 3.4.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter cucurbitas iure colocesiorum: cucurbitas quoques ex aqua in modum

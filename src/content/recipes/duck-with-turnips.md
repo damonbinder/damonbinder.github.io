@@ -1,6 +1,7 @@
 ---
 title: Duck with Turnips
 source: Apicius 6.2.3
+work: Apicius
 originalLang: Latin
 original: >-
   gruem uel anatem ex rapis: lauas, ornas et in olla elixabis cum aqua sale et

@@ -1,6 +1,7 @@
 ---
 title: Prawns in cumin sauce
 source: Apicius 1.29/9.1.3/9.7
+work: Apicius
 originalLang: Latin
 original: >-
   XXVIIII. CYMINATVM IN OSTREA ET CONCILIA: piper ligusticum petrosillenum

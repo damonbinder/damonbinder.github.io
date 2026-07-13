@@ -1,6 +1,7 @@
 ---
 title: Whitebait Patina
 source: Apicius 4.2.20
+work: Apicius
 originalLang: Latin
 original: >-
   patina de apua fricata: apua lauas oua confringes et cum apua commisces.

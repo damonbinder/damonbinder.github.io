@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A standard clarified butter scented or tested at the end with wheat and betel leaf.
 tradition: Indian
-category: Mānasollāsa
+category: Dips and relishes
 subcategory: Dairy, drinks & condiments
 order: 1058
 status: draft

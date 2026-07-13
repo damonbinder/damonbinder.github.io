@@ -1,6 +1,7 @@
 ---
 title: Semolina Pudding
 source: Apicius 2.2.10
+work: Apicius
 originalLang: Latin
 original: >-
   apotermum sic facies: alicam elixa cum nucleis et amindalis depilatis et in

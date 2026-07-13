@@ -1,6 +1,7 @@
 ---
 title: Liver
-source: From the Heidelberg papyrus
+source: Heidelberg papyrus R.6
+work: Heidelberg
 category: Meat
 subcategory: Unclassified
 order: 65

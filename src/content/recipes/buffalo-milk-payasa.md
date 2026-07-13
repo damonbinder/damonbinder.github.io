@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The text specifies mature buffalo milk, prized for its richness. Whole cow’s milk with a little cream gives a practical approximation.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1004
 status: draft

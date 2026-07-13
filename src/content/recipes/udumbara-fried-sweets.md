@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The verse gives the name and technique but not an unambiguous filling. The reconstruction uses the immediately preceding kīsāra as the enclosed sweet, producing a fig-shaped stuffed fritter.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1010
 status: draft

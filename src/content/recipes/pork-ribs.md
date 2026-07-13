@@ -1,6 +1,7 @@
 ---
 title: Pork Ribs
 source: Apicius 7.4.4
+work: Apicius
 originalLang: Latin
 original: >-
   aliter ofelle: recte friguntur ut pene ossa rodantur. liquaminis summi

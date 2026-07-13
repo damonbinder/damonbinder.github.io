@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A cooling, tart buttermilk drink perfumed with cumin and asafoetida — the ancestor of modern chaas. The passage also names two plainer dilutions of churned curd, mathita and udaśvit, but the spiced takra is the only one of the three that is really a drink.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1054
 status: published

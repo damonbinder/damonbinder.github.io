@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The text gives a family of liver or dark-organ preparations: dry-spiced, mustard-coated, curd-dressed, citrus-dressed, and sour-fried.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1037
 status: draft

@@ -1,6 +1,7 @@
 ---
 title: Cold sauce for wild sheep
 source: Apicius 8.4.3
+work: Apicius
 originalLang: Latin
 original: >-
   ius frigidum in ouifero: piper ligusticum thimum cuminum frictum nucleos

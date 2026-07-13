@@ -1,6 +1,7 @@
 ---
 title: Boiled Mussels
 source: Apicius 3.20.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter sfondilos elixos: perfundes ammulato infra scripto: apii semen rutam

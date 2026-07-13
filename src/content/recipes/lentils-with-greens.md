@@ -1,6 +1,7 @@
 ---
 title: Lentils with greens
 source: Heidelberg papyrus
+work: Heidelberg
 category: Legumes
 subcategory: Lentils
 order: 151

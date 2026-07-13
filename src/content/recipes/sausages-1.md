@@ -1,6 +1,7 @@
 ---
 title: Sausages
 source: Apicius 2.5.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: coctam alicam et tritam cum pulpa concisa et trita una cum piper et

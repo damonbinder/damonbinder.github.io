@@ -1,6 +1,7 @@
 ---
 title: Fava Beans
 source: Apicius 5.6.1
+work: Apicius
 originalLang: Latin
 original: >-
   fabaciae uirides: ex liquamine oleo coriandro uiridi cumino et porro conciso

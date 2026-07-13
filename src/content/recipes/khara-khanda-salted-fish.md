@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A salt-preserved fish subsequently grilled. The source does not specify a curing ratio, so this reconstruction uses refrigerated salt-curing rather than claiming shelf stability.
 tradition: Indian
-category: Mānasollāsa
+category: Seafood
 subcategory: Fish & other animals
 order: 1043
 status: draft

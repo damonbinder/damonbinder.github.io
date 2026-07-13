@@ -1,6 +1,7 @@
 ---
 title: Turnips
 source: Apicius 3.13.1
+work: Apicius
 originalLang: Latin
 original: >-
   rapas siue napos elixatos exprimes. deinde teres cuminum plurimum rutam

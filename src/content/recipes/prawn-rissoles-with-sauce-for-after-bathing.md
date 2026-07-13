@@ -1,6 +1,7 @@
 ---
 title: Prawn rissoles with sauce for after bathing
 source: Apicius 2.1.3 and 2.2.7
+work: Apicius
 originalLang: Latin
 original: >-
   esicia de iscillis uel de cammaris amplis: cammari uel iscille de testa sua

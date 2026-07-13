@@ -1,6 +1,7 @@
 ---
 title: Garlic Sauce
 source: Heidelberg papyrus V.3
+work: Heidelberg
 category: Meat
 subcategory: Unclassified
 order: 69

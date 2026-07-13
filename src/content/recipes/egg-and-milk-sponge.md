@@ -1,6 +1,7 @@
 ---
 title: Egg and Milk Sponge
 source: Apicius 7.11.8
+work: Apicius
 originalLang: Latin
 original: >-
   oua sfongia ex lacte: oua quattuor, lactis eminam, olei unciam in se

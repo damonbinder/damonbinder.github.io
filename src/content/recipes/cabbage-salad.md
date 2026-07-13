@@ -1,6 +1,7 @@
 ---
 title: Cabbage Salad
-source: Mnesitheus, quoted in Oribasius Medical Collections 4.4.1, and Cato De Agricultura, 157
+source: Mnesitheus, in Oribasius, Medical Collections 4.4.1
+work: Oribasius
 category: Vegetables
 subcategory: Salads
 order: 111

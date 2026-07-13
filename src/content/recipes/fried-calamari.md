@@ -1,6 +1,7 @@
 ---
 title: Fried calamari
 source: Apicius 9.3.1
+work: Apicius
 originalLang: Latin
 original: >-
   in lolligine in patina: teres piper rutam mel modicum liquamen carenum, olei

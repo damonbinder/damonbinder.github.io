@@ -1,6 +1,6 @@
 ---
 name: Vinidarius
-period: c. 500
+period: c. 500 AD
 ---
 
 

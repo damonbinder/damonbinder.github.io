@@ -8,7 +8,7 @@ original: >-
 translation: >-
   Wash superior mung beans and cook them slowly in an equal quantity of water. While they cook, add asafoetida-water and small pieces of fresh ginger. Add eggplant fried in oil, or fried lotus-stem discs, or priyāla kernels. Add water little by little. Some cooks add mutton pieces or pieces of fat. When fully cooked, add ground black pepper; after removing from the fire, add powdered dry ginger and stir.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1003
 status: published

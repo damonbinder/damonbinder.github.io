@@ -1,6 +1,7 @@
 ---
 title: Peas
 source: Apicius 5.3.6
+work: Apicius
 originalLang: Latin
 original: >-
   aliter pisa siue faba: ubi dispumauerit teres mel liquamen carenum cuminum

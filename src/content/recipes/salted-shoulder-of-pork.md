@@ -1,6 +1,7 @@
 ---
 title: Salted Shoulder of Pork
 source: Apicius 7.9.3
+work: Apicius
 originalLang: Latin
 original: >-
   petasonem ex musteis: petasonem elixas cum bilibre ordei et caricis XXV. cum

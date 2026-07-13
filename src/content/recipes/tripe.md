@@ -1,6 +1,7 @@
 ---
 title: Tripe
 source: Apicius 7.1.5
+work: Apicius
 originalLang: Latin
 original: >-
   callum, libelli, coticulæ, ungelle: cum piper liquamine lasere adponis.

@@ -1,6 +1,7 @@
 ---
 title: Fried Chickpeas
 source: Apicius 5.8.2a
+work: Apicius
 originalLang: Latin
 original: >-
   aliter faseolus siue cicer: frictos ex oenogaro et pipere gustabis. et

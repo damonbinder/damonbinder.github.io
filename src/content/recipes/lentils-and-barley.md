@@ -1,6 +1,7 @@
 ---
 title: Lentils and barley
-source: Galen On the Powers of Food, R5
+source: Galen, On the Powers of Food R5
+work: Galen
 category: Legumes
 subcategory: Lentils
 order: 149

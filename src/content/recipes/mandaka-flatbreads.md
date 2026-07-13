@@ -10,7 +10,7 @@ translation: >-
 description: >-
   These are thin, pale wheat flatbreads enriched with milk and ghee. They are closer to soft rotis than to leavened bread.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1005
 status: draft

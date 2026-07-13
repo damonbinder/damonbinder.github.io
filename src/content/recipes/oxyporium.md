@@ -1,6 +1,7 @@
 ---
 title: Oxyporium
 source: Apicius 1.32 and 3.18.2
+work: Apicius
 originalLang: Latin
 original: >-
   XXXII. OXYPORIVM: cumini uncias II; zingiberis unciam I; rutae uiridis

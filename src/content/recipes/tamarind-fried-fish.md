@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The fish is cleaned with salt, oil, and turmeric, briefly soured with tamarind, dusted in wheat flour, and fried.
 tradition: Indian
-category: Mānasollāsa
+category: Seafood
 subcategory: Fish & other animals
 order: 1042
 status: draft

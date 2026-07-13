@@ -1,6 +1,7 @@
 ---
 title: Alexandrian Sauce for Grilled Fish
 source: Apicius 10.1.7
+work: Apicius
 originalLang: Latin
 original: >-
   aliter ius Alexandrinum in pisce asso: piper ligusticum coriandrum uiridem,

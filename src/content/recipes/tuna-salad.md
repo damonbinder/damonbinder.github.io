@@ -1,6 +1,7 @@
 ---
 title: Tuna Salad
 source: Apicius 9.10.2
+work: Apicius
 originalLang: Latin
 original: >-
   sarda ita fit: coquitur sarda et exossatur. teritur pipere ligustico timo

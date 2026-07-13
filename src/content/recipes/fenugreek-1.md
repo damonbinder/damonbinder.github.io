@@ -1,6 +1,7 @@
 ---
 title: Fenugreek
-source: Apicius 5.7, see also Galen
+source: Apicius 5.7
+work: Apicius
 originalLang: Latin
 original: >-
   VII. FENUM GRECUM. fenum Grecum ex liquamine oleo et uino.

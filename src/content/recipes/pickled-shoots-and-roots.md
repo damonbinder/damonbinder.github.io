@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Shoots and tubers are first made tender, then preserved either in brine or mustard oil.
 tradition: Indian
-category: Mānasollāsa
+category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1051
 status: draft

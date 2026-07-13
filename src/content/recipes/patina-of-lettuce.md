@@ -1,6 +1,7 @@
 ---
 title: Patina of Lettuce
 source: Apicius 4.2.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter patina: tyrsum lactuce teres cum pipere liquamine careno aquam oleo;

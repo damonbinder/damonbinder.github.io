@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A sweet, rich preparation of coarse wheat grain toasted in ghee and spiced with cardamom and black pepper. The source calls for a deliberately coarse grain — the gritty fraction winnowed from flour — which keeps the grains distinct rather than collapsing into a smooth paste.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1009
 status: draft

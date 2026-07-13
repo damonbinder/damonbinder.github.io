@@ -1,6 +1,7 @@
 ---
 title: Cabbage with Semolina
 source: Apicius 3.9.6
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: culiculis conditis ut supra; superfundes alicam elixam cum nucleis

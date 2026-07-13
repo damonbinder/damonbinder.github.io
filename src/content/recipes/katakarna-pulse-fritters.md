@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A mixed-pulse fritter whose batter was probably soured or aerated. A short fermentation supplies the bubbling texture described in the verse.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1013
 status: draft

@@ -1,6 +1,7 @@
 ---
 title: Fava Beans
 source: Apicius 5.6.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: fabaciae ex sinapi trito melle nucleis ruta cumino; ex aceto

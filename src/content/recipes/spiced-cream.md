@@ -1,6 +1,7 @@
 ---
 title: Spiced Cream
-source: Hierophilus, January
+source: Hierophilus, January 3
+work: Hierophilus
 category: Dessert
 subcategory: Cream, Curds, and Cheese
 order: 182

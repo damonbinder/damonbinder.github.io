@@ -1,6 +1,7 @@
 ---
 title: Roast Lamb
 source: Apicius 8.6.4
+work: Apicius
 originalLang: Latin
 original: >-
   hedum siue agnum assum: edi cocturam: ubi eum ex liquamine et oleo coxeris,

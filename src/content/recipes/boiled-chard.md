@@ -1,6 +1,7 @@
 ---
 title: Boiled Chard
 source: Apicius 3.11.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter betas elixas: ex sinapi oleo modico et aceto bene inferuntur.

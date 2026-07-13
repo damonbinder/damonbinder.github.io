@@ -1,6 +1,7 @@
 ---
 title: Mushroom Patina
 source: Apicius 7.13.6
+work: Apicius
 originalLang: Latin
 original: >-
   boletos aliter: tirsos eorum concisos in patellam, ouam perfundis addito

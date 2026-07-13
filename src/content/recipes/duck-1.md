@@ -1,6 +1,7 @@
 ---
 title: Duck
 source: Apicius 6.8.1
+work: Apicius
 originalLang: Latin
 original: >-
   elixo ius crudum: adicies in mortarium aneti semen mentam siccam laseris

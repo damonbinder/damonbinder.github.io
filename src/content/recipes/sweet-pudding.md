@@ -1,6 +1,7 @@
 ---
 title: Sweet Pudding
 source: Apicius 7.11.4
+work: Apicius
 originalLang: Latin
 original: >-
   dulcia piperata: <teres piper,> mittis mel merum passum rutam, eo mittis

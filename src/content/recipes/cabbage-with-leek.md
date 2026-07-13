@@ -1,6 +1,7 @@
 ---
 title: Cabbage with Leek
 source: Apicius 3.9.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: cauliculi elixati in patina conpositi condiuntur liquamine oleo mero

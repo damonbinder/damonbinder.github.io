@@ -1,6 +1,7 @@
 ---
 title: Cucumber Salad
 source: Apicius 3.6.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter cucumeres: piper puleium mel uel passum liquamen et acetum. interdum

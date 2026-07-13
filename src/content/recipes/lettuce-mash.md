@@ -1,6 +1,7 @@
 ---
 title: Lettuce Mash
 source: Apicius 3.15.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter holus molle ex foliis lactucarum: cum cepis quoques ex aqua nitrata;

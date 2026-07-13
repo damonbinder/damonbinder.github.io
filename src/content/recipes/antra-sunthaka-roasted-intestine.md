@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A very simple charcoal-roasted intestine preparation intended to become crisp.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1034
 status: draft

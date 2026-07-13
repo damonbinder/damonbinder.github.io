@@ -1,6 +1,7 @@
 ---
 title: Julian Pottage
 source: Apicius 5.1.1/4
+work: Apicius
 originalLang: Latin
 original: >-
   pultes Iuliane sic coquuntur: alicam purgatam infundis, coques, facies ut

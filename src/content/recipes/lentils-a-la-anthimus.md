@@ -1,6 +1,7 @@
 ---
 title: Lentils a la Anthimus
-source: Anthimus, 67
+source: Anthimus, On the Observance of Foods 67
+work: Anthimus
 category: Legumes
 subcategory: Lentils
 order: 150

@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This is a flexible master sauce for cooked meat. Tamarind, yoghurt, pomegranate, and lemon produce the layered acidity requested by the source.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1022
 status: draft

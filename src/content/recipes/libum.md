@@ -1,6 +1,7 @@
 ---
 title: Libum
-source: De Agricultura 75
+source: Cato, De agricultura 75
+work: Cato
 category: Dessert
 subcategory: Cakes
 order: 167

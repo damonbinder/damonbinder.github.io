@@ -1,6 +1,7 @@
 ---
 title: Meatballs in hydrogarum
 source: Apicius 2.2.1/2
+work: Apicius
 originalLang: Latin
 original: >-
   esicia plena: accipies adipes fasiani recentes, preduras et facis ex eo

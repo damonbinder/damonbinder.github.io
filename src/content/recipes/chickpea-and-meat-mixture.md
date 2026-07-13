@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A mixed fry of chickpea pieces, fresh chickpeas, meat, beans, and aromatics, finished nearly dry with the sour glaze.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1023
 status: draft

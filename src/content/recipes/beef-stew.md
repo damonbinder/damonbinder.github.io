@@ -1,6 +1,7 @@
 ---
 title: Beef Stew
 source: Apicius 8.5.2
+work: Apicius
 originalLang: Latin
 original: >-
   uitulinam siue bubulam cum porris <uel> cidoneis uel cepis uel colocaseis:

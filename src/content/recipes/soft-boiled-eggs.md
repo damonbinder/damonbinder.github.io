@@ -1,6 +1,7 @@
 ---
 title: Soft-boiled Eggs
 source: Apicius 7.17.3
+work: Apicius
 originalLang: Latin
 original: >-
   in ouis apalis: piper ligusticum nucleos infusos; suffundes mel acetum,

@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A direct ancestor in principle of mustard-rich South Asian oil pickles. The reconstruction lightly cures the produce with salt before adding heated mustard oil.
 tradition: Indian
-category: Mānasollāsa
+category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1050
 status: draft

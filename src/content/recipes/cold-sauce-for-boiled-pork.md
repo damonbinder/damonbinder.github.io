@@ -1,6 +1,7 @@
 ---
 title: Cold Sauce for Boiled Pork
 source: Apicius 8.7.15
+work: Apicius
 originalLang: Latin
 original: >-
   ius frigidum in porcellum ita facies in elixum: teres piper careum anetum,

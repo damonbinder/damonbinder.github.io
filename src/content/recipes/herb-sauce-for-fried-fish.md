@@ -1,6 +1,7 @@
 ---
 title: Herb Sauce for Fried Fish
 source: Apicius 10.1.1
+work: Apicius
 originalLang: Latin
 original: >-
   ius diabotanon in pisce frixo: piscem quemlibet curas, lauas, friges. teres

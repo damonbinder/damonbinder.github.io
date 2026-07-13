@@ -1,6 +1,7 @@
 ---
 title: Afrutum
-source: Anthimus 34
+source: Anthimus, On the Observance of Foods 34
+work: Anthimus
 category: Eggs and Patinas
 order: 9
 ---

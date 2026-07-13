@@ -78,7 +78,10 @@ const eras = defineCollection({
   schema: z.object({
     name: z.string(),
     order: z.number().default(0),
-    sources: z.array(z.string()),
+    sources: z.array(z.string()).default([]),
+    sourceGroups: z
+      .array(z.object({ label: z.string(), sources: z.array(z.string()) }))
+      .optional(),
   }),
 });
 

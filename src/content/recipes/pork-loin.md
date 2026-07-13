@@ -1,6 +1,7 @@
 ---
 title: Pork Loin
-source: From the Heidelberg papyrus
+source: Heidelberg papyrus R.7
+work: Heidelberg
 category: Meat
 subcategory: Pork
 order: 40

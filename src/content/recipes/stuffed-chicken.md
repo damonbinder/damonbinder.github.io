@@ -1,6 +1,7 @@
 ---
 title: Stuffed Chicken
 source: Apicius 6.8.14
+work: Apicius
 originalLang: Latin
 original: >-
   pullus farsilis: pullum sicut in iure cuminato. a ceruice expedies. teres

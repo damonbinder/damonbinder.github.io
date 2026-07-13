@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Two rustic breads made from the same enriched wheat dough as maṇḍaka: one baked in embers, the other cooked on a hot plate.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1006
 status: draft

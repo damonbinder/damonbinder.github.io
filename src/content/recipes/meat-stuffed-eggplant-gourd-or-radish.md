@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Whole vegetables are hollowed, packed with spiced meat, browned in oil, and finished under cover.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1031
 status: draft

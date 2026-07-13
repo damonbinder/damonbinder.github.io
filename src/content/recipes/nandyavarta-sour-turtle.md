@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The historical recipe uses turtle. Because wild turtle is protected or restricted in many jurisdictions, the modern reconstruction should use legally farmed turtle where available, or a firm dark-meat substitute such as rabbit or monkfish.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Fish & other animals
 order: 1045
 status: draft

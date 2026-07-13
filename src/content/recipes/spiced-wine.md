@@ -1,6 +1,7 @@
 ---
 title: Spiced Wine
 source: Apicius 1.1
+work: Apicius
 originalLang: Latin
 original: >-
   I. CONDITVM PARADOXVM. conditi paradoxi conpositio: mellis pondo XV in eneum

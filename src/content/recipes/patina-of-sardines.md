@@ -1,6 +1,7 @@
 ---
 title: Patina of Sardines
 source: Apicius 4.2.11
+work: Apicius
 originalLang: Latin
 original: >-
   patina de apua: abuam lauas, ex oleo maceras; in cummana conpones, adicies

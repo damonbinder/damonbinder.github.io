@@ -1,6 +1,7 @@
 ---
 title: Honey Fritters
 source: Apicius 7.11.6
+work: Apicius
 originalLang: Latin
 original: >-
   aliter dulcia: accipies similam, coques in aquam calidam ita ut durissimam

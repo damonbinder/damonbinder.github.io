@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The text describes a continuum from concentrated milk to milk solids. A broad heavy pan and patient stirring are essential.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Dairy, drinks & condiments
 order: 1052
 status: draft

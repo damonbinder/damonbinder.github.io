@@ -1,6 +1,7 @@
 ---
 title: Parthian Lamb
 source: Apicius 8.6.10
+work: Apicius
 originalLang: Latin
 original: >-
   hedum siue agnum Particum: mittes in furnum; teres piper rutam cepam

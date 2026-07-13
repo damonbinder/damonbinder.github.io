@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A close relative of medu vada, though the multiple small holes are decorative rather than a single central opening.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1015
 status: draft

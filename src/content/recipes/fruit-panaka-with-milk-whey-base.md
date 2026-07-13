@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This unusual pānaka appears to use a clarified sweet milk-whey base combined with fruit juice and tamarind.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1061
 status: draft

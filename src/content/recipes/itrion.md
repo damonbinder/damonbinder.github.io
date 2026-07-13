@@ -1,6 +1,7 @@
 ---
 title: Itrion
-source: From Athenaeus, also Galen R9
+source: Athenaeus
+work: Athenaeus
 category: Dessert
 subcategory: Cakes
 order: 170

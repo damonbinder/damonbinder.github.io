@@ -1,6 +1,7 @@
 ---
 title: Curds
 source: Apicius 7.11.9a
+work: Apicius
 originalLang: Latin
 original: >-
   melcas: cum pipere et liquamine, uel sale, oleo et coriandro.

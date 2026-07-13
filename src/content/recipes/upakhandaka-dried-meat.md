@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A short-dried, heavily salted meat subsequently roasted. For safety, the modern version uses refrigeration and a low oven rather than ambient shade-drying.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1039
 status: draft

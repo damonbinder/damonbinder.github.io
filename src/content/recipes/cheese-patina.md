@@ -1,6 +1,7 @@
 ---
 title: Cheese Patina
-source: Tiropatinam — Apicius 7.11.7
+source: Apicius 7.11.7
+work: Apicius
 originalLang: Latin
 original: >-
   tiropatina: accipies lac, aduersus quod patinam estimabis, temperabis lac

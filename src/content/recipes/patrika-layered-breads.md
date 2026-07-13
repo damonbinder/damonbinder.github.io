@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Patrikās are thin, fat-cooked sheets stacked into a layered bread. A restrained amount of ghee keeps the result closer to the source than a modern flaky paratha.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1008
 status: draft

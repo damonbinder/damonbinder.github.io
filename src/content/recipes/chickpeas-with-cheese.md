@@ -1,6 +1,7 @@
 ---
 title: Chickpeas with Cheese
-source: Galen On the Powers of Food R6
+source: Galen, On the Powers of Food R6
+work: Galen
 category: Legumes
 subcategory: Other Legumes
 order: 159

@@ -1,6 +1,7 @@
 ---
 title: Chicken Conchicla
 source: Apicius 5.4.5
+work: Apicius
 originalLang: Latin
 original: >-
   aliter conciclam sic facies: concidis pullum minutatim, liquamine oleo et

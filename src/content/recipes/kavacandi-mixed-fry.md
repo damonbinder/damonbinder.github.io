@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Kavacandī is deliberately miscellaneous: a richly seasoned mixed fry using meat, vegetables, sprouts, and pulse cakes. The reconstruction keeps the dish varied but coherent.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1024
 status: draft

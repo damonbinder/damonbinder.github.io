@@ -1,6 +1,7 @@
 ---
 title: Cabbage with Onion
 source: Apicius 3.9.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter: culiculos elixatos mediabiis; summa foliarum teres cum coriandro

@@ -1,6 +1,7 @@
 ---
 title: Conditum
-source: Oribasius 5.33i
+source: Oribasius, Medical Collections 5.33i
+work: Oribasius
 category: Beverages
 order: 185
 ---

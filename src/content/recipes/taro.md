@@ -1,6 +1,7 @@
 ---
 title: Taro
 source: Apicius 7.15
+work: Apicius
 originalLang: Latin
 original: >-
   XV. IN COLOCASIO. in colocasio: piper cuminum rutam mel liquamen, olei

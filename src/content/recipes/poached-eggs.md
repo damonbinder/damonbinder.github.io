@@ -1,6 +1,7 @@
 ---
 title: Poached Eggs
-source: Galen On the Powers of Food R17
+source: Galen, On the Powers of Food R17
+work: Galen
 category: Eggs and Patinas
 order: 8
 ---

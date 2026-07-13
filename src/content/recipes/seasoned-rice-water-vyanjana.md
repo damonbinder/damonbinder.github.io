@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A thin sweet-sour, lightly fermented-tasting accompaniment made from starchy rice water.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1059
 status: draft

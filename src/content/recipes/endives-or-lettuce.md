@@ -1,6 +1,7 @@
 ---
 title: Endives or Lettuce
 source: Apicius 3.18.1a
+work: Apicius
 originalLang: Latin
 original: >-
   intuba ex liquamine et oleo modico medere cepa concisa. pro lactucis uero

@@ -1,6 +1,7 @@
 ---
 title: Oxyporium
-source: Columella 12.59e
+source: Columella, De re rustica 12.59e
+work: Columella
 category: Vegetables
 subcategory: Salads
 order: 109

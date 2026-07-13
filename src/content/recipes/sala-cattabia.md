@@ -1,6 +1,7 @@
 ---
 title: Sala Cattabia
 source: Apicius 4.1.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter sala cattabia: panem Alexandrinum excauabis; in posca macerabis.

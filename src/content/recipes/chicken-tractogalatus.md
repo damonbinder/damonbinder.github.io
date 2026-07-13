@@ -1,6 +1,7 @@
 ---
 title: Chicken Tractogalatus
 source: Apicius 6.8.13
+work: Apicius
 originalLang: Latin
 original: >-
   pullus tractogalatus: pullum quoques liquamine oleo uino, cui mittis

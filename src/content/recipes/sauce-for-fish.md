@@ -1,6 +1,7 @@
 ---
 title: Sauce for Fish
 source: Apicius 10.2.4 and 10.3.1
+work: Apicius
 originalLang: Latin
 original: >-
   aliter ius in morena elixa: piper ligusticum anetum apii semen rus Syriacum

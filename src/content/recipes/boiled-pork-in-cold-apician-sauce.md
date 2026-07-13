@@ -1,6 +1,7 @@
 ---
 title: Boiled Pork in Cold Apician Sauce
 source: Apicius 8.7.6
+work: Apicius
 originalLang: Latin
 original: >-
   porcellum lacte pastum elixum calidum iure frigido crudo Apiciano: adicies

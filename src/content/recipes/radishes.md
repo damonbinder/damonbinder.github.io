@@ -1,6 +1,7 @@
 ---
 title: Radishes
 source: Apicius 3.14
+work: Apicius
 originalLang: Latin
 original: >-
   XIIII. RAFANOS. rafanos cum piperato ita ut piper cum liquamine teras.

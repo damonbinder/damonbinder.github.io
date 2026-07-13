@@ -1,6 +1,7 @@
 ---
 title: Fava Bean Conchicla
 source: Apicius 5.4.1
+work: Apicius
 originalLang: Latin
 original: >-
   cum faba: coques. teres piper ligusticum cuminum coriandrum uiridem;

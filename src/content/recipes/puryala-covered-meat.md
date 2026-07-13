@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A two-stage dish: meat is first simmered in mustard and ginger, then finished under cover in a fragrant ghee tempering.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1025
 status: draft

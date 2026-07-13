@@ -1,6 +1,7 @@
 ---
 title: Celery Mash
 source: Apicius 3.15.2
+work: Apicius
 originalLang: Latin
 original: >-
   aliter olus molle: apium quoques ex aqua nitrata, exprimes et concides

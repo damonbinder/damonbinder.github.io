@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This is a drained-rice method rather than the modern absorption method. It produces separate grains enriched at the end with either ghee or milk.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1001
 status: draft

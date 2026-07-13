@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Alternating liver and fat on skewers protects the organ meat from drying and creates the contrasting colours implied by the name.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1036
 status: draft

@@ -26,7 +26,7 @@ course: main
 dishType: cakkalika
 ingredients:
   - pork
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1021.4
 status: published

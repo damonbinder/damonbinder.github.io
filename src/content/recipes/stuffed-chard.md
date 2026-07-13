@@ -1,6 +1,7 @@
 ---
 title: Stuffed Chard
 source: Apicius 3.11.1
+work: Apicius
 originalLang: Latin
 original: >-
   concides porrum coriandrum; cuminum uuam passam farinam et omnia in medullam

@@ -1,6 +1,7 @@
 ---
 title: Prawn rissoles
 source: Apicius 2.1.1
+work: Apicius
 originalLang: Latin
 original: >-
   isicia fiunt marina de cammaris et astacis de lolligine de sepia de lucusta.

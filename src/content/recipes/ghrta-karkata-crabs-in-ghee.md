@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Crabs are dry-roasted, soured, and finished in ghee with cumin and pungent spice.
 tradition: Indian
-category: Mānasollāsa
+category: Seafood
 subcategory: Fish & other animals
 order: 1046
 status: draft

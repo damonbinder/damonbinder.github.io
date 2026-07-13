@@ -1,6 +1,7 @@
 ---
 title: Boiled Chicken with Gourd
 source: Apicius 6.8.8-9
+work: Apicius
 originalLang: Latin
 original: >-
   pullum elixum ex iure suo: teres piper cuminum timi modicum feniculi semen

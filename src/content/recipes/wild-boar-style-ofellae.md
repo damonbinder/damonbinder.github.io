@@ -1,6 +1,7 @@
 ---
 title: Wild-Boar Style Ofellae
 source: Apicius 7.4.3
+work: Apicius
 originalLang: Latin
 original: >-
   ofellae aprogeneo more: ex oleo liquamine condiuntur et mittitur eis

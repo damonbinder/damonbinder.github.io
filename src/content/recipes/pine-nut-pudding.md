@@ -1,6 +1,7 @@
 ---
 title: Pine Nut Pudding
 source: Apicius 7.11.5
+work: Apicius
 originalLang: Latin
 original: >-
   aliter dulcia: piper nucleos mel rutam et passum teres; cum lacte et tractam

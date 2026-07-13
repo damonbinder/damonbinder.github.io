@@ -1,6 +1,7 @@
 ---
 title: Asparagus Patina
 source: Apicius 4.2.5
+work: Apicius
 originalLang: Latin
 original: >-
   aliter patina de asparagis frigida: accipies asparagos purgatos, in mortario

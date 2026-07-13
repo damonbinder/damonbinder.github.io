@@ -1,6 +1,7 @@
 ---
 title: Patina of Nettles
 source: Apicius 4.2.36
+work: Apicius
 originalLang: Latin
 original: >-
   patina urticarum calida et frigida: urticam accipies, lauas, colas per

@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A concentrated bone-in mutton or goat broth, sharpened with sourness and asafoetida.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1038
 status: draft

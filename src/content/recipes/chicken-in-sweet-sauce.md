@@ -1,6 +1,7 @@
 ---
 title: Chicken in Sweet Sauce
-source: Based on Anthimus 13
+source: Anthimus, On the Observance of Foods 13
+work: Anthimus
 category: Poultry
 subcategory: Chicken
 order: 82

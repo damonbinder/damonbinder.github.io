@@ -1,6 +1,7 @@
 ---
 title: Carthaginian porridge
-source: Cato 85
+source: Cato, De agricultura 85
+work: Cato
 category: Grains
 subcategory: Wheat porridge
 order: 162

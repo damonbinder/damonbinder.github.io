@@ -1,6 +1,7 @@
 ---
 title: Vardanian Chicken
 source: Apicius 6.8.11
+work: Apicius
 originalLang: Latin
 original: >-
   pullus Vardanus: pullum quoques iure hoc: liquamine oleo uino fasciculum

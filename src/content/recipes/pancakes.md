@@ -1,6 +1,7 @@
 ---
 title: Pancakes
-source: Galen On the Powers of Food R2
+source: Galen, On the Powers of Food R2
+work: Galen
 category: Dessert
 subcategory: Pancakes and Fritters
 order: 173

@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A sweet, cardamom-scented buttermilk drink. Edible camphor is optional and should be barely perceptible.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1055
 status: draft

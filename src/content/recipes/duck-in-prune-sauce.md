@@ -1,6 +1,7 @@
 ---
 title: Duck in Prune Sauce
 source: Apicius 6.2.2
+work: Apicius
 originalLang: Latin
 original: >-
   in grue in anate uel in pullo: piper cepam siccam ligusticum cuminum apii

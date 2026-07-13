@@ -1,6 +1,7 @@
 ---
 title: Barley with linseed
-source: Pliny 18.73
+source: Pliny, Naturalis Historia 18.73
+work: Pliny
 category: Grains
 subcategory: Barley
 order: 166

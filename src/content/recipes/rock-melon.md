@@ -1,6 +1,7 @@
 ---
 title: Rock Melon
 source: Apicius 3.7
+work: Apicius
 originalLang: Latin
 original: >-
   VII. PEPONES ET MELONES. piper puleium mel uel passum liquamen acetum.

@@ -1,6 +1,7 @@
 ---
 title: Apician Patina
 source: Apicius 4.2.14/15
+work: Apicius
 originalLang: Latin
 original: >-
   patinam Apicianam sic facies: frustra suminis cocti pulpas piscium pulpas

@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A savoury, heated curd sauce for fried urad cakes. The reconstruction uses rice vinegar diluted with water for the uncertain sour grain liquid ārānāla.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1017
 status: draft

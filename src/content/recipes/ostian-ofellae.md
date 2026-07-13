@@ -1,6 +1,7 @@
 ---
 title: Ostian Ofellae
 source: Apicius 7.4.1
+work: Apicius
 originalLang: Latin
 original: >-
   ofellas Ostienses [in ofillam]: designas ofellas in cute, ita ut cutis sic

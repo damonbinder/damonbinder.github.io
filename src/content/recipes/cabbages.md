@@ -1,6 +1,7 @@
 ---
 title: Cabbages
 source: Apicius 3.9.1a
+work: Apicius
 originalLang: Latin
 original: >-
   si uoles, addes piper et ligusticum mentam rutam coriandrum folia coliclorum

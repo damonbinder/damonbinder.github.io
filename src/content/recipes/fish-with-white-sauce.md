@@ -1,6 +1,7 @@
 ---
 title: Fish with White-Sauce
-source: Galen On the Power of Foods R18
+source: Galen, On the Powers of Food R18
+work: Galen
 category: Seafood
 subcategory: Unclassified
 order: 100

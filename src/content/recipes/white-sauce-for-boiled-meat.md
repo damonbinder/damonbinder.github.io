@@ -1,6 +1,7 @@
 ---
 title: White Sauce for Boiled Meat
 source: Apicius 7.6.4
+work: Apicius
 originalLang: Latin
 original: >-
   ius candidum in elixam: piper liquamen uinum rutam cepam nucleos conditum,

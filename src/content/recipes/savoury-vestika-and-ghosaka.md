@@ -10,7 +10,7 @@ translation: >-
 description: >-
   These are savoury stuffed flatbreads distinguished mainly by the pulse and cooking surface. Chickpea, urad dal, or dried peas all work.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1012
 status: draft

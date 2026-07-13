@@ -1,6 +1,7 @@
 ---
 title: Pig Trotters with Barley
-source: Galen R15
+source: Galen, On the Powers of Food R15
+work: Galen
 category: Meat
 subcategory: Unclassified
 order: 70

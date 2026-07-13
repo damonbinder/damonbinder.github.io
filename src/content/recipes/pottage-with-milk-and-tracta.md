@@ -1,6 +1,7 @@
 ---
 title: Pottage with Milk and Tracta
 source: Apicius 5.1.3
+work: Apicius
 originalLang: Latin
 original: >-
   pultes tractogalatae: lactis sextarium et aquae modicum mittes in caccabo

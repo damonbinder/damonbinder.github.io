@@ -1,6 +1,7 @@
 ---
 title: Frontonian Piglet
 source: Apicius 8.7.11
+work: Apicius
 originalLang: Latin
 original: >-
   porcellum oenococtum: porcellum preduras, ornas. adicies in caccabum oleum

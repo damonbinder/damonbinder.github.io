@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This entry gives both a sweet dairy version and a sour fermented-rice version. The cakes are soaked after frying so that they soften.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1016
 status: draft

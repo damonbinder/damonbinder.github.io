@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Whole roe sacs are first set by roasting or poaching, then sliced and fried with aromatic spices.
 tradition: Indian
-category: Mānasollāsa
+category: Seafood
 subcategory: Fish & other animals
 order: 1044
 status: draft

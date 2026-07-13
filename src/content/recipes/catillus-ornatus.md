@@ -1,6 +1,7 @@
 ---
 title: Catillus Ornatus
-source: From The Art of Making Bread by Chrysippus of Tyana, quoted in Athenaeus 647
+source: Chrysippus of Tyana, in Athenaeus 647
+work: Chrysippus of Tyana
 category: Grains
 subcategory: Bread
 order: 161

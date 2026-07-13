@@ -1,6 +1,7 @@
 ---
 title: Chicken meatballs in hydrogarum
 source: Apicius 2.2.4
+work: Apicius
 originalLang: Latin
 original: >-
   aliter de pullo: piperis grana XXX conteres, mittis liquaminis optimi

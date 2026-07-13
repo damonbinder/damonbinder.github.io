@@ -1,6 +1,7 @@
 ---
 title: Sweet Nut Patina
 source: Apicius 4.2.2/4.2.16
+work: Apicius
 originalLang: Latin
 original: >-
   aliter patina uersatilis: nucleos nuces fractas; torres eas et teres cum

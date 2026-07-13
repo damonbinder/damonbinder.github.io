@@ -1,6 +1,7 @@
 ---
 title: Leeks
 source: Apicius 3.10.1
+work: Apicius
 originalLang: Latin
 original: >-
   porros maturos fieri: pugnum salis aquam et oleum mixtum facies et ibi

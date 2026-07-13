@@ -1,6 +1,7 @@
 ---
 title: Parthian Chicken
 source: Apicius 6.8.3
+work: Apicius
 originalLang: Latin
 original: >-
   pullum Particum: pullum aperies a naui et in quadrato ornas. teres piper

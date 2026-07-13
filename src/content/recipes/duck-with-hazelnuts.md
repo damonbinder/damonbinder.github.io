@@ -1,6 +1,7 @@
 ---
 title: Duck with Hazelnuts
-source: Modified from The Classical Cookbook, page 133
+source: Apicius 6.2.4
+work: Apicius
 category: Poultry
 subcategory: Unclassified
 order: 86

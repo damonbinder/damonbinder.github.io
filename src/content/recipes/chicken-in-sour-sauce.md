@@ -1,6 +1,7 @@
 ---
 title: Chicken in Sour Sauce
 source: Apicius 6.8.4
+work: Apicius
 originalLang: Latin
 original: >-
   pullum oxizomum: olei acetabulum maiorem, <uini> satis modice, liquaminis

@@ -1,6 +1,7 @@
 ---
 title: Lentils with mussels
 source: Apicius 5.2.3
+work: Apicius
 originalLang: Latin
 original: >-
   aliter lenticulam: coquis. cum despumauerit, porrum et coriandrum uiridem

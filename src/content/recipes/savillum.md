@@ -1,6 +1,7 @@
 ---
 title: Savillum
-source: De Agricultura 84
+source: Cato, De agricultura 84
+work: Cato
 category: Dessert
 subcategory: Cakes
 order: 168

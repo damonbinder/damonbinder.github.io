@@ -1,6 +1,7 @@
 ---
 title: Hipotrimma
 source: Apicius 1.33
+work: Apicius
 originalLang: Latin
 original: >-
   XXXIII. YPOTRIMA: piper ligusticum mentam aridam nucleos pineos uuam passam

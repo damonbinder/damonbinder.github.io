@@ -10,7 +10,7 @@ translation: >-
 description: >-
   This is the chapter’s basic template for pulse soups. The one-to-twenty salt ratio is probably by weight and is fairly salty; the reconstruction uses less and allows adjustment at the end.
 tradition: Indian
-category: Mānasollāsa
+category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1002
 status: draft

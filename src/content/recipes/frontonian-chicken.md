@@ -1,6 +1,7 @@
 ---
 title: Frontonian Chicken
 source: Apicius 6.8.12
+work: Apicius
 originalLang: Latin
 original: >-
   pullum Frontonianum: pullum praedura, condies liquamine oleo mixto, cui

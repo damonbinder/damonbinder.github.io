@@ -1,6 +1,7 @@
 ---
 title: Gastris
-source: From The Art of Making Bread by Chrysippus of Tyana, quoted in Athenaeus 647
+source: Chrysippus of Tyana, in Athenaeus 647
+work: Chrysippus of Tyana
 category: Dessert
 subcategory: Cakes
 order: 169

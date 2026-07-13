@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A simple ancestor of sweet strained-yoghurt dishes such as shrikhand.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Dairy, drinks & condiments
 order: 1056
 status: draft

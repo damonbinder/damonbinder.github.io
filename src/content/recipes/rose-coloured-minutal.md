@@ -1,6 +1,7 @@
 ---
 title: Rose-coloured Minutal
 source: Apicius 4.3.7–8
+work: Apicius
 originalLang: Latin
 original: >-
   minutal ex iecineribus et pulmonibus leporis: inuenies inter lepores

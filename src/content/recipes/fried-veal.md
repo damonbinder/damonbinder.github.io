@@ -1,6 +1,7 @@
 ---
 title: Fried Veal
 source: Apicius 8.5.1
+work: Apicius
 originalLang: Latin
 original: >-
   uitellina fricta: piper ligusticum apii semen cuminum origanum cepam siccam

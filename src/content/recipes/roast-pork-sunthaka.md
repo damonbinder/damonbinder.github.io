@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The practical core is skewered fatty pork roasted until it begins to baste itself. Skin-on pork belly gives the closest readily available cut.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1020
 status: draft

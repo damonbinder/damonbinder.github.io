@@ -10,7 +10,7 @@ translation: >-
 description: >-
   A dark mutton stew thickened and enriched with fresh blood. The recipe is practical only where inspected food-grade blood is legally available.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1028
 status: draft

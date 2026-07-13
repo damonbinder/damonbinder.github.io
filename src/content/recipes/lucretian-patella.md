@@ -1,6 +1,7 @@
 ---
 title: Lucretian Patella
 source: Apicius 4.2.25
+work: Apicius
 originalLang: Latin
 original: >-
   patellam Lucretianam: cepas pallachanas purgas; uiridia earum proicies; in

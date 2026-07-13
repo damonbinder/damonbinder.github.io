@@ -1,6 +1,7 @@
 ---
 title: Gourd
 source: Apicius 3.4.1
+work: Apicius
 originalLang: Latin
 original: >-
   callosiores reddes gustum ad cucurbitas: coctas expressas in patinam

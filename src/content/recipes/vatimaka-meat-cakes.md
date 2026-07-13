@@ -10,7 +10,7 @@ translation: >-
 description: >-
   Simple saffron-seasoned meat patties cooked by frying, griddling, or grilling.
 tradition: Indian
-category: Mānasollāsa
+category: Meat
 subcategory: Meat, offal & sausages
 order: 1032
 status: draft

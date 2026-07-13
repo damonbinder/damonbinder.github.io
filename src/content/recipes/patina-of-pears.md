@@ -1,6 +1,7 @@
 ---
 title: Patina of Pears
-source: From Apicius 4.2.35
+source: Apicius 4.2.35
+work: Apicius
 originalLang: Latin
 original: >-
   patina de piris: pira elixa et purgata e medio; teres cum pipere cumino

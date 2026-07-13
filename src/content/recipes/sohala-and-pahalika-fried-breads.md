@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The distinction seems to be between a firmer floating fried bread and a softer bread held under the oil. Both can be reconstructed from the maṇḍaka dough.
 tradition: Indian
-category: Mānasollāsa
+category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1007
 status: draft

@@ -1,6 +1,7 @@
 ---
 title: Pottage with Wine-based Stock
 source: Apicius 5.1.2
+work: Apicius
 originalLang: Latin
 original: >-
   pultes cum iure oenocoti: pultes oenococti iure condies; copadia similam

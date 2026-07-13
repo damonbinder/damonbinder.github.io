@@ -1,6 +1,7 @@
 ---
 title: Cold Peas
 source: Apicius 5.3.4
+work: Apicius
 originalLang: Latin
 original: >-
   pisum: coques, agitabis et mittis in frigidam. cum refrigrauerit, deinde

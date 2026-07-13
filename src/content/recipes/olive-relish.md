@@ -1,6 +1,7 @@
 ---
 title: Olive Relish
-source: Cato De Agricultura 119
+source: Cato, De agricultura 119
+work: Cato
 category: Dips and Relishes
 order: 3
 ---

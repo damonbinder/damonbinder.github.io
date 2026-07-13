@@ -12,7 +12,7 @@ description: >-
   balance should resemble a lightly sweetened spiced lentil pastry rather than
   a dessert.
 tradition: Indian
-category: Mānasollāsa
+category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1011
 status: published

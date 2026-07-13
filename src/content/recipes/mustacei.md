@@ -1,6 +1,7 @@
 ---
 title: Mustacei
-source: De Agricultura 121
+source: Cato, De agricultura 121
+work: Cato
 category: Grains
 subcategory: Bread
 order: 160

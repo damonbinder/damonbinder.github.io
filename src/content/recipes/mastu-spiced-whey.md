@@ -10,7 +10,7 @@ translation: >-
 description: >-
   The whey from making śikhariṇī becomes a light salty drink or thin accompaniment.
 tradition: Indian
-category: Mānasollāsa
+category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1057
 status: draft

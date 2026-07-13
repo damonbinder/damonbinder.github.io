@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { getRecipes, catSlug, workOf, getWorkToEra, showingDrafts } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, workOf, pageOf, getWorkToEra, showingDrafts } from '../../../lib/recipes.ts';
 import { getCollection } from 'astro:content';
 
 const recipes = await getRecipes();
@@ -31,10 +31,10 @@ const realCategory = (d: { category?: string; work?: string; source?: string }) 
 
 const cards = recipes.map((r) => ({
   id: r.id,
-  work: workOf(r.data),
+  work: pageOf(r.data),
   title: r.data.title,
   source: r.data.source ?? '',
-  era: workToEra.get(workOf(r.data)) ?? null,
+  era: workToEra.get(pageOf(r.data)) ?? null,
   category: realCategory(r.data),
   language: r.data.originalLang ?? null,
   status: r.data.status,
@@ -77,18 +77,6 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
       </div>
     </div>
 
-    {categories.length > 0 && (
-      <div class="filter-group">
-        <span class="filter-label">Category</span>
-        <div class="pill-row" id="pills-category">
-          <button type="button" class="pill" data-category="all" aria-pressed="true">All</button>
-          {categories.map((c) => (
-            <button type="button" class="pill" data-category={c} aria-pressed="false">{c}</button>
-          ))}
-        </div>
-      </div>
-    )}
-
     {languages.length > 0 && (
       <div class="filter-group">
         <span class="filter-label">Language</span>
@@ -96,6 +84,18 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
           <button type="button" class="pill" data-language="all" aria-pressed="true">All</button>
           {languages.map((l) => (
             <button type="button" class="pill" data-language={l} aria-pressed="false">{l}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {categories.length > 0 && (
+      <div class="filter-group">
+        <span class="filter-label">Category</span>
+        <div class="pill-row" id="pills-category">
+          <button type="button" class="pill" data-category="all" aria-pressed="true">All</button>
+          {categories.map((c) => (
+            <button type="button" class="pill" data-category={c} aria-pressed="false">{c}</button>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import {
-  catSlug, getWorkCounts, getWorkTotalCounts, getWorkPublishedCounts,
+  catSlug, displayName, SOURCE_PAGES, getWorkCounts, getWorkTotalCounts, getWorkPublishedCounts,
   getSourceEntry, showingDrafts,
 } from '../../lib/recipes.ts';
 
@@ -11,63 +11,83 @@ const workCounts = await getWorkCounts();
 const totalCounts = await getWorkTotalCounts();
 const publishedCounts = await getWorkPublishedCounts();
 
+const buildSource = async (name) => {
+  const total = totalCounts.get(name) ?? 0;
+  const published = publishedCounts.get(name) ?? 0;
+  const hasPage = (workCounts.get(name) ?? 0) > 0;
+  const period = (await getSourceEntry(name))?.data.period;
+  const isGroup = !SOURCE_PAGES.has(name);
+  // What follows the date. Never expose draft counts to the public: an
+  // unpublished source shows its date alone. In dev (showingDrafts) keep the
+  // "N of M published" progress readout for our own tracking.
+  const recipeCount = (n: number) => `${n} recipe${n === 1 ? '' : 's'}`;
+  let countText: string | null;
+  if (showingDrafts) {
+    countText = published < total ? `${published} of ${total} recipes published` : recipeCount(total);
+  } else if (hasPage) {
+    countText = recipeCount(published);
+  } else {
+    countText = null;
+  }
+  return { name, label: displayName(name), total, published, hasPage, period, isGroup, countText };
+};
+
 const eraSections = await Promise.all(eras.map(async (era) => {
   const { Content } = await render(era);
-  const sources = await Promise.all(
-    era.data.sources
-      .filter((name) => (totalCounts.get(name) ?? 0) > 0)
-      .map(async (name) => {
-        const total = totalCounts.get(name) ?? 0;
-        const published = publishedCounts.get(name) ?? 0;
-        const hasPage = (workCounts.get(name) ?? 0) > 0;
-        const period = (await getSourceEntry(name))?.data.period;
-        return { name, total, published, hasPage, period };
-      }),
-  );
+  // A single flat list of the era's sources, sorted alphabetically by display
+  // name. `sourceGroups` is still the data shape (it drives page routing), but
+  // the hub lists sources undivided.
+  const names = era.data.sourceGroups
+    ? era.data.sourceGroups.flatMap((g) => g.sources)
+    : era.data.sources;
+  const sources = (await Promise.all(names.map(buildSource)))
+    .filter((s) => s.total > 0)
+    .sort((a, b) => {
+      // Single-author sources first (alphabetical), then misc/group pages.
+      if (a.isGroup !== b.isGroup) return a.isGroup ? 1 : -1;
+      const key = (l: string) => l.replace(/^the\s+/i, '');
+      return key(a.label).localeCompare(key(b.label));
+    });
   const publishedSourceCount = sources.filter((s) => s.published > 0).length;
-  return { era, Content, sources, publishedSourceCount };
+  return { era, Content, sources, sourceCount: sources.length, publishedSourceCount };
 }));
 ---
-<Base title="Historical Recipes" description="Historical recipes I've cooked, reconstructing dishes from the ancient and medieval world.">
+<Base wide title="Historical Recipes" description="Historical recipes I've cooked, reconstructing dishes from the ancient and medieval world.">
   <div class="recipes-hub">
     <h1>Historical Recipes</h1>
     <p class="lead">
-      I've cooked hundreds of historical recipes — mostly from ancient Greece and Rome,
-      but also from a range of other ancient and medieval cuisines, which I'm steadily
-      adding. Recipes here are ones I've actually cooked, so this is my active list in
-      my own kitchen. The originals rarely give quantities, so taste and adjust as you
-      go, the way any ancient cook would have.
+      I've cooked hundreds of historical recipes from various ancient and medieval
+      cuisines, which I am steadily adding to this website. Below I provide an overview
+      of the cuisines; you can browse all recipes <a href="/recipes/all/">here</a>.
     </p>
-    <p class="browse-all-link"><a href="/recipes/all/">Browse all recipes by tradition and category →</a></p>
 
-    {eraSections.map(({ era, Content, sources, publishedSourceCount }) => (
+    {eraSections.map(({ era, Content, sources, sourceCount, publishedSourceCount }) => (
       <details class="era-accordion" open={era.data.order === 0}>
         <summary>
           <span>{era.data.name}</span>
-          <span class="era-count">{publishedSourceCount} of {sources.length} sources published</span>
           <span class="chevron">▶</span>
         </summary>
         <div class="accordion-body">
           <div class="blurb"><Content /></div>
-          <ul class="source-list">
-            {sources.map((s) => (
-              <li class="source-row">
-                {s.hasPage ? (
-                  <a class="name" href={`/recipes/${catSlug(s.name)}/`}>{s.name}</a>
-                ) : (
-                  <span class="name muted-name">{s.name}</span>
-                )}
-                <span class="count">
-                  {s.period && <>{s.period} · </>}
-                  {s.hasPage
-                    ? (s.published < s.total
-                        ? <>{s.published} of {s.total} recipe{s.total === 1 ? '' : 's'} published</>
-                        : <>{s.total} recipe{s.total === 1 ? '' : 's'}</>)
-                    : <>{s.total} drafted, not yet published</>}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <aside class="source-index">
+            <h2 class="source-index-title">Sources</h2>
+            <ul class="source-list">
+              {sources.map((s) => (
+                <li class="source-row">
+                  {s.hasPage ? (
+                    <a class="name" href={`/recipes/${catSlug(s.name)}/`}>{s.label}</a>
+                  ) : (
+                    <span class="name muted-name">{s.label}</span>
+                  )}
+                  <span class="count">
+                    {s.period}
+                    {s.period && s.countText && <> · </>}
+                    {s.countText}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </details>
     ))}
@@ -107,54 +127,73 @@ const eraSections = await Promise.all(eras.map(async (era) => {
     font-family: var(--font-sans);
     font-size: 0.75rem;
     color: var(--muted);
+    margin-left: auto;
     transition: transform 0.15s ease;
   }
   .era-accordion[open] summary .chevron { transform: rotate(90deg); }
   .era-accordion summary:hover { color: var(--accent); }
-  .era-accordion summary .era-count {
-    font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-right: auto;
-  }
 
   .accordion-body { padding: 0 0 1.6rem; }
+  @media (min-width: 60rem) {
+    .accordion-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 17rem;
+      gap: 2.5rem;
+      align-items: start;
+    }
+  }
   .blurb {
     font-size: 1.02rem;
     line-height: 1.6;
-    max-width: 40rem;
     margin: 0 0 1.1rem;
   }
   .blurb :global(p) { margin: 0 0 1rem; }
   .blurb :global(p:last-child) { margin-bottom: 0; }
 
+  .source-index { margin-top: 0.3rem; }
+  @media (min-width: 60rem) {
+    .source-index { position: sticky; top: 2rem; }
+  }
+  .source-index-title {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-group + .source-group { margin-top: 1.2rem; }
+  .source-group-label {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fg);
+    margin: 0 0 0.3rem;
+  }
+
   .source-list { list-style: none; margin: 0; padding: 0; }
   .source-row {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.6rem 0;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.45rem 0;
     border-bottom: 1px solid var(--rule);
   }
   .source-row:last-child { border-bottom: none; }
   .source-row .name {
     font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   .source-row a.name { color: var(--fg); text-decoration: none; }
   .source-row a.name:hover { color: var(--accent); }
   .source-row .name.muted-name { color: var(--muted); font-weight: 600; }
   .source-row .count {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--muted);
-    white-space: nowrap;
-  }
-
-  @media (max-width: 500px) {
-    .source-row { flex-wrap: wrap; }
   }
 </style>

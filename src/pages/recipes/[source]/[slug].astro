@@ -1,30 +1,30 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { render } from 'astro:content';
-import { getRecipes, catSlug, workOf, citationNumber, getSourceEntry, showingDrafts } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry, showingDrafts } from '../../../lib/recipes.ts';
 
 export async function getStaticPaths() {
   const recipes = await getRecipes();
   const link = (x: (typeof recipes)[number] | undefined) =>
-    x ? { title: x.data.title, href: `/recipes/${catSlug(workOf(x.data))}/${x.id}/` } : null;
+    x ? { title: x.data.title, href: `/recipes/${catSlug(pageOf(x.data))}/${x.id}/` } : null;
 
-  // Group by source, ordered by citation number, so prev/next steps through
-  // recipes in the order they appear within that source.
+  // Group by source page, ordered by citation number, so prev/next steps
+  // through recipes in the order they appear within that page.
   const bySource = new Map<string, typeof recipes>();
   for (const r of recipes) {
-    const w = workOf(r.data);
+    const w = pageOf(r.data);
     if (!bySource.has(w)) bySource.set(w, []);
     bySource.get(w)!.push(r);
   }
   for (const group of bySource.values()) {
-    group.sort((a, b) => citationNumber(a.data) - citationNumber(b.data));
+    group.sort((a, b) => compareCitations(a.data, b.data));
   }
 
   const paths = [];
   for (const group of bySource.values()) {
     group.forEach((r, i) => {
       paths.push({
-        params: { source: catSlug(workOf(r.data)), slug: r.id },
+        params: { source: catSlug(pageOf(r.data)), slug: r.id },
         props: { recipe: r, prev: link(group[i - 1]), next: link(group[i + 1]) },
       });
     });
@@ -36,9 +36,10 @@ const { recipe, prev, next } = Astro.props;
 const d = recipe.data;
 const { Content } = await render(recipe);
 
-const work = workOf(d);
-const workHref = `/recipes/${catSlug(work)}/`;
-const period = (await getSourceEntry(work))?.data.period;
+const page = pageOf(d);
+const work = displayName(page);
+const workHref = `/recipes/${catSlug(page)}/`;
+const period = (await getSourceEntry(page))?.data.period;
 const langCode = { Latin: 'la', Greek: 'grc', Sanskrit: 'sa' }[d.originalLang ?? ''] ?? undefined;
 
 // Foreign untranslated terms are italicised with *asterisks* in the source text
@@ -93,7 +94,12 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
 
   <nav class="recipe-nav">
     {prev ? <a class="prev" href={prev.href}>← <Fragment set:html={em(prev.title)} /></a> : <span></span>}
-    {next && <a class="next" href={next.href}><Fragment set:html={em(next.title)} /> →</a>}
+    <span class="mid">
+      <a href={workHref}>{work}</a>
+      <span class="dot">·</span>
+      <a href="/recipes/">Recipe index</a>
+    </span>
+    {next ? <a class="next" href={next.href}><Fragment set:html={em(next.title)} /> →</a> : <span></span>}
   </nav>
 </Base>
 
@@ -209,8 +215,9 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
   }
 
   .recipe-nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
     gap: 1rem;
     margin-top: 3rem;
     padding-top: 1.2rem;
@@ -220,5 +227,17 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
   }
   .recipe-nav a { text-decoration: none; color: var(--muted); }
   .recipe-nav a:hover { color: var(--accent); }
-  .recipe-nav .next { text-align: right; margin-left: auto; }
+  .recipe-nav .prev { justify-self: start; }
+  .recipe-nav .next { justify-self: end; text-align: right; }
+
+  .recipe-nav .mid {
+    justify-self: center;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .recipe-nav .mid a { border-bottom: 1px solid var(--rule); }
+  .recipe-nav .mid a:hover { border-color: var(--accent); }
+  .recipe-nav .mid .dot { color: var(--muted); }
 </style>

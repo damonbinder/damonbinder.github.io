@@ -1,10 +1,10 @@
 ---
-import { catSlug, showingDrafts, workOf } from '../lib/recipes.ts';
+import { catSlug, showingDrafts, workOf, pageOf } from '../lib/recipes.ts';
 
 interface Props { recipe: any; showWork?: boolean }
 const { recipe, showWork = false } = Astro.props;
 const d = recipe.data;
-const href = `/recipes/${catSlug(workOf(d))}/${recipe.id}/`;
+const href = `/recipes/${catSlug(pageOf(d))}/${recipe.id}/`;
 const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 const snippet = d.description
   ? d.description.length > 140 ? d.description.slice(0, 140).trim() + '…' : d.description

@@ -2,27 +2,31 @@
 import Base from '../../../layouts/Base.astro';
 import SourceRecipeBrowser from '../../../components/SourceRecipeBrowser.astro';
 import { render } from 'astro:content';
-import { getRecipes, catSlug, workOf, citationNumber, getSourceEntry } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry } from '../../../lib/recipes.ts';
 import { sourceTexts } from '../../../data/sources/index.ts';
 
 export async function getStaticPaths() {
   const recipes = await getRecipes();
   const byWork = new Map<string, typeof recipes>();
   for (const r of recipes) {
-    const w = workOf(r.data);
+    const w = pageOf(r.data);
     if (!byWork.has(w)) byWork.set(w, []);
     byWork.get(w)!.push(r);
   }
   return [...byWork.entries()].map(([work, list]) => ({
     params: { source: catSlug(work) },
-    props: { work, list: list.sort((a, b) => citationNumber(a.data) - citationNumber(b.data)) },
+    props: { work, list: list.sort((a, b) => compareCitations(a.data, b.data)) },
   }));
 }
 
 const { work, list } = Astro.props;
+const title = displayName(work);
 const sourceEntry = await getSourceEntry(work);
 const period = sourceEntry?.data.period;
-const Blurb = sourceEntry ? (await render(sourceEntry)).Content : undefined;
+// Some source entries carry only a date (no blurb body); render the blurb
+// column only when there's actual prose, so date-only entries don't leave an
+// empty column.
+const Blurb = sourceEntry?.body?.trim() ? (await render(sourceEntry)).Content : undefined;
 const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
 
 // The complete surviving text (independent of which entries have become
@@ -34,9 +38,9 @@ const textEntries = (fullText ?? []).map((entry) => ({
   recipe: bySourceCitation.get(entry.ref),
 }));
 ---
-<Base title={work} description={`Recipes from ${work}.`} wide>
-  <p class="crumb"><a href="/recipes/">Recipes</a> › {work}</p>
-  <h1>{work}</h1>
+<Base title={title} description={`Recipes from ${title}.`} wide>
+  <p class="crumb"><a href="/recipes/">Recipes</a> › {title}</p>
+  <h1>{title}</h1>
   <p class="meta">
     {period && <span>{period}</span>}
     {period && <span class="dot">·</span>}

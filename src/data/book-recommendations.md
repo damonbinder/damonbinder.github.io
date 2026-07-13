@@ -2,7 +2,7 @@
 
 Last updated June 2026  
 
-## Science and Technology
+## Science
 
 - _Power, Sex, Suicide_ by Nick Lane (2005)
 
@@ -88,7 +88,7 @@ Last updated June 2026
 
 - _The Origins of Efficiency_ by Brian Potter (2025)
 
-- _The Infinite Machine_ by Sebastian Mallaby (2026)
+- _The Infinity Machine_ by Sebastian Mallaby (2026)
 
   about Demis Hassabis and DeepMind
 
@@ -232,7 +232,9 @@ Last updated June 2026
 
   a surprisingly interesting book on shipping containers
 
-### Economic History (arranged roughly by how technical/dry they are)
+### Economic History
+
+*Arranged roughly by how technical/dry they are.*
 
 - _How the World became Rich_ by Mark Koyama and Jared Rubin (2022)
 
@@ -284,7 +286,7 @@ Last updated June 2026
 
   highly recommended for an overview of how, broadly speaking, pre-industrial societies actually operated
 
-- _Escape from Rome: The Failure of Empire and the Road to Prosperity_ by Walter Schiedel (2019)
+- _Escape from Rome: The Failure of Empire and the Road to Prosperity_ by Walter Scheidel (2019)
 
   about why the Roman empire formed, why no later power managed to recreate the empire, and how this important for understanding why Europe industrialized first
 
@@ -292,7 +294,7 @@ Last updated June 2026
 
   long, but serves as a good introduction to both Western and Chinese history, in parallel.
 
-- _Farmers, foragers, and fossil fuels_, also by Ian Morris (2015)
+- _Foragers, Farmers, and Fossil Fuels_, also by Ian Morris (2015)
 
   on how the values we hold have changed over time
 
@@ -330,7 +332,7 @@ Last updated June 2026
 
   or agriculture "it's a trap!"
 
-- _The Indo-Europeans Rediscovered_ by J. P. Mallory (1989)
+- _The Indo-Europeans Rediscovered_ by J. P. Mallory (2025)
 
 - _Weavers, Scribes, and Kings_ by Amanda Podany (2022)
 
@@ -426,7 +428,7 @@ Last updated June 2026
 
   an economic history of Nazi Germany
 
-- _A Short History of World War 1_ by James Stockesbury (1981)
+- _A Short History of World War 1_ by James Stokesbury (1981)
 
 - _The Making of the Atomic Bomb_ by Richard Rhodes (1986)
 
@@ -486,7 +488,7 @@ Last updated June 2026
 
   covers the first ~300 years of the Christian church
 
-- _Buddhism_ (2001) and _The Buddha_ (2007), both by Donald Lopez
+- _Buddhism_ (2001) and _The Buddha_ (2025), both by Donald Lopez
 
   scholarly and concise
 

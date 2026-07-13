@@ -21,4 +21,74 @@ import { Content } from '../../data/book-recommendations.md';
   }
   .booklist :global(h2) { font-size: 1.6rem; margin-top: 2.8rem; }
   .booklist :global(h3) { font-size: 1.25rem; margin-top: 1.9rem; }
+
+  /* Collapsible sections (built at runtime from each H2) and subsections (H3). */
+  .booklist :global(.book-section) { border-top: 1px solid var(--rule); }
+  .booklist :global(.book-section:last-of-type) { border-bottom: 1px solid var(--rule); }
+
+  .booklist :global(summary) {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+    margin: 0;
+  }
+  .booklist :global(summary::-webkit-details-marker) { display: none; }
+  .booklist :global(.book-section > summary h2) { margin: 1.4rem 0; }
+  .booklist :global(.book-subsection > summary h3) { margin: 1.3rem 0 0.6rem; }
+  .booklist :global(summary:hover h2),
+  .booklist :global(summary:hover h3) { color: var(--accent); }
+
+  .booklist :global(summary .chevron) {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-left: auto;
+    align-self: center;
+    transition: transform 0.15s ease;
+  }
+  .booklist :global(details[open] > summary .chevron) { transform: rotate(90deg); }
+
+  .booklist :global(.section-body) { padding-bottom: 0.4rem; }
+  .booklist :global(.section-body > :first-child) { margin-top: 0.4rem; }
 </style>
+
+<script>
+  // Wrap each heading and its following content in a <details> so sections
+  // collapse. Done in the browser so the markdown source stays plain markdown.
+  function wrapSections(container: Element, tag: string, className: string) {
+    const nodes = Array.from(container.children);
+    let body: HTMLElement | null = null;
+    for (const node of nodes) {
+      if (node.tagName === tag) {
+        const details = document.createElement('details');
+        details.className = className;
+        details.open = true;
+        const summary = document.createElement('summary');
+        summary.appendChild(node.cloneNode(true));
+        const chevron = document.createElement('span');
+        chevron.className = 'chevron';
+        chevron.textContent = '▶';
+        summary.appendChild(chevron);
+        details.appendChild(summary);
+        body = document.createElement('div');
+        body.className = 'section-body';
+        details.appendChild(body);
+        container.insertBefore(details, node);
+        node.remove();
+      } else if (body) {
+        body.appendChild(node);
+      }
+      // Content before the first heading is left in place.
+    }
+  }
+
+  const list = document.querySelector('.booklist');
+  if (list) {
+    wrapSections(list, 'H2', 'book-section');
+    list.querySelectorAll('.book-section > .section-body').forEach((body) =>
+      wrapSections(body, 'H3', 'book-subsection'),
+    );
+  }
+</script>

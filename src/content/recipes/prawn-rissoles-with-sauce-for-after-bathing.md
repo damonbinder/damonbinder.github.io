@@ -4,21 +4,20 @@ source: Apicius 2.1.3 and 2.2.7
 work: Apicius
 originalLang: Latin
 original: >-
-  esicia de iscillis uel de cammaris amplis: cammari uel iscille de testa sua
+  [2.1.3] esicia de iscillis uel de cammaris amplis: cammari uel iscille de testa sua
   eximuntur et in mortario teruntur cum pipere et liquamine optimo. pulpe
-  esicia plassantur.<br>esicia amulata a balineo sic facies: teres piper
+  esicia plassantur.<br>[2.2.7] esicia amulata a balineo sic facies: teres piper
   ligusticum origanum modicum silfi gingber minimum mellis modicum;
   liquamine temperabis; misces adicies super esicia; facies ut ferueat. cum
   bene bulliuerit amulo obligas ispis so et soruendum inferes.
 translation: >-
-  *Isicia* of prawns or of large crayfish: the crayfish or prawns are taken
+  [2.1.3] *Isicia* of prawns or of large crayfish: the crayfish or prawns are taken
   out of their shells and pounded in a mortar with pepper and the best fish
-  sauce. Rissoles (*isicia*) are shaped from the flesh.<br>Starch-thickened
+  sauce. Rissoles (*isicia*) are shaped from the flesh.<br>[2.2.7] Starch-thickened
   rissoles for after the bath: make them thus. Grind pepper, lovage, a
-  little oregano, silphium [asafoetida], a very little ginger, and a little
+  little oregano, silphium, a very little ginger, and a little
   honey; temper with fish sauce; mix it and pour it over the rissoles; bring
-  it to a boil. When it has boiled well, bind it with starch [*ispis so* is
-  obscure] and serve it to be sipped.
+  it to a boil. When it has boiled well, bind it with starch and serve it immediately.
 category: Isicia
 subcategory: Meatballs
 order: 22

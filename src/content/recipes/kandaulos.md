@@ -7,7 +7,7 @@ subcategory: Beef and Veal
 order: 58
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g diced beef (or lamb or pork)  
 * 750 ml beef stock  
@@ -16,7 +16,7 @@ order: 58
 * 2 tsp dried dill leaf  
 * 1 Tb olive oil
 
-**Method**
+## Method
 
 1. Heat up the olive oil in a dutch oven. Add the diced beef and fry until browned.  
 2. Add the beef stock. Bring to a simmer, and cook for an hour.  

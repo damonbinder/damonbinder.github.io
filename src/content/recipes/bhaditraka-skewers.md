@@ -14,7 +14,7 @@ order: 1026
 status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g lamb loin, goat loin, or pork tenderloin, cut into 4 cm pieces  
 * 30 ml fresh ginger juice  
@@ -23,7 +23,7 @@ status: published
 * 40 g ghee, melted  
 * 1 tsp ground black pepper
 
-**Method**
+## Method
 
 1. Pierce each piece of meat repeatedly with a skewer or fork.  
 2. Mix the ginger juice, asafoetida-water, and half the salt. Rub into the meat and refrigerate for 2–4 hours.  

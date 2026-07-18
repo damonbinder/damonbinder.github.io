@@ -18,7 +18,7 @@ subcategory: Unclassified
 order: 124
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600g beetroot  
 * 300 ml white wine  
@@ -26,5 +26,5 @@ order: 124
 * Pinch of salt  
 * 2 Tb olive oil
 
-**Method**  
+## Method
 Cut the beetroot in bite-sized chunks. Place into a saucepan along with remaining ingredients, and simmer for 20–30 minutes or until the beetroot is cooked.

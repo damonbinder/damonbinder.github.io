@@ -6,7 +6,7 @@ category: Dips and Relishes
 order: 3
 ---
 
-**Ingredients**
+## Ingredients
 
 * 120 g black olives  
 * 120 g green olives  
@@ -18,5 +18,5 @@ order: 3
 * 2 tsp dried rue  
 * 2 tsp dried mint
 
-**Method**  
+## Method
 Chop the olives, then add the remaining ingredients. Place in a sealable container and pour a little more olive oil over to cover. 

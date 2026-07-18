@@ -9,7 +9,7 @@ order: 53
 
 Hyposphagma *for roast meat: the blood to be blended with honey, cheese, salt, cumin, silphium—these heated together.*
 
-**Ingredients**
+## Ingredients
 
 * 1.5 kg boneless leg of lamb  
 * 400 ml pig’s blood  
@@ -19,7 +19,7 @@ Hyposphagma *for roast meat: the blood to be blended with honey, cheese, salt, c
 * A pinch of asafoetida  
 * 1½ tsp salt 
 
-**Method**
+## Method
 
 1. Preheat the oven to 180C/350F. Roast the leg of lamb for about 90 minutes, or until cooked to the desired doneness. Once cooked, remove from the oven, cover in aluminium foil, and let rest for 10 minutes.  
 2. While the lamb is resting, prepare the sauce by adding the remaining ingredients into a saucepan and whisking them together until thoroughly combined.   

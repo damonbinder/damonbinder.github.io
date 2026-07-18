@@ -17,7 +17,7 @@ subcategory: Chicken
 order: 73
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs  
 * 1 small leak, thoroughly washed  
@@ -28,7 +28,7 @@ order: 73
 * 40 ml white wine  
 * 30 ml white wine vinegar
 
-**Method**
+## Method
 
 1. Preheat the oven to 180°C / 350 F.  
 2. Place the chicken in a dutch oven, skin side up, along with the leak. Add the remaining ingredients to the dutch oven, place in the oven, and cook for 50 minutes.  

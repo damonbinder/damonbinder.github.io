@@ -19,7 +19,7 @@ subcategory: Chicken
 order: 72
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thigh, with skin and bone  
 * 200 ml white wine  
@@ -29,7 +29,7 @@ order: 72
 * ½ tsp asafoetida  
 * Black pepper
 
-**Method**
+## Method
 
 1. Preheat the oven to 180°C / 350 F.  
 2. Dry-fry the caraway seeds, then grind in a mortar and pestle. Combine in a measuring jug with wine, fish sauce, lovage, and asafoetida, along with a generous amount of ground black pepper.  

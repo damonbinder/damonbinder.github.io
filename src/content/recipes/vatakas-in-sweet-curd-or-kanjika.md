@@ -16,13 +16,13 @@ order: 1016
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 8 small fried urad vaṭakas, made from iḍerikā batter without holes  
 * For sweet curd: 400 g plain yoghurt, 100 ml water, 40 g sugar, ½ tsp cardamom, ¼ tsp black pepper  
 * For kāñjika: 500 ml lightly sour rice water or thin fermented rice drink, ½ tsp salt
 
-**Method**
+## Method
 
 1. Fry small holeless cakes from the fermented urad batter and drain.  
 2. For the sweet version, whisk the yoghurt, water, sugar, cardamom, and pepper until smooth.  

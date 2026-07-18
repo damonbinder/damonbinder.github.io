@@ -15,14 +15,14 @@ subcategory: Salads
 order: 107
 ---
 
-**Ingredients**
+## Ingredients
 
 * Head romaine lettuce (or an endive)  
 * Half of a small white onion, thinly sliced  
 * Olive oil  
 * Fish sauce
 
-**Method**  
+## Method
 Wash and dry the lettuce leaves, and break into large bite-size pieces into a salad bowl. Add the thinly sliced onion. Drizzle with fish sauce and olive oil, toss, and serve.
 
 **Notes**

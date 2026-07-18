@@ -16,13 +16,13 @@ order: 1006
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 batch maṇḍaka dough  
 * Rice flour or wheat flour, for dusting  
 * Ghee, for serving
 
-**Method**
+## Method
 
 1. For griddle polikās, divide the dough into 8 balls, dust generously, and roll to 10–12 cm rounds about 5 mm thick.  
 2. Cook on a medium-hot griddle for 1–2 minutes per side until mottled brown and cooked through.  

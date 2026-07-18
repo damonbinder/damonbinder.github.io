@@ -7,7 +7,7 @@ subcategory: Salted Meat
 order: 62
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg corned beef or ham  
 * 800 ml white wine  
@@ -22,7 +22,7 @@ order: 62
 * 1 tsp coarsely ground black pepper  
 * 500g white bread
 
-**Method**
+## Method
 
 1. Toast the fennel seeds and aniseed in a small fry pan, then grind to powder in a mortar and pestle  
 2. Cut meat into small chunks, and place in a saucepan along with the wine, juice, and vinegar. Bring to a simmer, then add the fennel, aniseed, thyme, and coriander  

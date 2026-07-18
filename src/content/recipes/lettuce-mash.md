@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 132
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 head of lettuce  
 * 2 onions, peeled and cut in half  
@@ -29,7 +29,7 @@ order: 132
 * 2 Tb olive oil  
 * 2 Tb white wine
 
-**Method**
+## Method
 
 1. Place the lettuce, onions, and baking soda in a large saucepan. Cover in water, bring to the boil, and then simmer for 15 minutes.  
 2. Drain the water from the saucepan, then leave the lettuce and onions to cool for a few minutes.  

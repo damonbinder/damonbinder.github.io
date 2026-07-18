@@ -15,7 +15,7 @@ subcategory: Lamb and Goat
 order: 50
 ---
 
-**Ingredients**
+## Ingredients
 
 * 2 kg leg of lamb  
 * 25 g whole coriander seeds  
@@ -23,7 +23,7 @@ order: 50
 * 2 tsp salt  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 1. Preheat the oven to 180C/350F  
 2. In a mortar and pestle, crush the coriander seeds into a coarse mixture, then mix with the salt and black pepper. Combine with the olive oil and rub all over the leg of lamb.  

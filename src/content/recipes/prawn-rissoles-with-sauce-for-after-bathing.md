@@ -14,9 +14,10 @@ translation: >-
 category: Isicia
 subcategory: Meatballs
 order: 22
+status: published
 ---
 
-**Ingredients**  
+## Ingredients
 *For meatballs*
 
 * 500 g prawns, minced  
@@ -35,7 +36,7 @@ order: 22
 * 300 ml water  
 * 1½ Tb starch, made into a slurry
 
-**Method**
+## Method
 
 4. Make the prawn rissoles by mixing the minced prawns with the fish sauce and white pepper, and roll them into small balls.  
 5. Place all the ingredients for the sauce in a pan, except for the starch. Mix together and bring to a simmer. Add the prawn rissole, and simmer for about 5 minutes, or until the rissoles are fully cooked.  

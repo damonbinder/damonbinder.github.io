@@ -16,7 +16,7 @@ order: 1061
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 L whole milk  
 * 40 ml lemon juice  
@@ -26,7 +26,7 @@ status: draft
 * 300 ml strained fruit juice, such as pomegranate, mango, grape, or lime  
 * Cold water as needed
 
-**Method**
+## Method
 
 1. Bring the milk to a boil, lower the heat, and add the lemon juice until it separates.  
 2. Pour through a cloth and collect the whey. Stir the sugar and cardamom into the warm whey, then filter again until relatively clear.  

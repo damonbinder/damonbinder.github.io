@@ -16,13 +16,13 @@ order: 1015
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 batch fermented iḍerikā batter  
 * 700 ml neutral oil, for frying  
 * Water, for wetting the hands
 
-**Method**
+## Method
 
 1. Heat the oil to 175°C.  
 2. Wet one hand and spread about 50 g batter into a thick disc on the palm or on a piece of baking parchment.  

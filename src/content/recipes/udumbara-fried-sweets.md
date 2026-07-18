@@ -16,13 +16,13 @@ order: 1010
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200 g maṇḍaka dough  
 * 150 g cooled kīsāra  
 * 500 ml neutral oil, for frying
 
-**Method**
+## Method
 
 1. Divide the dough and kīsāra each into 10 portions.  
 2. Flatten a piece of dough, place the filling in the centre, and pinch the dough closed around it.  

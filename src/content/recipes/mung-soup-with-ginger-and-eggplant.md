@@ -14,7 +14,7 @@ order: 1003
 status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g whole mung beans, hulled mung beans, or split yellow mung dal  
 * 900 ml water, plus more as needed  
@@ -28,7 +28,7 @@ status: published
 * Optional: 250 g boneless lamb, cut into small pieces  
 * Optional alternative to eggplant: 200 g sliced lotus root or 50 g chopped charoli nuts
 
-**Method**
+## Method
 
 1. Rinse the mung. Combine it with 750 ml water and the asafoetida, bring to a boil, then cover partly and simmer gently.  
 2. If using lamb, add it after the first 10 minutes and simmer until tender.  

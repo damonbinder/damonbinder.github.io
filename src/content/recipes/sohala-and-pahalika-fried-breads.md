@@ -16,13 +16,13 @@ order: 1007
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 batch maṇḍaka dough  
 * 750 ml neutral oil or sesame oil, for frying  
 * Rice flour, for dusting
 
-**Method**
+## Method
 
 1. Divide the dough into 12 balls and roll each into a 10 cm round.  
 2. Heat the oil to 185°C for sohalās. Fry each round without pressing it down; let it puff and float, turning once, until firm and lightly browned.  

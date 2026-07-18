@@ -17,9 +17,12 @@ translation: >-
 category: Dessert
 subcategory: Pudding
 order: 179
+status: published
 ---
 
-**Ingredients**
+This dessert recipe is out of place in *Apicius* Book 2, which otherwise contains recipes for meatballs and sausages. The term *apothermum* suggests that, perhaps like *Apicius 2.2.7*, this was intended to be served post-bathing. 
+
+## Ingredients
 
 * 250 ml milk  
 * 2 heaped tablespoons semolina flour  
@@ -29,7 +32,7 @@ order: 179
 * 60ml *passum*  
 * Pepper
 
-**Method**
+## Method
 
 1. Heat the milk and semolina in a small saucepan, until the mixture begins to thicken.  
 2. Add the nuts, honey, and *passum*. Continue cooking gently for another few minutes, stirring constantly.  

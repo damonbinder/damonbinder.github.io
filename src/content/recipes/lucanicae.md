@@ -20,9 +20,15 @@ translation: >-
 category: Isicia
 subcategory: Sausages
 order: 25
+status: published
 ---
 
-**Ingredients**
+This sausage is named after Lucania in southern Italy, and was allegedly brought back to Rome by soldiers in the third century BC. Sausages bearing this name can be found today throughout the Mediterranean, from the Portuguese and Brazilian *linguiça* to the Hebrew *naqniq*, though the recipes have long since greatly diverged. 
+
+While the original recipe is for a cured sausage, but given the risks of home-curing, I've instead suggested recreating it as a fresh sausage. It also works well as meatballs or meat patties for those without sausage skins. 
+
+
+## Ingredients
 
 * 500 g fatty pork shoulder, minced  
 * 50 ml fish sauce  
@@ -37,8 +43,5 @@ order: 25
 * ⅓ tsp liquid smoke  
 * Sausage skins
 
-**Method**  
+## Method
 Pulverise the pine nuts, peppercorns, and bay berries, then mix together with the other ingredients, using a mincer or food processor if available. Prepare the sausage skins and stuff with the filling to create small sausages. When ready to cook, grill under a medium heat.
-
-**Notes**  
-These can also be made into patties if sausages skins are unavailable.

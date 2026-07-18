@@ -16,7 +16,7 @@ order: 1023
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g cooked chickpeas, drained  
 * 250 g boneless lamb or pork, cut into 2 cm pieces  
@@ -34,7 +34,7 @@ status: draft
 * 200 ml sour meat glaze  
 * 1 tsp salt
 
-**Method**
+## Method
 
 1. Mash half the cooked chickpeas and form them into small rough nuggets; leave the rest whole.  
 2. Heat the oil and brown the meat. Add the onion, garlic, and fresh ginger and cook for 3 minutes.  

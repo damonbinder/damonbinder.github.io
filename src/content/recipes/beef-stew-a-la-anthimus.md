@@ -7,7 +7,7 @@ subcategory: Beef and Veal
 order: 57
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg beef stew meat, chopped into bite-sized cubes  
 * 120 ml red wine vinegar  
@@ -22,7 +22,7 @@ order: 57
 * 2 Tb white wine  
 * Salt to taste
 
-**Method**
+## Method
 
 1. Place the beef in a dutch oven, and add water so that the beef is just covered. Bring to a gentle boil, and then skim off any foam.  
 2. Add the vinegar, leeks, celeriac, and pennyroyal, then simmer with the lid on for 1 hour.  

@@ -11,16 +11,15 @@ original: >-
 translation: >-
   Another dish with starch sauce: strip the little bones from chickens, then
   put into a pot leeks, dill, and salt. When it is cooked, add pepper and
-  celery seed; then grind soaked barley [oridiam appears to be a scribal
-  error, likely for hordeum, barley], add fish sauce and *passum* or
-  *defrutum*, mix everything together, and serve with forcemeat balls
-  (*isicia*).
+  celery seed; then make a paste of boiled rice, add fish sauce and *passum* or
+  *defrutum*, mix everything together, and serve with forcemeat balls.
 category: Isicia
 subcategory: Meatballs
 order: 24
+status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs, with bone and skin  
 * 1 leek, cleaned of dirt  
@@ -32,7 +31,7 @@ order: 24
 * Pinch of celery seeds, ground  
 * 90 ml *passum*
 
-**Method**
+## Method
 
 1. Separate the chicken meat from the skin and bones. Mince the chicken meat and place in the fridge.  
 2. Place the skin and bones in a saucepan along with the leek, dill, and 1 L of water. Bring to a simmer, then reduce heat and cook gently for 2 hrs.   

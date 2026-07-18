@@ -16,7 +16,7 @@ order: 1047
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 whole dressed rabbit, about 1.2 kg, cut into 8 pieces  
 * 40 g tamarind concentrate  
@@ -27,7 +27,7 @@ status: draft
 * 1 tsp ground cumin  
 * 20 g ghee or oil
 
-**Method**
+## Method
 
 1. Simmer the rabbit pieces with tamarind, water, and half the salt for 30–40 minutes, until nearly tender.  
 2. Drain and pat dry. Thread manageable pieces onto skewers or arrange on a rack.  

@@ -19,7 +19,7 @@ subcategory: Pancakes and Fritters
 order: 172
 ---
 
-**Ingredients**
+## Ingredients
 
 * 100g plain flour  
 * 200 ml milk  
@@ -27,7 +27,7 @@ order: 172
 * Honey  
 * Pepper
 
-**Method**
+## Method
 
 1. In a saucepan, whisk together the flour, milk, and 2 Tb olive oil. Gently heat while continually stirring, until the mixture thickens into a semisolid mass.  
 2. Pour the flour mixture onto a plate and spread thinly. Chill in the fridge until the mixture is solid.  

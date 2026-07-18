@@ -7,7 +7,7 @@ subcategory: Unclassified
 order: 100
 ---
 
-**Ingredients**
+## Ingredients
 
 * 450g salmon fillets  
 * 1 leek, finely chopped  
@@ -15,7 +15,7 @@ order: 100
 * 1 Tb olive oil, plus more for serving  
 * Salt
 
-**Method**
+## Method
 
 1. Heat the olive oil in a frying pan. Add the leeks and gently fry for a few minutes.  
 2. Add the salmon, along with 150ml of water, the dill leaf, and a few pinches of salt. Simmer until the salmon is cooked and the sauce has reduced somewhat. Drizzle on some more olive oil, if desired, and serve.

@@ -16,13 +16,13 @@ order: 1058
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g unsalted cultured butter  
 * 1 whole wheat grain  
 * 1 fresh edible betel leaf, washed and dried
 
-**Method**
+## Method
 
 1. Melt the butter in a heavy saucepan over low heat.  
 2. Continue cooking gently until the water has evaporated, the milk solids are golden, and the fat is clear.  

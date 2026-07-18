@@ -16,13 +16,13 @@ order: 1052
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 2 L whole milk, preferably buffalo milk  
 * Optional: 50–100 g sugar, depending on intended use  
 * Optional: ½ tsp cardamom
 
-**Method**
+## Method
 
 1. Pour the milk into a wide heavy saucepan and bring to a gentle simmer.  
 2. Cook over the lowest practical heat, stirring and scraping the base and sides frequently.  

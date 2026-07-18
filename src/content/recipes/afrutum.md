@@ -6,7 +6,7 @@ category: Eggs and Patinas
 order: 9
 ---
 
-**Ingredients**
+## Ingredients
 
 * 6 egg whites  
 * 200 g white fish fillets or chicken  
@@ -18,7 +18,7 @@ order: 9
 * Black pepper  
 * Salt
 
-**Method**
+## Method
 
 1. In a wide dutch oven, poach the fish or chicken in 120 ml water, along with the coriander, dill, and a couple pinches of salt. Once the meat is cooked, remove from liquid and finely chop.  
 2. Remove the sprigs of coriander from the cooking liquor, and then add 120 ml white wine, and the fish sauce to the pot. Pepper to taste, and add more salt if needed.  

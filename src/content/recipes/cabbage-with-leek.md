@@ -15,7 +15,7 @@ subcategory: Cabbage
 order: 120
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500g cabbage  
 * 1 small leek, finely chopped  
@@ -27,7 +27,7 @@ order: 120
 * Ground black pepper  
 * 250 ml water
 
-**Method**
+## Method
 
 1. Preheat oven to 180C/350F  
 2. Chop the cabbage and leek into large strips. Add to a large dutch oven along with the olive oil, and fry on high heat until the cabbage begins to brown.  

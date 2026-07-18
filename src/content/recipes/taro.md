@@ -14,7 +14,7 @@ subcategory: Unclassified
 order: 136
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400 g taro  
 * ½ tsp ground black pepper  
@@ -26,7 +26,7 @@ order: 136
 * 60 ml water  
 * 1 tsp cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Peel and cut the taro into large cubes. Place in boiling water and cook for 12–15 minutes, or until cooked but not too mushy, then drain.   
 2. Mix the remaining ingredients in a small saucepan and bring to a gentle simmer. Add the cornstarch to thicken, then pour over the taro and serve.

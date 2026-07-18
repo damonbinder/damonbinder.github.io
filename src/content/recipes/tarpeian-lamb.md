@@ -15,7 +15,7 @@ subcategory: Lamb and Goat
 order: 51
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg boneless lamb roast  
 * Pepper  
@@ -29,7 +29,7 @@ order: 51
 * 2 Tb grape syrup  
 * Olive oil
 
-**Method**
+## Method
 
 1. Mix together half of the rue, savory, onion, and fish sauce, along with the thyme and a generous grind of pepper, and rub over the lamb. Marinate for 4–8 hours.  
 2. When ready to cook, preheat the oven to 180C/350F. Coat the bottom of a deep roasting dish or dutch oven with a little olive oil, then place on the lamb and roast uncovered until cooked to desired doneness—around 1 hr to reach medium rare.  

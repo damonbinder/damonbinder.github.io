@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 99
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400 g white fish fillet  
 * ½ tsp ground black pepper  
@@ -26,7 +26,7 @@ order: 99
 * 400 ml water  
 * Red vinegar
 
-**Method**
+## Method
 
 1. Choose a frying pan just large enough to fit the pieces of fish. Add the spices, fish sauce, and water to the pan, and bring to a simmer.  
 2. Add the fish, then reduce the heat so that the water remains below a simmer. Poach the fish until cooked, about 5–10 minutes.  

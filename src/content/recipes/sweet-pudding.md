@@ -16,7 +16,7 @@ subcategory: Pudding
 order: 180
 ---
 
-**Ingredients**
+## Ingredients
 
 * 80 g bulgur wheat  
 * 40 g honey  
@@ -28,7 +28,7 @@ order: 180
 * 30 g walnuts, almonds, or other crushed nuts  
 * 15 g hazelnuts
 
-**Method**
+## Method
 
 1. Soak the bulgur wheat in warm water for 20 minutes until plump.  
 2. Drain the bulgur and mix with all the remaining ingredients bar the hazelnuts  

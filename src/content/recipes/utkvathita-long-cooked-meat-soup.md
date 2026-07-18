@@ -16,7 +16,7 @@ order: 1038
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1.5 kg bone-in lamb or goat shoulder, breast, neck, and ribs  
 * 3 L water  
@@ -24,7 +24,7 @@ status: draft
 * ½ tsp asafoetida  
 * 2½ tsp rock salt, plus more to taste
 
-**Method**
+## Method
 
 1. Place the meat and bones in a large heavy pot with the water.  
 2. Bring slowly to a boil and skim the surface.  

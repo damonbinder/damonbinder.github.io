@@ -7,7 +7,7 @@ subcategory: Cakes
 order: 167
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g ricotta  
 * 125g whole wheat flour  
@@ -16,7 +16,7 @@ order: 167
 * Olive oil  
 * Honey for serving
 
-**Method**
+## Method
 
 1. Preheat the oven to 180 C  
 2. Thoroughly mix together the ricotta, flour, and eggs along with a pinch of salt. Shape into a round loaf.  

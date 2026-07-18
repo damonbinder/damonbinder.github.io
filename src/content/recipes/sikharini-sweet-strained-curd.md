@@ -16,13 +16,13 @@ order: 1056
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g full-fat plain yoghurt  
 * 80 g fine sugar  
 * ½ tsp ground cardamom
 
-**Method**
+## Method
 
 1. Line a sieve with clean cloth, add the yoghurt, and drain in the refrigerator for 6–12 hours.  
 2. Transfer the thick curd to a bowl and beat with sugar and cardamom until smooth.  

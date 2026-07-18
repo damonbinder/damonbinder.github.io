@@ -13,14 +13,14 @@ subcategory: Salads
 order: 106
 ---
 
-**Ingredients**
+## Ingredients
 
 * Head romaine lettuce, rocket, endives, chicory, or other leafy greens  
 * Olive oil  
 * Fish sauce  
 * Red wine vinegar
 
-**Method**  
+## Method
 Wash and dry the lettuce leaves, and break into large bite-size pieces into a salad bowl. Drizzle with olive oil, fish sauce, and vinegar, and serve.
 
 **Notes**

@@ -16,7 +16,7 @@ order: 1012
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200 g split chickpeas, urad dal, or yellow split peas  
 * 15 g fresh ginger, grated  
@@ -26,7 +26,7 @@ status: draft
 * 300 g maṇḍaka dough  
 * 20 g ghee or oil, for the griddle
 
-**Method**
+## Method
 
 1. Cook the pulse until tender, drain very well, and mash coarsely.  
 2. Mix with ginger, cumin, asafoetida, and salt. Cool completely.  

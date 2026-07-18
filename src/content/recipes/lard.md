@@ -14,12 +14,12 @@ subcategory: Salted Meat
 order: 61
 ---
 
-**Ingredients**
+## Ingredients
 
 *  200 g lardo or salted pork fat  
 * 1 tsp dried dill  
 * Salt  
 * Olive oil
 
-**Method**  
+## Method
 Boil the lard in water with dill for 5 to 10 minutes, until soft. Remove from the water and slice. Drizzle with a little olive and salt, then serve.

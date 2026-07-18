@@ -20,7 +20,7 @@ subcategory: Gourds, Cucumbers, and Melons
 order: 114
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g squash (or gourd, if you can find it)  
 * ½ tsp ground pepper  
@@ -32,7 +32,7 @@ order: 114
 * ½ Tb olive oil  
 * 2 tsp cornstarch
 
-**Method**
+## Method
 
 1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a dutch oven  
 2. Mix together all other ingredients except the cornstarch slurry and pour over the squash. Bring to a simmer and cook for a few minutes.  

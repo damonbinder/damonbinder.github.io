@@ -16,14 +16,14 @@ order: 1055
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml fresh buttermilk or takra  
 * 40 g sugar  
 * ½ tsp ground cardamom  
 * Optional: a speck of food-grade edible camphor
 
-**Method**
+## Method
 
 1. Whisk the buttermilk with the sugar and cardamom until the sugar dissolves.  
 2. Add the smallest possible speck of edible camphor if using.  

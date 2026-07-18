@@ -15,7 +15,7 @@ subcategory: Apician Sauces for Fish
 order: 90
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ tsp ground pepper  
 * ½ tsp lovage  
@@ -30,7 +30,7 @@ order: 90
 * 2 Tb olive oil  
 * 1 Tb defrutum
 
-**Method**
+## Method
 
 1. In a mortar and pestle, pound the celery seed, mustard seed, and dill seed into a fine powder.  
 2. Mix everything into a small saucepan, bring to a simmer, then serve with the fish.

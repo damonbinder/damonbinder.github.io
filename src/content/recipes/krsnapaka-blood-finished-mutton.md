@@ -16,7 +16,7 @@ order: 1028
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g boneless mutton or lamb shoulder, cut into 2 cm pieces  
 * 200 ml food-grade lamb or pig blood  
@@ -33,7 +33,7 @@ status: draft
 * Optional: a speck of food-grade edible camphor  
 * 20 g ghee
 
-**Method**
+## Method
 
 1. Whisk ½ tsp salt into the blood and strain through a fine sieve. Keep refrigerated.  
 2. Combine the meat, tamarind water, pomegranate juice, cumin, coriander, turmeric, dried ginger, asafoetida, and remaining salt. Simmer covered until the meat is tender.  

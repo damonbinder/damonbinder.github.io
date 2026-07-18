@@ -16,7 +16,7 @@ order: 1005
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300 g fine whole-wheat flour or atta  
 * 30 g rice flour, for dusting  
@@ -25,7 +25,7 @@ status: draft
 * 100 ml whole milk  
 * 80–110 ml water
 
-**Method**
+## Method
 
 1. Mix the wheat flour and salt. Rub in the ghee, then add the milk and enough water to form a soft dough.  
 2. Knead for 8–10 minutes until smooth. Cover and rest for 30 minutes.  

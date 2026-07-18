@@ -19,9 +19,10 @@ translation: >-
 category: Isicia
 subcategory: Sausages
 order: 27
+status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g fatty pork shoulder, minced  
 * 1 large leek  
@@ -34,7 +35,7 @@ order: 27
 * 3 eggs  
 * Sausage skins
 
-**Method**
+## Method
 
 1. Finely chop the white part of the leek, and discard the greens (or save for another use)  
 2. Add the chopped leek to a pan along with the bulgur wheat and about 150 ml of water. Bring to the boil and then simmer for a few minutes. Strain the leak and bulgur mixture and then turn out onto a baking tray to cool.  

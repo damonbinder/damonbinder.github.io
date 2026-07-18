@@ -23,7 +23,7 @@ subcategory: Chicken
 order: 79
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 whole chicken, about 2 kg  
 * Salt  
@@ -42,7 +42,7 @@ order: 79
 * 30 ml fish sauce  
 * 30 ml olive oil
 
-**Method**
+## Method
 
 1. Preheat the oven to 190C/375F.   
 2. Place the bulgur wheat, pour over boiling water and leave to soak  

@@ -21,7 +21,7 @@ subcategory: Lentils
 order: 147
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200g red lentils  
 * 150g boiled mussel meat, finely chopped  
@@ -37,7 +37,7 @@ order: 147
 * 1 Tb *defrutum*  
 * Extra virgin olive oil, to serve
 
-**Method**
+## Method
 
 1. Rinse the lentils in cold water, then place in a saucepan with 700 ml of water. Bring to a simmer, cover with the lid, then cook for about 30 minutes or until the lentils are mushy.  
 2. Add the remaining ingredients except the olive oil to the sauce. Bring to a simmer, and then cook until the lentils are thick.   

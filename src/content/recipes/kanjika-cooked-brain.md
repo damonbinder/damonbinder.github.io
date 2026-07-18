@@ -16,7 +16,7 @@ order: 1041
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g cleaned calf or lamb brains  
 * 500 ml lightly sour rice kāñjika, or 450 ml water plus 50 ml rice vinegar  
@@ -27,7 +27,7 @@ status: draft
 * ¼ tsp asafoetida  
 * ¼ tsp turmeric
 
-**Method**
+## Method
 
 1. Soak the brains in cold salted water for 30 minutes and remove any visible membrane.  
 2. Poach gently in the kāñjika for 8–10 minutes, then lift out and cool.  

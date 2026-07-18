@@ -21,7 +21,7 @@ subcategory: Gourds, Cucumbers, and Melons
 order: 115
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg squash (or gourd, if you can find it)  
 * 8 dates  
@@ -36,7 +36,7 @@ order: 115
 * 60 ml vinegar  
 * 30 ml *defrutum*
 
-**Method**
+## Method
 
 1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a baking dish.  
 2. Place the dates in a bowl along with a little water, and microwave for a minute. Place a food processor along with the pine nuts, and blend into a coarse paste.  

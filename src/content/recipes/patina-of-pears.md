@@ -16,7 +16,7 @@ subcategory: Sweet Patinas
 order: 178
 ---
 
-**Ingredients**
+## Ingredients
 
 * 700 g pears  
 * 200 ml raisin wine  
@@ -27,7 +27,7 @@ order: 178
 * 4 eggs  
 * ½ tsp ground black pepper
 
-**Method**
+## Method
 
 1. Peel and core the pears, then boil for 5 minutes. Place in a blender and blend until smooth. Alternatively, use 600 g of canned pears (drained) and blend those instead   
 2. Combine the pears with the remaining ingredients, and whisk together until smooth  

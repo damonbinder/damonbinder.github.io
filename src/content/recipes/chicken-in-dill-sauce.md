@@ -23,7 +23,7 @@ subcategory: Chicken
 order: 71
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs  
 * 1 tsp dill seed  
@@ -38,7 +38,7 @@ order: 71
 * 1 Tb olive oil  
 * Pepper to serve
 
-**Instructions**
+## Instructions
 
 1. Preheat the oven to 190C.   
 2. Grind the dill and mustard seeds, then mix all of the ingredients, except the chicken, together into a sauce.  

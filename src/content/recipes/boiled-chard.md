@@ -13,7 +13,7 @@ subcategory: Unclassified
 order: 128
 ---
 
-**Ingredients**
+## Ingredients
 
 * A large bundle of chard leaves  
 * 1 Tb olive oil  
@@ -21,7 +21,7 @@ order: 128
 * 1 tsp vinegar  
 * Salt
 
-**Method**
+## Method
 
 1. Clean and boil the chard until cooked, then remove and strain in a colander.  
 2. Mix the remaining ingredients in a bowl, then toss with the chard and serve.

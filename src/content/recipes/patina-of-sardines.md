@@ -19,7 +19,7 @@ subcategory: Unclassified
 order: 95
 ---
 
-**Ingredients**
+## Ingredients
 
 * 5 whole sardines (about 450g)  
 * 100 ml white wine  
@@ -29,7 +29,7 @@ order: 95
 * ½ tsp dried rue  
 * Pepper
 
-**Method**
+## Method
 
 1. Place the sardines in a frying pan along with the wine, oil, fish sauce, oregano, and rue. Bring to a simmer and cook for 10 minutes, or until the sardines are cooked through.   
 2. Remove the sardines from the frying pan, sprinkle with pepper, and serve with just a little of the cooking liquid.

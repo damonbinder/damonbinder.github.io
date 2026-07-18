@@ -16,7 +16,7 @@ subcategory: Other Legumes
 order: 152
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g frozen fava beans  
 * 100 ml white wine  
@@ -27,7 +27,7 @@ order: 152
 * 2 Tb fish sauce  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 1. Thaw the fava beans either by leaving them in the fridge for a few hours, or by running them under cold water. Remove the fava bean skins and discard.  
 2. Place the fava beans in a pot with enough water to cover. Bring to a gentle simmer and cook until very soft, around 15 to 20 minutes.  

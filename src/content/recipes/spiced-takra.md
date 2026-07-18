@@ -16,7 +16,7 @@ order: 1054
 status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml cultured buttermilk  
 * 125 ml water  
@@ -27,7 +27,7 @@ status: published
 * Pinch of asafoetida  
 * 1 tsp ghee  
 
-**Method**
+## Method
 
 1. Warm the ghee in a small pan, add the cumin and asafoetida, and let them sizzle until fragrant, about 30 seconds. Set aside to cool.  
 2. Whisk the buttermilk with the water to a thin, drinkable pour.  

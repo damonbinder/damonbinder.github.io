@@ -7,7 +7,7 @@ subcategory: Salads
 order: 111
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 small cabbage  
 * 2 tsp fresh rue, finely chopped  
@@ -17,7 +17,7 @@ order: 111
 * 1 Tb red wine vinegar  
 * Salt
 
-**Method**
+## Method
 
 1. Finely slice the cabbage, and toss together with the herbs, salt, and asafoetida.  
 2. Mix together the honey and the vinegar. Pour over the salad, toss everything together, and serve.

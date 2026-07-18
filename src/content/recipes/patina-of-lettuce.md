@@ -14,7 +14,7 @@ subcategory: Vegetable Patinas
 order: 10
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g lettuce  
 * 30 ml *defrutum*  
@@ -23,7 +23,7 @@ order: 10
 * 5 eggs  
 * Pepper
 
-**Method**
+## Method
 
 1. Preheat the oven to 160 C / 320 F  
 2. Place the lettuce in a food processor and puree  

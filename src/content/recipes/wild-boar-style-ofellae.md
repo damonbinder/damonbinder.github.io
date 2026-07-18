@@ -22,7 +22,7 @@ subcategory: Ofellae
 order: 33
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g pork belly  
 * 2 tsp ground cumin  
@@ -34,7 +34,7 @@ order: 33
 * 45 ml fish sauce  
 * 2 tsp cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 200C. Roast the pork belly in the oven until well done, about 1 hr. Once pork belly is cooked, remove from the oven and allow to rest for 20 minutes  
 2. Slice the pork into bite-sized pieces, and add to a frying pan along with the spices, the honey, the fish sauce, and 30 ml of water. Bring to a boil and cook for a few minutes.  

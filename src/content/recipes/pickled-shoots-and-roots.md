@@ -16,14 +16,14 @@ order: 1051
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg edible shoots or roots: prepared bamboo shoots, asparagus, ginger-family rhizomes, elephant-foot yam, or firm radish  
 * For brine: 1 L water and 60 g salt  
 * Or for oil pickle: 250 ml mustard oil, 40 g salt, 40 g ground mustard  
 * ½ tsp turmeric
 
-**Method**
+## Method
 
 1. Peel and cut the roots or shoots into bite-sized pieces. Boil in abundant water until just tender; bamboo shoots and elephant-foot yam must be thoroughly cooked according to established modern preparation guidance.  
 2. Drain and dry completely.  

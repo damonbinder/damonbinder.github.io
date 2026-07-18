@@ -14,7 +14,7 @@ subcategory: Cabbage
 order: 122
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500g cabbage, chopped into thin strips  
 * 4 Tb of semolina  
@@ -26,7 +26,7 @@ order: 122
 * 30g raisins  
 * A handful of coriander leaves, chopped
 
-**Method**
+## Method
 
 3. Heat 250 ml of water in a small saucepan. Add the semolina, pine nuts, along with a generous pinch of salt. Cook until thick, stirring frequently to prevent sticking.  
 4. While the semolina is cooking, add the cabbage to a wok or frying pan along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  

@@ -7,7 +7,7 @@ subcategory: Greek Fish
 order: 94
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g porgy, scaled and gutted (as a substitute for Mediterranean parrotfish)  
 * 150 g feta cheese  
@@ -15,7 +15,7 @@ order: 94
 * 1 tsp salt  
 * 1½ tsp cumin seeds
 
-**Method**
+## Method
 
 1. Preheat the oven to 220 C/ 430 F  
 2. Using a mortar and pestle, grind the cheese and olive oil together into a paste.  

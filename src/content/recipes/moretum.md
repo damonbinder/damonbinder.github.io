@@ -6,7 +6,7 @@ category: Dips and Relishes
 order: 4
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200 g pecorino romano cheese  
 * 1 head of garlic, peeled  
@@ -16,5 +16,5 @@ order: 4
 * 2 Tb white wine vinegar  
 * 2 Tb olive oil
 
-**Method**  
+## Method
 Blend everything together in a food processor into a paste, and serve with bread.

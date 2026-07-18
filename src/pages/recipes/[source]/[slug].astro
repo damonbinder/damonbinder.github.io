@@ -73,7 +73,7 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
         {d.original && (
           <div class="og">
             <span class="og-label">{d.originalLang ?? 'Original'}</span>
-            <p lang={langCode}><em>{d.original}</em></p>
+            <p lang={langCode} set:html={`<em>${d.original}</em>`}></p>
           </div>
         )}
         {d.translation && (
@@ -179,13 +179,14 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
   .recipe-body :global(ol) { margin: 0; padding-left: 1.3rem; }
   .recipe-body :global(ul li) { margin: 0.25rem 0; }
 
-  /* Ingredients (the list right after the Ingredients heading): two columns
-     once the list runs long, single column when it's short. */
-  .recipe-body :global(#ingredients + ul:has(li:nth-child(5))) {
+  /* Ingredients (any list between the Ingredients and Method headings —
+     some recipes split ingredients into sub-groups with their own lists):
+     two columns once a given list runs long, single column when it's short. */
+  .recipe-body :global(#ingredients ~ ul:has(li:nth-child(5)):not(#method ~ ul)) {
     columns: 2;
     column-gap: 2.5rem;
   }
-  .recipe-body :global(#ingredients + ul li) { break-inside: avoid; }
+  .recipe-body :global(#ingredients ~ ul:not(#method ~ ul) li) { break-inside: avoid; }
 
   /* Method — numbered steps. */
   .recipe-body :global(ol) { list-style: none; counter-reset: step; padding-left: 0; }

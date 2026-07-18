@@ -16,7 +16,7 @@ order: 1033
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g cleaned lamb intestine or tripe  
 * 250 g lamb liver  
@@ -29,7 +29,7 @@ status: draft
 * 1½ tsp salt  
 * 600 ml water
 
-**Method**
+## Method
 
 1. Clean and blanch the intestine or tripe according to the butcher’s instructions, then cut all meats into 2 cm pieces.  
 2. Mix with the mustard paste, water, ginger juice, tamarind, asafoetida, and salt.  

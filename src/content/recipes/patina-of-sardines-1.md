@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 96
 ---
 
-**Ingredients**
+## Ingredients
 
 * 5 whole sardines (about 450g)  
 * 30 ml olive oil  
@@ -29,7 +29,7 @@ order: 96
 * ½ tsp pepper  
 * 1 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 200 C / 400 F. Place the sardines in the oven and bake for 15 minutes, or until cooked through.  
 2. While the sardines are cooking, heat the olive oil in a large frying pan. Add the onions and cook for 5 minutes, until translucent.  

@@ -16,7 +16,7 @@ order: 1025
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g boneless lamb or goat, cut into 4 cm pieces  
 * 800 ml water  
@@ -31,7 +31,7 @@ status: draft
 * 3 garlic cloves, sliced  
 * ¼ tsp asafoetida
 
-**Method**
+## Method
 
 1. Whisk the mustard into the water. Add the meat, dried ginger, and fresh ginger and simmer until nearly tender, 45–75 minutes.  
 2. Reserve 250 ml of the cooking liquid and drain the meat.  

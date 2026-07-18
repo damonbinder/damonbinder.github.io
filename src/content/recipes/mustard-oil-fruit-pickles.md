@@ -16,7 +16,7 @@ order: 1050
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg green mango, bitter gourd, firm green banana, or young jackfruit  
 * 40 g salt  
@@ -25,7 +25,7 @@ status: draft
 * 1 tsp turmeric  
 * Optional: 1 tsp fenugreek seed
 
-**Method**
+## Method
 
 1. Wash and dry the produce completely. Cut into bite-sized pieces and toss with the salt. Rest in the refrigerator overnight.  
 2. Drain any released liquid and spread the pieces to dry for 1 hour.  

@@ -15,7 +15,7 @@ subcategory: Lamb and Goat
 order: 45
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g diced lamb  
 * 400 g dried cowpeas  
@@ -23,7 +23,7 @@ order: 45
 * 1 tsp asafoetida  
 * Generous black pepper
 
-**Method**
+## Method
 
 1. Soak the cowpeas in cool water for 8 hours  
 2. Brown the diced lamb in a dutch oven.   

@@ -21,7 +21,7 @@ subcategory: Lentils
 order: 146
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g red lentils  
 * 1 leeks, chopped  
@@ -39,7 +39,7 @@ order: 146
 * ½ tsp asafoetida  
 * 1 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Rinse the lentils in cold water, then place in a saucepan with 800 ml of water. Bring to a simmer, then add the leeks and coriander leaves and cook covered until the lentils are mushy, about 45 minutes.  
 2. Add all other ingredients except the cornstarch. Taste and adjust seasoning as required.  

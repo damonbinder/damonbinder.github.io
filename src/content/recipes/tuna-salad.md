@@ -17,7 +17,7 @@ subcategory: Unclassified
 order: 98
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200g canned tuna  
 * Ground black pepper  
@@ -32,7 +32,7 @@ order: 98
 * 1 tsp *defrutum*  
 * 2 Tb olive oil
 
-**Method**  
+## Method
 Mix the tuna with the herbs, date syrup, and honey. Add ground pepper and salt to taste. Place into a small serving dish. Slice the boiled egg and place on top to decorate. Mix the wine, vinegar, *defrutum*, and olive oil together and use to dress the tuna.
 
 **Notes**

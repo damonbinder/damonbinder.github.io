@@ -26,7 +26,7 @@ subcategory: Salted Meat
 order: 60
 ---
 
-**Ingredients**
+## Ingredients
 
 * 700 g gammon or smoked ham  
 * 250 g pearl barley  
@@ -39,7 +39,7 @@ order: 60
 * 30 ml *liquamen*  
 * 6 *mustacei* (must cakes, see recipe)
 
-**Method**
+## Method
 
 1. Place the meat in a large saucepan with the barley and figs. Add water to cover. Bring to a boil and simmer for 1 hour.  
 2. Preheat the oven to 400F/200C. Remove the meat from the saucepan, and place on a baking tray, and allow to cool for a few minutes. Then cover with the honey and place in the oven for 30 minutes.  

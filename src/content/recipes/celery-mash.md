@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 131
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 head of celery  
 * 1 onions, peeled and cut in half  
@@ -28,7 +28,7 @@ order: 131
 * 30 ml fish sauce  
 * 15 ml olive oil
 
-**Method**
+## Method
 
 1. Place the celery, onion, and baking soda in a large saucepan. Cover in water, bring to the boil, and then simmer for 15 minutes.  
 2. Drain the water from the saucepan, then leave the celery and onions to cool for a few minutes.  

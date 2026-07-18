@@ -16,7 +16,7 @@ subcategory: Lamb and Goat
 order: 52
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg lamb roast  
 * 1 small onion, finely minced or pulverised  
@@ -30,7 +30,7 @@ order: 52
 * 1 tsp savory  
 * 1/2 tsp asafoetida
 
-**Method**
+## Method
 
 1. Preheat the oven to 200C/475F. Place the lamb roast in the oven and roast until medium rare, about 1 hour. Once cooked, remove from the oven and allow to rest for 10 minutes before carving into thick slices.  
 2. When the lamb is almost ready to take out of the oven, start preparing the sauce by heating the olive oil in a saucepan. Then add the onions and fry for 5 minutes, until soft and translucent.  

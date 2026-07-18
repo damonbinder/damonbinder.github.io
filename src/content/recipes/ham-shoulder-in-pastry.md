@@ -19,7 +19,7 @@ subcategory: Salted Meat
 order: 59
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1.5 kg ham shoulder  
 * 10 dried figs  
@@ -30,7 +30,7 @@ order: 59
 * 100 ml water  
 * 100 g set honey
 
-**Method**
+## Method
 
 1. Boil the ham shoulder with the figs and the bay leaves for about 1.5 hours, or until cooked. Remove the ham shoulder from the water and allow it to cool.  
 2. Prepare the pastry by mixing together the flour, salt, and oil, then combining with water to form a dough. Need until smooth and pliable.  

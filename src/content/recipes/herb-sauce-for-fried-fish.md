@@ -21,7 +21,7 @@ subcategory: Apician Sauces for Fish
 order: 87
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500g fish fillets, or a whole 750g fish  
 * ½ tsp ground black pepper  
@@ -37,7 +37,7 @@ order: 87
 * 3 Tb red wine vinegar  
 * 1½ Tb *liquamen* 
 
-**Method**
+## Method
 
 1. Add all of the ingredients (other than the fish) to a small saucepan, mix together, and gently bring to a simmer for a few minutes. Taste and adjust as needed, then turn down the heat to keep warm while the fish is being fried.   
 2. Heat a little olive oil in a skillet, then fry the fish until cooked.   

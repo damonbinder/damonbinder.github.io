@@ -16,7 +16,7 @@ order: 1013
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 100 g yellow split peas  
 * 100 g split chickpeas  
@@ -28,7 +28,7 @@ status: draft
 * ¼ tsp instant yeast or 2 Tb sourdough starter  
 * 700 ml neutral oil, for frying
 
-**Method**
+## Method
 
 1. Soak the split peas and chickpeas overnight. Drain and grind with just enough water to make a thick, slightly coarse batter.  
 2. Beat in the fava-bean flour, ghee, salt, asafoetida, and yeast or starter.  

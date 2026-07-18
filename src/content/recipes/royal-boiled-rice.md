@@ -16,14 +16,14 @@ order: 1001
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300 g aged basmati or another fragrant long-grain rice  
 * 1.5 L water, plus more for washing and soaking  
 * 15 g ghee, or 60 ml whole milk  
 * ½ tsp fine salt (optional; not specified in the text)
 
-**Method**
+## Method
 
 1. Wash the rice until the water is nearly clear, then soak it for 30 minutes and drain.  
 2. Bring 1.5 L water to a rolling boil in a large saucepan. Add the rice and stir once.  

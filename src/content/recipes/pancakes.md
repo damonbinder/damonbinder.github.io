@@ -7,7 +7,7 @@ subcategory: Pancakes and Fritters
 order: 173
 ---
 
-**Ingredients**
+## Ingredients
 
 * 120 g whole wheat flour  
 * 240 ml water  
@@ -15,7 +15,7 @@ order: 173
 * 30 g honey, plus additional for serving  
 * Olive oil, for frying
 
-**Method**
+## Method
 
 1. Mix the wheat, salt, honey and water together in a mixing bowl, then let rest for 20 minutes.  
 2. Heat a little olive oil in a pan. Pour some of the batter into the pan to make a thin pancake. Cook for a couple minutes, then flip and cook on the other side. Repeat until the batter is finished, adding more olive oil if needed.   

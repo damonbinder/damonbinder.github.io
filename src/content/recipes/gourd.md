@@ -21,7 +21,7 @@ subcategory: Gourds, Cucumbers, and Melons
 order: 113
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g squash (or gourd, if you can find it)  
 * ½ tsp ground pepper  
@@ -32,7 +32,7 @@ order: 113
 * 1 Tb liquamen  
 * 1 Tb *defrutum*
 
-**Method**
+## Method
 
 1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a dutch oven  
 2. Mix the remaining ingredients together, then pour over the squash. Bring to a simmer and cook for a few minutes, sprinkle with pepper, and serve. 

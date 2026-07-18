@@ -19,7 +19,7 @@ subcategory: Sweet Patinas
 order: 175
 ---
 
-**Ingredients**
+## Ingredients
 
 * 40 g hazelnuts, almonds, walnuts or mixture  
 * 20 g pine nuts  
@@ -30,7 +30,7 @@ order: 175
 * 10 ml olive oil  
 * 15 ml honey \+ for serving
 
-**Method**
+## Method
 
 1. Place the nuts into a frying pan and toast for a few minutes. Tip into a mortar and pestle and grind into a course powder  
 2. Place the remaining ingredients into a mixing bowl and whisk smooth.  

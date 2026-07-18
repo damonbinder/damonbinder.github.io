@@ -16,13 +16,13 @@ order: 1034
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g thoroughly cleaned lamb or pork intestine  
 * 1½ tsp fine rock salt  
 * 15 g ghee or oil
 
-**Method**
+## Method
 
 1. Parboil the cleaned intestine in salted water for 20 minutes, then drain and dry thoroughly.  
 2. Wind it tightly around metal skewers or cut into manageable lengths and thread in loops.  

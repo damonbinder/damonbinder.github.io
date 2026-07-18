@@ -16,7 +16,7 @@ order: 1045
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g legally sourced farmed turtle meat, rabbit, or monkfish, cut into large pieces  
 * 40 g tamarind concentrate  
@@ -28,7 +28,7 @@ status: draft
 * ¼ tsp asafoetida  
 * ½ tsp ground dried ginger
 
-**Method**
+## Method
 
 1. Simmer the meat with tamarind, water, and salt until tender: 20 minutes for monkfish, or 45–90 minutes for rabbit or turtle depending on the cut.  
 2. Drain, reserving a little cooking liquid.  

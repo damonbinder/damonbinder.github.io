@@ -16,14 +16,14 @@ order: 1036
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g lamb liver, cut into 4 cm pieces  
 * 250 g lamb fat or pork back fat, cut into similar pieces  
 * 1½ tsp rock salt  
 * 1 tsp ground black pepper
 
-**Method**
+## Method
 
 1. Alternate liver and fat on metal skewers.  
 2. Grill over medium-hot charcoal, turning frequently, until the fat is browned and the liver is just cooked through.  

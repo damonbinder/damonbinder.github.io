@@ -19,7 +19,7 @@ subcategory: Fish Patinas
 order: 17
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300g fillets of sole  
 * 20 ml fish sauce  
@@ -30,7 +30,7 @@ order: 17
 * Pinch of oregano  
 * Pepper
 
-**Method**
+## Method
 
 1. Place the sole fillets in a frying pan along with the fish sauce, olive oil, and white wine. Gently bring to heat and poach the sole fillets until they are cooked through, then remove from heat and allow to cool.  
 2. Whisk together the eggs, lovage, and oregano along with a generous grind of black pepper. Pour over the sole and gently mix so that the eggs and cooking liquor combine.  

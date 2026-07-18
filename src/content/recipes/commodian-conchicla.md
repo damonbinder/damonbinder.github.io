@@ -19,7 +19,7 @@ subcategory: Conchicla
 order: 144
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200g split peas  
 * Generous ground pepper  
@@ -30,7 +30,7 @@ order: 144
 * 3 Tb white wine  
 * 4 eggs
 
-**Method**
+## Method
 
 1. Place the split peas in a saucepan along with 650 ml of water. Bring to a boil and cook partially covered for about 45 minutes, or until the peas become mushy and thick.   
 2. Remove the peas from the heat, and add the pepper, lovage, dill onion, fish sauce, and white wine to the peas. Mix and allow to cool for a few minutes. Meanwhile, preheat the oven to 180C/350F.  

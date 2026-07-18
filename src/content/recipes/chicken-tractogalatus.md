@@ -28,7 +28,7 @@ subcategory: Chicken
 order: 78
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs, with skin and bone  
 * 300 ml white wine  
@@ -45,7 +45,7 @@ order: 78
 * 2 Tb *defrutum*  
 * 2 Tb cornstarch, mixed with water into a slurry
 
-**Method**
+## Method
 
 1. Add the white wine, fish sauce, onion, coriander leaves, and olive oil to a large saucepan and bring to a simmer. Add the chicken thighs and simmer for about 25 minutes, or until the chicken is cooked through.  
 2. Add the milk, semolina, and 2 Tb honey to a separate saucepan, along with a couple pinches of salt. Heat and stir until it becomes very thick, being careful not to let it burn.  

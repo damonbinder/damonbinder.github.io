@@ -35,7 +35,7 @@ order: 29
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg pork shoulder, diced  
 * 3 browns onions  
@@ -52,7 +52,7 @@ status: draft
 * 2x450g cans of apricots, drained  
 * 3 Tb of cornstarch, prepared into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 200 C/400 F. Lightly coat the pork in olive oil, place in a roasting tin, and roast for about 45 minutes, or until the exterior is browned. Remove the pork from the oven and allow to cool.  
 2. Finely dice the onions, and dice the pork into bite-sized pieces, and then add both to a large pot along with the wine, fish sauce, and olive oil. Bring to a simmer, then put a lid on and cook for 20 minutes.  

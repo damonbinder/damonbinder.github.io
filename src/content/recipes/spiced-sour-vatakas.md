@@ -16,7 +16,7 @@ order: 1017
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 8 fried urad vaṭakas  
 * 300 g plain yoghurt  
@@ -29,7 +29,7 @@ status: draft
 * 1 tsp rock salt  
 * Pinch of asafoetida
 
-**Method**
+## Method
 
 1. Whisk the yoghurt, water, and rice vinegar until smooth.  
 2. Add the ginger, coriander, cumin, pepper, salt, and asafoetida.  

@@ -14,7 +14,7 @@ subcategory: Apician Sauces for Fish
 order: 89
 ---
 
-**Ingredients**
+## Ingredients
 
 * Pepper  
 * Pinch of lovage  
@@ -25,7 +25,7 @@ order: 89
 * 1 Tb fish sauce  
 * 1 Tb olive oil
 
-**Method**  
+## Method
 Mix everything into a small saucepan. Bring to a simmer and cook for a few minutes, then serve with the fish.
 
 **Notes**

@@ -16,7 +16,7 @@ subcategory: Lamb and Goat
 order: 46
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g diced lamb  
 * 1 large onion, finely chopped  
@@ -29,7 +29,7 @@ order: 46
 * 300 ml white wine  
 * 1 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Heat the olive in a medium-size dutch oven. Add the diced lamb and brown.  
 2. Add the onion to the dutch oven and continue to cook until translucent  

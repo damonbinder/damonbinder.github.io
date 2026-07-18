@@ -17,7 +17,7 @@ subcategory: Lamb and Goat
 order: 48
 ---
 
-**Ingredients**
+## Ingredients
 
 * 2 kg leg of lamb  
 * 250 ml fish sauce  
@@ -26,7 +26,7 @@ order: 48
 * 1 tsp asafoetida  
 * 1 tsp pepper
 
-**Method**
+## Method
 
 1. Place the leg of lamb in a large pot or dutch oven along with the fish sauce, olive oil, and water. Gently simmer for around 1 hr, or until the center of the lamb reaches 65C.  
 2. Preheat the oven to 260C/500F.   

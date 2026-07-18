@@ -7,7 +7,7 @@ subcategory: Bread
 order: 160
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g flour  
 * 60g grated hard cheese, such as parmesan or cheddar  
@@ -18,7 +18,7 @@ order: 160
 * ½ tsp instant dried yeast   
 * Bay leaves
 
-**Method**
+## Method
 
 1. Bring the grape juice to body temperature. Add the yeast and allow to froth for a few minutes.  
 2. Mix together the flour, cheese, cumin, aniseed, and lard.   

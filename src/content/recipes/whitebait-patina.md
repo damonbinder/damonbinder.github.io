@@ -18,7 +18,7 @@ subcategory: Fish Patinas
 order: 16
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g small fry (or any white fish fillet, broken into chunks)  
 * 4 eggs  
@@ -27,7 +27,7 @@ order: 16
 * 20 ml fish sauce  
 * Pepper
 
-**Method**
+## Method
 
 1. Whisk the eggs, then mix together with the fish.  
 2. Add the oil, wine, and fish sauce to a frying pan and bring to a simmer. Pour the egg and fish into the pan and cook.  

@@ -16,7 +16,7 @@ order: 1057
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml fresh whey from strained yoghurt or acid-set curds  
 * 10 g ghee  
@@ -24,7 +24,7 @@ status: draft
 * Pinch of asafoetida  
 * ¾ tsp rock salt
 
-**Method**
+## Method
 
 1. Heat the ghee in a small pan. Add the cumin and asafoetida and cook for 20–30 seconds.  
 2. Pour the tempering into the whey and stir in the salt.  

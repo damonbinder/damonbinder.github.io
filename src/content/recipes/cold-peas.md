@@ -18,7 +18,7 @@ subcategory: Peas
 order: 139
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g split peas  
 * 30 ml white wine vinegar  
@@ -27,7 +27,7 @@ order: 139
 * ¼ onion, finely diced  
 * Salt
 
-**Method**
+## Method
 
 1. Place peas in a saucepan along with 750 ml of water. Bring to a simmer, then cover and cook for about 1 hour, or until the peas are mushy and smooth.   
 2. Remove the peas from the heat and allow to cool for a little, before placing in the fridge to chill completely.  

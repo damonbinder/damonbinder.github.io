@@ -13,7 +13,7 @@ category: Eggs and Patinas
 order: 7
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150g pine nuts, soaked in 75 ml white wine  
 * 1 Tb honey  
@@ -23,7 +23,7 @@ order: 7
 * ½ tsp ground pepper  
 * 6 eggs
 
-**Method**
+## Method
 
 1. First prepare the sauce by combining all ingredients, except for the eggs, into a food processor and blending until smooth. Taste and adjust as desired.  
 2. Bring a small pot full of water to the boil. Add the eggs and continue to boil for six minutes.  

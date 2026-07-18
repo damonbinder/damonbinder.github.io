@@ -16,7 +16,7 @@ order: 1037
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600 g lamb or calf liver  
 * 20 ml oil  
@@ -29,7 +29,7 @@ status: draft
 * For citrus version: 50 g chopped lemon or citron pulp  
 * For sour-fried version: 30 ml tamarind water and 20 ml additional oil
 
-**Method**
+## Method
 
 1. Grill or pan-sear the liver in large pieces until browned outside and just cooked within. Rest, then cut into bite-sized pieces.  
 2. For the dry version, toss with oil, pepper, cumin or caraway, salt, and asafoetida.  

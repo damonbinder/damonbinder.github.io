@@ -15,9 +15,10 @@ translation: >-
 category: Isicia
 subcategory: Sausages
 order: 26
+status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g fatty pork shoulder, minced  
 * 40 g pine nuts, crushed  
@@ -27,7 +28,7 @@ order: 26
 * Sausage skins  
 * Mustard, for serving
 
-**Method**  
+## Method
 To make the sausages, first put the bulgur wheat in some warm water for 30 minutes. Strain and combine with the remaining ingredients. Prepare the sausage skins and stuff with the filling to create small sausages.
 
 To cook the sausages, place in a saucepan with water and boil for about 10 minutes, or until cooked through. Place under the broiler and broil until golden, then serve with mustard.

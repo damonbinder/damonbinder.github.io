@@ -16,7 +16,7 @@ order: 1030
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600 g finely minced lamb, goat, or pork  
 * ¼ tsp asafoetida dissolved in 30 ml water  
@@ -28,7 +28,7 @@ status: draft
 * 500 ml oil, for bhūṣikās  
 * 250 g maṇḍaka dough, for kośalīs
 
-**Method**
+## Method
 
 1. Mix or process the meat with the asafoetida-water, salt, cumin, pepper, and coriander until sticky and smooth.  
 2. For māṃsa-vaṭakas, form 12 balls. Brown in ghee, add 100 ml water, cover, and cook until done.  

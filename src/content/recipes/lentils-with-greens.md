@@ -7,7 +7,7 @@ subcategory: Lentils
 order: 151
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300 g red lentils  
 * 300 g greens (for instance chard, spinach, or mustard greens)  
@@ -18,7 +18,7 @@ order: 151
 * 1 tsp ground aniseed  
 * 2 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Bring 900 ml of water to a boil. Add the lentils, reduce heat to a simmer, and cook uncovered for 15 minutes.  
 2. Add the greens and the onion, then continue to cook uncovered for another 15 minutes, or until both lentils and greens are cooked, adding more water if needed.  

@@ -19,7 +19,7 @@ subcategory: Chicken
 order: 74
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs, with skin and bone  
 * 2x ½ tsp of asafoetida, separated  
@@ -35,7 +35,7 @@ order: 74
 * 2 Tb oil  
 * 1.5 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 180 C / 350 F  
 2. Rub a ½ tsp of asafoetida onto the chicken thighs, then sprinkle ground pepper over. Place in a roasting tray and roast for 45 minutes, or until cooked through and the skin is golden  

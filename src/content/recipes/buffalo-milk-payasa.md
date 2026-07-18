@@ -16,7 +16,7 @@ order: 1004
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 100 g fragrant short-grain rice, or 80 g millet  
 * 1 L whole milk  
@@ -25,7 +25,7 @@ status: draft
 * ¼ tsp ground cardamom  
 * Pinch of salt
 
-**Method**
+## Method
 
 1. Rinse the grain. Combine it with the milk and cream in a heavy saucepan.  
 2. Bring slowly to a simmer, then cook over very low heat for 45–60 minutes, stirring frequently and scraping the base.  

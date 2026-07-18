@@ -1,5 +1,5 @@
 ---
-title: Hipotrimma
+title: Hypotrimma
 source: Apicius 1.33
 work: Apicius
 originalLang: Latin
@@ -12,9 +12,13 @@ translation: >-
   cheese, honey, vinegar, fish sauce, oil, wine, *defrutum* or *caroenum*.
 category: Dips and Relishes
 order: 1
+status: published
 ---
 
-**Ingredients**
+The name is a Greek term for a sauce. The recipe does not specify what to serve it with, but roast meat and seafood are both plausible. I find it pairs well with pita chips or crackers. 
+
+
+## Ingredients
 
 * 50g raisins  
 * 50g pine nuts  
@@ -30,12 +34,7 @@ order: 1
 * 1 Tb *defrutum*  
 * 100 ml white wine
 
-**Method**
+## Method
 
 1. Place the raisins in a bowl with a little water and microwave for a minute, to soften.  
 2. Put the raisins and the pine nuts into a food processor and blend into a paste. Then add the remaining ingredients, and blend together until smooth. 
-
-**Notes**
-
-* This is based on the recipe in Grainger  
-* This goes well with pita chip, crackers, or other plain chips

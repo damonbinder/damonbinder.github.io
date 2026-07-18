@@ -7,7 +7,7 @@ subcategory: Lentils
 order: 150
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g red lentils  
 * 1 Tb vinegar  
@@ -16,7 +16,7 @@ order: 150
 * A small bunch of coriander leaves with stems (and roots, if available)   
 * Salt
 
-**Method**
+## Method
 
 1. Bring 800 ml of water to the boil. Add the lentils and cook for about 1 hr, or until the lentils are cooked through and become mushy. Stir occasionally to prevent lentils sticking, and add more water as needed to prevent them drying out.  
 2. Add the vinegar, olive oil, sumac, and coriander along with a generous pinch of salt. Stir everything together and taste, seasoning with extra salt and olive oil if desired, and allow to simmer for an additional 10 minutes. Remove the coriander leaves and serve.

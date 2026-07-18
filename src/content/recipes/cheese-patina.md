@@ -19,14 +19,14 @@ subcategory: Sweet Patinas
 order: 176
 ---
 
-**Ingredients**
+## Ingredients
 
 * 5 eggs  
 * 540 ml milk  
 * 100 g honey  
 * Pepper
 
-**Method**
+## Method
 
 1. Preheat the oven to 160C/300F  
 2. Whisk together the eggs, milk, and honey until smooth.   

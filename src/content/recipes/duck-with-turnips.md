@@ -30,7 +30,7 @@ order: 85
 
 *Wash and prepare the crane or duck. Boil it in a pot with water, salt, and dill until half-cooked. Separately, cook the turnips until their bitterness is removed. Remove the bird from the pot, wash it again, and place it in a pan with oil, fish sauce, and a bundle of leek and coriander. Add the washed and finely chopped turnips on top, ensuring everything cooks together. Toward the end of cooking, add a small amount of* defrutum *to color the dish. Prepare a sauce by grinding pepper, cumin, coriander, and* laser *root. Moisten with vinegar and the cooking broth, then pour it over the duck in the pot and let it boil. Thicken with starch, pour the sauce over the turnips, sprinkle with pepper, and serve.*
 
-**Ingredients**
+## Ingredients
 
 * 1 whole duck (about 2 kg)  
 * 600 g turnips, peeled and diced  
@@ -48,7 +48,7 @@ order: 85
 * 2 tbsp red wine vinegar  
 * 1½  Tb cornstarch mixed with water into a slurry
 
-**Method**
+## Method
 
 9. Remove the wings and neck from the duck and trim any excess skin and fat. Place the duck in a large dutch oven along with the trimmings and giblets (if included). Add the salt and dill along with enough water to cover. Bring to a boil, then reduce heat and simmer for about 45 minutes, until the duck is half-cooked  
 10. Place the diced turnips in a separate pot. Bring to a boil, then immediately remove from the heat, pour out the hot water, and shock with cold water.  

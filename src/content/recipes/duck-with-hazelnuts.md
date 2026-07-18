@@ -7,7 +7,7 @@ subcategory: Unclassified
 order: 86
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 duck leg and thighs  
 * 100g hazelnuts  
@@ -20,7 +20,7 @@ order: 86
 * 1½ tsp chopped fresh parsley  
 * Pepper
 
-**Method**
+## Method
 
 1. Roast hazelnuts at 180℃ for 10 minutes, then blend into a fine crumb  
 2. Place the duck pieces into an oven dish, skin up. Season with pepper.  

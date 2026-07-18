@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 63
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g cut of beef, lamb, or pork suitable for slow cooking  
 * 50 ml \+ 40 ml fish sauce  
@@ -29,7 +29,7 @@ order: 63
 * 1 Tb oil  
 * Ground pepper
 
-**Method**
+## Method
 
 1. Place the meat in a saucepan along with 50 ml of fish sauce and half of the brown onion. Add enough water to cover the meat, then simmer with the lid on for 2 hours, or until the meat is cooked and falling apart. Check periodically to make sure enough water remains, and add more if needed.  
 2. Once the meat is cooked, take 100 ml of the cooking liquid and pour onto the bread to soak for a few minutes.   

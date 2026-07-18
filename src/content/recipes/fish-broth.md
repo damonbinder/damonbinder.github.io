@@ -7,7 +7,7 @@ subcategory: Unclassified
 order: 103
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg fish fillets  
 * 1 brown onion, finely chopped  
@@ -22,7 +22,7 @@ order: 103
 * 30 ml olive oil  
 * 30 white wine vinegar
 
-**Method**
+## Method
 
 1. Place all the ingredients except the fish fillets and vinegar in a pot. Bring to a simmer and cook for 30 minutes. Added water, and taste and adjust seasonings as needed  
 2. Turn the heat down low. Add the fish and the white wine vinegar, and poach the fish until cooked, about 5–10 minutes. Serve the fish with the broth. 

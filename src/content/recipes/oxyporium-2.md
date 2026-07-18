@@ -7,7 +7,7 @@ subcategory: Salads
 order: 110
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ tsp white pepper  
 * ½ tsp dried mint  
@@ -17,5 +17,5 @@ order: 110
 * 1 Tb red wine vinegar  
 * 2 tsp fish sauce
 
-**Method**  
+## Method
 Mix all the ingredients together. Serve with lettuce as a salad dressing, or consume alongside lettuce by the teaspoon. 

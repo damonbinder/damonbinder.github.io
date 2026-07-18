@@ -16,7 +16,7 @@ subcategory: Duck
 order: 83
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 whole duck (about 2 kg)  
 * 2 tsp salt  
@@ -35,7 +35,7 @@ order: 83
 * 1 tbsp red wine vinegar  
 * 2 tsp cornstarch mixed with water into a slurry
 
-**Method**
+## Method
 
 1. Remove the wings and neck from the duck and trim any excess skin and fat. Place the duck in a large dutch oven along with the trimmings and giblets (if included). Add the salt and dill along with enough water to cover. Bring to a boil, then reduce heat and simmer for about 25 minutes.  
 2. While the duck cooks, preheat the oven to 300F/160C  

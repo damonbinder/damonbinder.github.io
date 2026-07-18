@@ -16,14 +16,14 @@ order: 1049
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg mixed firm produce: green mango, small eggplant, lime, gooseberry, cucumber, ridge gourd, grapes, green beans, or similar  
 * 1 L water  
 * 60 g non-iodized salt  
 * Optional: 1 tsp mustard seed and ½ tsp fenugreek seed
 
-**Method**
+## Method
 
 1. Wash the produce and leave small items whole; cut larger items into 3–4 cm pieces.  
 2. Dissolve the salt in the water by boiling, then cool completely.  

@@ -7,7 +7,7 @@ subcategory: Cabbage
 order: 123
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600 g green or white cabbage, cored and cut into 1 cm strips  
 * 15 mL extra‑virgin olive oil  
@@ -20,7 +20,7 @@ order: 123
 * Salt
 
 
-**Method**
+## Method
 
 1. Put the sliced cabbage into a saucepan and add cold water to just cover. Bring to a boil, then simmer 5–7 min until tender.  
 2. Tip the cabbage into a sieve over a bowl to catch the cooking liquor. Measure out 350–400 mL liquor for the dry soup.  

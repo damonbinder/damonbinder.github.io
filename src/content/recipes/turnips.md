@@ -16,7 +16,7 @@ subcategory: Unclassified
 order: 129
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600g turnips  
 * 1 tsp dried rue  
@@ -28,7 +28,7 @@ order: 129
 * 2 Tb *defrutum*  
 * 1 Tb olive oil
 
-**Method**
+## Method
 
 1. Peel and cut the turnips into large wedges. Bring water to the boil in a large saucepan, then add the turnips. Boil for 20 minutes, or until fork tender.  
 2. Drain the turnips, and place them back in the saucepan. Add the remaining ingredients and bring to a simmer, then serve. 

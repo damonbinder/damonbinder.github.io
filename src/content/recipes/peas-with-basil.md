@@ -19,7 +19,7 @@ subcategory: Peas
 order: 138
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g split peas  
 * 1 small leek, chopped  
@@ -33,7 +33,7 @@ order: 138
 * 1 Tb white wine  
 * 2 Tb fish sauce
 
-**Method**
+## Method
 
 1. Place peas in a saucepan along the leek, coriander leaf, cumin, and 750 ml of water. Bring to a simmer, then cover and cook for about 1 hour, or until the peas are mushy and smooth.  
 2. Finely crush the pepper, lovage, dill, and basil leaves together with a mortar and pestle. Flush the liquid out with the wine and pour into the peas, along with the fish sauce.  

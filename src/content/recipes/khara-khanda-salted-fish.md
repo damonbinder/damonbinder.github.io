@@ -16,13 +16,13 @@ order: 1043
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg very fresh firm fish, cut into 8–10 cm pieces  
 * 80 g non-iodized salt  
 * Optional: 1 tsp turmeric
 
-**Method**
+## Method
 
 1. Coat the fish thoroughly with the salt and optional turmeric.  
 2. Pack into a non-reactive container, cover, and refrigerate for 24–48 hours.  

@@ -16,7 +16,7 @@ order: 1002
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g split mung, red lentils, split chickpeas, or urad dal  
 * 900 ml water, plus more as needed  
@@ -25,7 +25,7 @@ status: draft
 * 1 tsp fine rock salt, plus more to taste  
 * 15 g ghee or 1 Tb neutral oil (optional modern addition)
 
-**Method**
+## Method
 
 1. Rinse the pulse until the water runs mostly clear.  
 2. Combine the pulse, water, asafoetida, and turmeric in a saucepan. Bring to a boil, then reduce to a very gentle simmer.  

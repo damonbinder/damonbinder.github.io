@@ -37,7 +37,7 @@ subcategory: Wheat porridge
 order: 163
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200 g semolina  
 * 1 Tb olive oil  
@@ -48,7 +48,7 @@ order: 163
 * 45 ml fish sauce  
 * 150 ml white wine
 
-**Method**
+## Method
 
 1. Place the semolina in a large saucepan with 1 L of water and the olive oil. Bring to a simmer and cook until thickened, approximately 5 minutes.  
 2. Place the mince in a dutch oven and fry on high heat until cooked through.  

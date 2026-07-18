@@ -16,7 +16,7 @@ order: 1040
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg split beef, lamb, or goat marrow bones  
 * 20 ml lemon juice or tamarind water  
@@ -25,7 +25,7 @@ status: draft
 * ½ tsp ground cumin or caraway  
 * ¾ tsp rock salt
 
-**Method**
+## Method
 
 1. Roast the bones cut-side up at 230°C for 15–20 minutes, until the marrow is soft and bubbling.  
 2. Scoop the marrow into a small pan.  

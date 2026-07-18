@@ -16,7 +16,7 @@ order: 1044
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g intact fish roe sacs  
 * 20 ml oil, plus 30 ml for frying  
@@ -25,7 +25,7 @@ status: draft
 * ¼ tsp asafoetida  
 * 1 tsp rock salt
 
-**Method**
+## Method
 
 1. Brush the roe sacs with a little oil and bake at 190°C for 10–15 minutes, until firm enough to slice.  
 2. Cool slightly and cut into 2 cm pieces.  

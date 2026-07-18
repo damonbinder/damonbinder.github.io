@@ -16,7 +16,7 @@ order: 1035
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml food-grade pig or lamb blood  
 * 200 g pork back fat or lamb fat, finely diced  
@@ -29,7 +29,7 @@ status: draft
 * 2 tsp rock salt  
 * 2 m cleaned sausage casing
 
-**Method**
+## Method
 
 1. Keep all ingredients cold. Whisk the blood with the citrus, ginger, spices, and salt, then fold in the diced fat.  
 2. Fill the casing loosely, leaving room for expansion. Tie into rings or a single coil.  

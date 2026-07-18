@@ -20,7 +20,7 @@ subcategory: Sweet Patinas
 order: 177
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 eggs  
 * 270 ml milk  
@@ -28,7 +28,7 @@ order: 177
 * 3 Tb honey  
 * Pepper
 
-**Method**
+## Method
 
 1. Crack the eggs into a mixing bowl along with the milk and olive oil, and whisk until smooth.  
 2. Place a little additional olive oil into a large frying pan. Heat at maximum flame until it sizzles, then pour in the egg mixture. Let the mixture cook, undisturbed, until the bottom is well done and the top has mostly set.   

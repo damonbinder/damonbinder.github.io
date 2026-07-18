@@ -19,7 +19,7 @@ subcategory: Pork
 order: 36
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg meat from pork shoulder  
 * Pepper  
@@ -31,7 +31,7 @@ order: 36
 * 50 ml fish sauce  
 * 3 Tb honey
 
-**Method**
+## Method
 
 1. Boil the pork in salted water for about 1.5 hrs, until cooked through  
 2. Once the pork is cooked, prepare the sauce by mixing together all of the remaining ingredients.  

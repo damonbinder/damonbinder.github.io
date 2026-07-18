@@ -24,7 +24,7 @@ subcategory: Pork
 order: 38
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg pork shoulder roast  
 * 300 ml white wine  
@@ -35,7 +35,7 @@ order: 38
 * Ground black pepper  
 * Olive oil
 
-**Method**
+## Method
 
 1. Preheat the oven to 350 F / 160 C.   
 2. Heat a little olive oil in a large dutch oven, and brown the pork shoulder on all sides.  

@@ -17,7 +17,7 @@ subcategory: Apician Sauces for Fish
 order: 91
 ---
 
-**Ingredients**
+## Ingredients
 
 * 2 Tb *passum*  
 * 1 Tb *defrutum*  
@@ -26,5 +26,5 @@ order: 91
 * ½ tsp dried rue  
 * Ground pepper
 
-**Method**  
+## Method
 Place the ingredient into a small saucepan, mix together, and gently bring to heat. Thicken with a little cornstarch if desired.

@@ -16,14 +16,14 @@ order: 1053
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 L whole milk  
 * 30 g plain live-culture yoghurt or cultured buttermilk  
 * Optional: 20 g sugar  
 * Optional: ¼ tsp ground cardamom
 
-**Method**
+## Method
 
 1. Reduce the milk gently to 500 ml, stirring often.  
 2. Cool to 42–45°C. Whisk in the yoghurt or buttermilk and the optional sugar or cardamom.  

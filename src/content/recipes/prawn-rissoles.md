@@ -13,9 +13,10 @@ translation: >-
 category: Isicia
 subcategory: Meatballs
 order: 20
+status: published
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g prawns, minced  
 * 50 ml \+ 15 ml fish sauce  
@@ -24,7 +25,7 @@ order: 20
 * Pinch of asafoetida  
 * Ground black pepper
 
-**Method**
+## Method
 
 1. Mix the spices together with 15 ml of the fish sauce, then add to the prawns and mix thoroughly  
 2. Add 50 ml of fish sauce and 350 ml of water to a saucepan. Bring to just below a simmer.  

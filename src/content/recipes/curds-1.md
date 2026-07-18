@@ -11,12 +11,12 @@ category: Dips and Relishes
 order: 6
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150 g cottage cheese  
 * 1 tsp ground coriander leaf  
 * 2 tsp olive oil  
 * Pinch of salt.
 
-**Method**  
+## Method
 Mix everything together and serve.

@@ -16,7 +16,7 @@ subcategory: Peas
 order: 141
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g split peas  
 * 1½ tsp ground cumin  
@@ -29,7 +29,7 @@ order: 141
 * 3 Tb wine  
 * Pepper
 
-**Method**
+## Method
 
 7. Place peas in a saucepan along with 750 ml of water. Bring to a simmer, then cover and cook for about 1 hour, or until the peas are mushy and thick.  
 8. Add the remaining ingredients to the saucepan. Stir, make adjustments to the flavour as needed. Serve with a generous grinding of black pepper.

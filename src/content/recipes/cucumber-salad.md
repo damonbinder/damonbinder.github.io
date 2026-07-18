@@ -14,7 +14,7 @@ subcategory: Gourds, Cucumbers, and Melons
 order: 116
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 cucumber, thinly sliced  
 * 60 ml *passum*  
@@ -24,7 +24,7 @@ order: 116
 * A couple pinches of asafoetida  
 * Ground black pepper
 
-**Method**
+## Method
 
 1. Arrange the cucumber slices in a shallow dish. Combine the other ingredients together and pour over the cucumber. Cover the dish with cling wrap and leave in the fridge for a couple of hours.
 

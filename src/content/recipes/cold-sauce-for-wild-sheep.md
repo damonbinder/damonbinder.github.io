@@ -14,7 +14,7 @@ subcategory: Unclassified
 order: 68
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ tsp pepper  
 * ½ tsp lovage leaf  
@@ -26,5 +26,5 @@ order: 68
 * 1 Tb vinegar  
 * 1 Tb olive oil
 
-**Method**  
+## Method
 Gentle toast the cumin seeds and pine nuts in a small frying pan. Pour into a large mortar and pestle along with the pepper, lovage, and thyme, and grind into a fine paste. Combine with the remain ingredients, mix thoroughly, and transfer to a serving dish.

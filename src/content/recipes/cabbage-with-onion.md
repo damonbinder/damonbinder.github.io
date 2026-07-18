@@ -14,7 +14,7 @@ subcategory: Cabbage
 order: 119
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300g cabbage, chopped into thin strips  
 * 1 brown onion, diced  
@@ -25,7 +25,7 @@ order: 119
 * 1 Tb fish sauce  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 1. Add the cabbage and onion to a wok or frying pan along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
 2. Add the remaining ingredients to the wok, toss everything together, then serve.

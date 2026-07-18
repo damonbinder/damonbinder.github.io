@@ -25,7 +25,7 @@ subcategory: Ofellae
 order: 32
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g pork belly  
 * 150 ml *passum*  
@@ -36,7 +36,7 @@ order: 32
 * ½ tsp lovage  
 * Ground pepper
 
-**Method**
+## Method
 
 1. Preheat the oven to 200C. Roast the pork belly in the oven until well done, reaching an internal temperature of 78 C (60–120 mins depending on thickness). Once pork belly is cooked, remove from the oven and slice into 3cm x 3cm chunks  
 2. Place the pork along with the remaining ingredients into a saucepan. Bring to a simmer and continue cooking until the sauce has mostly evaporated, and clings to the meat. Remove the meat from the saucepan, sprinkle with pepper, and serve.

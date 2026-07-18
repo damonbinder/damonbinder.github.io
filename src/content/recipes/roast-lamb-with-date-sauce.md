@@ -18,7 +18,7 @@ subcategory: Lamb and Goat
 order: 49
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1.5 kg leg of lamb  
 * 270 ml milk  
@@ -31,7 +31,7 @@ order: 49
 * 4 dates, softened in boiling water and pounded into a paste  
 * 1 Tb cornstarch, made into slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 180C/475F.   
 2. Place the lamb into a dutch oven along with 30 ml of fish sauce and 300 ml of water. Cook in the oven, covered, for 80 mins, then remove the lid and continue cooking until desired doneness is reached. Remove from the oven and allow to rest.  

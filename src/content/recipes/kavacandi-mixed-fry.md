@@ -16,7 +16,7 @@ order: 1024
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400 g boneless lamb, pork, or goat, cut into 2 cm pieces  
 * 150 g eggplant, cut into 2 cm pieces  
@@ -34,7 +34,7 @@ status: draft
 * 150 ml sour meat glaze  
 * 2 Tb chopped fresh herbs or tender greens
 
-**Method**
+## Method
 
 1. Heat the oil in a wide pan and brown the meat thoroughly.  
 2. Add the onion, ginger, radish, and eggplant and cook until beginning to soften.  

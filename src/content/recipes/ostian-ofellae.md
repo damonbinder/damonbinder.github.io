@@ -26,7 +26,7 @@ subcategory: Ofellae
 order: 31
 ---
 
-**Ingredients**  
+## Ingredients
 *For marinade:*
 
 * 1 kg pork belly  
@@ -46,7 +46,7 @@ order: 31
 * Generous ground black pepper  
 * 1 Tb cornstarch, made into slurry
 
-**Method**
+## Method
 
 1. Dry roast and grind the seeds in the marinade, then combine with the lovage, asafoetida, and fish sauce  
 2. Place the meat skin side down. Score the meat by cutting through the meat down to, but not through, the skin, in parallel lines 3 cm apart. Then cut meat orthogonally, again not cutting through the skin, to get a grid of 3cm x 3cm squares. Cover the meat with the marinade and place covered in the fridge for 3 days.  

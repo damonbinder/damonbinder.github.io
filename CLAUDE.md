@@ -4,8 +4,8 @@ Personal website for Damon Binder. This file is project-specific context; Damon'
 
 ## What this is & status
 
-- Astro static site, being built on branch **`astro-rebuild`**. It replaces an old Jekyll site, now parked in **`legacy/`**.
-- The **live site is still the old Jekyll** served from `master`. Nothing goes live until we deploy (see TODO.md). Work on `astro-rebuild`.
+- Astro static site. It replaces an old Jekyll site, now parked in **`legacy/`**.
+- **Live at [djbinder.com](https://djbinder.com) since 2026-07-13.** Deployed from `master` via `.github/workflows/deploy.yml` — builds and pushes to GitHub Pages on every push to `master`, on manual dispatch, and on a daily cron (so the blog river's external feeds stay current). Work happens on `astro-rebuild`; commit and push to `master` to go live (as of the launch, `master` and `astro-rebuild` point at the same commit — merge or fast-forward as needed).
 - Dev: `npm run dev` (port 4321). Build: `npm run build`. Verify changes with the preview tools.
 
 ## Where content lives
@@ -61,8 +61,6 @@ Damon's personal collection of historical recipes he's actually cooked — class
 - **Defenses in Depth** — Damon's Ghost blog at defensesindepth.bio. Multi-author; the loader reads the author feed (`/author/damon/rss/`) and also filters by `dc:creator` = "Damon Binder".
 - **Random Lives** — deployed at random-lives.github.io/random-lives, a separate GitHub org (Jekyll, no RSS feed yet → the loader scrapes its `/blog/` index).
 
-## Deploy plan
+## Deploy
 
-Not deployed yet. Plan: GitHub Action to build + deploy to GitHub Pages, switch the repo's Pages source off Jekyll to Actions, add a scheduled (cron) rebuild so Defenses in Depth / Random Lives stay current, and confirm the domain (CNAME is preserved in `public/`).
-
-See **TODO.md** for the current outstanding work.
+Live and deployed — see "What this is & status" above for how. See **TODO.md** for current outstanding (post-launch) work.

@@ -16,7 +16,7 @@ order: 1022
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g cooked roast pork, lamb, or goat, cut into bite-sized pieces  
 * 100 g plain yoghurt  
@@ -32,7 +32,7 @@ status: draft
 * 1½ tsp rock salt  
 * 20 ml sesame oil or neutral oil
 
-**Method**
+## Method
 
 1. Whisk together the yoghurt, tamarind, pomegranate juice, lemon juice, spices, salt, and oil.  
 2. For a smooth sauce, strain through a fine sieve.  

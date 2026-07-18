@@ -16,7 +16,7 @@ order: 1042
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 800 g firm white fish fillets or steaks  
 * 20 ml oil, for rubbing  
@@ -29,7 +29,7 @@ status: draft
 * ¼ tsp ground cardamom  
 * ½ tsp ground black pepper
 
-**Method**
+## Method
 
 1. Rub the fish with the 20 ml oil and 1 tsp salt for 1–2 minutes. Rinse briefly in water mixed with turmeric, then pat completely dry.  
 2. Dilute the tamarind in 150 ml water. Simmer the fish in this liquid for 2–4 minutes, just until the exterior firms, then drain and cool.  

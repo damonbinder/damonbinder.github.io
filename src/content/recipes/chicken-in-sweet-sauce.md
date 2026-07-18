@@ -7,7 +7,7 @@ subcategory: Chicken
 order: 82
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 chicken thighs  
 * 250 ml white wine  
@@ -19,7 +19,7 @@ order: 82
 * ⅓ tsp spikenard  
 * ⅓ tsp costus
 
-**Method**
+## Method
 
 1. Place the chicken thighs in a pot along with the wine, honey, and salt. Bring to a simmer, cover, and cook for 25 minutes, or until the chicken thighs are almost cooked through.  
 2. Add the remaining spices to the pot. Simmer for another couple minutes, taste and adjust seasoning as desired, and then serve.

@@ -16,7 +16,7 @@ order: 1009
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150 g coarse semolina (coarse rava/sooji) or dalia (cracked wheat) — not fine semolina; see note  
 * about 250 ml whole milk  
@@ -26,7 +26,7 @@ status: draft
 * ¼ tsp finely ground black pepper  
 * Pinch of salt
 
-**Method**
+## Method
 
 1. Moisten the coarse grain with a few tablespoons of the milk — just enough to dampen it, not a soak.  
 2. Melt the ghee in a heavy pan over medium-low heat. Add the moistened grain and cook, stirring constantly, until it smells nutty and the grains stay loose and separate.  

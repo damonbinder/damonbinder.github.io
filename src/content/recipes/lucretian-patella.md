@@ -21,7 +21,7 @@ subcategory: Unclassified
 order: 97
 ---
 
-**Ingredients**
+## Ingredients
 
 * 320 g salted fish  
 * 1 large white onion, finely diced  
@@ -32,7 +32,7 @@ order: 97
 * 2 tsp vinegar  
 * 1 tsp dried savoury
 
-**Method**
+## Method
 
 1. Rinse the salt from the fish. Place in a large bowl, cover with water, and leave to soak in the fridge for at least a few hours, changing the water several times.  
 2. When ready to cook, place the onions in a frying pan along with the fish sauce, olive oil, and 2 Tb of water. Cook for about 5 minutes or until the onions are translucent.  

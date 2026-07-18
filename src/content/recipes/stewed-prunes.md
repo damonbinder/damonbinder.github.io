@@ -7,11 +7,11 @@ subcategory: Fruit
 order: 183
 ---
 
-**Ingredients**
+## Ingredients
 
 * 120 g prunes  
 * 180 ml wine  
 * 30 g honey
 
-**Method**  
+## Method
 Place the prunes, wine, and honey in a saucepan. Bring to a simmer and stew gently for 10 minutes, then serve. 

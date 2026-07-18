@@ -56,7 +56,7 @@ subcategory: Other Patinas
 order: 19
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150 g cooked fish  
 * 150 g cooked chicken  
@@ -72,7 +72,7 @@ order: 19
 * 90 g pine nuts  
 * 16x 6 inch flour tortillas (about 400 g)
 
-**Method**
+## Method
 
 1. Finely dice the cooked fish, chicken, and pork belly and set to one side.  
 2. Place the pepper, lovage, fish sauce, wine, *passum*, and olive oil in a large saucepan. Bring to a simmer and cook gently for a few minutes.  

@@ -17,7 +17,7 @@ subcategory: Pork
 order: 39
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 Tb caraway seeds  
 * 120g pine nuts  
@@ -31,7 +31,7 @@ order: 39
 * 1 Tb honey  
 * 1 Tb olive oil
 
-**Method**
+## Method
 
 1. Grind the caraway seeds, pine nuts, and mustard seeds into a fine paste in a mortar and pestle, or food processor  
 2. Combine with the rest of the ingredients, and serve.

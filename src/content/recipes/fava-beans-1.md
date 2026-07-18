@@ -14,7 +14,7 @@ subcategory: Other Legumes
 order: 155
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400 g cooked, peeled fava beans  
 * 50 g pine nuts  
@@ -24,5 +24,5 @@ order: 155
 * ½  tsp cumin  
 * ½ tsp rue
 
-**Method**  
+## Method
 Finely crush the pine nuts and mix with Djon mustard, honey, vinegar, cumin, and rue. Toss with the fava beans and serve.

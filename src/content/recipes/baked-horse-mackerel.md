@@ -7,14 +7,14 @@ subcategory: Greek Fish
 order: 92
 ---
 
-**Ingredients**
+## Ingredients
 
 * A 500g horse-mackerel (or any white fish fillet)  
 * 125g chevre cheese (or feta, or other strongly flavoured cheese)  
 * ½ tsp of asafoetida  
 * 1 tsp dried oregano, or leaves from two fresh sprigs
 
-**Method**
+## Method
 
 1. Preheat the oven to 180C/350F.  
 2. If using a whole mackerel, split open the fish down the belly and open it out. Remove the spine and as many bones as you can, then place flesh side up onto a baking tray. (If using fish fillets, simply place on a baking tray with skin, if present touching the tray.)  

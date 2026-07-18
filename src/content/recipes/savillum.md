@@ -7,7 +7,7 @@ subcategory: Cakes
 order: 168
 ---
 
-**Ingredients**
+## Ingredients
 
 * 750 g ricotta  
 * 150 g white flour  
@@ -15,7 +15,7 @@ order: 168
 * 1 egg  
 * Poppy seeds
 
-**Method**
+## Method
 
 1. Preheat the oven to 180 C / 350 F  
 2. In a mixing bowl, mix together the ricotta, flour, honey, and egg, until well-combined  

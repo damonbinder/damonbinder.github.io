@@ -27,7 +27,7 @@ subcategory: Chicken
 order: 81
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1.5 kg whole chicken  
 * 150 g split peas  
@@ -42,7 +42,7 @@ order: 81
 * 120 ml white wine  
 * 450 g streaky bacon
 
-**Method**  
+## Method
 *Making the sauce*
 
 1. Place into a small saucepan the pepper, lovage, oregano, ginger, fish sauce, *passum*, and white wine. Bring to a gentle simmer and cooked for a few minutes, then remove from the heat.

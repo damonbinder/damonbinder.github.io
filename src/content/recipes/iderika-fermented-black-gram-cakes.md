@@ -16,7 +16,7 @@ order: 1014
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g skinned urad dal  
 * 120–180 ml water  
@@ -26,7 +26,7 @@ status: draft
 * ½ tsp ground black pepper  
 * 20 g ghee
 
-**Method**
+## Method
 
 1. Soak the urad dal for 6 hours, drain, and grind with enough water to make a very thick, smooth batter.  
 2. Beat the batter vigorously for 5 minutes to incorporate air. Mix in the salt and half the asafoetida.  

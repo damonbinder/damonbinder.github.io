@@ -14,7 +14,7 @@ subcategory: Beef and Veal
 order: 56
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500g diced chuck roast  
 * 1 large onion, diced, or a small leek, diced  
@@ -24,7 +24,7 @@ order: 56
 * 1/2 tsp asafoetida  
 * Generous ground pepper
 
-**Method**
+## Method
 
 1. Heat olive oil in a small dutch oven until close to smoking. Add the beef and brown.  
 2. Turn the heat down to moderate and add the onion. Continue frying for about 5 minutes, or until translucent.  

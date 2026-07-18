@@ -26,7 +26,7 @@ subcategory: Minutals
 order: 28
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ kg pork shoulder, diced  
 * 250g of minced beef  
@@ -45,7 +45,7 @@ order: 28
 * ½  tsp asafoetida  
 * 2 Tb cornflour, mixed into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 200 C/400 F. Lightly coat the pork in olive oil, place in a roasting tin, and roast for about 45 minutes, or until the exterior is browned. Remove the pork from the oven and allow to cool for a minutes before dicing  
 2. Form the minced beef into small meatballs.   

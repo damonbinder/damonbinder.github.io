@@ -7,7 +7,7 @@ subcategory: Unclassified
 order: 65
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g pork liver  
 * 60 ml olive oil  
@@ -17,7 +17,7 @@ order: 65
 * 1 tsp asafoetida  
 * A generous amount of salt
 
-**Method**
+## Method
 
 1. Thinly slice the liver, then combine with the rest of the ingredients and leave to marinate for a few hours.  
 2. Broil the liver for a few minutes on each side, then serve.

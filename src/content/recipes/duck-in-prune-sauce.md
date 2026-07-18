@@ -22,7 +22,7 @@ subcategory: Duck
 order: 84
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 duck  
 * ½ tsp ground black pepper  
@@ -38,7 +38,7 @@ order: 84
 * 60 ml *defrutum*, for basting  
 * 15 ml olive oil
 
-**Method**
+## Method
 
 1. Preheat the oven to 230C/450F. Place the duck on a roast tray breast side down with a little water covering the tray bottom. Baste with a little defrutum, then place in the oven and bake for 30 minutes.  
 2. Rotate the duck, then bake for another 20 minutes. Baste with *defrutum*, then bake for another 10 minutes. Baste once more, then roast another 5–10 minutes or until cooked. Remove from the oven and allow to rest for 5 minutes before carving.  

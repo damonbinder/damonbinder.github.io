@@ -16,7 +16,7 @@ order: 1020
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg skin-on pork belly or fatty pork shoulder  
 * 20 ml lime juice or mild vinegar (optional sour pre-cooking)  
@@ -24,7 +24,7 @@ status: draft
 * 1 tsp ground black pepper  
 * 15 g ghee, melted
 
-**Method**
+## Method
 
 1. Cut the pork into 4 cm cubes or thick strips. For the sour variant, toss with the lime juice and half the salt and refrigerate for 2 hours.  
 2. Thread the pieces onto metal skewers, leaving small gaps between them.  

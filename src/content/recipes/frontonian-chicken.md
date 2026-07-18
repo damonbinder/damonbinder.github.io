@@ -18,7 +18,7 @@ subcategory: Chicken
 order: 77
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg chicken thighs, with skin and bone  
 * 2 Tb olive oil  
@@ -30,7 +30,7 @@ order: 77
 * 120 ml *defrutum*  
 * Pepper
 
-**Method**
+## Method
 
 1. Place a large dutch oven on high heat. Place the chicken skin side down, and fry until the skin is golden. Flip and brown on the meat side.  
 2. Add the olive oil, fish sauce, leek, and herbs, along with 100 ml of water. Cover and simmer for 30 minutes, or until the chicken is cooked through.  

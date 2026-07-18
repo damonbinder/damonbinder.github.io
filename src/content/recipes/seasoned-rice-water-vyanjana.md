@@ -16,7 +16,7 @@ order: 1059
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml water from the second washing of rice, or 450 ml water plus 1 tsp rice flour  
 * 20 g tamarind concentrate  
@@ -27,7 +27,7 @@ status: draft
 * Pinch of asafoetida  
 * ½ tsp salt (modern balancing addition)
 
-**Method**
+## Method
 
 1. Combine all ingredients in a saucepan and whisk until smooth.  
 2. Heat gently until steaming and slightly thickened, about 5 minutes; do not boil hard.  

@@ -7,7 +7,7 @@ subcategory: Pork
 order: 40
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg pork loin  
 * 1 Tb ground coriander  
@@ -18,7 +18,7 @@ order: 40
 * 75 ml vinegar  
 * 1½  tsp dried oregano
 
-**Method**
+## Method
 
 1. Season the pork with coriander, asafoetida and salt. Let stand for at least an hour.  
 2. Heat oven to 200C/400F. Roast the pork until it reaches an internal temperature of 63C/145F (about 25-35 minutes).  

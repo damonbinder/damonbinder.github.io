@@ -13,7 +13,7 @@ subcategory: Unclassified
 order: 133
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g fresh leafy vegetables   
   (eg spinach, chard, mustard greens)  
@@ -24,7 +24,7 @@ order: 133
 * 1 tsp cumin  
 * 10 small grains of mastic gum
 
-**Method**
+## Method
 
 1. Wash and chop the leafy vegetables as desired  
 2. Crush the mastic gum in a mortar and pestle. Place all of the ingredients into a frying pan and saute the greens until cooked, adding a little water if desired.

@@ -7,12 +7,12 @@ subcategory: Cakes
 order: 170
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200g sesame seeds  
 * 180g honey
 
-**Method**
+## Method
 
 1. Line a large tray with parchment paper  
 2. Place the sesame seeds in a large frying pan and toast until aromatic and golden, reduce the heat to keep them warm.  

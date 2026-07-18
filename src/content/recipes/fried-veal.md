@@ -14,7 +14,7 @@ subcategory: Beef and Veal
 order: 55
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500g of thin veal steaks  
 * 1 onion, finely diced  
@@ -31,7 +31,7 @@ order: 55
 * 1 Tb *defrutum*  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 1. Heat olive oil in a skillet. Add the veal and fry for a few minutes, until cooked through. Remove veal from the skillet and set aside.  
 2. Add the diced onion to the skillet and cook until soft. Then add all of the remaining ingredients to the skillet. Simmer for about 5 minutes, until the sauce has become thick and glossy.  

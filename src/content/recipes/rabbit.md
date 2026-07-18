@@ -20,7 +20,7 @@ subcategory: Unclassified
 order: 66
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 rabbit (about 1.3 kg)  
 * Olive oil  
@@ -34,7 +34,7 @@ order: 66
 * 300 ml white wine  
 * 45 ml fish sauce
 
-**Method**
+## Method
 
 1. Preheat the oven to 180C/350F.   
 2. Bring a large pot of water to the boil. Place the rabbit in pieces into the pot and allow to cook for a few minutes.   

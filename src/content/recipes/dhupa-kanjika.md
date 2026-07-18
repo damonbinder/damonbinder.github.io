@@ -16,14 +16,14 @@ order: 1060
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 ml strained rice kāñjika or another mild sour fermented grain liquid  
 * ¾ tsp rock salt  
 * ½ tsp roasted ground cumin  
 * Pinch of asafoetida
 
-**Method**
+## Method
 
 1. Whisk the kāñjika with the salt, cumin, and asafoetida.  
 2. Chill or serve at room temperature.

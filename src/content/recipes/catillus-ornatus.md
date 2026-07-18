@@ -7,7 +7,7 @@ subcategory: Bread
 order: 161
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400g lettuce  
 * 50 ml white wine  
@@ -17,7 +17,7 @@ order: 161
 * Pepper  
 * Olive oil, for frying
 
-**Method**
+## Method
 
 1. Wash the lettuce leaves and blend with the white wine to form a puree. Pour the lettuce puree into a fine mesh strainer, and mix with a spoon to drain as much liquid as possible.   
 2. Place the drained lettuce puree in a large mixing bowl. Add most of the flour and mix to incorporate, then keep adding flour and kneading until the mixture comes together into a smooth dough. Add the lard and a generous amount of pepper, then knead for a few more minutes until incorporated.  

@@ -22,7 +22,7 @@ subcategory: Pork
 order: 37
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg meat from pork shoulder  
 * ½ tsp pepper  
@@ -37,7 +37,7 @@ order: 37
 * 2 Tb olive oil  
 * 1 Tb cornstarch, made into a slurry
 
-**Method**
+## Method
 
 1. Preheat the oven to 325 F / 160 C. Generously salt the meat and then roast for 1.5 hours, or until cooked through. Take out to rest while you prepare the sauce.  
 2. Add all of the remaining ingredients, barring only the starch and half the celery seed, to a saucepan. Bring to the boil then simmer for 5 minutes.  

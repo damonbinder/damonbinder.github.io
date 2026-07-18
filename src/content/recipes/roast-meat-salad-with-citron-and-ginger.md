@@ -16,7 +16,7 @@ order: 1029
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g cooked grilled lamb, goat, or pork  
 * 50 g lemon or citron pulp, finely chopped  
@@ -29,7 +29,7 @@ status: draft
 * 15 ml lemon juice  
 * 15 g ghee
 
-**Method**
+## Method
 
 1. Cut the warm meat into very fine strips or mince it by hand.  
 2. Mix with the citrus pulp, ginger, garlic or spring onion, cumin, pepper, asafoetida, salt, and lemon juice.  

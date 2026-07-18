@@ -11,11 +11,11 @@ category: Dips and Relishes
 order: 5
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150 g cottage cheese  
 * 1 tsp fish sauce  
 * Ground black pepper
 
-**Method**  
+## Method
 Mix everything together and serve.

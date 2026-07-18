@@ -28,7 +28,7 @@ subcategory: Conchicla
 order: 145
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g split peas  
 * 4 boneless, skinless, chicken thighs  
@@ -42,7 +42,7 @@ order: 145
 * 2 eggs  
 * A handful of pine nuts
 
-**Method**
+## Method
 
 1. Place peas in a saucepan along with 750 ml of water. Bring to a simmer, then cover and cook for about 1 hour, or until the peas are mushy and thick.  
 2. While the peas are cooking, place the chicken thighs, wine, fish sauce, olive oil, onion, and coriander. Bring to a simmer and cook for 45 minutes. Remove the chicken from the cooking liquid and shred with a fork. Use a strainer to separate the onions from the cooking liquid, reserving both.  

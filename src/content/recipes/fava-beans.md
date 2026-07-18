@@ -14,7 +14,7 @@ subcategory: Other Legumes
 order: 153
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600 g cooked, peeled fava beans  
 * 100g whites of leek, finely chopped  
@@ -23,5 +23,5 @@ order: 153
 * 2 Tb fish sauce  
 * 4 Tb olive oil
 
-**Method**  
+## Method
 Mix together the olive oil, fish sauce, cumin, coriander leaves, and chopped leek, then pour over the beans and serve.

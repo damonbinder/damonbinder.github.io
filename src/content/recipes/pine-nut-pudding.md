@@ -16,7 +16,7 @@ subcategory: Pudding
 order: 181
 ---
 
-**Ingredients**
+## Ingredients
 
 * 600 ml milk  
 * 60 ml *passum*  
@@ -27,7 +27,7 @@ order: 181
 * 4 eggs  
 * Pepper
 
-**Method**
+## Method
 
 1. Preheat the oven to 350 F / 180 C.  
 2. Add the milk, *passum*, honey, pine nuts, rue, and cornstarch to a saucepan along with a generous amount of ground pepper, and whisk together.  

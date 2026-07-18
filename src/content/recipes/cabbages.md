@@ -14,7 +14,7 @@ subcategory: Cabbage
 order: 118
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300g cabbage  
 * Pepper  
@@ -26,7 +26,7 @@ order: 118
 * 1 Tb white wine  
 * 1 Tb olive oil
 
-**Method**
+## Method
 
 1. Chop the cabbage into thin strips. Boil with water in a saucepan for 5-7 minutes, or until tender.  
 2. Drain the water from the saucepan, then add the remaining ingredients. Return the saucepan to the heat for a couple minutes while mixing everything together, then serve.

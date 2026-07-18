@@ -14,7 +14,7 @@ subcategory: Unclassified
 order: 101
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300 g calamari, cut into rings  
 * 1 Tb olive oil  
@@ -24,7 +24,7 @@ order: 101
 * 1 Tb *defrutum*  
 * Generous ground black pepper
 
-**Method**
+## Method
 
 1. Thoroughly dry the calamari with a paper towel  
 2. Place the olive oil in a frying pan and place on high heat. When the pan is very hot, add the calamari and fry for a couple minutes, until the calamari is opaque and beginning to curl.  

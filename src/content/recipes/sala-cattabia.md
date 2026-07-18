@@ -16,7 +16,7 @@ category: Dips and Relishes
 order: 2
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150g white bread, crust removed  
 * 75 ml vinegar  
@@ -30,7 +30,7 @@ order: 2
 * 3 Tb white wine  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 1. Break the white bread into medium chunks and place in a bowl.   
 2. Mix the vinegar with 250 ml of water, pour over the bread and allow to soak.   

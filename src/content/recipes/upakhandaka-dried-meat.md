@@ -16,7 +16,7 @@ order: 1039
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg lean beef, venison, lamb, or goat, cut into 1 cm thick strips  
 * 25 g fine salt  
@@ -24,7 +24,7 @@ status: draft
 * 1 tsp ground black pepper  
 * 1 tsp ground cumin
 
-**Method**
+## Method
 
 1. Toss the strips thoroughly with the salt, asafoetida-water, pepper, and cumin. Refrigerate for 12 hours.  
 2. Arrange on racks and dry in a dehydrator or convection oven at 65–70°C until the surface is dry and the strips have lost about half their weight, 4–8 hours.  

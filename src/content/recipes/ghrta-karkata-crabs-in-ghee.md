@@ -16,7 +16,7 @@ order: 1046
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 kg whole cleaned crabs or 750 g crab sections  
 * 40 ml lemon juice or tamarind water  
@@ -26,7 +26,7 @@ status: draft
 * ½ tsp ground black pepper or long pepper  
 * ¼ tsp asafoetida
 
-**Method**
+## Method
 
 1. Heat a heavy dry pan until very hot. Add the crab and cook, covered, for 3–5 minutes until the shells brighten and begin to crack.  
 2. Add the lemon juice or tamarind water and half the salt. Cover and cook until the crab is done, 6–10 minutes depending on size.  

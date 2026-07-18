@@ -7,12 +7,12 @@ subcategory: Cream, Curds, and Cheese
 order: 182
 ---
 
-**Ingredients**
+## Ingredients
 
 * 100 ml cream  
 * 2 tsp honey  
 * Pinch of cinnamon  
 * Small pinch of spikenard
 
-**Method**  
+## Method
 Mix together and serve alongside seasonally appropriate fruits—pears, pomegranates, dates, raisins—or nuts such as almonds, pistachios, and pine nuts. 

@@ -16,7 +16,7 @@ order: 1018
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1 L whole milk  
 * 200 ml cultured buttermilk, plus more if needed  
@@ -26,7 +26,7 @@ status: draft
 * 150 ml water  
 * ½ tsp ground cardamom
 
-**Method**
+## Method
 
 1. Bring the milk just to a boil. Lower the heat and add the buttermilk gradually until the curds separate clearly from the whey.  
 2. Strain through cloth, rinse briefly with cool water, and hang for 30 minutes.  

@@ -16,7 +16,7 @@ subcategory: Apician Sauces for Fish
 order: 88
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ tsp ground pepper  
 * ½ tsp lovage  
@@ -31,7 +31,7 @@ order: 88
 * 2 Tb fish sauce  
 * 1 Tb olive oil
 
-**Method**  
+## Method
 Mix everything into a small saucepan, bring to a simmer, then serve with the fish.
 
 **Notes**

@@ -14,7 +14,7 @@ subcategory: Gourds, Cucumbers, and Melons
 order: 117
 ---
 
-**Ingredients**
+## Ingredients
 
 * Half a rockmelon  
 * 2 tsp dried mint or pennyroyal  
@@ -23,7 +23,7 @@ order: 117
 * 1 Tb fish sauce  
 * Pepper
 
-**Method**
+## Method
 
 1. Peel the rock melon, then dice into bite sized pieces. Arrange on a serving dish  
 2. Mix together the remaining ingredients in a small bowl. Pour over the rock melon, toss, and leave to chill for 15 minutes, then serve sprinkled with pepper

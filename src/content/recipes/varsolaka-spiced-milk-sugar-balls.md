@@ -16,7 +16,7 @@ order: 1019
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250 g white sugar  
 * 125 ml water  
@@ -28,7 +28,7 @@ status: draft
 * Optional: a speck of food-grade edible camphor, no more than 10 mg  
 * Ghee, for greasing the hands
 
-**Method**
+## Method
 
 1. Combine the sugar and water in a heavy saucepan and heat until dissolved. Add 50 ml milk; skim the foam that rises, then strain the syrup through fine cloth or a coffee filter.  
 2. Return the clarified syrup to the pan with the remaining milk. Cook over medium-low heat, stirring continuously, until very thick and the mixture reaches about 116–118°C.  

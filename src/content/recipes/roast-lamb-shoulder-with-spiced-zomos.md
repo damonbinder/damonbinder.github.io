@@ -7,7 +7,7 @@ subcategory: Lamb and Goat
 order: 54
 ---
 
-**Ingredients**
+## Ingredients
 
 * 1.6 kg lamb shoulder, bone‑in  
 * 100 mL dry white wine  
@@ -19,7 +19,7 @@ order: 54
 * ¼ tsp caraway seeds, lightly crushed  
 * 1 Tb  cornstarch mixed with 15 mL cold water to make a slurr
 
-**Method**
+## Method
 
 1. Heat the oven to 180 °C. Pat the lamb dry and set on a rack in a roasting pan, fat side up.  
 2. Make the basting liquor. Dissolve salt in 100 mL wine.  

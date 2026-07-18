@@ -7,7 +7,7 @@ subcategory: Lentils
 order: 149
 ---
 
-**Ingredients**
+## Ingredients
 
 * 150 g red lentils  
 * 90 g barley  
@@ -17,5 +17,5 @@ order: 149
 * 1 tsp pennyroyal  
 * 4 Tb fish sauce
 
-**Method**  
+## Method
 Add all of the ingredients to a large saucepan along with 1.5 L of water. Bring to a boil, then simmer uncovered for 90 minutes, or until cooked and the lentils have become thick. Add more water if needed, and stir occasionally to prevent sticking.

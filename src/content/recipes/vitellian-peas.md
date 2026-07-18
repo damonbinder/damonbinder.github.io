@@ -21,7 +21,7 @@ subcategory: Peas
 order: 140
 ---
 
-**Ingredients**
+## Ingredients
 
 * 250g split peas  
 * Pepper  
@@ -34,7 +34,7 @@ order: 140
 * 2 Tb vinegar  
 * 2 Tb olive oil
 
-**Method**
+## Method
 
 4. Place peas in a saucepan along with 750 ml of water. Bring to a simmer, then cover and cook for about 1 hour, or until the peas are mushy and smooth.  
 5. Crush the egg yolks in a mortar and pestle. Add the ginger, generous pepper, and honey and pound again. Add the vinegar, fish sauce, and white wine, and mix until smooth.  

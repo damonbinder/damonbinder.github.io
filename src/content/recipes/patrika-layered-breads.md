@@ -16,7 +16,7 @@ order: 1008
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 300 g fine wheat flour  
 * ¾ tsp salt  
@@ -24,7 +24,7 @@ status: draft
 * 50 g ghee, melted  
 * Rice flour, for dusting
 
-**Method**
+## Method
 
 1. Mix the flour and salt, add enough water for a soft dough, knead until smooth, and rest for 30 minutes.  
 2. Divide into 10 balls and roll each as thinly as possible.  

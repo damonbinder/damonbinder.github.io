@@ -18,7 +18,7 @@ subcategory: Other Legumes
 order: 158
 ---
 
-**Ingredients**
+## Ingredients
 
 * 400g can chickpeas, drained  
 * 6 eggs  
@@ -28,7 +28,7 @@ order: 158
 * Pepper  
 * Olive oil
 
-**Method**
+## Method
 
 1. Place the chickpeas in a frying pan along with a little olive oil and heat gently.  
 2. Whisk together the eggs, then pour over the chickpeas and cook, flipping if needed.  

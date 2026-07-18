@@ -16,7 +16,7 @@ order: 1031
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 4 small eggplants, or 2 small ridge gourds, or 4 large daikon sections  
 * 400 g seasoned meat paste from the māṃsa-vaṭaka recipe  
@@ -24,7 +24,7 @@ status: draft
 * 150 ml water or light stock  
 * ½ tsp salt
 
-**Method**
+## Method
 
 1. Cut a cap from each vegetable and hollow out the centre while keeping the walls intact.  
 2. Fill firmly with the seasoned meat and replace the cap, securing it with a toothpick if needed.  

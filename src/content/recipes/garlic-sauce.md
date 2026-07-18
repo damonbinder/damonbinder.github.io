@@ -7,7 +7,7 @@ subcategory: Unclassified
 order: 69
 ---
 
-**Ingredients**
+## Ingredients
 
 * ½ tsp ground pepper  
 * 1 tsp ground cumin   
@@ -19,5 +19,5 @@ order: 69
 * 45 ml grape syrup  
 * 180 ml wine
 
-**Method**  
+## Method
 Place all the ingredients into a small saucepan. Gentle bring to a simmer and cook for a few minutes, then serve with meat or fish. 

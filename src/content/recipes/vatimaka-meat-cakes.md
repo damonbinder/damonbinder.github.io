@@ -16,7 +16,7 @@ order: 1032
 status: draft
 ---
 
-**Ingredients**
+## Ingredients
 
 * 500 g finely minced lamb or goat  
 * Large pinch saffron, soaked in 1 Tb warm water  
@@ -26,7 +26,7 @@ status: draft
 * ¼ tsp asafoetida  
 * 20 ml oil or ghee
 
-**Method**
+## Method
 
 1. Mix the meat with the saffron water, salt, pepper, cumin, and asafoetida until sticky.  
 2. Form 12 small, flat cakes.  

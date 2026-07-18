@@ -7,7 +7,7 @@ subcategory: Cakes
 order: 169
 ---
 
-**Ingredients**
+## Ingredients
 
 * 200g sesame seeds  
 * 200g honey  
@@ -18,7 +18,7 @@ order: 169
 * 1 tsp ground black pepper  
 * Oil, for greasing
 
-**Method**
+## Method
 
 1. Place the sesame seeds into a food processor and blend into a powder.  
 2. Put 80g of the honey into a small saucepan. Bring to a boil and simmer for 6 minutes. Remove from the heat, add the sesame seed mixture, and stir together.  

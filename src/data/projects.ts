@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Harmonics Lab',
+    blurb:
+      'An additive-synthesis playground. Build a sound from its harmonics, watch the waveform, and play it across a keyboard.',
+    date: 'July 2026',
+    href: '/harmonic-lab/',
+  },
+  {
     title: 'Random Lives',
     blurb:
       'Biographical stories of randomly sampled people from across all of human history.',

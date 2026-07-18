@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harmonics Lab — Waveform Synthesizer</title>
+    <script type="module" crossorigin src="./assets/index-BJKlitmO.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C1IBSKCH.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Harmonics&nbsp;Lab</h1>
+        <p class="byline">by <a href="/">Damon Binder</a></p>
+      </header>
+
+      <div class="panel transport-panel">
+        <div id="transport" class="transport"></div>
+      </div>
+
+      <div class="top-row">
+        <div class="panel display-panel">
+          <div class="panel-title">Waveform <span class="hint" id="waveHint">one cycle</span></div>
+          <canvas id="waveCanvas"></canvas>
+        </div>
+        <div class="panel display-panel">
+          <div class="panel-title">Live output <span class="hint" id="scopeHint">silent</span></div>
+          <canvas id="scopeCanvas"></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          Harmonics <span class="hint">drag to set the amplitude of each partial</span>
+        </div>
+        <div class="harmonics-wrap">
+          <div id="harmonics" class="harmonics"></div>
+          <div id="harmonicsExt" class="harmonics" hidden></div>
+        </div>
+        <div class="harmonics-toggles">
+          <button id="moreHarmonics" class="phase-toggle" type="button" aria-expanded="false">
+            Show harmonics 17–32 <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <button id="phaseToggle" class="phase-toggle" type="button" aria-expanded="false">
+            Show phase controls <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          Instruments
+        </div>
+        <div id="presets" class="presets"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          Effects <span class="hint">off by default · click a name to switch it on</span>
+        </div>
+        <div id="effects" class="effects"></div>
+      </div>
+
+      <div class="section-break"></div>
+
+      <div class="panel">
+        <div class="panel-title">
+          Keyboard
+          <span class="hint">click keys, or use your computer's A–; row · Space toggles the drone</span>
+        </div>
+        <div id="keyboard" class="keyboard"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          Envelope <span class="hint">attack · decay · sustain · release, applied to every note</span>
+        </div>
+        <div id="envelope" class="envelope"></div>
+      </div>
+
+      <footer class="credits">
+        Instrument timbres from the
+        <a href="https://web.archive.org/web/20200229061632/http://www.timbre.ws/sharc/" target="_blank" rel="noopener">SHARC</a>
+        database · sung vowels from
+        <a href="https://zenodo.org/records/1193957" target="_blank" rel="noopener">VocalSet</a>
+        (Wilkins et al., 2018), CC&nbsp;BY&nbsp;4.0.
+      </footer>
+    </div>
+
+  </body>
+</html>

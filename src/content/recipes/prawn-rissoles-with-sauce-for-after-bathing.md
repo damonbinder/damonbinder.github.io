@@ -6,11 +6,19 @@ originalLang: Latin
 original: >-
   esicia de iscillis uel de cammaris amplis: cammari uel iscille de testa sua
   eximuntur et in mortario teruntur cum pipere et liquamine optimo. pulpe
-  esicia plassantur.
+  esicia plassantur.<br>esicia amulata a balineo sic facies: teres piper
+  ligusticum origanum modicum silfi gingber minimum mellis modicum;
+  liquamine temperabis; misces adicies super esicia; facies ut ferueat. cum
+  bene bulliuerit amulo obligas ispis so et soruendum inferes.
 translation: >-
   *Isicia* of prawns or of large crayfish: the crayfish or prawns are taken
   out of their shells and pounded in a mortar with pepper and the best fish
-  sauce. Rissoles (*isicia*) are shaped from the flesh.
+  sauce. Rissoles (*isicia*) are shaped from the flesh.<br>Starch-thickened
+  rissoles for after the bath: make them thus. Grind pepper, lovage, a
+  little oregano, silphium [asafoetida], a very little ginger, and a little
+  honey; temper with fish sauce; mix it and pour it over the rissoles; bring
+  it to a boil. When it has boiled well, bind it with starch [*ispis so* is
+  obscure] and serve it to be sipped.
 category: Isicia
 subcategory: Meatballs
 order: 22

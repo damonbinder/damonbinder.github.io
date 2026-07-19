@@ -7,14 +7,14 @@ original: >-
   अङ्गारभृष्टकं मांसं शुद्धे पट्टे निधापयेत् । कर्तर्या तिलशः कृत्वा मातुलिङ्गस्य केसरैः ॥ ७६ ॥ आर्द्रकैः केसराम्लैश्च गृञ्जनैस्तत्प्रमाणकैः । जीरकैर्मरिचैः पिष्टैर्हिङ्गुसैन्धवचूर्णकैः ॥ ७७ ॥ मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् । आमं मांसं च पेषण्यां हिङ्गुतोयेन सिञ्चितम् ॥ ७८ ॥
 translation: >-
   Place ember-roasted meat on a clean board and cut it into very small strips or sesame-seed-like pieces. Mix it with citron pulp, fresh ginger, sour citrus pulp, gṛñjana, ground cumin and pepper, asafoetida, and rock salt. Perfume the mixed meat with asafoetida smoke.
-description: >-
-  A finely chopped warm meat salad sharpened with citrus, ginger, allium, cumin, and pepper.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1029
 status: draft
 ---
+
+A finely chopped warm meat salad sharpened with citrus, ginger, allium, cumin, and pepper.
 
 ## Ingredients
 

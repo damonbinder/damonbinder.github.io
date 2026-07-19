@@ -7,14 +7,14 @@ original: >-
   अर्धावशेषिते दुग्धे तक्रमीषद्विनिक्षिपेत् । नवस्थाल्यां न्यसेत्तत्तु निवाते स्थापयेच्च ताम् ॥ ६८ ॥ शर्करामिश्रितं वापि एलयापि विमिश्रयेत् । यामषट्कोषितं क्षीरमम्लतां घनतां भजेत् ॥ ६९ ॥ दधीति नाम प्राप्नोति पथ्यं मृष्टं मनोहरम् । हीनकाले तथा पथ्यं चिरकालेऽम्लता बहु ॥ १५७० ॥
 translation: >-
   Add a little buttermilk to milk reduced by half, put it in a new pot, and leave it in a windless place. It may also be mixed with sugar or cardamom. After six yāmas the milk becomes sour and thick and is called dadhi. If left too long it becomes excessively sour.
-description: >-
-  A very rich cultured curd made from milk concentrated to half its volume before inoculation.
 tradition: Indian
 category: Dips and relishes
 subcategory: Dairy, drinks & condiments
 order: 1053
 status: draft
 ---
+
+A very rich cultured curd made from milk concentrated to half its volume before inoculation.
 
 ## Ingredients
 

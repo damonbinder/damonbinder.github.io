@@ -7,14 +7,14 @@ original: >-
   वंशाङ्कुरं लघु चक्रीं शतावर्यास्तथैव च । पातालटेण्टुकानां च प्ररोहान् क्षालितान् मृदून् ॥ ६१ ॥ सलिले लवणोपेते तैले वापि सराजिके । लवणेन समायुक्ते प्रक्षिपेदङ्कुरानिमान् ॥ ६२ ॥ मागिणीमाकं पैष्टुं कचोरं वनमागिणीम् । कर्पूरमागिणीमूलं तथैवाम्लहरिद्रकाम् ॥ ६३ ॥ सूरणं मधुशिग्रं च तथा बिलकन्दकम् । एतानि पूर्ववत्कृत्वा तैले वापि विनिक्षिपेत् ॥ ६४ ॥
 translation: >-
   Wash and soften bamboo shoots, cakrī, śatāvarī shoots, and pātāla and tendu sprouts. Put them in salted water or in oil with mustard and salt. A further group of roots and tubers, including kacora, sour turmeric, elephant-foot yam, and bilakanda, is prepared in the same way and placed in oil.
-description: >-
-  Shoots and tubers are first made tender, then preserved either in brine or mustard oil.
 tradition: Indian
 category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1051
 status: draft
 ---
+
+Shoots and tubers are first made tender, then preserved either in brine or mustard oil.
 
 ## Ingredients
 

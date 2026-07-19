@@ -7,14 +7,14 @@ original: >-
   शङ्कुद्वयं समास्थाप्य बध्नीयादुज्ज्वलाम्बरम् । प्रसार्य यष्टिभिः किंचित्क्षीरमम्लेन भेदितम् ॥ ८१ ॥ सितया च समायुक्तमेलाचूर्णविमिश्रितम् । क्षिपेत्प्रसारिते वस्त्रे स्रावयेत्पेषयेत्समम् ॥ ८२ ॥ पुनः पुनः क्षिपेत्तत्र यावन्निर्मलतां व्रजेत् । पक्वचिञ्चाफलं भृष्टं वर्णार्थं तत्र निक्षिपेत् ॥ ८३ ॥ यस्य कस्य फलस्यापि रसेन परिमिश्रयेत् । तत्तन्नामसमाख्यातं पानकं पेयमुत्तमम् ॥ ८४ ॥
 translation: >-
   Stretch a clean cloth between supports. Curdle milk with a souring agent, mix it with sugar and cardamom, pour it onto the cloth, let it drain, and press or grind it repeatedly until the liquid becomes clear. Add roasted ripe tamarind for colour. Mix with the juice of any desired fruit; the drink takes that fruit’s name and is an excellent pānaka.
-description: >-
-  This unusual pānaka appears to use a clarified sweet milk-whey base combined with fruit juice and tamarind.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1061
 status: draft
 ---
+
+This unusual pānaka appears to use a clarified sweet milk-whey base combined with fruit juice and tamarind.
 
 ## Ingredients
 

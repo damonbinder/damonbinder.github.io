@@ -7,14 +7,14 @@ original: >-
   उपर्युपरि निक्षिप्ताः पत्रिकाः विपचेत्सुधीः । गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥ दुग्धाक्तान् घृतपकांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान् कीसारसंज्ञितान् ॥ ८७ ॥
 translation: >-
   Moisten coarse wheat particles with milk, cook them in ghee, mix them with sugar, and season them with cardamom and black pepper. This is called kīsāra.
-description: >-
-  A sweet, rich preparation of coarse wheat grain toasted in ghee and spiced with cardamom and black pepper. The source calls for a deliberately coarse grain — the gritty fraction winnowed from flour — which keeps the grains distinct rather than collapsing into a smooth paste.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1009
 status: draft
 ---
+
+A sweet, rich preparation of coarse wheat grain toasted in ghee and spiced with cardamom and black pepper. The source calls for a deliberately coarse grain — the gritty fraction winnowed from flour — which keeps the grains distinct rather than collapsing into a smooth paste.
 
 ## Ingredients
 

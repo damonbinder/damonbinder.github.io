@@ -7,14 +7,14 @@ original: >-
   बदराकारकान् खण्डान् पूर्ववच्चूर्णमिश्रितान् । आर्द्रकांस्तत्प्रमाणांश्च पक्वतैले विपाचयेत् ॥ ५३ ॥ वार्ताकशकलांश्चैव मूलकस्य च खण्डकान् । पलाण्ड्वार्द्रकसम्भूतान् मुद्गाङ्कुरविनिर्मितान् ॥ ५४ ॥ वटकान् निक्षिपेत्तत्र मेषकस्य च चूर्णकम् । कासमर्देन संयुक्तं पलान्यन्यानि कानिचित् ॥ ५५ ॥ सुसिद्धं वासयेद्धूपैर्नानारसविमिश्रितम् । नानाद्रव्यसमेता सा कवचन्दी भवेच्छुभा ॥ ५६ ॥
 translation: >-
   Cut meat into pieces the size of jujubes, season as before, and fry in well-heated oil with equal-sized pieces of ginger. Add eggplant, radish, onion, ginger, mung sprouts, vaṭakas, meṣaka powder, kāsamarda, and any other suitable meats or vegetables. Cook thoroughly, combine with several sauces or tastes, and perfume with aromatic smoke. Because it contains many substances, it is called kavacandī.
-description: >-
-  Kavacandī is deliberately miscellaneous: a richly seasoned mixed fry using meat, vegetables, sprouts, and pulse cakes. The reconstruction keeps the dish varied but coherent.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1024
 status: draft
 ---
+
+Kavacandī is deliberately miscellaneous: a richly seasoned mixed fry using meat, vegetables, sprouts, and pulse cakes. The reconstruction keeps the dish varied but coherent.
 
 ## Ingredients
 

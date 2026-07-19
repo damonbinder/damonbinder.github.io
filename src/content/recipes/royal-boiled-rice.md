@@ -7,14 +7,14 @@ original: >-
   यत्नादाकृष्यापनयेद्दासीभिस्तण्डुलस्थितान् । अखण्डान् शोधितानेव क्षालितान् बहुशो जलैः ॥ १३५० ॥ तण्डुलान् कुन्दसङ्काशांस्तोयान्तर्धारितांश्चिरम् । स्थाल्यां ताम्रकृतायां वा मृज्जातायामथापि वा ॥ ५१ ॥ तण्डुलत्रिगुणं तोयं निक्षिपेच्च पिधापयेत् । वाससा शशिशुभ्रेण धौतेन च घनेन च ॥ ५२ ॥ चुल्यां निधाय निधूमे वह्नौ तत् काथयेज्जलम् । सुतप्ते बुद्बुदोपेते स्वल्पबाष्पसमन्विते ॥ ५३ ॥ तण्डुलानावपेत्स्थाल्यां दर्व्या च परिघट्टयेत् । सिक्थं विमृश्य वीक्षेत वारं वारं विचक्षणः ॥ ५४ ॥ मृदुभूते च तत्सिक्थे किञ्चिद्वा कणगर्भिते । तत्र दुग्धं घृतं वापि निक्षिप्योत्तारयेत्ततः ॥ ५५ ॥ स्थाल्यास्ये पिटकं दत्त्वा मण्डं तं स्रावयेद्गुणी । ईषदुद्धारितं मण्डमूष्मणा परिशोषयेत् ॥ ५६ ॥
 translation: >-
   Wash the whole, cleaned grains many times. Soak jasmine-white rice, then put three times as much water as rice in a copper or earthen pot and cover it with a dense clean cloth. Bring the water to a boil over a smokeless fire, add the rice, and stir. Test grains repeatedly. When they are soft but retain a slight firm core, add milk or ghee, remove from the fire, drain the starchy water, and let the remaining moisture dry in the retained heat.
-description: >-
-  This is a drained-rice method rather than the modern absorption method. It produces separate grains enriched at the end with either ghee or milk.
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1001
 status: draft
 ---
+
+This is a drained-rice method rather than the modern absorption method. It produces separate grains enriched at the end with either ghee or milk.
 
 ## Ingredients
 

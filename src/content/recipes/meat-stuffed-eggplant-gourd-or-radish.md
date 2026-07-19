@@ -7,14 +7,14 @@ original: >-
   वार्ताकान्तदेशस्य समीपे कृतरन्ध्रकम् । निष्कासितेषु बीजेषु तेन मांसेन पूरितम् ॥ ८३ ॥ तैलेन पाचितं किंचिदाणके परिपाचयेत् । पूरभट्टाकसंज्ञं तत्स्वादुना परिपाचयेत् ॥ ८४ ॥ कोशातकीफलेऽप्येवं मूलकस्य च कन्दके । पूरिते चूर्णमांसेन तत्तन्नाम्ना तु कथ्यते ॥ ८५ ॥
 translation: >-
   Make a hole near the end of an eggplant, remove the seeds, and fill it with seasoned minced meat. Cook it first in oil and then finish it in a pan; this is called pūra-bhaṭṭāka. The same procedure may be used for kośātakī gourd or radish root, each dish taking the name of the vegetable.
-description: >-
-  Whole vegetables are hollowed, packed with spiced meat, browned in oil, and finished under cover.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1031
 status: draft
 ---
+
+Whole vegetables are hollowed, packed with spiced meat, browned in oil, and finished under cover.
 
 ## Ingredients
 

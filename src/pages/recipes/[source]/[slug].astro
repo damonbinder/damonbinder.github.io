@@ -43,12 +43,22 @@ const period = (await getSourceEntry(page))?.data.period;
 const langCode = { Latin: 'la', Greek: 'grc', Sanskrit: 'sa' }[d.originalLang ?? ''] ?? undefined;
 
 // Foreign untranslated terms are italicised with *asterisks* in the source text
-// and translation/description strings; render those as emphasis. stripEm gives
-// the plain-text form for the <title> tag and other markup-free contexts.
+// and translation strings; render those as emphasis. stripEm gives the
+// plain-text form for the <title> tag and other markup-free contexts.
 const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
 const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
+
+// Meta description: the recipe's intro paragraph (prose above the first
+// heading, if any), stripped of Markdown; falls back to a generic line.
+const bodyText = (recipe.body ?? '').trimStart();
+const introPara = bodyText.startsWith('#')
+  ? ''
+  : bodyText.split(/\n#{1,6}\s/)[0].split(/\n\s*\n/)[0].trim();
+const metaDescription = introPara
+  ? introPara.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim()
+  : `${stripEm(d.title)} — a historical recipe.`;
 ---
-<Base title={stripEm(d.title)} description={stripEm(d.description ?? `${d.title} — a historical recipe.`)}>
+<Base title={stripEm(d.title)} description={metaDescription}>
   <p class="crumb">
     <a href="/recipes/">Recipes</a> ›
     <a href={workHref}>{work}</a>
@@ -84,8 +94,6 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
         )}
       </div>
     )}
-
-    {d.description && <p class="description" set:html={em(d.description)}></p>}
 
     <div class="recipe-body">
       <Content />
@@ -156,12 +164,6 @@ const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
     margin-bottom: 0.5rem;
   }
   .og p { margin: 0; font-size: 0.98rem; line-height: 1.6; }
-
-  .description {
-    font-size: 1.08rem;
-    line-height: 1.6;
-    margin: 0 0 1.8rem;
-  }
 
   /* Recipe body — Ingredients / Method / Notes as clean section labels. */
   .recipe-body :global(h2) {

@@ -10,16 +10,14 @@ translation: >-
   including mango, *jambu*, citron, grape, *punarnavā*, flax, *surasā*,
   *brahmī*, sour-leaf, safflower, and lotus. Mix the shoots with tamarind
   sourness, citron or lime juice, or curd, together with salt.
-description: >-
-  The plant list is long and many names are regional or uncertain, but the
-  principle is simple: tender leaves dressed sharply with tamarind, citrus, or
-  yoghurt, and salt.
 tradition: Indian
 category: Vegetables
 subcategory: Vegetables & pickles
 order: 1048
 status: published
 ---
+
+The plant list is long and many names are regional or uncertain, but the principle is simple: tender leaves dressed sharply with tamarind, citrus, or yoghurt, and salt.
 
 ## Ingredients
 

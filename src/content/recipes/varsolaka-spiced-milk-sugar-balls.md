@@ -7,14 +7,14 @@ original: >-
   क्षीरप्रकारनामेदं भक्ष्यं मृष्टं मनोहरम् । शर्करां वारिसंयुक्तां ताम्रपात्रे विपाचयेत् ॥ ११ ॥ अर्धपाके क्षिपेद्दुग्धं सकं वापि यथारुचि । तेन मुञ्चेन्मलं सा तु शर्करा कथिता सती ॥ १२ ॥ निर्मलेन च वस्त्रेण गालयेत्तां मुहुर्मुहुः । मृदौ पाके द्रुता पेया मध्यमे मधुसन्निभा ॥ १३ ॥ खरे तु कठिना भक्ष्या साधिके शर्करा भवेत् । खरपाके सुसिद्धायाः सितायाः सम्पुटे ॥ १४ ॥ नानारूपाणि कुर्वीत खण्डपाकविशारदः । शोधितायां सितायां तु क्षीरं संमिश्रयेत्समम् ॥ १५ ॥ खरपाकावधिर्यावत्तावत्तापयेत्पुनः । उत्तार्य नागरं तीक्ष्णमेलाकर्पूरकेसरैः ॥ १६ ॥
 translation: >-
   Cook sugar with water in a copper vessel. At half-cooking add milk to separate the scum, then filter repeatedly through clean cloth. At the soft stage the syrup is liquid, at the middle stage honey-like, and at the hard stage it becomes a firm sweet. Mix an equal quantity of milk with purified sugar and heat again to the hard stage. Remove from the fire, add dry ginger, pungent spice, cardamom, camphor, and saffron, and shape into balls called varṣolakas.
-description: >-
-  A clarified sugar-and-milk confection cooked to a firm stage and strongly perfumed. Modern food-grade camphor is optional and should be used only in an extremely small quantity.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1019
 status: draft
 ---
+
+A clarified sugar-and-milk confection cooked to a firm stage and strongly perfumed. Modern food-grade camphor is optional and should be used only in an extremely small quantity.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   चतस्रश्च चतस्रो घटिता मण्डका वराः । गोलान् प्रसारितान् पाणावङ्गारेषु विनिक्षिपेत् ॥ ८१ ॥ अङ्गारपालिकाः शस्ताः किंचित्कृष्णत्वमागताः । गोलकान् पिष्टकालिप्तान् पेषण्या तान् प्रसारयेत् ॥ ८२ ॥ सुतप्ततापने क्षिप्तानीषत्पक्वान् विवर्तयेत् । खर्परेऽपि पचेदेवं पोलिकानामयं क्रमः ॥ ८३ ॥
 translation: >-
   Flatten dough-balls by hand and place them among embers until they darken slightly; these are aṅgārapolikās. For polikās, coat dough-balls with flour, flatten them on a stone, place them on a thoroughly heated plate, turn them when partly cooked, and finish them on the plate or an earthen griddle.
-description: >-
-  Two rustic breads made from the same enriched wheat dough as maṇḍaka: one baked in embers, the other cooked on a hot plate.
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1006
 status: draft
 ---
+
+Two rustic breads made from the same enriched wheat dough as maṇḍaka: one baked in embers, the other cooked on a hot plate.
 
 ## Ingredients
 

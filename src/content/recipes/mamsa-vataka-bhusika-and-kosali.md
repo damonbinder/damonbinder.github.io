@@ -7,14 +7,14 @@ original: >-
   मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् । आमं मांसं च पेषण्यां हिङ्गुतोयेन सिञ्चितम् ॥ ७८ ॥ लवणेन च चूर्णेन सहितं पेषयेद्बुधः । पिष्टवच्चिकणं कृत्वा गोलकानि प्रकल्पयेत् ॥ ७९ ॥ चूर्णीकृतं तु यन्मांसं गोलकैस्तद्विवेष्टयेत् । चूर्णगर्भांश्च वटकान् निक्षिपेदाणके शुभे ॥ १४८० ॥ ख्यातास्ते मांसवटका रुच्या दृश्या मनोहराः । त एव वटकास्तैले पक्वाः स्युर्भूषिकाभिधाः ॥ ८१ ॥ तदेव चूर्णितं मांसं कणिकापरिवेष्टितम् । अङ्गारेषु तथा भृष्टं कोशलीति निगद्यते ॥ ८२ ॥
 translation: >-
   Grind raw meat smooth with asafoetida-water, salt, and spice powder. Shape it into balls and wrap each with further minced meat so that the centre is filled; cook the balls in a pan as māṃsa-vaṭakas. The same balls fried in oil are called bhūṣikās. Wrap the same minced meat in dough and roast it among embers; this is called kośalī.
-description: >-
-  One seasoned meat paste produces three dishes: pan-cooked balls, fried balls, and dough-wrapped baked parcels.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1030
 status: draft
 ---
+
+One seasoned meat paste produces three dishes: pan-cooked balls, fried balls, and dough-wrapped baked parcels.
 
 ## Ingredients
 

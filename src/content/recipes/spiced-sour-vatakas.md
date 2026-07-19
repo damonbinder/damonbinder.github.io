@@ -7,14 +7,14 @@ original: >-
   यत्र यत्र द्रवद्रव्ये तन्नाम्ना वटकास्तु ते । आरनालेन सान्द्रेण दध्ना सुमथितेन च ॥ ५ ॥ सैन्धवार्द्रकधान्याकजीरकं च विमिश्रयेत् । मरिचानि द्विधा कृत्वा क्षिपेत्तत्र तु पाकवित् ॥ ६ ॥ दर्व्या विघट्टयन् सर्वं पचेद्यावद्घनीभवेत् । उत्तार्य वटकान् क्षिप्त्वा विकिरेन्मारिचं रजः ॥ ७ ॥
 translation: >-
   Mix thick sour ārānāla with well-churned curd, rock salt, fresh ginger, coriander, cumin, and split peppercorns. Stir and cook until thick. Remove from the fire, add the vaṭakas, scatter pepper powder over them, and perfume with asafoetida.
-description: >-
-  A savoury, heated curd sauce for fried urad cakes. The reconstruction uses rice vinegar diluted with water for the uncertain sour grain liquid ārānāla.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1017
 status: draft
 ---
+
+A savoury, heated curd sauce for fried urad cakes. The reconstruction uses rice vinegar diluted with water for the uncertain sour grain liquid ārānāla.
 
 ## Ingredients
 

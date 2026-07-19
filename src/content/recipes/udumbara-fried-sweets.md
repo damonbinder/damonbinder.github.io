@@ -7,14 +7,14 @@ original: >-
   दुग्धाक्तान् घृतपकांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान् कीसारसंज्ञितान् ॥ ८७ ॥ गोलकेन समावेष्ट्य तैलेनोदुम्बरान् पचेत् । उत्क्वाथ्य विदलान् पिष्ट्वा चणकप्रभृतीन् शुभान् ॥ ८८ ॥
 translation: >-
   A sweet preparation is enclosed in a ball of dough and fried in oil; it is called udumbara.
-description: >-
-  The verse gives the name and technique but not an unambiguous filling. The reconstruction uses the immediately preceding kīsāra as the enclosed sweet, producing a fig-shaped stuffed fritter.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1010
 status: draft
 ---
+
+The verse gives the name and technique but not an unambiguous filling. The reconstruction uses the immediately preceding kīsāra as the enclosed sweet, producing a fig-shaped stuffed fritter.
 
 ## Ingredients
 

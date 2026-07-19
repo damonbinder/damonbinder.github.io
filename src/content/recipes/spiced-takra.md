@@ -7,14 +7,14 @@ original: >-
   मन्थानेन मथित्वा तन्नवनीतमथो हरेत् । निर्जलं मथितं प्रोक्तमुदश्वित् स्याज्जलार्धकम् ॥ ७१ ॥ पादाम्बु तक्रमुद्दिष्टं धूपितं हिङ्गुजीरकैः । आर्द्रकेण समायुक्तमेलासैन्धवचूर्णितम् ॥ ७२ ॥
 translation: >-
   Churn curd and remove the butter. The undiluted churned product is called mathita; with half its volume of water it is udaśvit; with one-quarter water it is takra. Takra is perfumed with asafoetida and cumin and seasoned with fresh ginger, cardamom, and powdered rock salt.
-description: >-
-  A cooling, tart buttermilk drink perfumed with cumin and asafoetida — the ancestor of modern chaas. The passage also names two plainer dilutions of churned curd, mathita and udaśvit, but the spiced takra is the only one of the three that is really a drink.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1054
 status: published
 ---
+
+A cooling, tart buttermilk drink perfumed with cumin and asafoetida — the ancestor of modern chaas.
 
 ## Ingredients
 

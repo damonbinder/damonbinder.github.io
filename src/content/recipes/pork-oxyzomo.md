@@ -19,8 +19,6 @@ translation: >-
   in a pot. Put the pig into it. Once it begins to boil, stir it often so that
   it thickens. If it starts to run short of liquid, add another pint of water.
   Cook it through in this way and serve the pig so.
-description: >-
-  Unusually for an ancient recipe, this one gives exact quantities.
 related:
   - pork-in-coriander-sauce
   - pork-unococto
@@ -36,6 +34,8 @@ subcategory: Pork
 order: 44
 status: published
 ---
+
+Unusually for an ancient recipe, this one gives exact quantities.
 
 ## Ingredients
 

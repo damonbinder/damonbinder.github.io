@@ -43,7 +43,6 @@ const recipes = defineCollection({
     originalLang: z.string().optional(),   // "Latin" | "Greek" | "Sanskrit" | …
     original: z.string().optional(),      // original-language source text
     translation: z.string().optional(),   // fresh English translation (Claude)
-    description: z.string().optional(),    // brief intro to the dish
     related: z.array(z.string()).default([]),   // slugs of related recipes
     // Tag facets (browse axes)
     tradition: z.string().optional(),      // "Roman" | "Greek"

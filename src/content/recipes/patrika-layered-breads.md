@@ -7,14 +7,14 @@ original: >-
   तैलमग्नाः पीतवर्णा मृदवः पाहलिकाः स्मृताः । तनुप्रसारितान् गोलान् ताप्य स्नेहेन पाचितान् ॥ ८५ ॥ उपर्युपरि निक्षिप्ताः पत्रिकाः विपचेत्सुधीः । गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥
 translation: >-
   Spread dough-balls thin, cook them with fat, and lay the sheets one above another. Separate the coarse wheat particles from the flour by beating or winnowing.
-description: >-
-  Patrikās are thin, fat-cooked sheets stacked into a layered bread. A restrained amount of ghee keeps the result closer to the source than a modern flaky paratha.
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1008
 status: draft
 ---
+
+Patrikās are thin, fat-cooked sheets stacked into a layered bread. A restrained amount of ghee keeps the result closer to the source than a modern flaky paratha.
 
 ## Ingredients
 

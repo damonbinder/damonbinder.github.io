@@ -7,14 +7,14 @@ original: >-
   हिङ्गुना धूपयेत्सम्यग् वटकास्ते मनोहराः । दुग्धमुत्क्वाथ्य तन्मध्ये तक्रमम्लं विनिक्षिपेत् ॥ ८ ॥ हित्वा तोयं घनीभूतं वस्त्रबद्धं पृथक्कृतम् । शालितण्डुलपिष्टेन मिश्रितं परिपेषितम् ॥ ९ ॥ नानाकारैः सुघटितं सर्पिषा परिपाचितम् । पक्वशर्करया सिक्तमेलाचूर्णेन वासितम् ॥ १४१० ॥
 translation: >-
   Boil milk and add sour buttermilk so that it separates. Discard the whey, tie the curds in cloth, and mix and grind them with rice flour. Shape the paste into varied forms, fry them in ghee, soak or coat them in cooked sugar syrup, and scent them with cardamom.
-description: >-
-  Fresh acid-set curds are kneaded with rice flour, fried, and syruped. The result falls between a fried paneer sweet and a rice-flour fritter.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1018
 status: draft
 ---
+
+Fresh acid-set curds are kneaded with rice flour, fried, and syruped. The result falls between a fried paneer sweet and a rice-flour fritter.
 
 ## Ingredients
 

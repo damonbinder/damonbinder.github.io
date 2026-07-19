@@ -7,14 +7,14 @@ original: >-
   यस्य कस्यापि मेषादेः शिरो भृष्ट्वा विभिद्य च । आददीत च मस्तिष्कं काञ्जिकेन विपाचयेत् ॥ १५२० ॥ आणके तैलमध्ये वा यथारुचि पुनः पचेत् । चूर्णैः संयोज्य तत्पश्चाद्धिङ्गुधूपेन धूपयेत् ॥ २१ ॥
 translation: >-
   Roast and split the head of a sheep or another animal, remove the brain, and cook it in kāñjika. It may then be cooked again in a pan or in oil, mixed with spice powders, and perfumed with asafoetida.
-description: >-
-  Brain is first poached in a sour fermented liquid and then fried with spices. Commercially cleaned calf or lamb brain avoids the source’s whole-head preparation.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1041
 status: draft
 ---
+
+Brain is first poached in a sour fermented liquid and then fried with spices. Commercially cleaned calf or lamb brain avoids the source’s whole-head preparation.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   अङ्गारेषु तथा भृष्ट्वा कालखण्डं विकृत्य च । पूगीफलप्रमाणेन खण्डान् कृत्वा विचक्षणः ॥ २ ॥ तैलेनाभ्यज्य तान् सर्वान्मरिचाजाजिसैन्धवैः । चूर्णितैर्विकिरेत्पश्चाद्धिङ्गुधूपेन धूपयेत् ॥ ३ ॥ अनेन विधिना भृष्ट्वा राजिकाकल्कलेपितान् । कालखण्डान् प्रकुर्वीत दध्ना राजिकयाथवा ॥ ४ ॥ भृष्टस्य कालखण्डस्य कृत्वा चक्कलिकाः शुभाः । केसरैर्मातुलिङ्गस्य सैन्धवाद्यैश्च मिश्रयेत् ॥ ५ ॥ समेदस्कौ द्विधा भक्तौ कृत्वा लवणमिश्रितौ । आम्लकैर्भावयित्वा तौ तैलेन परिपाचयेत् ॥ ६ ॥
 translation: >-
   Roast kālakhaṇḍa over embers, cut it into areca-nut-sized pieces, smear with oil, and season with pepper, ajājī, and rock salt, then perfume with asafoetida. It may instead be coated with mustard paste or dressed with curd and mustard. Thin slices may be mixed with citron pulp and salt. Fatty pieces may be split, salted, steeped in sour liquids, and fried in oil.
-description: >-
-  The text gives a family of liver or dark-organ preparations: dry-spiced, mustard-coated, curd-dressed, citrus-dressed, and sour-fried.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1037
 status: draft
 ---
+
+The text gives a family of liver or dark-organ preparations: dry-spiced, mustard-coated, curd-dressed, citrus-dressed, and sour-fried.
 
 ## Ingredients
 

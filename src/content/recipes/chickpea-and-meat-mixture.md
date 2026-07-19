@@ -7,14 +7,14 @@ original: >-
   चणकस्य समान् खण्डान् कल्पयित्वा विचक्षणः । निशाजीरकतीक्ष्णाद्यैः शुण्ठीधान्यकहिङ्गुभिः ॥ ४९ ॥ चूर्णितैर्मेलयित्वा तांस्तप्ततैले विनिक्षिपेत् । समानार्द्रकखण्डांश्च चणकान् हरितानपि ॥ १४५० ॥ श्लक्ष्णमांसैः क्षिपेत्कोलं निष्पावान् कोमलानपि । पलाण्डुशकलान् वापि लशुनं वापि निक्षिपेत् ॥ ५१ ॥ एवं पूर्वोदितं सूदः प्रयुञ्जीत यथारुचि । शोषितेऽम्लरसे पश्चात्सिद्धमुत्तार्य धूपयेत् ॥ ५२ ॥
 translation: >-
   Make equal-sized pieces of chickpea preparation, season them with turmeric, cumin, pungent spices, dry ginger, coriander, and asafoetida, and put them in hot oil. Add equal-sized fresh ginger and green chickpeas, tender meat, kola, soft niṣpāva beans, onion, or garlic. Add the previously described sour sauce according to taste. When the sour liquid has dried away, remove and perfume the dish.
-description: >-
-  A mixed fry of chickpea pieces, fresh chickpeas, meat, beans, and aromatics, finished nearly dry with the sour glaze.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1023
 status: draft
 ---
+
+A mixed fry of chickpea pieces, fresh chickpeas, meat, beans, and aromatics, finished nearly dry with the sour glaze.
 
 ## Ingredients
 

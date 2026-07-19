@@ -7,14 +7,14 @@ original: >-
   स्रावितं यद्धृतं तोयं जीरकाज्यसैन्धवैः । संयुक्तं हिङ्गुधूपेन धूपितं मस्तु कीर्तितम् ॥ ७५ ॥
 translation: >-
   The liquid retained after curd has drained, mixed with cumin, ghee, and rock salt and perfumed with asafoetida, is called mastu.
-description: >-
-  The whey from making śikhariṇī becomes a light salty drink or thin accompaniment.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1057
 status: draft
 ---
+
+The whey from making śikhariṇī becomes a light salty drink or thin accompaniment.
 
 ## Ingredients
 

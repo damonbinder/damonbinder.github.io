@@ -17,9 +17,6 @@ translation: >-
   along with some of the cooking liquor, and mix. Add the stoned apricots and
   boil until cooked through. Crumble in pastry to bind it, sprinkle with pepper,
   and serve.
-description: >-
-  A sweet-and-sour pork stew with apricots. A minutal was a Roman stew of finely
-  diced meat, often with meatballs, thickened at the end with crumbled pastry.
 related:
   - matian-minutal
   - rose-coloured-minutal
@@ -34,6 +31,8 @@ subcategory: Minutals
 order: 29
 status: draft
 ---
+
+A sweet-and-sour pork stew with apricots. A minutal was a Roman stew of finely diced meat, often with meatballs, thickened at the end with crumbled pastry.
 
 ## Ingredients
 

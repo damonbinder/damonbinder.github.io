@@ -7,14 +7,14 @@ original: >-
   पूर्ववच्छोधिते रक्ते बीजपूरस्य केसरम् । रसमार्द्रकसम्भूतं रसं दन्तशठस्य च ॥ ९४ ॥ जीरकं हिङ्गु मरिचं धान्यकं सैन्धवं क्षिपेत् । मेदसः श्लक्ष्णखण्डानि क्षिप्त्वा सर्वं विलोडयेत् ॥ ९५ ॥ अन्त्रं प्रक्षालितं यत्नात्तेन रक्तेन पूरितम् । पेटकाकृतियुक्तासु कम्रासु परिवेष्टयेत् ॥ ९६ ॥ कम्रामुखानि बध्नीयात्केवलैरन्त्रकैस्तथा । तैरेव रज्जुसङ्काशैर्गृहीत्वोपरि तापयेत् ॥ ९७ ॥ अङ्गारैः किंशुकाकारैर्यावत्काठिन्यमाप्नुयुः । मण्डलीयं समाख्याता राजवृक्षफलोपमा ॥ ९८ ॥
 translation: >-
   Mix purified blood with citron pulp, ginger juice, dantaśaṭha juice, cumin, asafoetida, black pepper, coriander, rock salt, and finely cut fat. Fill a carefully washed intestine, coil it into circular forms, tie the ends, and heat it until firm and red like kiṃśuka flowers. The ring-shaped sausage is called maṇḍalī.
-description: >-
-  A coiled blood sausage scented with citrus, ginger, cumin, coriander, and asafoetida.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1035
 status: draft
 ---
+
+A coiled blood sausage scented with citrus, ginger, cumin, coriander, and asafoetida.
 
 ## Ingredients
 

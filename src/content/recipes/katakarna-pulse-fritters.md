@@ -7,14 +7,14 @@ original: >-
   अनेनैव प्रकारेण विपचेत्पाकतत्त्ववित् । वट्टाणस्य विदलं विदलं चणकस्य च ॥ ९४ ॥ चूर्णितं वारिणा सार्धं सर्पिषा परिभावितम् । सैन्धवेन च संयुक्तं कण्डुना परिघट्टितम् ॥ ९५ ॥ निष्पावचूर्णसंयुक्तं पेषण्यां च प्रसारितम् । कटाहे तैलसंपूर्णे कटकर्णान् प्रपाचयेत् ॥ ९६ ॥
 translation: >-
   Grind split vaṭṭāṇa and chickpea with water, condition the mixture with ghee and rock salt, beat it with kaṇḍu, mix in niṣpāva flour, flatten it on a stone, and deep-fry it until the pieces are bubble-like and golden.
-description: >-
-  A mixed-pulse fritter whose batter was probably soured or aerated. A short fermentation supplies the bubbling texture described in the verse.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1013
 status: draft
 ---
+
+A mixed-pulse fritter whose batter was probably soured or aerated. A short fermentation supplies the bubbling texture described in the verse.
 
 ## Ingredients
 

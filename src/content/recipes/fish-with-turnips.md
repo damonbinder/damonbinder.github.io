@@ -17,8 +17,6 @@ translation: >-
   fish and let it boil with plenty of oil. When it has boiled, grind cumin and
   half a bay berry, and add saffron for color. Thicken with rice starch. Pour
   over and then serve. Add a little vinegar.
-description: >-
-  The rice starch that thickens the sauce is a distinctively late-Roman touch.
 related: []
 tradition: Roman
 course: main
@@ -31,6 +29,8 @@ subcategory: Unclassified
 order: 105
 status: published
 ---
+
+The rice starch that thickens the sauce is a distinctively late-Roman touch.
 
 ## Ingredients
 

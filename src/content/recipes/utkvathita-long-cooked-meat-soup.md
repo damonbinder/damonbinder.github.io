@@ -7,14 +7,14 @@ original: >-
   क्रोडदेशोद्भवं मांसमंस्या सह विखण्डितम् । अंसकीकससंयुक्तं पार्श्वकुल्या समन्वितम् ॥ ७ ॥ मृद्भाण्डे स्थाल्यवक्त्रे तन्निक्षिप्य बहलोदके । हिङ्गुना चाम्लकेनापि सैन्धवेन च संयुतम् ॥ ८ ॥ काथयेत्सुचिरं कालं यावत्तन्मार्दवं भजेत् । उत्क्वाथितमिदं सूपं ख्यातं शास्त्रविशारदैः ॥ ९ ॥
 translation: >-
   Cut flesh from the chest, shoulder, adjacent bones, and ribs. Put it in an earthen pot with abundant water, asafoetida, a souring agent, and rock salt. Boil it for a long time until the meat becomes tender. This is called an utkvāthita soup.
-description: >-
-  A concentrated bone-in mutton or goat broth, sharpened with sourness and asafoetida.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1038
 status: draft
 ---
+
+A concentrated bone-in mutton or goat broth, sharpened with sourness and asafoetida.
 
 ## Ingredients
 

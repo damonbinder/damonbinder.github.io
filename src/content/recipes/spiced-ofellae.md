@@ -9,11 +9,6 @@ original: >-
 translation: >-
   *Ofellae* in fish-sauce: mix asafoetida, ginger, and cardamom, all ground,
   with a small measure of fish sauce, and cook the *ofellae* in it.
-description: >-
-  *Ofellae* are cuts of meat, like belly or ribs, that are first roasted and
-  then finished quickly in a seasoned sauce. While *ofellae* are attested from
-  at least the early Imperial period, the use of cardamom and ginger in this recipe
-  is unusual and suggests a late date of composition.
 related:
   - apician-ofellae
   - ostian-ofellae
@@ -28,6 +23,8 @@ subcategory: Ofellae
 order: 35
 status: published
 ---
+
+*Ofellae* are cuts of meat, like belly or ribs, that are first roasted and then finished quickly in a seasoned sauce. While *ofellae* are attested from at least the early Imperial period, the use of cardamom and ginger in this recipe is unusual and suggests a late date of composition.
 
 ## Ingredients
 

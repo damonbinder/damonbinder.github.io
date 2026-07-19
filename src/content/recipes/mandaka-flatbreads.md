@@ -7,14 +7,14 @@ original: >-
   घरट्रैश्चूर्णिताः श्लक्ष्णाश्चालन्या वितुषीकृताः । गोधूमचूर्णकं श्लक्ष्णं किंचिद्घृतविमिश्रितम् ॥ ७६ ॥ लवणेन च संयुक्तं क्षीरनीरेण पिण्डितम् । सुमहत्यां काष्ठपात्र्यां करास्फालैर्विमर्दयेत् ॥ ७७ ॥ मर्दितं चिकणीभूतं गोलकान् परिकल्पयेत् । स्नेहाभ्यक्तैः करतलैः शालिचूर्णैर्विरूक्षितान् ॥ ७८ ॥ प्रसारयेद्गोलकांस्तान् करसञ्चारवर्तनैः । विस्तृता मण्डकाः श्लक्ष्णाः सितपट्टसमप्रभाः ॥ ७९ ॥ प्रयत्नान्निक्षिपेत्तज्ज्ञस्तप्तखर्परमस्तके । पक्वांश्चापनयेच्छीघ्रं यावत्कार्ण्यं न जायते ॥ १३८० ॥
 translation: >-
   Wash wheat, dry it in the sun, grind it finely, and remove the husk. Mix the fine flour with a little ghee and salt, make a dough with milk and water, and knead vigorously until smooth. Make balls, grease the palms, dust the balls with rice flour, and spread them by turning them between the hands. Cook the broad, smooth breads on a hot earthen griddle and remove them before they blacken. Four may be stacked or joined for a superior serving.
-description: >-
-  These are thin, pale wheat flatbreads enriched with milk and ghee. They are closer to soft rotis than to leavened bread.
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1005
 status: draft
 ---
+
+These are thin, pale wheat flatbreads enriched with milk and ghee. They are closer to soft rotis than to leavened bread.
 
 ## Ingredients
 

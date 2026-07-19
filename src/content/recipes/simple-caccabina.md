@@ -12,9 +12,6 @@ translation: >-
   if you like; season with fish sauce and oil and let it boil. Grind a little
   pepper and tejpat, and into the ground mixture mix in egg and beat it
   together.
-description: >-
-  This plain *caccabina* gets its name from the *caccabus*, a generic type of
-  Roman cooking pot. It is very similar to the *patinas* found in Apicius.
 related:
   - caccabina-pudding
 tradition: Roman
@@ -29,6 +26,8 @@ subcategory: Vegetable Patinas
 order: 13
 status: published
 ---
+
+This plain *caccabina* gets its name from the *caccabus*, a generic type of Roman cooking pot. It is very similar to the *patinas* found in Apicius.
 
 ## Ingredients
 

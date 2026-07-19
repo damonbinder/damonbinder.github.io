@@ -7,14 +7,14 @@ original: >-
   गव्यं वा माहिषं वापि क्षीरं नीरविवर्जितम् । पचेत्स्थाल्यां मृदावग्नौ दर्वीघट्टनसंयुतम् ॥ ६५ ॥ अर्धावशेषं कुर्वीत त्रिभागेनावशेषितम् । षड्भागशेषितं वापि कुर्यादष्टावशेषिकम् ॥ ६६ ॥ अर्धावशिष्टं पाने स्यात्त्रिभागं लेह्यकं भवेत् । षड्भागं पिण्डतामेति शर्करा स्यादथाष्टमे ॥ ६७ ॥
 translation: >-
   Cook undiluted cow’s or buffalo’s milk over a low fire while continually stirring. Reduce it to one-half, one-third, one-sixth, or one-eighth of the original amount. At one-half it remains drinkable; at one-third it is spoonable; at one-sixth it forms a solid mass; at one-eighth it becomes a sugar-like milk confection.
-description: >-
-  The text describes a continuum from concentrated milk to milk solids. A broad heavy pan and patient stirring are essential.
 tradition: Indian
 category: Dessert
 subcategory: Dairy, drinks & condiments
 order: 1052
 status: draft
 ---
+
+The text describes a continuum from concentrated milk to milk solids. A broad heavy pan and patient stirring are essential.
 
 ## Ingredients
 

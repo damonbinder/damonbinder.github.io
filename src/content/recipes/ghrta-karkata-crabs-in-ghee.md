@@ -7,14 +7,14 @@ original: >-
   कर्कटांस्तु लघून् स्थूलान् हस्तपादवियोजितान् । रूक्षे ताम्रमये पात्रे सुतप्ते तान् विवर्जयेत् ॥ १५४० ॥ स्फोटिते खपरे तांस्तु मृदो भाण्डे विनिक्षिपेत् । विपचेल्लवणाम्लैश्च पुनः सर्पिषि पाचयेत् ॥ ४१ ॥ जीरकं लवणं तीक्ष्णं चूर्णितं तेषु निक्षिपेत् । वृष्या बलकरा हृद्या मृष्टास्ते घृतकर्कटाः ॥ ४२ ॥
 translation: >-
   Remove the limbs from small or large crabs. Heat them in a dry, very hot copper vessel until their shells crack. Transfer them to an earthen pot, cook them with salt and souring agents, then cook them again in ghee. Add ground cumin, salt, and pungent spice. These are called ghṛta-karkaṭas.
-description: >-
-  Crabs are dry-roasted, soured, and finished in ghee with cumin and pungent spice.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals
 order: 1046
 status: draft
 ---
+
+Crabs are dry-roasted, soured, and finished in ghee with cumin and pungent spice.
 
 ## Ingredients
 

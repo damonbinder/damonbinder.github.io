@@ -16,10 +16,6 @@ translation: >-
   and pour it into a bronze pan. Put the pig into that sauce and cook it
   through; and when you take it up, thicken with starch, then transfer it to a
   serving dish and serve.
-description: >-
-  Pork braised and then finished in its own sauce of wine, raisin wine, and
-  spices, thickened with starch. *Unocoto* is obscure — likely a corruption —
-  so it's left untranslated here rather than guessed at.
 related:
   - pork-in-coriander-sauce
   - pork-in-thyme-sauce
@@ -34,6 +30,8 @@ subcategory: Pork
 order: 42
 status: published
 ---
+
+Pork braised and then finished in its own sauce of wine, raisin wine, and spices, thickened with starch. *Unocoto* is obscure — likely a corruption — so it's left untranslated here rather than guessed at.
 
 ## Ingredients
 

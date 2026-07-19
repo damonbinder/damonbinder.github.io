@@ -16,9 +16,6 @@ translation: >-
   liquor; add raw eggs to the liquid; beat them and work into a single body.
   Pour over the sole in the dish. Set it over a gentle fire to cook down, and
   when it has set sprinkle with pepper.
-description: >-
-  A classic *patina*. Close variants of this recipe also survive in
-  Vinidarius 13 and in Apicius 4.2.27 and 4.2.28.
 related:
   - patina-of-sole
 tradition: Roman
@@ -32,6 +29,8 @@ subcategory: Fish Patinas
 order: 18
 status: published
 ---
+
+A classic *patina*. Close variants of this recipe also survive in Vinidarius 13 and in Apicius 4.2.27 and 4.2.28.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   निष्पीड्य दधि वस्त्रेण स्रावयेत्तद्रुतं जलम् । शर्करैलासमायुक्ता सूदैः शिखरिणी मता ॥ ७४ ॥
 translation: >-
   Press curd in a cloth and allow the liquid whey to drain out. Mix the thick curd with sugar and cardamom; cooks call this śikhariṇī.
-description: >-
-  A simple ancestor of sweet strained-yoghurt dishes such as shrikhand.
 tradition: Indian
 category: Dessert
 subcategory: Dairy, drinks & condiments
 order: 1056
 status: draft
 ---
+
+A simple ancestor of sweet strained-yoghurt dishes such as shrikhand.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   दध्ना विमिश्रयेच्चिञ्चां किंवा दाडिमसारकम् । अथवामलकं पिष्टं मेलयेद्वाम्लवेतसम् ॥ ४२ ॥ रसं वा मातुलिङ्गस्य रसं दन्तशठस्य च । मिश्रयेद्वा रसानेतान् द्वित्रान्वापि यथारुचि ॥ ४३ ॥ गन्धार्थं धान्यकं हिङ्गु जीरकं तत्र निक्षिपेत् । हरिद्रां चैव वर्णार्थं सुसूक्ष्मं च तथार्द्रकम् ॥ ४४ ॥ रुच्यर्थं विश्वमरिचं सैन्धवं च विनिक्षिपेत् । गालयेत्सितवस्त्रेण किंचित्तैलं विमिश्रयेत् ॥ ४५ ॥ मृदः स्थाल्यां विनिक्षिप्य दर्वीघट्टनपूर्वकम् । प्रलेहकं मृदावग्नौ पचेत्पाकविशारदः ॥ ४६ ॥ प्रक्षिप्य शुण्ठकांस्तत्र मृदु कुर्याच्च पाकतः । भावितांश्च रसैः सर्वैः सिद्धानुत्तारयेद्बुधः ॥ ४७ ॥ धूपयेद्धिङ्गुना वापि नखधूपेन वा पुनः । धूपेन जीरकस्यापि शशिधूपेन कोविदः ॥ ४८ ॥
 translation: >-
   Mix tamarind with curd, or use pomegranate juice; alternatively combine ground āmalaka with amlavetasa, citron juice, or dantaśaṭha juice. Use two or three sour juices according to taste. Add coriander, asafoetida, cumin, turmeric, fresh ginger, black pepper, and rock salt. Strain and mix in a little oil. Cook over a low fire while stirring until it becomes a thick sauce, add meat śuṇṭhakas, and cook until tender and saturated. Perfume the finished dish with asafoetida or another aromatic smoke.
-description: >-
-  This is a flexible master sauce for cooked meat. Tamarind, yoghurt, pomegranate, and lemon produce the layered acidity requested by the source.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1022
 status: draft
 ---
+
+This is a flexible master sauce for cooked meat. Tamarind, yoghurt, pomegranate, and lemon produce the layered acidity requested by the source.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   यावद्बुद्बुदसंकाशा भवन्ति कनकत्विषः । माषस्य विदलान् क्लिन्नान्निस्तुषान् हस्तलोडनैः ॥ ९७ ॥ ततः सम्पेष्य पेषण्यां सम्भारेण विमिश्रितान् । स्थाल्यां विमर्द्य बहुशः स्थापयेत्तदहस्ततः ॥ ९८ ॥ आम्लीभूतं माषपिष्टं वैटिकासु विनिक्षिपेत् । गर्भाभिरन्याभिः पिधाय परिपाचयेत् ॥ ९९ ॥ अवतार्यात्र मरिचं चूर्णितं विकिरेदनु । घृताक्तान् हिङ्गुसर्पिर्भ्यां जीरकेण च धूपयेत् ॥ १४०० ॥ सुशीताः धवलाः श्लक्ष्णा एता इडेरिका वराः । तस्यैव माषपिष्टस्य गोलकान् विस्तृतान् घनान् ॥ १ ॥
 translation: >-
   Soak split black gram, remove the skins by rubbing, grind it, mix in seasonings, knead or beat it repeatedly in a pot, and leave it for the day. When the batter has soured, place it in small moulds, cover with other moulds, and cook. Remove the cakes, scatter ground pepper over them, smear them with ghee, and perfume or temper them with asafoetida, ghee, and cumin. When cool, white, and smooth, they are called iḍerikās.
-description: >-
-  These resemble steamed fermented urad cakes. The paired moulds are most easily represented by an idli tray or covered ramekins.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads
 order: 1014
 status: draft
 ---
+
+These resemble steamed fermented urad cakes. The paired moulds are most easily represented by an idli tray or covered ramekins.
 
 ## Ingredients
 

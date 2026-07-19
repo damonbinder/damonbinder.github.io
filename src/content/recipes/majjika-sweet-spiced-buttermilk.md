@@ -7,14 +7,14 @@ original: >-
   मथितं शर्करायुक्तमेलाचूर्णविमिश्रितम् । कर्पूरधूपितं नाम्ना मज्जिकेत्यभिधीयते ॥ ७३ ॥
 translation: >-
   Churned curd or buttermilk mixed with sugar and cardamom powder and perfumed with camphor smoke is called majjikā.
-description: >-
-  A sweet, cardamom-scented buttermilk drink. Edible camphor is optional and should be barely perceptible.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1055
-status: draft
+status: published
 ---
+
+A sweet, cardamom-scented buttermilk drink. Buttermilk is hard to find where I am, so I substituted Greek yoghurt thinned with water to the consistency I wanted and sweetened to taste. I have not yet found camphor that I trust to eat.
 
 ## Ingredients
 
@@ -28,7 +28,3 @@ status: draft
 1. Whisk the buttermilk with the sugar and cardamom until the sugar dissolves.  
 2. Add the smallest possible speck of edible camphor if using.  
 3. Chill well and serve.
-
-**Notes**
-
-* Ordinary camphor is not edible. Use only food-grade camphor or omit it.

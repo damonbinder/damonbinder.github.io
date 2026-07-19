@@ -7,14 +7,14 @@ original: >-
   समेदस्कानि मांसानि कृत्वा दीर्घाणि कर्तनैः । हिङ्गुतोयेन संसिच्य लवणेन विलोडयेत् ॥ १३ ॥ छायायां तानि खण्डानि वायुना परिशोषयेत् । एकद्वित्रिदिनान्तेषु भृष्टान्यङ्गारपुञ्जके ॥ १४ ॥ स्थूलीकृतानि यावच्च स्वादुरुच्यानि यन्नृणाम् । उपखण्डकनामानि सर्वशाकोत्तमानि च ॥ १५ ॥ हरिणस्य तथा खण्डांश्चक्कलीः परिकल्पितान् । सम्भारसहितान् प्राज्यलवणेन विमिश्रितान् ॥ १६ ॥ शोषितानपि चात्यर्थमग्निना परिभर्जितान् । हृद्यान् पथ्यान् सुगन्धांश्च कल्पयेदुपखण्डकान् ॥ १७ ॥
 translation: >-
   Cut fatty meat into long strips, sprinkle them with asafoetida-water, rub with salt, and dry them in shade and moving air. After one, two, or three days, roast them in a heap of embers until they swell and become tasty. Venison may likewise be cut thin, mixed with plentiful salt and seasonings, dried thoroughly, and roasted.
-description: >-
-  A short-dried, heavily salted meat subsequently roasted. For safety, the modern version uses refrigeration and a low oven rather than ambient shade-drying.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1039
 status: draft
 ---
+
+A short-dried, heavily salted meat subsequently roasted. For safety, the modern version uses refrigeration and a low oven rather than ambient shade-drying.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   मत्स्याण्डकोशावादाय वह्निना परिभर्जयेत् । दृढीभूते ततः पश्चात्खण्डशः परिकल्पयेत् ॥ ३५ ॥ विपच्य तप्ततैले तान्येलामरिचकादिभिः । विकीर्य सैन्धवेनापि हिङ्गुना परिधूपयेत् ॥ ३६ ॥
 translation: >-
   Roast fish roe-sacs in the fire. Once firm, cut them into pieces, fry them in hot oil, scatter cardamom, pepper, and related spices over them, add rock salt, and perfume with asafoetida.
-description: >-
-  Whole roe sacs are first set by roasting or poaching, then sliced and fried with aromatic spices.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals
 order: 1044
 status: draft
 ---
+
+Whole roe sacs are first set by roasting or poaching, then sliced and fried with aromatic spices.
 
 ## Ingredients
 

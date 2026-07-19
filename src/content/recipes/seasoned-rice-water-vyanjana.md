@@ -7,14 +7,14 @@ original: >-
   तण्डुलक्षालितं तोयं चिञ्चाम्लेन विमिश्रितम् । ईषत्तक्रेण संयुक्तं सितया सह योजितम् ॥ ७८ ॥ एलाचूर्णसमायुक्तमार्द्रकस्य रसेन च । धूपितं हिङ्गुना सम्यग्व्यञ्जनं परिकीर्तितम् ॥ ७९ ॥
 translation: >-
   Mix rice-washing water with tamarind sourness, a little buttermilk, sugar, cardamom powder, and ginger juice, then perfume with asafoetida. This is called a vyañjana or liquid accompaniment.
-description: >-
-  A thin sweet-sour, lightly fermented-tasting accompaniment made from starchy rice water.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments
 order: 1059
 status: draft
 ---
+
+A thin sweet-sour, lightly fermented-tasting accompaniment made from starchy rice water.
 
 ## Ingredients
 

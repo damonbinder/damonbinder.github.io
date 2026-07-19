@@ -7,14 +7,14 @@ original: >-
   श्रीफलं केतकं चिञ्चा मेषशृङ्गी सुगन्धिजम् । कुटजं मरिचं पथ्या विषमुष्टिकशिम्बिजम् ॥ ५४ ॥ एलारामठनीवारमेथिकापर्पटं तथा । अगस्त्यं नन्दनं राजमातुलिङ्गकपाटालम् ॥ ५५ ॥ कटं मदं कर्कटं च करीरं टेण्टुकं तथा । वेत्रकारीफलं चैव लवणाम्भसि निक्षिपेत् ॥ ५६ ॥ चूतमाम्रातकं धात्री कुहिरि कर्कटी तथा । कूष्माण्डं त्रपुसं द्राक्षा कर्कटी बृहतीद्वयम् ॥ ५७ ॥ कोशातकी बीजपूरं निष्पावं करमर्दकम् । जम्बीरबिम्बवार्ताककर्मरं लवणाम्भसि ॥ ५८ ॥
 translation: >-
   A long list of fruits, pods, aromatics, gourds, grapes, eggplants, limes, citron, āmalaka, mango, niṣpāva, and other produce is to be placed in salt water.
-description: >-
-  This is a general brining method rather than a single fixed pickle. Small firm fruits and vegetables work best.
 tradition: Indian
 category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1049
 status: draft
 ---
+
+This is a general brining method rather than a single fixed pickle. Small firm fruits and vegetables work best.
 
 ## Ingredients
 

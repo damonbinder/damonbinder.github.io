@@ -19,8 +19,6 @@ translation: >-
   Taste it, and when it is well mixed and seasoned put it in a dish and let it
   boil gently; and as it cooks add a pint of milk and eggs beaten with milk;
   pour this over the dish, and as soon as it has set, serve.
-description: >-
-  A richer version of the simple *caccabina* given in Vinidarius 1.
 related:
   - simple-caccabina
 tradition: Roman
@@ -36,6 +34,8 @@ subcategory: Vegetable Patinas
 order: 14
 status: published
 ---
+
+A richer version of the simple *caccabina* given in Vinidarius 1.
 
 ## Ingredients
 

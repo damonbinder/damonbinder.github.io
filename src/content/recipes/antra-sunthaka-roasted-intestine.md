@@ -7,14 +7,14 @@ original: >-
   अन्त्राणि जलधौतानि शूलयष्ट्यां विवेष्टयेत् । तापयेच्च तथाङ्गारैर्यावत्कठिनतां ययुः ॥ ९२ ॥ पश्चाद्विचूर्णितं श्लक्ष्णं सैन्धवं तेषु योजयेत् । अन्त्रशुण्ठकमाख्यातं चर्वणे मर्मरारवम् ॥ ९३ ॥
 translation: >-
   Wash intestines with water, wind them around a skewer, and roast them over embers until firm. Add finely powdered rock salt. The dish makes a crisp, crackling sound when chewed.
-description: >-
-  A very simple charcoal-roasted intestine preparation intended to become crisp.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1034
 status: draft
 ---
+
+A very simple charcoal-roasted intestine preparation intended to become crisp.
 
 ## Ingredients
 

@@ -7,14 +7,14 @@ original: >-
   नवनीतं नवं धौतं नीरलेशविवर्जितम् । तापयेदग्निना सम्यङ्मृदुना घृतभाण्डके ॥ ७६ ॥ पाके संपूर्णतां याते क्षिपेद्गोधूमबीजकम् । क्षिपेत्ताम्बूलपत्रं च पश्चादुत्तारयेद्घृतम् ॥ ७७ ॥
 translation: >-
   Wash fresh butter until no trace of water remains. Heat it over a low fire in a ghee-pot. When clarification is complete, add a grain of wheat and a betel leaf, then remove the ghee from the fire.
-description: >-
-  A standard clarified butter scented or tested at the end with wheat and betel leaf.
 tradition: Indian
 category: Dips and relishes
 subcategory: Dairy, drinks & condiments
 order: 1058
 status: draft
 ---
+
+A standard clarified butter scented or tested at the end with wheat and betel leaf.
 
 ## Ingredients
 

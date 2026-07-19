@@ -7,14 +7,14 @@ original: >-
   अथवा राजिकाचूर्णे सतैले लवणान्विते । प्रक्षाल्य वृन्तसहितं फलं चूतादिकं न्यसेत् ॥ ५९ ॥ कारवेल्लं सपनसं कदलीफलमेव च । सतैले राजिकाचूर्णे निक्षिपेल्लवणान्विते ॥ १५६० ॥
 translation: >-
   Wash mangoes and related fruits with their stalks attached and place them in mustard powder mixed with oil and salt. Bitter gourd, jackfruit, and banana are preserved in the same oil, mustard, and salt mixture.
-description: >-
-  A direct ancestor in principle of mustard-rich South Asian oil pickles. The reconstruction lightly cures the produce with salt before adding heated mustard oil.
 tradition: Indian
 category: Dips and relishes
 subcategory: Vegetables & pickles
 order: 1050
 status: draft
 ---
+
+A direct ancestor in principle of mustard-rich South Asian oil pickles. The reconstruction lightly cures the produce with salt before adding heated mustard oil.
 
 ## Ingredients
 

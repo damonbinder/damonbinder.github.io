@@ -1,14 +1,14 @@
 // The surviving text of the Mānasollāsa's food chapter (Vimshati 3, Adhyaya
-// 13) transcribed so far — independent of which entries have become recipe
-// pages yet. Sanskrit and English are copied verbatim from each recipe's own
-// \`original\`/\`translation\` fields (the source of truth), so this file stays in
-// sync by re-generating from those, not by hand-editing. Entries for recipes
-// Damon has cooked and edited are his own words; the rest are first-pass
-// translation drafts for Damon to check and correct — they have not been
-// reviewed the way the cooked ones have.
-//
-// Gaps in the verse numbering (e.g. 1416 to 1427) are verses not yet
-// transcribed into any recipe file, not omissions.
+// 13, "Annabhoga"), verses 1342–1600 — the complete section. Entries that
+// correspond to a cooked recipe copy that recipe's own `original`/`translation`
+// fields verbatim (the source of truth), so this file stays in sync by
+// re-generating from those, not by hand-editing; entries for recipes Damon has
+// cooked and edited are his own words. Entries with no matching recipe yet
+// (the chapter's framing, the meat and vegetable classifications, the passage
+// on cleaning birds, and the closing material on serving and seasonal diet)
+// are first-pass drafts from a working philological transcription, not reviewed
+// the way the cooked ones have been; where the source itself is corrupt or
+// uncertain, that is noted in square brackets rather than smoothed over.
 export interface ManasollasaEntry {
   ref: string;
   latin: string;
@@ -16,6 +16,11 @@ export interface ManasollasaEntry {
 }
 
 export const manasollasaText: ManasollasaEntry[] = [
+  {
+    ref: "Mānasollāsa 3.13.1342–1349",
+    latin: "अन्नभोगोऽयमधुना द्वयोरन्त्यो निगद्यते । बान्धवान्मण्डपाधीशान्सामन्तान् मान्यकान् भटान् ॥ ४२ ॥ आश्रितान् सुहृदो भृत्यान् गीतवाद्यविशारदान् । आहूय स्वोचिते स्थाने निर्वेश्याग्रे तु भोजयेत् ॥ ४३ ॥ पुत्रैः पौत्रैः प्रपौत्रैश्च सह भुञ्जीत पार्थिवः । भोज्यं भक्ष्यं तथा पेयं लेह्यं चोष्यं तथैव च ॥ ४४ ॥ इति पञ्चविधं हृद्यं पथ्यं भुञ्जीत भूपतिः । रक्तशालिर्महाशालिर्गन्धशालिः कलिङ्गकः ॥ ४५ ॥ मुण्डशालिः स्थूलशालिः सूक्ष्मशालिः सषष्टिकः । रक्तत्वाद्रक्तशालिः स्यान्महाशालिर्महाकृतिः ॥ ४६ ॥ सुगन्धिर्गन्धशालिः स्यात्कलिङ्गोत्थः कलिङ्गकः । शूकशून्यो मुण्डशालिः स्थूलशालिस्तदाकृतिः ॥ ४७ ॥ सौक्ष्म्यात्तु सूक्ष्मशालिः स्याद् द्विमासः षष्टिकः स्मृतः । एतान् शालीन् पृथक् सर्वान्मुसलैर्वितुषीकृतान् ॥ ४८ ॥ निक्षिप्य तण्डुलान् पट्टे विचिनुयात्कणकांस्ततः । पाषाणमृत्तिकाशूकतृणपर्णं तुषं तथा ॥ ४९ ॥",
+    english: "Now the enjoyment of food, the second of the two enjoyments under discussion, is described. The king should summon his relatives, the superintendents of the dining pavilion, feudatory chiefs, honoured persons, soldiers, dependants, friends, servants, and experts in song and instrumental music. Having seated each in the place appropriate to his rank, he should first have them fed. The king himself should eat with his sons, grandsons, and great-grandsons. Food is fivefold: bhojya, substantial food that is chewed; bhakṣya, morsels or snack-like foods; peya, drink; lehya, preparations that are licked; and coṣya, things whose juice is sucked. The ruler should eat food of these five kinds that is pleasing and wholesome. The rice varieties named are raktasāli, mahāsāli, gandhasāli, kaliṅgaka, muṇḍasāli, sthūlasāli, sūkṣmasāli, and ṣaṣṭika. Raktasāli is so called from its red colour; mahāsāli from its large form; gandhasāli from its fragrance; kaliṅgaka because it comes from Kaliṅga; muṇḍasāli because it lacks an awn; sthūlasāli because of its thick grain; sūkṣmasāli because of its fineness; and ṣaṣṭika because it matures rapidly [here the printed reading appears to describe a two-month crop]. Each variety is to be handled separately. Dehusk it with pestles, spread the rice on a cloth or board, and have the maidservants carefully remove stones, earth, awns, grass, leaves, husk, and every other foreign particle.",
+  },
   {
     ref: "Mānasollāsa 3.13.1350–1356",
     latin: "यत्नादाकृष्यापनयेद्दासीभिस्तण्डुलस्थितान् । अखण्डान् शोधितानेव क्षालितान् बहुशो जलैः ॥ १३५० ॥ तण्डुलान् कुन्दसङ्काशांस्तोयान्तर्धारितांश्चिरम् । स्थाल्यां ताम्रकृतायां वा मृज्जातायामथापि वा ॥ ५१ ॥ तण्डुलत्रिगुणं तोयं निक्षिपेच्च पिधापयेत् । वाससा शशिशुभ्रेण धौतेन च घनेन च ॥ ५२ ॥ चुल्यां निधाय निधूमे वह्नौ तत् काथयेज्जलम् । सुतप्ते बुद्बुदोपेते स्वल्पबाष्पसमन्विते ॥ ५३ ॥ तण्डुलानावपेत्स्थाल्यां दर्व्या च परिघट्टयेत् । सिक्थं विमृश्य वीक्षेत वारं वारं विचक्षणः ॥ ५४ ॥ मृदुभूते च तत्सिक्थे किञ्चिद्वा कणगर्भिते । तत्र दुग्धं घृतं वापि निक्षिप्योत्तारयेत्ततः ॥ ५५ ॥ स्थाल्यास्ये पिटकं दत्त्वा मण्डं तं स्रावयेद्गुणी । ईषदुद्धारितं मण्डमूष्मणा परिशोषयेत् ॥ ५६ ॥",
@@ -112,6 +117,11 @@ export const manasollasaText: ManasollasaEntry[] = [
     english: "Cook sugar with water in a copper vessel. At half-cooking add milk to separate the scum, then filter repeatedly through clean cloth. At the soft stage the syrup is liquid, at the middle stage honey-like, and at the hard stage it becomes a firm sweet. Mix an equal quantity of milk with purified sugar and heat again to the hard stage. Remove from the fire, add dry ginger, pungent spice, cardamom, camphor, and saffron, and shape into balls called varṣolakas.",
   },
   {
+    ref: "Mānasollāsa 3.13.1417–1426",
+    latin: "निक्षिप्य गोलकाः कार्या नाम्ना वर्षोलकास्तु ते । वराहपललं स्निग्धं मृष्टं सारङ्गजं पलम् ॥ १७ ॥ हरिणस्यामिषं पथ्यं रूक्षं मांसं शशोद्भवम् । आविकं तरसं रुच्यं लघु क्रव्यमजोद्भवम् ॥ १८ ॥ मत्स्यमांसं भवेद्वृष्यं शाकुनं लघु कीर्तितम् । रुरुसम्बरसंभूतं पुष्टं चेद्रुच्यमीरितम् ॥ १९ ॥ मांसान्यन्यानि बल्यानि रसनाप्रीतिदानि च । कृशस्य व्याधियुक्तस्य जराजर्जरितस्य च ॥ १४२० ॥ शावकस्य च शुष्कस्य विषसन्दूषितस्य च । वारिणा निहतस्यापि श्रमशोषमृतस्य च ॥ २१ ॥ क्लिन्नस्य पूतिगन्धस्य मांसानि परिवर्जयेत् । पृष्ठवंशस्य पार्श्वस्थं बहिरन्तश्च संस्थितम् ॥ २२ ॥ जघनस्य घनं पिण्डं पुच्छमूलसमुद्भवम् । क्रोडदेशोद्भवं चैव कक्षाभागस्य पूरकम् ॥ २३ ॥ पार्श्वयोः संस्थितं चैव कुक्षिसन्धिविलेपकम् । अंसपूर्वांशसम्भूतं मुकुलं हृदयोद्भवम् ॥ २४ ॥ कालखण्डं तथा वृक्कौ गुदान्त्रं च तथान्त्रकम् । अक्षिणी रसना कर्णावूधो वृषणकर्णकम् ॥ २५ ॥ पशुकायां सुसंलग्नं वपामस्तिष्कमज्जकम् । पादाः शृङ्गं खुरास्त्वक् च श्रेष्ठमेतत्पलं मतम् ॥ २६ ॥",
+    english: "The text characterizes the meats. Boar is fatty and rich; sāraṅga meat is praised; deer is wholesome; hare is dry; mutton is juicy and tasty; goat meat is light; fish is aphrodisiac; bird meat is light; and the flesh of ruru and sambar deer is nourishing and palatable. Other meats may also strengthen the body and please the tongue. Avoid the meat of an emaciated, diseased, decrepit, very young, dried-out, poisoned, drowned, exhausted, wasted, putrid, or foul-smelling animal. The anatomical list begins with meat beside the spine, lying both outside and within; the dense mass of the rump and tail-root; the chest; the flesh filling the armpit; the sides and the junction of the abdomen; the shoulder region; and a bud-shaped portion associated with the heart. The list of edible parts continues with the kālakhaṇḍa, kidneys, rectum and intestines, eyes, tongue, ears, udder, testicles, fat attached within the carcass, brain, marrow, feet, horns, hooves, and skin. The text calls these meat portions valuable, while allowing that among the various classes some are better than others. Several cut-names are technical and not securely identifiable from the verse alone; kālakhaṇḍa is probably a dark organ such as liver [the identification remains uncertain].",
+  },
+  {
     ref: "Mānasollāsa 3.13.1427–1435",
     latin: "एतेषु मांसवर्गेषु केषाञ्चित्किंचिदुत्तमम् । वराहं सितवस्त्रेण प्रच्छाद्योत्क्वथितवारिणा ॥ २७ ॥ गण्डकेन सदण्डेन तावसिञ्चन्मुहुर्मुहुः । यावत्तज्जातरोमाणि प्रोन्मूल्यन्ते सुखं करैः ॥ २८ ॥ पश्चात्कर्तरिकया रोमाण्युद्धृष्टान्यपसारयेत् । अथवा कर्दमालिप्तं दहेत्तं तृणवह्निना ॥ २९ ॥ सुखोत्पाट्यानि रोमाणि पूर्ववच्चापसारयेत् । आजानुसन्धिमूलाङ्घ्रीं तृणैः प्रच्छाद्य तं दहेत् ॥ १४३० ॥ कठिनत्वमुपायातं क्षालयेन्निर्मलजलैः । पाण्डुरं बिससङ्काशं समं संस्थापितं कटे ॥ ३१ ॥ आमूर्ध्नः प्रस्थापयति कर्तरिकापरिपाटितम् । सारीफलकररेखाभ्यां चित्तवत् स्यादायामशुण्ठकम् ॥ ३२ ॥ चतुरस्रीकृतान् खण्डान् शूलपोतान् प्रतापयेत् । अङ्गारेषु प्रभूतेषु घृतबिन्दुस्रवावधि ॥ ३३ ॥ पश्चान्मरिचचूर्णेन विकिरेत्सैन्धवं ततः । अथाम्लपरिस्विन्नान् पूर्ववत्परिकल्पयेत् ॥ ३४ ॥ अथवा दारितान् कृत्वा त्वक्शेषान् लवणान्वितान् । भर्जयेदङ्गारपुञ्जेषु शुण्ठकानमृतोपमान् ॥ ३५ ॥",
     english: "Clean a pig by scalding or singeing and remove the bristles. Cut the flesh into long śuṇṭhakas, then make square pieces, thread them on skewers, and roast over abundant embers until drops of fat begin to fall. Scatter ground pepper and rock salt over them. Alternatively, first cook the pieces in a sour liquid, or leave the skin on split pieces, salt them, and roast them in a heap of embers.",
@@ -154,7 +164,7 @@ export const manasollasaText: ManasollasaEntry[] = [
   {
     ref: "Mānasollāsa 3.13.1457–1461",
     latin: "स्थूलामलकसङ्काशान् शुद्धमांसस्य खण्डकान् । काथयेद्राजिकातोयैर्नागरार्द्रकसंयुतैः ॥ ५७ ॥ स्थापयेत्तज्जलं पात्रे रिक्ते चाम्लैर्विपाचयेत् । तत्समान् शुण्ठकान् क्षिप्त्वा सैन्धवं तत्र योजयेत् ॥ ५८ ॥ मेथकचूर्णकं तत्र धान्यकस्य च पूलिकाम् । निक्षिप्योत्तारयेत्सूदो घृतं वान्यत्र तापयेत् ॥ ५९ ॥ सुतप्ते च घृते पलाण्डुं लशुनं हिङ्गुना सह । प्रक्षिप्य संस्कृतं मांसं तस्यां स्थाल्यां प्रवेशयेत् ॥ १४६० ॥ पिहितं च ततः कुर्यात्किंचित्कालं प्रतीक्ष्य च । उत्तारयेत्ततः सिद्धं पुर्यलाख्यमिदं वरम् ॥ ६१ ॥",
-    english: "Cut clean meat into pieces the size of large āmalakas. Boil them in mustard-water with dry and fresh ginger. Reserve the liquid, add equal-sized śuṇṭhaka pieces, rock salt, fenugreek powder, and coriander, then remove the meat. Heat ghee separately; put onion, garlic, and asafoetida into the hot ghee, return the prepared meat, cover briefly, and remove when done. The dish is called purya or puryala.",
+    english: "Cut clean meat into pieces the size of large āmalakas. Boil them in mustard-water combined with dried and fresh ginger. Transfer the cooking liquor to an empty vessel and cook it with sour ingredients. Return the same-sized meat śuṇṭhakas and add rock salt, fenugreek powder, and a small bundle of coriander. Take the preparation off the fire and heat ghee separately. Into the very hot ghee put onion, garlic, and asafoetida; then place the prepared meat in that pot. Cover it, wait a short time, and remove it when done. This excellent preparation is called puryala.",
   },
   {
     ref: "Mānasollāsa 3.13.1462–1465",
@@ -222,6 +232,11 @@ export const manasollasaText: ManasollasaEntry[] = [
     english: "Cut flesh from the chest, shoulder, adjacent bones, and ribs. Put it in an earthen pot with abundant water, asafoetida, a souring agent, and rock salt. Boil it for a long time until the meat becomes tender. This is called an utkvāthita soup.",
   },
   {
+    ref: "Mānasollāsa 3.13.1510–1512",
+    latin: "विशैस्तस्य च मेषस्य जठरं पाटयेदनु । आन्तरं सर्वमुत्सार्य बध्नीयादपराङ्घ्रिकौ ॥ १५१० ॥ शिरश्च रज्ज्वा दृढया ज्वालायां परितापयेत् । यावद्रोमाणि गच्छन्ति यावत्कृष्णत्वमेति च ॥ ११ ॥ ततः प्रक्षाल्य तोयेन शेषं क्रोडवदाचरेत् । अन्येषां श्वापदानां च शेषं मेषवदाचरेत् ॥ १२ ॥",
+    english: "Open the sheep’s belly with a knife, remove all the internal contents, and bind the hind legs. Tie the head securely with a rope and expose it to flame until the hair is gone and the surface blackens. Wash it with water and treat the remainder as the pig was treated. Other wild animals are to be cleaned in the same general manner as sheep.",
+  },
+  {
     ref: "Mānasollāsa 3.13.1513–1517",
     latin: "समेदस्कानि मांसानि कृत्वा दीर्घाणि कर्तनैः । हिङ्गुतोयेन संसिच्य लवणेन विलोडयेत् ॥ १३ ॥ छायायां तानि खण्डानि वायुना परिशोषयेत् । एकद्वित्रिदिनान्तेषु भृष्टान्यङ्गारपुञ्जके ॥ १४ ॥ स्थूलीकृतानि यावच्च स्वादुरुच्यानि यन्नृणाम् । उपखण्डकनामानि सर्वशाकोत्तमानि च ॥ १५ ॥ हरिणस्य तथा खण्डांश्चक्कलीः परिकल्पितान् । सम्भारसहितान् प्राज्यलवणेन विमिश्रितान् ॥ १६ ॥ शोषितानपि चात्यर्थमग्निना परिभर्जितान् । हृद्यान् पथ्यान् सुगन्धांश्च कल्पयेदुपखण्डकान् ॥ १७ ॥",
     english: "Cut fatty meat into long strips, sprinkle them with asafoetida-water, rub with salt, and dry them in shade and moving air. After one, two, or three days, roast them in a heap of embers until they swell and become tasty. Venison may likewise be cut thin, mixed with plentiful salt and seasonings, dried thoroughly, and roasted.",
@@ -237,9 +252,19 @@ export const manasollasaText: ManasollasaEntry[] = [
     english: "Roast and split the head of a sheep or another animal, remove the brain, and cook it in kāñjika. It may then be cooked again in a pan or in oil, mixed with spice powders, and perfumed with asafoetida.",
   },
   {
+    ref: "Mānasollāsa 3.13.1522–1523",
+    latin: "पक्षिणामपि सर्वेषां पिच्छानुत्सार्य सर्वतः । चञ्चुपादौ पृथक्कृत्वा पाटयित्वा ततोदरम् ॥ २२ ॥ निष्कृष्यान्त्रादिकं सर्वं पूर्ववत्परिपाचयेत् । यथा सूकरमेषाणां क्रियाः प्रोक्ता विपाचने ॥ २३ ॥",
+    english: "For birds, remove all feathers, separate the beak and feet, and open the belly. Remove the intestines and all other internal parts of the bird and cook it by the methods already prescribed for pig and sheep.",
+  },
+  {
     ref: "Mānasollāsa 3.13.1524–1531",
     latin: "सशल्कानां च मत्स्यानां शल्कं स्फोट्यं प्रयत्नतः । स्थूलाश्चेत्खण्डशः कार्याः लघवश्चेत्सरूपतः ॥ २४ ॥ मत्स्यानां छेदयेच्छीर्षं पुच्छं तेषां च पक्षिणाम् । विपाट्य जठरं तस्मादन्त्राण्यपसारयेत् ॥ २५ ॥ कण्टकष्टबडिशादग्धाः खवलाचुकैः ... । पाठीनैश्च तथैतेषां पृथक्कृत्वा शिरः पचेत् ॥ २६ ॥ मत्स्यानां घर्षणं कार्यं तैलेन लवणेन च । यावत्पिच्छलतां याति मत्स्यगन्धश्च नश्यति ॥ २७ ॥ क्षालयेदुदकैः पश्चाद्धरिद्राकल्कमिश्रितैः । वस्त्रे धृत्वा निपीड्यैतान् स्रावयेत्सङ्गतं जलम् ॥ २८ ॥ क्षिपेत्पूर्वप्रसिद्धेषु प्रपवेष्वाणकेषु तान् । स्वल्पे काले गते सूदः स्थालीमुत्तार्य धूपयेत् ॥ २९ ॥ मत्स्यखण्डानि धौतानि चिञ्चाम्लेन विपाचयेत् । ततो गोधूमचूर्णं तु विकिरेत्तेषु सर्वतः ॥ १५३० ॥ तप्ततैले क्षिपेत्तानि पिङ्गान्युत्तारयेत्ततः । एलामरिचचूर्णेन सैन्धवेन च भावयेत् ॥ ३१ ॥",
     english: "Scale large fish and cut them into pieces; leave small fish whole. Remove head, tail, fins, and intestines. Rub the fish with oil and salt until the slime and fish smell disappear, wash in turmeric-water, and drain in cloth. Cook washed pieces in tamarind souring liquid, scatter wheat flour over all sides, and fry in hot oil until brown. Season with cardamom, black pepper, and rock salt.",
+  },
+  {
+    ref: "Mānasollāsa 3.13.1532",
+    latin: "आणके वा तथा तैले वह्नौ वा धूमवर्जिते । पूर्वोक्तविधिना मत्स्यान् यथारुचि विपाचयेत् ॥ ३२ ॥",
+    english: "Fish may alternatively be cooked in a pan, in oil, or over a smokeless fire by the preceding methods and according to taste.",
   },
   {
     ref: "Mānasollāsa 3.13.1533–1534",
@@ -265,6 +290,11 @@ export const manasollasaText: ManasollasaEntry[] = [
     ref: "Mānasollāsa 3.13.1543–1547",
     latin: "मूषकाः क्षेत्रसम्भूता नदीकूलेषु संस्थिताः । स्थूलाः श्यामास्तथा पुष्टा जात्या ते मयिगाः स्मृताः ॥ ४३ ॥ प्रतप्ते सलिले तांस्तु निक्षिपेत्पुच्छधारणात् । उद्धृत्य तस्मात्सलिलाद्रोमाण्युत्पाटयेत्ततः ॥ ४४ ॥ विभेद्य जठरं तेषां स्फोटयेदन्त्रकाणि तु । सम्भारसहितैरम्लैः पचेच्च लवणान्वितैः ॥ ४५ ॥ शूलपोतांस्ततः कृत्वा तानङ्गारैः प्रतापयेत् । यावद्बहिस्त्वचस्तेषां शोषमायान्ति तापनात् ॥ ४६ ॥ सुपक्वेषु तथा तेषु मूषकेषु किरेदनु । लवणं मरिचं शुण्ठीं जीरकं च विचूर्णितम् ॥ ४७ ॥",
     english: "A thick, dark, well-fleshed field or river animal called mūṣaka or mayiga is scalded, skinned, gutted, cooked with seasoned sour liquids and salt, threaded on skewers, and roasted until the outer skin dries. Ground salt, pepper, dry ginger, and cumin are scattered over it.",
+  },
+  {
+    ref: "Mānasollāsa 3.13.1548–1549",
+    latin: "फलशाकं पत्रशाकं कन्दशाकं च मूलकम् । पुष्पशाकं शिम्बिशाकं पक्वापक्वविभेदतः ॥ ४८ ॥ कल्पयेद्विविधैः शाकैर्मांसवत्पाककोविदः । वटकान् पर्पटान् हृद्यानङ्गारैः परिभर्जयेत् ॥ ४९ ॥",
+    english: "Vegetables are classified as fruit vegetables, leafy vegetables, tubers, roots, flowers, and pod-bearing legumes, each of which may be used in ripe or unripe form. A skilled cook should prepare vegetables in varied ways analogous to meat cookery, and pleasing vaṭakas and crisp parpaṭas may be roasted over embers.",
   },
   {
     ref: "Mānasollāsa 3.13.1550–1553",
@@ -335,5 +365,15 @@ export const manasollasaText: ManasollasaEntry[] = [
     ref: "Mānasollāsa 3.13.1581–1584",
     latin: "शङ्कुद्वयं समास्थाप्य बध्नीयादुज्ज्वलाम्बरम् । प्रसार्य यष्टिभिः किंचित्क्षीरमम्लेन भेदितम् ॥ ८१ ॥ सितया च समायुक्तमेलाचूर्णविमिश्रितम् । क्षिपेत्प्रसारिते वस्त्रे स्रावयेत्पेषयेत्समम् ॥ ८२ ॥ पुनः पुनः क्षिपेत्तत्र यावन्निर्मलतां व्रजेत् । पक्वचिञ्चाफलं भृष्टं वर्णार्थं तत्र निक्षिपेत् ॥ ८३ ॥ यस्य कस्य फलस्यापि रसेन परिमिश्रयेत् । तत्तन्नामसमाख्यातं पानकं पेयमुत्तमम् ॥ ८४ ॥",
     english: "Stretch a clean cloth between supports. Curdle milk with a souring agent, mix it with sugar and cardamom, pour it onto the cloth, let it drain, and press or grind it repeatedly until the liquid becomes clear. Add roasted ripe tamarind for colour. Mix with the juice of any desired fruit; the drink takes that fruit’s name and is an excellent pānaka.",
+  },
+  {
+    ref: "Mānasollāsa 3.13.1585–1597",
+    latin: "सौवर्णे राजते पात्रे रीतियन्त्रविधारिते । भोजयेन्मण्डलेशादीन् यथायोग्यप्रदेशतः ॥ ८५ ॥ विशाले काञ्चने पात्रे स्वर्णकञ्चोलसंयुते । लोहगङ्गालकैर्युक्ते रुक्मपिङ्गालकैस्तथा ॥ ८६ ॥ भृङ्गारशुक्तिसमोपेते कनकस्थालसंयुते । जलप्रक्षालिते सम्यक्सितवस्त्रप्रमार्जिते ॥ ८७ ॥ वर्धयेत्पूर्वकथितमन्नपक्वान्नपानकम् । ऊरुनाभिप्रदेशान्तं संछाद्य सितवाससा ॥ ८८ ॥ गद्दिकायां समासीनः पूर्वाशासम्मुखो नृपः । अन्नं मुद्रसमोपेतं भुञ्जीतोष्णं घृतप्लुतम् ॥ ८९ ॥ प्राचीमुखस्तु भुञ्जान आयुश्च लभते बहु । यशश्च लभतेऽत्यर्थमश्नन्दक्षिणदिङ्मुखः ॥ १५९० ॥ श्रियं तु लभते पुष्टां भुञ्जानः पश्चिमाननः । सत्यवाक्यफलं प्राप्नोत्यश्नन् धनददिङ्मुखः ॥ ९१ ॥ श्लक्ष्णमांससमायुक्तं विदलैर्वा विमिश्रितम् । लेहैर्विविधैर्हृद्यैर्लेपितं वा तथोदनम् ॥ ९२ ॥ मांसप्रकारकैर्मृष्टैरम्लमिश्रैश्च पल्लवैः । नानाविधैस्तथा शाकैः फलपत्रसमुद्भवैः ॥ ९३ ॥ वटकैः पर्पटैर्हृद्यैः खरखण्डोपखण्डकैः । यथारुचि यथासात्म्यं सुखं भुञ्जीत भूपतिः ॥ ९४ ॥ पक्वान्नं पायसं मध्ये शर्कराघृतमिश्रितम् । ततः फलानि भुञ्जीत मधुराम्लरसानि च ॥ ९५ ॥ पिबेच्च पानकं हृद्यं लिह्याच्छिखरिणीमपि । चूषेन्मज्जिकां पश्चाद्दधि चाद्यात्ततो घनम् ॥ ९६ ॥ ततस्तक्रमश्नीयात्सैन्धवेन च संयुतम् । क्षीरं वापि पिबेत्पश्चात्पिबेद्वा काञ्जिकं वरम् ॥ ९७ ॥",
+    english: "Food is to be served to feudatory chiefs and others in gold or silver vessels supported or arranged by the appropriate serving apparatus, each person being placed according to rank. The royal service uses a large golden vessel with a golden cup or cover, metal ladles and small gold-coloured implements, ewers or pouring vessels, shell-shaped spoons, and golden dishes. Everything is washed with water and wiped with white cloth. Arrange in these vessels the cooked foods, prepared rice, and drinks described earlier. The king covers himself with white cloth from the thighs up to the navel, sits on a cushion facing east, and eats hot rice flooded with ghee and accompanied by mudra [the exact food meant by mudra here is uncertain]. Eating while facing east is said to give long life; facing south, great fame; facing west, abundant prosperity; facing the direction of the wealth-god Kubera, the reward of truthful speech. Rice may be combined with tender meat, split pulses, or various pleasing sauces and linctuses. It may be served with rich meat preparations, sour-dressed shoots, vegetables made from fruits and leaves, vaṭakas, crisp parpaṭas, salted fish khara-khaṇḍas, and dried meat upakhaṇḍakas. The king should eat comfortably according to his taste and what agrees with his constitution. In the middle of the meal he should take cooked sweets and pāyasa mixed with sugar and ghee. Then he should eat sweet and sour fruits, drink a pleasing pānaka, lick śikhariṇī, and afterwards sip or suck majjikā. He may then eat curd and a dense milk preparation, followed by takra mixed with rock salt. At the end he may drink milk or excellent kāñjika.",
+  },
+  {
+    ref: "Mānasollāsa 3.13.1598–1600",
+    latin: "मांसमम्लेन भुञ्जीत दुग्धं वा शर्करायुतम् । लवणेन तथा चाम्लं क्षारं कटुकषायकैः ॥ ९८ ॥ वसन्ते कटु चाश्नीयाद्ग्रीष्मे मधुरशीतलम् । वर्षासु च तथा क्षारं मधुरं शरदि स्मृतम् ॥ ९९ ॥ हेमन्ते स्निग्धमुष्णं च शिशिरेऽप्युष्णमम्लकम् । एवं भुञ्जीत यद्भूपोऽन्नभोगः स कथ्यते ॥ १६०० ॥ अन्नभोगः समाख्यातः सोमेश्वरमहीभुजा । इत्यन्नभोगः ॥ १३ ॥",
+    english: "Meat should be eaten with sour accompaniments; milk with sugar. Sour preparations are paired with salt, and alkaline foods with pungent and astringent tastes. In spring one should eat pungent foods; in summer, sweet and cooling foods; in the rainy season, alkaline or sharp foods; in autumn, sweet foods. In early winter one should eat rich, unctuous, and hot food, and in late winter hot and sour food. When a king eats in this manner, it is called the enjoyment of food. Thus the chapter on Annabhoga has been set forth by King Someśvara. Here ends Annabhoga, chapter 13.",
   },
 ];

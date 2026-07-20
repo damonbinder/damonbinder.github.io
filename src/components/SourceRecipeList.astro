@@ -11,6 +11,7 @@ const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
       <a href={`/recipes/${catSlug(work)}/${r.id}/`}>
         <span class="cite">{r.data.source}</span>
         <span class="title" set:html={em(r.data.title)}></span>
+        {showingDrafts && r.data.wifeFavorite && <span class="rc-tag fav">♥ Wife favorite</span>}
         {showingDrafts && r.data.status === 'draft' && <span class="rc-tag draft">Draft</span>}
       </a>
     </li>
@@ -60,6 +61,7 @@ const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
     padding: 0.1rem 0.5rem;
   }
   .rc-tag.draft { color: #8a5a00; background: #fbf0d8; border: 1px solid #e8d29a; }
+  .rc-tag.fav { color: #a3195b; background: #fce4ef; border: 1px solid #f2b8d4; }
 
   @media (max-width: 500px) {
     .source-list a { flex-wrap: wrap; gap: 0.15rem 1rem; }

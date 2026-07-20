@@ -38,6 +38,7 @@ const cards = recipes.map((r) => ({
   category: realCategory(r.data),
   language: r.data.originalLang ?? null,
   status: r.data.status,
+  wifeFavorite: r.data.wifeFavorite,
 }));
 
 // Facet option lists. Traditions in era order; categories and languages in
@@ -123,6 +124,7 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
               {c.era && <span class="chip">{c.era}</span>}
               {c.category && <span class="chip">{c.category}</span>}
               {c.language && <span class="chip">{c.language}</span>}
+              {showingDrafts && c.wifeFavorite && <span class="chip fav">♥ Wife favorite</span>}
               {showingDrafts && c.status === 'draft' && <span class="chip draft">Draft</span>}
             </div>
           </a>
@@ -238,6 +240,7 @@ const published = recipes.filter((r) => r.data.status === 'published').length;
     padding: 0.08rem 0.5rem;
   }
   .chip.draft { color: #8a5a00; background: #fbf0d8; border: 1px solid #e8d29a; }
+  .chip.fav { color: #a3195b; background: #fce4ef; border: 1px solid #f2b8d4; }
 
   .recipe-card[data-hidden="true"] { display: none; }
 </style>

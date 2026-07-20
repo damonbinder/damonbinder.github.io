@@ -13,11 +13,14 @@ const snippet = d.description
 <a class="recipe-card" href={href}>
   <div class="rc-top">
     <h3 set:html={em(d.title)}></h3>
-    {showingDrafts && (
-      d.status === 'draft'
-        ? <span class="rc-tag draft">Draft</span>
-        : <span class="rc-tag live">Live</span>
-    )}
+    <span class="rc-tags">
+      {showingDrafts && d.wifeFavorite && <span class="rc-tag fav">♥ Favorite</span>}
+      {showingDrafts && (
+        d.status === 'draft'
+          ? <span class="rc-tag draft">Draft</span>
+          : <span class="rc-tag live">Live</span>
+      )}
+    </span>
   </div>
   <p class="rc-source">{showWork ? (d.source ?? workOf(d)) : (d.source ?? '')}</p>
   {snippet && <p class="rc-desc" set:html={em(snippet)}></p>}
@@ -36,6 +39,7 @@ const snippet = d.description
   }
   .recipe-card:hover { border-color: var(--accent); }
   .rc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+  .rc-tags { flex: 0 0 auto; display: flex; align-items: baseline; gap: 0.3rem; }
   .recipe-card h3 {
     margin: 0;
     font-size: 1.05rem;
@@ -55,6 +59,7 @@ const snippet = d.description
   }
   .rc-tag.draft { color: #8a5a00; background: #fbf0d8; border: 1px solid #e8d29a; }
   .rc-tag.live { color: #2e7d4f; background: #e7f4ec; border: 1px solid #b7dcc4; }
+  .rc-tag.fav { color: #a3195b; background: #fce4ef; border: 1px solid #f2b8d4; }
   .rc-source {
     font-family: var(--font-sans);
     font-size: 0.78rem;

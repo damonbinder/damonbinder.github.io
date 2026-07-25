@@ -30,13 +30,30 @@ const Blurb = sourceEntry?.body?.trim() ? (await render(sourceEntry)).Content : 
 const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
 
 // The complete surviving text (independent of which entries have become
-// cooked recipe pages), linked through to a recipe page where one exists.
+// cooked recipe pages), linked through to whichever recipes it covers.
+//
+// Matching is by overlapping verse range, not by string equality: the text's
+// blocks are sense units and often straddle verse boundaries ("1385cd–1386ab"),
+// so they rarely equal a recipe's own citation. Overlap also means one block
+// can list several recipes — the four pork cakkalikās all cite 1436–1441.
 const fullText = sourceTexts[work];
-const bySourceCitation = new Map(list.map((r) => [r.data.source, r]));
-const textEntries = (fullText ?? []).map((entry) => ({
-  ...entry,
-  recipe: bySourceCitation.get(entry.ref),
-}));
+const verseSpan = (s: string): [number, number] | null => {
+  const ns = (s.match(/\d{3,}/g) ?? []).map(Number);
+  if (!ns.length) return null;
+  return [ns[0], ns[ns.length - 1]];
+};
+const spans = list
+  .map((r) => ({ recipe: r, span: verseSpan(r.data.source) }))
+  .filter((x): x is { recipe: typeof x.recipe; span: [number, number] } => x.span !== null);
+const textEntries = (fullText ?? []).map((entry) => {
+  const span = verseSpan(entry.ref);
+  return {
+    ...entry,
+    recipes: span
+      ? spans.filter((x) => x.span[0] <= span[1] && span[0] <= x.span[1]).map((x) => x.recipe)
+      : [],
+  };
+});
 ---
 <Base title={title} description={`Recipes from ${title}.`} wide>
   <p class="crumb"><a href="/recipes/">Recipes</a> › {title}</p>
@@ -63,8 +80,17 @@ const textEntries = (fullText ?? []).map((entry) => ({
         {textEntries.map((entry) => (
           <div class="text-row">
             <span class="ref">
-              {entry.recipe
-                ? <a href={`/recipes/${catSlug(work)}/${entry.recipe.id}/`}>{entry.ref}</a>
+              {entry.recipes.length > 0
+                ? entry.recipes.map((r, i) => (
+                    <Fragment>
+                      {i > 0 && <span class="ref-sep">·</span>}
+                      <a href={`/recipes/${catSlug(work)}/${r.id}/`}>
+                        {i === 0
+                          ? entry.ref
+                          : <Fragment set:html={em(r.data.title)} />}
+                      </a>
+                    </Fragment>
+                  ))
                 : entry.ref}
             </span>
             <p class="latin" set:html={`<em>${em(entry.latin)}</em>`}></p>

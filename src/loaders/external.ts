@@ -61,7 +61,7 @@ async function fetchDefensesInDepth(): Promise<RawPost[]> {
       id: `did/${slugFromUrl(link)}`,
       title: String(it.title ?? 'Untitled'),
       date: new Date(String(it.pubDate ?? '')).toISOString(),
-      excerpt: it.description ? String(it.description) : undefined,
+      excerpt: it.description ? decode(String(it.description)) : undefined,
       external: link,
       source: 'Defenses in Depth',
     });

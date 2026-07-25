@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'The Indo-European Family Tree',
+    blurb:
+      'An interactive, time-calibrated tree of the Indo-European languages. Click a language for its vocabulary and a passage of the same text — the opening of the Lord’s Prayer — so you can watch it change down a lineage.',
+    date: 'July 2026',
+    href: '/language-tree/',
+  },
+  {
     title: 'Harmonics Lab',
     blurb:
       'An additive-synthesis playground. Build a sound from its harmonics, watch the waveform, and play it across a keyboard.',

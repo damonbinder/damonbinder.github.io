@@ -55,9 +55,12 @@ const recipes = defineCollection({
     order: z.number().default(0),
     // Publication state
     status: z.enum(['draft', 'published']).default('draft'),
-    // Private annotation, never shown in the public build (gated by
-    // showingDrafts same as draft status) — Damon's own household rating.
+    // Private annotations, never shown in the public build (gated by
+    // showingDrafts same as draft status) — Damon's own household rating,
+    // and a private kitchen note to himself (things to try next time, why
+    // the reconstruction departs from the text, and so on).
     wifeFavorite: z.boolean().default(false),
+    privateNote: z.string().optional(),
   }),
 });
 

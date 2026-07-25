@@ -18,6 +18,8 @@ category: Meat
 subcategory: Meat, offal & sausages
 order: 1021.4
 status: published
+privateNote: >-
+  To try in future: the text smokes the asafoetida into the curd rather than stirring it in. At 1439 *dhūpite hiṅgunā* is locative, agreeing with the curd, so the curd is smoked *before* the *cakkalikā*s go into it. Method: whisk the curd with the mustard and citron, stand a small metal cup in it so the rim clears the surface, drop in a lump of glowing charcoal, put the asafoetida on the coal with a few drops of ghee, cover tightly 4–5 minutes, lift the cup out, then fold in the *cakkalikā*s. This is *dhūngar*. The ghee-on-the-fumigant detail is the text's own — 1400 has *hiṅgusarpirbhyāṃ … dhūpayet*. The bloomed-in-ghee version in the method below is what I actually cooked and it worked; the smoke matters more here than in a hot dish because nothing ever cooks the raw hing out of a cold curd dressing.
 ---
 
 ## Ingredients

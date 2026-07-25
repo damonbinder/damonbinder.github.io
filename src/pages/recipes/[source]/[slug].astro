@@ -99,6 +99,13 @@ const metaDescription = introPara
     <div class="recipe-body">
       <Content />
     </div>
+
+    {showingDrafts && d.privateNote && (
+      <aside class="private-note">
+        <span class="pn-label">Private note — not on the public site</span>
+        <p set:html={em(d.privateNote)}></p>
+      </aside>
+    )}
   </article>
 
   <nav class="recipe-nav">
@@ -133,6 +140,26 @@ const metaDescription = introPara
     background: #fce4ef;
     border: 1px solid #f2b8d4;
   }
+
+  /* Private kitchen note. Rendered only when showingDrafts, so it is absent
+     from the public build's HTML rather than merely hidden. */
+  .private-note {
+    margin-top: 2.5rem;
+    padding: 1rem 1.1rem;
+    background: #fbf0d8;
+    border: 1px dashed #e8d29a;
+    border-radius: 4px;
+  }
+  .pn-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8a5a00;
+    margin-bottom: 0.5rem;
+  }
+  .private-note p { margin: 0; font-size: 0.95rem; }
 
   .meta {
     font-family: var(--font-sans);

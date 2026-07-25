@@ -18,6 +18,8 @@ category: Meat
 subcategory: Meat, offal & sausages
 order: 1021.2
 status: published
+privateNote: >-
+  To try in future: the asafoetida here is smoke, not powder — and note the target differs from the curd version. At 1441 *dhūpitāḥ* is nominative plural agreeing with *cakkalikā*, so it is the **meat** that gets smoked, after the citron, ginger, pepper, mustard, and salt have been mixed through it. Method: put the dressed *cakkalikā*s in a bowl, stand a small metal cup among them, drop in a lump of glowing charcoal, put the asafoetida on the coal with a few drops of ghee, cover tightly 4–5 minutes, lift the cup out. This is *dhūngar*. Stirring the powder in, as the method below does, is what I cooked and it worked — it is just a different technique from the one the verse names.
 ---
 
 ## Ingredients

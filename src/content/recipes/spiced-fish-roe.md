@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मत्स्याण्डकोशावादाय वह्निना परिभर्जयेत् । दृढीभूते ततः पश्चात्खण्डशः परिकल्पयेत् ॥ ३५ ॥ विपच्य तप्ततैले तान्येलामरिचकादिभिः । विकीर्य सैन्धवेनापि हिङ्गुना परिधूपयेत् ॥ ३६ ॥
 translation: >-
-  Roast fish roe-sacs in the fire. Once firm, cut them into pieces, fry them in hot oil, scatter cardamom, pepper, and related spices over them, add rock salt, and perfume with asafoetida.
+  Take the pair of roe-sacs from the fish and roast them in the fire. Once firm, cut them into pieces and fry them in hot oil. Scatter cardamom, pepper, and the like over them, and rock salt as well, and perfume them with asafoetida.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals
@@ -14,12 +14,13 @@ order: 1044
 status: draft
 ---
 
-Whole roe sacs are first set by roasting or poaching, then sliced and fried with aromatic spices.
+The roe is set whole in the fire before it is sliced, which is what keeps the pieces from disintegrating in the pan.
 
 ## Ingredients
 
 * 500 g intact fish roe sacs  
-* 20 ml oil, plus 30 ml for frying  
+* 60 ml oil for frying, plus a little for the tray  
+* 1 tsp ghee or oil, for the asafoetida  
 * ½ tsp ground black pepper  
 * ¼ tsp ground cardamom  
 * ¼ tsp asafoetida  
@@ -29,9 +30,14 @@ Whole roe sacs are first set by roasting or poaching, then sliced and fried with
 
 1. Brush the roe sacs with a little oil and bake at 190°C for 10–15 minutes, until firm enough to slice.  
 2. Cool slightly and cut into 2 cm pieces.  
-3. Heat the remaining oil and fry the pieces until lightly browned.  
-4. Sprinkle with pepper, cardamom, asafoetida, and salt and serve hot.
+3. Heat the frying oil and fry the pieces until lightly browned. Lift them out onto a warm dish.  
+4. Sprinkle with the pepper, cardamom, and salt.  
+5. Stir the asafoetida into the hot ghee, pour it over, and cover for a minute so the aroma settles into the dish.
 
 **Notes**
 
-* Cooking time depends strongly on the size and species of roe; the centre must become opaque and firm.
+* *Matsyāṇḍakośau* is a dual — the pair of roe sacs from one fish — and the text says to take them out first, so the roe is extracted whole and only then goes near the fire.  
+* *Elāmaricakādibhiḥ* ends in *-ādi*, "and the rest", so the spice list is explicitly open. Cardamom and pepper are the two named; the rest is up to the cook.  
+* *Paridhūpayet* is a fumigation, not a sprinkle. Blooming the asafoetida in hot fat and covering the dish is how the chapter's other recipes render the same verb.  
+* Cooking time depends strongly on the size and species of roe; the centre must become opaque and firm.  
+* Not all roe is edible. The roe of barbel, tench, gar, and cabezon is toxic to humans regardless of freshness, and heat does not reliably destroy the toxin. Use roe from a species that is actually eaten — cod, grey mullet, salmon, herring, shad, or mackerel.

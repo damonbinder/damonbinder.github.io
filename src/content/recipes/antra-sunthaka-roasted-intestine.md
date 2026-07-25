@@ -6,7 +6,10 @@ originalLang: Sanskrit
 original: >-
   अन्त्राणि जलधौतानि शूलयष्ट्यां विवेष्टयेत् । तापयेच्च तथाङ्गारैर्यावत्कठिनतां ययुः ॥ ९२ ॥ पश्चाद्विचूर्णितं श्लक्ष्णं सैन्धवं तेषु योजयेत् । अन्त्रशुण्ठकमाख्यातं चर्वणे मर्मरारवम् ॥ ९३ ॥
 translation: >-
-  Wash intestines with water, wind them around a skewer, and roast them over embers until firm. Add finely powdered rock salt. The dish makes a crisp, crackling sound when chewed.
+  Wash intestines with water and wind them around a spit-rod. Heat them over embers likewise, until they turn firm. Afterwards apply very finely powdered rock salt to them. This is called *antra-śuṇṭhaka*; it has a rustling sound in the chewing.
+related:
+  - roast-pork-sunthaka
+  - pancavarni-five-colored-offal-stew
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
@@ -14,22 +17,25 @@ order: 1034
 status: draft
 ---
 
-A very simple charcoal-roasted intestine preparation intended to become crisp.
+The name puts this in the *śuṇṭhaka* family and so does the method: something long, wound onto a spit and held over embers until it hardens, then salted afterwards rather than before. The point of the dish is the sound — *marmara*, the rustle of dry leaves.
 
 ## Ingredients
 
 * 500 g thoroughly cleaned lamb or pork intestine  
-* 1½ tsp fine rock salt  
-* 15 g ghee or oil
+* 1½ tsp fine rock salt
 
 ## Method
 
-1. Parboil the cleaned intestine in salted water for 20 minutes, then drain and dry thoroughly.  
-2. Wind it tightly around metal skewers or cut into manageable lengths and thread in loops.  
-3. Brush with ghee and grill over medium charcoal, turning frequently, until browned, firm, and crisp at the edges.  
-4. Sprinkle with rock salt and serve hot.
+1. Clean the intestine thoroughly: strip it, turn it inside out, scrub it with coarse salt and flour, and rinse it repeatedly until the water runs clear. Or buy it already cleaned.  
+2. Simmer it in salted water for 45–60 minutes, until tender. Drain and dry it well — uncovered in the fridge for a few hours if you have time, because dryness is what lets it crisp.  
+3. Wind it tightly around metal skewers, or cut it into manageable lengths and thread it in loops.  
+4. Grill over charcoal that has burned down to embers, turning often, until browned, firm, and crisp at the edges — 20–30 minutes. Don't hurry it over a high fire; the outside scorches long before the coils harden through.  
+5. Scatter the rock salt over and serve hot.
 
 **Notes**
 
-* Parboiling is a modern food-safety addition; the source proceeds directly from washing to roasting.  
-* The intended texture is explicitly crisp or crackling.
+* Parboiling is a modern food-safety addition; the source proceeds directly from washing to roasting. It is also what makes the dish work — 45–60 minutes is what lamb intestine needs, and a shorter simmer leaves it rubbery in a way no amount of grilling fixes.  
+* The intended texture is explicitly crisp or crackling. *Marmara* is specifically the rustle of dry leaves, so the target is crackling-dry rather than merely browned.  
+* **Nothing is brushed on.** The chapter says *ghṛtena siñcet*, "baste with ghee", when it means basting (1464), so the absence of any fat here is meaningful — and intestine carries plenty of its own.  
+* **The name places the dish in the *śuṇṭhaka* family, and so does the sequence.** 1432 calls the pork version *āyāma-śuṇṭhaka*, "the long *śuṇṭhaka*", and 1434 salts and peppers it *paścāt*, after roasting — exactly what 1493 does here with *paścād … saindhavaṃ teṣu yojayet*.  
+* Clean the intestine properly. This is the least processed dish in the chapter — the text does nothing to it but wash it — and a gut brings its whole flora with it.

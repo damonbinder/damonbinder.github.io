@@ -6,7 +6,11 @@ originalLang: Sanskrit
 original: >-
   गोलकेन समावेष्ट्य तैलेनोदुम्बरान् पचेत् । उत्क्वाथ्य विदलान् पिष्ट्वा चणकप्रभृतीन् शुभान् ॥ ८८ ॥ हिङ्गुसैन्धवसंयुक्तान् शर्करापरिमिश्रितान् । मरिचैलादिचूर्णेन युक्तान् गोलकवेष्टितान् ॥ ८९ ॥ किंचित्प्रसारिते तैले पूरिका विपचेच्छुभाः । एवं ताप्यां पचेदन्याः पूरिकाश्च विचक्षणः ॥ १३९० ॥
 translation: >-
-  Boil and grind split chickpeas or similar pulses. Mix the paste with asafoetida, rock salt, sugar, black pepper, cardamom, and other aromatics. Enclose it in a dough-ball, flatten it slightly, and fry it in oil. Other *pūrikās* may be cooked on a heated plate.
+  Boil and grind fine split chickpeas or similar pulses. Mix the paste with asafoetida, rock salt, sugar, black pepper, cardamom, and other aromatics. Enclose it in a dough-ball and fry the excellent *pūrikās* in a little oil spread over the pan. The discerning cook may cook other *pūrikās* on a heated plate.
+related:
+  - mandaka-flatbreads
+  - udumbara-fried-sweets
+  - savoury-vestika-and-ghosaka
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads

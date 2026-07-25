@@ -6,7 +6,13 @@ originalLang: Sanskrit
 original: >-
   तैलपूर्णकटाहे तु सुतप्ते सोहला पचेत् । उत्तानपाकसंसिद्धाः कठिनाः सोहला मताः ॥ ८४ ॥ तैलमग्नाः पीतवर्णा मृदवः पाहलिकाः स्मृताः । तनुप्रसारितान् गोलान् ताप्य स्नेहेन पाचितान् ॥ ८५ ॥
 translation: >-
-  Cook *sohalās* in a very hot cauldron full of oil; they are firm and cook while floating with the upper surface exposed. *Pāhalikās* are submerged in oil, yellow in colour, and soft.
+  Cook *sohalās* in a very hot cauldron full of oil. Brought to completion
+  face-up — floating with the upper surface out of the oil — they are held to be
+  firm. *Pāhalikās* are sunk in the oil, yellow in colour, and soft. [The closing
+  half-verse begins the following recipe: balls spread out thin, heated, and
+  cooked in fat.]
+related:
+  - mandaka-flatbreads
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
@@ -14,22 +20,24 @@ order: 1007
 status: draft
 ---
 
-The distinction seems to be between a firmer floating fried bread and a softer bread held under the oil. Both can be reconstructed from the maṇḍaka dough.
+The text draws the distinction by submersion: the *sohalā* floats with its top face clear of the oil and comes out firm, while the *pāhalikā* is held under and comes out soft and evenly gold. Neither verse names a dough, so the *maṇḍaka* dough stands in.
 
 ## Ingredients
 
-* 1 batch maṇḍaka dough  
-* 750 ml neutral oil or sesame oil, for frying  
+* 1 batch *maṇḍaka* dough  
+* 1.2 L neutral oil or sesame oil, for frying — enough depth to submerge a bread  
 * Rice flour, for dusting
 
 ## Method
 
 1. Divide the dough into 12 balls and roll each into a 10 cm round.  
-2. Heat the oil to 185°C for sohalās. Fry each round without pressing it down; let it puff and float, turning once, until firm and lightly browned.  
-3. For pāhalikās, lower the oil to 170°C and hold each round beneath the surface with a slotted spoon for the first 20–30 seconds. Fry until yellow-gold but still soft.  
+2. Heat the oil in a deep pan to about 180°C. For *sohalās*, slide a round in and leave it to float with its upper face clear of the oil, spooning hot oil over it if you like, then turn it once near the end. It comes out firm, browned underneath and paler on top.  
+3. For *pāhalikās*, use the same oil and hold each round under the surface with a slotted spoon until it puffs and is cooked through, 40–60 seconds, then lift it out. It comes out an even pale gold and soft.  
 4. Drain on a rack and serve immediately.
 
 **Notes**
 
-* The temperature distinction is a modern reconstruction of the text’s contrast between firm, floating sohalā and soft, submerged pāhalikā.  
-* The breads are unsweetened in the source and may accompany savoury or sweet dishes.
+* The variable in the text is submersion, not temperature. The *sohalā* is *uttāna-pāka*, cooked face-up, and comes out *kaṭhina*, firm; the *pāhalikā* is *taila-magna*, sunk in the oil, and comes out *mṛdu*, soft, and yellow. That matches what actually happens: a bread whose top face stays out of the oil dries there, sets firm, and colours only underneath, while one held fully under traps its own steam, puffs, and colours evenly.  
+* You need real depth of oil to hold a bread under. A shallow pan will only give you *sohalās*.  
+* Neither verse names a dough. The *golān* of the surrounding verses is anaphoric to the *maṇḍaka* balls of 1378, which is why that dough is used here.  
+* The transmitted 1385b runs a syllable long against the metre; reading *pāhlikāḥ* would fix it, so the name may be *pāhlikā*.

@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   कच्छपान् वह्निना भृष्ट्वा पादांश्छल्कांश्च मोचयेत् । शिरश्चैव पृथक्कृत्वा पक्वरम्भाफलोपमान् ॥ ३७ ॥ अम्लकैश्च विपच्याथ तैलेनाज्येन वा पुनः । पाचयेच्च सुसिद्धांस्तान् चूर्णकैरवचूर्णयेत् ॥ ३८ ॥ आणके वा पचेत्तज्ज्ञो निधूमे वा हुताशने । नन्द्यावर्ता इति ख्याता मृदुरुच्या मनोहराः ॥ ३९ ॥
 translation: >-
-  Roast turtle, remove the feet and shell, separate the head, and cut the flesh into pieces like ripe banana fruit. Cook the pieces with sour ingredients, then cook them again in oil or ghee until thoroughly done and dust with spice powders. They may also be cooked in a pan or over a smokeless fire. The dish is called *nandyāvarta*.
+  Roast turtles in the fire and free the feet and the shell-plates; separate the head as well, so that they resemble ripe plantains. Then cook them with sour liquids, and cook them again in oil or in ghee; when they are thoroughly done, dust them with spice powders. One who knows the work may instead cook them in a pan, or over a smokeless fire. These are known as *nandyāvartas*: tender, appetizing, and delightful.
 tradition: Indian
 category: Meat
 subcategory: Fish & other animals
@@ -14,11 +14,13 @@ order: 1045
 status: draft
 ---
 
-The historical recipe uses turtle. Because wild turtle is protected or restricted in many jurisdictions, the modern reconstruction should use legally farmed turtle where available, or a firm dark-meat substitute such as rabbit or monkfish.
+Roasting comes first here, and its job is to loosen the shell: fire the turtle, free the plates, the feet, and the head, and what is left resembles a ripe plantain. The comparison is to the whole dressed body. The source never cuts the animal up — every noun downstream stays masculine plural, one *nandyāvarta* per turtle.
+
+Wild turtle is protected or restricted in most jurisdictions, so this reconstruction uses legally farmed turtle where it can be had, or rabbit.
 
 ## Ingredients
 
-* 800 g legally sourced farmed turtle meat, rabbit, or monkfish, cut into large pieces  
+* 800 g legally sourced farmed turtle, or 1 rabbit jointed into large pieces  
 * 40 g tamarind concentrate  
 * 250 ml water  
 * 1½ tsp rock salt  
@@ -30,12 +32,15 @@ The historical recipe uses turtle. Because wild turtle is protected or restricte
 
 ## Method
 
-1. Simmer the meat with tamarind, water, and salt until tender: 20 minutes for monkfish, or 45–90 minutes for rabbit or turtle depending on the cut.  
+1. Simmer the meat with tamarind, water, and salt until tender — 45–90 minutes, depending on the cut. Keep the pieces as large as the pan allows; the source cooks the dressed body whole.  
 2. Drain, reserving a little cooking liquid.  
 3. Heat the ghee and fry the pieces until browned, adding a spoonful of reserved liquid if they begin to dry.  
 4. Finish with cumin, pepper, asafoetida, and dried ginger.
 
 **Notes**
 
-* Check local law before buying or preparing turtle; never use wild-caught protected species.  
-* The source’s slaughter and shell-removal instructions are not reproduced.
+* 1539 closes with *mṛdu-rucyā manoharāḥ* — "tender, appetizing, delightful". *Mṛdu* is the useful word of the three: tenderness is the stated target, so cook to collapse rather than to a firm set.  
+* 1538 asks only for *cūrṇakas*, "spice powders", and names none of them; it specifies no salt either. The cumin, pepper, asafoetida, and dried ginger here are borrowed from the neighbouring recipes — 1542 for the crabs, 1547 for the *mūṣaka*, 1536 for the fish roe.  
+* *Nandyāvarta* is the name of an auspicious diagram, a whorl or interlocking figure. The text does not say why the dish is called that.  
+* The dressing — roast to loosen the plates, then free the feet, the shell, and the head — is not reproduced here.  
+* Check local law before buying or preparing turtle; never use wild-caught protected species. Turtles are also a well-documented Salmonella reservoir, so handle the raw meat the way you would handle raw poultry.

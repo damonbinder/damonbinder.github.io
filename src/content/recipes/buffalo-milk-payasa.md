@@ -6,7 +6,14 @@ originalLang: Sanskrit
 original: >-
   उत्तार्य नागरं चूर्णं क्षिप्त्वा दर्व्या विघट्टयेत् । श्यामाककङ्गुनीवारगन्धशालिसुतण्डुलैः ॥ ७३ ॥ सरवेष्टिकसेवाकैर्दिवसैर्लघुविस्तृतैः । चिरप्रसूतमहिषीपयसा पायसं पचेत् ॥ ७४ ॥ पायसं लेहने योग्यं स्वादुगन्धं मनोहरम् । गोधूमाः क्षालिताः शुभ्राः शोषिता रविरश्मिभिः ॥ ७५ ॥
 translation: >-
-  Cook fine grains of *śyāmāka*, *kaṅgu*, *nīvāra*, fragrant rice, or another good rice in the milk of a buffalo that calved long before. The *pāyasa* should become thick enough to lick, sweet-smelling, and pleasing.
+  [The opening half-verse completes the preceding mung soup: having taken it off
+  the fire, put in powdered dried ginger and stir it with the ladle.] Cook a
+  *pāyasa* in the milk of a buffalo that calved long before, with the fine
+  grains of *śyāmāka*, *kaṅgu*, *nīvāra*, or fragrant *śāli* rice — or with
+  *sara*, *veṣṭika*, and *sevāka*, thinly drawn out over some days [the reading
+  of this half-verse is obscure]. The *pāyasa* should become thick enough to
+  lick, sweet-smelling, and pleasing. [The closing half-verse begins the
+  following *maṇḍaka* recipe: wheat, washed white and dried by the sun's rays.]
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
@@ -14,13 +21,13 @@ order: 1004
 status: draft
 ---
 
-The text specifies mature buffalo milk, prized for its richness. Whole cow’s milk with a little cream gives a practical approximation.
+The text specifies the milk of a buffalo that calved long before — late-lactation milk, which carries more fat and solids than early milk. Whole cow’s milk with a little cream approximates it.
 
 ## Ingredients
 
 * 100 g fragrant short-grain rice, or 80 g millet  
 * 1 L whole milk  
-* 100 ml double cream (optional, especially when using cow’s milk)  
+* 100 ml double cream (omit if you have buffalo milk)  
 * 75 g sugar  
 * ¼ tsp ground cardamom  
 * Pinch of salt
@@ -34,5 +41,8 @@ The text specifies mature buffalo milk, prized for its richness. Whole cow’s m
 
 **Notes**
 
-* Sugar and cardamom are plausible additions for the “sweet-smelling” result but are not explicitly listed in these verses.  
-* For a closer grain alternative, use barnyard millet for *śyāmāka* or foxtail millet for *kaṅgu*.
+* The cream is what lets cow’s milk stand in for buffalo. Buffalo milk runs about 7–8% fat against 3.5–4% for cow, and 1 L of whole milk with 100 ml of double cream lands in the same range.  
+* *Pāyasaṃ lehane yogyam*, "*pāyasa* fit for licking", is the chapter's own yardstick for the *lehya* class named at 1344–45, and other dishes in the chapter are measured against it. It should fall off a spoon in a sheet rather than run.  
+* Sugar and cardamom are not named in these three verses. They are the chapter's own seasonings for a sweet grain-and-milk dish a dozen verses later, where *kīsāra* takes sugar and a powder of cardamom and pepper (1386–87), so they are a reasonable import rather than a guess.  
+* For a closer grain, use barnyard millet for *śyāmāka* or foxtail millet for *kaṅgu*. *Nīvāra* is uncultivated rice, gathered rather than sown. *Gandhaśāli* is one of the eight rices named at 1345–47 and defined there by its fragrance, so basmati is the descendant, though a shorter grain makes a better pudding.  
+* Verse 1374a–b is obscure and nothing here is reconstructed from it. It continues the list of things a *pāyasa* can be made from — *sara*, *veṣṭika*, *sevāka* — described as thinly drawn out over some days. *Sevāka* may be the ancestor of *sevaiyā*, sun-dried vermicelli, which would make this a noodle *pāyasa*, but the reading is not secure.

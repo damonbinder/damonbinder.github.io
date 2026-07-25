@@ -13,12 +13,18 @@ original: >-
   ॥ १४४० ॥ चूर्णितं मरिचं राजीसैन्धवैर्मिश्रयेत्ततः । हिङ्गुना धूपिताः साम्ला
   हृद्याश्चक्कलिका वराः ॥ ४१ ॥
 translation: >-
-  Cut the fatty portion of cooked *śuṇṭhakas* into thin palmyra-leaf-shaped
-  slices called *cakkalikās*. Put them in churned curd with sugar, cardamom, and
-  camphor; or in curd with mustard and citron pulp, perfumed with asafoetida.
-  Alternatively fry them in ghee and scatter cardamom and sugar over them. A sour
-  version combines citron pulp, fresh ginger, sour citrus, pepper, mustard, rock
-  salt, and asafoetida.
+  Taking the fatty portion of the cooked *śuṇṭhakas*, make fine *cakkalikās*,
+  slices of the same shape as a palmyra leaf. Throw the appetizing *cakkalikās*
+  into churned curd [*mathita*, from which the butter has been removed] combined
+  with sugar, mixed with cardamom, and perfumed with camphor. Or take *śuṇṭhas*
+  of meat and fat, made into *cakkalikās* as before, and throw them into churned
+  curd combined with mustard and citron pulp and thoroughly perfumed with
+  asafoetida smoke. Alternatively fry them in ghee and scatter cardamom with
+  sugar over them. Or else, with the pulp of a well-ripened citron, with finely
+  cut pieces of fresh ginger, and with delightful *kesarāmla* [a second name for
+  the citron], then mix in powdered pepper together with mustard and rock salt;
+  perfumed with asafoetida, sour and heart-pleasing, these *cakkalikās* are
+  excellent.
 related:
   - roast-pork-sunthaka
 tradition: Indian
@@ -47,4 +53,8 @@ status: published
 
 ## Notes
 
+* The text's only guide to the slicing is that the *cakkalikās* are shaped like a palmyra leaf: a long narrow strip, the same leaf South Indian manuscripts were written on. The thickness, the length, the chilling (which is only there to make thin slices possible), and the skinning are all mine.
+* *Mathita*, the word for the curd here, is defined later in the same chapter (1571–72) as curd churned with the butter taken out and no water added. So the target is a thin, tangy, low-fat curd rather than set whole-milk yoghurt.
+* In 1439 it is the curd that is perfumed with asafoetida rather than the meat, and the verb means perfumed with smoke. Blooming the asafoetida in a little hot ghee and stirring that into the yoghurt is closer to the text than dusting the powder over the finished dish.
+* The 20-minute rest earns its place in this version. Ground mustard develops its pungency only once it is wetted, and acid slows that reaction down, so with the citron in the yoghurt the heat builds over the rest instead of arriving all at once.
 * Citron is hard to find; lemon pulp with a little finely grated peel is the closest substitute.

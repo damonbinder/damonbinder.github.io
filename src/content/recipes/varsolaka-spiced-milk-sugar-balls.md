@@ -6,7 +6,9 @@ originalLang: Sanskrit
 original: >-
   क्षीरप्रकारनामेदं भक्ष्यं मृष्टं मनोहरम् । शर्करां वारिसंयुक्तां ताम्रपात्रे विपाचयेत् ॥ ११ ॥ अर्धपाके क्षिपेद्दुग्धं सकं वापि यथारुचि । तेन मुञ्चेन्मलं सा तु शर्करा कथिता सती ॥ १२ ॥ निर्मलेन च वस्त्रेण गालयेत्तां मुहुर्मुहुः । मृदौ पाके द्रुता पेया मध्यमे मधुसन्निभा ॥ १३ ॥ खरे तु कठिना भक्ष्या साधिके शर्करा भवेत् । खरपाके सुसिद्धायाः सितायाः सम्पुटे ॥ १४ ॥ नानारूपाणि कुर्वीत खण्डपाकविशारदः । शोधितायां सितायां तु क्षीरं संमिश्रयेत्समम् ॥ १५ ॥ खरपाकावधिर्यावत्तावत्तापयेत्पुनः । उत्तार्य नागरं तीक्ष्णमेलाकर्पूरकेसरैः ॥ १६ ॥
 translation: >-
-  Cook sugar with water in a copper vessel. At half-cooking add milk to separate the scum, then filter repeatedly through clean cloth. At the soft stage the syrup is liquid, at the middle stage honey-like, and at the hard stage it becomes a firm sweet. Mix an equal quantity of milk with purified sugar and heat again to the hard stage. Remove from the fire, add dry ginger, pungent spice, cardamom, camphor, and saffron, and shape into balls called *varṣolakas*.
+  This *bhakṣya*, named *kṣīraprakāra*, is delicious and delightful. Cook *śarkarā* mixed with water in a copper vessel. At half-cooking throw in milk, or else *saka*, as preferred [the second term is unclear]; by this it releases its impurity, and that sugar is then declared *sitā*, refined. Strain it through a spotless cloth again and again. At the soft cooking it is fluid, a drink; at the middle, it resembles honey; at the hard, it is firm, a *bhakṣya*; and cooked beyond that, it becomes *śarkarā* again — it grains. Out of *sitā* well perfected at the hard cooking, in a *sampuṭa* [a closed two-part mould; the line is defective here], the expert in *khaṇḍa*-cooking should make various forms. But into purified *sitā* he should mix an equal quantity of milk and heat it again up to the limit of the hard cooking. Taking it off the fire, throw in dry ginger, *tīkṣṇa*, cardamom, camphor, and saffron. [1417 continues: balls are then to be made, and those are called *varṣolakas*.]
+related:
+  - ksira-prakara-milk-curd-sweets
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
@@ -14,13 +16,14 @@ order: 1019
 status: draft
 ---
 
-A clarified sugar-and-milk confection cooked to a firm stage and strongly perfumed. Modern food-grade camphor is optional and should be used only in an extremely small quantity.
+A clarified sugar-and-milk confection cooked to a firm stage and strongly perfumed. The passage is really two recipes that share one preparation: refined sugar taken to the hard stage can be moulded on its own into shapes, or mixed with an equal quantity of milk, re-cooked, and spiced into these balls. Between the two sits the chapter's account of the four degrees of sugar cooking, which is the most useful thing in the verses — soft, honey-like, hard, and then past hard, where the mass grains back into loose sugar.
 
 ## Ingredients
 
 * 250 g white sugar  
 * 125 ml water  
-* 250 ml whole milk, divided  
+* 250 ml whole milk, for the body  
+* 50 ml whole milk, for clarifying  
 * ½ tsp ground dried ginger  
 * ½ tsp ground cardamom  
 * Pinch of black pepper or long pepper  
@@ -30,13 +33,20 @@ A clarified sugar-and-milk confection cooked to a firm stage and strongly perfum
 
 ## Method
 
-1. Combine the sugar and water in a heavy saucepan and heat until dissolved. Add 50 ml milk; skim the foam that rises, then strain the syrup through fine cloth or a coffee filter.  
-2. Return the clarified syrup to the pan with the remaining milk. Cook over medium-low heat, stirring continuously, until very thick and the mixture reaches about 116–118°C.  
-3. Remove from the heat and stir in the ginger, cardamom, pepper, saffron milk, and optional camphor.  
+1. Combine the sugar and water in a heavy saucepan — copper if you have it — and heat until dissolved. Add the 50 ml of milk; skim the scum that rises, then strain the syrup through fine cloth or a coffee filter. Repeat the straining.  
+2. Return the clarified syrup to the pan with the 250 ml of milk. Cook over medium-low heat, stirring continuously and scraping the sides, until the mass pulls away from the pan and reaches 120–124°C. Expect 30–45 minutes.  
+3. Stop as soon as it gets there. Take it off the heat and stir in the ginger, cardamom, pepper, saffron milk, and optional camphor, then beat for a minute as it cools to bring up a fine grain.  
 4. When cool enough to handle, grease the hands lightly and form small balls.  
 5. Leave uncovered until firm, then store airtight.
 
 **Notes**
 
-* The phrase “equal quantity” may refer to equal measures of purified sugar and milk; the reconstruction follows that reading by approximate starting weight and volume.  
+* **The four stages, and why the last one is a warning.** *Mṛdu* (soft): fluid, drinkable. *Madhyama* (middle): *madhu-sannibhā*, like honey. *Khara* (hard): *kaṭhinā bhakṣyā*, firm enough to be a morsel you bite. And then *sādhike śarkarā bhavet* — cooked past that, it turns back into *śarkarā*, sugar grains. The chapter states the same terminal point for reduced milk at 1567: at a sixth it comes to a mass, and at an eighth it becomes *śarkarā*. So *khara-pākāvadhi*, "up to the limit of the hard cooking", is a stop instruction, and the last stage is what happens if you miss it.  
+* **Which is why the temperature matters.** 120–124°C gives a mass that sets firm and can still be rolled while warm. Below about 118°C it stays fudgy and will not be *kaṭhina*; much above 126°C it seizes in the pan before you can shape it. Continuous stirring is necessary here or the milk catches, but it also promotes crystallization, so the finished texture is a fine crystalline one — closer to a firm burfi than to a toffee. That is what *śarkarā*-adjacent graining looks like when it is under control.  
+* **The passage refines its sugar in two named grades.** It starts from *śarkarā*, clarifies it by throwing milk into the half-cooked syrup so that the coagulating protein carries the scum up, strains it repeatedly, and calls the product *sitā* — the technical term for refined white sugar. 1415a's cook is a *khaṇḍa-pāka-viśārada*, an expert in *khaṇḍa*-cooking, *khaṇḍa* being another grade in the same series. The translation before this one collapsed all of it to "sugar" and "purified sugar".  
+* **"Equal quantity" means equal to the *sitā*, not counting the clarifying milk.** *Kṣīraṃ saṃmiśrayet samam* (1415) governs the milk mixed into the *śodhitā sitā*; the milk thrown in at half-cooking (1412) is a separate, additional amount. The reconstruction above splits them.  
+* **The other product in the passage is plain moulded sugar.** 1414–15 has hard-stage *sitā* set in a *sampuṭa* — a closed, two-part vessel, so a mould — and *nānārūpāṇi*, various forms, made from it. Moulded sugar figures are still made in Karnataka as *sakkare acchu*. That step is not reconstructed here; it needs no milk and no spice.  
+* *Tīkṣṇa* is a named spice in this chapter rather than a generic pungent — it appears in three closed spice lists, and in a milk-and-sugar sweet black pepper is the plausible member of the candidates.  
+* *Tāmra-pātre*, a copper vessel, is worth honouring: for a long reduction of milk and sugar the even heat is the difference between a clean finish and a scorched one.  
+* A faster route, and a modern one: reduce the 250 ml of milk to about a third on its own before combining, which cuts the stirring time substantially.  
 * Only food-grade edible camphor is suitable. Ordinary camphor is toxic and must not be used.

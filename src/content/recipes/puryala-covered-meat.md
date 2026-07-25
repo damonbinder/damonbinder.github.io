@@ -43,3 +43,9 @@ The Mānasollāsa contains no poultry dishes, but it advised that birds can be p
 6. Heat the ghee in the emptied pot. Fry the onion, garlic, and asafoetida until fragrant.  
 7. Return the chicken and sauce, turn everything through the ghee, cover, and cook over low heat for a few minutes, then serve. 
 
+## Notes
+
+* **Where the licence for chicken comes from.** 3.13.1522–23: *pakṣiṇām api sarveṣāṃ* — of all birds, having removed the feathers, separated beak and feet, opened the belly and drawn out the entrails — *pūrvavat paripācayet, yathā sūkara-meṣāṇāṃ kriyāḥ proktā vipācane*, "cook them as before, just as the operations for pig and sheep have been stated." The chapter gives no bird recipe of its own; it rates fowl in its survey of meats (*śākunaṃ laghu*, "bird meat is light", 1419) and then hands birds over to the pig and sheep methods.
+* **The text asks for boneless pieces.** *Śuddhamāṃsasya khaṇḍakān* the size of large *āmalakas* is about 3 cm of trimmed meat, so whole drumsticks are an adaptation, not the source's cut.
+* The order of the first three steps is the source's: the mustard-and-ginger cooking liquor is decanted into a second vessel and cooked with the sour ingredients, and only then do the meat pieces go back into it.
+

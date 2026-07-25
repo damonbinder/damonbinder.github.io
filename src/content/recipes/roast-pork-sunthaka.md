@@ -26,7 +26,7 @@ The practical core is skewered fatty pork roasted until it begins to baste itsel
 ## Method
 
 1. Cut the pork into long strips, then across into squares about 4 cm.  
-2. *Sour variant:* simmer the pieces, covered, in 350 ml water with the tamarind and 1 tsp salt for 30–40 minutes, until nearly tender. Drain and pat dry.  
+2. *Sour variant:* put the pieces in a pot with 150 ml water, the tamarind, and 1 tsp salt. Cover tightly and cook over low heat for 30–40 minutes, until nearly tender — the pieces should sweat in a shallow layer of liquid rather than sit submerged. Drain and pat dry.  
 3. Thread the pieces onto metal skewers, leaving small gaps between them.  
 4. Grill over medium-hot charcoal or under a hot broiler, turning frequently, until browned and the fat drips freely — the dripping is the text's own doneness cue. About 15–25 minutes, less for pre-simmered pieces.  
 5. Cook until tender and at least 71°C in the centre.  
@@ -36,6 +36,7 @@ The practical core is skewered fatty pork roasted until it begins to baste itsel
 **Notes**
 
 * The sour treatment is a cooking step, not a marinade. *Amla-parisvinnān* (1434) is from *pari-svid*, the *svedana* family of moist-heat techniques, and the same root at 1436 is already rendered "cooked *śuṇṭhakas*" in the *Cakkalikās*. The text then says *pūrvavat*, "as before" — the sour-cooked pieces go back onto the skewers rather than replacing the roast.  
+* *Svedana* is sweating, not boiling. The chapter's other sour-cooked dishes — the *mūṣaka* roast at 1543–47, the *nandyāvarta* turtle at 1537–39, and the crabs at 1541 — all use forms of *pac*, "cook, boil", with the sour as the medium. This recipe does not: *pari-svid* is the gentler technique, so a tightly covered pot with a shallow layer of liquid is closer than a submerged simmer.  
 * The text adds no fat. 1433 roasts "up to the trickling of drops of fat", meaning the pork's own; where the chapter wants basting it says so, as at 1464 for the bhaditraka.  
 * Skin comes off for the skewers, following the published *Cakkalikās*, which specify skinless cooked belly. Skin-on 4 cm cubes on a direct grill give leathery skin and unrendered fat. The 1435 ember variant is the one place the text explicitly wants the skin left on.  
 * The carcass-cleaning instructions are omitted from the modern method; use commercially butchered meat.  

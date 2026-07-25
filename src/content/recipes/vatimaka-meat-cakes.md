@@ -6,7 +6,9 @@ originalLang: Sanskrit
 original: >-
   आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वटिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥
 translation: >-
-  Grind raw meat very fine and mix it with saffron and other seasonings. Shape it into small cakes. Fry them in hot oil, cook them in a pan, or heat them directly at the fire. This preparation is called *vaṭimaka* and has three forms.
+  Raw meat, very finely ground and mixed with saffron and the rest: having made it into *vaṭakas*, one should cook them through in hot oil. Or one who knows the art may put them in a pan, or heat them at the fire. That is called *vaṭimaka* by name, and it is said to have three forms.
+related:
+  - mamsa-vataka-bhusika-and-kosali
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
@@ -14,7 +16,7 @@ order: 1032
 status: draft
 ---
 
-Simple saffron-seasoned meat patties cooked by frying, griddling, or grilling.
+This is the plain sibling of the *māṃsa-vaṭaka*: the same wet-ground raw meat shaped into *vaṭakas*, but with no crumb centre, and cooked any of three ways — in hot oil, in a pan, or straight at the fire.
 
 ## Ingredients
 
@@ -28,11 +30,13 @@ Simple saffron-seasoned meat patties cooked by frying, griddling, or grilling.
 
 ## Method
 
-1. Mix the meat with the saffron water, salt, pepper, cumin, and asafoetida until sticky.  
+1. Grind or process the meat very fine — *supiṣṭaṃ* — then work in the saffron water, salt, pepper, cumin, and asafoetida until sticky.  
 2. Form 12 small, flat cakes.  
-3. Cook in a lightly greased frying pan for 3–5 minutes per side; alternatively deep-fry or grill over charcoal.  
-4. Cook until browned and fully done in the centre.
+3. The text's first method is hot oil: shallow- or deep-fry at 175°C for 4–6 minutes, turning once, until browned and 71°C in the centre.  
+4. Or cook them in a lightly greased pan for 3–5 minutes a side, or grill them over charcoal that has burned down to embers. Either way, cook until browned and fully done in the centre.
 
 **Notes**
 
-* “Saffron and other seasonings” leaves the rest of the spice mixture open; cumin, pepper, and asafoetida follow nearby recipes.
+* “Saffron and other seasonings” leaves the rest of the spice mixture open; cumin, pepper, and asafoetida follow nearby recipes. No salt is named either, and the *-ādi* is what licenses it.
+* ***Kesara* here is saffron, even though it means citron pulp on either side of this recipe.** 1476 and 1505 have *mātuliṅgasya kesaraiḥ* and 1494 *bījapūrasya kesaram* — in each case a citrus in the genitive, and the *kesara* is the fruit's pulp. 1486 has the word bare, heading an *-ādi* list of seasonings, which is how 1416 uses it too: *nāgaraṃ tīkṣṇam elākarpūrakesaraiḥ*, in a milk-and-sugar sweet where it sits beside cardamom and camphor and can only be saffron.
+* **The three cooking methods are a formula the chapter reuses.** *Āṇake … tāpayed vā vibhāvasau* recurs at 1521, 1532, and 1539, and at 1532 and 1539 the fire is specified as smokeless — *vahnau dhūmavarjite*, *nidhūme hutāśane* — so the third method is coals burned down past the flame, not an open fire. *Āṇaka* itself is not securely identified; see the note on it in the *Māṃsa-Vaṭaka* recipe.

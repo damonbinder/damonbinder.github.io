@@ -6,7 +6,11 @@ originalLang: Sanskrit
 original: >-
   यत्र यत्र द्रवद्रव्ये तन्नाम्ना वटकास्तु ते । आरनालेन सान्द्रेण दध्ना सुमथितेन च ॥ ५ ॥ सैन्धवार्द्रकधान्याकजीरकं च विमिश्रयेत् । मरिचानि द्विधा कृत्वा क्षिपेत्तत्र तु पाकवित् ॥ ६ ॥ दर्व्या विघट्टयन् सर्वं पचेद्यावद्घनीभवेत् । उत्तार्य वटकान् क्षिप्त्वा विकिरेन्मारिचं रजः ॥ ७ ॥
 translation: >-
-  Mix thick sour *ārānāla* with well-churned curd, rock salt, fresh ginger, coriander, cumin, and split peppercorns. Stir and cook until thick. Remove from the fire, add the *vaṭakas*, scatter pepper powder over them, and perfume with asafoetida.
+  In whatever liquid substance they are put, the *vaṭakas* take their name from it. Into thick *āranāla* and well-churned curd, mix rock salt, fresh ginger, coriander, and cumin; and the cook who knows his craft should split the peppercorns in two and throw them in there. Stirring the whole of it with a ladle, he should cook it until it becomes thick. Then, having taken it off the fire and thrown in the *vaṭakas*, he should scatter pepper powder over them. [1408 continues: perfume them well with asafoetida; those *vaṭakas* are delightful.]
+related:
+  - gharika-black-gram-rings
+  - iderika-fermented-black-gram-cakes
+  - vatakas-in-sweet-curd-or-kanjika
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads
@@ -14,30 +18,35 @@ order: 1017
 status: draft
 ---
 
-A savoury, heated curd sauce for fried urad cakes. The reconstruction uses rice vinegar diluted with water for the uncertain sour grain liquid ārānāla.
+A savory, heated curd sauce for fried urad cakes. *Āranāla* is the sour fermented rice liquid the previous recipe calls *kāñjika*, and the text asks for it *sāndra*, thick. That thickness is starch, and the starch is what lets a curd sauce be reduced to *ghanībhavet* — properly thick — without graining.
 
 ## Ingredients
 
 * 8 fried urad vaṭakas  
 * 300 g plain yoghurt  
-* 150 ml water  
-* 30 ml rice vinegar  
+* 250 ml thick rice kāñjika, unstrained (see notes)  
 * 15 g fresh ginger, grated  
-* 2 Tb chopped coriander leaves  
+* 2 tsp coriander seed, coarsely ground  
 * 1 tsp ground cumin  
-* ½ tsp coarsely crushed black pepper, plus more to finish  
+* ½ tsp black peppercorns, cracked in half, plus ground pepper to finish  
 * 1 tsp rock salt  
-* Pinch of asafoetida
+* Pinch of asafoetida  
+* 1 tsp ghee
 
 ## Method
 
-1. Whisk the yoghurt, water, and rice vinegar until smooth.  
-2. Add the ginger, coriander, cumin, pepper, salt, and asafoetida.  
-3. Heat very gently, stirring constantly, until steaming and slightly thickened; do not let it boil hard or split.  
+1. Whisk the yoghurt on its own until completely smooth, then whisk in the kāñjika.  
+2. Add the ginger, coriander, cumin, cracked pepper, and salt.  
+3. Cook over medium-low heat, stirring the whole time with a ladle or wooden spoon, until it has visibly thickened and coats the spoon — 12–18 minutes. Do not let it come to a rolling boil.  
 4. Remove from the heat, add the vaṭakas, and leave for 20–30 minutes to soften.  
-5. Finish with additional pepper.
+5. Warm the ghee in a small pan, add the asafoetida, let it sizzle for a few seconds, and spoon it over. Scatter ground pepper to finish.
 
 **Notes**
 
-* Ārānāla is a sour fermented grain liquid; diluted rice vinegar gives acidity but not its full fermented flavour.  
-* For a closer version, replace the water and vinegar with 180 ml strained rice kāñjika.
+* ***Āranāla*** is not obscure: it is the standard term for sour fermented rice gruel, glossed in the lexica as the water in which boiled rice has been left to ferment and treated as an equivalent of *kāñjika* — which is exactly what the previous recipe (1404) puts *vaṭakas* into. Note the spelling: the metre requires *ā-ra-nā-la*, four syllables.  
+* **Vinegar is the wrong substitute, and not only on flavor.** *Sāndreṇa* — thick — is doing structural work. A thick, unstrained rice kāñjika carries gelatinized rice starch, on the order of one to two per cent of the finished sauce, and that is enough to keep casein from aggregating as the sauce reduces. It is the same trick as the besan in kadhi. Swap in vinegar and water and you have removed the stabilizer while keeping the acid, which is why the sauce then has to be undercooked to survive.  
+* **This sauce sits in the worst possible pH band, so the starch matters.** Yoghurt plus a mildly sour grain liquid lands around pH 4.0–4.3, right at casein's isoelectric point, where aggregation is fastest; a teaspoon of salt screens the remaining charge and makes it worse; and the text then asks for a reduction. There is no fat and no egg here. Continuous stirring (*darvyā vighaṭṭayan*) and the starch are the whole of the defense.  
+* **Making the kāñjika thick.** Boil rice in excess water, keep the starchy water rather than draining it away, and leave it at room temperature 24–48 hours until pleasantly sour, mashing a little of the rice into it. Do not strain it. If you only have thin or strained kāñjika, whisk 2 tsp rice flour into it cold before it meets the yoghurt.  
+* *Marīcāni dvidhā kṛtvā* — peppercorns "made twofold" — is cracked, not ground. The ground pepper is a second, separate application at the end (*mārīcaṃ rajaḥ*).  
+* *Dhānyāka* is most likely coriander seed: it sits unmarked in a compound with rock salt and cumin, where *ārdraka* alongside it is explicitly marked "fresh". If it is the leaf, 2 Tb chopped fresh coriander is the substitution.  
+* The asafoetida comes from 1408, where it is *dhūpayet* — fumigated with smoke, not stirred in raw and not bloomed in fat. *Dhūpa* is literal smoke everywhere in this chapter, all 26 occurrences, and 1448 settles it with *dhūpena jīrakasyāpi*, "with the smoke *of* cumin". Blooming the asafoetida in hot ghee is a substitution rather than a translation of *dhūpayet* — though a period-appropriate one, since the chapter does have a genuine hot-ghee asafoetida bloom at 1459–60, in wholly separate vocabulary.

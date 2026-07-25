@@ -1,12 +1,12 @@
 ---
 title: Sweet Pulse *Pūrikā*
-source: Mānasollāsa 3.13.1388–1390
+source: Mānasollāsa 3.13.1388cd–1390
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  गोलकेन समावेष्ट्य तैलेनोदुम्बरान् पचेत् । उत्क्वाथ्य विदलान् पिष्ट्वा चणकप्रभृतीन् शुभान् ॥ ८८ ॥ हिङ्गुसैन्धवसंयुक्तान् शर्करापरिमिश्रितान् । मरिचैलादिचूर्णेन युक्तान् गोलकवेष्टितान् ॥ ८९ ॥ किंचित्प्रसारिते तैले पूरिका विपचेच्छुभाः । एवं ताप्यां पचेदन्याः पूरिकाश्च विचक्षणः ॥ १३९० ॥
+  उत्क्वाथ्य विदलान् पिष्ट्वा चणकप्रभृतीन् शुभान् ॥ ८८ ॥ हिङ्गुसैन्धवसंयुक्तान् शर्करापरिमिश्रितान् । मरिचैलाविचूर्णेन युक्तान्गोलकवेष्टितान् ॥ ८९ ॥ किंचित्प्रसारिते तैले पूरिका विपचेच्छुभाः । एवं ताप्यां पचेदन्याः पूरिकाश्च विचक्षणः ॥ १३९० ॥
 translation: >-
-  Boil and grind split chickpeas or similar pulses. Mix the paste with asafoetida, rock salt, sugar, black pepper, cardamom, and other aromatics. Enclose it in a dough-ball, flatten it slightly, and fry it in oil. Other pūrikās may be cooked on a heated plate.
+  Having boiled and ground fine excellent split pulses, chickpeas and the rest, joined with asafoetida and rock-salt, mixed with sugar, joined with powder of pepper, cardamom, and the like, and wrapped in a ball of dough: in oil spread a little he should cook fine *pūrikā*s. In this same way the discerning man may cook other *pūrikā*s on the griddle.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads

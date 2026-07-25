@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1571–1572
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  मन्थानेन मथित्वा तन्नवनीतमथो हरेत् । निर्जलं मथितं प्रोक्तमुदश्वित् स्याज्जलार्धकम् ॥ ७१ ॥ पादाम्बु तक्रमुद्दिष्टं धूपितं हिङ्गुजीरकैः । आर्द्रकेण समायुक्तमेलासैन्धवचूर्णितम् ॥ ७२ ॥
+  मन्थानेन मथित्वा तन्नवनीतमथो हरेत् । निर्जलं मथितं प्रोक्तमुदस्वित्या(श्विच्च)जलार्धकम् ॥ ७१ ॥ पादाम्बु तक्रमुद्दिष्टं धूपितं हिङ्गुजीरकैः । आर्द्रकेण समायुक्तमेलासैन्धवचूर्णितम् ॥ ७२ ॥
 translation: >-
-  Churn curd and remove the butter. The undiluted churned product is called mathita; with half its volume of water it is udaśvit; with one-quarter water it is takra. Takra is perfumed with asafoetida and cumin and seasoned with fresh ginger, cardamom, and powdered rock salt.
+  Having churned it with a churning-stick, he should then take off the butter. The waterless churned product is declared to be *mathita*; *udaśvit* has half of it water. That with a quarter part water is designated *takra*. It is fumigated with the smoke of asafoetida and cumin, joined with fresh ginger, and powdered with cardamom and rock salt.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments

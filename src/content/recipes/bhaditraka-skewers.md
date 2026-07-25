@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1462–1465
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  पृष्ठवंशसमुद्भूतं शुद्धं मांसं प्रगृह्य च । घनसारप्रमाणानि कृत्वा खण्डानि मूषकैः ॥ ६२ ॥ विध्वा तु बहुशस्तानि बहुरन्ध्राणि कारयेत् । हिङ्ग्वार्द्रकरसैर्युक्तं सैन्धवेन च पेषयेत् ॥ ६३ ॥ शूलपोतानि कृत्वा तान्यङ्गारेषु प्रतापयेत् । घृतेन सिञ्चेत्पाकज्ञो वारं वारं विवर्तयेत् ॥ ६४ ॥ सिद्धेषु मरिचं चूर्णं विकिरेत्सैन्धवान्वितम् । नाम्ना भडित्रकं रुच्यं लघु पथ्यं मनोहरम् ॥ ६५ ॥
+  पृष्ठवंशसमुद्भूतं शुद्धं मांसं प्रगृह्यते । घनसारप्रमाणानि कृत्वा खण्डानि मूलकैः ॥ ६२ ॥ विध्वा तु बहुशस्तानि बहुरन्ध्राणि कारयेत् । हिङ्ग्वार्द्रकरसंयुक्तं सैन्धवेन च पेषयेत् ॥ ६३ ॥ शूलप्रोतानि कृत्वा तान्यङ्गारेषु प्रतापयेत् । घृतेन सिञ्चेत्पाकज्ञो वारंवारं विवर्तयेत् ॥ ६४ ॥ सिद्धेषु मारिचं चूर्णं विकिरेत्सैन्धवान्वितम् । नाम्ना भडित्रकं रुच्यं लघु पथ्यं मनोहरम् ॥ ६५ ॥
 translation: >-
-  Take clean meat from beside the spine, cut it into pieces, and pierce the pieces many times. Rub them with asafoetida-water, ginger juice, and rock salt. Thread them on skewers and roast over embers, turning repeatedly and basting with ghee. When cooked, scatter ground black pepper and rock salt over them. This preparation is called bhaditraka.
+  Clean meat that comes from beside the backbone is taken. Having made pieces of the measure of camphor with *mūlakas*, he should pierce them many times over and make them full of holes. And he should pound the meat, combined with the juices of asafoetida and fresh ginger, together with rock salt. Having threaded them on skewers, he should roast them over the embers; one who knows cooking should baste them with ghee and turn them over again and again. When they are done, he should scatter pepper powder mixed with rock salt over them. By name this is *bhaḍitraka*: appetizing, light, wholesome, delightful.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

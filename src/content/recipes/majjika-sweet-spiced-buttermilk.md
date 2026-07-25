@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मथितं शर्करायुक्तमेलाचूर्णविमिश्रितम् । कर्पूरधूपितं नाम्ना मज्जिकेत्यभिधीयते ॥ ७३ ॥
 translation: >-
-  Churned curd or buttermilk mixed with sugar and cardamom powder and perfumed with camphor smoke is called majjikā.
+  *Mathita* — the undiluted churned curd defined in the previous verse — joined with sugar, mixed with cardamom powder, and fumigated with camphor smoke, is called by the name *majjikā*.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments

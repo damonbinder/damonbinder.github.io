@@ -214,7 +214,7 @@ export const manasollasaText: ManasollasaEntry[] = [
   {
     ref: "Mānasollāsa 3.13.1486–1487",
     latin: "आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वट्टिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥",
-    english: "Raw meat, very finely ground and mixed with *kesara* and the rest [the citron pulp of 1476–77 and the seasonings that go with it], he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.",
+    english: "Raw meat, very finely ground and mixed with saffron and the rest [*kesara* means the citron's pulp at 1476, 1494, and 1504, but each of those names the citron in the genitive; here it stands bare at the head of an *-ādi* list of seasonings, as at 1416, where it sits beside cardamom and camphor in a milk sweet and can only be saffron], he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.",
   },
   {
     ref: "Mānasollāsa 3.13.1488–1491",

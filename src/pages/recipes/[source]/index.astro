@@ -37,7 +37,11 @@ const escAttr = (s: string) =>
 // Scanned rather than matched by regex: notes nest to arbitrary depth, since a
 // note may gloss a bracketed word of its own. Unbalanced brackets are left
 // alone rather than silently swallowing the rest of the paragraph.
-function noteify(s: string) {
+//
+// Markers are numbered per block so a sidenote can be paired with its point in
+// the text by eye. `n` is a one-element array so the count carries through the
+// recursive call for nested notes.
+function noteify(s: string, n: number[] = [0]) {
   let out = '';
   let i = 0;
   while (i < s.length) {
@@ -49,9 +53,11 @@ function noteify(s: string) {
       else if (s[j] === ']' && --depth === 0) break;
     }
     if (j >= s.length) { out += s[i++]; continue; } // unbalanced: leave as-is
+    const k = ++n[0];
     out +=
-      '<span class="ednote" tabindex="0"><sup>◦</sup>' +
-      `<span class="ednote-body">${noteify(s.slice(i + 1, j))}</span></span>`;
+      `<span class="ednote" tabindex="0"><sup class="ednote-mark">${k}</sup>` +
+      `<span class="ednote-body"><span class="ednote-num">${k}</span>` +
+      `${noteify(s.slice(i + 1, j), n)}</span></span>`;
     i = j + 1;
   }
   return out;
@@ -179,6 +185,7 @@ const textEntries = (fullText ?? []).map((entry) => {
       </div>
     </details>
   )}
+
 </Base>
 
 
@@ -219,6 +226,13 @@ const textEntries = (fullText ?? []).map((entry) => {
   .full-text summary:hover { color: var(--accent); }
   .full-text[open] summary { border-bottom: 1px solid var(--rule); margin-bottom: 1.4rem; }
 
+  /* The full text needs more room than the 58rem reading measure: three columns
+     plus a gutter for the sidenotes. Break out of the wrap symmetrically. */
+  .full-text[open] .text-rows {
+    --gutter: 14.5rem;
+    width: min(94vw, 84rem);
+    margin-left: calc(50% - min(47vw, 42rem));
+  }
   .text-rows { display: flex; flex-direction: column; gap: 1.6rem; }
   .text-row {
     display: grid;
@@ -226,6 +240,11 @@ const textEntries = (fullText ?? []).map((entry) => {
     gap: 1.5rem;
     align-items: baseline;
   }
+  /* The gutter is right padding on the translation, not a grid column: a float
+     is positioned against its own containing block, so keeping the reservation
+     and the pull-out inside the same box is the only way the arithmetic stays
+     local and predictable. */
+  .text-row .english { padding-right: var(--gutter); }
   .text-row .ref {
     font-family: var(--font-sans);
     font-size: 0.78rem;
@@ -253,44 +272,66 @@ const textEntries = (fullText ?? []).map((entry) => {
   /* Editorial notes: a marker that reveals its note on hover or focus.
      These spans are injected with set:html, so they never carry Astro's
      scoping attribute — the selectors have to be :global to reach them. */
-  .text-row :global(.ednote) {
-    cursor: help;
-    color: var(--accent);
-  }
-  .text-row :global(.ednote > sup) { font-size: 0.7em; line-height: 0; }
-  /* The bubble is positioned against the paragraph, not the marker, so it can
-     never run off the edge of a narrow screen — a marker-anchored tooltip
-     would, and CSS has no way to flip it back. It opens just under the
-     paragraph, spanning its width. */
-  .text-row .english { position: relative; }
-  .text-row :global(.ednote-body) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 0.35rem);
-    z-index: 5;
-    display: none;
-    padding: 0.5rem 0.7rem;
-    background: var(--bg);
-    color: var(--fg);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+  .text-row :global(.ednote) { color: var(--accent); }
+  .text-row :global(.ednote-mark) {
     font-family: var(--font-sans);
-    font-size: 0.78rem;
-    line-height: 1.45;
-    text-indent: 0;
-    white-space: normal;
+    font-size: 0.62rem;
+    font-weight: 600;
+    line-height: 0;
+    padding: 0 0.1em;
+    vertical-align: super;
   }
-  .text-row :global(.ednote:hover > .ednote-body),
-  .text-row :global(.ednote:focus > .ednote-body),
-  .text-row :global(.ednote:focus-within > .ednote-body) { display: block; }
-  .text-row :global(.ednote:focus) { outline: 1px dotted var(--accent); outline-offset: 2px; }
-  /* A nested note lives inside an open bubble, which is itself positioned —
-     anchor the inner one to it rather than to the paragraph. */
-  .text-row :global(.ednote-body) { position: absolute; }
-  .text-row :global(.ednote-body .ednote-body) { top: calc(100% + 0.3rem); }
+  .text-row :global(.ednote-num) {
+    font-weight: 600;
+    color: var(--accent);
+    margin-right: 0.35em;
+  }
 
+  /* Sidenotes, floated out into the reserved fourth column. A float sits on the
+     line where it occurs in the source — which is the alignment wanted, and is
+     not obtainable any other way without measuring after layout. `clear: right`
+     then stacks notes that would otherwise collide. The negative right margin
+     is the gutter width plus the grid gap. */
+  .text-row :global(.ednote-body) {
+    float: right;
+    clear: right;
+    width: calc(var(--gutter) - 1.5rem);
+    margin: 0.1rem 0 0.55rem 1.5rem;
+    margin-right: calc(-1 * var(--gutter));
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    text-indent: 0;
+  }
+  .text-row :global(.ednote-body em) { color: var(--fg); }
+  /* A note nested inside another must not float again — it would take a second
+     helping of the negative margin and shoot off the page. Run it inline. */
+  .text-row :global(.ednote-body .ednote-body) {
+    float: none;
+    display: inline;
+    width: auto;
+    margin: 0 0 0 0.3em;
+  }
+  .text-row :global(.ednote:hover .ednote-mark),
+  .text-row :global(.ednote:focus .ednote-mark) {
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 2px;
+  }
+  .text-row :global(.ednote:focus) { outline: none; }
+
+  /* No room for a gutter: notes run on under the text instead of being clipped. */
+  @media (max-width: 899px) {
+    .full-text[open] .text-rows { width: auto; margin-left: 0; }
+    .text-row .english { padding-right: 0; }
+    .text-row :global(.ednote-body) {
+      float: none;
+      display: block;
+      width: auto;
+      margin: 0.3rem 0 0.5rem 1.25rem;
+    }
+  }
   @media (max-width: 700px) {
     .text-row { grid-template-columns: 1fr; gap: 0.4rem; }
     .text-row .ref { order: -1; }

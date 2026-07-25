@@ -29,7 +29,6 @@ The Mānasollāsa contains no poultry dishes, but it advised that birds can be p
 * 1 tsp salt  
 * Small bunch of coriander leaves
 * 30 g ghee  
-* 1 small onion, sliced  
 * 3 garlic cloves, sliced  
 * Small pinch of asafoetida
 
@@ -40,6 +39,6 @@ The Mānasollāsa contains no poultry dishes, but it advised that birds can be p
 3. Return the chicken and strained liquid to the pot. Add the tamarind, fenugreek, salt, and coriander.  
 4. Uncover and simmer for another 15–20 minutes, turning the drumsticks occasionally, until they are cooked through and the liquid has reduced to a thick coating. Add a little water if it threatens to scorch before the chicken is done.  
 5. Remove the drumsticks and sauce from the pot.  
-6. Heat the ghee in the emptied pot. Fry the onion, garlic, and asafoetida until fragrant.  
+6. Heat the ghee in the emptied pot. Fry the garlic and asafoetida until fragrant.  
 7. Return the chicken and sauce, turn everything through the ghee, cover, and cook over low heat for a few minutes, then serve. 
 

@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   दुग्धमुत्क्वाथ्य तन्मध्ये तक्रमम्लं विनिक्षिपेत् ॥ १४०८ ॥ हित्वा तोयं घनीभूतं वस्त्रबद्धं पृथक्कृतम् । शालितण्डुलपिष्टेन मिश्रितं परिपेषितम् ॥ १४०९ ॥ नानाकारैः सुघटितं सर्पिषा परिपाचितम् । पक्वशर्करया सिक्तमेलाचूर्णेन वासितम् ॥ १४१० ॥ क्षीरप्रकारनामेदं भक्ष्यं मृष्टं मनोहरम् ।
 translation: >-
-  Having boiled up milk, one should throw sour *takra* [buttermilk] into the middle of it. The water abandoned, the thickened mass is tied up in cloth and set apart; mixed with the flour of *śāli* rice and thoroughly ground; well formed into various shapes; thoroughly cooked in ghee; drenched with cooked sugar; and scented with cardamom powder. This *bhakṣya*, named *kṣīraprakāra*, is delicious and delightful. [The milk is broken with sour buttermilk, not with a sharp acid. *Śāli* is the fine white rice whose eight varieties open the chapter at 1345–48. "Cooked sugar" is defined immediately below at 1413–14.]
+  Having boiled up milk, one should throw sour *takra* into the middle of it. The water abandoned, the thickened mass is tied up in cloth and set apart; mixed with the flour of *śāli* rice and thoroughly ground; well formed into various shapes; thoroughly cooked in ghee; drenched with cooked sugar; and scented with cardamom powder. This *bhakṣya*, named *kṣīraprakāra*, is delicious and delightful.
 related:
   - spiced-sour-vatakas
   - varsolaka-spiced-milk-sugar-balls

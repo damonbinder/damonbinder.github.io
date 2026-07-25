@@ -10,11 +10,11 @@ translation: |-
 
   For aroma he should put in there coriander, asafoetida, and cumin; and turmeric for colour; and likewise very finely cut fresh ginger. For relish he should put in dried ginger, black pepper, and rock salt. He should strain it through a white cloth, and mix in a little oil.
 
-  Having put it into an earthenware pot, stirring it first with a ladle, the one skilled in cooking should cook it over a gentle fire into a *pralehaka* [placing the dish in the *lehya*, “lickable”, class of the fivefold scheme set out at 1344–45; manuscript A reads *prahelakaṃ*].
+  Having put it into an earthenware pot, stirring it first with a ladle, the one skilled in cooking should cook it over a gentle fire into a *pralehaka*.
 
   And having thrown the *śuṇṭhaka*s in there, he should make them tender by the cooking. When they are steeped in all the juices and done, the wise one should take them off the fire.
 
-  The expert should perfume it with asafoetida, or again with *nakhadhūpa* [onycha, the operculum of a marine snail], or with the smoke of cumin, or with *śaśidhūpa* [literally “moon-smoke”, probably camphor].
+  The expert should perfume it with asafoetida, or again with *nakhadhūpa*, or with the smoke of cumin, or with *śaśidhūpa*.
 related:
   - roast-pork-sunthaka
   - finely-diced-meat-with-green-chickpeas

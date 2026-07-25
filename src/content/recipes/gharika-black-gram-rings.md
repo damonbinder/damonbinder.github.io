@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   तस्यैव माषपिष्टस्य गोलकान्विस्तृतान्घनान् ॥ १४०१ ॥ पञ्चभिः सप्तभिर्वापि छिद्रैश्च परिशोभितान् । तप्ततैले पचेद्यावल्लौहित्यं तेषु जायते ॥ १४०२ ॥ घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः ।
 translation: >-
-  Of that very same black-gram paste, balls — spread out broad and thick, and adorned with five holes, or else with seven: one should fry them in hot oil until a redness arises in them. Known by the name *ghārikā*, they are the most delightful among *bhakṣyas*. [*Bhakṣya* is the second of the five classes of food set out at 1344–45. The batter is the soured *iḍerikā* batter of 1399, and the colour contrast is deliberate: steamed, the same paste comes out `धवलाः`, white; fried, `लौहित्यं`, red.]
+  Of that very same black-gram paste, balls — spread out broad and thick, and adorned with five holes, or else with seven: one should fry them in hot oil until a redness arises in them. Known by the name *ghārikā*, they are the most delightful among *bhakṣyas*.
 related:
   - iderika-fermented-black-gram-cakes
   - vatakas-in-sweet-curd-or-kanjika

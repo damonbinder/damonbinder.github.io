@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मत्स्यांश्च खण्डशः कृत्वा चतुरङ्गुलसम्मितान् । लवणेन समायुक्तान् कुम्भेषु परिपूरयेत् ॥ ३३ ॥ खारखण्डा इति ख्याताश्चिरकालं वसन्ति ते । भोजनावसरे सूदो वह्निना परिभर्जयेत् ॥ ३४ ॥
 translation: >-
-  And having cut fish into pieces measuring four fingerbreadths, and having mixed them with salt, he should pack them into jars. They are known as *khāra-khaṇḍas*, “salt-pieces”, and they keep for a long time. At mealtime the cook should roast them thoroughly over the fire. [The print reads *khāra-khaṇḍā*, p. 130; C and F read *khī-*.]
+  And having cut fish into pieces measuring four fingerbreadths, and having mixed them with salt, he should pack them into jars. They are known as *khāra-khaṇḍas*, “salt-pieces”, and they keep for a long time. At mealtime the cook should roast them thoroughly over the fire.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals

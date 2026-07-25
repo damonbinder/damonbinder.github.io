@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मत्स्याण्डकोशावादाय वह्निना परिभर्जयेत् । दृढीभूते ततः पश्चात् खण्डशः परिकल्पयेत् ॥ ३५ ॥ विपच्य तप्ततैले तान्येलामरिचकादिभिः । विकीर्य सैन्धवेनापि हिङ्गुना परिधूपयेत् ॥ ३६ ॥
 translation: >-
-  Having taken the two egg-sacs of the fish, he should roast them thoroughly over the fire. Then, once they have grown firm, he should afterwards cut them into pieces. Having cooked those pieces in hot oil, he should strew them with cardamom, pepper, and the like, and with rock salt as well, and should perfume them with asafoetida. [At 1535c the edition prints *dṛḍhībhūte* with the editor’s suggested dual *dṛḍhībhūtau*, agreeing with the two sacs, in parentheses, p. 130.]
+  Having taken the two egg-sacs of the fish, he should roast them thoroughly over the fire. Then, once they have grown firm, he should afterwards cut them into pieces. Having cooked those pieces in hot oil, he should strew them with cardamom, pepper, and the like, and with rock salt as well, and should perfume them with asafoetida.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals

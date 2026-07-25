@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   हरिमन्थस्य विदलं हिङ्गुजीरकमिश्रितम् । लवणेन च संयुक्तमार्द्रकेण समन्वितम् ॥ १३९१ ॥ वेष्टयित्वा गोलकेन वेष्टिका खर्परे पचेत् । विदलं चणकस्यैवं पूर्वसम्भारसंस्कृतम् ॥ १३९२ ॥ ताप्यां तैलविलिप्तायां धोसकान्विपचेद्बुधः । माषस्य राजमाषस्य वट्टाणस्य च धोसकान् ॥ १३९३ ॥ अनेनैव प्रकारेण विपचेत्पाकतत्त्ववित् ।
 translation: >-
-  Split chickpea, mixed with asafoetida and cumin, joined with salt and accompanied by fresh ginger: having wrapped it up with a dough-ball, one should cook the *veṣṭikā* on an earthenware pan. Split chickpea, prepared in this same way with the seasonings named before — on a griddle smeared with oil the wise man should cook *dhosakas*. *Dhosakas* of black gram, of cowpea, and of pea the knower of the essence of cooking should cook by this very same method. [The dish is *dhosaka*: the edition prints `धोसकान्` in both halves of 1393 with no variant recorded — the Sanskritized form of the word behind Kannada *dose* and Tamil *tōcai*. At 1393a the manuscripts have `तैले` and the editor corrects to `तैल-`. Note that only the *veṣṭikā* is wrapped in dough, and only the *dhosaka* gets an oiled griddle.]
+  Split chickpea, mixed with asafoetida and cumin, joined with salt and accompanied by fresh ginger: having wrapped it up with a dough-ball, one should cook the *veṣṭikā* on an earthenware pan. Split chickpea, prepared in this same way with the seasonings named before — on a griddle smeared with oil the wise man should cook *dhosakas*. *Dhosakas* of black gram, of cowpea, and of pea the knower of the essence of cooking should cook by this very same method.
 related:
   - sweet-pulse-purika
   - katakarna-pulse-fritters

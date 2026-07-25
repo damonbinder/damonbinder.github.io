@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वट्टिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥
 translation: >-
-  Raw meat, very finely ground and mixed with saffron and the rest [*kesara* means the citron's pulp at 1476, 1494, and 1504, but each of those names the citron in the genitive; here it stands bare at the head of an *-ādi* list of seasonings, as at 1416, where it sits beside cardamom and camphor in a milk sweet and can only be saffron], he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.
+  Raw meat, very finely ground and mixed with saffron and the rest, he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.
 related:
   - mamsa-vataka-bhusika-and-kosali
 tradition: Indian

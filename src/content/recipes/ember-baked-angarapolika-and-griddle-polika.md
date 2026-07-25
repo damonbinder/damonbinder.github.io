@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   चतस्रश्च चतस्रश्च घटिता मण्डका वराः । गोलान्प्रसारितान्पाणावङ्गारेषु विनिक्षिपेत् ॥ ८१ ॥ अङ्गारपोलिकाः शस्ताः किंचित्कृष्णत्वमागताः । गोलकान्पिष्टकालिप्तान् पेषण्या तान्प्रसारयेत् ॥ ८२ ॥ सुतप्ततापनिक्षिप्तानीषत्पक्वान्विवर्तयेत् । कर्परेऽपि पचेदेवं पोलिकानामयं क्रमः ॥ ८३ ॥
 translation: >-
-  *Maṇḍaka*s fitted together four and four are the best. [This half-verse closes the preceding *maṇḍaka* passage.] Balls spread out on the palm he should throw among the embers. *Aṅgārapolikā*s are at their best when they have taken on a little blackness. Balls smeared with flour he should spread out with a grinding-stone; thrown onto a thoroughly heated griddle, he should turn them over when they are a little cooked. On an earthenware pan too he may cook them in this same way. This is the procedure for *polikā*s.
+  Balls spread out on the palm he should throw among the embers. *Aṅgārapolikā*s are at their best when they have taken on a little blackness. Balls smeared with flour he should spread out with a grinding-stone; thrown onto a thoroughly heated griddle, he should turn them over when they are a little cooked. On an earthenware pan too he may cook them in this same way. This is the procedure for *polikā*s.
 related:
   - mandaka-flatbreads
 tradition: Indian

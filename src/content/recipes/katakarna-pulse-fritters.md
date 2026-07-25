@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   वट्टाणकस्य विदलं विदलं चणकस्य च ॥ १३९४ ॥ चूर्णितं वारिणा सार्धं सर्पिषा परिभावितम् । सैन्धवेन च संयुक्तं कण्डुना परिघट्टितम् ॥ १३९५ ॥ निष्पावचूर्णसंयुक्तं पेषण्यां च प्रसारितम् । कटाहे तैलसंपूर्णे कटकर्णान्प्रपाचयेत् ॥ १३९६ ॥ यावद्बुद्बुदसंकाशा भवन्ति कनकत्विषः ।
 translation: >-
-  Split pea and split chickpea: reduced to powder, then slaked with water, thoroughly permeated with ghee, joined with rock salt, worked about with a *kaṇḍu*, joined with lablab flour, and spread out on the grinding stone — in a cauldron brimming with oil one should fry the *kaṭakarṇas* right through, until they come out like bubbles, with the sheen of gold. [`कण्डुना` is an implement in the instrumental, printed with no variant: either *kandu*, an iron pan, or an instrument-noun from √*kaṇḍ*, to pound. `चूर्णितं` means the pulses are milled dry and the water added afterwards. Nothing here sours or rests the mixture; the bubbles are a frying cue.]
+  Split pea and split chickpea: reduced to powder, then slaked with water, thoroughly permeated with ghee, joined with rock salt, worked about with a *kaṇḍu*, joined with lablab flour, and spread out on the grinding stone — in a cauldron brimming with oil one should fry the *kaṭakarṇas* right through, until they come out like bubbles, with the sheen of gold.
 related:
   - savoury-vestika-and-ghosaka
   - iderika-fermented-black-gram-cakes

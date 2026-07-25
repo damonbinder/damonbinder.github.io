@@ -8,13 +8,13 @@ original: >-
 translation: |-
   Among these classes of meat, in each of them some one part is the best.
 
-  Having covered a boar over with a white cloth, one should pour boiling water [*utphulla*, literally “burst open, bubbled up”] over it again and again with a long-handled *gaṇḍaka* [a dipper; the manuscripts disagree on the word], for just so long until the bristles that have grown on it are easily pulled out by hand. Afterwards he should scrape the loosened bristles away with a knife.
+  Having covered a boar over with a white cloth, one should pour boiling water over it again and again with a long-handled *gaṇḍaka*, for just so long until the bristles that have grown on it are easily pulled out by hand. Afterwards he should scrape the loosened bristles away with a knife.
 
   Or else, the carcass smeared over with clay, he should burn it with a fire of straw; the bristles, now easily pulled out, he should remove as before. Having covered with straw the lower legs from the base of the knee-joint down to the foot, he should burn those as well.
 
   When it has come to be hard, he should wash it with clean water — pale, resembling a lotus-stalk, laid down flat on a mat.
 
-  He lays it out slit open with the knife right up to the head. By two lines like the lines of a *sārī*-board, patterned … a long *śuṇṭhikā*. [The second half of this verse is corrupt in Shrigondekar’s edition too, and he prints two alternatives rather than restoring it: *cittaṃ* with the variant *-vacca ta*, and *syāyāmasuṇṭhikām* with the variant *śuṇṭhakān*. The sense the passage requires is that the flesh is scored crosswise in a grid, as on a game-board, and that this yields the long strips called *śuṇṭhaka*. The verb *prasthāpayati* is a present indicative among optatives; manuscript D reads the plural *prasthāpayanti*.]
+  He lays it out slit open with the knife right up to the head.
 
   The pieces, made four-cornered and pierced on a skewer, he should roast thoroughly over abundant embers, until drops of fat run down. Afterwards he should scatter powdered pepper over them, and then rock salt.
 

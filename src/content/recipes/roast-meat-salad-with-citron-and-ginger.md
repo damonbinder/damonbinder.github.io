@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   अङ्गारभृष्टकं मांसं शुद्धे पट्टे निधापयेत् । कर्तर्या तिलशः कृत्वा मातुलिङ्गस्य केसरैः ॥ ७६ ॥ आर्द्रकैः केसराम्लैश्च गृञ्जनैस्तत्प्रमाणकैः । जीरकैर्मरिचैः पिष्टैर्हिङ्गुसैन्धवचूर्णकैः ॥ ७७ ॥ मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् । आमं मांसं च पेषण्यां हिङ्गुतोयेन सिञ्चितम् ॥ ७८ ॥
 translation: >-
-  Place ember-roasted meat on a clean board and cut it into very small strips or sesame-seed-like pieces. Mix it with citron pulp, fresh ginger, sour citrus pulp, gṛñjana, ground cumin and pepper, asafoetida, and rock salt. Perfume the mixed meat with asafoetida smoke.
+  Place ember-roasted meat on a clean board and cut it into very small strips or sesame-seed-like pieces. Mix it with citron pulp, fresh ginger, sour citrus pulp, *gṛñjana* cut to the same size, ground cumin and pepper, asafoetida, and rock salt. Perfume the mixed meat with asafoetida smoke.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
@@ -18,7 +18,7 @@ A finely chopped warm meat salad sharpened with citrus, ginger, allium, cumin, a
 
 ## Ingredients
 
-* 500 g cooked grilled lamb, goat, or pork  
+* 500 g cooked grilled lean meat: pork loin, lamb leg or loin, or goat  
 * 50 g lemon or citron pulp, finely chopped  
 * 15 g fresh ginger, finely chopped  
 * 1 small garlic clove or 2 spring onions, finely chopped  
@@ -38,4 +38,5 @@ A finely chopped warm meat salad sharpened with citrus, ginger, allium, cumin, a
 **Notes**
 
 * *Gṛñjana* may be garlic, onion, or another allium.  
-* Pouring hot ghee over asafoetida gives a practical equivalent to aromatic fumigation.
+* Pouring hot ghee over asafoetida gives a practical equivalent to aromatic fumigation.  
+* **Use a lean cut.** The meat is cut *tilaśaḥ*, to sesame-seed fineness, which maximizes the surface area of any fat that sets as the salad cools — a fatty cut turns waxy in the mouth within a couple of minutes. The chapter discriminates: the *cakkalikās* take *medo-bhāgaṃ*, "the fatty portion" of the cooked *śuṇṭhakas*, while the bhaditraka and puryala both call for *śuddha māṃsa*, clean lean meat. The hot ghee poured over at the end is what carries a lean cut, so don't compensate with a fattier one.

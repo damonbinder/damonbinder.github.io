@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   उपर्युपरि निक्षिप्ताः पत्रिकाः विपचेत्सुधीः । गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥ दुग्धाक्तान् घृतपकांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान् कीसारसंज्ञितान् ॥ ८७ ॥
 translation: >-
-  Moisten coarse wheat particles with milk, cook them in ghee, mix them with sugar, and season them with cardamom and black pepper. This is called kīsāra.
+  Moisten coarse wheat particles with milk, cook them in ghee, mix them with sugar, and season them with cardamom and black pepper. This is called *kīsāra*.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads

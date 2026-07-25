@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   सुशीताः धवलाः श्लक्ष्णा एता इडेरिका वराः । तस्यैव माषपिष्टस्य गोलकान् विस्तृतान् घनान् ॥ १ ॥ पञ्चभिः सप्तभिर्वापि छिद्रैश्च परिशोभितान् । तप्ततैले पचेद्यावल्लौहित्यं तेषु जायते ॥ २ ॥ घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः । निच्छिद्रा घारिकाः पक्वा मथिते शर्करायुते ॥ ३ ॥
 translation: >-
-  From the same black-gram batter make broad, thick discs ornamented with five or seven holes. Fry them in hot oil until reddish; these attractive snacks are called ghārikās.
+  From the same black-gram batter make broad, thick discs ornamented with five or seven holes. Fry them in hot oil until reddish; these attractive snacks are called *ghārikās*.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads

@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   रुरुशम्बरसराङ्गच्छागस्य नलकं पृथु । अग्नौ भृष्ट्वा शिलाघातैः स्फोटयित्वा प्रयत्नतः ॥ १८ ॥ मज्जानं तु ततो हृत्वा लवणाम्लेन हिङ्गुना । मरिचाजाजिचूर्णेन पचेत्स्थाल्यां विचक्षणः ॥ १९ ॥
 translation: >-
-  Roast a large marrow bone from deer or goat, crack it, remove the marrow, and cook it in a pot with salt, sour liquid, asafoetida, pepper, and powdered ajājī.
+  Roast a large marrow bone from deer or goat, crack it, remove the marrow, and cook it in a pot with salt, sour liquid, asafoetida, pepper, and powdered *ajājī*.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

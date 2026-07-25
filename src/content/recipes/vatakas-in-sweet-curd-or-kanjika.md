@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः । निच्छिद्रा घारिकाः पक्वा मथिते शर्करायुते ॥ ३ ॥ एलामरिचसंयुक्ते निक्षिप्ता वटिकाभिधाः । त एव वटकाः क्षिप्ताः काञ्जिके काञ्जिकाभिधाः ॥ ४ ॥
 translation: >-
-  Cook ghārikās without holes and place them in churned curd or buttermilk sweetened with sugar and seasoned with cardamom and pepper; they are then called vaṭikās. If the same vaṭakas are put in kāñjika, they are called kāñjika-vaṭakas. In general, a vaṭaka takes the name of the liquid in which it is served.
+  Cook *ghārikās* without holes and place them in churned curd or buttermilk sweetened with sugar and seasoned with cardamom and pepper; they are then called *vaṭikās*. If the same *vaṭakas* are put in *kāñjika*, they are called *kāñjika-vaṭakas*. In general, a *vaṭaka* takes the name of the liquid in which it is served.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads

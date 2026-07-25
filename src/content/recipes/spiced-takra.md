@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मन्थानेन मथित्वा तन्नवनीतमथो हरेत् । निर्जलं मथितं प्रोक्तमुदश्वित् स्याज्जलार्धकम् ॥ ७१ ॥ पादाम्बु तक्रमुद्दिष्टं धूपितं हिङ्गुजीरकैः । आर्द्रकेण समायुक्तमेलासैन्धवचूर्णितम् ॥ ७२ ॥
 translation: >-
-  Churn curd and remove the butter. The undiluted churned product is called mathita; with half its volume of water it is udaśvit; with one-quarter water it is takra. Takra is perfumed with asafoetida and cumin and seasoned with fresh ginger, cardamom, and powdered rock salt.
+  Churn curd and remove the butter. The undiluted churned product is called *mathita*; with half its volume of water it is *udaśvit*; with one-quarter water it is *takra*. *Takra* is perfumed with asafoetida and cumin and seasoned with fresh ginger, cardamom, and powdered rock salt.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments

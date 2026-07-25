@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वटिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥
 translation: >-
-  Grind raw meat very fine and mix it with saffron and other seasonings. Shape it into small cakes. Fry them in hot oil, cook them in a pan, or heat them directly at the fire. This preparation is called vaṭimaka and has three forms.
+  Grind raw meat very fine and mix it with saffron and other seasonings. Shape it into small cakes. Fry them in hot oil, cook them in a pan, or heat them directly at the fire. This preparation is called *vaṭimaka* and has three forms.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

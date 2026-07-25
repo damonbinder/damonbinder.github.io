@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   मत्स्यांश्च खण्डशः कृत्वा चतुरङ्गुलसम्मितान् । लवणेन समायुक्तान् कुम्भेषु परिपूरयेत् ॥ ३३ ॥ खरखण्डा इति ख्याताश्चिरकालं वसन्ति ते । भोजनावसरे सूदो वह्निना परिभर्जयेत् ॥ ३४ ॥
 translation: >-
-  Cut fish into pieces four finger-widths long, mix them with salt, and pack them into jars. These long-keeping pieces are called khara-khaṇḍas. At mealtime the cook roasts them over fire.
+  Cut fish into pieces four finger-widths long, mix them with salt, and pack them into jars. These long-keeping pieces are called *khara-khaṇḍas*. At mealtime the cook roasts them over fire.
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals

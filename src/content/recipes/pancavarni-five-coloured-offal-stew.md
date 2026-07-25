@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   अन्त्राणि खण्डशः कृत्वा कालखण्डं तथा कृतम् । वारिप्रक्षालितं कृत्वा खण्डितान् समरूपतः ॥ ८८ ॥ मेदसः शकलास्तद्वन्मांसखण्डांस्तथैव च । राजिकाकल्कदिग्धांस्तांस्तोयमिश्रान् विपाचयेत् ॥ ८९ ॥ आर्द्रकस्य रसं स्तोकमम्लमल्पं विमिश्रयेत् । प्रमाणाल्लवणं क्षिप्त्वा हिङ्गुतोयं च मेलयेत् ॥ १४९० ॥ किंचिच्छेषं द्रवं तत्तु समुत्तार्य विधूपयेत् । पञ्चवर्णीति विख्याता नानारूपरसावहा ॥ ९१ ॥
 translation: >-
-  Cut cleaned intestines and kālakhaṇḍa into equal pieces. Add pieces of fat and ordinary meat, smear everything with mustard paste, and cook with water. Add a little ginger juice and sour liquid, salt, and asafoetida-water. When only a little liquid remains, remove and perfume the dish. It is called pañcavarṇī, the five-coloured one.
+  Cut cleaned intestines and *kālakhaṇḍa* into equal pieces. Add pieces of fat and ordinary meat cut the same way, smear everything with mustard paste, and cook with water. Add a little ginger juice and sour liquid, salt in due measure, and asafoetida-water. When only a little liquid remains, remove and perfume the dish. It is called *pañcavarṇī*, the five-coloured one.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

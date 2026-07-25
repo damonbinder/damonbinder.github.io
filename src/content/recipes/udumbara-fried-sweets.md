@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   दुग्धाक्तान् घृतपकांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान् कीसारसंज्ञितान् ॥ ८७ ॥ गोलकेन समावेष्ट्य तैलेनोदुम्बरान् पचेत् । उत्क्वाथ्य विदलान् पिष्ट्वा चणकप्रभृतीन् शुभान् ॥ ८८ ॥
 translation: >-
-  A sweet preparation is enclosed in a ball of dough and fried in oil; it is called udumbara.
+  A sweet preparation is enclosed in a ball of dough and fried in oil; it is called *udumbara*.
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads

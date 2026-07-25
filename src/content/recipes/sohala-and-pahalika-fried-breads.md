@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   तैलपूर्णकटाहे तु सुतप्ते सोहला पचेत् । उत्तानपाकसंसिद्धाः कठिनाः सोहला मताः ॥ ८४ ॥ तैलमग्नाः पीतवर्णा मृदवः पाहलिकाः स्मृताः । तनुप्रसारितान् गोलान् ताप्य स्नेहेन पाचितान् ॥ ८५ ॥
 translation: >-
-  Cook sohalās in a very hot cauldron full of oil; they are firm and cook while floating with the upper surface exposed. Pāhalikās are submerged in oil, yellow in colour, and soft.
+  Cook *sohalās* in a very hot cauldron full of oil; they are firm and cook while floating with the upper surface exposed. *Pāhalikās* are submerged in oil, yellow in colour, and soft.
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads

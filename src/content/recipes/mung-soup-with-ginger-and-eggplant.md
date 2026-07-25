@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   इतरः पूर्ववत् कार्यः पाकः पाकविचक्षणैः । प्रक्षालितान् वरान्मुद्गान् समतोये विनिक्षिपेत् ॥ ६७ ॥ चुल्यां मन्दाग्निना पाकः कर्तव्यः सूपकारकैः । पच्यमानेषु मुद्गेषु हिङ्गुवारि विनिक्षिपेत् ॥ ६८ ॥ आर्द्रकस्य च खण्डानि सूक्ष्माणि च विनिक्षिपेत् । वार्ताकं पाटितं तैलभृष्टं तत्र विनिक्षिपेत् ॥ ६९ ॥ तैलभृष्टा मृदूभूताः क्षिपेद्वा बिसचक्रिकाः । बीजानि वा प्रियालस्य क्षिप्त्वा दर्व्या विवर्तयेत् ॥ १३७० ॥ पुनः पुनः क्षिपेत्तोयं स्तोकं स्तोकं विचक्षणः । केचिदिच्छन्ति रुच्यर्थं मेषमांसस्य खण्डकान् ॥ ७१ ॥ कान्यपि द्विधा भिन्नान्मेदसः शकलानि वा । मुहुः सूपे सुनिष्पन्ने चूर्णितं मरिचं क्षिपेत् ॥ ७२ ॥
 translation: >-
-  Wash superior mung beans and cook them slowly in an equal quantity of water. While they cook, add asafoetida-water and small pieces of fresh ginger. Add eggplant fried in oil, or fried lotus-stem discs, or priyāla kernels. Add water little by little. Some cooks add mutton pieces or pieces of fat. When fully cooked, add ground black pepper; after removing from the fire, add powdered dry ginger and stir.
+  Wash superior mung beans and cook them slowly in an equal quantity of water. While they cook, add asafoetida-water and small pieces of fresh ginger. Add eggplant fried in oil, or fried lotus-stem discs, or *priyāla* kernels. Add water little by little. Some cooks add mutton pieces or pieces of fat. When fully cooked, add ground black pepper; after removing from the fire, add powdered dry ginger and stir.
 tradition: Indian
 category: Legumes
 subcategory: Rice, pulses, grains & breads

@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   निष्पीड्य दधि वस्त्रेण स्रावयेत्तद्रुतं जलम् । शर्करैलासमायुक्ता सूदैः शिखरिणी मता ॥ ७४ ॥
 translation: >-
-  Press curd in a cloth and allow the liquid whey to drain out. Mix the thick curd with sugar and cardamom; cooks call this śikhariṇī.
+  Press curd in a cloth and allow the liquid whey to drain out. Mix the thick curd with sugar and cardamom; cooks call this *śikhariṇī*.
 tradition: Indian
 category: Dessert
 subcategory: Dairy, drinks & condiments

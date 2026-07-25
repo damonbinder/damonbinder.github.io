@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   सौवीरनिर्मलं साम्लं लवणेन च संयुतम् । हिङ्गुना जीरकेणापि धूपितं धूपकाञ्जिकम् ॥ १५८० ॥
 translation: >-
-  Clear, sour sauvīra mixed with salt and perfumed with asafoetida and cumin is called dhūpa-kāñjika.
+  Clear, sour *sauvīra* mixed with salt and perfumed with asafoetida and cumin is called *dhūpa-kāñjika*.
 tradition: Indian
 category: Beverages
 subcategory: Dairy, drinks & condiments

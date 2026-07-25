@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   यस्य कस्यापि मेषादेः शिरो भृष्ट्वा विभिद्य च । आददीत च मस्तिष्कं काञ्जिकेन विपाचयेत् ॥ १५२० ॥ आणके तैलमध्ये वा यथारुचि पुनः पचेत् । चूर्णैः संयोज्य तत्पश्चाद्धिङ्गुधूपेन धूपयेत् ॥ २१ ॥
 translation: >-
-  Having roasted and split the head of any animal whatever, beginning with the sheep, he should take out the brain and cook it through with *kāñjika*. Then he should cook it again, as he likes, in an *āṇaka* [pan] or in the midst of oil. Afterwards, having combined it with the spice powders, he should perfume it with asafoetida smoke.
+  Having roasted and broken open the head of any animal whatever, beginning with the sheep, he should take out the brain and cook it right through with *kāñjika*. Then he should cook it again, as he likes, in a pan or in the midst of oil. Having combined it with the powdered spices, he should afterwards fumigate it with asafoetida smoke.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

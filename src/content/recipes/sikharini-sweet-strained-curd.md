@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1574
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  निष्पीड्य दधि वस्त्रेण स्रावयेत्तद्रुतं जलम् । शर्करैलासमायुक्ता सूदैः शिखरिणी मता ॥ ७४ ॥
+  निष्पीड्य दधि वस्त्रेण स्रावयेत्तद्द्रुतं जलम् । शर्करैलासमायुक्ता सूदैः शिखरिणी मता ॥ ७४ ॥
 translation: >-
-  Having pressed the *dadhi* in a cloth, one should drain off its liquid. Joined with sugar and cardamom, it is reckoned by cooks to be *śikhariṇī*.
+  Having pressed the *dadhi* in a cloth, he should drain off that water of it quickly. Joined with sugar and cardamom, it is held by cooks to be *śikhariṇī*.
 related:
   - dadhi-curd-from-reduced-milk
   - mastu-spiced-whey

@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1540–1542
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  कर्कटांस्तु लघून् स्थूलान् हस्तपादवियोजितान् । रूक्षे ताम्रमये पात्रे सुतप्ते तान् विवर्जयेत् ॥ १५४० ॥ स्फोटिते खपरे तांस्तु मृदो भाण्डे विनिक्षिपेत् । विपचेल्लवणाम्लैश्च पुनः सर्पिषि पाचयेत् ॥ ४१ ॥ जीरकं लवणं तीक्ष्णं चूर्णितं तेषु निक्षिपेत् । वृष्या बलकरा हृद्या मृष्टास्ते घृतकर्कटाः ॥ ४२ ॥
+  कर्कटांस्तु लघून्स्थूलान् हस्तपादवियोजितान् । रूक्षे ताम्रमये पात्रे सुतप्ते तान्विभर्जयेत् ॥ १५४० ॥ स्फोटिते खर्परे तांस्तु मृदो भाण्डे विनिक्षिपेत् । विपचेल्लवणाम्लैश्च पुनः सर्पिषि पाचयेत् ॥ ४१ ॥ जीरकं लवणं तीक्ष्णं चूर्णितं तेषु निक्षिपेत् । वृष्या बलकरा हृद्या मृष्टास्ते घृतकर्कटाः ॥ ४२ ॥
 translation: >-
-  Take crabs, small or large, with their claws and legs detached, and roast them in a dry copper vessel, very hot [the verb as transmitted, *vivarjayet*, "he should shun", cannot be right; probably *vibharjayet*, "he should roast"]. When the shell has cracked, put them into an earthen pot and cook them with salt and sour liquids; then cook them again in ghee. Throw powdered cumin, salt, and *tīkṣṇa* over them. These *ghṛta-karkaṭas* are aphrodisiac, strengthening, good for the heart, and delicious.
+  Crabs, whether small or large, with their claws and legs detached — he should roast them in a dry copper vessel, thoroughly heated. When the carapace has burst open, he should put them into a vessel of clay; he should cook them with salt and sour things, and then cook them again in ghee. He should throw powdered cumin, salt, and *tīkṣṇa* over them. These *ghṛta-karkaṭas*, “ghee-crabs”, are aphrodisiac, strength-giving, agreeable to the heart, and savoury. [1540d: the edition prints *tānvi(bha)varjayet*, p. 131, the parenthesis being the editor’s correction; *vibharjayet*, “he should roast them”, is the only reading that gives sense — the two scan identically, so the metre cannot decide it. 1541a: the print reads *kharpare*, a variant of *karpara*, here the crab’s shell, not a vessel — so the two vessels of the recipe are the dry copper pan and the earthen pot, and the switch comes exactly where the acid enters.]
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals

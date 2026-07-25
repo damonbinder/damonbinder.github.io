@@ -4,16 +4,9 @@ source: Mānasollāsa 3.13.1373–1375
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  उत्तार्य नागरं चूर्णं क्षिप्त्वा दर्व्या विघट्टयेत् । श्यामाककङ्गुनीवारगन्धशालिसुतण्डुलैः ॥ ७३ ॥ सरवेष्टिकसेवाकैर्दिवसैर्लघुविस्तृतैः । चिरप्रसूतमहिषीपयसा पायसं पचेत् ॥ ७४ ॥ पायसं लेहने योग्यं स्वादुगन्धं मनोहरम् । गोधूमाः क्षालिताः शुभ्राः शोषिता रविरश्मिभिः ॥ ७५ ॥
+  उत्तार्य नागरं चूर्णं क्षिप्त्वा दर्व्या विघट्टयेत् । श्यामाककङ्गुनीवारगन्धशालिसुतण्डुलैः ॥ ७३ ॥ सरवेष्टिकसेवाकैर्दिवसैर्लघुविस्तृतैः । चिरप्रसूतमहिषीपयसा पायसं पचेत् ॥ ७४ ॥ पायसं लेहने योग्यं स्वादुगन्धं मनोहरम् । गोधूमाः क्षालिता शुभ्राः शोषिता रविरश्मिभिः ॥ ७५ ॥
 translation: >-
-  [The opening half-verse completes the preceding mung soup: having taken it off
-  the fire, put in powdered dried ginger and stir it with the ladle.] Cook a
-  *pāyasa* in the milk of a buffalo that calved long before, with the fine
-  grains of *śyāmāka*, *kaṅgu*, *nīvāra*, or fragrant *śāli* rice — or with
-  *sara*, *veṣṭika*, and *sevāka*, thinly drawn out over some days [the reading
-  of this half-verse is obscure]. The *pāyasa* should become thick enough to
-  lick, sweet-smelling, and pleasing. [The closing half-verse begins the
-  following *maṇḍaka* recipe: wheat, washed white and dried by the sun's rays.]
+  Having taken it off the fire, he should put in powdered dry ginger and stir it about with the ladle. [This half-verse completes the mung soup of the preceding passage.] With the fine grains of barnyard millet, foxtail millet, wild rice, and fragrant *śāli*, and with *sara*, *veṣṭika*, and *sevāka*, spread out thin over some days, he should cook a *pāyasa* in the milk of a buffalo that calved long ago. [The first half of this verse is corrupt: the edition prints *sara-veṣṭika-sevākaiḥ* and suggests *veṣṭita* for *veṣṭika*; the three terms cannot be identified with confidence.] The *pāyasa* is fit for licking, sweet-smelling, and delightful. Wheat grains, washed, white, dried by the rays of the sun —
 tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads

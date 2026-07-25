@@ -4,9 +4,17 @@ source: Mānasollāsa 3.13.1442–1448
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  दध्ना विमिश्रयेच्चिञ्चां किंवा दाडिमसारकम् । अथवामलकं पिष्टं मेलयेद्वाम्लवेतसम् ॥ ४२ ॥ रसं वा मातुलिङ्गस्य रसं दन्तशठस्य च । मिश्रयेद्वा रसानेतान् द्वित्रान्वापि यथारुचि ॥ ४३ ॥ गन्धार्थं धान्यकं हिङ्गु जीरकं तत्र निक्षिपेत् । हरिद्रां चैव वर्णार्थं सुसूक्ष्मं च तथार्द्रकम् ॥ ४४ ॥ रुच्यर्थं विश्वमरिचं सैन्धवं च विनिक्षिपेत् । गालयेत्सितवस्त्रेण किंचित्तैलं विमिश्रयेत् ॥ ४५ ॥ मृदः स्थाल्यां विनिक्षिप्य दर्वीघट्टनपूर्वकम् । प्रलेहकं मृदावग्नौ पचेत्पाकविशारदः ॥ ४६ ॥ प्रक्षिप्य शुण्ठकांस्तत्र मृदु कुर्याच्च पाकतः । भावितांश्च रसैः सर्वैः सिद्धानुत्तारयेद्बुधः ॥ ४७ ॥ धूपयेद्धिङ्गुना वापि नखधूपेन वा पुनः । धूपेन जीरकस्यापि शशिधूपेन कोविदः ॥ ४८ ॥
-translation: >-
-  Mix curd with tamarind, or with pomegranate essence, or with ground *āmalaka*, or with *amlavetasa*, or with the juice of citron, or with the juice of *dantaśaṭha*. Or mix two or three of these juices, as you like. For aroma put in coriander, asafoetida, and cumin; turmeric for colour; and very finely cut fresh ginger. For relish put in dried ginger, black pepper, and rock salt. Strain it through a white cloth and mix in a little oil. Put it in an earthen pot and, stirring with a ladle, cook it over a gentle fire into a *pralehaka*. Throw the *śuṇṭhakas* in and cook them soft, saturated with all the flavours. Perfume it with asafoetida, or with onycha, or with cumin smoke, or with camphor smoke.
+  दध्ना विमिश्रयेच्चिञ्चां किंवा दाडिमसारकम् । अथवामलकं पिष्टं मेलयेद्वाम्लवेतसम् ॥ ४२ ॥ रसं वा मातुलिङ्गस्य रसं दन्तशठस्य च । मिश्रयेद्वा रसानेतान्द्वित्रान्वापि यथारुचि ॥ ४३ ॥ गन्धार्थं धान्यकं हिङ्गु जीरकं तत्र निक्षिपेत् । हरिद्रां चैव वर्णार्थं सुसूक्ष्मं च तथार्द्रकम् ॥ ४४ ॥ रुच्यर्थं विश्वमरिचं सैन्धवं च विनिक्षिपेत् । गालयेत्सितवस्त्रेण किंचित्तैलं विमिश्रयेत् ॥ ४५ ॥ मृदः स्थाल्यां विनिक्षिप्य दर्वीघट्टनपूर्वकम् । प्रलेहकं मृदावग्नौ पचेत्पाकविशारदः ॥ ४६ ॥ प्रक्षिप्य शुण्ठकांस्तत्र मृदु कुर्याच्च पाकतः । भावितांश्च रसैः सर्वैः सिद्धानुत्तारयेद्बुधः ॥ ४७ ॥ धूपयेद्धिङ्गुना वापि नखधूपेन वा पुनः । धूपेन जीरकस्यापि शशिधूपेन कोविदः ॥ ४८ ॥
+translation: |-
+  He should mix tamarind into curd, or else pomegranate essence; or he should combine ground emblic myrobalan, or *amlavetasa*; or the juice of citron, and the juice of *dantaśaṭha*. Or he may mix these juices, two or three of them, as he pleases.
+
+  For aroma he should put in there coriander, asafoetida, and cumin; and turmeric for colour; and likewise very finely cut fresh ginger. For relish he should put in dried ginger, black pepper, and rock salt. He should strain it through a white cloth, and mix in a little oil.
+
+  Having put it into an earthenware pot, stirring it first with a ladle, the one skilled in cooking should cook it over a gentle fire into a *pralehaka* [placing the dish in the *lehya*, “lickable”, class of the fivefold scheme set out at 1344–45; manuscript A reads *prahelakaṃ*].
+
+  And having thrown the *śuṇṭhaka*s in there, he should make them tender by the cooking. When they are steeped in all the juices and done, the wise one should take them off the fire.
+
+  The expert should perfume it with asafoetida, or again with *nakhadhūpa* [onycha, the operculum of a marine snail], or with the smoke of cumin, or with *śaśidhūpa* [literally “moon-smoke”, probably camphor].
 related:
   - roast-pork-sunthaka
   - finely-diced-meat-with-green-chickpeas

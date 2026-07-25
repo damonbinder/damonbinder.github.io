@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1535–1536
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  मत्स्याण्डकोशावादाय वह्निना परिभर्जयेत् । दृढीभूते ततः पश्चात्खण्डशः परिकल्पयेत् ॥ ३५ ॥ विपच्य तप्ततैले तान्येलामरिचकादिभिः । विकीर्य सैन्धवेनापि हिङ्गुना परिधूपयेत् ॥ ३६ ॥
+  मत्स्याण्डकोशावादाय वह्निना परिभर्जयेत् । दृढीभूते ततः पश्चात् खण्डशः परिकल्पयेत् ॥ ३५ ॥ विपच्य तप्ततैले तान्येलामरिचकादिभिः । विकीर्य सैन्धवेनापि हिङ्गुना परिधूपयेत् ॥ ३६ ॥
 translation: >-
-  Take the pair of roe-sacs from the fish and roast them in the fire. Once firm, cut them into pieces and fry them in hot oil. Scatter cardamom, pepper, and the like over them, and rock salt as well, and perfume them with asafoetida.
+  Having taken the two egg-sacs of the fish, he should roast them thoroughly over the fire. Then, once they have grown firm, he should afterwards cut them into pieces. Having cooked those pieces in hot oil, he should strew them with cardamom, pepper, and the like, and with rock salt as well, and should perfume them with asafoetida. [At 1535c the edition prints *dṛḍhībhūte* with the editor’s suggested dual *dṛḍhībhūtau*, agreeing with the two sacs, in parentheses, p. 130.]
 tradition: Indian
 category: Seafood
 subcategory: Fish & other animals

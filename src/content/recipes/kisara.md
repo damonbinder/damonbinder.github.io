@@ -1,12 +1,12 @@
 ---
 title: '*Kīsāra*'
-source: Mānasollāsa 3.13.1386–1387
+source: Mānasollāsa 3.13.1386cd–1387
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  उपर्युपरि निक्षिप्ताः पत्रिकाः विपचेत्सुधीः । गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥ दुग्धाक्तान् घृतपकांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान् कीसारसंज्ञितान् ॥ ८७ ॥
+  गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥ दुग्धाक्तान् घृतपक्वांश्च सितया च विमिश्रितान् । एलामरिचचूर्णेन युक्तान्कासारसंज्ञितान् ॥ ८७ ॥
 translation: >-
-  Take from the wheat flour the coarse grains beaten out with a winnowing basket. Moistened with milk, cooked in ghee, mixed with white sugar, and joined with powder of cardamom and pepper, they are called *kīsāra*.
+  The coarse grains taken up out of the wheat flour and beaten out with a winnowing-basket, moistened with milk, cooked in ghee, mixed with white sugar, and joined with powder of cardamom and pepper: these are called *kāsāra*.
 related:
   - patrika-layered-breads
   - udumbara-fried-sweets

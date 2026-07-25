@@ -4,10 +4,9 @@ source: Mānasollāsa 3.13.1575
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  स्रावितं यद्धृतं तोयं जीरकाज्यसैन्धवैः । संयुक्तं हिङ्गुधूपेन धूपितं मस्तु कीर्तितम् ॥ ७५ ॥
+  स्रावितं यद्धृतं तोयं जीरकार्द्रकसैन्धवैः । संयुक्तं हिङ्गुधूपेन धूपितं मस्तु कीर्तितम् ॥ ७५ ॥
 translation: >-
-  The water that was drained off and kept back, joined with cumin, ghee, and rock
-  salt, and fumigated with asafoetida-incense, is declared to be *mastu*.
+  The water that was drained off and kept, joined with cumin, fresh ginger, and rock salt, and fumigated with the smoke of asafoetida, is declared to be *mastu*.
 related:
   - sikharini-sweet-strained-curd
 tradition: Indian

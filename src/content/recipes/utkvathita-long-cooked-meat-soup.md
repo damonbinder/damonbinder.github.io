@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1507–1509
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  क्रोडदेशोद्भवं मांसमंस्या सह विखण्डितम् । अंसकीकससंयुक्तं पार्श्वकुल्या समन्वितम् ॥ ७ ॥ मृद्भाण्डे स्थाल्यवक्त्रे तन्निक्षिप्य बहलोदके । हिङ्गुना चाम्लकेनापि सैन्धवेन च संयुतम् ॥ ८ ॥ काथयेत्सुचिरं कालं यावत्तन्मार्दवं भजेत् । उत्क्वाथितमिदं सूपं ख्यातं शास्त्रविशारदैः ॥ ९ ॥
+  क्रोडदेशोद्भवं मांसमंस्या सह विखण्डितम् । अंसकीकससंयुक्तं पार्श्वकुल्या समन्वितम् ॥ ७ ॥ मृद्भाण्डे स्थालवक्त्रे तन्निक्षिप्य बहलोदके । हिङ्गुना चार्द्रकेणापि सैन्धवेन च संयुतम् ॥ ८ ॥ काथयेत्सुचिरं कालं यावत्तन्मार्दवं भजेत् । उत्क्वाथितमिदं सूपं ख्यातं शास्त्रविशारदैः ॥ ९ ॥
 translation: >-
-  Flesh arising from the chest region, cut up together with the shoulder, joined with the shoulder bones and accompanied by the rib bones: put it into an earthen vessel closed at the mouth [*sthālyavaktre*; the compound is obscure, but it restricts the vessel's opening either way], in abundant water, together with asafoetida, with a sour agent, and with rock salt. Decoct it for a very long time, until it attains tenderness. This soup, called *utkvāthita*, is renowned among those skilled in the treatises.
+  Flesh arising from the chest region, cut up together with the shoulder, joined with the shoulder bone and accompanied by the *pārśva-kulyā* [the "channel of the flank", i.e. the rack of ribs]: having put it into an earthen vessel with a plate set over the pot's mouth as a lid, in abundant water, together with asafoetida, with fresh ginger, and with rock salt, he should decoct it for a very long time, until it attains tenderness. This soup is called *utkvāthita*, "boiled right up", by those skilled in the treatises [ms D reads "by those skilled in the treatises on soups"].
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

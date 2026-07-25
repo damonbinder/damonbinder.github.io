@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1486–1487
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वटिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥
+  आमं मांसं सुपिष्टं तु केसरादिविमिश्रितम् । वटकीकृत्य तैलेन तप्तेन परिपाचयेत् ॥ ८६ ॥ आणके च क्षिपेत्तज्ज्ञस्तापयेद्वा विभावसौ । नाम्ना वट्टिमकं तत्तु त्रिप्रकारमुदीरितम् ॥ ८७ ॥
 translation: >-
-  Raw meat, very finely ground and mixed with saffron and the rest: having made it into *vaṭakas*, one should cook them through in hot oil. Or one who knows the art may put them in a pan, or heat them at the fire. That is called *vaṭimaka* by name, and it is said to have three forms.
+  Raw meat, very finely ground and mixed with *kesara* and the rest [the citron pulp of 1476–77 and the seasonings that go with it], he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.
 related:
   - mamsa-vataka-bhusika-and-kosali
 tradition: Indian

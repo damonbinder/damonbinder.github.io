@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1476–1478
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  अङ्गारभृष्टकं मांसं शुद्धे पट्टे निधापयेत् । कर्तर्या तिलशः कृत्वा मातुलिङ्गस्य केसरैः ॥ ७६ ॥ आर्द्रकैः केसराम्लैश्च गृञ्जनैस्तत्प्रमाणकैः । जीरकैर्मरिचैः पिष्टैर्हिङ्गुसैन्धवचूर्णकैः ॥ ७७ ॥ मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् । आमं मांसं च पेषण्यां हिङ्गुतोयेन सिञ्चितम् ॥ ७८ ॥
+  अङ्गारभृष्टकं मांसं शुद्धे पट्टे निधापयेत् । कर्तर्या तिलशः कृत्वा मातुलिङ्गस्य केसरैः ॥ ७६ ॥ आर्द्रकैः केसराम्लैश्च गृञ्जनैस्तत्प्रमाणकैः । जीरकैर्मरिचैः पिष्टैर्हिङ्गुसैन्धवचूर्णकैः ॥ ७७ ॥ मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् ।
 translation: >-
-  Place ember-roasted meat on a clean board and cut it with a knife into pieces as fine as sesame seeds. Mix it with the pulp of citron, with fresh ginger, with *kesarāmla* [a second name for the citron], with *gṛñjana* cut to the same size, with ground cumin and pepper, and with powdered asafoetida and rock salt. Perfume the mixed meat with asafoetida smoke.
+  He should set ember-roasted meat down on a clean board and cut it with a knife to the fineness of sesame seeds. Then, having mixed that meat with the *kesara* of the citron, with fresh ginger, with *kesarāmla* [the edition prints *kesarālaiḥ* and corrects it in parentheses to *kesarāmlaiḥ*; the ingredient is not securely identifiable], with *gṛñjana* cut to that same size [*gṛñjana* is some allium — garlic, onion, or the like], with ground cumin and pepper, and with powdered asafoetida and rock salt, he should scent it with asafoetida smoke.
 related:
   - mamsa-vataka-bhusika-and-kosali
 tradition: Indian

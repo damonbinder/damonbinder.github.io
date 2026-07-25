@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1492–1493
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  अन्त्राणि जलधौतानि शूलयष्ट्यां विवेष्टयेत् । तापयेच्च तथाङ्गारैर्यावत्कठिनतां ययुः ॥ ९२ ॥ पश्चाद्विचूर्णितं श्लक्ष्णं सैन्धवं तेषु योजयेत् । अन्त्रशुण्ठकमाख्यातं चर्वणे मर्मरारवम् ॥ ९३ ॥
+  अन्त्राणि जलधौतानि शूलयष्ट्यां विवेष्टयेत् । तापयेच्च तथाऽङ्गारैर्यावत्काठिनतां ययुः ॥ ९२ ॥ पश्चाद्विचूर्णितं श्लक्ष्णं सैन्धवं तेषु योजयेत् । अन्त्रशुण्ठकमाख्यातं चर्वणे मर्मरारवम् ॥ ९३ ॥
 translation: >-
-  Wash intestines with water and wind them around a spit-rod. Heat them over embers likewise, until they turn firm. Afterwards apply very finely powdered rock salt to them. This is called *antra-śuṇṭhaka*; it has a rustling sound in the chewing.
+  He should wind intestines washed in water around a spit-rod, and heat them likewise with embers until they reach firmness. Afterwards he should apply finely powdered rock salt to them. This is called *antra-śuṇṭhaka*; in the chewing it has a crackling sound.
 related:
   - roast-pork-sunthaka
   - pancavarni-five-colored-offal-stew

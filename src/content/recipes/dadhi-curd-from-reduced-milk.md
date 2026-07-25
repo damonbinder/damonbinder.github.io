@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1568–1570
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  अर्धावशेषिते दुग्धे तक्रमीषद्विनिक्षिपेत् । नवस्थाल्यां न्यसेत्तत्तु निवाते स्थापयेच्च ताम् ॥ ६८ ॥ शर्करामिश्रितं वापि एलयापि विमिश्रयेत् । यामषट्कोषितं क्षीरमम्लतां घनतां भजेत् ॥ ६९ ॥ दधीति नाम प्राप्नोति पथ्यं मृष्टं मनोहरम् । हीनकाले तथा पथ्यं चिरकालेऽम्लता बहु ॥ १५७० ॥
+  अर्धावशेषिते दुग्धे तक्रमीषद्विनिक्षिपेत् । नवस्थाल्यां न्यसेत्तत्तु निवाते स्थापयेच्च ताम् ॥ ६८ ॥ शर्करामिश्रितं वापि फलैर्वापि विमिश्रयेत् । यामषट्कोषितं क्षीरमम्लतां घनतां भजेत् ॥ ६९ ॥ दधीति नाम प्राप्नोति पथ्यं मृष्टं मनोहरम् । हीनकाले तथा पथ्यं चिरकालेऽम्लता बहु ॥ १५७० ॥
 translation: >-
-  Into milk reduced to a half one should throw a little *takra*. One should set it in a new pot, and keep the pot in a windless place. Or one may mix it with sugar, or with cardamom as well. Having stood for six *yāmas*, the milk takes on sourness and thickness, and obtains the name *dadhi* — wholesome, delicious, and charming. In a shorter time it is likewise wholesome; over a long time the sourness is great.
+  Into milk reduced to a half he should throw a little *takra*. He should set it down in a new pot, and should keep that pot in a windless place. Or it may be mixed with sugar, or he may mix it with fruits as well. Milk left standing six *yāmas* takes on sourness and thickness. It obtains the name *dadhi* — wholesome, sweet, and delightful. In a shorter time it is likewise wholesome; over a long time the sourness is great.
 related:
   - reduced-milk-in-four-stages
   - spiced-takra

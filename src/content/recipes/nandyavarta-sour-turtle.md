@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   कच्छपान् वह्निना भृष्ट्वा पादांश्छल्कांश्च मोचयेत् । शिरश्चैव पृथक्कृत्वा पक्वरम्भाफलोपमान् ॥ ३७ ॥ अम्लकैश्च विपच्याथ तैलेनाज्येन वा पुनः । पाचयेच्च सुसिद्धांस्तान् चूर्णकैरवचूर्णयेत् ॥ ३८ ॥ आणके वा पचेत्तज्ज्ञो निधूमे वा हुताशने । नन्द्यावर्ता इति ख्याता मृदुरुच्या मनोहराः ॥ ३९ ॥
 translation: >-
-  Roast turtles in the fire and free the feet and the shell-plates; separate the head as well, so that they resemble ripe plantains. Then cook them with sour liquids, and cook them again in oil or in ghee; when they are thoroughly done, dust them with spice powders. One who knows the work may instead cook them in a pan, or over a smokeless fire. These are known as *nandyāvartas*: tender, appetizing, and delightful.
+  Having roasted turtles over the fire, he should work off the feet and the shell-plates, and separate the head as well — the turtles then resembling ripe plantain fruits. Then, having cooked them with sour things, he should cook them once more in oil, or else in ghee; and when they are thoroughly done he should dust them over with spice powders. Or one who knows the work may cook them in a pan, or on a smokeless fire. They are known as *nandyāvartas*: of tender relish, delightful. [*pakvarambhāphalopamān* is accusative plural agreeing with *kacchapān*, the turtles themselves; there is no verb of cutting in the passage.]
 tradition: Indian
 category: Meat
 subcategory: Fish & other animals

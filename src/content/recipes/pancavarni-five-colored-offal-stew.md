@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1488–1491
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  अन्त्राणि खण्डशः कृत्वा कालखण्डं तथा कृतम् । वारिप्रक्षालितं कृत्वा खण्डितान् समरूपतः ॥ ८८ ॥ मेदसः शकलास्तद्वन्मांसखण्डांस्तथैव च । राजिकाकल्कदिग्धांस्तांस्तोयमिश्रान् विपाचयेत् ॥ ८९ ॥ आर्द्रकस्य रसं स्तोकमम्लमल्पं विमिश्रयेत् । प्रमाणाल्लवणं क्षिप्त्वा हिङ्गुतोयं च मेलयेत् ॥ १४९० ॥ किंचिच्छेषं द्रवं तत्तु समुत्तार्य विधूपयेत् । पञ्चवर्णीति विख्याता नानारूपरसावहा ॥ ९१ ॥
+  अन्त्राणि खण्डशः कृत्वा कालखण्डं तथा कृतम् । वारिप्रक्षालितं कृत्वा खण्डितान् समरूपतः ॥ ८८ ॥ मेदसः शकलास्तद्वन्मांसखण्डांस्तथैव च । राजिकाकल्कदिग्धांस्तांस्तोयमिश्रान्विपाचयेत् ॥ ८९ ॥ आर्द्रकस्य रसं स्तोकं अम्लमल्पं विमिश्रयेत् । प्रमाणाल्लवणं क्षिप्त्वा हिङ्गुतोयं च मेलयेत् ॥ १४९० ॥ किंचिच्छेषं द्रवं तत्तु समुत्तार्य विधूपयेत् । पञ्चवर्णीति विख्याता नानारूपरसावहा ॥ ९१ ॥
 translation: >-
-  Cut intestines into pieces, and *kālakhaṇḍa* [the liver] cut the same way and washed with water, all of them cut to a uniform shape. Slices of fat likewise, and pieces of meat in the same way. Smear them with mustard paste, mix them with water, and cook. Mix in a little ginger juice and a little sour liquid; put in salt in due measure and stir in asafoetida-water. When only a little liquid is left, take it off the fire and perfume it. It is renowned as *pañcavarṇī*, the five-coloured one, and it brings manifold forms and tastes.
+  Having cut the intestines into pieces, and the liver cut in the same way, and having washed them with water, all of them cut to a uniform shape; and slices of fat likewise, and pieces of meat in the same way — those, smeared with a paste of mustard and mixed with water, he should cook. He should mix in a little juice of fresh ginger and a little sour liquid; having put in salt in due measure, he should also stir in asafoetida water. When only a little of that liquid is left, he should take it off the fire and perfume it. It is renowned as *pañcavarṇī*, the five-coloured one, and it brings manifold forms and tastes.
 related:
   - antra-sunthaka-roasted-intestine
   - mandali-blood-sausage

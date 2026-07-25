@@ -4,22 +4,9 @@ source: Mānasollāsa 3.13.1350–1356
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  यत्नादाकृष्यापनयेद्दासीभिस्तण्डुलस्थितान् । अखण्डान् शोधितानेव क्षालितान् बहुशो जलैः ॥ १३५० ॥ तण्डुलान् कुन्दसङ्काशांस्तोयान्तर्धारितांश्चिरम् । स्थाल्यां ताम्रकृतायां वा मृज्जातायामथापि वा ॥ ५१ ॥ तण्डुलत्रिगुणं तोयं निक्षिपेच्च पिधापयेत् । वाससा शशिशुभ्रेण धौतेन च घनेन च ॥ ५२ ॥ चुल्यां निधाय निधूमे वह्नौ तत् काथयेज्जलम् । सुतप्ते बुद्बुदोपेते स्वल्पबाष्पसमन्विते ॥ ५३ ॥ तण्डुलानावपेत्स्थाल्यां दर्व्या च परिघट्टयेत् । सिक्थं विमृश्य वीक्षेत वारं वारं विचक्षणः ॥ ५४ ॥ मृदुभूते च तत्सिक्थे किञ्चिद्वा कणगर्भिते । तत्र दुग्धं घृतं वापि निक्षिप्योत्तारयेत्ततः ॥ ५५ ॥ स्थाल्यास्ये पिटकं दत्त्वा मण्डं तं स्रावयेद्गुणी । ईषदुद्धारितं मण्डमूष्मणा परिशोषयेत् ॥ ५६ ॥
+  यत्नाद्विकृष्यापनयेद्दासीभिस्तण्डुलस्थितान् । अखण्डान् शोधितानेव क्षालितान् बहुशो जलैः ॥ १३५० ॥ तण्डुलान् कुन्दसङ्काशांस्तोयान्तर्धारितांश्चिरम् । स्थाल्यां ताम्रकृतायां वा मृज्जातायामथापि वा ॥ ५१ ॥ तण्डुलत्रिगुणं तोयं निक्षिपेच्च पिधापयेत् । वाससा शशिशुभ्रेण धौतेन च घनेन च ॥ ५२ ॥ चुल्यां निधाय निर्धूमे वह्नौ तत् काथयेज्जलम् । सुतप्ते बुद्बुदोपेते स्वल्पबाष्पसमन्विते ॥ ५३ ॥ तण्डुलानावपेत्स्थाल्यां दर्व्या च परिघट्टयेत् । सिक्थं विमर्द्य वीक्षेत वारं वारं विचक्षणः ॥ ५४ ॥ मृदूभूते च तत्सिक्थे किञ्चिद्वा कणगर्भिते । तत्र दुग्धं घृतं वापि निक्षिप्योत्तारयेत्ततः ॥ ५५ ॥ स्थाल्यास्ये पिटकं दत्त्वा मण्डं तं स्रावयेद्गुणी । ईषदुद्धरितं मण्डमूष्मणा परिशोषयेत् ॥ ५६ ॥
 translation: >-
-  [The opening half-verse completes the previous one: with care, the
-  maidservants are to draw out and remove everything foreign lodged in the
-  rice.] Take grains unbroken and cleaned, washed many times with water, white
-  as *kunda* jasmine, and held under water a long while. In a pot made of
-  copper, or else of clay, put water three times the rice, and have it covered
-  with a cloth as white as the moon, washed, and thick. Set it on the stove and
-  boil that water over a smokeless fire. When the water is thoroughly hot,
-  covered in bubbles, and giving off a little steam, scatter the rice into the
-  pot and stir it with a ladle. The discerning cook should press a grain and
-  inspect it again and again. When the grain has gone soft, or still holds a
-  little core, put in milk, or else ghee, and then take the pot off the fire.
-  Setting a woven lid over the mouth of the pot, the skilled cook should pour
-  off the *māṇḍa*, the starchy water, and dry off what little of it remains in
-  the retained heat.
+  — with care, by means of the maidservants, he should draw out and remove the things lodged in the grain. [This half-verse completes the sentence begun at 1349.] The grains unbroken, thoroughly cleaned, washed many times with water, white as the *kunda* jasmine, and held a long while under water: in a pot made of copper, or else of clay, he should put water three times the rice, and have it covered with a cloth white as the moon, washed, and thick. Setting it on the stove, he should boil that water on a smokeless fire. When the water is thoroughly hot, covered with bubbles, and giving off a little steam, he should strew the rice into the pot and stir it about with a ladle. The discerning man should crush a grain and inspect it again and again. When that grain has gone soft, or still holds a little core, he should put milk into it, or else ghee, and then take it off the fire. Setting a woven lid over the mouth of the pot, the skilled man should let the starchy cooking water run off; and the little that is left behind he should dry away in the residual heat. [The edition prints *udharitam* here and suggests reading *udveritam*; neither is wholly clear, but the sense is the small quantity of cooking water not poured off.]
 related:
   - basic-split-pulse-soup
 tradition: Indian

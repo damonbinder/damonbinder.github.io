@@ -1,12 +1,12 @@
 ---
 title: '*Iḍerikā* Fermented Black-Gram Cakes'
-source: Mānasollāsa 3.13.1397–1401
+source: Mānasollāsa 3.13.1397cd–1401ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  यावद्बुद्बुदसंकाशा भवन्ति कनकत्विषः । माषस्य विदलान् क्लिन्नान्निस्तुषान् हस्तलोडनैः ॥ ९७ ॥ ततः सम्पेष्य पेषण्यां सम्भारेण विमिश्रितान् । स्थाल्यां विमर्द्य बहुशः स्थापयेत्तदहस्ततः ॥ ९८ ॥ आम्लीभूतं माषपिष्टं वैटिकासु विनिक्षिपेत् । गर्भाभिरन्याभिः पिधाय परिपाचयेत् ॥ ९९ ॥ अवतार्यात्र मरिचं चूर्णितं विकिरेदनु । घृताक्तान् हिङ्गुसर्पिर्भ्यां जीरकेण च धूपयेत् ॥ १४०० ॥ सुशीताः धवलाः श्लक्ष्णा एता इडेरिका वराः । तस्यैव माषपिष्टस्य गोलकान् विस्तृतान् घनान् ॥ १ ॥
+  माषस्य विदलान्क्लिन्नान्निस्तुषान्हस्तलोडनैः ॥ १३९७ ॥ ततः सम्पेष्य पेषण्यां सम्भारेण विमिश्रितान् । स्थाल्यां विमर्द्य बहुशः स्थापयेत्तदहस्ततः ॥ १३९८ ॥ आम्लीभूतं माषपिष्टं वैटिकासु विनिक्षिपेत् । वस्त्रगर्भाभिरन्याभिः पिधाय परिपाचयेत् ॥ १३९९ ॥ अवतार्यात्र मरिचं चूर्णितं विकिरेदनु । घृताक्तान्हिङ्गुसर्पिर्भ्यां जीरकेण च धूपयेत् ॥ १४०० ॥ सुशीता धवलाः श्लक्ष्णा एता इडेरिका वराः ।
 translation: >-
-  Soak split black gram and rub the husks off it by hand. Then grind it on the grinding stone, mix it with the seasonings, work it many times over in a pot, and set it aside for the day. Once the black-gram paste has turned sour, put it into *vaiṭikā* moulds, cover them over with other moulds lined with cloth, and cook them right through. Take them off the fire, scatter powdered pepper over them, and, smeared with ghee, perfume them with asafoetida in ghee and with cumin. Well cooled, white, and smooth, these are the excellent *iḍerikās*.
+  Split black gram, soaked and freed of its husks by rubbing with the hands; then, ground on the grinding stone, mixed with the seasoning-mix, worked over many times in a pot, and after that set aside for that day. Once the black-gram paste has turned sour, one should put it into *vaiṭikā* moulds, cover them over with others that have cloth inside, and cook it right through. Having taken them off the fire, one should then scatter powdered pepper over them; and, smeared with ghee, one should smoke them with asafoetida-and-ghee and with cumin. Well cooled, white, and smooth — these are the excellent *iḍerikās*. [1399c reads `वस्त्रगर्भाभिरन्याभिः`, "with others having cloth inside": the covering moulds are cloth-lined, which is moist heat. `वैटिकासु` is printed with no variant; the sense "in small cups" rests on the locative plus the covering vessels. The finishing order is off the fire, then pepper, then a ghee smear, then the smoking — three separate operations. `धूप-` is literal smoke throughout the chapter.]
 related:
   - gharika-black-gram-rings
   - katakarna-pulse-fritters

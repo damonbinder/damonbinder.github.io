@@ -1,12 +1,12 @@
 ---
 title: Spiced Sour Vaṭakas
-source: Mānasollāsa 3.13.1405–1407
+source: Mānasollāsa 3.13.1405cd–1408ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  यत्र यत्र द्रवद्रव्ये तन्नाम्ना वटकास्तु ते । आरनालेन सान्द्रेण दध्ना सुमथितेन च ॥ ५ ॥ सैन्धवार्द्रकधान्याकजीरकं च विमिश्रयेत् । मरिचानि द्विधा कृत्वा क्षिपेत्तत्र तु पाकवित् ॥ ६ ॥ दर्व्या विघट्टयन् सर्वं पचेद्यावद्घनीभवेत् । उत्तार्य वटकान् क्षिप्त्वा विकिरेन्मारिचं रजः ॥ ७ ॥
+  आरनालेन सान्द्रेण दध्ना सुमथितेन च ॥ १४०५ ॥ सैन्धवार्द्रकधान्याकजीरकं च विमिश्रयेत् । मरिचानि द्विधा कृत्वा क्षिपेत्तत्र तु पाकवित् ॥ १४०६ ॥ दर्व्या विघट्टयन्सर्वं पचेद्यावद्घनीभवेत् । उत्तार्य वटकान्क्षिप्त्वा विकिरेन्मारिचं रजः ॥ १४०७ ॥ हिङ्गुना धूपयेत्सम्यग्वटकास्ते मनोभिधाः ।
 translation: >-
-  In whatever liquid substance they are put, the *vaṭakas* take their name from it. Into thick *āranāla* and well-churned curd, mix rock salt, fresh ginger, coriander, and cumin; and the cook who knows his craft should split the peppercorns in two and throw them in there. Stirring the whole of it with a ladle, he should cook it until it becomes thick. Then, having taken it off the fire and thrown in the *vaṭakas*, he should scatter pepper powder over them. [1408 continues: perfume them well with asafoetida; those *vaṭakas* are delightful.]
+  With thick *āranāla* and with well-churned curd: one should mix in rock salt, fresh ginger, coriander, and cumin; and the knower of cooking should split the peppercorns in two and throw them in there. Breaking the whole of it up with a ladle, he should cook it until it grows thick. Having taken it off the fire and thrown in the *vaṭakas*, he should scatter pepper powder over them, and smoke them well with asafoetida. Those *vaṭakas* are *mano-abhidhāḥ*. [`आरनालेन` — four syllables, the standard word for thick sour fermented rice gruel, which is the *kāñjika* of 1404; `सान्द्रेण`, thick, is the reading. The peppercorns are cracked in two, and the pepper *powder* at 1407d is a second, separate application. 1408b: the edition prints `मनोभिधाः`, where the transcription behind the recipe pages has `मनोहराः`, "delightful". The `-अभिधाः` formula continues 1404's `वटिकाभिधाः` and `काञ्जिकाभिधाः`, and 1405ab has just said the name follows the liquid, so the sense is plausibly that these *vaṭakas* are named at will; the name-word itself is obscure. MS A reads `मना-`.]
 related:
   - gharika-black-gram-rings
   - iderika-fermented-black-gram-cakes

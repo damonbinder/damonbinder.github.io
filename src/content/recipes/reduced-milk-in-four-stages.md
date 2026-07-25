@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   गव्यं वा माहिषं वापि क्षीरं नीरविवर्जितम् । पचेत्स्थाल्यां मृदावग्नौ दर्वीघट्टनसंयुतम् ॥ ६५ ॥ अर्धावशेषं कुर्वीत त्रिभागेनावशेषितम् । षड्भागशेषितं वापि कुर्यादष्टावशेषिकम् ॥ ६६ ॥ अर्धावशिष्टं पाने स्यात्त्रिभागं लेह्यकं भवेत् । षड्भागं पिण्डतामेति शर्करा स्यादथाष्टमे ॥ ६७ ॥
 translation: >-
-  Cow's milk, or else buffalo's, free of water, one should cook in a pot over a gentle fire, stirring it with a ladle. One should reduce it to a half remaining, or to a third remaining, or to a sixth remaining, or one should make it reduced to an eighth. The half-remaining is for drinking; the third becomes a *lehya*, a thing to be licked; the sixth attains the state of a solid mass; and at the eighth it becomes *śarkarā* [granular, like sugar].
+  Cow's milk, or else buffalo's, free of water — he should cook it in a pot over a soft fire, attended with stirring by a ladle. He should make it half-remaining, or reduced to a third part, or reduced to a sixth part, or he should make it reduced to an eighth. The half-remaining is for drinking; the third part becomes a *lehya*, a thing to be licked; the sixth part goes to the state of a solid lump; and at the eighth it becomes *śarkarā*, sugar.
 related:
   - dadhi-curd-from-reduced-milk
 tradition: Indian

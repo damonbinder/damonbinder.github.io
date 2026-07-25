@@ -1,16 +1,12 @@
 ---
 title: Sohalā and Pāhalikā Fried Breads
-source: Mānasollāsa 3.13.1384–1385
+source: Mānasollāsa 3.13.1384–1385ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  तैलपूर्णकटाहे तु सुतप्ते सोहला पचेत् । उत्तानपाकसंसिद्धाः कठिनाः सोहला मताः ॥ ८४ ॥ तैलमग्नाः पीतवर्णा मृदवः पाहलिकाः स्मृताः । तनुप्रसारितान् गोलान् ताप्य स्नेहेन पाचितान् ॥ ८५ ॥
+  तैलपूर्णकटाहे तु सुतप्ते सोहलां पचेत् । उत्तानपाकसंसिद्धाः कठिनाः सोहला मताः ॥ ८४ ॥ तैलमग्नाः पीतवर्णा मृद्वः पाहलिकाः स्मृताः ।
 translation: >-
-  Cook *sohalās* in a very hot cauldron full of oil. Brought to completion
-  face-up — floating with the upper surface out of the oil — they are held to be
-  firm. *Pāhalikās* are sunk in the oil, yellow in colour, and soft. [The closing
-  half-verse begins the following recipe: balls spread out thin, heated, and
-  cooked in fat.]
+  In a cauldron full of oil, thoroughly heated, he should cook the *sohalā*. Brought to completion by cooking face-up, the *sohalā*s are held to be firm. Sunk in the oil, yellow in colour, and soft — these are known as *pāhalikā*s.
 related:
   - mandaka-flatbreads
 tradition: Indian

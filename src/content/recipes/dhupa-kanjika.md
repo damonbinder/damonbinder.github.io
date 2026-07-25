@@ -6,8 +6,7 @@ originalLang: Sanskrit
 original: >-
   सौवीरनिर्मलं साम्लं लवणेन च संयुतम् । हिङ्गुना जीरकेणापि धूपितं धूपकाञ्जिकम् ॥ १५८० ॥
 translation: >-
-  Clarified *sauvīra*, sour, joined with salt, and fumigated with asafoetida and
-  with cumin as well, is *dhūpa-kāñjika* — the smoked *kāñjika*.
+  Clear *sauvīra* — a sour ferment — sour, and joined with salt, fumigated with asafoetida and with cumin as well, is *dhūpa-kāñjika*, the smoked *kāñjika*.
 related:
   - vatakas-in-sweet-curd-or-kanjika
   - spiced-sour-vatakas

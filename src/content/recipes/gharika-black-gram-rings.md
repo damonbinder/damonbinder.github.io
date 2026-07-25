@@ -1,12 +1,12 @@
 ---
 title: Ghārikā Black-Gram Rings
-source: Mānasollāsa 3.13.1401–1403
+source: Mānasollāsa 3.13.1401cd–1403ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  सुशीताः धवलाः श्लक्ष्णा एता इडेरिका वराः । तस्यैव माषपिष्टस्य गोलकान् विस्तृतान् घनान् ॥ १ ॥ पञ्चभिः सप्तभिर्वापि छिद्रैश्च परिशोभितान् । तप्ततैले पचेद्यावल्लौहित्यं तेषु जायते ॥ २ ॥ घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः । निच्छिद्रा घारिकाः पक्वा मथिते शर्करायुते ॥ ३ ॥
+  तस्यैव माषपिष्टस्य गोलकान्विस्तृतान्घनान् ॥ १४०१ ॥ पञ्चभिः सप्तभिर्वापि छिद्रैश्च परिशोभितान् । तप्ततैले पचेद्यावल्लौहित्यं तेषु जायते ॥ १४०२ ॥ घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः ।
 translation: >-
-  From that very same black-gram batter [the soured batter of the *iḍerikās*] make balls, spread out broad and thick, adorned with five holes, or else with seven. Fry them in hot oil until a red color appears in them. Renowned by the name *ghārikā*, they are the most delightful of *bhakṣyas*.
+  Of that very same black-gram paste, balls — spread out broad and thick, and adorned with five holes, or else with seven: one should fry them in hot oil until a redness arises in them. Known by the name *ghārikā*, they are the most delightful among *bhakṣyas*. [*Bhakṣya* is the second of the five classes of food set out at 1344–45. The batter is the soured *iḍerikā* batter of 1399, and the colour contrast is deliberate: steamed, the same paste comes out `धवलाः`, white; fried, `लौहित्यं`, red.]
 related:
   - iderika-fermented-black-gram-cakes
   - vatakas-in-sweet-curd-or-kanjika

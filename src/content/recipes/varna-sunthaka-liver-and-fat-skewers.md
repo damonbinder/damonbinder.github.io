@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1499–1501
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  पञ्चाङ्गपट्टद्वेष्ट्या वर्तिबद्धोज्ज्वला वपा । अङ्गुलद्वयमानेन खण्डांस्तस्याः प्रकल्पयेत् ॥ ९९ ॥ खण्डानि कालखण्डस्य तत्प्रमाणानि चान्तरा । शूलपोतानि कृत्वा तानङ्गारेषु प्रतापयेत् ॥ १५०० ॥ सैन्धवं विकिरेत्तत्र सुश्लक्ष्णं मरिचान्वितम् । वर्णशुण्ठकनामेदं वर्णितं सोमभूभुजा ॥ १ ॥
+  पञ्चाङ्गपट्टवद्वेष्ट्य च वर्तिबद्धोज्ज्वला वपा । अङ्गुलद्वयमानेन खण्डांस्तस्याः प्रकल्पयेत् ॥ ९९ ॥ खण्डानि कालखण्डस्य तत्प्रमाणानि चान्तरा । शूलप्रोतानि कृत्वा तान्यङ्गारेषु प्रतापयेत् ॥ १५०० ॥ सैन्धवं विकिरेत्तत्र सुश्लक्ष्णं मरिचान्वितम् । वर्णशुण्ठकनामेदं वर्णितं सोमभूभुजा ॥ १ ॥
 translation: >-
-  Take the glistening caul fat [*vapā*, the omentum], bound into a roll by wrapping it with a *pañcāṅga* band [the compound is corrupt], and make pieces of it by the measure of two finger-widths. Set pieces of *kālakhaṇḍa* [liver] of that same measure in between them. Thread them on the spit and roast them over embers. Scatter over them very finely ground rock salt together with pepper. This is named *varṇa-śuṇṭhaka*, as described by King Soma.
+  Having wrapped it like a *pañcāṅga-paṭṭa* [some strip or band; the quarter-verse is corrupt in the printed edition as well — it runs one syllable long, and Shrigondekar's footnote records D's *-dveṣṭā ca* against the text's *-dveṣṭya ca*], the caul (*vapā*), gleaming, bound into a roll: of it he should make pieces by the measure of two finger-widths. And in between, pieces of liver of that same measure. Having threaded them on a spit, he should roast them over the embers. On them he should scatter very fine rock salt together with pepper. This, named *varṇa-śuṇṭhaka*, has been described by King Soma.
 related:
   - kalakhanda-preparations
 tradition: Indian

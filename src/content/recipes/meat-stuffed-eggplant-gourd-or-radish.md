@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1483–1485
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  वार्ताकान्तदेशस्य समीपे कृतरन्ध्रकम् । निष्कासितेषु बीजेषु तेन मांसेन पूरितम् ॥ ८३ ॥ तैलेन पाचितं किंचिदाणके परिपाचयेत् । पूरभट्टाकसंज्ञं तत्स्वादुना परिपाचयेत् ॥ ८४ ॥ कोशातकीफलेऽप्येवं मूलकस्य च कन्दके । पूरिते चूर्णमांसेन तत्तन्नाम्ना तु कथ्यते ॥ ८५ ॥
+  वार्ताकं वृन्तदेशस्य समीपे कृतरन्ध्रकम् । निष्कासितेषु बीजेषु तेन मांसेन पूरितम् ॥ ८३ ॥ तैलेन पाचितं किंचिदाणके परिपाचयेत् । पूरभट्टाकसंज्ञं तत्स्वादुना परिपाचयेत् ॥ ८४ ॥ कोशातकीफलेऽप्येवं मूलकस्य च कन्दके । पूरिते चूर्णमांसेन तत्तन्नाम्ना तु कथ्यते ॥ ८५ ॥
 translation: >-
-  Make a hole in an eggplant near its end and, the seeds having been taken out, fill it with that meat. Cooked a little in oil, one should cook it through in a pan; that is named *pūra-bhaṭṭāka* [*bhaṭṭāka* is a synonym of *vārtāka*, so the name means "filled eggplant"] — cook it through with something savoury. Likewise too in the fruit of the *kośātakī* gourd, and in the root of the radish, filled with the crumbled meat: each is spoken of by the name of its own vegetable.
+  An eggplant, with a hole made near the region of its stalk and its seeds taken out, is filled with that meat. Cooked a little in oil, he should then cook it through in the pan. That one, whose name is *pūra-bhaṭṭāka* ["stuffed *bhaṭṭāka*"; *bhaṭṭāka* is a synonym of *vārtāka*, eggplant], he should cook through with something savoury (*svādu*). In the fruit of the ridge gourd too, and in the root-tuber of the radish, it goes the same way: when they are filled with the crumbed meat, each is spoken of by the name of its own vegetable.
 related:
   - mamsa-vataka-bhusika-and-kosali
 tradition: Indian

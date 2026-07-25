@@ -4,9 +4,21 @@ source: Mānasollāsa 3.13.1427–1435
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  एतेषु मांसवर्गेषु केषाञ्चित्किंचिदुत्तमम् । वराहं सितवस्त्रेण प्रच्छाद्योत्क्वथितवारिणा ॥ २७ ॥ गण्डकेन सदण्डेन तावसिञ्चन्मुहुर्मुहुः । यावत्तज्जातरोमाणि प्रोन्मूल्यन्ते सुखं करैः ॥ २८ ॥ पश्चात्कर्तरिकया रोमाण्युद्धृष्टान्यपसारयेत् । अथवा कर्दमालिप्तं दहेत्तं तृणवह्निना ॥ २९ ॥ सुखोत्पाट्यानि रोमाणि पूर्ववच्चापसारयेत् । आजानुसन्धिमूलाङ्घ्रीं तृणैः प्रच्छाद्य तं दहेत् ॥ १४३० ॥ कठिनत्वमुपायातं क्षालयेन्निर्मलजलैः । पाण्डुरं बिससङ्काशं समं संस्थापितं कटे ॥ ३१ ॥ आमूर्ध्नः प्रस्थापयति कर्तरिकापरिपाटितम् । सारीफलकररेखाभ्यां चित्तवत् स्यादायामशुण्ठकम् ॥ ३२ ॥ चतुरस्रीकृतान् खण्डान् शूलपोतान् प्रतापयेत् । अङ्गारेषु प्रभूतेषु घृतबिन्दुस्रवावधि ॥ ३३ ॥ पश्चान्मरिचचूर्णेन विकिरेत्सैन्धवं ततः । अथाम्लपरिस्विन्नान् पूर्ववत्परिकल्पयेत् ॥ ३४ ॥ अथवा दारितान् कृत्वा त्वक्शेषान् लवणान्वितान् । भर्जयेदङ्गारपुञ्जेषु शुण्ठकानमृतोपमान् ॥ ३५ ॥
-translation: >-
-  Clean a pig by scalding or singeing and remove the bristles, then wash it until it is pale like a lotus-stalk. Cut the flesh into long *śuṇṭhakas* [the verse defining the cut is corrupt], then make square pieces, thread them on skewers, and roast over abundant embers until drops of fat begin to fall. Scatter ground pepper and rock salt over them. Or else sweat the pieces in sour liquid and then prepare them as before. Or else split them, leave the skin on, salt them, and roast them in heaps of embers: *śuṇṭhakas* like ambrosia.
+  एतेषु मांसवर्गेषु केषाञ्चित्किंचिदुत्तमम् । वराहं सितवस्त्रेण प्रच्छाद्योत्फुल्लवारिणा ॥ २७ ॥ गण्डकेन सदण्डेन तावत्सिञ्चेन्मुहुर्मुहुः । यावत्तज्जातरोमाणि प्रोन्मूल्यन्ते सुखं करैः ॥ २८ ॥ पश्चात्कर्त्रिकया रोमाण्युद्धृष्टान्यपसारयेत् । अथवा कर्दमालिप्तं दहेत्तं तृणवह्निना ॥ २९ ॥ सुखोत्पाट्यानि रोमाणि पूर्ववच्चापसारयेत् । आजानुसन्धिमूलाङ्घ्रि तृणैः प्रच्छाद्य तं दहेत् ॥ १४३० ॥ कठिनत्वमुपायातं क्षालयेन्निर्मलैर्जलैः । पाण्डुरं बिससङ्काशं समं संस्थापितं कटे ॥ ३१ ॥ आमूर्ध्नं प्रस्थापयति कर्त्रिकापरिपाटितम् । सारीफलकरेखाभ्यां चित्तं स्यायामसुण्ठिकाम् ॥ ३२ ॥ चतुरस्रीकृतान् खण्डान् शूलप्रोतान् प्रतापयेत् । अङ्गारेषु प्रभूतेषु घृतबिन्दुस्रवावधि ॥ ३३ ॥ पश्चान्मरिचचूर्णेन विकिरेत्सैन्धवं ततः । अथवाम्लपरिस्विन्नान् पूर्ववत्परिकल्पयेत् ॥ ३४ ॥ अथवा दारितान् कृत्वा त्वक्शेषान् लवणान्वितान् । भृज्येदङ्गारपुञ्जेषु शुण्ठकानमृतोपमान् ॥ ३५ ॥
+translation: |-
+  Among these classes of meat, in each of them some one part is the best.
+
+  Having covered a boar over with a white cloth, one should pour boiling water [*utphulla*, literally “burst open, bubbled up”] over it again and again with a long-handled *gaṇḍaka* [a dipper; the manuscripts disagree on the word], for just so long until the bristles that have grown on it are easily pulled out by hand. Afterwards he should scrape the loosened bristles away with a knife.
+
+  Or else, the carcass smeared over with clay, he should burn it with a fire of straw; the bristles, now easily pulled out, he should remove as before. Having covered with straw the lower legs from the base of the knee-joint down to the foot, he should burn those as well.
+
+  When it has come to be hard, he should wash it with clean water — pale, resembling a lotus-stalk, laid down flat on a mat.
+
+  He lays it out slit open with the knife right up to the head. By two lines like the lines of a *sārī*-board, patterned … a long *śuṇṭhikā*. [The second half of this verse is corrupt in Shrigondekar’s edition too, and he prints two alternatives rather than restoring it: *cittaṃ* with the variant *-vacca ta*, and *syāyāmasuṇṭhikām* with the variant *śuṇṭhakān*. The sense the passage requires is that the flesh is scored crosswise in a grid, as on a game-board, and that this yields the long strips called *śuṇṭhaka*. The verb *prasthāpayati* is a present indicative among optatives; manuscript D reads the plural *prasthāpayanti*.]
+
+  The pieces, made four-cornered and pierced on a skewer, he should roast thoroughly over abundant embers, until drops of fat run down. Afterwards he should scatter powdered pepper over them, and then rock salt.
+
+  Or else, the pieces sweated through in sour liquids, he should prepare as before. Or else, having split them, leaving the skin on, and mixed them with salt, he should fry them in heaps of embers — *śuṇṭhaka*s like *amṛta*, the drink of immortality.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

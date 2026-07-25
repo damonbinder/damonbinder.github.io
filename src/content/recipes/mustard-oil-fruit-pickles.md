@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   अथवा राजिकाचूर्णे सतैले लवणान्विते । प्रक्षाल्य वृन्तसहितं फलं चूतादिकं न्यसेत् ॥ ५९ ॥ कारवेल्लं सपनसं कदलीफलमेव च । सतैले राजिकाचूर्णे निक्षिपेल्लवणान्विते ॥ १५६० ॥
 translation: >-
-  Or else, having washed it, one should place the fruit together with its stalk — mango and the like — in powdered mustard mixed with oil and salt. Bitter gourd, jackfruit, and banana too one should put into the same powdered mustard with oil and salt.
+  Or else: in powdered mustard mixed with oil and joined with salt, having washed it, he should set down the fruit together with its stalk — mango and the like. Bitter gourd, along with jackfruit, and banana fruit as well, he should put into powdered mustard mixed with oil and joined with salt.
 related:
   - pickled-shoots-and-roots
 tradition: Indian

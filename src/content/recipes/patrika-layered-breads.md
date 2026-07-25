@@ -1,12 +1,12 @@
 ---
 title: '*Patrikā* Layered Breads'
-source: Mānasollāsa 3.13.1385–1386
+source: Mānasollāsa 3.13.1385cd–1386ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  तैलमग्नाः पीतवर्णा मृदवः पाहलिकाः स्मृताः । तनुप्रसारितान् गोलान् ताप्य स्नेहेन पाचितान् ॥ ८५ ॥ उपर्युपरि निक्षिप्ताः पत्रिकाः विपचेत्सुधीः । गोधूमचूर्णादुद्धृत्य शूर्पेणाभ्याहतान् कणान् ॥ ८६ ॥
+  तनुप्रसारितान्गोलान्ताप्यां स्नेहेन पाचितान् ॥ ८५ ॥ उपर्युपरि निक्षिप्ताः पत्रिका विपचेत्सुधीः ।
 translation: >-
-  Spread the dough-balls thin and cook them with fat on the heated griddle; laid one above another, the wise cook should cook them as *patrikās*.
+  Balls spread out thin and cooked with fat on the griddle, laid one above another — the wise man should cook them as *patrikā*s.
 related:
   - mandaka-flatbreads
   - kisara

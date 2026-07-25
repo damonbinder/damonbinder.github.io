@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1478–1482
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  मिश्रयित्वा तु तन्मांसं हिङ्गुधूपेन वासयेत् । आमं मांसं च पेषण्यां हिङ्गुतोयेन सिञ्चितम् ॥ ७८ ॥ लवणेन च चूर्णेन सहितं पेषयेद्बुधः । पिष्टवच्चिकणं कृत्वा गोलकानि प्रकल्पयेत् ॥ ७९ ॥ चूर्णीकृतं तु यन्मांसं गोलकैस्तद्विवेष्टयेत् । चूर्णगर्भांश्च वटकान् निक्षिपेदाणके शुभे ॥ १४८० ॥ ख्यातास्ते मांसवटका रुच्या दृश्या मनोहराः । त एव वटकास्तैले पक्वाः स्युर्भूषिकाभिधाः ॥ ८१ ॥ तदेव चूर्णितं मांसं कणिकापरिवेष्टितम् । अङ्गारेषु तथा भृष्टं कोशलीति निगद्यते ॥ ८२ ॥
+  आमं मांसं च पेषण्यां हिङ्गुतोयेन सेचितम् ॥ ७८ ॥ लवणेन च चूर्णेन संहितं पेषयेद्बुधः । पिष्टवच्चिकणं कृत्वा गोलकानि प्रकल्पयेत् ॥ ७९ ॥ चूर्णीकृतं तु यन्मांसं गोलकैस्तद्विवेष्टयेत् । चूर्णगर्भांश्च वटकान्प्रक्षिपेदाणके शुभे ॥ १४८० ॥ ख्यातास्ते मांसवटका रुच्या दृश्या मनोहराः । त एव वटकास्तैले पक्वाः स्युर्भूषिकाभिधाः ॥ ८१ ॥ तदेव चूर्णितं मांसं कणिकापरिवेष्टितम् । अङ्गारेषु तथा भृष्टं कोशलीति निगद्यते ॥ ८२ ॥
 translation: >-
-  Raw meat, on the grinding stone, sprinkled with asafoetida-water: the wise cook should grind it together with salt and spice powder. Having made it sticky like dough, he should form it into balls. The meat that has been reduced to *cūrṇa* [a crumb, as against the sticky paste] — that he should envelop with the balls, and put the *cūrṇa*-cored *vaṭakas* into a good pan. These are the renowned *māṃsa-vaṭakas*: tasty, handsome to look at, and delightful. Those same *vaṭakas*, cooked in oil, are the ones called *bhūṣikās*. That same *cūrṇa*-meat, wrapped around with wheat dough and roasted likewise among embers, is called *kośalī*.
+  And raw meat, sprinkled with asafoetida water on the grinding stone and joined with salt and with spice powder, the learned man should grind. Having made it sticky like dough, he should form it into balls. But the meat that has been reduced to crumb (*cūrṇa*) — that he should wrap up in the balls; and the *vaṭaka*s so given crumb bellies he should throw into a good pan. These are renowned as the *māṃsa-vaṭaka*s: tasty, handsome to look at, delightful. Those same *vaṭaka*s, cooked in oil, are the ones called *bhūṣikā*s. That same crumbed meat, wrapped about with wheat-flour dough and roasted likewise among the embers, is called *kośalī*.
 related:
   - roast-meat-salad-with-citron-and-ginger
   - meat-stuffed-eggplant-gourd-or-radish

@@ -4,12 +4,9 @@ source: Mānasollāsa 3.13.1578–1579
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  तण्डुलक्षालितं तोयं चिञ्चाम्लेन विमिश्रितम् । ईषत्तक्रेण संयुक्तं सितया सह योजितम् ॥ ७८ ॥ एलाचूर्णसमायुक्तमार्द्रकस्य रसेन च । धूपितं हिङ्गुना सम्यग्व्यञ्जनं परिकीर्तितम् ॥ ७९ ॥
+  तण्डुलक्षालितं तोयं चिञ्चाम्लेन विमिश्रितम् । ईषत्तक्रेण संयुक्तं सितया सह योजितम् ॥ ७८ ॥ एलाचूर्णसमायुक्तमार्द्रकस्य रसेन च । धूपितं हिङ्गुना सम्यक् व्यञ्जनं परिकीर्तितम् ॥ ७९ ॥
 translation: >-
-  Water in which rice has been washed, mixed with tamarind sour, joined with a
-  little *takra*, combined with sugar, together with cardamom powder and the
-  juice of fresh ginger, and thoroughly fumigated with asafoetida, is declared to
-  be a *vyañjana*.
+  Water in which rice has been washed, mixed with tamarind sour, joined with a little *takra*, combined with sugar, together with cardamom powder and with the juice of fresh ginger, and thoroughly fumigated with asafoetida: that is declared to be a *vyañjana*.
 related:
   - spiced-takra
 tradition: Indian

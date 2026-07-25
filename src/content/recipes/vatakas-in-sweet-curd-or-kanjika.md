@@ -1,12 +1,12 @@
 ---
 title: Vaṭakas in Sweet Curd or Kāñjika
-source: Mānasollāsa 3.13.1403–1404
+source: Mānasollāsa 3.13.1403cd–1405ab
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  घारिकासंज्ञया ख्याता भक्ष्येषु सुमनोहराः । निच्छिद्रा घारिकाः पक्वा मथिते शर्करायुते ॥ ३ ॥ एलामरिचसंयुक्ते निक्षिप्ता वटिकाभिधाः । त एव वटकाः क्षिप्ताः काञ्जिके काञ्जिकाभिधाः ॥ ४ ॥
+  निच्छिद्रा घारिकाः पक्वा मथिते शर्करायुते ॥ १४०३ ॥ एलामरिचसंयुक्ते निक्षिप्ता वटिकाभिधाः । त एव वटकाः क्षिप्ताः काञ्जिके काञ्जिकाभिधाः ॥ १४०४ ॥ यत्र यत्र द्रवद्रव्ये तन्नाम्ना वटकास्तु ते ।
 translation: >-
-  *Ghārikās* cooked without holes, put into *mathita* combined with sugar and joined with cardamom and pepper, are named *vaṭikās*. Those same *vaṭakas*, put into *kāñjika*, are named *kāñjika*[-*vaṭakas*].
+  *Ghārikās* cooked without holes, thrown into *mathita* joined with sugar and combined with cardamom and pepper, are the ones named *vaṭikā*. Those same *vaṭakas*, thrown into *kāñjika*, are the ones named *kāñjika*. In whatever liquid substance they are put, the *vaṭakas* take their name from that. [`मथित` is the chapter's own technical grade, defined at 1571: curd churned and stripped of its butter, with no water added — diluted by half it is *udaśvit*, by a quarter *takra*. At 1404b the manuscripts read `वटिकाभिधाः` and the editor corrects to `वटकाभिधाः`, matching `वटकाः` in the next hemistich; the manuscript reading is kept here.]
 related:
   - gharika-black-gram-rings
   - iderika-fermented-black-gram-cakes

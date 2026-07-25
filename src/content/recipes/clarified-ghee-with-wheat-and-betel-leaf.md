@@ -4,12 +4,9 @@ source: Mānasollāsa 3.13.1576–1577
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  नवनीतं नवं धौतं नीरलेशविवर्जितम् । तापयेदग्निना सम्यङ्मृदुना घृतभाण्डके ॥ ७६ ॥ पाके संपूर्णतां याते क्षिपेद्गोधूमबीजकम् । क्षिपेत्ताम्बूलपत्रं च पश्चादुत्तारयेद्घृतम् ॥ ७७ ॥
+  नवनीतं नवं धौतं नीरलेशविवर्जितम् । तापयेदग्निना सम्यक् मृदुना घृतभाण्डके ॥ ७६ ॥ पाके संपूर्णतां याते क्षिपेद्गोधूमबीजकम् । क्षिपेत्ताम्बूलपत्रं च पश्चादुत्तारयेद्घृतम् ॥ ७७ ॥
 translation: >-
-  Fresh butter, newly churned, washed, and rid of every trace of water: heat it
-  properly over a gentle fire in a ghee-pot. When the cooking has reached
-  completion, throw in wheat grain, and throw in a betel leaf; afterwards take
-  the ghee off the fire.
+  Fresh butter, newly churned, washed, and free of the least trace of water: he should heat it properly over a soft fire in a ghee-pot. When the cooking has gone to completeness, he should throw in a wheat grain; and he should throw in a betel leaf, and afterwards take the ghee off the fire.
 related:
   - spiced-takra
 tradition: Indian

@@ -4,19 +4,9 @@ source: Mānasollāsa 3.13.1554–1558
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  श्रीफलं केतकं चिञ्चा मेषशृङ्गी सुगन्धिजम् । कुटजं मरिचं पथ्या विषमुष्टिकशिम्बिजम् ॥ ५४ ॥ एलारामठनीवारमेथिकापर्पटं तथा । अगस्त्यं नन्दनं राजमातुलिङ्गकपाटालम् ॥ ५५ ॥ कटं मदं कर्कटं च करीरं टेण्टुकं तथा । वेत्रकारीफलं चैव लवणाम्भसि निक्षिपेत् ॥ ५६ ॥ चूतमाम्रातकं धात्री कुहिरि कर्कटी तथा । कूष्माण्डं त्रपुसं द्राक्षा कर्कटी बृहतीद्वयम् ॥ ५७ ॥ कोशातकी बीजपूरं निष्पावं करमर्दकम् । जम्बीरबिम्बवार्ताककर्मरं लवणाम्भसि ॥ ५८ ॥
+  श्रीफलं केतकं चिञ्चा मेषशृङ्गी सुगन्धिजम् । कुटजं मरिचं पथ्या विषमुष्टिकशिम्बिजम् ॥ ५४ ॥ एलारामठनीवारमेथिकापर्पटं तथा । अगस्त्यं नन्दनं राजमातुलिङ्गकपाटलिं ॥ ५५ ॥ कटं मटं कर्कटं च करीरं टेण्टुकं तथा । वेत्रकारीफलं चैव लवणाम्भासि निक्षिपेत् ॥ ५६ ॥ चूतमाम्रातकं धात्री कुहिरी कर्कटी तथा । कूष्माण्डं त्रपुसं द्राक्षा कर्कटी बृहतीद्वयम् ॥ ५७ ॥ कोशातकीबीजपूरं निष्पावं करमर्दकम् । जम्बीरबिम्बवार्ताककर्मरं लवणाम्भासि ॥ ५८ ॥
 translation: >-
-  Bael, *ketaka* [screw pine], tamarind, *meṣaśṛṅgī*, *sugandhija*, *kuṭaja*,
-  pepper, *pathyā* [chebulic myrobalan], the pods of *viṣamuṣṭika* [the name
-  normally denotes the poisonous *Strychnos nux-vomica*; the identification
-  here is not secure], cardamom, asafoetida, *nīvāra* [wild rice], fenugreek,
-  *parpaṭa*, *agasti*, *nandana*, royal citron, *pāṭala* [the transmitted form
-  does not scan; *pāṭala*, the trumpet-flower, is the likely reading], *kaṭa*,
-  *mada*, *karkaṭa*, *karīra*, tendu, cane, and *kārīphala* — put these into
-  salt water. Mango, hog plum, *āmalaka*, *kuhiri*, snake cucumber, ash gourd,
-  cucumber, grapes, snake cucumber again [the repetition inside the verse may
-  be a copying error], the two *bṛhatīs*, luffa, citron, *niṣpāva*,
-  *karamardaka*, lime, ivy gourd, eggplant, and *karmara* — into salt water.
+  Bael, screw pine, tamarind, *meṣaśṛṅgī*, *sugandhija*; *kuṭaja*, pepper, chebulic myrobalan, and what comes of the pod of *viṣamuṣṭika*; cardamom, asafoetida, wild rice, fenugreek, and *parpaṭa* likewise; *agastya*, *nandana*, royal citron, and *pāṭali* — *kaṭa*, *maṭa*, and *karkaṭa*, and *karīra* and *ṭeṇṭuka* likewise, and cane and *kārīphala*: he should put these into salt water. Mango, hog plum, emblic myrobalan, *kuhirī*, and *karkaṭī* likewise; ash gourd, cucumber, grapes, *karkaṭī*, the two *bṛhatīs*; ridge gourd, citron, lablab bean, *karamardaka*; lime, ivy gourd, eggplant, and *karmara* — into salt water. [1555d: the print reads *-kapāṭaliṃ*, p. 132, accusative of the feminine *pāṭali*, the trumpet-flower; D reads *-liḥ*. Our *pāṭālam* broke the cadence. 1556a: the print reads *maṭaṃ*, not *madaṃ*. 1557: *karkaṭī* stands twice in the printed verse, in b and in d. 1556d and 1558d: the print reads *lavaṇāmbhāsi* in both places, where the expected locative singular is *lavaṇāmbhasi*.]
 tradition: Indian
 category: Dips and relishes
 subcategory: Vegetables & pickles

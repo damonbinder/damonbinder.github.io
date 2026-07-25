@@ -4,9 +4,9 @@ source: Mānasollāsa 3.13.1561–1564
 work: Mānasollāsa
 originalLang: Sanskrit
 original: >-
-  वंशाङ्कुरं लघु चक्रीं शतावर्यास्तथैव च । पातालटेण्टुकानां च प्ररोहान् क्षालितान् मृदून् ॥ ६१ ॥ सलिले लवणोपेते तैले वापि सराजिके । लवणेन समायुक्ते प्रक्षिपेदङ्कुरानिमान् ॥ ६२ ॥ मागिणीमाकं पैष्टुं कचोरं वनमागिणीम् । कर्पूरमागिणीमूलं तथैवाम्लहरिद्रकाम् ॥ ६३ ॥ सूरणं मधुशिग्रं च तथा बिलकन्दकम् । एतानि पूर्ववत्कृत्वा तैले वापि विनिक्षिपेत् ॥ ६४ ॥
+  वंशाङ्कुरं लघुं चक्रीं शतावर्यास्तथैव च । पातालटेण्टुकानां च प्ररोहान्क्षालितान्मृदून् ॥ ६१ ॥ सलिले लवणोपेते तैले वाऽपि सराजिके । लवणेन समायुक्ते प्रक्षिपेदङ्कुरानिमान् ॥ ६२ ॥ मागिणीमार्द्रकं पैष्टुं कचोरं वनमागिणीम् । कर्पूरमागिणीमूलं तथैवाम्लहरिद्रका ॥ ६३ ॥ सूरणं मधुशिग्रुं च तथा शंबलकन्दकम् । एतानि पूर्ववत्कृत्वा तैले वापि विनिक्षिपेत् ॥ ६४ ॥
 translation: >-
-  Bamboo shoot, small *cakrī*, and likewise the shoots of *śatāvarī*, and the sprouts of *pātāla* and *ṭeṇṭuka* — tender ones, washed: one should put these sprouts into water mixed with salt, or else into oil with mustard and joined with salt. *Māgiṇī-māka*, *paiṣṭu* [this pāda is metrically defective], *kacora*, wild *māgiṇī*, the root of camphor *māgiṇī*, and likewise sour turmeric; elephant-foot yam, sweet *śigru*, and *bilakanda* — having prepared these as before, one should put them into oil as well.
+  Bamboo shoot, the small *cakrī*, and likewise the shoots of *śatāvarī*, and the sprouts of the *pātāla-ṭeṇṭukas*, washed and tender — into water furnished with salt, or else into oil with mustard and joined with salt, he should throw these sprouts. *Māgiṇī* and fresh ginger, *paiṣṭu*, zedoary, and wild *māgiṇī*; the root of camphor-*māgiṇī*, and likewise sour turmeric, that is, mango ginger; elephant-foot yam and sweet *śigru*, a variety of the drumstick tree, and likewise the *śaṃbala*-bulb — having prepared these as before, he should put them into oil as well. [1561a: the print reads *laghuṃ*, p. 133, which the cadence requires. 1563a: the print reads *māgiṇīmārdrakaṃ*, i.e. *māgiṇīm* + *ārdrakaṃ*, fresh ginger; our *māgiṇīmākaṃ* was a syllable short. 1563d: the print reads *haridrakā*, not *-kām*. 1564: the print reads *madhuśigruṃ* and *śaṃbalakandakam*; our *bilakandakam* was a syllable short, and D reads *vaṣṭha-*.]
 related:
   - mustard-oil-fruit-pickles
 tradition: Indian

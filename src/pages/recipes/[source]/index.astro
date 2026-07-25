@@ -28,6 +28,69 @@ const period = sourceEntry?.data.period;
 // empty column.
 const Blurb = sourceEntry?.body?.trim() ? (await render(sourceEntry)).Content : undefined;
 const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const escAttr = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Editorial additions and uncertainty notes are written in [square brackets].
+// Inline they swamp the prose, so render each as a superscript marker holding
+// its note — shown on hover, and on keyboard focus or tap via :focus-within.
+// Scanned rather than matched by regex: notes nest to arbitrary depth, since a
+// note may gloss a bracketed word of its own. Unbalanced brackets are left
+// alone rather than silently swallowing the rest of the paragraph.
+function noteify(s: string) {
+  let out = '';
+  let i = 0;
+  while (i < s.length) {
+    if (s[i] !== '[') { out += s[i++]; continue; }
+    let depth = 0;
+    let j = i;
+    for (; j < s.length; j++) {
+      if (s[j] === '[') depth++;
+      else if (s[j] === ']' && --depth === 0) break;
+    }
+    if (j >= s.length) { out += s[i++]; continue; } // unbalanced: leave as-is
+    out +=
+      '<span class="ednote" tabindex="0"><sup>◦</sup>' +
+      `<span class="ednote-body">${noteify(s.slice(i + 1, j))}</span></span>`;
+    i = j + 1;
+  }
+  return out;
+}
+
+// Anuṣṭubh is printed as two half-lines per verse, closed by ॥ N ॥. Split on
+// those markers so the page shows the verse structure instead of one long
+// paragraph. Returns null for sources with no verse markers (e.g. Vinidarius),
+// which fall back to running text.
+const DEVA = '०१२३४५६७८९';
+const toArabic = (n: string) =>
+  Number([...n].map((c) => (DEVA.indexOf(c) >= 0 ? String(DEVA.indexOf(c)) : c)).join(''));
+function splitVerses(latin: string, blockStart: number, blockEnd: number) {
+  if (!latin.includes('॥')) return null;
+  const out: { num: number | null; lines: string[] }[] = [];
+  const re = /॥\s*([\d०-९]+)\s*॥/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(latin)) !== null) {
+    const body = latin.slice(last, m.index).trim();
+    last = re.lastIndex;
+    // Printed verse numbers are abbreviated to their last digits; restore the
+    // century from the block's own first verse.
+    const raw = toArabic(m[1]);
+    let num: number | null = raw;
+    if (raw < 100) {
+      num = Math.floor(blockStart / 100) * 100 + raw;
+      if (num < blockStart) num += 100;
+    }
+    // A marker outside the block's own span isn't a verse number — the
+    // colophon closes with the adhyāya number (॥ १३ ॥). Leave it unlabelled.
+    if (num !== null && (num < blockStart || num > blockEnd)) num = null;
+    const lines = body.split('।').map((l) => l.trim()).filter(Boolean);
+    if (lines.length) out.push({ num, lines });
+  }
+  const tail = latin.slice(last).trim();
+  if (tail) out.push({ num: null, lines: tail.split('।').map((l) => l.trim()).filter(Boolean) });
+  return out.length ? out : null;
+}
 
 // The complete surviving text (independent of which entries have become
 // cooked recipe pages), linked through to whichever recipes it covers.
@@ -52,6 +115,7 @@ const textEntries = (fullText ?? []).map((entry) => {
     recipes: span
       ? spans.filter((x) => x.span[0] <= span[1] && span[0] <= x.span[1]).map((x) => x.recipe)
       : [],
+    verses: splitVerses(entry.latin, span ? span[0] : 0, span ? span[1] : Infinity),
   };
 });
 ---
@@ -93,9 +157,22 @@ const textEntries = (fullText ?? []).map((entry) => {
                   ))
                 : entry.ref}
             </span>
-            <p class="latin" set:html={`<em>${em(entry.latin)}</em>`}></p>
+            {entry.verses
+              ? <div class="verses">
+                  {entry.verses.map((v) => (
+                    <div class="verse">
+                      <span class="vnum">{v.num ?? ''}</span>
+                      <span class="vlines">
+                        {v.lines.map((l, i) => (
+                          <span class="vline" set:html={`<em>${em(l)}</em>${i < v.lines.length - 1 ? ' ।' : ' ॥'}`}></span>
+                        ))}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              : <p class="latin" set:html={`<em>${em(entry.latin)}</em>`}></p>}
             {entry.english
-              ? <p class="english" set:html={em(entry.english)}></p>
+              ? <p class="english" set:html={noteify(em(entry.english))}></p>
               : <p class="english untranslated">—</p>}
           </div>
         ))}
@@ -103,6 +180,7 @@ const textEntries = (fullText ?? []).map((entry) => {
     </details>
   )}
 </Base>
+
 
 <style>
   .crumb { font-family: var(--font-sans); font-size: 0.85rem; margin: 0 0 0.6rem; }
@@ -158,8 +236,65 @@ const textEntries = (fullText ?? []).map((entry) => {
   .text-row p { margin: 0; font-size: 0.95rem; line-height: 1.55; }
   .text-row .untranslated { color: var(--muted); }
 
+  /* Verse layout: number in a hanging margin, half-lines stacked as printed. */
+  .verses { display: flex; flex-direction: column; gap: 0.5rem; }
+  .verse { display: grid; grid-template-columns: 2.6rem 1fr; align-items: baseline; }
+  .vnum {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.15em;
+  }
+  .vlines { display: flex; flex-direction: column; }
+  .vline { font-size: 0.95rem; line-height: 1.7; text-indent: 0; }
+  .vline + .vline { padding-left: 1.1rem; }
+
+  /* Editorial notes: a marker that reveals its note on hover or focus.
+     These spans are injected with set:html, so they never carry Astro's
+     scoping attribute — the selectors have to be :global to reach them. */
+  .text-row :global(.ednote) {
+    cursor: help;
+    color: var(--accent);
+  }
+  .text-row :global(.ednote > sup) { font-size: 0.7em; line-height: 0; }
+  /* The bubble is positioned against the paragraph, not the marker, so it can
+     never run off the edge of a narrow screen — a marker-anchored tooltip
+     would, and CSS has no way to flip it back. It opens just under the
+     paragraph, spanning its width. */
+  .text-row .english { position: relative; }
+  .text-row :global(.ednote-body) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0.35rem);
+    z-index: 5;
+    display: none;
+    padding: 0.5rem 0.7rem;
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.14);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    text-indent: 0;
+    white-space: normal;
+  }
+  .text-row :global(.ednote:hover > .ednote-body),
+  .text-row :global(.ednote:focus > .ednote-body),
+  .text-row :global(.ednote:focus-within > .ednote-body) { display: block; }
+  .text-row :global(.ednote:focus) { outline: 1px dotted var(--accent); outline-offset: 2px; }
+  /* A nested note lives inside an open bubble, which is itself positioned —
+     anchor the inner one to it rather than to the paragraph. */
+  .text-row :global(.ednote-body) { position: absolute; }
+  .text-row :global(.ednote-body .ednote-body) { top: calc(100% + 0.3rem); }
+
   @media (max-width: 700px) {
     .text-row { grid-template-columns: 1fr; gap: 0.4rem; }
     .text-row .ref { order: -1; }
+    .verse { grid-template-columns: 2.2rem 1fr; }
+    .vline + .vline { padding-left: 0.7rem; }
   }
 </style>

@@ -229,14 +229,21 @@ const textEntries = (fullText ?? []).map((entry) => {
   /* The full text needs more room than the 58rem reading measure: three columns
      plus a gutter for the sidenotes. Break out of the wrap symmetrically. */
   .full-text[open] .text-rows {
-    --gutter: 14.5rem;
-    width: min(94vw, 84rem);
-    margin-left: calc(50% - min(47vw, 42rem));
+    /* Chosen by measurement, not taste: a wider block gives the translation
+       longer lines, which bunches the note markers vertically and forces more
+       sidenotes off their own line. 70/13 put the most notes level with their
+       marker while keeping a readable 28rem measure. */
+    --gutter: 13rem;
+    width: min(94vw, 70rem);
+    margin-left: calc(50% - min(47vw, 35rem));
   }
   .text-rows { display: flex; flex-direction: column; gap: 1.6rem; }
+  /* The Sanskrit column is capped rather than an equal 1fr share: a half-line
+     of anuṣṭubh never needs more than about 17rem, so an even split leaves a
+     widening band of dead space between the two texts as the window grows. */
   .text-row {
     display: grid;
-    grid-template-columns: 5.5rem 1fr 1fr;
+    grid-template-columns: 5.5rem minmax(0, 20.5rem) minmax(0, 1fr);
     gap: 1.5rem;
     align-items: baseline;
   }
@@ -321,8 +328,11 @@ const textEntries = (fullText ?? []).map((entry) => {
   }
   .text-row :global(.ednote:focus) { outline: none; }
 
-  /* No room for a gutter: notes run on under the text instead of being clipped. */
-  @media (max-width: 899px) {
+  /* No room for a gutter: notes run on under the text instead of being clipped.
+     The threshold is set by what the row actually needs — ref, Sanskrit, a
+     readable measure of English, the gutter, and three gaps — not by a round
+     number, since below it the translation gets squeezed to a few words wide. */
+  @media (max-width: 1199px) {
     .full-text[open] .text-rows { width: auto; margin-left: 0; }
     .text-row .english { padding-right: 0; }
     .text-row :global(.ednote-body) {

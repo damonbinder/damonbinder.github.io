@@ -13,18 +13,12 @@ original: >-
   ॥ १४४० ॥ चूर्णितं मरिचं राजीसैन्धवैर्मिश्रयेत्ततः । हिङ्गुना धूपिताः साम्ला
   हृद्याश्चक्कलिका वराः ॥ ४१ ॥
 translation: >-
-  Taking the fatty portion of the cooked *śuṇṭhakas*, make fine *cakkalikās*,
-  slices of the same shape as a palmyra leaf. Throw the appetizing *cakkalikās*
-  into churned curd [*mathita*, from which the butter has been removed] combined
-  with sugar, mixed with cardamom, and perfumed with camphor. Or take *śuṇṭhas*
-  of meat and fat, made into *cakkalikās* as before, and throw them into churned
-  curd combined with mustard and citron pulp and thoroughly perfumed with
-  asafoetida smoke. Alternatively fry them in ghee and scatter cardamom with
-  sugar over them. Or else, with the pulp of a well-ripened citron, with finely
-  cut pieces of fresh ginger, and with delightful *kesarāmla* [a second name for
-  the citron], then mix in powdered pepper together with mustard and rock salt;
-  perfumed with asafoetida, sour and heart-pleasing, these *cakkalikās* are
-  excellent.
+  Cut the fatty portion of cooked *śuṇṭhakas* into thin palmyra-leaf-shaped
+  slices called *cakkalikās*. Put them in churned curd with sugar, cardamom, and
+  camphor; or in curd with mustard and citron pulp, perfumed with asafoetida.
+  Alternatively fry them in ghee and scatter cardamom and sugar over them. A sour
+  version combines citron pulp, fresh ginger, sour citrus, pepper, mustard, rock
+  salt, and asafoetida.
 related:
   - roast-pork-sunthaka
 tradition: Indian
@@ -57,9 +51,5 @@ status: published
 
 ## Notes
 
-* The text's only guide to the slicing is that the *cakkalikās* are shaped like a palmyra leaf: a long narrow strip, the same leaf South Indian manuscripts were written on. The thickness, the length, the chilling (which is only there to make thin slices possible), and the skinning are all mine.
 * The text doesn't say whether the pork for the sour version is fried first. I fried it in ghee, as in the sweet version, and it worked well.
-* In 1441 it is the *cakkalikās* themselves that are perfumed with asafoetida, where 1439 perfumes the curd instead. That is some support for treating this version as dressed meat rather than as something folded into a sauce.
-* Mixing the dressing ten minutes ahead gives the ground mustard time to develop; tossed straight onto hot pork it stays flat. The text puts the powders into the citron and ginger before the meat arrives, so this is the order it already implies.
 * Citron is hard to find; lemon pulp with a little finely grated peel is the closest substitute.
-* 1440 names the citron twice, once as *mātuluṅga* and once as *kesarāmla*, which the lexica also gloss as the citron. There is no second, separate sour fruit in the verse.

@@ -6,7 +6,7 @@ originalLang: Sanskrit
 original: >-
   स्थूलामलकसङ्काशान् शुद्धमांसस्य खण्डकान् । काथयेद्राजिकातोयैर्नागरार्द्रकसंयुतैः ॥ ५७ ॥ स्थापयेत्तज्जलं पात्रे रिक्ते चाम्लैर्विपाचयेत् । तत्समान् शुण्ठकान् क्षिप्त्वा सैन्धवं तत्र योजयेत् ॥ ५८ ॥ मेथकचूर्णकं तत्र धान्यकस्य च पूलिकाम् । निक्षिप्योत्तारयेत्सूदो घृतं वान्यत्र तापयेत् ॥ ५९ ॥ सुतप्ते च घृते पलाण्डुं लशुनं हिङ्गुना सह । प्रक्षिप्य संस्कृतं मांसं तस्यां स्थाल्यां प्रवेशयेत् ॥ १४६० ॥ पिहितं च ततः कुर्यात्किंचित्कालं प्रतीक्ष्य च । उत्तारयेत्ततः सिद्धं पुर्यलाख्यमिदं वरम् ॥ ६१ ॥
 translation: >-
-  Cut clean meat into pieces the size of large *āmalakas*. Boil them in mustard-water combined with dried and fresh ginger. Transfer the cooking liquor to an empty vessel and cook it with sour ingredients. Return the same-sized meat *śuṇṭhakas* and add rock salt, fenugreek powder, and a small bundle of coriander. Take the preparation off the fire and heat ghee separately. Into the very hot ghee put onion, garlic, and asafoetida; then place the prepared meat in that pot. Cover it, wait a short time, and remove it when done. This excellent preparation is called *puryala*.
+  Cut clean meat into pieces the size of large āmalakas. Boil them in mustard-water combined with dried and fresh ginger. Transfer the cooking liquor to an empty vessel and cook it with sour ingredients. Return the same-sized meat śuṇṭhakas and add rock salt, fenugreek powder, and a small bundle of coriander. Take the preparation off the fire and heat ghee separately. Into the very hot ghee put onion, garlic, and asafoetida; then place the prepared meat in that pot. Cover it, wait a short time, and remove it when done. This excellent preparation is called puryala.
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
@@ -42,10 +42,4 @@ The Mānasollāsa contains no poultry dishes, but it advised that birds can be p
 5. Remove the drumsticks and sauce from the pot.  
 6. Heat the ghee in the emptied pot. Fry the onion, garlic, and asafoetida until fragrant.  
 7. Return the chicken and sauce, turn everything through the ghee, cover, and cook over low heat for a few minutes, then serve. 
-
-## Notes
-
-* **Where the licence for chicken comes from.** 3.13.1522–23: *pakṣiṇām api sarveṣāṃ* — of all birds, having removed the feathers, separated beak and feet, opened the belly and drawn out the entrails — *pūrvavat paripācayet, yathā sūkara-meṣāṇāṃ kriyāḥ proktā vipācane*, "cook them as before, just as the operations for pig and sheep have been stated." The chapter gives no bird recipe of its own; it rates fowl in its survey of meats (*śākunaṃ laghu*, "bird meat is light", 1419) and then hands birds over to the pig and sheep methods.
-* **The text asks for boneless pieces.** *Śuddhamāṃsasya khaṇḍakān* the size of large *āmalakas* is about 3 cm of trimmed meat, so whole drumsticks are an adaptation, not the source's cut.
-* The order of the first three steps is the source's: the mustard-and-ginger cooking liquor is decanted into a second vessel and cooked with the sour ingredients, and only then do the meat pieces go back into it.
 

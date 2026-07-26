@@ -32,5 +32,4 @@ These meatballs are colored with saffron, which causes them to go golden in colo
 
 1. Grind or process the meat very fine — *supiṣṭaṃ* — then work in the saffron water, salt, pepper, cumin, and asafoetida until sticky.  
 2. Form 15 small, flat cakes.  
-3. The text's first method is hot oil: shallow- or deep-fry at 175°C for 4–6 minutes, turning once, until browned and 71°C in the centre.  
-4. Or cook them in a lightly greased pan for 3–5 minutes a side, or grill them over charcoal that has burned down to embers. Either way, cook until browned and fully done in the centre.
+3. Shallow-fry them in the oil over medium heat, 3–5 minutes a side, turning once, until browned and cooked through — 71°C in the centre.

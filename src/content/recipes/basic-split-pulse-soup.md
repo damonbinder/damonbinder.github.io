@@ -20,7 +20,7 @@ status: published
 * 900 ml water, plus more as needed  
 * ¼ tsp asafoetida  
 * ½ tsp ground turmeric  
-* 1 tsp fine rock salt, plus more to taste
+* 2 tsp fine rock salt, plus more to taste
 
 ## Method
 

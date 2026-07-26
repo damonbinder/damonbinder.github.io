@@ -16,7 +16,7 @@ status: published
 
 ## Ingredients
 
-* 750 g lamb loin, goat loin, or pork tenderloin, cut into 4 cm pieces  
+* 750 g lamb loin, goat loin, or pork tenderloin, cut into 3 cm pieces  
 * 30 ml fresh ginger juice  
 * ¼ tsp asafoetida dissolved in 30 ml warm water  
 * 1½ tsp rock salt, divided  

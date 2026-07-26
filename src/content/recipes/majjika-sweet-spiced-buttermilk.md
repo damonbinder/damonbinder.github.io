@@ -18,7 +18,7 @@ A sweet, cardamom-scented buttermilk drink. Buttermilk is hard to find where I a
 
 ## Ingredients
 
-* 500 ml fresh buttermilk or takra  
+* 500 ml fresh buttermilk  
 * 40 g sugar  
 * ½ tsp ground cardamom  
 * Optional: a speck of food-grade edible camphor

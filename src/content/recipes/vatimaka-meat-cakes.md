@@ -13,7 +13,7 @@ tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1032
-status: draft
+status: published
 ---
 
 These meatballs are colored with saffron, which causes them to go golden in color when they're fried. The recipe doesn't say which spices to use, but I've suggested pepper, cumin, and asafoetida, as these are pretty commonly called for in similar contexts in the book.

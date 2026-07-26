@@ -60,7 +60,7 @@ Last updated June 2026
 
 - _The Origins of Genomic Architecture_ by Michael Lynch (2007)
 
-  not aimed at lay readers but a fascinating nevertheless for those with some background in biology
+  not aimed at lay readers but fascinating nevertheless for those with some background in biology
 
 - _Understanding Bird Behavior_ by Wenfei Tong (2020)
 
@@ -134,7 +134,7 @@ Last updated June 2026
 
   on how to be happy
 
-- _Peak: Secrets from the New Science of Expertise_ (2016)
+- _Peak: Secrets from the New Science of Expertise_ by Anders Ericsson and Robert Pool (2016)
 
   much better than I was expecting given the title (the secret is lots of dedicated purposeful practice, if you are wondering)
 
@@ -158,7 +158,7 @@ Last updated June 2026
 
 - _Codes of the Underworld: How Criminals Communicate_ by Diego Gambetta (2009)
 
-  applies signalling theory to criminal enterprises
+  applies signaling theory to criminal enterprises
 
 - _Status and Culture_ (2022), and _Blank Space_ (2025), by W. David Marx
 
@@ -198,7 +198,7 @@ Last updated June 2026
 
 - _Destined For War_ by Graham Allison (2017)
 
-  about the possibility of a US-China, and how to mitigate the risks
+  about the possibility of a US-China war, and how to mitigate the risks
 
 ## Economics
 
@@ -234,7 +234,7 @@ Last updated June 2026
 
 ### Economic History
 
-*Arranged roughly by how technical/dry they are.*
+Arranged roughly by how technical/dry they are.
 
 - _How the World became Rich_ by Mark Koyama and Jared Rubin (2022)
 
@@ -260,7 +260,7 @@ Last updated June 2026
 
   why Islamic law held back commerce in the Islamic world
 
-- _Trade and Poverty_ by Jeffery Williamson (2011)
+- _Trade and Poverty_ by Jeffrey Williamson (2011)
 
   why the 3rd world fell behind
 
@@ -288,9 +288,9 @@ Last updated June 2026
 
 - _Escape from Rome: The Failure of Empire and the Road to Prosperity_ by Walter Scheidel (2019)
 
-  about why the Roman empire formed, why no later power managed to recreate the empire, and how this important for understanding why Europe industrialized first
+  about why the Roman empire formed, why no later power managed to recreate the empire, and how this is important for understanding why Europe industrialized first
 
-- _Why The West Rules for Now_ by Ian Morris (2010)
+- _Why the West Rules—For Now_ by Ian Morris (2010)
 
   long, but serves as a good introduction to both Western and Chinese history, in parallel.
 
@@ -300,7 +300,7 @@ Last updated June 2026
 
 - _The Big Book of Horrible Things_ by Matthew White (2011)
 
-  a fascinating (if somewhat arbitrary) discussion of the 100 worst atrocities in history, ranked by number of deaths. The author also has an (appropriately dark) sense of humour.
+  a fascinating (if somewhat arbitrary) discussion of the 100 worst atrocities in history, ranked by number of deaths. The author also has an (appropriately dark) sense of humor.
 
 - _After Tamerlane_ by John Darwin (2007)
 
@@ -310,11 +310,11 @@ Last updated June 2026
 
   a history of diseases and pandemics
 
-- _Famine, a short history_ by Cormac O Grada (2009)
+- _Famine, a short history_ by Cormac Ó Gráda (2009)
 
 ### Regional Histories
 
-- _A History of China_ (2008) and _A History of India_ (2000) by John Keay
+- _China: A History_ (2008) and _India: A History_ (2000) by John Keay
 
   probably the best single volume introductions to these topics in English, and both are very readable
 
@@ -338,11 +338,11 @@ Last updated June 2026
 
   a history of ancient Mesopotamia
 
-- _Understanding Early Civilization_ by Bruce Trigger (2003)
+- _Understanding Early Civilizations_ by Bruce Trigger (2003)
 
   a comparative study of seven ancient societies
 
-- _Ancient Israel: What we know and how we know it_ by Lester Grabbe (2007)
+- _Ancient Israel: What Do We Know and How Do We Know It?_ by Lester Grabbe (2007)
 
 - _The Rise and Fall of Classical Greece_ by Josiah Ober (2015)
 
@@ -380,7 +380,7 @@ Last updated June 2026
 
   on the pre-Columbian Americas, and the Columbian exchange, respectively
 
-- _Why Did Europe Conquer the World?_ by Phillip Hoffman (2015)
+- _Why Did Europe Conquer the World?_ by Philip Hoffman (2015)
 
   econ history look at the question, very readable and short
 
@@ -398,13 +398,13 @@ Last updated June 2026
 
 - _Return of a King_ by William Dalrymple (2013)
 
-  about the disastrous, comitragic First Anglo-Afghan War
+  about the disastrous, tragicomic First Anglo-Afghan War
 
 ### Modern History
 
 - _Dancing in the Glory of Monsters_ (2011) and _The War That Doesn't Say Its Name_ (2021) by Jason Stearns
 
-  the former book is a history of the Congo Wars, the deadliest wars that have occurred since the end of the second world war, and the latter is on the aftermath. Be warned that they are pretty dark in places, but very written and fascinating.
+  the former book is a history of the Congo Wars, the deadliest wars that have occurred since the end of the second world war, and the latter is on the aftermath. Be warned that they are pretty dark in places, but very well written and fascinating.
 
 - _Cold War_ by John Gaddis (2005)
 
@@ -456,13 +456,13 @@ Last updated June 2026
 
   on the Congo Free State under King Leopold II
 
-- _The Soviet Bioweapons Program_ by Leitenberg and Zilinskas (2012)
+- _The Soviet Biological Weapons Program_ by Leitenberg and Zilinskas (2012)
 
   the definitive work on the topic, surprisingly readable
 
 - _How to Hide an Empire_ by Daniel Immerwahr (2019)
 
-  a history of the "Greater USA", particular the Philippines and Puerto Rico
+  a history of the "Greater USA", particularly the Philippines and Puerto Rico
 
 - _The Making of the Modern Philippines_ by Philip Bowring (2022)
 
@@ -470,7 +470,7 @@ Last updated June 2026
 
   the former on the Angolan civil war, the latter an unconventional and not wholly-reliable portrait of Haile Selassie
 
-- _Embers of War_ by Frederik Logevall (2012)
+- _Embers of War_ by Fredrik Logevall (2012)
 
   about the French Indochina war, and how the US first came to be entangled with Vietnam
 
@@ -488,7 +488,7 @@ Last updated June 2026
 
   covers the first ~300 years of the Christian church
 
-- _Buddhism_ (2001) and _The Buddha_ (2025), both by Donald Lopez
+- _Buddhism: A Journey through History_ and _The Buddha_ (both 2025) by Donald Lopez
 
   scholarly and concise
 

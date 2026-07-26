@@ -16,7 +16,7 @@ order: 1001
 status: draft
 ---
 
-This uses the pasta method of cooking rice, which, perhaps to the surprise of many Asians, is not a European invention but is, in fact, how Indians traditionally (and, as this recipe shows, for at least the past thousand years) have always cooked rice. The recipe calls for adding the milk or ghee before draining, which doesn't make a lot of sense to me, so I've flipped the ordering. It also doesn't call for salt, but again, I would assume this is probably salted, although again, this is not entirely clear.
+This uses the pasta method of cooking rice, which—perhaps to the surprise of many Asians—is not a European invention. It is how Indians have traditionally cooked rice, and this recipe shows they have done so for at least a thousand years. The recipe adds the milk or ghee before draining, which doesn't make much sense to me, so I've flipped the ordering. It calls for no salt; I assume the rice was salted, though the text doesn't say.
 
 ## Ingredients
 

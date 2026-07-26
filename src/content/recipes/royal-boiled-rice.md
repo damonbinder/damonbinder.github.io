@@ -16,14 +16,14 @@ order: 1001
 status: draft
 ---
 
-This is a drained-rice method rather than the modern absorption method. It produces separate grains enriched at the end with either ghee or milk.
+This uses the pasta method of cooking rice, which, perhaps to the surprise of many Asians, is not a European invention but is, in fact, how Indians traditionally (and, as this recipe shows, for at least the past thousand years) have always cooked rice. The recipe calls for adding the milk or ghee before draining, which doesn't make a lot of sense to me, so I've flipped the ordering. It also doesn't call for salt, but again, I would assume this is probably salted, although again, this is not entirely clear.
 
 ## Ingredients
 
 * 300 g aged basmati or another fragrant long-grain rice  
 * 1.1 L water, plus more for washing and soaking  
 * 15 g ghee, or 60 ml whole milk  
-* ½ tsp fine salt (optional; not specified in the text)
+* ½ tsp fine salt (optional)
 
 ## Method
 
@@ -32,12 +32,3 @@ This is a drained-rice method rather than the modern absorption method. It produ
 3. Boil uncovered for 6–9 minutes. Test often by pressing a grain between your fingers, and stop when the grains are tender, or tender with a faint firm centre.  
 4. Drain immediately through a fine colander. Return the rice to the warm pan, add the ghee or milk, cover, and leave off the heat for 8 minutes.  
 5. Fluff gently and serve hot.
-
-**Notes**
-
-* The three-to-one water ratio is the text's own, measured by volume, and it works as written: the rice is drained rather than absorbed, so the water only has to be enough for the grains to boil freely in.  
-* The text puts the milk or ghee in *before* draining, not after. For ghee that works as written — it floats and coats the grains as the water runs off. For milk it does not, since the milk would leave with the starch water, so the method here adds the dairy after draining instead.  
-* The drained starch water is *māṇḍa*, a named preparation in its own right. The text pours most of it off through a woven lid set over the mouth of the pot and lets the last of it dry away in the retained heat, which is the same rest that finishes the rice.  
-* *Cira* in 1351 means the soak is a long one rather than a token quarter-hour.  
-* The pot is copper or earthenware, and the cloth goes over it before it goes on the fire; do not place loose cloth near a flame.  
-* The line that calls this rice fit for a king is 1357a–b, which the source text prints at the head of the next recipe.

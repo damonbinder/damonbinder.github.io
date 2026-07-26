@@ -17,7 +17,7 @@
 // Disputed glyphs were re-rendered at 400–1400 dpi; several corrections would
 // have gone the wrong way at lower resolution. Every departure from the
 // earlier working transcription is recorded verse by verse, with page
-// citations, in research/manasollasa-collation-*.md.
+// citations, in collation reports kept outside this repository.
 //
 // Conventions. Where the edition itself is corrupt, or the editor could not
 // restore a reading, his sigla and parentheses are carried through rather than

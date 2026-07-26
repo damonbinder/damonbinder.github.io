@@ -13,3 +13,10 @@ node_modules/
 .obsidian/
 # logs
 npm-debug.log*
+
+# working scratch — research reports, drafts, review notes and copy
+# worksheets. Kept on disk, never committed: this repo is public.
+research/
+drafts/
+review/
+project-copy.md

@@ -42,7 +42,7 @@ This is the sauce the text puts the preceding roast pork *śuṇṭhakas* into. 
 * ½ tsp ground black pepper  
 * ¼ tsp asafoetida  
 * 1½ tsp rock salt  
-* 20 ml sesame oil or neutral oil  
+* 20 ml Indian sesame oil, or another neutral oil  
 * To finish: ¼ tsp asafoetida, ½ tsp cumin seeds, 1 tsp ghee
 
 ## Method

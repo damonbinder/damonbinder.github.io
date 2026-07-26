@@ -23,7 +23,7 @@ The verse opens with *athavā*, "or else": this is the second treatment for the 
 * 1 kg green mango, bitter gourd, firm green banana, or young jackfruit  
 * 80 g salt  
 * 80 g ground mustard seed  
-* 250 ml sesame oil, or mustard oil — see notes  
+* 250 ml Indian sesame oil, or mustard oil — see notes  
 * Optional: 1 tsp turmeric  
 * Optional: 1 tsp fenugreek seed
 

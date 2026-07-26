@@ -16,7 +16,7 @@ order: 1032
 status: draft
 ---
 
-These meatballs are colored with saffron, which causes them to go golden in color when they're fried. The recipe doesn't say which spices to use, but I've suggested pepper, cumin, and asafoetida, as these are pretty commonly called for in similar ways in other parts of the book, but you could really use what you like.
+These meatballs are colored with saffron, which causes them to go golden in color when they're fried. The recipe doesn't say which spices to use, but I've suggested pepper, cumin, and asafoetida, as these are pretty commonly called for in similar contexts in the book.
 
 ## Ingredients
 
@@ -26,7 +26,7 @@ These meatballs are colored with saffron, which causes them to go golden in colo
 * ½ tsp ground black pepper  
 * ½ tsp ground cumin  
 * ¼ tsp asafoetida  
-* 20 ml sesame oil
+* 20 ml Indian sesame oil or neutral cooking oil
 
 ## Method
 

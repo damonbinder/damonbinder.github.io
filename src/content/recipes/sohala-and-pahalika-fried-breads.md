@@ -21,7 +21,7 @@ The text draws the distinction by submersion: the *sohalā* floats with its top 
 ## Ingredients
 
 * 1 batch *maṇḍaka* dough  
-* 1.2 L neutral oil or sesame oil, for frying — enough depth to submerge a bread  
+* 1.2 L neutral oil or Indian sesame oil, for frying — enough depth to submerge a bread  
 * Rice flour, for dusting
 
 ## Method

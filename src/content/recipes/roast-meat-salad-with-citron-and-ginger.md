@@ -8,7 +8,7 @@ original: >-
 translation: >-
   He should set ember-roasted meat down on a clean board and cut it with a knife to the fineness of sesame seeds. Then, having mixed that meat with the *kesara* of the citron, with fresh ginger, with *kesarāmla*, with *gṛñjana* cut to that same size, with ground cumin and pepper, and with powdered asafoetida and rock salt, he should scent it with asafoetida smoke.
 related:
-  - mamsa-vataka-bhusika-and-kosali
+  - bhusika
   - meat-stuffed-eggplant-gourd-or-radish
   - vatimaka-meat-cakes
 tradition: Indian

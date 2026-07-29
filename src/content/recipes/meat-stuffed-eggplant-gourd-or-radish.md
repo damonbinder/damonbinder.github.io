@@ -9,7 +9,7 @@ translation: >-
   An eggplant, with a hole made near the region of its stalk and its seeds taken out, is filled with that meat. Cooked a little in oil, he should then cook it through in the pan. That one, whose name is *pūra-bhaṭṭāka*, he should cook through with something savoury (*svādu*). In the fruit of the ridge gourd too, and in the root-tuber of the radish, it goes the same way: when they are filled with the *cūrṇa* meat, each is spoken of by the name of its own vegetable.
 related:
   - roast-meat-salad-with-citron-and-ginger
-  - mamsa-vataka-bhusika-and-kosali
+  - bhusika
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

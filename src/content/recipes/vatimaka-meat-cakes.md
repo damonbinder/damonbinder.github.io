@@ -8,7 +8,7 @@ original: >-
 translation: >-
   Raw meat, very finely ground and mixed with saffron and the rest, he should form into *vaṭaka*s and cook through in hot oil. Or one who knows that art may put them in the pan, or heat them at the fire. That, *vaṭṭimaka* by name, is declared to be of three kinds.
 related:
-  - mamsa-vataka-bhusika-and-kosali
+  - bhusika
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

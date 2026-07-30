@@ -27,8 +27,7 @@ status: published
 ## Method
 
 1. Cut the pork into long strips, then across into squares about 4 cm.  
-2. Put the pieces in a pot with the water and the tamarind — the liquid should come about halfway up the meat. Cover tightly and cook over low heat for 50 minutes.  
+2. Put the pieces in a pot with the water and the tamarind — the liquid should come about halfway up the meat. Cover tightly and cook over low heat for 50 minutes. 
 3. Drain and pat dry.  
-4. Thread the pieces onto metal skewers, leaving small gaps between them.  
-5. Broil close to the element, turning, until crisp on all sides.  
-6. Sprinkle with the salt and pepper and serve.
+4. Thread the pieces onto metal skewers, leaving small gaps between them, then broil close to the element, turning, until crisp on all sides.  
+5. Sprinkle with the salt and pepper and serve.

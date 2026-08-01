@@ -11,7 +11,7 @@ tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1024
-related: [sour-meat-glaze]
+related: [sour-sauce-for-roast-meat]
 status: draft
 ---
 

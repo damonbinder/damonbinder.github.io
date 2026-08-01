@@ -8,7 +8,7 @@ original: >-
 translation: >-
   Having made pieces of meat the size of a chickpea, the discerning cook should mix them with turmeric, cumin, *tīkṣṇa* and the rest, and with dried ginger, coriander, and asafoetida, all reduced to powder, and throw them into heated oil — and pieces of fresh ginger cut to the same size, and green chickpeas too. Along with the finely cut meats he should put in *kola* and tender lablab pods; or else he may put in slices of onion, or garlic. In this way the cook should apply, as he likes, the sauce described earlier. Afterwards, when the sour juice has dried away, he should take the finished dish off the fire and perfume it with aromatic smoke.
 related:
-  - sour-meat-glaze
+  - sour-sauce-for-roast-meat
 tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages

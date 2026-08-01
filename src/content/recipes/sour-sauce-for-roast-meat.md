@@ -35,7 +35,7 @@ status: published
 * 1 tsp ground coriander  
 * 1 tsp ground cumin  
 * ½ tsp turmeric  
-* 15 g fresh ginger, very finely cut  
+* the juice of 15 g fresh ginger  
 * ½ tsp ground dried ginger  
 * ½ tsp ground black pepper  
 * ¼ tsp asafoetida  

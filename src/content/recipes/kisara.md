@@ -26,12 +26,11 @@ A sweet, rich preparation of coarse wheat grain toasted in ghee and spiced with 
 * 80 g ghee  
 * 100 g white sugar  
 * 1 tsp ground cardamom  
-* ½ tsp finely ground black pepper  
-* Pinch of salt
+* ½ tsp finely ground black pepper
 
 ## Method
 
 1. Moisten the coarse grain with the milk — enough to dampen it evenly and no more, so it stays crumbly rather than becoming a slurry. Leave it 10 minutes for the milk to soak in.  
 2. Melt the ghee in a heavy pan over medium-low heat. Add the moistened grain and cook, stirring constantly, for 12–15 minutes, until it looks golden and smells nutty. The grains should stay loose and separate.  
-3. Take the pan off the heat and stir in the sugar, cardamom, pepper, and salt. Serve warm in small portions.
+3. Take the pan off the heat and stir in the sugar, cardamom, and pepper. Serve warm in small portions.
 

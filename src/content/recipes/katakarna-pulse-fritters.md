@@ -8,7 +8,8 @@ original: >-
 translation: >-
   Split pea and split chickpea: reduced to powder, then slaked with water, thoroughly permeated with ghee, joined with rock salt, worked about with a *kaṇḍu*, joined with lablab flour, and spread out on the grinding stone — in a cauldron brimming with oil one should fry the *kaṭakarṇas* right through, until they come out like bubbles, with the sheen of gold.
 related:
-  - savoury-vestika-and-ghosaka
+  - savoury-vestika
+  - dhosaka
   - iderika-fermented-black-gram-cakes
 tradition: Indian
 category: Legumes

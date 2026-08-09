@@ -32,7 +32,7 @@ The text's own summary of *kavacandī* is that it has a lot of things in it, and
 * ¼ tsp asafoetida  
 * ½ tsp ground fenugreek  
 * 1½ tsp salt  
-* 150 ml sour meat glaze  
+* Two or three flavoring juices, e.g. 15 g tamarind concentrate diluted in 100 ml water, 50 ml pomegranate juice, and 15 ml ginger juice  
 * Small handful of bitter greens — fenugreek or mustard leaves — shredded  
 * Optional: 150 g of a second meat or offal, cut to the same size  
 * To finish: 1 tsp ghee, ¼ tsp asafoetida, ½ tsp cumin seeds
@@ -51,8 +51,8 @@ For the *vaṭakas*
 2. Toss the meat with the turmeric, cumin, coriander, pepper, dried ginger, and asafoetida until evenly coated.  
 3. Heat the 45 ml of oil in a wide pan until it shimmers. Fry the meat with the 2 cm ginger pieces over high heat until browned all over.  
 4. Add the radish and eggplant and fry until they begin to colour.  
-5. Add the salt and the sour glaze. Cover and cook gently until the meat and vegetables are tender.  
-6. Uncover. Stir in the fenugreek powder, the shredded greens, and the *vaṭakas*, and cook until the sauce is reduced and clinging.  
+5. Add the salt and the juices. Cover and cook gently until the meat and vegetables are tender.  
+6. Uncover. Stir in the fenugreek powder, the shredded greens, and the *vaṭakas*, and cook a few minutes more until everything has come together. The dish should stay moist — the text's endpoint is *susiddham*, well cooked, not a dry reduction.  
 7. Bloom the finishing asafoetida and cumin seeds in the hot ghee and stir them through off the heat.
 
 **Notes**
@@ -61,5 +61,6 @@ For the *vaṭakas*
 * ***Kāsamarda*** is identifiable: *Senna occidentalis* (formerly *Cassia occidentalis*), coffee senna or *kasondi*, whose leaves are eaten as a pot-herb in South India — including a *tambuḷi* in coastal Karnataka, which is the right region for this text. It isn't sold outside India, so a bitter green stands in. *Kāsamardena saṃyuktaṃ* agrees with *cūrṇakam*, so the *kāsamarda* goes in together with the powder rather than separately.
 * ***Meṣaka*** is the genuinely uncertain word here, and *methaka* — fenugreek — is very probably what it should be. The identical compound *methaka-cūrṇakaṃ* appears four verses later at 1459, and *methakasya ca* at 1467; *meṣakasya ca cūrṇakam* is those two halves joined, and scans identically. No spice called *meṣaka* is attested. Minced mutton is not a live reading: *cūrṇaka* means a powdered spice every time it occurs in this chapter (1459, 1475, 1477), and where the chapter means minced meat it says *cūrṇīkṛtaṃ māṃsam* (1479–85).
 * **The powders are the ones from 1449.** *Pūrvavac-cūrṇa-miśritān* back-references the spice list of the preceding recipe — turmeric, cumin, pepper and the like, dried ginger, coriander, and asafoetida — and they go onto the meat before it is fried, not into the pan afterwards. The dried ginger and asafoetida are easy to lose in the back-reference.
-* **No salt and no sauce are named in 1453–1456.** The salt here is a modern addition. *Nānā-rasa-vimiśritam* ("mixed with the various juices") is most likely the sour preparation of 1442–48, since 1452 reuses it explicitly, but 1453–56 gives no *pūrvodita* to point at, so treating it as that sauce is an inference.
+* ***Nānā-rasa-vimiśritam* is "mixed with various juices" — the chapter's added flavoring juices, chosen freely.** Every culinary use of *rasa* in this chapter is a juice the cook adds — the six sour juices of 1442–43 (*miśrayed vā rasān etān dvitrān vāpi yathāruci*, "mix these juices, two or three, as he pleases"), the *rasaiḥ sarvaiḥ* the śuṇṭhakas are steeped in at 1447, and the ginger and coriander juices at 1466 and 1490 — never the liquid the ingredients release in the pan. So the instruction here is to mix in two or three of the flavoring juices at will; the closing pāda's parallelism confirms it — *nānā-rasa-vimiśritam... nānā-dravya-sametā*, many juices and many substances, the dish's two axes of abundance. Unlike 1452 there is no *pūrvodita* pointing at the finished sauce of 1442–48, and no *śoṣite 'mlarase* drying it down: a batch of that sauce is a workable shortcut, but the strict reading is juices added directly, and the endpoint is *susiddham*, well cooked, not reduced dry.  
+* **No salt is named in 1453–1456.** The salt here is a modern addition.
 * **The name is not explained by the text.** 1456 says only that a *kavacandī* provided with many substances is a good one (*nānādravyasametā sā kavacandī bhavecchubhā*); it does not gloss the word.

@@ -11,10 +11,10 @@ tradition: Indian
 category: Dessert
 subcategory: Rice, pulses, grains & breads
 order: 1004
-status: draft
+status: published
 ---
 
-The text specifies the milk of a buffalo that calved long before — late-lactation milk, which carries more fat and solids than early milk. Whole cow’s milk with a little cream approximates it.
+This recipe itself calls for nothing but rice and milk. Later in the chapter, *pāyasa* is named among the dishes served with sugar and ghee, and the chapter's other sweet milk dishes are generally spiced with cardamom too — so sugar goes in at the end, ghee is left for drizzling at the table, and the cardamom is optional. While the text calls for the milk of a buffalo that calved long before, and therefore high in milk fats and solids, that is hard to find where I live. I've therefore used whole cow’s milk with a little cream to approximate it.
 
 ## Ingredients
 
@@ -22,20 +22,12 @@ The text specifies the milk of a buffalo that calved long before — late-lactat
 * 1 L whole milk  
 * 100 ml double cream (omit if you have buffalo milk)  
 * 75 g sugar  
-* ¼ tsp ground cardamom  
-* Pinch of salt
+* ¼ tsp ground cardamom (optional)  
+* Ghee, for drizzling (optional)
 
 ## Method
 
 1. Rinse the grain. Combine it with the milk and cream in a heavy saucepan.  
-2. Bring slowly to a simmer, then cook over very low heat for 45–60 minutes, stirring frequently and scraping the base.  
-3. When the grain is completely tender and the pudding is thick enough to mound softly on a spoon, add the sugar, cardamom, and salt.  
-4. Cook for another 5 minutes and serve warm or chilled.
-
-**Notes**
-
-* The cream is what lets cow’s milk stand in for buffalo. Buffalo milk runs about 7–8% fat against 3.5–4% for cow, and 1 L of whole milk with 100 ml of double cream lands in the same range.  
-* *Pāyasaṃ lehane yogyam*, "*pāyasa* fit for licking", is the chapter's own yardstick for the *lehya* class named at 1344–45, and other dishes in the chapter are measured against it. It should fall off a spoon in a sheet rather than run.  
-* Sugar and cardamom are not named in these three verses. They are the chapter's own seasonings for a sweet grain-and-milk dish a dozen verses later, where *kīsāra* takes sugar and a powder of cardamom and pepper (1386–87), so they are a reasonable import rather than a guess.  
-* For a closer grain, use barnyard millet for *śyāmāka* or foxtail millet for *kaṅgu*. *Nīvāra* is uncultivated rice, gathered rather than sown. *Gandhaśāli* is one of the eight rices named at 1345–47 and defined there by its fragrance, so basmati is the descendant, though a shorter grain makes a better pudding.  
-* Verse 1374a–b is obscure and nothing here is reconstructed from it. It continues the list of things a *pāyasa* can be made from — *sara*, *veṣṭika*, *sevāka* — described as thinly drawn out over some days. *Sevāka* may be the ancestor of *sevaiyā*, sun-dried vermicelli, which would make this a noodle *pāyasa*, but the reading is not secure.
+2. Bring slowly to a simmer, then cook over very low heat for 45–60 minutes, stirring frequently and scraping the base, until the grain is completely tender and the pudding is thick enough to mound softly on a spoon.  
+3. Take the pan off the heat and stir in the sugar, and the cardamom if using.  
+4. Serve warm or chilled, with ghee for drizzling at the table.

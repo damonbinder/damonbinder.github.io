@@ -14,36 +14,25 @@ tradition: Indian
 category: Meat
 subcategory: Meat, offal & sausages
 order: 1033
-status: draft
+status: published
 ---
 
-Intestine, liver, fat, and muscle meat, all cut to one size, smeared with mustard paste and cooked down until nearly dry. The text calls the result *pañcavarṇī*, the five-coloured, but names only four materials.
+This dish is called a pancavani or five-coloured, although I'm not sure why, given there are awful meats in it. When I cooked it, it came out to be not particularly colourful. I used pork because finding pork liver and bong are much easier where I live than finding sheep liver and sheep intestine. A mumbled shoulder cut or pork belly can give you both the fat and the meat in a single purchase if you can't easily find fat back.
 
 ## Ingredients
 
-* 250 g cleaned lamb intestine or tripe  
-* 250 g lamb liver  
-* 250 g lamb shoulder  
-* 100 g lamb fat or fatty belly  
-* 30 g mustard paste  
-* 15 ml ginger juice  
-* 15 g tamarind concentrate diluted in 100 ml water  
-* ¼ tsp asafoetida  
-* 1½ tsp salt  
-* 600 ml water
+* 600 g pork bung, cleaned and cut into 2 cm pieces
+* 1 kg fatty pork shoulder, cut in 2 cm pieces so that some pieces are mostly fat and some mostly lean 
+* 600 g pork liver  
+* 45 g brown mustard seeds
+* 45 ml ginger juice  
+* 45 g tamarind concentrate, diluted in 300 ml water  
+* 1 tsp asafoetida  
+* 30 g salt  
 
 ## Method
 
-1. Clean the intestine thoroughly: strip it, turn it inside out, scrub it with coarse salt and flour, and rinse it repeatedly until the water runs clear — or buy it already cleaned. Cut all four materials into 2 cm pieces so that they match, which is what *samarūpataḥ* asks for.  
-2. Simmer the intestine and the shoulder in the water with the mustard paste, asafoetida, and salt, covered, until the intestine is properly tender: 1½–2 hours for lamb intestine, less for pre-cooked tripe. Top up the water as needed.  
-3. Add the fat, uncover, and reduce over a higher heat until only a little thick sauce is left.  
-4. Stir in the ginger juice and the tamarind water, add the liver, and cook for 4–6 minutes only — just until it is firm and no longer bloody at the centre.  
-5. Take the pan off the fire and perfume it.
-
-**Notes**
-
-* ***Kālakhaṇḍa* is the liver, and securely so.** The Sanskrit, Kannada, Marathi, and Nepali lexica all give the liver, and the compound is literally "the black piece", after the organ's colour. The word recurs at 1500, 1502, 1504, and 1505, always treated as a single large organ that can be skewered whole and then sliced thin.
-* **Where the fifth colour is.** The text names four materials — intestine, liver, fat, and meat. *Varṇa* means "kind, class" as readily as "colour", and the likeliest fifth is the mustard paste everything is smeared with, the only other thing in the pot with a colour of its own. The chapter's own gloss on the name is 1491d, *nānārūpa-rasāvahā*, "bringing manifold forms and tastes", which is about variety rather than a count; and at 1501 a skewer alternating nothing but fat and liver is a *varṇa-śuṇṭhaka*. Nothing in the passage calls for a fifth solid.
-* **The sourness is meant to be slight.** 1490 puts a quantifier on both additions — *ārdrakasya rasaṃ stokam*, "a little ginger juice", and *amlam alpaṃ*, "a little sour" — where the neighbouring recipes pour sour liquid in freely. So this is a mustard dish and not a sour one, and the ginger juice and tamarind here are half what they were.
-* **Hold the liver back.** The text puts all four materials into the pot together, but lamb intestine wants 1½–2 hours to come tender and liver is ruined in ten minutes. Cooked as written, the liver comes out grey and grainy. Staging it into the reduced sauce at the end is mine.
-* Buy cleaned offal from a reputable butcher, or clean it as in step 1, and cook the intestine right through. Undercooked gut is the one real hazard here; the liver is not the problem.
+1. Dry-toast the mustard seeds in a pan over low heat for a minute or two, just until fragrant and starting to pop, then tip out and let cool completely. Cover with cool water and soak 15–30 minutes, then drain and discard that water. Grind the drained seeds with fresh cold water and a pinch of salt, using a mortar and pestle or short pulses in a food processor rather than continuous grinding, which builds up heat. Let the paste rest, uncovered, for 10–15 minutes.  
+2. Put the bung and shoulder pieces into a wide saucepan along with enough water to cover, then add the mustard paste, asafoetida, and salt. Cover and hold it at a bare simmer for about 3 hrs, or until the bung is tender. Top up the water as needed.  
+3. Once tender, stir in the ginger juice and the tamarind water. Uncover and reduce over higher heat until only a little thick sauce is left.  
+4. Cut the liver into matching pieces, add it, and cook for 5--10 minutes, until it is just firm and no longer pink at the centre.  

@@ -219,7 +219,7 @@ const ENEMY_TYPES = {
   normal: { hp: ENEMY_HP, speed: ENEMY_SPEED, color: "#f87171", flashColor: "#fecaca", score: ENEMY_SCORE },
   runner: { hp: ENEMY_HP, speed: ENEMY_SPEED * 1.7, color: "#fb923c", flashColor: "#fed7aa", score: 130, sizeMult: 0.85 },
   headless: { hp: ENEMY_HP, speed: ENEMY_SPEED, color: "#a78bfa", flashColor: "#ddd6fe", score: 150, headless: true },
-  watcher: { hp: ENEMY_HP, speed: ENEMY_SPEED * 2.2, color: "#38bdf8", flashColor: "#e0f2fe", score: 150 },
+  watcher: { hp: ENEMY_HP, speed: ENEMY_SPEED * 3.3, color: "#38bdf8", flashColor: "#e0f2fe", score: 150 },
   ranged: { hp: ENEMY_HP, speed: ENEMY_SPEED * 0.7, color: "#34d399", flashColor: "#a7f3d0", score: 150 },
   // Three stacked circles, one per remaining hit point, so the silhouette is
   // its own health bar and it visibly shortens as you land shots. Every hit

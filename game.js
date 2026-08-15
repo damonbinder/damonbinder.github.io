@@ -167,9 +167,10 @@ const RANGED_FIRE_FLASH_MS = 120;
 // player's eyes stay closed (reuses the same continuous blink signal the
 // watcher enemy freeze check runs on), draining a small dedicated ammo pool
 // fast enough that it's naturally spent within a few seconds.
-// The pickup appears on wave 4 and every second wave after (4, 6, 8, ...),
-// arriving fresh at the start of each of those and gone once taken — the same
-// periodic-event shape as the heal pad, rather than respawning on a timer.
+// The pickup appears on wave 4 and every second wave after (4, 6, 8, ...) and
+// then waits on the floor until it's taken — it does not expire on the waves
+// in between. Unlike the heal pad, which is a periodic event that comes and
+// goes whether or not it was used, this is a findable object.
 const SMG_UNLOCK_WAVE = 4;
 const SMG_WAVE_INTERVAL = 2;
 const SMG_SPAWN = readLayout("S")[0];
@@ -498,10 +499,13 @@ export class CorridorGame {
     this.healPad.charge = 0;
     this.healPad.tickTimer = 0;
 
-    // Same shape for the SMG: present from the start of the waves that carry
-    // one, gone for the rest. Not cleared while it's actually equipped, or
-    // walking over the empty spot mid-use would look like it respawned.
-    this.smgPickup.active = smgWaveHasPickup(this.wave) && this.weapon !== "smg";
+    // The SMG is *not* the same shape as the pad. It arrives on its own waves
+    // and then stays put until someone actually picks it up — only
+    // _stepSmgPickup clears it. This used to assign the flag outright, which
+    // meant an untouched SMG silently vanished off the floor on every
+    // intervening wave (spawned on 4, gone on 5), so a player who saw it but
+    // couldn't safely reach it that wave lost it for nothing.
+    if (smgWaveHasPickup(this.wave) && this.weapon !== "smg") this.smgPickup.active = true;
   }
 
   _makeEnemy(type, x, y) {

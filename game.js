@@ -67,13 +67,16 @@ const ENEMY_SCORE = 100;
 const HIT_FLASH_MS = 150;
 const FIRE_FLASH_MS = 120;
 const DEATH_ANIM_MS = 250; // kills fade/shrink out over this long instead of vanishing instantly
-const KNIFE_SWING_MS = 260;
-// How long a swing roots the player in place. Slightly longer than the swing
+const PUNCH_SWING_MS = 260;
+// How long a punch roots the player in place. Slightly longer than the strike
 // animation so the commitment outlasts the visual and reads as a cost rather
 // than as a hitch — see the note in _step.
-const KNIFE_MOVE_LOCK_MS = 320;
-// Fraction of the swing spent winding up before the slash proper.
-const KNIFE_WINDUP_T = 0.28;
+const PUNCH_MOVE_LOCK_MS = 320;
+// Phase boundaries within the strike, as fractions of PUNCH_SWING_MS: draw
+// back until the first, thrust out until the second, recover after. The
+// thrust is the short middle slice on purpose — that's what makes it snap.
+const PUNCH_WINDUP_T = 0.28;
+const PUNCH_RECOVER_T = 0.5;
 
 const ENEMY_SPAWNS = readLayout("e");
 // Nothing spawns inside this radius. It matters more than it looks because
@@ -90,14 +93,14 @@ const MIN_SPAWN_DIST_FROM_PLAYER = 6;
 const PLAYER_START = readLayout("P")[0];
 const PLAYER_START_ANGLE = 0;
 
-const KNIFE_RANGE = 1.0;
+const PUNCH_RANGE = 1.0;
 
-// The knife is a weapon slot rather than something you can do with the pistol
+// Melee is a weapon slot rather than something you can do with the pistol
 // out, so it sits in the same cycle as the guns and swings on the same blink
 // that fires them. It is the floor of the cycle: it never runs out, which is
 // what lets a dry pistol fall through to it instead of leaving the player
 // holding an empty gun with no attack at all.
-const WEAPON_CYCLE = ["pistol", "smg", "knife"];
+const WEAPON_CYCLE = ["pistol", "smg", "fists"];
 
 // Enemies push each other apart below this range. Without it they have no
 // mutual collision at all, so a wave converging from different spawns stacks
@@ -367,7 +370,7 @@ export class CorridorGame {
     this.onGameOver = null;
     this.onShoot = null;
     this.onEmptyFire = null;
-    this.onKnifeSwish = null;
+    this.onPunchSwing = null;
     this.onPlayerHurt = null;
     this.onEnemyShoot = null;
     this.onWeaponChange = null;
@@ -397,8 +400,8 @@ export class CorridorGame {
     this._rebuildFlowField();
     this.hitFlash = 0;
     this.fireFlash = 0;
-    this.knifeSwingRemaining = 0;
-    this.knifeMoveLock = 0;
+    this.punchRemaining = 0;
+    this.punchMoveLock = 0;
     this.moveDir = 0;
     this.strafeDir = 0;
     this.turnDir = 0;
@@ -538,9 +541,9 @@ export class CorridorGame {
   // lets the player hold onto and ration what they're already carrying
   // instead of it always firing the moment their eyes close. A dry pistol is
   // skipped for the same reason: cycling onto it could only ever produce
-  // empty clicks. The knife is always available.
+  // empty clicks. Fists are always available.
   _weaponAvailable(weapon) {
-    if (weapon === "knife") return true;
+    if (weapon === "fists") return true;
     if (weapon === "smg") return this.smgAmmo > 0;
     return this.ammo > 0;
   }
@@ -568,12 +571,12 @@ export class CorridorGame {
   // Running a weapon dry drops the player straight onto the next thing that
   // can still attack rather than leaving them holding an empty gun mid-wave.
   // The SMG hands back to the pistol if there's anything left in it; a dry
-  // pistol falls through to the knife, which never runs out. Callers notify
+  // pistol falls through to the fists, which never run out. Callers notify
   // ammo themselves afterwards, so the HUD ends up showing whichever pool is
   // actually active rather than the one that just hit zero.
   _autoSwitchIfDry() {
     if (this._weaponAvailable(this.weapon)) return;
-    this.weapon = this.weapon === "smg" && this.ammo > 0 ? "pistol" : "knife";
+    this.weapon = this.weapon === "smg" && this.ammo > 0 ? "pistol" : "fists";
     this._notifyWeapon();
   }
 
@@ -594,16 +597,16 @@ export class CorridorGame {
     this._healPulse += stepMs;
     if (this.hitFlash > 0) this.hitFlash -= stepMs;
     if (this.fireFlash > 0) this.fireFlash -= stepMs;
-    if (this.knifeSwingRemaining > 0) this.knifeSwingRemaining -= stepMs;
-    if (this.knifeMoveLock > 0) this.knifeMoveLock -= stepMs;
+    if (this.punchRemaining > 0) this.punchRemaining -= stepMs;
+    if (this.punchMoveLock > 0) this.punchMoveLock -= stepMs;
 
     this.player.angle += this.turnDir * TURN_SPEED * dt;
-    // Swinging roots the player for KNIFE_MOVE_LOCK_MS: the knife one-shots
+    // Punching roots the player for PUNCH_MOVE_LOCK_MS: a punch one-shots
     // anything it reaches, so committing to it has to cost something, and
     // standing still inside melee range with a wave closing is that cost.
     // Turning is deliberately exempt — it's gaze-driven, so freezing it would
     // fight the aim system rather than read as a commitment.
-    const rooted = this.knifeMoveLock > 0;
+    const rooted = this.punchMoveLock > 0;
     const strafeAngle = this.player.angle + Math.PI / 2; // + = strafe right, independent of turning
     const moveDir = rooted ? 0 : this.moveDir;
     const strafeDir = rooted ? 0 : this.strafeDir;
@@ -693,7 +696,7 @@ export class CorridorGame {
         pk.respawnTimer = PICKUP_RESPAWN_MS;
         this.ammo = Math.min(MAX_AMMO_CAP, this.ammo + AMMO_PER_PICKUP);
         this.onAmmoPickup?.();
-        // Deliberately does *not* switch you off the knife — walking over a
+        // Deliberately does *not* switch you off the fists — walking over a
         // crate refills the pistol, it doesn't decide for you which weapon
         // you're holding. Cycle back with R when you want it.
         this._notifyAmmo();
@@ -1090,7 +1093,7 @@ export class CorridorGame {
     for (const en of this.enemies) {
       if (!en.alive && en.deathAnim <= 0) continue;
       // A low onScreen distance floor (not 0.15+) matters here: enemies
-      // close to melee range regularly, and the knife/gun both need to
+      // close to melee range regularly, and melee/gun both need to
       // still be able to hit them point-blank instead of them vanishing.
       const { screenX, onScreen, dist } = this._relativeScreenX(en.x, en.y);
       const sizeMult = (ENEMY_TYPES[en.type] || ENEMY_TYPES.normal).sizeMult || 1;
@@ -1212,9 +1215,9 @@ export class CorridorGame {
   fireAt(nx, ny) {
     if (!this.alive) return false;
     // Single entry point for "attack with whatever is equipped", whichever
-    // control path called it — the knife is a weapon slot now, so the same
+    // control path called it — melee is a weapon slot now, so the same
     // blink that fires a gun swings it, and no caller has to know which.
-    if (this.weapon === "knife") return this.tryKnife();
+    if (this.weapon === "fists") return this.tryPunch();
     const usingSmg = this.weapon === "smg";
     if (usingSmg ? this.smgAmmo <= 0 : this.ammo <= 0) {
       this.onEmptyFire?.();
@@ -1233,7 +1236,7 @@ export class CorridorGame {
     if (!hit) return false;
     const en = hit.proj.ref;
     // A segmented enemy loses exactly one segment per hit; nothing one-shots
-    // it except the knife, which bypasses hp entirely.
+    // it except a punch, which bypasses hp entirely.
     if (hit.headshot && !(ENEMY_TYPES[en.type] || ENEMY_TYPES.normal).segments) en.hp = 0;
     else en.hp -= 1;
     en.hitFlash = HIT_FLASH_MS;
@@ -1253,18 +1256,18 @@ export class CorridorGame {
   }
 
   // Melee: doesn't use ammo or need precise aim, just the nearest visible,
-  // unoccluded enemy within short range. Only swings while the knife is the
+  // unoccluded enemy within short range. Only throws while the fists are the
   // equipped weapon — it is a slot you switch to, not something available
   // with a gun in your hands.
-  tryKnife() {
-    if (!this.alive || this.weapon !== "knife") return false;
-    this.knifeSwingRemaining = KNIFE_SWING_MS; // swing plays whether or not it connects
-    this.knifeMoveLock = KNIFE_MOVE_LOCK_MS; // and roots you whether or not it connects, too
-    this.onKnifeSwish?.();
+  tryPunch() {
+    if (!this.alive || this.weapon !== "fists") return false;
+    this.punchRemaining = PUNCH_SWING_MS; // swing plays whether or not it connects
+    this.punchMoveLock = PUNCH_MOVE_LOCK_MS; // and roots you whether or not it connects, too
+    this.onPunchSwing?.();
     let best = null;
     let bestDist = Infinity;
     for (const p of this._projections) {
-      if (!p.onScreen || !p.ref.alive || p.dist > KNIFE_RANGE) continue;
+      if (!p.onScreen || !p.ref.alive || p.dist > PUNCH_RANGE) continue;
       const col = Math.max(0, Math.min(WIDTH - 1, Math.round(p.screenX)));
       if (p.dist >= this.depthBuffer[col]) continue;
       if (p.dist < bestDist) {
@@ -1281,114 +1284,134 @@ export class CorridorGame {
     return true;
   }
 
-  // Bottom-right viewmodel for the knife, held at rest and swung on attack.
+  // Bottom-right viewmodel for the fists, held at rest and thrown on attack.
   // The resting pose is what tells the player which weapon they're on, now
-  // that the knife is a slot rather than a gesture — it used to appear only
-  // for the 260ms of the swing itself.
-  _drawKnifeViewmodel() {
+  // that melee is a slot rather than a gesture — it used to appear only for
+  // the 260ms of the strike itself.
+  //
+  // Everything here is flat blocky shapes with a hard outline, matching the
+  // pistol's two-rectangle viewmodel and the enemies' circles. An earlier
+  // pass drew a shaded, tapered knife with a bevel and a lit edge; it was
+  // well-formed and completely wrong for the game, reading as a photograph
+  // pasted over a diagram.
+  _drawFistViewmodel() {
     const { ctx } = this;
-    const swinging = this.knifeSwingRemaining > 0;
-    const t = swinging ? 1 - this.knifeSwingRemaining / KNIFE_SWING_MS : 0; // 0 -> 1 across the swing
+    const punching = this.punchRemaining > 0;
+    const t = punching ? 1 - this.punchRemaining / PUNCH_SWING_MS : 0; // 0 -> 1 across the strike
 
-    // Ghost copies sampled from earlier in the arc. Only during the slash —
-    // trailing the wind-up would read as a stutter rather than as speed.
-    if (swinging && t > KNIFE_WINDUP_T) {
+    // Ghost copies from earlier in the thrust, smaller and further back, so
+    // the punch leaves a sense of having travelled toward the screen. Only
+    // during the thrust — trailing the wind-up would read as a stutter.
+    if (punching && t > PUNCH_WINDUP_T && t < PUNCH_RECOVER_T) {
       for (let i = 3; i >= 1; i--) {
-        const back = t - i * 0.055;
-        if (back <= KNIFE_WINDUP_T) continue;
+        const back = t - i * 0.05;
+        if (back <= PUNCH_WINDUP_T) continue;
         ctx.save();
-        ctx.globalAlpha = 0.2 - i * 0.045;
-        this._drawKnifeShape(this._knifePose(back, true), true);
+        ctx.globalAlpha = 0.18 - i * 0.04;
+        this._drawFist(this._fistPose(back, true), true);
         ctx.restore();
       }
     }
-    this._drawKnifeShape(this._knifePose(t, swinging), false);
+    this._drawFist(this._fistPose(t, punching), false);
   }
 
-  // Two-phase swing: a short pull back and up, then a fast slash down across
-  // the screen. Splitting it is what gives the strike an anticipation beat —
-  // a single linear sweep reads as the knife drifting rather than striking.
-  _knifePose(t, swinging) {
-    if (!swinging) return { x: WIDTH - 66, y: HEIGHT - 26, angle: -1.12 };
-    if (t < KNIFE_WINDUP_T) {
-      const u = t / KNIFE_WINDUP_T;
-      return { x: WIDTH - 66 + u * 16, y: HEIGHT - 26 + u * 5, angle: -1.12 - u * 0.55 };
+  // A punch reads through *scale* rather than rotation: the fist gets bigger
+  // as it extends toward the screen, which is the only depth cue a 2D
+  // viewmodel has. Three phases — draw back, thrust, recover — because a
+  // straight out-and-back has no anticipation and lands like a twitch.
+  // Centred like the gun viewmodel, and the thrust runs straight up the
+  // middle toward the reticle rather than in from a corner, so the fist
+  // arrives where the player is actually aiming.
+  _fistPose(t, punching) {
+    const restY = HEIGHT - 34;
+    const x = WIDTH / 2;
+    if (!punching) return { x, y: restY, scale: 1 };
+    if (t < PUNCH_WINDUP_T) {
+      const u = t / PUNCH_WINDUP_T;
+      return { x, y: restY + u * 16, scale: 1 - u * 0.14 };
     }
-    // Ease-out cubic: leaves fast and settles, which is what sells the weight.
-    const e = 1 - Math.pow(1 - (t - KNIFE_WINDUP_T) / (1 - KNIFE_WINDUP_T), 3);
-    return { x: WIDTH - 50 - e * 78, y: HEIGHT - 21 - e * 34, angle: -1.67 + e * 2.25 };
+    if (t < PUNCH_RECOVER_T) {
+      // Ease-out: leaves fast and decelerates into full extension.
+      const u = (t - PUNCH_WINDUP_T) / (PUNCH_RECOVER_T - PUNCH_WINDUP_T);
+      const e = 1 - Math.pow(1 - u, 3);
+      return { x, y: restY + 16 - e * 152, scale: 0.86 + e * 0.92 };
+    }
+    // Recover: ease back to rest, slower than the thrust so the strike keeps
+    // its snap and the return doesn't read as a second action.
+    const u = (t - PUNCH_RECOVER_T) / (1 - PUNCH_RECOVER_T);
+    const e = u * u * (3 - 2 * u);
+    return { x, y: restY - 136 + e * 136, scale: 1.78 - e * 0.78 };
   }
 
-  // Blade geometry in local space: origin at the hand, edge down, tip at +x.
-  // Ghost copies skip the detail and fill flat — at trail alpha the bevel and
-  // groove are invisible anyway, and they'd only muddy the silhouette.
-  _drawKnifeShape({ x, y, angle }, ghost) {
+  // Fist geometry in local space: origin at the centre of the hand, knuckles
+  // up, forearm running off the bottom of the screen. Ghost copies fill flat
+  // — at trail alpha the detail is invisible and only muddies the silhouette.
+  _drawFist({ x, y, scale }, ghost) {
     const { ctx } = this;
+    const rr = (rx, ry, w, h, r) => {
+      ctx.beginPath();
+      ctx.moveTo(rx + r, ry);
+      ctx.arcTo(rx + w, ry, rx + w, ry + h, r);
+      ctx.arcTo(rx + w, ry + h, rx, ry + h, r);
+      ctx.arcTo(rx, ry + h, rx, ry, r);
+      ctx.arcTo(rx, ry, rx + w, ry, r);
+      ctx.closePath();
+    };
+
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(angle);
-
-    const blade = new Path2D();
-    blade.moveTo(-2, -7);
-    blade.lineTo(50, -7);
-    blade.lineTo(78, -1); // clipped point
-    blade.lineTo(56, 5);
-    blade.lineTo(-2, 6);
-    blade.closePath();
+    ctx.scale(scale, scale);
 
     if (ghost) {
-      ctx.fillStyle = "#e2e8f0";
-      ctx.fill(blade);
+      ctx.fillStyle = "#7c8798";
+      rr(-25, -22, 50, 34, 10);
+      ctx.fill();
       ctx.restore();
       return;
     }
 
-    // Grip, then guard, then blade — back to front, so each overlaps cleanly.
-    ctx.fillStyle = "#2b3038";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "rgba(10,12,16,0.85)";
+    ctx.lineWidth = 2;
+
+    // Forearm first, so the hand overlaps it rather than the other way round.
+    ctx.fillStyle = "#262b36";
     ctx.beginPath();
-    ctx.moveTo(-38, -6);
-    ctx.lineTo(-6, -8);
-    ctx.lineTo(-6, 8);
-    ctx.lineTo(-38, 7);
+    ctx.moveTo(-17, 4);
+    ctx.lineTo(17, 4);
+    ctx.lineTo(30, 90);
+    ctx.lineTo(-8, 90);
     ctx.closePath();
     ctx.fill();
-    ctx.strokeStyle = "rgba(12,14,18,0.8)";
-    ctx.lineWidth = 1.4;
+    ctx.stroke();
+
+    ctx.fillStyle = "#4b5563"; // cuff
+    rr(-21, 2, 42, 15, 4);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "#454e5c"; // thumb, tucked across the near side
+    rr(-31, -9, 16, 18, 6);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "#3f4855"; // hand mass
+    rr(-25, -22, 50, 34, 10);
+    ctx.fill();
+    ctx.stroke();
+
+    // Knuckle row. These are the whole read at a glance — without them the
+    // hand is an anonymous rounded block.
+    ctx.fillStyle = "#78849a";
     for (let i = 0; i < 4; i++) {
-      const gx = -33 + i * 7;
-      ctx.beginPath();
-      ctx.moveTo(gx, -7);
-      ctx.lineTo(gx + 3, 7.5);
+      rr(-23 + i * 12, -27, 11, 15, 5);
+      ctx.fill();
       ctx.stroke();
     }
-    ctx.fillStyle = "#4b5563";
-    ctx.fillRect(-43, -6, 6, 13); // pommel
-    ctx.fillRect(-8, -11, 7, 22); // guard
 
-    const steel = ctx.createLinearGradient(0, -7, 0, 6);
-    steel.addColorStop(0, "#f8fafc");
-    steel.addColorStop(0.45, "#cbd5e1");
-    steel.addColorStop(1, "#8b95a5");
-    ctx.fillStyle = steel;
-    ctx.fill(blade);
-    ctx.strokeStyle = "rgba(12,14,18,0.85)";
-    ctx.lineWidth = 1;
-    ctx.stroke(blade);
-
-    ctx.strokeStyle = "rgba(88,99,116,0.8)"; // fuller
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(6, -2.5);
-    ctx.lineTo(52, -2.5);
-    ctx.stroke();
-
-    ctx.strokeStyle = "rgba(255,255,255,0.9)"; // lit cutting edge
-    ctx.lineWidth = 1.3;
-    ctx.beginPath();
-    ctx.moveTo(-2, 5.6);
-    ctx.lineTo(56, 4.6);
-    ctx.lineTo(78, -1);
-    ctx.stroke();
+    ctx.fillStyle = "rgba(255,255,255,0.07)"; // top-left facet
+    rr(-21, -18, 22, 12, 5);
+    ctx.fill();
 
     ctx.restore();
   }
@@ -1454,7 +1477,7 @@ export class CorridorGame {
 
       if (kind === "enemy") {
         // Kills fade + sink over DEATH_ANIM_MS instead of vanishing the
-        // instant they die, so an insta-kill (headshot/knife) still reads as
+        // instant they die, so an insta-kill (headshot/punch) still reads as
         // an actual death rather than the target just disappearing.
         const dying = !p.ref.alive;
         const fadeT = dying ? Math.max(0, p.ref.deathAnim / DEATH_ANIM_MS) : 1;
@@ -1604,8 +1627,8 @@ export class CorridorGame {
     }
 
     const kick = this.fireFlash > 0 ? Math.min(14, (this.fireFlash / FIRE_FLASH_MS) * 14) : 0;
-    if (this.weapon === "knife") {
-      this._drawKnifeViewmodel();
+    if (this.weapon === "fists") {
+      this._drawFistViewmodel();
     } else {
       const wieldingSmg = this.weapon === "smg";
       ctx.fillStyle = wieldingSmg ? "#312e81" : "#262b36";

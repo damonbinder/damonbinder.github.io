@@ -35,7 +35,7 @@ const waveEl = document.getElementById("wave");
 const blinkCountEl = document.getElementById("blinkCount");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
-const knifeCountEl = document.getElementById("knifeCount");
+const punchCountEl = document.getElementById("punchCount");
 const showCameraToggle = document.getElementById("showCamera");
 const cameraPanel = document.querySelector(".camera-panel");
 const debugToggle = document.getElementById("debugToggle");
@@ -71,7 +71,7 @@ let started = false;
 let awaitingStartBlink = false;
 let lastFrameTime = 0;
 let blinkCount = 0;
-let knifeCount = 0;
+let punchCount = 0;
 let reticleNX = 0.5;
 let reticleNY = 0.5;
 let mouseAimActive = false;
@@ -109,7 +109,7 @@ game.onAmmoChange = (ammo) => {
   ammoEl.textContent = ammo;
 };
 
-const WEAPON_LABELS = { smg: "SMG", knife: "Knife", pistol: "Pistol" };
+const WEAPON_LABELS = { smg: "SMG", fists: "Fists", pistol: "Pistol" };
 
 game.onWeaponChange = (weapon) => {
   weaponEl.textContent = WEAPON_LABELS[weapon] || "Pistol";
@@ -138,12 +138,12 @@ game.onEnemyShoot = () => sound.playEnemyShoot();
 game.onSmgShoot = () => sound.playSmgShoot();
 game.onAmmoPickup = () => sound.playAmmoPickup();
 
-// Every swing comes through here now that the knife is a weapon slot fired by
-// blinking, so this is also where the debug swing counter is kept.
-game.onKnifeSwish = () => {
-  sound.playKnifeSwish();
-  knifeCount++;
-  knifeCountEl.textContent = knifeCount;
+// Every punch comes through here now that melee is a weapon slot thrown by
+// blinking, so this is also where the debug punch counter is kept.
+game.onPunchSwing = () => {
+  sound.playPunchSwing();
+  punchCount++;
+  punchCountEl.textContent = punchCount;
 };
 
 function updateDanger() {
@@ -280,11 +280,11 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 
-  // Aiming/firing is gaze+blink only, and every weapon — knife included —
+  // Aiming/firing is gaze+blink only, and every weapon — fists included —
   // attacks on that same blink. K is a ?debug convenience that jumps straight
-  // to the knife slot, so it can be tested without cycling with R first.
+  // to the fists slot, so it can be tested without cycling with R first.
   if (!DEBUG) return;
-  if (key === "k" && started) game.equipWeapon("knife");
+  if (key === "k" && started) game.equipWeapon("fists");
   // N jumps a wave, for reaching wave-gated content without clearing up to it.
   if (key === "n" && started) game.skipWave();
   // C simulates holding your eyes shut, for testing the SMG without a camera.
@@ -382,7 +382,7 @@ async function startWithCamera() {
     // single edge-triggered shot, so the two don't both fire on one blink.
     if (game.weapon !== "smg") fire();
   };
-  // jawOpen/mouthOpen no longer drive anything — the knife moved onto the
+  // jawOpen/mouthOpen no longer drive anything — melee moved onto the
   // blink along with the guns — but the tracker still reports them, and the
   // readout is kept so the signal stays calibratable if it's ever used again.
   tracker.onDebug = ({ hasFace, yaw, pitch, nx, ny, left, right, blinking, jawOpen, mouthOpen }) => {

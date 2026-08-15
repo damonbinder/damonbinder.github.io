@@ -323,26 +323,44 @@ export class SoundFX {
     osc.stop(t + 0.05);
   }
 
-  playKnifeSwish() {
+  // A low whiff with a thump under it. This was a blade swish — a bright
+  // bandpass sweeping up to 2.6kHz — back when melee was a knife; a fist
+  // moving through air is a much duller, lower sound, and the short sine
+  // thump is what gives it mass rather than sounding like a miss every time.
+  playPunchSwing() {
     if (!this.ctx) return;
     const ctx = this.ctx;
     const t = ctx.currentTime;
-    const noise = this._noiseBurst(0.25);
+
+    const noise = this._noiseBurst(0.18);
     const filter = ctx.createBiquadFilter();
     filter.type = "bandpass";
-    filter.Q.value = 1.1;
-    filter.frequency.setValueAtTime(350, t);
-    filter.frequency.linearRampToValueAtTime(2600, t + 0.11);
-    filter.frequency.linearRampToValueAtTime(450, t + 0.24);
+    filter.Q.value = 0.9;
+    filter.frequency.setValueAtTime(220, t);
+    filter.frequency.linearRampToValueAtTime(760, t + 0.07);
+    filter.frequency.linearRampToValueAtTime(190, t + 0.17);
     const gain = ctx.createGain();
     gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.5, t + 0.05);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.24);
+    gain.gain.exponentialRampToValueAtTime(0.42, t + 0.035);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.17);
     noise.connect(filter);
     filter.connect(gain);
     gain.connect(this.masterGain);
     noise.start(t);
-    noise.stop(t + 0.25);
+    noise.stop(t + 0.18);
+
+    const thump = ctx.createOscillator();
+    thump.type = "sine";
+    thump.frequency.setValueAtTime(150, t + 0.02);
+    thump.frequency.exponentialRampToValueAtTime(58, t + 0.12);
+    const thumpGain = ctx.createGain();
+    thumpGain.gain.setValueAtTime(0.0001, t + 0.02);
+    thumpGain.gain.exponentialRampToValueAtTime(0.34, t + 0.045);
+    thumpGain.gain.exponentialRampToValueAtTime(0.001, t + 0.14);
+    thump.connect(thumpGain);
+    thumpGain.connect(this.masterGain);
+    thump.start(t + 0.02);
+    thump.stop(t + 0.15);
   }
 
   playHurt() {

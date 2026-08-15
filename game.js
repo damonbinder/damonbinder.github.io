@@ -67,16 +67,26 @@ const ENEMY_SCORE = 100;
 const HIT_FLASH_MS = 150;
 const FIRE_FLASH_MS = 120;
 const DEATH_ANIM_MS = 250; // kills fade/shrink out over this long instead of vanishing instantly
-const PUNCH_SWING_MS = 260;
-// How long a punch roots the player in place. Slightly longer than the strike
+const SABER_SWING_MS = 260;
+// How long a swing roots the player in place. Slightly longer than the swing
 // animation so the commitment outlasts the visual and reads as a cost rather
 // than as a hitch — see the note in _step.
-const PUNCH_MOVE_LOCK_MS = 320;
-// Phase boundaries within the strike, as fractions of PUNCH_SWING_MS: draw
-// back until the first, thrust out until the second, recover after. The
-// thrust is the short middle slice on purpose — that's what makes it snap.
-const PUNCH_WINDUP_T = 0.28;
-const PUNCH_RECOVER_T = 0.5;
+const SABER_MOVE_LOCK_MS = 320;
+// Phase boundaries within the swing, as fractions of SABER_SWING_MS: wind up
+// until the first, slash until the second, recover after. The slash is the
+// short middle slice on purpose — that's what makes it snap.
+const SABER_WINDUP_T = 0.28;
+const SABER_RECOVER_T = 0.5;
+// Blade angles, radians, clockwise from straight up. Rest leans right so the
+// blade never sits over the reticle; the slash runs from up-right, over the
+// top, down to the left — roughly 135 degrees of arc, which is what makes it
+// read as a cut across the whole view rather than a poke.
+const SABER_REST_ANGLE = 0.42;
+const SABER_WINDUP_ANGLE = 0.85;
+const SABER_SLASH_ANGLE = -1.5;
+const SABER_BLADE_LEN = 168;
+const SABER_TRAIL_SAMPLES = 9;
+const SABER_TRAIL_STEP = 0.016; // in swing-fraction; see the note in _drawSaberViewmodel
 
 const ENEMY_SPAWNS = readLayout("e");
 // Nothing spawns inside this radius. It matters more than it looks because
@@ -93,14 +103,14 @@ const MIN_SPAWN_DIST_FROM_PLAYER = 6;
 const PLAYER_START = readLayout("P")[0];
 const PLAYER_START_ANGLE = 0;
 
-const PUNCH_RANGE = 1.0;
+const SABER_RANGE = 1.0;
 
 // Melee is a weapon slot rather than something you can do with the pistol
 // out, so it sits in the same cycle as the guns and swings on the same blink
 // that fires them. It is the floor of the cycle: it never runs out, which is
 // what lets a dry pistol fall through to it instead of leaving the player
 // holding an empty gun with no attack at all.
-const WEAPON_CYCLE = ["pistol", "smg", "fists"];
+const WEAPON_CYCLE = ["pistol", "smg", "saber"];
 
 // Enemies push each other apart below this range. Without it they have no
 // mutual collision at all, so a wave converging from different spawns stacks
@@ -370,7 +380,7 @@ export class CorridorGame {
     this.onGameOver = null;
     this.onShoot = null;
     this.onEmptyFire = null;
-    this.onPunchSwing = null;
+    this.onSaberSwing = null;
     this.onPlayerHurt = null;
     this.onEnemyShoot = null;
     this.onWeaponChange = null;
@@ -400,8 +410,9 @@ export class CorridorGame {
     this._rebuildFlowField();
     this.hitFlash = 0;
     this.fireFlash = 0;
-    this.punchRemaining = 0;
-    this.punchMoveLock = 0;
+    this.saberRemaining = 0;
+    this.saberMoveLock = 0;
+    this._saberIdle = 0;
     this.moveDir = 0;
     this.strafeDir = 0;
     this.turnDir = 0;
@@ -541,9 +552,9 @@ export class CorridorGame {
   // lets the player hold onto and ration what they're already carrying
   // instead of it always firing the moment their eyes close. A dry pistol is
   // skipped for the same reason: cycling onto it could only ever produce
-  // empty clicks. Fists are always available.
+  // empty clicks. The saber is always available.
   _weaponAvailable(weapon) {
-    if (weapon === "fists") return true;
+    if (weapon === "saber") return true;
     if (weapon === "smg") return this.smgAmmo > 0;
     return this.ammo > 0;
   }
@@ -571,12 +582,12 @@ export class CorridorGame {
   // Running a weapon dry drops the player straight onto the next thing that
   // can still attack rather than leaving them holding an empty gun mid-wave.
   // The SMG hands back to the pistol if there's anything left in it; a dry
-  // pistol falls through to the fists, which never run out. Callers notify
+  // pistol falls through to the saber, which never runs out. Callers notify
   // ammo themselves afterwards, so the HUD ends up showing whichever pool is
   // actually active rather than the one that just hit zero.
   _autoSwitchIfDry() {
     if (this._weaponAvailable(this.weapon)) return;
-    this.weapon = this.weapon === "smg" && this.ammo > 0 ? "pistol" : "fists";
+    this.weapon = this.weapon === "smg" && this.ammo > 0 ? "pistol" : "saber";
     this._notifyWeapon();
   }
 
@@ -597,16 +608,17 @@ export class CorridorGame {
     this._healPulse += stepMs;
     if (this.hitFlash > 0) this.hitFlash -= stepMs;
     if (this.fireFlash > 0) this.fireFlash -= stepMs;
-    if (this.punchRemaining > 0) this.punchRemaining -= stepMs;
-    if (this.punchMoveLock > 0) this.punchMoveLock -= stepMs;
+    if (this.saberRemaining > 0) this.saberRemaining -= stepMs;
+    if (this.saberMoveLock > 0) this.saberMoveLock -= stepMs;
+    this._saberIdle += stepMs; // drives the blade's idle sway
 
     this.player.angle += this.turnDir * TURN_SPEED * dt;
-    // Punching roots the player for PUNCH_MOVE_LOCK_MS: a punch one-shots
+    // Swinging roots the player for SABER_MOVE_LOCK_MS: the saber one-shots
     // anything it reaches, so committing to it has to cost something, and
     // standing still inside melee range with a wave closing is that cost.
     // Turning is deliberately exempt — it's gaze-driven, so freezing it would
     // fight the aim system rather than read as a commitment.
-    const rooted = this.punchMoveLock > 0;
+    const rooted = this.saberMoveLock > 0;
     const strafeAngle = this.player.angle + Math.PI / 2; // + = strafe right, independent of turning
     const moveDir = rooted ? 0 : this.moveDir;
     const strafeDir = rooted ? 0 : this.strafeDir;
@@ -696,7 +708,7 @@ export class CorridorGame {
         pk.respawnTimer = PICKUP_RESPAWN_MS;
         this.ammo = Math.min(MAX_AMMO_CAP, this.ammo + AMMO_PER_PICKUP);
         this.onAmmoPickup?.();
-        // Deliberately does *not* switch you off the fists — walking over a
+        // Deliberately does *not* switch you off the saber — walking over a
         // crate refills the pistol, it doesn't decide for you which weapon
         // you're holding. Cycle back with R when you want it.
         this._notifyAmmo();
@@ -1217,7 +1229,7 @@ export class CorridorGame {
     // Single entry point for "attack with whatever is equipped", whichever
     // control path called it — melee is a weapon slot now, so the same
     // blink that fires a gun swings it, and no caller has to know which.
-    if (this.weapon === "fists") return this.tryPunch();
+    if (this.weapon === "saber") return this.trySwing();
     const usingSmg = this.weapon === "smg";
     if (usingSmg ? this.smgAmmo <= 0 : this.ammo <= 0) {
       this.onEmptyFire?.();
@@ -1236,7 +1248,7 @@ export class CorridorGame {
     if (!hit) return false;
     const en = hit.proj.ref;
     // A segmented enemy loses exactly one segment per hit; nothing one-shots
-    // it except a punch, which bypasses hp entirely.
+    // it except a saber swing, which bypasses hp entirely.
     if (hit.headshot && !(ENEMY_TYPES[en.type] || ENEMY_TYPES.normal).segments) en.hp = 0;
     else en.hp -= 1;
     en.hitFlash = HIT_FLASH_MS;
@@ -1256,18 +1268,18 @@ export class CorridorGame {
   }
 
   // Melee: doesn't use ammo or need precise aim, just the nearest visible,
-  // unoccluded enemy within short range. Only throws while the fists are the
+  // unoccluded enemy within short range. Only swings while the saber is the
   // equipped weapon — it is a slot you switch to, not something available
   // with a gun in your hands.
-  tryPunch() {
-    if (!this.alive || this.weapon !== "fists") return false;
-    this.punchRemaining = PUNCH_SWING_MS; // swing plays whether or not it connects
-    this.punchMoveLock = PUNCH_MOVE_LOCK_MS; // and roots you whether or not it connects, too
-    this.onPunchSwing?.();
+  trySwing() {
+    if (!this.alive || this.weapon !== "saber") return false;
+    this.saberRemaining = SABER_SWING_MS; // swing plays whether or not it connects
+    this.saberMoveLock = SABER_MOVE_LOCK_MS; // and roots you whether or not it connects, too
+    this.onSaberSwing?.();
     let best = null;
     let bestDist = Infinity;
     for (const p of this._projections) {
-      if (!p.onScreen || !p.ref.alive || p.dist > PUNCH_RANGE) continue;
+      if (!p.onScreen || !p.ref.alive || p.dist > SABER_RANGE) continue;
       const col = Math.max(0, Math.min(WIDTH - 1, Math.round(p.screenX)));
       if (p.dist >= this.depthBuffer[col]) continue;
       if (p.dist < bestDist) {
@@ -1284,69 +1296,76 @@ export class CorridorGame {
     return true;
   }
 
-  // Bottom-right viewmodel for the fists, held at rest and thrown on attack.
-  // The resting pose is what tells the player which weapon they're on, now
-  // that melee is a slot rather than a gesture — it used to appear only for
-  // the 260ms of the strike itself.
+  // Two-handed energy blade, gripped at the bottom centre of the screen.
+  // Centred is *correct* here rather than a compromise: two hands on one hilt
+  // belong in the middle, which a single fist never did — that pose was
+  // anatomically wrong and read as one arm growing out of the sternum.
   //
-  // Everything here is flat blocky shapes with a hard outline, matching the
-  // pistol's two-rectangle viewmodel and the enemies' circles. An earlier
-  // pass drew a shaded, tapered knife with a bevel and a lit edge; it was
-  // well-formed and completely wrong for the game, reading as a photograph
-  // pasted over a diagram.
-  _drawFistViewmodel() {
+  // The hilt and hands are flat blocky shapes with hard outlines, matching
+  // the pistol's rectangles. Only the blade breaks that, and it has to: it is
+  // the one lit object in the game, so it is drawn additively in layers
+  // instead of filled.
+  _drawSaberViewmodel() {
     const { ctx } = this;
-    const punching = this.punchRemaining > 0;
-    const t = punching ? 1 - this.punchRemaining / PUNCH_SWING_MS : 0; // 0 -> 1 across the strike
+    const swinging = this.saberRemaining > 0;
+    const t = swinging ? 1 - this.saberRemaining / SABER_SWING_MS : 0; // 0 -> 1 across the swing
 
-    // Ghost copies from earlier in the thrust, smaller and further back, so
-    // the punch leaves a sense of having travelled toward the screen. Only
-    // during the thrust — trailing the wind-up would read as a stutter.
-    if (punching && t > PUNCH_WINDUP_T && t < PUNCH_RECOVER_T) {
-      for (let i = 3; i >= 1; i--) {
-        const back = t - i * 0.05;
-        if (back <= PUNCH_WINDUP_T) continue;
+    // Arc smear: blade-only copies from earlier in the slash. A saber wants
+    // more of these than a solid weapon would, because they're additive and
+    // each one is faint — together they read as a single lit arc hanging in
+    // the air rather than as discrete stamps.
+    if (swinging && t > SABER_WINDUP_T && t < SABER_RECOVER_T + 0.12) {
+      // Sample count and spacing are a pair, and both matter. The slash is
+      // eased, so the blade covers most of its 135 degrees in the first few
+      // milliseconds; at wide spacing the copies land far enough apart to
+      // read as several separate blades rather than one lit arc. Nine
+      // closely-spaced samples close the gaps at the fast end.
+      for (let i = SABER_TRAIL_SAMPLES; i >= 1; i--) {
+        const back = t - i * SABER_TRAIL_STEP;
+        if (back <= SABER_WINDUP_T) continue;
         ctx.save();
-        ctx.globalAlpha = 0.18 - i * 0.04;
-        this._drawFist(this._fistPose(back, true), true);
+        ctx.globalAlpha = 0.2 * (1 - i / (SABER_TRAIL_SAMPLES + 1));
+        this._drawSaber(this._saberPose(back, true), true);
         ctx.restore();
       }
     }
-    this._drawFist(this._fistPose(t, punching), false);
+    this._drawSaber(this._saberPose(t, swinging), false);
   }
 
-  // A punch reads through *scale* rather than rotation: the fist gets bigger
-  // as it extends toward the screen, which is the only depth cue a 2D
-  // viewmodel has. Three phases — draw back, thrust, recover — because a
-  // straight out-and-back has no anticipation and lands like a twitch.
-  // Centred like the gun viewmodel, and the thrust runs straight up the
-  // middle toward the reticle rather than in from a corner, so the fist
-  // arrives where the player is actually aiming.
-  _fistPose(t, punching) {
-    const restY = HEIGHT - 34;
+  // Pure rotation about the grip, unlike the fist's scale-based thrust: a
+  // blade on a stick sweeps, and the pivot sits near the bottom edge so a
+  // modest rotation throws the tip right across the view. Three phases —
+  // wind up, slash, recover — with the slash as the short middle slice, so
+  // it snaps rather than drifting.
+  _saberPose(t, swinging) {
     const x = WIDTH / 2;
-    if (!punching) return { x, y: restY, scale: 1 };
-    if (t < PUNCH_WINDUP_T) {
-      const u = t / PUNCH_WINDUP_T;
-      return { x, y: restY + u * 16, scale: 1 - u * 0.14 };
+    const y = HEIGHT - 26;
+    // Idle sway. A perfectly still blade reads as a decal pasted on the
+    // screen; this is small enough not to disturb aim and is the only thing
+    // that says the weapon is powered.
+    const idle = Math.sin(this._saberIdle / 240) * 0.016;
+    const rest = SABER_REST_ANGLE + idle;
+    if (!swinging) return { x, y, angle: rest };
+    if (t < SABER_WINDUP_T) {
+      const u = t / SABER_WINDUP_T;
+      return { x, y, angle: rest + u * (SABER_WINDUP_ANGLE - rest) };
     }
-    if (t < PUNCH_RECOVER_T) {
-      // Ease-out: leaves fast and decelerates into full extension.
-      const u = (t - PUNCH_WINDUP_T) / (PUNCH_RECOVER_T - PUNCH_WINDUP_T);
+    if (t < SABER_RECOVER_T) {
+      // Ease-out: leaves fast, decelerates into the end of the arc.
+      const u = (t - SABER_WINDUP_T) / (SABER_RECOVER_T - SABER_WINDUP_T);
       const e = 1 - Math.pow(1 - u, 3);
-      return { x, y: restY + 16 - e * 152, scale: 0.86 + e * 0.92 };
+      return { x, y, angle: SABER_WINDUP_ANGLE + e * (SABER_SLASH_ANGLE - SABER_WINDUP_ANGLE) };
     }
-    // Recover: ease back to rest, slower than the thrust so the strike keeps
-    // its snap and the return doesn't read as a second action.
-    const u = (t - PUNCH_RECOVER_T) / (1 - PUNCH_RECOVER_T);
+    // Recover: smoothstep back to rest, slower than the slash so the strike
+    // keeps its snap and the return doesn't read as a second swing.
+    const u = (t - SABER_RECOVER_T) / (1 - SABER_RECOVER_T);
     const e = u * u * (3 - 2 * u);
-    return { x, y: restY - 136 + e * 136, scale: 1.78 - e * 0.78 };
+    return { x, y, angle: SABER_SLASH_ANGLE + e * (rest - SABER_SLASH_ANGLE) };
   }
 
-  // Fist geometry in local space: origin at the centre of the hand, knuckles
-  // up, forearm running off the bottom of the screen. Ghost copies fill flat
-  // — at trail alpha the detail is invisible and only muddies the silhouette.
-  _drawFist({ x, y, scale }, ghost) {
+  // Local space: origin at the grip, blade running up -y. Ghost copies draw
+  // the blade alone — the hands don't smear, they're attached to the player.
+  _drawSaber({ x, y, angle }, ghost) {
     const { ctx } = this;
     const rr = (rx, ry, w, h, r) => {
       ctx.beginPath();
@@ -1360,58 +1379,77 @@ export class CorridorGame {
 
     ctx.save();
     ctx.translate(x, y);
-    ctx.scale(scale, scale);
+    ctx.rotate(angle);
 
-    if (ghost) {
-      ctx.fillStyle = "#7c8798";
-      rr(-25, -22, 50, 34, 10);
-      ctx.fill();
-      ctx.restore();
-      return;
-    }
+    if (!ghost) {
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "rgba(10,12,16,0.85)";
+      ctx.lineWidth = 2;
 
-    ctx.lineJoin = "round";
-    ctx.strokeStyle = "rgba(10,12,16,0.85)";
-    ctx.lineWidth = 2;
-
-    // Forearm first, so the hand overlaps it rather than the other way round.
-    ctx.fillStyle = "#262b36";
-    ctx.beginPath();
-    ctx.moveTo(-17, 4);
-    ctx.lineTo(17, 4);
-    ctx.lineTo(30, 90);
-    ctx.lineTo(-8, 90);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.fillStyle = "#4b5563"; // cuff
-    rr(-21, 2, 42, 15, 4);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.fillStyle = "#454e5c"; // thumb, tucked across the near side
-    rr(-31, -9, 16, 18, 6);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.fillStyle = "#3f4855"; // hand mass
-    rr(-25, -22, 50, 34, 10);
-    ctx.fill();
-    ctx.stroke();
-
-    // Knuckle row. These are the whole read at a glance — without them the
-    // hand is an anonymous rounded block.
-    ctx.fillStyle = "#78849a";
-    for (let i = 0; i < 4; i++) {
-      rr(-23 + i * 12, -27, 11, 15, 5);
+      ctx.fillStyle = "#2b3038"; // hilt body
+      rr(-8, -54, 16, 84, 3);
       ctx.fill();
       ctx.stroke();
+
+      ctx.fillStyle = "#5b6577"; // emitter shroud
+      rr(-11, -58, 22, 13, 3);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = "#4b5563"; // pommel
+      rr(-10, 22, 20, 10, 3);
+      ctx.fill();
+      ctx.stroke();
+
+      // Hands, upper then lower, drawn over the hilt with a gap between them
+      // so the hilt still reads as one object running through both. The
+      // knuckle row and the thumb block are what stop each one reading as a
+      // grey lozenge — a plain rounded rect at this size says nothing.
+      for (const hy of [-34, -4]) {
+        ctx.fillStyle = "#3f4855";
+        rr(-24, hy, 48, 24, 7);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#525c6b"; // knuckles, along the near edge
+        for (let i = 0; i < 3; i++) {
+          rr(-22 + i * 11, hy + 1, 10, 8, 3);
+          ctx.fill();
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = "#333b47"; // thumb, wrapping around the far side
+        rr(9, hy + 6, 15, 16, 5);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(10,12,16,0.45)"; // finger separation
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.moveTo(-22, hy + 16);
+        ctx.lineTo(6, hy + 16);
+        ctx.stroke();
+        ctx.strokeStyle = "rgba(10,12,16,0.85)";
+        ctx.lineWidth = 2;
+      }
     }
 
-    ctx.fillStyle = "rgba(255,255,255,0.07)"; // top-left facet
-    rr(-21, -18, 22, 12, 5);
-    ctx.fill();
+    // Blade: concentric bars, widest and dimmest first, summed additively so
+    // the middle saturates to a white core with a cyan bloom around it. Only
+    // the outer layers are kept dim — additive over the blue-grey walls turns
+    // anything near full intensity into a flat white slab.
+    ctx.globalCompositeOperation = "lighter";
+    const top = -58 - SABER_BLADE_LEN;
+    for (const [w, color] of [
+      [26, "rgba(34,211,238,0.18)"],
+      [17, "rgba(103,232,249,0.30)"],
+      [9, "rgba(165,243,252,0.60)"],
+      [4, "rgba(255,255,255,0.95)"],
+    ]) {
+      ctx.fillStyle = color;
+      rr(-w / 2, top, w, SABER_BLADE_LEN + 8, w / 2);
+      ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
 
     ctx.restore();
   }
@@ -1477,7 +1515,7 @@ export class CorridorGame {
 
       if (kind === "enemy") {
         // Kills fade + sink over DEATH_ANIM_MS instead of vanishing the
-        // instant they die, so an insta-kill (headshot/punch) still reads as
+        // instant they die, so an insta-kill (headshot/saber) still reads as
         // an actual death rather than the target just disappearing.
         const dying = !p.ref.alive;
         const fadeT = dying ? Math.max(0, p.ref.deathAnim / DEATH_ANIM_MS) : 1;
@@ -1627,8 +1665,8 @@ export class CorridorGame {
     }
 
     const kick = this.fireFlash > 0 ? Math.min(14, (this.fireFlash / FIRE_FLASH_MS) * 14) : 0;
-    if (this.weapon === "fists") {
-      this._drawFistViewmodel();
+    if (this.weapon === "saber") {
+      this._drawSaberViewmodel();
     } else {
       const wieldingSmg = this.weapon === "smg";
       ctx.fillStyle = wieldingSmg ? "#312e81" : "#262b36";

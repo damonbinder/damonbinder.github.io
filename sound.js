@@ -41,6 +41,15 @@ const BP_VOICE_PHASE_STEP = 0.25 / BP_OCTAVES;
 // smear. Distance still does the real work on each voice's level.
 const BP_VOICE_TRIM = [1, 0.85, 0.72, 0.6];
 
+// Idle hum for the saber viewmodel, and the base pitch its swing bends from.
+// Two saws a few cents apart beat against each other, which is what gives a
+// saber hum its restless quality — a single oscillator just sounds like a
+// test tone. Deliberately well above the tension drone's 58Hz so the two
+// occupy different registers instead of muddying each other, and quiet
+// enough to sit under everything.
+const SABER_HUM_HZ = 132;
+const SABER_HUM_GAIN = 0.055;
+
 // All effects are synthesized with the Web Audio API — no audio files. The
 // AudioContext can only start from a real user gesture (browser autoplay
 // policy), so callers must invoke resume() synchronously inside a click
@@ -74,6 +83,7 @@ export class SoundFX {
       this.limiter.connect(this.ctx.destination);
       this._startTension();
       this._startBarberPole();
+      this._startSaberHum();
     }
     if (this.ctx.state === "suspended") this.ctx.resume();
   }
@@ -129,6 +139,50 @@ export class SoundFX {
     }
     this.bpPhase = 0;
     this.bpLastTime = ctx.currentTime;
+  }
+
+  _startSaberHum() {
+    const ctx = this.ctx;
+    this.saberGain = ctx.createGain();
+    this.saberGain.gain.value = 0;
+    this.saberGain.connect(this.masterGain);
+
+    const lp = ctx.createBiquadFilter();
+    lp.type = "lowpass";
+    lp.frequency.value = 1100;
+    lp.connect(this.saberGain);
+
+    this.saberOscs = [];
+    for (const detune of [-9, 9]) {
+      const osc = ctx.createOscillator();
+      osc.type = "sawtooth";
+      osc.frequency.value = SABER_HUM_HZ;
+      osc.detune.value = detune;
+      osc.connect(lp);
+      osc.start();
+      this.saberOscs.push(osc);
+    }
+
+    // Slow wobble on pitch — the same idea as the tremolo on the tension
+    // drone, but modulating frequency rather than gain, which is what keeps
+    // the hum from settling into a steady organ note.
+    this.saberLfo = ctx.createOscillator();
+    this.saberLfo.type = "sine";
+    this.saberLfo.frequency.value = 5.5;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 3.5; // cents
+    this.saberLfo.connect(lfoGain);
+    for (const osc of this.saberOscs) lfoGain.connect(osc.detune);
+    this.saberLfo.start();
+  }
+
+  // Declarative, and called every frame from the render loop like
+  // setThreats() rather than switched on weapon-change events. A sustained
+  // sound driven by events gets stranded on whichever path nobody remembered
+  // — death, pause, running dry mid-swing — and then hums forever.
+  setSaberActive(active) {
+    if (!this.ctx) return;
+    this.saberGain.gain.setTargetAtTime(active ? SABER_HUM_GAIN : 0, this.ctx.currentTime, 0.05);
   }
 
   // dangers: one value per nearby enemy, each in [0,1] where 1 is on top of
@@ -323,44 +377,54 @@ export class SoundFX {
     osc.stop(t + 0.05);
   }
 
-  // A low whiff with a thump under it. This was a blade swish — a bright
-  // bandpass sweeping up to 2.6kHz — back when melee was a knife; a fist
-  // moving through air is a much duller, lower sound, and the short sine
-  // thump is what gives it mass rather than sounding like a miss every time.
-  playPunchSwing() {
+  // The swing is a pitch bend, not a noise whoosh. What makes a swung energy
+  // blade sound like one is Doppler on a sustained tone — the hum rushing up
+  // and back down as it passes — so this is two detuned saws bent up and
+  // released, with only a little air noise under them for the sweep.
+  playSaberSwing() {
     if (!this.ctx) return;
     const ctx = this.ctx;
     const t = ctx.currentTime;
 
-    const noise = this._noiseBurst(0.18);
-    const filter = ctx.createBiquadFilter();
-    filter.type = "bandpass";
-    filter.Q.value = 0.9;
-    filter.frequency.setValueAtTime(220, t);
-    filter.frequency.linearRampToValueAtTime(760, t + 0.07);
-    filter.frequency.linearRampToValueAtTime(190, t + 0.17);
-    const gain = ctx.createGain();
-    gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.42, t + 0.035);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.17);
-    noise.connect(filter);
-    filter.connect(gain);
-    gain.connect(this.masterGain);
-    noise.start(t);
-    noise.stop(t + 0.18);
+    for (const detune of [0, 7]) {
+      const osc = ctx.createOscillator();
+      osc.type = "sawtooth";
+      osc.detune.value = detune;
+      osc.frequency.setValueAtTime(SABER_HUM_HZ, t);
+      osc.frequency.exponentialRampToValueAtTime(SABER_HUM_HZ * 2.6, t + 0.09);
+      osc.frequency.exponentialRampToValueAtTime(SABER_HUM_HZ * 0.9, t + 0.3);
+      const lp = ctx.createBiquadFilter();
+      lp.type = "lowpass";
+      lp.frequency.setValueAtTime(900, t);
+      lp.frequency.linearRampToValueAtTime(2400, t + 0.09);
+      lp.frequency.linearRampToValueAtTime(700, t + 0.3);
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(0.3, t + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+      osc.connect(lp);
+      lp.connect(gain);
+      gain.connect(this.masterGain);
+      osc.start(t);
+      osc.stop(t + 0.31);
+    }
 
-    const thump = ctx.createOscillator();
-    thump.type = "sine";
-    thump.frequency.setValueAtTime(150, t + 0.02);
-    thump.frequency.exponentialRampToValueAtTime(58, t + 0.12);
-    const thumpGain = ctx.createGain();
-    thumpGain.gain.setValueAtTime(0.0001, t + 0.02);
-    thumpGain.gain.exponentialRampToValueAtTime(0.34, t + 0.045);
-    thumpGain.gain.exponentialRampToValueAtTime(0.001, t + 0.14);
-    thump.connect(thumpGain);
-    thumpGain.connect(this.masterGain);
-    thump.start(t + 0.02);
-    thump.stop(t + 0.15);
+    const noise = this._noiseBurst(0.2);
+    const bp = ctx.createBiquadFilter();
+    bp.type = "bandpass";
+    bp.Q.value = 1.4;
+    bp.frequency.setValueAtTime(400, t);
+    bp.frequency.linearRampToValueAtTime(1800, t + 0.08);
+    bp.frequency.linearRampToValueAtTime(350, t + 0.19);
+    const noiseGain = ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.0001, t);
+    noiseGain.gain.exponentialRampToValueAtTime(0.16, t + 0.04);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, t + 0.19);
+    noise.connect(bp);
+    bp.connect(noiseGain);
+    noiseGain.connect(this.masterGain);
+    noise.start(t);
+    noise.stop(t + 0.2);
   }
 
   playHurt() {

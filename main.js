@@ -35,7 +35,7 @@ const waveEl = document.getElementById("wave");
 const blinkCountEl = document.getElementById("blinkCount");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
-const punchCountEl = document.getElementById("punchCount");
+const swingCountEl = document.getElementById("swingCount");
 const showCameraToggle = document.getElementById("showCamera");
 const cameraPanel = document.querySelector(".camera-panel");
 const debugToggle = document.getElementById("debugToggle");
@@ -71,7 +71,7 @@ let started = false;
 let awaitingStartBlink = false;
 let lastFrameTime = 0;
 let blinkCount = 0;
-let punchCount = 0;
+let swingCount = 0;
 let reticleNX = 0.5;
 let reticleNY = 0.5;
 let mouseAimActive = false;
@@ -109,7 +109,7 @@ game.onAmmoChange = (ammo) => {
   ammoEl.textContent = ammo;
 };
 
-const WEAPON_LABELS = { smg: "SMG", fists: "Fists", pistol: "Pistol" };
+const WEAPON_LABELS = { smg: "SMG", saber: "Saber", pistol: "Pistol" };
 
 game.onWeaponChange = (weapon) => {
   weaponEl.textContent = WEAPON_LABELS[weapon] || "Pistol";
@@ -138,12 +138,12 @@ game.onEnemyShoot = () => sound.playEnemyShoot();
 game.onSmgShoot = () => sound.playSmgShoot();
 game.onAmmoPickup = () => sound.playAmmoPickup();
 
-// Every punch comes through here now that melee is a weapon slot thrown by
-// blinking, so this is also where the debug punch counter is kept.
-game.onPunchSwing = () => {
-  sound.playPunchSwing();
-  punchCount++;
-  punchCountEl.textContent = punchCount;
+// Every swing comes through here now that melee is a weapon slot swung by
+// blinking, so this is also where the debug swing counter is kept.
+game.onSaberSwing = () => {
+  sound.playSaberSwing();
+  swingCount++;
+  swingCountEl.textContent = swingCount;
 };
 
 function updateDanger() {
@@ -167,6 +167,13 @@ function updateDanger() {
     dangers.push(1 - d / DANGER_RANGE);
   }
   sound.setThreats(dangers);
+}
+
+// The blade hums whenever it's actually drawn and usable. Driven off the
+// current state every frame rather than off weapon-change events, so there's
+// no path — death, pause, a swap mid-swing — that can leave it running.
+function updateSaberHum() {
+  sound.setSaberActive(started && game.alive && !manualPause && game.weapon === "saber");
 }
 
 function renderHud() {
@@ -235,6 +242,7 @@ function loop(t) {
   if (game.alive && !manualPause) game.advance(Math.min(dt, 100));
   renderHud();
   updateDanger();
+  updateSaberHum();
   updateSmgAutoFire(dt);
 }
 requestAnimationFrame((t) => {
@@ -280,11 +288,11 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 
-  // Aiming/firing is gaze+blink only, and every weapon — fists included —
+  // Aiming/firing is gaze+blink only, and every weapon — the saber included —
   // attacks on that same blink. K is a ?debug convenience that jumps straight
-  // to the fists slot, so it can be tested without cycling with R first.
+  // to the saber slot, so it can be tested without cycling with R first.
   if (!DEBUG) return;
-  if (key === "k" && started) game.equipWeapon("fists");
+  if (key === "k" && started) game.equipWeapon("saber");
   // N jumps a wave, for reaching wave-gated content without clearing up to it.
   if (key === "n" && started) game.skipWave();
   // C simulates holding your eyes shut, for testing the SMG without a camera.

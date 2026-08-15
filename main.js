@@ -1,0 +1,454 @@
+import { CorridorGame, CORRIDOR_CONST } from "./game.js";
+import { FaceTracker } from "./tracker.js";
+import { SoundFX } from "./sound.js";
+
+// Units; proximity tension ramps up from this distance down to 0. Raised from
+// the original 4 with the 20x16 map: the cue exists to warn about things you
+// can't turn fast enough to see, so it wants to start well before contact.
+// It's deliberately paired with a steep BP_CURVE — a long range with a linear
+// ramp is just constant noise, whereas a long range with a late ramp gives a
+// barely-there presence far out that rushes in over the last few units.
+const DANGER_RANGE = 9;
+
+const { WIDTH, HEIGHT, SMG_FIRE_INTERVAL_MS } = CORRIDOR_CONST;
+
+const canvas = document.getElementById("game");
+const hud = document.getElementById("hud");
+const hudCtx = hud.getContext("2d");
+const board = document.querySelector(".board");
+const video = document.getElementById("video");
+const videoOverlay = document.getElementById("videoOverlay");
+const overlay = document.getElementById("overlay");
+const overlayTitle = document.getElementById("overlayTitle");
+const overlaySub = document.getElementById("overlaySub");
+const startOverlay = document.getElementById("startOverlay");
+const startBtn = document.getElementById("startBtn");
+const camError = document.getElementById("camError");
+const fallbackBtn = document.getElementById("fallbackBtn");
+const scoreEl = document.getElementById("score");
+const bestEl = document.getElementById("best");
+const healthEl = document.getElementById("health");
+const ammoEl = document.getElementById("ammo");
+const weaponEl = document.getElementById("weapon");
+const waveEl = document.getElementById("wave");
+const blinkCountEl = document.getElementById("blinkCount");
+const trackStateEl = document.getElementById("trackState");
+const mouthStateEl = document.getElementById("mouthState");
+const knifeCountEl = document.getElementById("knifeCount");
+const showCameraToggle = document.getElementById("showCamera");
+const cameraPanel = document.querySelector(".camera-panel");
+const debugToggle = document.getElementById("debugToggle");
+const debugReadout = document.getElementById("debugReadout");
+const yawSlider = document.getElementById("yawSlider");
+const pitchSlider = document.getElementById("pitchSlider");
+const smoothSlider = document.getElementById("smoothSlider");
+const threshSlider = document.getElementById("threshSlider");
+const debounceSlider = document.getElementById("debounceSlider");
+const mouthThreshSlider = document.getElementById("mouthThreshSlider");
+const mouthDebounceSlider = document.getElementById("mouthDebounceSlider");
+const invertXBox = document.getElementById("invertX");
+const invertYBox = document.getElementById("invertY");
+const yawVal = document.getElementById("yawVal");
+const pitchVal = document.getElementById("pitchVal");
+const smoothVal = document.getElementById("smoothVal");
+const threshVal = document.getElementById("threshVal");
+const debounceVal = document.getElementById("debounceVal");
+const mouthThreshVal = document.getElementById("mouthThreshVal");
+const mouthDebounceVal = document.getElementById("mouthDebounceVal");
+
+const BEST_KEY = "corridor-best";
+
+const DEBUG = new URLSearchParams(location.search).has("debug");
+if (DEBUG) {
+  document.querySelectorAll(".debug-only").forEach((el) => el.classList.remove("debug-only"));
+}
+
+const game = new CorridorGame(canvas);
+const sound = new SoundFX();
+let tracker = null;
+let started = false;
+let lastFrameTime = 0;
+let blinkCount = 0;
+let knifeCount = 0;
+let reticleNX = 0.5;
+let reticleNY = 0.5;
+let mouseAimActive = false;
+let forwardHeld = false;
+let backHeld = false;
+let strafeLeftHeld = false;
+let strafeRightHeld = false;
+let manualPause = false;
+let smgFireCooldown = 0;
+let debugEyesClosed = false; // DEBUG-only substitute for a sustained eyes-closed hold, for testing without a camera
+
+// Turning has no keyboard control at all — it only happens by looking (or,
+// under ?debug with no camera, moving the mouse) toward the outer edges of
+// the screen, past TURN_ZONE. Looking within the zone just aims/moves the
+// reticle; it's the same nx signal driving both.
+const TURN_ZONE = 0.22;
+function turnInputFromNX(nx) {
+  if (nx < TURN_ZONE) return -(TURN_ZONE - nx) / TURN_ZONE;
+  if (nx > 1 - TURN_ZONE) return (nx - (1 - TURN_ZONE)) / TURN_ZONE;
+  return 0;
+}
+
+let best = Number(localStorage.getItem(BEST_KEY) || 0);
+bestEl.textContent = best;
+
+game.onScoreChange = (score) => {
+  scoreEl.textContent = score;
+};
+
+game.onHealthChange = (health) => {
+  healthEl.textContent = Math.round(health);
+};
+
+game.onAmmoChange = (ammo) => {
+  ammoEl.textContent = ammo;
+};
+
+game.onWeaponChange = (weapon) => {
+  weaponEl.textContent = weapon === "smg" ? "SMG" : "Pistol";
+  if (weapon === "smg") smgFireCooldown = 0; // ready to fire the instant eyes close, not stale from before
+};
+
+game.onWaveChange = (wave) => {
+  waveEl.textContent = wave;
+};
+
+game.onGameOver = (score) => {
+  if (score > best) {
+    best = score;
+    localStorage.setItem(BEST_KEY, String(best));
+    bestEl.textContent = best;
+  }
+  overlayTitle.textContent = "Game over";
+  overlaySub.textContent = `Score ${score} — press R to restart`;
+  overlay.classList.remove("hidden");
+};
+
+game.onShoot = () => sound.playShoot();
+game.onEmptyFire = () => sound.playEmptyClick();
+game.onKnifeSwish = () => sound.playKnifeSwish();
+game.onPlayerHurt = () => sound.playHurt();
+game.onEnemyShoot = () => sound.playEnemyShoot();
+game.onSmgShoot = () => sound.playSmgShoot();
+
+function updateDanger() {
+  if (!started || !game.alive || manualPause) {
+    sound.setThreats([]);
+    return;
+  }
+  // Every enemy inside the range, not just the nearest — the cue stacks a
+  // voice per threat, so it needs all of them and their individual distances.
+  const dangers = [];
+  for (const en of game.enemies) {
+    if (!en.alive) continue;
+    // A frozen watcher is held still by being looked at, so it isn't a threat
+    // for as long as that lasts — it goes silent, and its voice dropping out
+    // of the chord is the feedback that you've pinned it. It sounds again the
+    // instant it starts moving, including the blink-dash and the
+    // WATCHER_MAX_FROZEN_MS escape valve, both of which clear en.frozen.
+    if (en.frozen) continue;
+    const d = Math.hypot(en.x - game.player.x, en.y - game.player.y);
+    if (d >= DANGER_RANGE) continue;
+    dangers.push(1 - d / DANGER_RANGE);
+  }
+  sound.setThreats(dangers);
+}
+
+function renderHud() {
+  hudCtx.clearRect(0, 0, WIDTH, HEIGHT);
+  if (!started) return;
+  const px = reticleNX * WIDTH;
+  const py = reticleNY * HEIGHT;
+  const target = game.alive ? game.peekTarget(reticleNX, reticleNY) : { hit: false, headshot: false };
+  hudCtx.strokeStyle = target.headshot ? "#fbbf24" : target.hit ? "#4ade80" : "rgba(231,233,238,0.85)";
+  hudCtx.lineWidth = 2;
+  const s = 9;
+  hudCtx.beginPath();
+  hudCtx.moveTo(px - s, py);
+  hudCtx.lineTo(px - 3, py);
+  hudCtx.moveTo(px + 3, py);
+  hudCtx.lineTo(px + s, py);
+  hudCtx.moveTo(px, py - s);
+  hudCtx.lineTo(px, py - 3);
+  hudCtx.moveTo(px, py + 3);
+  hudCtx.lineTo(px, py + s);
+  hudCtx.stroke();
+}
+
+function togglePause() {
+  if (!started || !game.alive) return;
+  manualPause = !manualPause;
+  refreshPauseOverlay();
+}
+
+function refreshPauseOverlay() {
+  if (!game.alive) return; // game-over overlay owns this state once you're dead
+  if (manualPause) {
+    overlayTitle.textContent = "Paused";
+    overlaySub.textContent = "Press space to resume";
+    overlay.classList.remove("hidden");
+  } else {
+    overlay.classList.add("hidden");
+  }
+}
+
+// The SMG has no manual trigger at all — as long as the player's eyes stay
+// closed (game.playerBlinking, the same continuous signal the watcher
+// freeze check runs on) it keeps firing on its own cooldown. A quick blink
+// yields one round if the cooldown happened to be ready; holding your eyes
+// shut yields a stream, right up until its small magazine runs dry.
+function updateSmgAutoFire(dt) {
+  const eyesClosed = game.playerBlinking || (DEBUG && debugEyesClosed);
+  if (!started || !game.alive || manualPause || game.weapon !== "smg" || !eyesClosed) {
+    smgFireCooldown = 0;
+    return;
+  }
+  smgFireCooldown -= dt;
+  if (smgFireCooldown <= 0) {
+    game.fireAt(reticleNX, reticleNY);
+    smgFireCooldown = SMG_FIRE_INTERVAL_MS;
+  }
+}
+
+function loop(t) {
+  requestAnimationFrame(loop);
+  const dt = lastFrameTime ? t - lastFrameTime : 16;
+  lastFrameTime = t;
+  if (!started) return;
+  // Clamp so a backgrounded/throttled tab can't fast-forward the player
+  // through many physics steps (and through walls) in one jump.
+  if (game.alive && !manualPause) game.advance(Math.min(dt, 100));
+  renderHud();
+  updateDanger();
+  updateSmgAutoFire(dt);
+}
+requestAnimationFrame((t) => {
+  lastFrameTime = t;
+  loop(t);
+});
+
+function updateMoveDir() {
+  game.setMoveDir((forwardHeld ? 1 : 0) - (backHeld ? 1 : 0));
+}
+
+function updateStrafeDir() {
+  game.setStrafeDir((strafeRightHeld ? 1 : 0) - (strafeLeftHeld ? 1 : 0));
+}
+
+function fire() {
+  if (!started || !game.alive || manualPause) return;
+  game.fireAt(reticleNX, reticleNY);
+}
+
+function knife() {
+  if (!started || !game.alive || manualPause) return;
+  game.tryKnife();
+}
+
+window.addEventListener("keydown", (e) => {
+  const key = e.key.toLowerCase();
+  if (["arrowup", "w"].includes(key)) {
+    forwardHeld = true;
+    updateMoveDir();
+  } else if (["arrowdown", "s"].includes(key)) {
+    backHeld = true;
+    updateMoveDir();
+  } else if (["arrowleft", "a"].includes(key)) {
+    strafeLeftHeld = true;
+    updateStrafeDir();
+  } else if (["arrowright", "d"].includes(key)) {
+    strafeRightHeld = true;
+    updateStrafeDir();
+  } else if (key === "r" && started) {
+    // R restarts once you've died, or switches weapons at any other time.
+    if (!game.alive) restart();
+    else game.toggleWeapon();
+  } else if (key === " ") {
+    togglePause();
+  }
+  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(key)) {
+    e.preventDefault();
+  }
+
+  // Aiming/firing is gaze+blink only, and the knife is mouth-open only.
+  // K is a ?debug convenience for testing without a camera (click fires).
+  if (!DEBUG) return;
+  if (key === "k") knife();
+  // N jumps a wave, for reaching wave-gated content without clearing up to it.
+  if (key === "n" && started) game.skipWave();
+  // C simulates holding your eyes shut, for testing the SMG without a camera.
+  if (key === "c") {
+    debugEyesClosed = true;
+    game.setPlayerBlinking(true);
+  }
+});
+
+window.addEventListener("keyup", (e) => {
+  const key = e.key.toLowerCase();
+  if (["arrowup", "w"].includes(key)) {
+    forwardHeld = false;
+    updateMoveDir();
+  } else if (["arrowdown", "s"].includes(key)) {
+    backHeld = false;
+    updateMoveDir();
+  } else if (["arrowleft", "a"].includes(key)) {
+    strafeLeftHeld = false;
+    updateStrafeDir();
+  } else if (["arrowright", "d"].includes(key)) {
+    strafeRightHeld = false;
+    updateStrafeDir();
+  } else if (key === "c" && DEBUG) {
+    debugEyesClosed = false;
+    game.setPlayerBlinking(false);
+  }
+});
+
+if (DEBUG) {
+  board.addEventListener("mousemove", (e) => {
+    if (!mouseAimActive) return;
+    const rect = canvas.getBoundingClientRect();
+    reticleNX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    reticleNY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    game.setTurnDir(turnInputFromNX(reticleNX));
+  });
+  board.addEventListener("click", fire);
+}
+
+function restart() {
+  game.reset();
+  manualPause = false;
+  overlay.classList.add("hidden");
+}
+
+function beginGame() {
+  if (started) return;
+  started = true;
+  startOverlay.classList.add("hidden");
+}
+
+async function startWithCamera() {
+  tracker = new FaceTracker(video, videoOverlay);
+  tracker.setThresholds({
+    yawRange: Number(yawSlider.value),
+    pitchRange: Number(pitchSlider.value),
+    smoothing: Number(smoothSlider.value) / 100,
+    invertX: invertXBox.checked,
+    invertY: invertYBox.checked,
+    blinkThreshold: Number(threshSlider.value) / 100,
+    blinkDebounce: Number(debounceSlider.value),
+    mouthThreshold: Number(mouthThreshSlider.value) / 100,
+    mouthDebounce: Number(mouthDebounceSlider.value),
+  });
+  tracker.onUpdate = ({ hasFace, nx, ny }) => {
+    reticleNX = nx;
+    reticleNY = ny;
+    game.setTurnDir(turnInputFromNX(reticleNX));
+    trackStateEl.textContent = hasFace ? "Tracking" : "Lost";
+    trackStateEl.className = `value ${hasFace ? "gaze-running" : "gaze-paused"}`;
+  };
+  tracker.onBlink = () => {
+    blinkCount++;
+    blinkCountEl.textContent = blinkCount;
+    // While the SMG is equipped, firing goes entirely through the
+    // continuous eyes-closed check (updateSmgAutoFire) instead of this
+    // single edge-triggered shot, so the two don't both fire on one blink.
+    if (game.weapon !== "smg") fire();
+  };
+  tracker.onMouthOpen = () => {
+    knife();
+    knifeCount++;
+    knifeCountEl.textContent = knifeCount;
+  };
+  tracker.onDebug = ({ hasFace, yaw, pitch, nx, ny, left, right, blinking, jawOpen, mouthOpen }) => {
+    game.setPlayerBlinking(blinking);
+    mouthStateEl.textContent = mouthOpen ? "Open" : "Closed";
+    mouthStateEl.className = `value ${mouthOpen ? "gaze-paused" : "gaze-running"}`;
+    if (!debugToggle.checked) return;
+    const fmt = (n) => (n == null ? "—" : n.toFixed(1));
+    debugReadout.textContent =
+      `face: ${hasFace ? "yes" : "no"}\n` +
+      `yaw:   ${fmt(yaw)}°  pitch: ${fmt(pitch)}°\n` +
+      `aim:   ${(nx * 100).toFixed(0)}%, ${(ny * 100).toFixed(0)}%\n` +
+      `blink: L ${(left * 100).toFixed(0)}%  R ${(right * 100).toFixed(0)}%  ${blinking ? "BLINK" : ""}\n` +
+      `mouth: ${(jawOpen * 100).toFixed(0)}%  ${mouthOpen ? "OPEN" : ""}`;
+  };
+
+  try {
+    camError.classList.add("hidden");
+    await tracker.init();
+    tracker.start();
+    mouseAimActive = false;
+    trackStateEl.textContent = "Tracking";
+    trackStateEl.className = "value gaze-running";
+    beginGame();
+  } catch (err) {
+    console.error("Camera/tracker init failed:", err);
+    tracker = null;
+    // Non-debug: no fallback control exists — aiming/firing needs the camera.
+    if (DEBUG) {
+      camError.textContent =
+        "Couldn't access the camera (" + (err?.message || err) + "). Continuing without it.";
+      camError.classList.remove("hidden");
+      continueWithoutCamera();
+    }
+  }
+}
+
+function continueWithoutCamera() {
+  tracker?.stop();
+  tracker = null;
+  cameraPanel.style.display = "none";
+  trackStateEl.textContent = "off";
+  trackStateEl.className = "value gaze-unknown";
+  mouthStateEl.textContent = "off";
+  mouthStateEl.className = "value gaze-unknown";
+  mouseAimActive = true;
+  reticleNX = 0.5;
+  reticleNY = 0.5;
+  beginGame();
+}
+
+startBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  sound.resume(); // must happen synchronously in this gesture handler (autoplay policy)
+  startWithCamera();
+});
+
+fallbackBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  sound.resume();
+  continueWithoutCamera();
+});
+
+showCameraToggle.addEventListener("change", () => {
+  const box = video.closest(".video-box");
+  box.style.visibility = showCameraToggle.checked ? "visible" : "hidden";
+});
+
+debugToggle.addEventListener("change", () => {
+  debugReadout.classList.toggle("hidden", !debugToggle.checked);
+});
+
+function bindSlider(slider, label, apply) {
+  slider.addEventListener("input", () => {
+    label.textContent = slider.value;
+    apply(Number(slider.value));
+  });
+}
+bindSlider(yawSlider, yawVal, (v) => tracker?.setThresholds({ yawRange: v }));
+bindSlider(pitchSlider, pitchVal, (v) => tracker?.setThresholds({ pitchRange: v }));
+bindSlider(smoothSlider, smoothVal, (v) => tracker?.setThresholds({ smoothing: v / 100 }));
+bindSlider(threshSlider, threshVal, (v) => tracker?.setThresholds({ blinkThreshold: v / 100 }));
+bindSlider(debounceSlider, debounceVal, (v) => tracker?.setThresholds({ blinkDebounce: v }));
+bindSlider(mouthThreshSlider, mouthThreshVal, (v) => tracker?.setThresholds({ mouthThreshold: v / 100 }));
+bindSlider(mouthDebounceSlider, mouthDebounceVal, (v) => tracker?.setThresholds({ mouthDebounce: v }));
+
+invertXBox.addEventListener("change", () => tracker?.setThresholds({ invertX: invertXBox.checked }));
+invertYBox.addEventListener("change", () => tracker?.setThresholds({ invertY: invertYBox.checked }));
+
+window.addEventListener("beforeunload", () => {
+  tracker?.stop();
+});

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Corridor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Corridor</h1>
+    </header>
+
+    <div class="board">
+      <canvas id="game" width="480" height="360"></canvas>
+      <canvas id="hud" width="480" height="360"></canvas>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-inner">
+          <div id="overlayTitle">Game over</div>
+          <div id="overlaySub">Press R to restart</div>
+        </div>
+      </div>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-inner">
+          <button id="startBtn">Start</button>
+          <div id="camError" class="cam-error hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="stat">
+        <span class="label">Score</span>
+        <span id="score" class="value">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">Best</span>
+        <span id="best" class="value">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">Health</span>
+        <span id="health" class="value">100</span>
+      </div>
+      <div class="stat">
+        <span class="label">Ammo</span>
+        <span id="ammo" class="value">10</span>
+      </div>
+      <div class="stat">
+        <span class="label">Weapon</span>
+        <span id="weapon" class="value">Pistol</span>
+      </div>
+      <div class="stat">
+        <span class="label">Wave</span>
+        <span id="wave" class="value">1</span>
+      </div>
+      <div class="stat gaze-stat debug-only">
+        <span class="label">Track</span>
+        <span id="trackState" class="value gaze-unknown">–</span>
+      </div>
+      <div class="stat debug-only">
+        <span class="label">Blinks</span>
+        <span id="blinkCount" class="value">0</span>
+      </div>
+      <div class="stat gaze-stat debug-only">
+        <span class="label">Mouth</span>
+        <span id="mouthState" class="value gaze-unknown">–</span>
+      </div>
+      <div class="stat debug-only">
+        <span class="label">Knives</span>
+        <span id="knifeCount" class="value">0</span>
+      </div>
+    </div>
+
+    <div class="panels debug-only">
+      <div class="panel camera-panel">
+        <div class="panel-title">Camera</div>
+        <div class="video-box">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="videoOverlay"></canvas>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="showCamera" checked />
+          Show camera preview
+        </label>
+      </div>
+
+      <div class="panel tuning-panel">
+        <div class="panel-title">Sensitivity</div>
+        <label class="slider-row">
+          <span>Look range (horizontal) <span id="yawVal">15</span>°</span>
+          <input type="range" id="yawSlider" min="10" max="60" value="15" />
+        </label>
+        <label class="slider-row">
+          <span>Look range (vertical) <span id="pitchVal">15</span>°</span>
+          <input type="range" id="pitchSlider" min="10" max="50" value="15" />
+        </label>
+        <label class="slider-row">
+          <span>Tracking smoothness <span id="smoothVal">60</span>%</span>
+          <input type="range" id="smoothSlider" min="2" max="60" value="60" />
+        </label>
+        <label class="slider-row">
+          <span>Blink threshold <span id="threshVal">20</span>%</span>
+          <input type="range" id="threshSlider" min="10" max="90" value="20" />
+        </label>
+        <label class="slider-row">
+          <span>Frames to confirm <span id="debounceVal">1</span></span>
+          <input type="range" id="debounceSlider" min="1" max="8" value="1" />
+        </label>
+        <label class="slider-row">
+          <span>Mouth-open threshold <span id="mouthThreshVal">35</span>%</span>
+          <input type="range" id="mouthThreshSlider" min="10" max="90" value="35" />
+        </label>
+        <label class="slider-row">
+          <span>Mouth frames to confirm <span id="mouthDebounceVal">1</span></span>
+          <input type="range" id="mouthDebounceSlider" min="1" max="8" value="1" />
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="invertX" checked />
+          Invert horizontal
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="invertY" />
+          Invert vertical
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="debugToggle" />
+          Show debug scores
+        </label>
+        <div id="debugReadout" class="debug-readout hidden"></div>
+        <div class="fallback-row">
+          <button id="fallbackBtn" class="link-btn">No camera? Use mouse/K instead</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint">Arrow keys or WASD to move. Space to pause. R switches weapons, or restarts after game over.</p>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

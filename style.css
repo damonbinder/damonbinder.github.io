@@ -7,6 +7,11 @@
   --accent: #4ade80;
   --danger: #f87171;
   --warn: #fbbf24;
+  /* 960px is exactly the canvas backing store, so at full size the board is
+     1:1 with its pixels. The 104vh term caps the 4:3 height at 78vh, which
+     keeps the board plus its chrome inside a laptop viewport without
+     scrolling. */
+  --board-w: min(92vw, 960px, 104vh);
 }
 
 * { box-sizing: border-box; }
@@ -21,16 +26,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
-  padding: 32px 16px 64px;
+  padding: 20px 16px 32px;
 }
 
 .wrap {
   width: 100%;
-  max-width: 720px;
+  max-width: 960px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
 header {
@@ -38,13 +43,14 @@ header {
 }
 
 h1 {
-  margin: 0 0 6px;
-  font-size: 2rem;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
 }
 
 .board {
   position: relative;
-  width: 480px;
+  width: var(--board-w);
   max-width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 12px;
@@ -149,9 +155,10 @@ canvas#hud {
 .hud {
   display: flex;
   gap: 24px;
-  width: 480px;
+  width: var(--board-w);
   max-width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .stat {
@@ -184,7 +191,7 @@ canvas#hud {
 .panels {
   display: flex;
   gap: 16px;
-  width: 480px;
+  width: var(--board-w);
   max-width: 100%;
   flex-wrap: wrap;
 }

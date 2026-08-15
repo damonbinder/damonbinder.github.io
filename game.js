@@ -1,5 +1,13 @@
 const WIDTH = 480;
 const HEIGHT = 360;
+// The board is displayed at up to 960px wide, so the canvas backing store is
+// rendered at RENDER_SCALE times the logical size and every draw call runs
+// under a matching base transform. That keeps every coordinate in this file —
+// viewmodel offsets, blade length, sprite math — in the 480x360 space it was
+// authored in, while the picture stays sharp at twice the size. Rays are still
+// cast one per logical column; on flat-shaded walls the 2px column width is
+// invisible, and it keeps the per-column work where it was.
+const RENDER_SCALE = 2;
 const STEP_MS = 16; // fixed physics sub-step, for deterministic/testable ticking
 
 const FOV = (66 * Math.PI) / 180;
@@ -202,7 +210,7 @@ const HEAL_TICK_MS = 300;
 const HEAL_TICK_HP = 1;
 const HEAL_TINT_MAX_ALPHA = 0.22;
 
-const WATCHER_BLINK_DASH_MULT = 1.8; // extra speed multiplier while lunging specifically during a blink window
+const WATCHER_BLINK_DASH_MULT = 3.6; // extra speed multiplier while lunging specifically during a blink window
 const WATCHER_MAX_FROZEN_MS = 4000; // anti-softlock escape valve — see the frozen-time check in _step
 
 // Per-type stats/visuals. Unlocked progressively by wave (see ENEMY_UNLOCKS)
@@ -373,6 +381,8 @@ function normalizeAngle(a) {
 export class CorridorGame {
   constructor(canvas) {
     this.canvas = canvas;
+    canvas.width = WIDTH * RENDER_SCALE;
+    canvas.height = HEIGHT * RENDER_SCALE;
     this.ctx = canvas.getContext("2d");
     this.onScoreChange = null;
     this.onHealthChange = null;
@@ -1460,6 +1470,10 @@ export class CorridorGame {
 
   draw() {
     const { ctx } = this;
+    // Re-established every frame rather than once at init, so a stray
+    // unbalanced save/restore anywhere below can't leave the whole picture
+    // drawing at the wrong scale from then on.
+    ctx.setTransform(RENDER_SCALE, 0, 0, RENDER_SCALE, 0, 0);
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
     ctx.fillStyle = "#14161d";
@@ -1696,4 +1710,4 @@ export class CorridorGame {
   }
 }
 
-export const CORRIDOR_CONST = { WIDTH, HEIGHT, SMG_FIRE_INTERVAL_MS };
+export const CORRIDOR_CONST = { WIDTH, HEIGHT, RENDER_SCALE, SMG_FIRE_INTERVAL_MS, PLAYER_MAX_HP };

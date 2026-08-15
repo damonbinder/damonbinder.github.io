@@ -13,8 +13,10 @@
     </header>
 
     <div class="board">
-      <canvas id="game" width="480" height="360"></canvas>
-      <canvas id="hud" width="480" height="360"></canvas>
+      <!-- Both backing stores are resized to RENDER_SCALE x this in JS; the
+           attributes just fix the aspect ratio before the module runs. -->
+      <canvas id="game" width="960" height="720"></canvas>
+      <canvas id="hud" width="960" height="720"></canvas>
 
       <div id="overlay" class="overlay hidden">
         <div class="overlay-inner">
@@ -32,31 +34,10 @@
       </div>
     </div>
 
-    <div class="hud">
-      <div class="stat">
-        <span class="label">Score</span>
-        <span id="score" class="value">0</span>
-      </div>
-      <div class="stat">
-        <span class="label">Best</span>
-        <span id="best" class="value">0</span>
-      </div>
-      <div class="stat">
-        <span class="label">Health</span>
-        <span id="health" class="value">100</span>
-      </div>
-      <div class="stat">
-        <span class="label">Ammo</span>
-        <span id="ammo" class="value">10</span>
-      </div>
-      <div class="stat">
-        <span class="label">Weapon</span>
-        <span id="weapon" class="value">Pistol</span>
-      </div>
-      <div class="stat">
-        <span class="label">Wave</span>
-        <span id="wave" class="value">1</span>
-      </div>
+    <!-- Score/health/ammo/weapon/wave are drawn on the canvas itself now; what
+         is left down here is calibration readout, so the whole strip is
+         debug-only and the default view is just the board. -->
+    <div class="hud debug-only">
       <div class="stat gaze-stat debug-only">
         <span class="label">Track</span>
         <span id="trackState" class="value gaze-unknown">–</span>

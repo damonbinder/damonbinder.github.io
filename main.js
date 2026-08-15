@@ -10,10 +10,12 @@ import { SoundFX } from "./sound.js";
 // barely-there presence far out that rushes in over the last few units.
 const DANGER_RANGE = 9;
 
-const { WIDTH, HEIGHT, SMG_FIRE_INTERVAL_MS } = CORRIDOR_CONST;
+const { WIDTH, HEIGHT, RENDER_SCALE, SMG_FIRE_INTERVAL_MS, PLAYER_MAX_HP } = CORRIDOR_CONST;
 
 const canvas = document.getElementById("game");
 const hud = document.getElementById("hud");
+hud.width = WIDTH * RENDER_SCALE;
+hud.height = HEIGHT * RENDER_SCALE;
 const hudCtx = hud.getContext("2d");
 const board = document.querySelector(".board");
 const video = document.getElementById("video");
@@ -26,12 +28,6 @@ const startBtn = document.getElementById("startBtn");
 const startPrompt = document.getElementById("startPrompt");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
-const scoreEl = document.getElementById("score");
-const bestEl = document.getElementById("best");
-const healthEl = document.getElementById("health");
-const ammoEl = document.getElementById("ammo");
-const weaponEl = document.getElementById("weapon");
-const waveEl = document.getElementById("wave");
 const blinkCountEl = document.getElementById("blinkCount");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
@@ -95,36 +91,21 @@ function turnInputFromNX(nx) {
 }
 
 let best = Number(localStorage.getItem(BEST_KEY) || 0);
-bestEl.textContent = best;
 
-game.onScoreChange = (score) => {
-  scoreEl.textContent = score;
-};
-
-game.onHealthChange = (health) => {
-  healthEl.textContent = Math.round(health);
-};
-
-game.onAmmoChange = (ammo) => {
-  ammoEl.textContent = ammo;
-};
-
+// Score, health, ammo, weapon and wave are all read straight off the game
+// each frame by renderHud() and drawn on the canvas, so none of them needs a
+// change callback any more. Only the two things the game itself can't know —
+// the stored best, and the SMG's fire cooldown — are still hooked here.
 const WEAPON_LABELS = { smg: "SMG", saber: "Saber", pistol: "Pistol" };
 
 game.onWeaponChange = (weapon) => {
-  weaponEl.textContent = WEAPON_LABELS[weapon] || "Pistol";
   if (weapon === "smg") smgFireCooldown = 0; // ready to fire the instant eyes close, not stale from before
-};
-
-game.onWaveChange = (wave) => {
-  waveEl.textContent = wave;
 };
 
 game.onGameOver = (score) => {
   if (score > best) {
     best = score;
     localStorage.setItem(BEST_KEY, String(best));
-    bestEl.textContent = best;
   }
   overlayTitle.textContent = "Game over";
   overlaySub.textContent = `Score ${score} — press R to restart`;
@@ -176,9 +157,80 @@ function updateSaberHum() {
   sound.setSaberActive(started && game.alive && !manualPause && game.weapon === "saber");
 }
 
+// --- On-screen readouts -----------------------------------------------------
+// All of it lives in the four corners rather than in a bar along the bottom:
+// the viewmodel occupies the bottom centre (the saber's hands sit at
+// HEIGHT-26 and its blade runs up the middle), so a bar would cover the one
+// part of the frame the player is already looking at.
+const HUD_FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+const HUD_MARGIN = 15;
+const HUD_LABEL = `600 7px ${HUD_FONT}`;
+const HUD_VALUE = `700 18px ${HUD_FONT}`;
+const HUD_SMALL = `600 8px ${HUD_FONT}`;
+const HUD_MUTED = "rgba(231,233,238,0.5)";
+const HUD_BAR_W = 92;
+const HUD_BAR_H = 4;
+// Matches each weapon's viewmodel tint, so the word and the thing in your
+// hands are the same colour.
+const WEAPON_TINTS = { smg: "#a5b4fc", saber: "#67e8f9", pistol: "#e7e9ee" };
+
+function hudText(text, x, y, font, color, align, spacing = "0px") {
+  hudCtx.font = font;
+  hudCtx.fillStyle = color;
+  hudCtx.textAlign = align;
+  hudCtx.letterSpacing = spacing;
+  hudCtx.fillText(text, x, y);
+  hudCtx.letterSpacing = "0px";
+}
+
+function healthColor(hp) {
+  const frac = hp / PLAYER_MAX_HP;
+  if (frac > 0.5) return "#4ade80";
+  if (frac > 0.25) return "#fbbf24";
+  return "#f87171";
+}
+
+function renderStats() {
+  const right = WIDTH - HUD_MARGIN;
+  const hp = Math.max(0, Math.round(game.health));
+  const isSaber = game.weapon === "saber";
+  const ammo = isSaber ? "∞" : String(game.weapon === "smg" ? game.smgAmmo : game.ammo);
+  const weaponLabel = (WEAPON_LABELS[game.weapon] || "Pistol").toUpperCase();
+
+  // Walls run from near-black to fairly bright and the heal pad washes the
+  // whole frame green, so every glyph gets a soft dark halo rather than
+  // relying on the background staying dark behind it.
+  hudCtx.shadowColor = "rgba(0,0,0,0.9)";
+  hudCtx.shadowBlur = 4;
+  hudCtx.textBaseline = "alphabetic";
+
+  hudText("WAVE", HUD_MARGIN, 20, HUD_LABEL, HUD_MUTED, "left", "1.2px");
+  hudText(String(game.wave), HUD_MARGIN, 38, HUD_VALUE, "#e7e9ee", "left");
+
+  hudText("SCORE", right, 20, HUD_LABEL, HUD_MUTED, "right", "1.2px");
+  hudText(String(game.score), right, 38, HUD_VALUE, "#e7e9ee", "right");
+  hudText(`BEST ${Math.max(best, game.score)}`, right, 50, HUD_SMALL, HUD_MUTED, "right");
+
+  hudText("HEALTH", HUD_MARGIN, HEIGHT - 44, HUD_LABEL, HUD_MUTED, "left", "1.2px");
+  hudText(String(hp), HUD_MARGIN, HEIGHT - 26, HUD_VALUE, healthColor(game.health), "left");
+  hudCtx.shadowBlur = 0;
+  hudCtx.fillStyle = "rgba(231,233,238,0.16)";
+  hudCtx.fillRect(HUD_MARGIN, HEIGHT - 20, HUD_BAR_W, HUD_BAR_H);
+  hudCtx.fillStyle = healthColor(game.health);
+  hudCtx.fillRect(HUD_MARGIN, HEIGHT - 20, HUD_BAR_W * Math.max(0, game.health / PLAYER_MAX_HP), HUD_BAR_H);
+  hudCtx.shadowBlur = 4;
+
+  hudText(weaponLabel, right, HEIGHT - 44, HUD_LABEL, WEAPON_TINTS[game.weapon] || HUD_MUTED, "right", "1.2px");
+  hudText(ammo, right, HEIGHT - 26, HUD_VALUE, !isSaber && Number(ammo) === 0 ? "#f87171" : "#e7e9ee", "right");
+
+  hudCtx.shadowBlur = 0;
+}
+
 function renderHud() {
+  hudCtx.setTransform(RENDER_SCALE, 0, 0, RENDER_SCALE, 0, 0);
   hudCtx.clearRect(0, 0, WIDTH, HEIGHT);
   if (!started) return;
+  renderStats();
   const px = reticleNX * WIDTH;
   const py = reticleNY * HEIGHT;
   const target = game.alive ? game.peekTarget(reticleNX, reticleNY) : { hit: false, headshot: false };

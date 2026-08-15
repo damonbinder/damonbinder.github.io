@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Corridor</title>
+<title>Blink</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Corridor</h1>
+      <h1>Blink</h1>
     </header>
 
     <div class="board">
@@ -26,6 +26,7 @@
       <div id="startOverlay" class="overlay">
         <div class="overlay-inner">
           <button id="startBtn">Start</button>
+          <div id="startPrompt" class="start-prompt hidden">Blink to start</div>
           <div id="camError" class="cam-error hidden"></div>
         </div>
       </div>
@@ -131,12 +132,12 @@
         </label>
         <div id="debugReadout" class="debug-readout hidden"></div>
         <div class="fallback-row">
-          <button id="fallbackBtn" class="link-btn">No camera? Use mouse/K instead</button>
+          <button id="fallbackBtn" class="link-btn">No camera? Use mouse/click instead</button>
         </div>
       </div>
     </div>
 
-    <p class="hint">Arrow keys or WASD to move. Space to pause. R switches weapons, or restarts after game over.</p>
+    <p class="hint">Arrow keys or WASD to move. Space to pause. R cycles weapons, or restarts after game over.</p>
   </div>
 
   <script type="module" src="main.js"></script>

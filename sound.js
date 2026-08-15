@@ -282,6 +282,30 @@ export class SoundFX {
     noise.stop(t + 0.13);
   }
 
+  // A bright rising two-note blip, deliberately the opposite contour to
+  // playEmptyClick's falling chirp — those are the two short sounds tied to
+  // the ammo count, and picking a crate up should never be mistakeable for a
+  // dry trigger. Triangle rather than square keeps it soft enough to read as
+  // a reward on top of the drone rather than as another weapon noise.
+  playAmmoPickup() {
+    if (!this.ctx) return;
+    const ctx = this.ctx;
+    const t = ctx.currentTime;
+    for (const [freq, offset] of [[660, 0], [988, 0.07]]) {
+      const osc = ctx.createOscillator();
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(freq, t + offset);
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, t + offset);
+      gain.gain.exponentialRampToValueAtTime(0.3, t + offset + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.13);
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+      osc.start(t + offset);
+      osc.stop(t + offset + 0.14);
+    }
+  }
+
   playEmptyClick() {
     if (!this.ctx) return;
     const ctx = this.ctx;

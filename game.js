@@ -68,6 +68,12 @@ const HIT_FLASH_MS = 150;
 const FIRE_FLASH_MS = 120;
 const DEATH_ANIM_MS = 250; // kills fade/shrink out over this long instead of vanishing instantly
 const KNIFE_SWING_MS = 260;
+// How long a swing roots the player in place. Slightly longer than the swing
+// animation so the commitment outlasts the visual and reads as a cost rather
+// than as a hitch — see the note in _step.
+const KNIFE_MOVE_LOCK_MS = 320;
+// Fraction of the swing spent winding up before the slash proper.
+const KNIFE_WINDUP_T = 0.28;
 
 const ENEMY_SPAWNS = readLayout("e");
 // Nothing spawns inside this radius. It matters more than it looks because
@@ -85,6 +91,13 @@ const PLAYER_START = readLayout("P")[0];
 const PLAYER_START_ANGLE = 0;
 
 const KNIFE_RANGE = 1.0;
+
+// The knife is a weapon slot rather than something you can do with the pistol
+// out, so it sits in the same cycle as the guns and swings on the same blink
+// that fires them. It is the floor of the cycle: it never runs out, which is
+// what lets a dry pistol fall through to it instead of leaving the player
+// holding an empty gun with no attack at all.
+const WEAPON_CYCLE = ["pistol", "smg", "knife"];
 
 // Enemies push each other apart below this range. Without it they have no
 // mutual collision at all, so a wave converging from different spawns stacks
@@ -359,6 +372,7 @@ export class CorridorGame {
     this.onEnemyShoot = null;
     this.onWeaponChange = null;
     this.onSmgShoot = null;
+    this.onAmmoPickup = null;
     this.reset();
   }
 
@@ -384,6 +398,7 @@ export class CorridorGame {
     this.hitFlash = 0;
     this.fireFlash = 0;
     this.knifeSwingRemaining = 0;
+    this.knifeMoveLock = 0;
     this.moveDir = 0;
     this.strafeDir = 0;
     this.turnDir = 0;
@@ -518,17 +533,48 @@ export class CorridorGame {
     this.playerBlinking = blinking;
   }
 
-  // Manual pistol/SMG swap. Switching to the SMG only works while there's
+  // A weapon is selectable only while it can actually attack. The SMG needs
   // leftover smgAmmo from a pickup — it doesn't grant a fresh magazine, just
   // lets the player hold onto and ration what they're already carrying
-  // instead of it always firing the moment their eyes close.
+  // instead of it always firing the moment their eyes close. A dry pistol is
+  // skipped for the same reason: cycling onto it could only ever produce
+  // empty clicks. The knife is always available.
+  _weaponAvailable(weapon) {
+    if (weapon === "knife") return true;
+    if (weapon === "smg") return this.smgAmmo > 0;
+    return this.ammo > 0;
+  }
+
+  // Manual weapon swap: steps to the next slot that can attack, wrapping.
   toggleWeapon() {
     if (!this.alive) return;
-    if (this.weapon === "smg") this.weapon = "pistol";
-    else if (this.smgAmmo > 0) this.weapon = "smg";
-    else return;
+    const from = WEAPON_CYCLE.indexOf(this.weapon);
+    for (let i = 1; i < WEAPON_CYCLE.length; i++) {
+      const next = WEAPON_CYCLE[(from + i) % WEAPON_CYCLE.length];
+      if (this._weaponAvailable(next)) {
+        this.equipWeapon(next);
+        return;
+      }
+    }
+  }
+
+  equipWeapon(weapon) {
+    if (!this.alive || weapon === this.weapon || !this._weaponAvailable(weapon)) return;
+    this.weapon = weapon;
     this._notifyWeapon();
     this._notifyAmmo();
+  }
+
+  // Running a weapon dry drops the player straight onto the next thing that
+  // can still attack rather than leaving them holding an empty gun mid-wave.
+  // The SMG hands back to the pistol if there's anything left in it; a dry
+  // pistol falls through to the knife, which never runs out. Callers notify
+  // ammo themselves afterwards, so the HUD ends up showing whichever pool is
+  // actually active rather than the one that just hit zero.
+  _autoSwitchIfDry() {
+    if (this._weaponAvailable(this.weapon)) return;
+    this.weapon = this.weapon === "smg" && this.ammo > 0 ? "pistol" : "knife";
+    this._notifyWeapon();
   }
 
   advance(dtMs) {
@@ -549,15 +595,24 @@ export class CorridorGame {
     if (this.hitFlash > 0) this.hitFlash -= stepMs;
     if (this.fireFlash > 0) this.fireFlash -= stepMs;
     if (this.knifeSwingRemaining > 0) this.knifeSwingRemaining -= stepMs;
+    if (this.knifeMoveLock > 0) this.knifeMoveLock -= stepMs;
 
     this.player.angle += this.turnDir * TURN_SPEED * dt;
+    // Swinging roots the player for KNIFE_MOVE_LOCK_MS: the knife one-shots
+    // anything it reaches, so committing to it has to cost something, and
+    // standing still inside melee range with a wave closing is that cost.
+    // Turning is deliberately exempt — it's gaze-driven, so freezing it would
+    // fight the aim system rather than read as a commitment.
+    const rooted = this.knifeMoveLock > 0;
     const strafeAngle = this.player.angle + Math.PI / 2; // + = strafe right, independent of turning
+    const moveDir = rooted ? 0 : this.moveDir;
+    const strafeDir = rooted ? 0 : this.strafeDir;
     const dx =
-      Math.cos(this.player.angle) * this.moveDir * MOVE_SPEED * dt +
-      Math.cos(strafeAngle) * this.strafeDir * MOVE_SPEED * dt;
+      Math.cos(this.player.angle) * moveDir * MOVE_SPEED * dt +
+      Math.cos(strafeAngle) * strafeDir * MOVE_SPEED * dt;
     const dy =
-      Math.sin(this.player.angle) * this.moveDir * MOVE_SPEED * dt +
-      Math.sin(strafeAngle) * this.strafeDir * MOVE_SPEED * dt;
+      Math.sin(this.player.angle) * moveDir * MOVE_SPEED * dt +
+      Math.sin(strafeAngle) * strafeDir * MOVE_SPEED * dt;
     this._moveWithCollision(dx, dy);
 
     // Only reflood when the player actually changes tile.
@@ -637,6 +692,10 @@ export class CorridorGame {
         pk.active = false;
         pk.respawnTimer = PICKUP_RESPAWN_MS;
         this.ammo = Math.min(MAX_AMMO_CAP, this.ammo + AMMO_PER_PICKUP);
+        this.onAmmoPickup?.();
+        // Deliberately does *not* switch you off the knife — walking over a
+        // crate refills the pistol, it doesn't decide for you which weapon
+        // you're holding. Cycle back with R when you want it.
         this._notifyAmmo();
       }
     }
@@ -1152,6 +1211,10 @@ export class CorridorGame {
 
   fireAt(nx, ny) {
     if (!this.alive) return false;
+    // Single entry point for "attack with whatever is equipped", whichever
+    // control path called it — the knife is a weapon slot now, so the same
+    // blink that fires a gun swings it, and no caller has to know which.
+    if (this.weapon === "knife") return this.tryKnife();
     const usingSmg = this.weapon === "smg";
     if (usingSmg ? this.smgAmmo <= 0 : this.ammo <= 0) {
       this.onEmptyFire?.();
@@ -1162,15 +1225,9 @@ export class CorridorGame {
     if (usingSmg) this.onSmgShoot?.();
     else this.onShoot?.();
     this.fireFlash = FIRE_FLASH_MS;
-    if (usingSmg && this.smgAmmo <= 0) {
-      // The SMG is a temporary find — once its small magazine runs dry,
-      // straight back to the pistol rather than sitting empty.
-      this.weapon = "pistol";
-      this._notifyWeapon();
-    }
-    // Notified after the possible revert above, so the HUD ends up showing
-    // whichever pool (SMG or pistol) is actually active now, not a stale
-    // just-hit-zero SMG count.
+    this._autoSwitchIfDry();
+    // Notified after the possible switch above, so the HUD ends up showing
+    // whichever pool is actually active now, not a stale just-hit-zero count.
     this._notifyAmmo();
     const hit = this._hitTestAt(nx, ny);
     if (!hit) return false;
@@ -1196,10 +1253,13 @@ export class CorridorGame {
   }
 
   // Melee: doesn't use ammo or need precise aim, just the nearest visible,
-  // unoccluded enemy within short range.
+  // unoccluded enemy within short range. Only swings while the knife is the
+  // equipped weapon — it is a slot you switch to, not something available
+  // with a gun in your hands.
   tryKnife() {
-    if (!this.alive) return false;
+    if (!this.alive || this.weapon !== "knife") return false;
     this.knifeSwingRemaining = KNIFE_SWING_MS; // swing plays whether or not it connects
+    this.knifeMoveLock = KNIFE_MOVE_LOCK_MS; // and roots you whether or not it connects, too
     this.onKnifeSwish?.();
     let best = null;
     let bestDist = Infinity;
@@ -1219,6 +1279,118 @@ export class CorridorGame {
     this.score += (ENEMY_TYPES[best.ref.type] || ENEMY_TYPES.normal).score;
     this._notifyScore();
     return true;
+  }
+
+  // Bottom-right viewmodel for the knife, held at rest and swung on attack.
+  // The resting pose is what tells the player which weapon they're on, now
+  // that the knife is a slot rather than a gesture — it used to appear only
+  // for the 260ms of the swing itself.
+  _drawKnifeViewmodel() {
+    const { ctx } = this;
+    const swinging = this.knifeSwingRemaining > 0;
+    const t = swinging ? 1 - this.knifeSwingRemaining / KNIFE_SWING_MS : 0; // 0 -> 1 across the swing
+
+    // Ghost copies sampled from earlier in the arc. Only during the slash —
+    // trailing the wind-up would read as a stutter rather than as speed.
+    if (swinging && t > KNIFE_WINDUP_T) {
+      for (let i = 3; i >= 1; i--) {
+        const back = t - i * 0.055;
+        if (back <= KNIFE_WINDUP_T) continue;
+        ctx.save();
+        ctx.globalAlpha = 0.2 - i * 0.045;
+        this._drawKnifeShape(this._knifePose(back, true), true);
+        ctx.restore();
+      }
+    }
+    this._drawKnifeShape(this._knifePose(t, swinging), false);
+  }
+
+  // Two-phase swing: a short pull back and up, then a fast slash down across
+  // the screen. Splitting it is what gives the strike an anticipation beat —
+  // a single linear sweep reads as the knife drifting rather than striking.
+  _knifePose(t, swinging) {
+    if (!swinging) return { x: WIDTH - 66, y: HEIGHT - 26, angle: -1.12 };
+    if (t < KNIFE_WINDUP_T) {
+      const u = t / KNIFE_WINDUP_T;
+      return { x: WIDTH - 66 + u * 16, y: HEIGHT - 26 + u * 5, angle: -1.12 - u * 0.55 };
+    }
+    // Ease-out cubic: leaves fast and settles, which is what sells the weight.
+    const e = 1 - Math.pow(1 - (t - KNIFE_WINDUP_T) / (1 - KNIFE_WINDUP_T), 3);
+    return { x: WIDTH - 50 - e * 78, y: HEIGHT - 21 - e * 34, angle: -1.67 + e * 2.25 };
+  }
+
+  // Blade geometry in local space: origin at the hand, edge down, tip at +x.
+  // Ghost copies skip the detail and fill flat — at trail alpha the bevel and
+  // groove are invisible anyway, and they'd only muddy the silhouette.
+  _drawKnifeShape({ x, y, angle }, ghost) {
+    const { ctx } = this;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+
+    const blade = new Path2D();
+    blade.moveTo(-2, -7);
+    blade.lineTo(50, -7);
+    blade.lineTo(78, -1); // clipped point
+    blade.lineTo(56, 5);
+    blade.lineTo(-2, 6);
+    blade.closePath();
+
+    if (ghost) {
+      ctx.fillStyle = "#e2e8f0";
+      ctx.fill(blade);
+      ctx.restore();
+      return;
+    }
+
+    // Grip, then guard, then blade — back to front, so each overlaps cleanly.
+    ctx.fillStyle = "#2b3038";
+    ctx.beginPath();
+    ctx.moveTo(-38, -6);
+    ctx.lineTo(-6, -8);
+    ctx.lineTo(-6, 8);
+    ctx.lineTo(-38, 7);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = "rgba(12,14,18,0.8)";
+    ctx.lineWidth = 1.4;
+    for (let i = 0; i < 4; i++) {
+      const gx = -33 + i * 7;
+      ctx.beginPath();
+      ctx.moveTo(gx, -7);
+      ctx.lineTo(gx + 3, 7.5);
+      ctx.stroke();
+    }
+    ctx.fillStyle = "#4b5563";
+    ctx.fillRect(-43, -6, 6, 13); // pommel
+    ctx.fillRect(-8, -11, 7, 22); // guard
+
+    const steel = ctx.createLinearGradient(0, -7, 0, 6);
+    steel.addColorStop(0, "#f8fafc");
+    steel.addColorStop(0.45, "#cbd5e1");
+    steel.addColorStop(1, "#8b95a5");
+    ctx.fillStyle = steel;
+    ctx.fill(blade);
+    ctx.strokeStyle = "rgba(12,14,18,0.85)";
+    ctx.lineWidth = 1;
+    ctx.stroke(blade);
+
+    ctx.strokeStyle = "rgba(88,99,116,0.8)"; // fuller
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(6, -2.5);
+    ctx.lineTo(52, -2.5);
+    ctx.stroke();
+
+    ctx.strokeStyle = "rgba(255,255,255,0.9)"; // lit cutting edge
+    ctx.lineWidth = 1.3;
+    ctx.beginPath();
+    ctx.moveTo(-2, 5.6);
+    ctx.lineTo(56, 4.6);
+    ctx.lineTo(78, -1);
+    ctx.stroke();
+
+    ctx.restore();
   }
 
   draw() {
@@ -1432,25 +1604,14 @@ export class CorridorGame {
     }
 
     const kick = this.fireFlash > 0 ? Math.min(14, (this.fireFlash / FIRE_FLASH_MS) * 14) : 0;
-    const wieldingSmg = this.weapon === "smg";
-    ctx.fillStyle = wieldingSmg ? "#312e81" : "#262b36";
-    ctx.fillRect(WIDTH / 2 - 26, HEIGHT - 70 + kick, 52, 60);
-    ctx.fillStyle = wieldingSmg ? "#1e1b4b" : "#171a21";
-    ctx.fillRect(WIDTH / 2 - 10, HEIGHT - 100 + kick, 20, 40);
-
-    if (this.knifeSwingRemaining > 0) {
-      const t = 1 - this.knifeSwingRemaining / KNIFE_SWING_MS; // 0 -> 1 across the swing
-      const angle = -0.9 + t * 1.3;
-      const swingAlpha = Math.min(1, this.knifeSwingRemaining / (KNIFE_SWING_MS * 0.3));
-      ctx.save();
-      ctx.globalAlpha = swingAlpha;
-      ctx.translate(WIDTH - 70, HEIGHT - 30);
-      ctx.rotate(angle);
-      ctx.fillStyle = "#4b5563";
-      ctx.fillRect(-20, -6, 22, 12);
-      ctx.fillStyle = "#d4d4d8";
-      ctx.fillRect(0, -4, 72, 8);
-      ctx.restore();
+    if (this.weapon === "knife") {
+      this._drawKnifeViewmodel();
+    } else {
+      const wieldingSmg = this.weapon === "smg";
+      ctx.fillStyle = wieldingSmg ? "#312e81" : "#262b36";
+      ctx.fillRect(WIDTH / 2 - 26, HEIGHT - 70 + kick, 52, 60);
+      ctx.fillStyle = wieldingSmg ? "#1e1b4b" : "#171a21";
+      ctx.fillRect(WIDTH / 2 - 10, HEIGHT - 100 + kick, 20, 40);
     }
 
     // Ramps in across the charge second, then holds flat while the pad

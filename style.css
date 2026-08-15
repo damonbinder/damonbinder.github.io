@@ -117,6 +117,26 @@ canvas#hud {
 
 #startBtn:hover { filter: brightness(1.08); }
 
+/* .overlay.hidden only fades the whole overlay, so these two need their own
+   display rule to swap in place while the overlay is still showing. */
+#startBtn.hidden { display: none; }
+
+.start-prompt {
+  margin-top: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  animation: start-prompt-pulse 1.6s ease-in-out infinite;
+}
+
+.start-prompt.hidden { display: none; }
+
+@keyframes start-prompt-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
 .cam-error {
   margin-top: 8px;
   color: var(--danger);

@@ -23,6 +23,7 @@ const overlayTitle = document.getElementById("overlayTitle");
 const overlaySub = document.getElementById("overlaySub");
 const startOverlay = document.getElementById("startOverlay");
 const startBtn = document.getElementById("startBtn");
+const startPrompt = document.getElementById("startPrompt");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const scoreEl = document.getElementById("score");
@@ -67,6 +68,7 @@ const game = new CorridorGame(canvas);
 const sound = new SoundFX();
 let tracker = null;
 let started = false;
+let awaitingStartBlink = false;
 let lastFrameTime = 0;
 let blinkCount = 0;
 let knifeCount = 0;
@@ -107,8 +109,10 @@ game.onAmmoChange = (ammo) => {
   ammoEl.textContent = ammo;
 };
 
+const WEAPON_LABELS = { smg: "SMG", knife: "Knife", pistol: "Pistol" };
+
 game.onWeaponChange = (weapon) => {
-  weaponEl.textContent = weapon === "smg" ? "SMG" : "Pistol";
+  weaponEl.textContent = WEAPON_LABELS[weapon] || "Pistol";
   if (weapon === "smg") smgFireCooldown = 0; // ready to fire the instant eyes close, not stale from before
 };
 
@@ -129,10 +133,18 @@ game.onGameOver = (score) => {
 
 game.onShoot = () => sound.playShoot();
 game.onEmptyFire = () => sound.playEmptyClick();
-game.onKnifeSwish = () => sound.playKnifeSwish();
 game.onPlayerHurt = () => sound.playHurt();
 game.onEnemyShoot = () => sound.playEnemyShoot();
 game.onSmgShoot = () => sound.playSmgShoot();
+game.onAmmoPickup = () => sound.playAmmoPickup();
+
+// Every swing comes through here now that the knife is a weapon slot fired by
+// blinking, so this is also where the debug swing counter is kept.
+game.onKnifeSwish = () => {
+  sound.playKnifeSwish();
+  knifeCount++;
+  knifeCountEl.textContent = knifeCount;
+};
 
 function updateDanger() {
   if (!started || !game.alive || manualPause) {
@@ -243,11 +255,6 @@ function fire() {
   game.fireAt(reticleNX, reticleNY);
 }
 
-function knife() {
-  if (!started || !game.alive || manualPause) return;
-  game.tryKnife();
-}
-
 window.addEventListener("keydown", (e) => {
   const key = e.key.toLowerCase();
   if (["arrowup", "w"].includes(key)) {
@@ -273,10 +280,11 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 
-  // Aiming/firing is gaze+blink only, and the knife is mouth-open only.
-  // K is a ?debug convenience for testing without a camera (click fires).
+  // Aiming/firing is gaze+blink only, and every weapon — knife included —
+  // attacks on that same blink. K is a ?debug convenience that jumps straight
+  // to the knife slot, so it can be tested without cycling with R first.
   if (!DEBUG) return;
-  if (key === "k") knife();
+  if (key === "k" && started) game.equipWeapon("knife");
   // N jumps a wave, for reaching wave-gated content without clearing up to it.
   if (key === "n" && started) game.skipWave();
   // C simulates holding your eyes shut, for testing the SMG without a camera.
@@ -326,7 +334,19 @@ function restart() {
 function beginGame() {
   if (started) return;
   started = true;
+  awaitingStartBlink = false;
   startOverlay.classList.add("hidden");
+}
+
+// Second beat of the start flow. The click on Start is what the browser's
+// autoplay policy needs to open the AudioContext and what prompts for the
+// camera; the game itself then waits for a blink. The prompt only appears
+// once the tracker is actually live, so it never asks for a gesture nothing
+// is watching for.
+function armBlinkStart() {
+  awaitingStartBlink = true;
+  startBtn.classList.add("hidden");
+  startPrompt.classList.remove("hidden");
 }
 
 async function startWithCamera() {
@@ -352,16 +372,19 @@ async function startWithCamera() {
   tracker.onBlink = () => {
     blinkCount++;
     blinkCountEl.textContent = blinkCount;
+    // The blink that starts the game shouldn't also be the first shot.
+    if (awaitingStartBlink) {
+      beginGame();
+      return;
+    }
     // While the SMG is equipped, firing goes entirely through the
     // continuous eyes-closed check (updateSmgAutoFire) instead of this
     // single edge-triggered shot, so the two don't both fire on one blink.
     if (game.weapon !== "smg") fire();
   };
-  tracker.onMouthOpen = () => {
-    knife();
-    knifeCount++;
-    knifeCountEl.textContent = knifeCount;
-  };
+  // jawOpen/mouthOpen no longer drive anything — the knife moved onto the
+  // blink along with the guns — but the tracker still reports them, and the
+  // readout is kept so the signal stays calibratable if it's ever used again.
   tracker.onDebug = ({ hasFace, yaw, pitch, nx, ny, left, right, blinking, jawOpen, mouthOpen }) => {
     game.setPlayerBlinking(blinking);
     mouthStateEl.textContent = mouthOpen ? "Open" : "Closed";
@@ -383,7 +406,7 @@ async function startWithCamera() {
     mouseAimActive = false;
     trackStateEl.textContent = "Tracking";
     trackStateEl.className = "value gaze-running";
-    beginGame();
+    armBlinkStart();
   } catch (err) {
     console.error("Camera/tracker init failed:", err);
     tracker = null;

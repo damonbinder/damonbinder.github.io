@@ -108,7 +108,7 @@ game.onGameOver = (score) => {
     localStorage.setItem(BEST_KEY, String(best));
   }
   overlayTitle.textContent = "Game over";
-  overlaySub.textContent = `Score ${score} — press R to restart`;
+  overlaySub.textContent = `Score ${score} — press space to restart`;
   overlay.classList.remove("hidden");
 };
 
@@ -330,11 +330,11 @@ window.addEventListener("keydown", (e) => {
     strafeRightHeld = true;
     updateStrafeDir();
   } else if (key === "r" && started) {
-    // R restarts once you've died, or switches weapons at any other time.
-    if (!game.alive) restart();
-    else game.toggleWeapon();
+    game.toggleWeapon();
   } else if (key === " ") {
-    togglePause();
+    // Space restarts once you've died, and pauses/resumes any other time.
+    if (started && !game.alive) restart();
+    else togglePause();
   }
   if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(key)) {
     e.preventDefault();

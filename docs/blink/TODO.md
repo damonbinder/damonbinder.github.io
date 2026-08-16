@@ -16,10 +16,15 @@ purpose, because everything in it is served.
       into the OG tags.
 - [ ] **Add a link to it from the site**, whenever it stops being unlisted.
       Right now nothing points here, which is the whole reason it is private.
-- [ ] **Get one other person to play it.** The single biggest remaining unknown.
-      Blink threshold, head-turn range and smoothing are all calibrated to one
-      person, one camera, one room's lighting. The settings panel exists so a
-      stranger can fix it, but nobody has ever tested whether they can.
+- [x] ~~Get one other person to play it.~~ Damon's wife played it on
+      2026-08-16 and it worked for her. That is the shipped blink threshold
+      registering on a second face — the single thing most likely to have been
+      overfitted to one person, and the reason this was blocking.
+      Still unknown, and worth asking while it's fresh: whether she had to
+      touch the sensitivity slider, whether she worked out the controls
+      unprompted, how far she got, and whether it was her own camera and
+      lighting or Damon's machine. A second face on the same webcam is a much
+      weaker result than a second setup.
 
 ## Worth doing, not blocking
 

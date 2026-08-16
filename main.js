@@ -537,7 +537,7 @@ async function startHandTracking() {
   // the one thing in the classifier that can't be verified without a camera.
   handTracker.mirrored = !invertHandsBox.checked;
   handTracker.onDirection = applyHandDirection;
-  handTracker.onUpdate = ({ hasHand, direction, raw, info, seenPct, posePct }) => {
+  handTracker.onUpdate = ({ hasHand, direction, raw, info, seenPct, posePct, medianAngle }) => {
     handStateEl.textContent = hasHand ? direction || "—" : "none";
     handStateEl.className = `value ${direction ? "gaze-running" : "gaze-unknown"}`;
     // Kept separate from the face tracker's readout below rather than merged
@@ -545,8 +545,12 @@ async function startHandTracking() {
     lastHandReadout =
       `hand:  ${hasHand ? "yes" : "no"}   seen ${seenPct}%  pose ${posePct}%\n` +
       `dir:   ${direction || "—"}  (raw ${raw || "—"})${info.reason ? `  ${info.reason}` : ""}\n` +
-      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
-      `len ${info.len.toFixed(2)}  ang ${info.angle == null ? "—" : `${info.angle}°`}`;
+      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  len ${info.len.toFixed(2)}\n` +
+      // The median is the one to read off while holding a pose; the live angle
+      // jitters several degrees a frame and is unreadable.
+      `angle: ${info.angle == null ? "—" : `${info.angle}°`}   ` +
+      `median ${medianAngle == null ? "—" : `${medianAngle}°`}  ` +
+      `(right 0, up 90, left 180, down -90)`;
   };
   try {
     await handTracker.init();

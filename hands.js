@@ -18,10 +18,32 @@ const THUMB_OUT_RATIO = 0.55;
 // How many of the four fingers must be curled. Three rather than four, because
 // a partly-extended index is common and reads as the same gesture to a human.
 const MIN_CURLED = 3;
-// The thumb vector must be this much longer on one axis than the other for the
-// direction to count, so a 45-degree thumb reads as nothing rather than
-// flickering between two directions.
-const AXIS_DOMINANCE = 1.3;
+// Sector half-widths in degrees, measured off each direction's own axis.
+// Anything falling in the gaps between sectors reads as nothing, which is what
+// stops a thumb on a boundary flickering between two directions.
+//
+// They are deliberately unequal. An even split assumes a thumb points where
+// its owner thinks it points, and in practice the measured angle carries a
+// systematic upward bias: a fist held in front of a webcam has the wrist below
+// and the knuckles above, so the thumb inherits that tilt whichever way it's
+// aimed. Split evenly, "up" then wins territory belonging to the other three —
+// exactly the reported symptom, up firing on almost anything while down, left
+// and right take real effort. Up gets the smallest sector to pay that back.
+//
+// These are informed guesses at the size of that bias, not measurements. The
+// debug readout reports a median angle per pose precisely so they can be set
+// from what a real hand in front of a real camera actually produces.
+const SECTORS = [
+  { dir: "right", axis: 0, half: 44 },
+  { dir: "up", axis: 90, half: 30 },
+  { dir: "left", axis: 180, half: 44 },
+  { dir: "down", axis: -90, half: 40 },
+];
+
+// Smallest absolute difference between two angles in degrees, wrapping at 180.
+function angleGap(a, b) {
+  return Math.abs(((a - b + 540) % 360) - 180);
+}
 // Consecutive detections of the same direction before it's acted on. The pose
 // is held rather than tapped, so a little latency costs nothing and this kills
 // single-frame misreads during the rotation between two directions.
@@ -49,7 +71,11 @@ function dist(a, b) {
 }
 
 // The minimum thumb-vector length, again as a ratio of palm length.
-const THUMB_MIN_LEN = 0.3;
+// A thumb aimed down or sideways is often angled partly at the camera as well,
+// which foreshortens it in the 2D projection, so this sits low enough not to
+// reject those. The curl and thumb-out tests are what actually establish the
+// pose; this only guards against a vector too short to have a direction.
+const THUMB_MIN_LEN = 0.22;
 
 // Pure geometry, exported so it can be exercised against synthetic landmark
 // sets without a camera. Returns the direction in the player's own frame of
@@ -93,7 +119,8 @@ export function analyzeThumb(lm, mirrored = true) {
   // be checked without a real camera in front of a real person.
   const right = mirrored ? -vx : vx;
   const up = -vy;
-  out.angle = Math.round((Math.atan2(up, right) * 180) / Math.PI);
+  const angle = (Math.atan2(up, right) * 180) / Math.PI;
+  out.angle = Math.round(angle);
 
   if (out.curled < MIN_CURLED) {
     out.reason = `only ${out.curled}/4 fingers curled`;
@@ -108,8 +135,8 @@ export function analyzeThumb(lm, mirrored = true) {
     return out;
   }
 
-  if (Math.abs(right) > Math.abs(up) * AXIS_DOMINANCE) out.direction = right > 0 ? "right" : "left";
-  else if (Math.abs(up) > Math.abs(right) * AXIS_DOMINANCE) out.direction = up > 0 ? "up" : "down";
+  const hit = SECTORS.find((s) => angleGap(angle, s.axis) <= s.half);
+  if (hit) out.direction = hit.dir;
   else out.reason = "diagonal";
   return out;
 }
@@ -204,15 +231,21 @@ export class HandTracker {
     }
     if (this._pendingStreak >= DIRECTION_DEBOUNCE) this._commit(raw);
 
-    this._history.push({ seen: this.hasHand, pose: !!raw });
+    this._history.push({ seen: this.hasHand, pose: !!raw, angle: info.angle });
     if (this._history.length > HISTORY) this._history.shift();
     const n = this._history.length || 1;
     const pct = (k) => Math.round((this._history.filter((h) => h[k]).length / n) * 100);
+    // Median rather than mean, and over every frame that got as far as having
+    // an angle at all. A live angle jitters too much to read off while holding
+    // a pose, and reading it off is the whole point — the sector widths above
+    // want setting from four measured numbers rather than from theory.
+    const angles = this._history.map((h) => h.angle).filter((a) => a != null).sort((a, b) => a - b);
+    const medianAngle = angles.length ? angles[angles.length >> 1] : null;
 
     if (this.overlayCtx) this._draw(lm, raw);
     this.onUpdate?.({
       hasHand: this.hasHand, direction: this.direction, raw, info,
-      seenPct: pct("seen"), posePct: pct("pose"),
+      seenPct: pct("seen"), posePct: pct("pose"), medianAngle,
     });
   }
 

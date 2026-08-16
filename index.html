@@ -32,10 +32,20 @@
         <div class="settings-card">
           <div class="settings-title">Settings</div>
 
-          <ul class="controls-list">
+          <!-- Only this middle section scrolls, so the Done button stays put on
+               a short viewport — the hands control list is long enough to
+               overflow the card and was pushing it off the bottom. -->
+          <div class="settings-body">
+          <!-- The movement lines swap with the control scheme; main.js puts
+               mode-keys / mode-wheel / mode-thumb on the list when the panel
+               opens. Aiming, firing, weapon and pause are the same either way. -->
+          <ul id="controlsList" class="controls-list mode-keys">
             <li><b>Look around</b> to aim.</li>
             <li><b>Blink</b> to shoot.</li>
-            <li><b>WASD</b> or the <b>arrow keys</b> to move.</li>
+            <li class="ctrl-keys"><b>WASD</b> or the <b>arrow keys</b> to move.</li>
+            <li class="ctrl-wheel"><b>Hold both hands up</b> like a steering wheel. Tilt it to strafe, raise or lower it to walk, and <b>open both palms</b> to stop dead.</li>
+            <li class="ctrl-wheel">Where you rest your hands is read off the blink that starts the game. The keyboard still works, and overrides your hands.</li>
+            <li class="ctrl-thumb"><b>Make a fist with your thumb out.</b> Thumb up walks forward, down or toward yourself backs up, left and right strafe. The keyboard still works, and overrides your hands.</li>
             <li><b>Open your mouth</b>, or press <b>R</b>, to change weapon.</li>
             <li><b>Space</b> to pause, and to restart once you're dead.</li>
           </ul>
@@ -49,6 +59,7 @@
             <input type="range" id="blinkSensSlider" min="10" max="90" value="80" />
           </label>
           <p class="settings-note">Turn blink sensitivity up if your shots aren't registering, down if the game fires on its own.</p>
+          </div>
 
           <button id="settingsClose" class="btn">Done</button>
         </div>

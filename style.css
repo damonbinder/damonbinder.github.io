@@ -127,7 +127,8 @@ canvas#hud {
 .settings-card {
   width: min(340px, 84%);
   max-height: 88%;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 12px;
@@ -141,6 +142,13 @@ canvas#hud {
   margin-bottom: 12px;
 }
 
+/* min-height:0 is what actually lets a flex child scroll rather than growing
+   the card past its max-height. */
+.settings-body {
+  overflow-y: auto;
+  min-height: 0;
+}
+
 .controls-list {
   margin: 0 0 16px;
   padding-left: 18px;
@@ -150,6 +158,15 @@ canvas#hud {
 }
 
 .controls-list b { color: var(--text); font-weight: 600; }
+
+/* The keyboard line is the default, so a list with no mode class at all still
+   reads correctly rather than losing its movement line entirely. */
+.controls-list .ctrl-wheel,
+.controls-list .ctrl-thumb { display: none; }
+.controls-list.mode-wheel .ctrl-keys,
+.controls-list.mode-thumb .ctrl-keys { display: none; }
+.controls-list.mode-wheel .ctrl-wheel,
+.controls-list.mode-thumb .ctrl-thumb { display: list-item; }
 
 .settings-note {
   margin: -2px 0 16px;

@@ -28,6 +28,7 @@ const startOverlay = document.getElementById("startOverlay");
 const settingsBtn = document.getElementById("settingsBtn");
 const settingsPanel = document.getElementById("settingsPanel");
 const settingsClose = document.getElementById("settingsClose");
+const controlsList = document.getElementById("controlsList");
 const volumeSlider = document.getElementById("volumeSlider");
 const volumeVal = document.getElementById("volumeVal");
 const blinkSensSlider = document.getElementById("blinkSensSlider");
@@ -390,9 +391,18 @@ function applyBlinkSensitivity(sens, { syncDebug = true } = {}) {
   localStorage.setItem(BLINK_SENS_KEY, String(sens));
 }
 
+// Read at open time rather than wired to a scheme-change event: the scheme can
+// be switched from the start screen, the game-over screen, or the debug panel's
+// mode select, and an event hooked to only some of those goes stale silently.
+function syncControlsList() {
+  const mode = handsEnabled ? (handModeSelect.value === "thumb" ? "thumb" : "wheel") : "keys";
+  controlsList.className = `controls-list mode-${mode}`;
+}
+
 function openSettings() {
   if (settingsOpen) return;
   settingsOpen = true;
+  syncControlsList();
   // Reuse manualPause rather than inventing a second notion of "stopped" — it
   // already gates physics, audio, and input everywhere they need gating.
   settingsPausedGame = started && game.alive && !manualPause;

@@ -44,6 +44,11 @@ export class FaceTracker {
     this.onMouthOpen = null; // ()
     this.onDebug = null;
     this.lastVideoTime = -1;
+    // The rAF timestamp of the last frame this actually ran inference on.
+    // detectForVideo is synchronous and blocks the main thread, so anything
+    // else doing inference needs to know not to pile into the same frame —
+    // see HandTracker.yieldTo.
+    this.lastDetectFrame = -1;
     this._loop = this._loop.bind(this);
   }
 
@@ -109,10 +114,11 @@ export class FaceTracker {
     if (stream) stream.getTracks().forEach((t) => t.stop());
   }
 
-  _loop() {
+  _loop(t) {
     if (!this.running) return;
     if (this.video.readyState >= 2 && this.video.currentTime !== this.lastVideoTime) {
       this.lastVideoTime = this.video.currentTime;
+      this.lastDetectFrame = t;
       const result = this.landmarker.detectForVideo(this.video, performance.now());
       this._handleResult(result);
     }

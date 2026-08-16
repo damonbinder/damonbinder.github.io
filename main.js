@@ -38,6 +38,7 @@ const calibrateResult = document.getElementById("calibrateResult");
 // [slider, label, key, scale] — scale converts the integer slider to the
 // option's units, so the percentage sliders read as percentages.
 const HAND_SLIDERS = [
+  ["handHzSlider", "handHzVal", "detectHz", 1],
   ["handTiltDeadSlider", "handTiltDeadVal", "wheelTiltDead", 1],
   ["handTiltRangeSlider", "handTiltRangeVal", "wheelTiltRange", 1],
   ["handRaiseDeadSlider", "handRaiseDeadVal", "wheelRaiseDead", 0.01],
@@ -600,6 +601,8 @@ function applyHandSteer({ move, strafe }) {
 async function startHandTracking() {
   handTracker = new HandTracker(video, handOverlay);
   handTracker.setOptions(handOptionsFromPanel());
+  // Never let the two models' inference land in the same animation frame.
+  handTracker.yieldTo = () => tracker?.lastDetectFrame;
   handTracker.onSteer = applyHandSteer;
   handTracker.onUpdate = ({ mode, hasHand, handCount, direction, steer, info, seenPct, posePct, medianAngle }) => {
     const live = steer.move !== 0 || steer.strafe !== 0;

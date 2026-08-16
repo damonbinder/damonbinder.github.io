@@ -48,10 +48,13 @@ function angleGap(a, b) {
 function wrapDeg(a) {
   return ((a + 540) % 360) - 180;
 }
-// Movement direction doesn't need video framerate, and the FaceLandmarker is
-// already running on every frame of the same stream. 20Hz halves the cost of
-// adding this and is still far quicker than the player can change pose.
-const DETECT_INTERVAL_MS = 50;
+// Default detections per second. Movement direction doesn't need video
+// framerate and the FaceLandmarker is already running on every frame of the
+// same stream, so this is the main dial for what hand steering costs: each
+// detection is ~12ms of synchronous main-thread work (CPU delegate, measured),
+// so 20Hz is roughly a quarter of the thread. Adjustable at runtime because
+// the right number depends entirely on the machine.
+const DEFAULT_DETECT_HZ = 20;
 // Rolling window for the debug hit-rate, in detections. 40 at 20Hz is 2s,
 // long enough to smooth out a dropped frame and short enough to respond while
 // you're still moving your hand.
@@ -95,6 +98,7 @@ export const HAND_DEFAULTS = {
   // reliable number it produces. The wheel uses nothing but two centroids.
   mode: "wheel",
   mirrored: true,
+  detectHz: DEFAULT_DETECT_HZ,
 
   // --- steering wheel ---
   // Hands held like handlebars: tilt the line between them to strafe, raise or
@@ -323,6 +327,10 @@ export class HandTracker {
 
     this.onSteer = null; // ({move, strafe}) — both modes, -1..1 per axis
     this.onUpdate = null; // everything the debug readout shows
+    // Returns the rAF timestamp of the frame the face tracker last ran on, so
+    // this one can stand down rather than pile into the same frame. See the
+    // note in _loop — this is a frame-rate fix, not a micro-optimisation.
+    this.yieldTo = null;
     this._loop = this._loop.bind(this);
   }
 
@@ -392,10 +400,19 @@ export class HandTracker {
     this.overlayCtx?.clearRect(0, 0, this.overlay.width, this.overlay.height);
   }
 
-  _loop() {
+  // Both landmarkers run detectForVideo *synchronously on the main thread*,
+  // which is the thread requestAnimationFrame runs on. Measured on a laptop:
+  // the face model costs ~8ms a call and this one ~12ms. Either alone fits
+  // inside a 16.7ms frame; the two landing in the same frame is 20ms and the
+  // frame is simply lost, which is what a visible stutter is made of. So this
+  // stands down whenever the face tracker has already spent this frame — it
+  // just detects on the next one instead, a delay of a single frame.
+  _loop(t) {
     if (!this.running) return;
     const now = performance.now();
-    if (now - this._lastDetect >= DETECT_INTERVAL_MS && this.video.readyState >= 2) {
+    const faceBusy = this.yieldTo?.() === t;
+    const interval = 1000 / Math.max(1, this.opts.detectHz);
+    if (!faceBusy && now - this._lastDetect >= interval && this.video.readyState >= 2) {
       this._lastDetect = now;
       const result = this.landmarker.detectForVideo(this.video, now);
       this._handleResult(result);

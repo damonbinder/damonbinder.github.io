@@ -93,8 +93,11 @@ const SABER_REST_ANGLE = 0.42;
 const SABER_WINDUP_ANGLE = 0.85;
 const SABER_SLASH_ANGLE = -1.5;
 const SABER_BLADE_LEN = 168;
-const SABER_TRAIL_SAMPLES = 9;
-const SABER_TRAIL_STEP = 0.016; // in swing-fraction; see the note in _drawSaberViewmodel
+// Few and widely spaced on purpose. Nine tightly-spaced samples fused into a
+// single continuous lit arc, which is what a real saber smear looks like and
+// is exactly why it didn't belong next to a pistol drawn as two rectangles.
+const SABER_TRAIL_SAMPLES = 3;
+const SABER_TRAIL_STEP = 0.05; // in swing-fraction; see the note in _drawSaberViewmodel
 
 const ENEMY_SPAWNS = readLayout("e");
 // Nothing spawns inside this radius. It matters more than it looks because
@@ -1379,21 +1382,17 @@ export class CorridorGame {
     const swinging = this.saberRemaining > 0;
     const t = swinging ? 1 - this.saberRemaining / SABER_SWING_MS : 0; // 0 -> 1 across the swing
 
-    // Arc smear: blade-only copies from earlier in the slash. A saber wants
-    // more of these than a solid weapon would, because they're additive and
-    // each one is faint — together they read as a single lit arc hanging in
-    // the air rather than as discrete stamps.
+    // Arc smear: a few blade-only copies from earlier in the slash. These are
+    // now widely spaced and few, so they read as a handful of stamped blades
+    // rather than a continuous lit arc — the smear used nine tightly-spaced
+    // additive samples to fuse into one glowing sweep, which was exactly the
+    // look that made the saber sit apart from everything else.
     if (swinging && t > SABER_WINDUP_T && t < SABER_RECOVER_T + 0.12) {
-      // Sample count and spacing are a pair, and both matter. The slash is
-      // eased, so the blade covers most of its 135 degrees in the first few
-      // milliseconds; at wide spacing the copies land far enough apart to
-      // read as several separate blades rather than one lit arc. Nine
-      // closely-spaced samples close the gaps at the fast end.
       for (let i = SABER_TRAIL_SAMPLES; i >= 1; i--) {
         const back = t - i * SABER_TRAIL_STEP;
         if (back <= SABER_WINDUP_T) continue;
         ctx.save();
-        ctx.globalAlpha = 0.2 * (1 - i / (SABER_TRAIL_SAMPLES + 1));
+        ctx.globalAlpha = 0.3 * (1 - i / (SABER_TRAIL_SAMPLES + 1));
         this._drawSaber(this._saberPose(back, true), true);
         ctx.restore();
       }
@@ -1434,91 +1433,45 @@ export class CorridorGame {
 
   // Local space: origin at the grip, blade running up -y. Ghost copies draw
   // the blade alone — the hands don't smear, they're attached to the player.
+  //
+  // Deliberately crude, and this is a correction rather than a shortcut. The
+  // saber used to be the only lit object in the game: an additively-blended
+  // bloom with a nine-sample smeared arc, hands with knuckle rows and thumb
+  // blocks. It looked good and it looked like it came from a different game,
+  // because the pistol two slots along is literally two grey rectangles and
+  // the enemies are flat circles on flat torsos. Everything here is flat fill
+  // plus a dark outline, in the same register as the rest.
   _drawSaber({ x, y, angle }, ghost) {
     const { ctx } = this;
-    const rr = (rx, ry, w, h, r) => {
-      ctx.beginPath();
-      ctx.moveTo(rx + r, ry);
-      ctx.arcTo(rx + w, ry, rx + w, ry + h, r);
-      ctx.arcTo(rx + w, ry + h, rx, ry + h, r);
-      ctx.arcTo(rx, ry + h, rx, ry, r);
-      ctx.arcTo(rx, ry, rx + w, ry, r);
-      ctx.closePath();
+    const box = (bx, by, w, h, fill) => {
+      ctx.fillStyle = fill;
+      ctx.fillRect(bx, by, w, h);
+      ctx.strokeRect(bx, by, w, h);
     };
 
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.strokeStyle = "rgba(10,12,16,0.85)";
+    ctx.lineWidth = 2;
 
     if (!ghost) {
-      ctx.lineJoin = "round";
-      ctx.strokeStyle = "rgba(10,12,16,0.85)";
-      ctx.lineWidth = 2;
-
-      ctx.fillStyle = "#2b3038"; // hilt body
-      rr(-8, -54, 16, 84, 3);
-      ctx.fill();
-      ctx.stroke();
-
-      ctx.fillStyle = "#5b6577"; // emitter shroud
-      rr(-11, -58, 22, 13, 3);
-      ctx.fill();
-      ctx.stroke();
-      ctx.fillStyle = "#4b5563"; // pommel
-      rr(-10, 22, 20, 10, 3);
-      ctx.fill();
-      ctx.stroke();
-
-      // Hands, upper then lower, drawn over the hilt with a gap between them
-      // so the hilt still reads as one object running through both. The
-      // knuckle row and the thumb block are what stop each one reading as a
-      // grey lozenge — a plain rounded rect at this size says nothing.
-      for (const hy of [-34, -4]) {
-        ctx.fillStyle = "#3f4855";
-        rr(-24, hy, 48, 24, 7);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = "#525c6b"; // knuckles, along the near edge
-        for (let i = 0; i < 3; i++) {
-          rr(-22 + i * 11, hy + 1, 10, 8, 3);
-          ctx.fill();
-          ctx.stroke();
-        }
-
-        ctx.fillStyle = "#333b47"; // thumb, wrapping around the far side
-        rr(9, hy + 6, 15, 16, 5);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.strokeStyle = "rgba(10,12,16,0.45)"; // finger separation
-        ctx.lineWidth = 1.3;
-        ctx.beginPath();
-        ctx.moveTo(-22, hy + 16);
-        ctx.lineTo(6, hy + 16);
-        ctx.stroke();
-        ctx.strokeStyle = "rgba(10,12,16,0.85)";
-        ctx.lineWidth = 2;
-      }
+      box(-8, -54, 16, 84, "#2b3038"); // hilt
+      box(-11, -58, 22, 12, "#5b6577"); // emitter
+      box(-10, 22, 20, 10, "#4b5563"); // pommel
+      // Two flat blocks for the hands. No knuckles, no thumb: at this size
+      // and against a pistol made of two rectangles, the detail was the part
+      // that looked out of place.
+      for (const hy of [-34, -4]) box(-24, hy, 48, 24, "#3f4855");
     }
 
-    // Blade: concentric bars, widest and dimmest first, summed additively so
-    // the middle saturates to a white core with a cyan bloom around it. Only
-    // the outer layers are kept dim — additive over the blue-grey walls turns
-    // anything near full intensity into a flat white slab.
-    ctx.globalCompositeOperation = "lighter";
+    // Blade: two flat bars, a wide body and a narrow core, no additive
+    // blending. It reads as a coloured blade rather than a light source,
+    // which is the point.
     const top = -58 - SABER_BLADE_LEN;
-    for (const [w, color] of [
-      [26, "rgba(34,211,238,0.18)"],
-      [17, "rgba(103,232,249,0.30)"],
-      [9, "rgba(165,243,252,0.60)"],
-      [4, "rgba(255,255,255,0.95)"],
-    ]) {
-      ctx.fillStyle = color;
-      rr(-w / 2, top, w, SABER_BLADE_LEN + 8, w / 2);
-      ctx.fill();
-    }
-    ctx.globalCompositeOperation = "source-over";
+    box(-9, top, 18, SABER_BLADE_LEN + 8, "#22d3ee");
+    ctx.fillStyle = "#cffafe";
+    ctx.fillRect(-3, top + 2, 6, SABER_BLADE_LEN + 4);
 
     ctx.restore();
   }

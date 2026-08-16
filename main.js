@@ -25,7 +25,12 @@ const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlayTitle");
 const overlaySub = document.getElementById("overlaySub");
 const startOverlay = document.getElementById("startOverlay");
-const startBtn = document.getElementById("startBtn");
+const startChoice = document.getElementById("startChoice");
+const startKeyboardBtn = document.getElementById("startKeyboardBtn");
+const startHandsBtn = document.getElementById("startHandsBtn");
+const restartChoice = document.getElementById("restartChoice");
+const restartKeyboardBtn = document.getElementById("restartKeyboardBtn");
+const restartHandsBtn = document.getElementById("restartHandsBtn");
 const startPrompt = document.getElementById("startPrompt");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
@@ -95,11 +100,16 @@ if (DEBUG) {
 // model over every frame of the same stream and there's no reason to charge
 // that to someone playing on the keyboard. `?hands=wheel` or `?hands=thumb`
 // picks a scheme; a bare `?hands=1` takes the panel's default.
+// The URL param no longer switches hand steering on — the start screen does
+// that — but it still picks *which* scheme (`?hands=wheel` / `?hands=thumb`)
+// and pre-reveals the tuning panel for a session that's going to use it.
 const HANDS_PARAM = new URLSearchParams(location.search).get("hands");
-const HANDS = HANDS_PARAM != null;
-if (HANDS) {
+let handsEnabled = false;
+
+function revealHandPanel() {
   document.querySelectorAll(".hands-only").forEach((el) => el.classList.remove("hands-only"));
 }
+if (HANDS_PARAM != null) revealHandPanel();
 
 const game = new CorridorGame(canvas);
 const sound = new SoundFX();
@@ -155,6 +165,7 @@ game.onGameOver = (score) => {
   }
   overlayTitle.textContent = "Game over";
   overlaySub.textContent = `Score ${score} — press space to restart`;
+  restartChoice.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
 
@@ -324,6 +335,9 @@ function refreshPauseOverlay() {
   if (manualPause) {
     overlayTitle.textContent = "Paused";
     overlaySub.textContent = "Press space to resume";
+    // Pause and game over share one overlay; switching scheme belongs only to
+    // the latter, where a restart is about to happen anyway.
+    restartChoice.classList.add("hidden");
     overlay.classList.remove("hidden");
   } else {
     overlay.classList.add("hidden");
@@ -543,6 +557,7 @@ if (DEBUG) {
 function restart() {
   game.reset();
   manualPause = false;
+  restartChoice.classList.add("hidden");
   overlay.classList.add("hidden");
 }
 
@@ -585,14 +600,16 @@ function beginGame() {
 // is watching for.
 function armBlinkStart() {
   awaitingStartBlink = true;
-  startBtn.classList.add("hidden");
+  startChoice.classList.add("hidden");
   // In wheel mode the starting blink doubles as the calibration sample, so
   // the prompt has to ask for the hands too. Whatever height and tilt the
   // player is resting at when they blink becomes the neutral, which beats any
   // default: the alternative is guessing where someone sits relative to their
   // own webcam.
-  if (HANDS && handModeSelect.value === "wheel") {
+  if (handsEnabled && handModeSelect.value === "wheel") {
     startPrompt.textContent = "Hold your hands up, then blink to start";
+  } else {
+    startPrompt.textContent = "Blink to start";
   }
   startPrompt.classList.remove("hidden");
 }
@@ -692,7 +709,7 @@ async function startWithCamera() {
     // Not awaited: the hand model is a second few-megabyte download, and
     // making the start prompt wait on it would be a visible stall for a mode
     // that's fine to come online a moment late.
-    if (HANDS) startHandTracking();
+    if (handsEnabled) startHandTracking();
   } catch (err) {
     console.error("Camera/tracker init failed:", err);
     tracker = null;
@@ -826,12 +843,41 @@ function continueWithoutCamera() {
   beginGame();
 }
 
-startBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
+// Both start buttons do the same thing bar the control scheme: the camera is
+// needed either way, since aiming and firing are gaze and blink whichever way
+// you walk.
+function chooseScheme(useHands) {
   sound.resume(); // must happen synchronously in this gesture handler (autoplay policy)
   requestWakeLock(); // likewise wants a real gesture behind it on some browsers
+  handsEnabled = useHands;
+  if (useHands) revealHandPanel();
   startWithCamera();
-});
+}
+
+startKeyboardBtn.addEventListener("click", (e) => { e.stopPropagation(); chooseScheme(false); });
+startHandsBtn.addEventListener("click", (e) => { e.stopPropagation(); chooseScheme(true); });
+
+// On the game-over screen the camera and audio are already running, so these
+// only swap the walking scheme and restart.
+async function restartWith(useHands) {
+  if (useHands === handsEnabled) {
+    restart();
+    return;
+  }
+  handsEnabled = useHands;
+  if (useHands) {
+    revealHandPanel();
+    await startHandTracking();
+  } else {
+    handTracker?.stop();
+    handTracker = null;
+    applyHandSteer({ move: 0, strafe: 0 });
+  }
+  restart();
+}
+
+restartKeyboardBtn.addEventListener("click", (e) => { e.stopPropagation(); restartWith(false); });
+restartHandsBtn.addEventListener("click", (e) => { e.stopPropagation(); restartWith(true); });
 
 fallbackBtn.addEventListener("click", (e) => {
   e.stopPropagation();

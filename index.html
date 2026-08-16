@@ -22,12 +22,21 @@
         <div class="overlay-inner">
           <div id="overlayTitle">Game over</div>
           <div id="overlaySub">Press space to restart</div>
+          <!-- Space restarts with whatever you were already using; these are
+               only for switching. A hands-free player can still reach space. -->
+          <div id="restartChoice" class="choice-row hidden">
+            <button id="restartKeyboardBtn" class="btn">Keyboard</button>
+            <button id="restartHandsBtn" class="btn">Hands</button>
+          </div>
         </div>
       </div>
 
       <div id="startOverlay" class="overlay">
         <div class="overlay-inner">
-          <button id="startBtn">Start</button>
+          <div id="startChoice" class="choice-row">
+            <button id="startKeyboardBtn" class="btn">Keyboard</button>
+            <button id="startHandsBtn" class="btn">Hands</button>
+          </div>
           <div id="startPrompt" class="start-prompt hidden">Blink to start</div>
           <div id="camError" class="cam-error hidden"></div>
         </div>

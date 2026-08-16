@@ -4,6 +4,28 @@ Deployed, unlisted, at **djbinder.com/blink/**. The game is in `public/blink/`,
 so editing it there is deploying it; these notes sit outside `public/` on
 purpose, because everything in it is served.
 
+## What this is for
+
+**The aim is not a good game. The aim is an entertaining, weird gimmick** —
+Damon, 2026-08-16, and worth reading before proposing anything.
+
+The product is the first thirty seconds: the camera prompt, a corridor, and the
+moment someone works out that it fired because they blinked. Almost nobody will
+see wave 8, let alone wave 20. So depth, progression and balance are not what
+this is judged on, and "the late game flatlines" is close to irrelevant however
+true it is.
+
+What follows from that:
+
+- **The weirdness is the asset.** Firing on an involuntary reflex, and watchers
+  that only advance while you are not looking at them, are the parts someone
+  repeats to the person next to them. Protect those over anything measurable.
+- **Shareability beats retention.** The link preview, and working for a stranger
+  on their own laptop, are worth more than any balance change.
+- **Suspect proposals that make it a better *game*.** More content, more
+  progression, more systems. They cost the thing that makes it worth sending to
+  someone.
+
 ## Needed before it goes public
 
 - [ ] **Remove `<meta name="robots" content="noindex, nofollow">` from

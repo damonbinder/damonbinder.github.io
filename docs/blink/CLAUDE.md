@@ -24,6 +24,28 @@ game is the deliberate exception**: it is called Blink and its start screen says
 covers the title and the start prompt, not a licence to explain the aim,
 watcher, or heal-pad mechanics too.
 
+## What this is for
+
+**The aim is not a good game. The aim is an entertaining, weird gimmick** —
+Damon, 2026-08-16, and worth reading before proposing anything.
+
+The product is the first thirty seconds: the camera prompt, a corridor, and the
+moment someone works out that it fired because they blinked. Almost nobody will
+see wave 8, let alone wave 20. So depth, progression and balance are not what
+this is judged on, and "the late game flatlines" is close to irrelevant however
+true it is.
+
+What follows from that:
+
+- **The weirdness is the asset.** Firing on an involuntary reflex, and watchers
+  that only advance while you are not looking at them, are the parts someone
+  repeats to the person next to them. Protect those over anything measurable.
+- **Shareability beats retention.** The link preview, and working for a stranger
+  on their own laptop, are worth more than any balance change.
+- **Suspect proposals that make it a better *game*.** More content, more
+  progression, more systems. They cost the thing that makes it worth sending to
+  someone.
+
 ### Enemy roster
 
 Enemy variety unlocks progressively by wave (see `ENEMY_UNLOCKS`/`poolForWave`

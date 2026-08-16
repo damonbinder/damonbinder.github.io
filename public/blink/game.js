@@ -594,7 +594,12 @@ export class CorridorGame {
     // meant an untouched SMG silently vanished off the floor on every
     // intervening wave (spawned on 4, gone on 5), so a player who saw it but
     // couldn't safely reach it that wave lost it for nothing.
-    if (smgWaveHasPickup(this.wave) && this.weapon !== "smg") this.smgPickup.active = true;
+    //
+    // It spawns whether or not the player is already holding one, so its waves
+    // are a restock as well as a first pickup — 30 rounds empty in a few
+    // seconds of held fire, and having kept the gun shouldn't be what locks you
+    // out of the next magazine.
+    if (smgWaveHasPickup(this.wave)) this.smgPickup.active = true;
   }
 
   _makeEnemy(type, x, y) {
@@ -854,10 +859,13 @@ export class CorridorGame {
 
   _stepSmgPickup() {
     const pk = this.smgPickup;
-    if (!pk.active || this.weapon === "smg") return;
+    if (!pk.active) return;
     const dist = Math.hypot(pk.x - this.player.x, pk.y - this.player.y);
     if (dist < PICKUP_RANGE) {
       pk.active = false; // gone until the next wave that carries one
+      // Taken while already holding one, this is a restock: the magazine is
+      // set rather than added to, so it can't be banked past
+      // SMG_AMMO_ON_PICKUP by collecting on a full clip.
       this.weapon = "smg";
       this.smgAmmo = SMG_AMMO_ON_PICKUP;
       this._notifyWeapon();

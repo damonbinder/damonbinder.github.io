@@ -17,6 +17,9 @@
 * { box-sizing: border-box; }
 
 .debug-only { display: none !important; }
+/* Stripped by ?hands=1, the way .debug-only is stripped by ?debug=1. An
+   element carrying both needs both flags before it shows. */
+.hands-only { display: none !important; }
 
 body {
   margin: 0;
@@ -286,6 +289,18 @@ canvas#hud {
 }
 
 .link-btn:hover { color: var(--text); }
+
+.calibrate-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.calibrate-result {
+  font-size: 0.75rem;
+  color: var(--accent);
+}
 
 .hint {
   color: var(--muted);

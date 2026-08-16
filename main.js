@@ -33,6 +33,20 @@ const blinkCountEl = document.getElementById("blinkCount");
 const handStateEl = document.getElementById("handState");
 const handOverlay = document.getElementById("handOverlay");
 const invertHandsBox = document.getElementById("invertHands");
+const calibrateHandsBtn = document.getElementById("calibrateHands");
+const calibrateResult = document.getElementById("calibrateResult");
+// [slider, label, key, scale] — scale converts the integer slider to the
+// option's units, so the percentage sliders read as percentages.
+const HAND_SLIDERS = [
+  ["handOffsetSlider", "handOffsetVal", "angleOffset", 1],
+  ["handHorizSlider", "handHorizVal", "horizHalf", 1],
+  ["handVertSlider", "handVertVal", "vertHalf", 1],
+  ["handCurlSlider", "handCurlVal", "minCurled", 1],
+  ["handOutSlider", "handOutVal", "thumbOut", 0.01],
+  ["handLenSlider", "handLenVal", "minLen", 0.01],
+  ["handTowardSlider", "handTowardVal", "towardDominance", 0.01],
+  ["handDebounceSlider", "handDebounceVal", "debounce", 1],
+];
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
 const swingCountEl = document.getElementById("swingCount");
@@ -70,6 +84,9 @@ if (DEBUG) {
 // every frame of the same stream and there's no reason to charge that to
 // someone playing on the keyboard.
 const HANDS = new URLSearchParams(location.search).has("hands");
+if (HANDS) {
+  document.querySelectorAll(".hands-only").forEach((el) => el.classList.remove("hands-only"));
+}
 const HAND_DIRS = {
   up: { move: 1, strafe: 0 },
   down: { move: -1, strafe: 0 },
@@ -522,6 +539,20 @@ async function startWithCamera() {
 // Runs on the stream the FaceTracker has already opened, so it can only be
 // started once that has resolved. A failure here is non-fatal by design —
 // aiming and firing still work, you're just back on the keyboard to walk.
+// Read the whole panel at once. Doing it this way rather than pushing single
+// values on each input event means a tracker created *after* the sliders have
+// been touched still comes up with what's on screen.
+function handOptionsFromPanel() {
+  // Unchecked is the expected case: raw front-camera frames aren't mirrored,
+  // so the sign flip is on by default. The checkbox is here because this is
+  // the one thing in the classifier that can't be verified without a camera.
+  const opts = { mirrored: !invertHandsBox.checked };
+  for (const [slider, , key, scale] of HAND_SLIDERS) {
+    opts[key] = Number(document.getElementById(slider).value) * scale;
+  }
+  return opts;
+}
+
 function applyHandDirection(dir) {
   const d = dir ? HAND_DIRS[dir] : null;
   handMove = d ? d.move : 0;
@@ -532,10 +563,7 @@ function applyHandDirection(dir) {
 
 async function startHandTracking() {
   handTracker = new HandTracker(video, handOverlay);
-  // Unchecked is the expected case: raw front-camera frames aren't mirrored,
-  // so the sign flip is on by default. The checkbox is here because this is
-  // the one thing in the classifier that can't be verified without a camera.
-  handTracker.mirrored = !invertHandsBox.checked;
+  handTracker.setOptions(handOptionsFromPanel());
   handTracker.onDirection = applyHandDirection;
   handTracker.onUpdate = ({ hasHand, direction, raw, info, seenPct, posePct, medianAngle }) => {
     handStateEl.textContent = hasHand ? direction || "—" : "none";
@@ -545,12 +573,19 @@ async function startHandTracking() {
     lastHandReadout =
       `hand:  ${hasHand ? "yes" : "no"}   seen ${seenPct}%  pose ${posePct}%\n` +
       `dir:   ${direction || "—"}  (raw ${raw || "—"})${info.reason ? `  ${info.reason}` : ""}\n` +
-      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  len ${info.len.toFixed(2)}\n` +
+      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
+      // depth negative means the thumb tip is nearer the camera than its
+      // knuckle, i.e. aimed at you
+      `len ${info.len.toFixed(2)}  depth ${info.depth.toFixed(2)}\n` +
       // The median is the one to read off while holding a pose; the live angle
       // jitters several degrees a frame and is unreadable.
-      `angle: ${info.angle == null ? "—" : `${info.angle}°`}   ` +
+      // Raw is the number calibration works off; corrected is what the
+      // sectors actually judge. Showing only one of them makes the offset
+      // slider look like it's doing nothing.
+      `angle: raw ${info.rawAngle == null ? "—" : `${info.rawAngle}°`}  ` +
       `median ${medianAngle == null ? "—" : `${medianAngle}°`}  ` +
-      `(right 0, up 90, left 180, down -90)`;
+      `corrected ${info.angle == null ? "—" : `${info.angle}°`}\n` +
+      `axes:  right 0, up 90, left 180, down -90`;
   };
   try {
     await handTracker.init();
@@ -620,8 +655,32 @@ bindSlider(mouthDebounceSlider, mouthDebounceVal, (v) => tracker?.setThresholds(
 invertXBox.addEventListener("change", () => tracker?.setThresholds({ invertX: invertXBox.checked }));
 invertYBox.addEventListener("change", () => tracker?.setThresholds({ invertY: invertYBox.checked }));
 
+for (const [slider, label] of HAND_SLIDERS) {
+  const el = document.getElementById(slider);
+  el.addEventListener("input", () => {
+    document.getElementById(label).textContent = el.value;
+    handTracker?.setOptions(handOptionsFromPanel());
+  });
+}
+
 invertHandsBox.addEventListener("change", () => {
-  if (handTracker) handTracker.mirrored = !invertHandsBox.checked;
+  handTracker?.setOptions(handOptionsFromPanel());
+});
+
+// One held gesture beats seven sliders: thumbs-up is the easiest pose to hold
+// steady, so calibrating off it rotates the frame by however far this person's
+// hand and camera placement sit from where the classifier assumed, and all
+// four directions move together.
+calibrateHandsBtn.addEventListener("click", () => {
+  const offset = handTracker?.calibrateTo("up");
+  if (offset == null) {
+    calibrateResult.textContent = handTracker ? "no thumb seen" : "hands not running";
+    return;
+  }
+  const el = document.getElementById("handOffsetSlider");
+  el.value = String(offset);
+  document.getElementById("handOffsetVal").textContent = String(offset);
+  calibrateResult.textContent = `offset ${offset}°`;
 });
 
 window.addEventListener("beforeunload", () => {

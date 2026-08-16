@@ -127,6 +127,49 @@
           <button id="fallbackBtn" class="link-btn">No camera? Use mouse/click instead</button>
         </div>
       </div>
+
+      <!-- Needs both flags: ?debug=1 strips debug-only, ?hands=1 strips
+           hands-only, so the panel is hidden unless hand steering is
+           actually running. -->
+      <div class="panel hand-panel debug-only hands-only">
+        <div class="panel-title">Hand steering</div>
+        <div class="calibrate-row">
+          <button id="calibrateHands" class="link-btn">Hold thumb UP, then click to calibrate</button>
+          <span id="calibrateResult" class="calibrate-result"></span>
+        </div>
+        <label class="slider-row">
+          <span>Angle offset <span id="handOffsetVal">0</span>°</span>
+          <input type="range" id="handOffsetSlider" min="-90" max="90" value="0" />
+        </label>
+        <label class="slider-row">
+          <span>Left/right sector <span id="handHorizVal">44</span>°</span>
+          <input type="range" id="handHorizSlider" min="15" max="70" value="44" />
+        </label>
+        <label class="slider-row">
+          <span>Up/down sector <span id="handVertVal">34</span>°</span>
+          <input type="range" id="handVertSlider" min="15" max="70" value="34" />
+        </label>
+        <label class="slider-row">
+          <span>Fingers curled <span id="handCurlVal">3</span>/4</span>
+          <input type="range" id="handCurlSlider" min="1" max="4" value="3" />
+        </label>
+        <label class="slider-row">
+          <span>Thumb clear of fist <span id="handOutVal">55</span>%</span>
+          <input type="range" id="handOutSlider" min="15" max="90" value="55" />
+        </label>
+        <label class="slider-row">
+          <span>Min thumb length <span id="handLenVal">22</span>%</span>
+          <input type="range" id="handLenSlider" min="5" max="60" value="22" />
+        </label>
+        <label class="slider-row">
+          <span>Thumb-at-me sensitivity <span id="handTowardVal">100</span>%</span>
+          <input type="range" id="handTowardSlider" min="30" max="300" value="100" />
+        </label>
+        <label class="slider-row">
+          <span>Frames to confirm <span id="handDebounceVal">1</span></span>
+          <input type="range" id="handDebounceSlider" min="1" max="8" value="1" />
+        </label>
+      </div>
     </div>
 
     <p class="hint">Arrow keys or WASD to move. Space to pause. R cycles weapon.</p>

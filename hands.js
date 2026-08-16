@@ -54,7 +54,11 @@ function wrapDeg(a) {
 // detection is ~12ms of synchronous main-thread work (CPU delegate, measured),
 // so 20Hz is roughly a quarter of the thread. Adjustable at runtime because
 // the right number depends entirely on the machine.
-const DEFAULT_DETECT_HZ = 20;
+// 12 rather than 20 because of the 120Hz case: each call is 5-12ms against an
+// 8.3ms refresh, so every detection overruns a frame and the only lever that
+// reduces blown frames is doing fewer of them. Movement is a held pose rather
+// than a tap, so it survives the lower rate far better than aim or blink would.
+const DEFAULT_DETECT_HZ = 12;
 // Rolling window for the debug hit-rate, in detections. 40 at 20Hz is 2s,
 // long enough to smooth out a dropped frame and short enough to respond while
 // you're still moving your hand.

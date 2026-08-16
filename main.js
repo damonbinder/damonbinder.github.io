@@ -352,7 +352,17 @@ function updateSmgAutoFire(dt) {
 // is what a stutter actually is, as opposed to a uniformly low rate), and the
 // detection counts say which model is spending the time.
 const FRAME_WINDOW = 180;
+// Two different things, and conflating them is misleading now that the render
+// is capped below the refresh rate: `refreshTimes` is how often the display
+// asks for a frame, which only identifies the panel, and `frameTimes` is
+// render-to-render, which is what the player actually sees.
+const refreshTimes = [];
 const frameTimes = [];
+// Ignore the first stretch after starting. The hand model's download and WASM
+// compile can land after the start blink and stall for over 100ms, which is a
+// one-off and would otherwise dominate a figure meant to describe steady play.
+const PERF_SETTLE_MS = 2500;
+let perfSettleAt = 0;
 let perfSampledAt = 0;
 let perfFaceCount = 0;
 let perfHandCount = 0;
@@ -371,9 +381,8 @@ let perfDropThreshold = 20;
 function samplePerf(t, dt) {
   frameTimes.push(dt);
   if (frameTimes.length > FRAME_WINDOW) frameTimes.shift();
-  // Ignore the first few frames and any gap big enough to be a tab switch or
-  // the initial model download rather than a stutter.
-  if (started && dt < 500) {
+  // dt over 500ms is a tab switch, not a stutter.
+  if (started && t > perfSettleAt && dt < 500) {
     if (dt > perfWorstEver) perfWorstEver = dt;
     if (dt > perfDropThreshold) perfDroppedEver++;
   }
@@ -391,12 +400,13 @@ function samplePerf(t, dt) {
   // 1.5 refreshes: past this the frame has certainly missed one.
   perfDropThreshold = median * 1.5;
   const dropped = sorted.filter((x) => x > perfDropThreshold).length;
+  const refresh = [...refreshTimes].sort((a, b) => a - b)[refreshTimes.length >> 1] || median;
   perfText =
     `fps ${Math.round(1000 / median)}   frame ${median.toFixed(1)}ms   ` +
     `worst ${sorted[sorted.length - 1].toFixed(1)}ms   ` +
     `>${perfDropThreshold.toFixed(0)}ms ${dropped}/${sorted.length}\n` +
     `session worst ${perfWorstEver.toFixed(1)}ms   dropped ${perfDroppedEver}   ` +
-    `infer face ${faceRate}/s hand ${handRate}/s`;
+    `panel ${Math.round(1000 / refresh)}Hz   infer face ${faceRate}/s hand ${handRate}/s`;
   perfEl.textContent = `${Math.round(1000 / median)}`;
   // The tracker's own debug callback owns the readout when a camera is
   // running; without one, nothing else would ever write this line.
@@ -416,13 +426,17 @@ function loop(t) {
   requestAnimationFrame(loop);
   const dt = lastFrameTime ? t - lastFrameTime : 16;
   lastFrameTime = t;
-  if (DEBUG) samplePerf(t, dt);
+  if (DEBUG) {
+    refreshTimes.push(dt);
+    if (refreshTimes.length > FRAME_WINDOW) refreshTimes.shift();
+  }
   if (!started) return;
   if (t - lastRenderAt < RENDER_MIN_MS) return;
   // Physics must step by the render interval, not the refresh interval, or
   // capping the rate would halve the speed of the whole game.
   const rdt = lastRenderAt ? t - lastRenderAt : 16;
   lastRenderAt = t;
+  if (DEBUG) samplePerf(t, rdt);
   // Clamp so a backgrounded/throttled tab can't fast-forward the player
   // through many physics steps (and through walls) in one jump.
   if (game.alive && !manualPause) game.advance(Math.min(rdt, 100));
@@ -534,6 +548,7 @@ function beginGame() {
   if (started) return;
   started = true;
   awaitingStartBlink = false;
+  perfSettleAt = performance.now() + PERF_SETTLE_MS;
   startOverlay.classList.add("hidden");
 }
 

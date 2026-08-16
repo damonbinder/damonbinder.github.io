@@ -252,6 +252,20 @@ const HEAL_TICK_HP = 1;
 const HEAL_TINT_MAX_ALPHA = 0.22;
 
 const WATCHER_BLINK_DASH_MULT = 3.6; // extra speed multiplier while lunging specifically during a blink window
+
+// Once the head count has capped (wave 14) nothing else about a wave changes,
+// so enemies get slightly faster from there instead. It is capped twice over on
+// purpose: the multiplier tops out at WAVE_SPEED_MAX_MULT, and WAVE_SPEED_ABS_CAP
+// then holds the result under the player's MOVE_SPEED of 2.2 whatever the
+// multiplier says. That second cap is not belt and braces — the watcher's 1.98
+// base is deliberately just short of the player's pace, and the percentage alone
+// would put it past them (2.28) by wave 20, which is the one thing the speed
+// rules here have always forbidden. The blink dash keeps the *unscaled* base:
+// at 7.13 u/s it needs no help, and compounding the two was never intended.
+const WAVE_SPEED_START = 14;
+const WAVE_SPEED_PER_WAVE = 0.025;
+const WAVE_SPEED_MAX_MULT = 1.15; // reached at wave 20
+const WAVE_SPEED_ABS_CAP = 2.1;
 const WATCHER_MAX_FROZEN_MS = 4000; // anti-softlock escape valve — see the frozen-time check in _step
 
 // Per-type stats/visuals. Unlocked progressively by wave (see ENEMY_UNLOCKS)
@@ -312,13 +326,34 @@ const LATE_WAVE_THEMES = [
 ];
 const LATE_WAVE_MAX_ENEMIES = 16;
 
+// The head count caps out at wave 14, which is where every other axis of a wave
+// stops changing too — the pool has been complete since 8 and the five themes
+// just repeat. From DEEP_WAVE_START the rotation gains a sixth entry, which
+// matters twice over: it is the pairing the mid-game table deliberately forbids
+// (stalkers excludes ranged), and six themes against five means the deep cycle
+// no longer lines up with the wave numbers the old one used.
+//
+// Watchers and ranged together pull in opposite directions. A watcher only
+// advances while you are *not* looking at it, so it has to be held in view; a
+// ranged enemy fires down exactly the sightline you are holding to do that.
+const DEEP_WAVE_START = 15;
+const DEEP_WAVE_THEMES = [{ min: { watcher: 3, ranged: 3 } }, ...LATE_WAVE_THEMES];
+
 function specForWave(wave) {
   if (wave <= WAVE_TABLE.length) return WAVE_TABLE[wave - 1];
   const over = wave - WAVE_TABLE.length;
   const last = WAVE_TABLE[WAVE_TABLE.length - 1].count;
+  // The deep cycle is indexed from its own start rather than continuing the
+  // mid-game count. That puts the new theme on wave 15 itself — the wave the
+  // head count caps on, and so the exact point the game used to go flat — and
+  // avoids handing wave 16 a repeat of wave 14's watcher theme, which is what
+  // carrying the index across gave us.
+  const deep = wave >= DEEP_WAVE_START;
+  const themes = deep ? DEEP_WAVE_THEMES : LATE_WAVE_THEMES;
+  const idx = deep ? wave - DEEP_WAVE_START : over - 1;
   return {
     count: Math.min(LATE_WAVE_MAX_ENEMIES, last + over),
-    ...LATE_WAVE_THEMES[(over - 1) % LATE_WAVE_THEMES.length],
+    ...themes[idx % themes.length],
   };
 }
 
@@ -742,7 +777,7 @@ export class CorridorGame {
         // a slower type is given a dash later.
         const speed = en.blinkDash
           ? typeInfo.speed * WATCHER_BLINK_DASH_MULT
-          : this._catchupSpeed(en, typeInfo.speed);
+          : this._catchupSpeed(en, this._baseSpeed(typeInfo));
         const { x: sx, y: sy } = this._chaseDir(en, ddx, ddy, dist);
         this._moveEnemy(en, sx, sy, speed, dt);
       }
@@ -839,11 +874,12 @@ export class CorridorGame {
       // stuck behind a pillar walks out to find its angle instead of pressing
       // into the wall until the player happens to wander into view.
       const { x: sx, y: sy } = this._chaseDir(en, ddx, ddy, dist);
-      this._moveEnemy(en, sx, sy, this._catchupSpeed(en, typeInfo.speed), dt);
+      this._moveEnemy(en, sx, sy, this._catchupSpeed(en, this._baseSpeed(typeInfo)), dt);
     } else if (dist < RANGED_PREFERRED_DIST - 0.4) {
       // No catch-up on the retreat: it's backing off from something already
-      // close, which is the one case the boost has no business touching.
-      this._moveEnemy(en, -ddx / dist, -ddy / dist, typeInfo.speed, dt);
+      // close, which is the one case the boost has no business touching. The
+      // wave scaling still applies — a faster shooter backs off faster too.
+      this._moveEnemy(en, -ddx / dist, -ddy / dist, this._baseSpeed(typeInfo), dt);
     }
 
     en.fireCooldown -= stepMs;
@@ -980,6 +1016,17 @@ export class CorridorGame {
   // Walk speed adjusted for how far this enemy still has to go. Reads the flow
   // field's step count directly, so an enemy that's close as the crow flies but
   // a long way round the geometry still gets the help.
+  // A type's walking speed for the current wave. Flat until WAVE_SPEED_START,
+  // then ramped and hard-capped — see the constants for why there are two caps.
+  _baseSpeed(typeInfo) {
+    if (this.wave <= WAVE_SPEED_START) return typeInfo.speed;
+    const mult = Math.min(
+      WAVE_SPEED_MAX_MULT,
+      1 + (this.wave - WAVE_SPEED_START) * WAVE_SPEED_PER_WAVE,
+    );
+    return Math.min(WAVE_SPEED_ABS_CAP, typeInfo.speed * mult);
+  }
+
   _catchupSpeed(en, base) {
     if (base >= CATCHUP_SPEED_CAP) return base;
     const cx = Math.floor(en.x);

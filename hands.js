@@ -54,11 +54,12 @@ function wrapDeg(a) {
 // detection is ~12ms of synchronous main-thread work (CPU delegate, measured),
 // so 20Hz is roughly a quarter of the thread. Adjustable at runtime because
 // the right number depends entirely on the machine.
-// 12 rather than 20 because of the 120Hz case: each call is 5-12ms against an
-// 8.3ms refresh, so every detection overruns a frame and the only lever that
-// reduces blown frames is doing fewer of them. Movement is a held pose rather
-// than a tap, so it survives the lower rate far better than aim or blink would.
-const DEFAULT_DETECT_HZ = 12;
+// Back at 20 now that inference runs in a worker. It was cut to 12 when every
+// detection was blocking the main thread and the only lever on dropped frames
+// was doing fewer of them; off-thread, the main thread pays only for
+// createImageBitmap, so the rate is free to serve responsiveness again. On the
+// main-thread fallback path this is still the dial that matters.
+const DEFAULT_DETECT_HZ = 20;
 // Rolling window for the debug hit-rate, in detections. 40 at 20Hz is 2s,
 // long enough to smooth out a dropped frame and short enough to respond while
 // you're still moving your hand.
@@ -323,7 +324,9 @@ export class HandTracker {
     // one would just erase the skeleton between hand frames.
     this.overlay = overlayCanvas;
     this.overlayCtx = overlayCanvas ? overlayCanvas.getContext("2d") : null;
-    this.landmarker = null;
+    this.landmarker = null; // only set on the main-thread fallback path
+    this.worker = null;
+    this._inFlight = false;
     this.running = false;
     this.opts = { ...HAND_DEFAULTS };
 
@@ -385,7 +388,57 @@ export class HandTracker {
     return this._median("rawAngle");
   }
 
+  // Inference runs in a worker when the browser allows it, because on a 120Hz
+  // display a synchronous 5-12ms call cannot fit in an 8.3ms refresh however
+  // it's scheduled. Falls back to the main thread if the worker can't start,
+  // which is why the synchronous path below is still here.
   async init() {
+    try {
+      await this._initWorker();
+      return;
+    } catch (err) {
+      console.warn("Hand worker unavailable, falling back to main thread:", err);
+      this.worker = null;
+    }
+    await this._initInline();
+  }
+
+  _initWorker() {
+    return new Promise((resolve, reject) => {
+      // Classic worker deliberately — see the note at the top of the worker.
+      const worker = new Worker(new URL("./hands-worker.js", import.meta.url));
+      const timeout = setTimeout(() => {
+        worker.terminate();
+        reject(new Error("worker init timed out"));
+      }, 20000);
+      worker.onmessage = (e) => {
+        if (e.data.type === "ready") {
+          clearTimeout(timeout);
+          this.worker = worker;
+          // Past init, every message is a detection result.
+          worker.onmessage = (ev) => {
+            if (ev.data.type !== "result") return;
+            this._inFlight = false;
+            this.detectCount++;
+            this._handleResult({ landmarks: ev.data.landmarks });
+          };
+          resolve();
+        } else if (e.data.type === "failed") {
+          clearTimeout(timeout);
+          worker.terminate();
+          reject(new Error(e.data.error));
+        }
+      };
+      worker.onerror = (err) => {
+        clearTimeout(timeout);
+        worker.terminate();
+        reject(err);
+      };
+      worker.postMessage({ type: "init" });
+    });
+  }
+
+  async _initInline() {
     const { FilesetResolver, HandLandmarker } = await import(CDN_BASE);
     const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
     const commonOpts = { runningMode: "VIDEO", numHands: 2 };
@@ -416,6 +469,8 @@ export class HandTracker {
     this.direction = null;
     this._commit({ move: 0, strafe: 0 });
     this.overlayCtx?.clearRect(0, 0, this.overlay.width, this.overlay.height);
+    this.worker?.terminate();
+    this.worker = null;
   }
 
   // Both landmarkers run detectForVideo *synchronously on the main thread*,
@@ -428,13 +483,35 @@ export class HandTracker {
   _loop(t) {
     if (!this.running) return;
     const now = performance.now();
-    const faceBusy = this.yieldTo?.() === t;
     const interval = 1000 / Math.max(1, this.opts.detectHz);
-    if (!faceBusy && now - this._lastDetect >= interval && this.video.readyState >= 2) {
+    const due = now - this._lastDetect >= interval && this.video.readyState >= 2;
+
+    if (this.worker) {
+      // Only createImageBitmap happens here — a fraction of a millisecond
+      // against the 5-12ms the inference itself costs. `_inFlight` keeps at
+      // most one frame in the worker, so a slow machine drops samples instead
+      // of building a queue that puts the input further behind over time.
+      if (due && !this._inFlight) {
+        this._lastDetect = now;
+        this._inFlight = true;
+        createImageBitmap(this.video).then(
+          (bitmap) => {
+            if (!this.running || !this.worker) {
+              bitmap.close();
+              this._inFlight = false;
+              return;
+            }
+            this.worker.postMessage({ type: "frame", bitmap, ts: now }, [bitmap]);
+          },
+          () => { this._inFlight = false; },
+        );
+      }
+    } else if (this.landmarker && due && this.yieldTo?.() !== t) {
+      // Main-thread fallback. The stagger against the face tracker only
+      // matters here, where the call really does block the frame.
       this._lastDetect = now;
       this.detectCount++;
-      const result = this.landmarker.detectForVideo(this.video, now);
-      this._handleResult(result);
+      this._handleResult(this.landmarker.detectForVideo(this.video, now));
     }
     requestAnimationFrame(this._loop);
   }

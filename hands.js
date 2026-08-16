@@ -1,6 +1,9 @@
-const CDN_BASE = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
-const MODEL_URL =
-  "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task";
+// Vendored — see the note in tracker.js. This is the main-thread fallback
+// path; the worker resolves the same files against its own location.
+const VENDOR = new URL("./vendor/", import.meta.url).href;
+const VISION_BUNDLE = `${VENDOR}tasks-vision/vision_bundle.mjs`;
+const WASM_DIR = `${VENDOR}tasks-vision/wasm`;
+const MODEL_URL = `${VENDOR}models/hand_landmarker.task`;
 
 // MediaPipe hand landmark indices. Only these are used.
 const WRIST = 0;
@@ -471,8 +474,8 @@ export class HandTracker {
   }
 
   async _initInline() {
-    const { FilesetResolver, HandLandmarker } = await import(CDN_BASE);
-    const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
+    const { FilesetResolver, HandLandmarker } = await import(VISION_BUNDLE);
+    const fileset = await FilesetResolver.forVisionTasks(WASM_DIR);
     const commonOpts = { runningMode: "VIDEO", numHands: 2 };
     try {
       this.landmarker = await HandLandmarker.createFromOptions(fileset, {

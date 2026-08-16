@@ -774,7 +774,7 @@ function withTimeout(promise, ms) {
 // worse than saying nothing.
 function startErrorMessage(err) {
   if (err?.phase === "model") {
-    return "Couldn't load the face tracking model (about 3MB). Check your connection, then try again.";
+    return "Couldn't load the face tracking model (about 6MB). Check your connection, then try again.";
   }
   switch (err?.name) {
     case "InsecureContextError":
@@ -818,7 +818,9 @@ async function startWithCamera() {
   camError.classList.add("hidden");
   setStartStatus("Starting…");
   const slowTimer = setTimeout(() => {
-    if (attempt === startAttempt) setStartStatus("Still loading — the face tracker is about 3MB.");
+    // Measured over the wire with compression on: 113KB bundle, 2.4MB wasm,
+    // 3.7MB model. Cached after the first run, hence "the first time".
+    if (attempt === startAttempt) setStartStatus("Still loading — about 6MB the first time.");
   }, START_SLOW_MS);
 
   tracker = new FaceTracker(video, videoOverlay);

@@ -1,6 +1,14 @@
-const CDN_BASE = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
-const MODEL_URL =
-  "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
+// Vendored under corridor/vendor/ rather than fetched from jsdelivr and
+// Google, for three reasons in descending order of weight. The start screen
+// promises nothing is sent anywhere, and two third-party requests hand every
+// visitor's IP to someone else. A blocked or down CDN is otherwise the single
+// likeliest way this fails for a stranger. And corridor/ is meant to drop onto
+// a site as a self-contained folder. Resolved against import.meta.url so the
+// paths hold wherever that folder is mounted.
+const VENDOR = new URL("./vendor/", import.meta.url).href;
+const VISION_BUNDLE = `${VENDOR}tasks-vision/vision_bundle.mjs`;
+const WASM_DIR = `${VENDOR}tasks-vision/wasm`;
+const MODEL_URL = `${VENDOR}models/face_landmarker.task`;
 
 function clamp(v, lo, hi) {
   return Math.max(lo, Math.min(hi, v));
@@ -93,8 +101,8 @@ export class FaceTracker {
 
   async _initModel() {
     this.onPhase?.("model");
-    const { FilesetResolver, FaceLandmarker } = await import(CDN_BASE);
-    const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
+    const { FilesetResolver, FaceLandmarker } = await import(VISION_BUNDLE);
+    const fileset = await FilesetResolver.forVisionTasks(WASM_DIR);
 
     const commonOpts = {
       outputFaceBlendshapes: true,

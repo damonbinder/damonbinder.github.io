@@ -17,16 +17,21 @@
 // either. A classic worker allows importScripts, and dynamic import() then
 // still loads the ESM bundle. Don't "modernise" this to type: "module".
 
-const CDN_BASE = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
-const MODEL_URL =
-  "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task";
+// Vendored — see the note in tracker.js. A classic worker has no
+// import.meta.url, but its `location` *is* its own script URL, which sits in
+// the same directory, so the relative paths come out identical to the
+// main-thread ones.
+const VENDOR = new URL("./vendor/", location.href).href;
+const VISION_BUNDLE = `${VENDOR}tasks-vision/vision_bundle.mjs`;
+const WASM_DIR = `${VENDOR}tasks-vision/wasm`;
+const MODEL_URL = `${VENDOR}models/hand_landmarker.task`;
 
 let landmarker = null;
 let busy = false;
 
 async function init() {
-  const { FilesetResolver, HandLandmarker } = await import(CDN_BASE);
-  const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
+  const { FilesetResolver, HandLandmarker } = await import(VISION_BUNDLE);
+  const fileset = await FilesetResolver.forVisionTasks(WASM_DIR);
   const opts = { runningMode: "VIDEO", numHands: 2 };
   try {
     landmarker = await HandLandmarker.createFromOptions(fileset, {

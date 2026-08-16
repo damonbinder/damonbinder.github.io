@@ -76,6 +76,90 @@ canvas#hud {
   pointer-events: none;
 }
 
+/* Sits above both overlays, so it stays reachable on the start and game-over
+   screens as well as mid-run. */
+.settings-btn {
+  position: absolute;
+  /* Sized as a share of the board rather than in fixed px, so its footprint in
+     the renderer's 480x360 logical space is the same whatever the board is
+     displayed at — the HUD's WAVE block is nudged clear of exactly that
+     footprint (6..28 logical px) and would collide again at a smaller size.
+     Percentage top resolves against height, left against width. */
+  top: 1.67%;
+  left: 1.25%;
+  z-index: 6;
+  width: 4.58%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(10, 12, 16, 0.45);
+  color: rgba(231, 233, 238, 0.55);
+  cursor: pointer;
+}
+
+.settings-btn svg {
+  width: 68%;
+  height: 68%;
+}
+
+.settings-btn:hover {
+  background: rgba(10, 12, 16, 0.75);
+  color: var(--text);
+}
+
+.settings-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 12, 16, 0.86);
+  backdrop-filter: blur(2px);
+}
+
+.settings-panel.hidden { display: none; }
+
+.settings-card {
+  width: min(340px, 84%);
+  max-height: 88%;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: left;
+}
+
+.settings-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.controls-list {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.controls-list b { color: var(--text); font-weight: 600; }
+
+.settings-note {
+  margin: -2px 0 16px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.settings-card .btn { width: 100%; }
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -307,8 +391,3 @@ canvas#hud {
   color: var(--accent);
 }
 
-.hint {
-  color: var(--muted);
-  font-size: 0.82rem;
-  text-align: center;
-}

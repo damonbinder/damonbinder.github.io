@@ -25,6 +25,13 @@ const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlayTitle");
 const overlaySub = document.getElementById("overlaySub");
 const startOverlay = document.getElementById("startOverlay");
+const settingsBtn = document.getElementById("settingsBtn");
+const settingsPanel = document.getElementById("settingsPanel");
+const settingsClose = document.getElementById("settingsClose");
+const volumeSlider = document.getElementById("volumeSlider");
+const volumeVal = document.getElementById("volumeVal");
+const blinkSensSlider = document.getElementById("blinkSensSlider");
+const blinkSensVal = document.getElementById("blinkSensVal");
 const startChoice = document.getElementById("startChoice");
 const startKeyboardBtn = document.getElementById("startKeyboardBtn");
 const startHandsBtn = document.getElementById("startHandsBtn");
@@ -221,6 +228,10 @@ function updateSaberHum() {
 // part of the frame the player is already looking at.
 const HUD_FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const HUD_MARGIN = 15;
+// The settings gear is a DOM button in this corner, occupying logical x 6..28
+// (it is sized as a share of the board precisely so that stays true at any
+// display size), so the wave readout starts clear of it rather than under it.
+const HUD_WAVE_X = 34;
 const HUD_LABEL = `600 7px ${HUD_FONT}`;
 const HUD_VALUE = `700 18px ${HUD_FONT}`;
 const HUD_SMALL = `600 8px ${HUD_FONT}`;
@@ -261,8 +272,8 @@ function renderStats() {
   hudCtx.shadowBlur = 4;
   hudCtx.textBaseline = "alphabetic";
 
-  hudText("WAVE", HUD_MARGIN, 20, HUD_LABEL, HUD_MUTED, "left", "1.2px");
-  hudText(String(game.wave), HUD_MARGIN, 38, HUD_VALUE, "#e7e9ee", "left");
+  hudText("WAVE", HUD_WAVE_X, 20, HUD_LABEL, HUD_MUTED, "left", "1.2px");
+  hudText(String(game.wave), HUD_WAVE_X, 38, HUD_VALUE, "#e7e9ee", "left");
 
   hudText("SCORE", right, 20, HUD_LABEL, HUD_MUTED, "right", "1.2px");
   hudText(String(game.score), right, 38, HUD_VALUE, "#e7e9ee", "right");
@@ -343,6 +354,77 @@ function refreshPauseOverlay() {
     overlay.classList.add("hidden");
   }
 }
+
+// Player-facing settings, as distinct from the ?debug=1 tuning panel. These are
+// the two knobs someone who isn't the author actually needs: a blink threshold
+// calibrated for one person in one room misfires for everybody else, and there
+// was previously no way to turn the sound off at all. Both persist, so a player
+// who gets it right once never does it again.
+const VOLUME_KEY = "corridor-volume";
+const BLINK_SENS_KEY = "corridor-blink-sens";
+
+let settingsOpen = false;
+let settingsPausedGame = false;
+
+function applyVolume(pct) {
+  volumeVal.textContent = String(pct);
+  if (volumeSlider.value !== String(pct)) volumeSlider.value = String(pct);
+  sound.setVolume(pct / 100);
+  localStorage.setItem(VOLUME_KEY, String(pct));
+}
+
+// The tracker takes a *threshold* — the blendshape level an eye has to pass to
+// count as shut — so a lower number fires more easily. The player-facing slider
+// runs the intuitive way round, which is why this is the one place the two are
+// inverted against each other. Writing the debug slider as well matters beyond
+// keeping them agreeing on screen: a tracker constructed later reads its
+// thresholds off that panel wholesale.
+function applyBlinkSensitivity(sens, { syncDebug = true } = {}) {
+  blinkSensVal.textContent = String(sens);
+  if (blinkSensSlider.value !== String(sens)) blinkSensSlider.value = String(sens);
+  tracker?.setThresholds({ blinkThreshold: (100 - sens) / 100 });
+  if (syncDebug) {
+    threshSlider.value = String(100 - sens);
+    threshVal.textContent = threshSlider.value;
+  }
+  localStorage.setItem(BLINK_SENS_KEY, String(sens));
+}
+
+function openSettings() {
+  if (settingsOpen) return;
+  settingsOpen = true;
+  // Reuse manualPause rather than inventing a second notion of "stopped" — it
+  // already gates physics, audio, and input everywhere they need gating.
+  settingsPausedGame = started && game.alive && !manualPause;
+  if (settingsPausedGame) {
+    manualPause = true;
+    refreshPauseOverlay();
+  }
+  settingsPanel.classList.remove("hidden");
+}
+
+function closeSettings() {
+  if (!settingsOpen) return;
+  settingsOpen = false;
+  settingsPanel.classList.add("hidden");
+  if (settingsPausedGame) {
+    settingsPausedGame = false;
+    manualPause = false;
+    refreshPauseOverlay();
+  }
+}
+
+settingsBtn.addEventListener("click", () => (settingsOpen ? closeSettings() : openSettings()));
+settingsClose.addEventListener("click", closeSettings);
+// Clicking the dimmed margin outside the card closes it too.
+settingsPanel.addEventListener("click", (e) => {
+  if (e.target === settingsPanel) closeSettings();
+});
+volumeSlider.addEventListener("input", () => applyVolume(Number(volumeSlider.value)));
+blinkSensSlider.addEventListener("input", () => applyBlinkSensitivity(Number(blinkSensSlider.value)));
+
+applyVolume(Number(localStorage.getItem(VOLUME_KEY) ?? volumeSlider.value));
+applyBlinkSensitivity(Number(localStorage.getItem(BLINK_SENS_KEY) ?? blinkSensSlider.value));
 
 // The SMG has no manual trigger at all — as long as the player's eyes stay
 // closed (game.playerBlinking, the same continuous signal the watcher
@@ -485,6 +567,13 @@ function fire() {
 }
 
 window.addEventListener("keydown", (e) => {
+  // With the panel up, the keyboard belongs to it — otherwise space would
+  // resume the game underneath, and the arrow keys would walk you rather than
+  // move the slider you're holding.
+  if (settingsOpen) {
+    if (e.key === "Escape") closeSettings();
+    return;
+  }
   const key = e.key.toLowerCase();
   if (["arrowup", "w"].includes(key)) {
     forwardHeld = true;
@@ -903,7 +992,9 @@ function bindSlider(slider, label, apply) {
 bindSlider(yawSlider, yawVal, (v) => tracker?.setThresholds({ yawRange: v }));
 bindSlider(pitchSlider, pitchVal, (v) => tracker?.setThresholds({ pitchRange: v }));
 bindSlider(smoothSlider, smoothVal, (v) => tracker?.setThresholds({ smoothing: v / 100 }));
-bindSlider(threshSlider, threshVal, (v) => tracker?.setThresholds({ blinkThreshold: v / 100 }));
+// Routed through applyBlinkSensitivity so the player-facing slider follows the
+// debug one; syncDebug is off to stop the two writing back at each other.
+bindSlider(threshSlider, threshVal, (v) => applyBlinkSensitivity(100 - v, { syncDebug: false }));
 bindSlider(debounceSlider, debounceVal, (v) => tracker?.setThresholds({ blinkDebounce: v }));
 bindSlider(mouthThreshSlider, mouthThreshVal, (v) => tracker?.setThresholds({ mouthThreshold: v / 100 }));
 bindSlider(mouthDebounceSlider, mouthDebounceVal, (v) => tracker?.setThresholds({ mouthDebounce: v }));

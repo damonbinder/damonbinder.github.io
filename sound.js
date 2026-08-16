@@ -58,6 +58,10 @@ export class SoundFX {
   constructor() {
     this.ctx = null;
     this.masterGain = null;
+    // Held here rather than only on the gain node, because the settings panel
+    // can be opened (and the volume set) before the first click has opened the
+    // AudioContext, at which point there is no node to write to yet.
+    this.volume = 0.5;
     this.tensionGain = null;
     this.tensionOsc = null;
     this.tensionLfo = null;
@@ -68,7 +72,7 @@ export class SoundFX {
     if (!this.ctx) {
       this.ctx = new (window.AudioContext || window.webkitAudioContext)();
       this.masterGain = this.ctx.createGain();
-      this.masterGain.gain.value = 0.5;
+      this.masterGain.gain.value = this.volume;
       // Limiter on the bus. The proximity drone is sustained and now runs
       // loud up close, so a gunshot or a hit landing on top of four voices
       // could otherwise sum past full scale and hard-clip at the destination.
@@ -86,6 +90,11 @@ export class SoundFX {
       this._startSaberHum();
     }
     if (this.ctx.state === "suspended") this.ctx.resume();
+  }
+
+  setVolume(v) {
+    this.volume = Math.max(0, Math.min(1, v));
+    if (this.masterGain) this.masterGain.gain.value = this.volume;
   }
 
   _startTension() {

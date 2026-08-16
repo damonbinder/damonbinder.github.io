@@ -20,11 +20,13 @@ purpose, because everything in it is served.
       2026-08-16 and it worked for her. That is the shipped blink threshold
       registering on a second face — the single thing most likely to have been
       overfitted to one person, and the reason this was blocking.
-      Still unknown, and worth asking while it's fresh: whether she had to
-      touch the sensitivity slider, whether she worked out the controls
-      unprompted, how far she got, and whether it was her own camera and
-      lighting or Damon's machine. A second face on the same webcam is a much
-      weaker result than a second setup.
+      **On her own machine**, so it is a second face, a second camera and a
+      second room's lighting — the strong version of the result, and the one
+      that licenses shipping. Everything the tracker reads varied at once and
+      the defaults still held.
+      Still worth asking: whether she touched the sensitivity slider, whether
+      she worked out the controls unprompted, and how far she got. Two setups
+      is not a distribution, but it is the difference between N=1 and N=2.
 
 ## Worth doing, not blocking
 

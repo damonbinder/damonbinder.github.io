@@ -78,6 +78,8 @@ const threshVal = document.getElementById("threshVal");
 const debounceVal = document.getElementById("debounceVal");
 const mouthThreshVal = document.getElementById("mouthThreshVal");
 const mouthDebounceVal = document.getElementById("mouthDebounceVal");
+const faceHzSlider = document.getElementById("faceHzSlider");
+const faceHzVal = document.getElementById("faceHzVal");
 
 const BEST_KEY = "corridor-best";
 
@@ -360,6 +362,11 @@ let perfText = "";
 // to read afterwards is the worst frame of the whole session.
 let perfWorstEver = 0;
 let perfDroppedEver = 0;
+// "Dropped" has to be measured against the display, not against 60Hz. On a
+// 120Hz panel a frame is 8.3ms and anything past ~12ms has already missed a
+// refresh, so a fixed 20ms threshold reports a handful of drops on a machine
+// that is missing most of them. Derived from the observed median.
+let perfDropThreshold = 20;
 
 function samplePerf(t, dt) {
   frameTimes.push(dt);
@@ -368,7 +375,7 @@ function samplePerf(t, dt) {
   // the initial model download rather than a stutter.
   if (started && dt < 500) {
     if (dt > perfWorstEver) perfWorstEver = dt;
-    if (dt > 20) perfDroppedEver++;
+    if (dt > perfDropThreshold) perfDroppedEver++;
   }
   if (t - perfSampledAt < 1000 || frameTimes.length < 10) return;
   const elapsed = (t - perfSampledAt) / 1000;
@@ -381,11 +388,13 @@ function samplePerf(t, dt) {
   const handRate = Math.round((hand - perfHandCount) / elapsed);
   perfFaceCount = face;
   perfHandCount = hand;
-  // A frame over 20ms missed a 60Hz refresh; over 33ms it missed two.
-  const dropped = sorted.filter((x) => x > 20).length;
+  // 1.5 refreshes: past this the frame has certainly missed one.
+  perfDropThreshold = median * 1.5;
+  const dropped = sorted.filter((x) => x > perfDropThreshold).length;
   perfText =
     `fps ${Math.round(1000 / median)}   frame ${median.toFixed(1)}ms   ` +
-    `worst ${sorted[sorted.length - 1].toFixed(1)}ms   >20ms ${dropped}/${sorted.length}\n` +
+    `worst ${sorted[sorted.length - 1].toFixed(1)}ms   ` +
+    `>${perfDropThreshold.toFixed(0)}ms ${dropped}/${sorted.length}\n` +
     `session worst ${perfWorstEver.toFixed(1)}ms   dropped ${perfDroppedEver}   ` +
     `infer face ${faceRate}/s hand ${handRate}/s`;
   perfEl.textContent = `${Math.round(1000 / median)}`;
@@ -394,19 +403,33 @@ function samplePerf(t, dt) {
   if (!tracker && debugToggle.checked) debugReadout.textContent = perfText;
 }
 
+// Render at most ~60fps even on a 120Hz display. A 480x360 raycaster gains
+// nothing from 120, and on a ProMotion panel the frame budget is 8.3ms while a
+// single MediaPipe call is 5-12ms — so at 120Hz an inference call cannot fit
+// beside anything. Rendering every other refresh halves how often a render
+// shares a frame with one, and gives a steady 60Hz cadence instead of a
+// nominal 120 punctured by misses, which is what actually reads as stutter.
+const RENDER_MIN_MS = 15;
+let lastRenderAt = 0;
+
 function loop(t) {
   requestAnimationFrame(loop);
   const dt = lastFrameTime ? t - lastFrameTime : 16;
   lastFrameTime = t;
   if (DEBUG) samplePerf(t, dt);
   if (!started) return;
+  if (t - lastRenderAt < RENDER_MIN_MS) return;
+  // Physics must step by the render interval, not the refresh interval, or
+  // capping the rate would halve the speed of the whole game.
+  const rdt = lastRenderAt ? t - lastRenderAt : 16;
+  lastRenderAt = t;
   // Clamp so a backgrounded/throttled tab can't fast-forward the player
   // through many physics steps (and through walls) in one jump.
-  if (game.alive && !manualPause) game.advance(Math.min(dt, 100));
+  if (game.alive && !manualPause) game.advance(Math.min(rdt, 100));
   renderHud();
   updateDanger();
   updateSaberHum();
-  updateSmgAutoFire(dt);
+  updateSmgAutoFire(rdt);
 }
 requestAnimationFrame((t) => {
   lastFrameTime = t;
@@ -558,6 +581,7 @@ async function startWithCamera() {
     blinkDebounce: Number(debounceSlider.value),
     mouthThreshold: Number(mouthThreshSlider.value) / 100,
     mouthDebounce: Number(mouthDebounceSlider.value),
+    detectHz: Number(faceHzSlider.value),
   });
   tracker.onUpdate = ({ hasFace, nx, ny }) => {
     reticleNX = nx;
@@ -771,6 +795,7 @@ bindSlider(threshSlider, threshVal, (v) => tracker?.setThresholds({ blinkThresho
 bindSlider(debounceSlider, debounceVal, (v) => tracker?.setThresholds({ blinkDebounce: v }));
 bindSlider(mouthThreshSlider, mouthThreshVal, (v) => tracker?.setThresholds({ mouthThreshold: v / 100 }));
 bindSlider(mouthDebounceSlider, mouthDebounceVal, (v) => tracker?.setThresholds({ mouthDebounce: v }));
+bindSlider(faceHzSlider, faceHzVal, (v) => tracker?.setThresholds({ detectHz: v }));
 
 invertXBox.addEventListener("change", () => tracker?.setThresholds({ invertX: invertXBox.checked }));
 invertYBox.addEventListener("change", () => tracker?.setThresholds({ invertY: invertYBox.checked }));

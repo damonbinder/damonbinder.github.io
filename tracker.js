@@ -44,6 +44,12 @@ export class FaceTracker {
     this.onMouthOpen = null; // ()
     this.onDebug = null;
     this.lastVideoTime = -1;
+    // Cap on detections per second. Uncapped it runs at the camera's frame
+    // rate, and each call is several milliseconds of blocking main-thread
+    // work — on a 120Hz display that is a missed refresh every time. Lower it
+    // to buy frames back, at the cost of aim smoothness and blink latency.
+    this.detectHz = 30;
+    this._lastDetect = 0;
     // The rAF timestamp of the last frame this actually ran inference on.
     // detectForVideo is synchronous and blocks the main thread, so anything
     // else doing inference needs to know not to pile into the same frame —
@@ -55,7 +61,7 @@ export class FaceTracker {
 
   setThresholds({
     yawRange, pitchRange, smoothing, invertX, invertY,
-    blinkThreshold, blinkDebounce, mouthThreshold, mouthDebounce,
+    blinkThreshold, blinkDebounce, mouthThreshold, mouthDebounce, detectHz,
   }) {
     if (yawRange != null) this.yawRange = yawRange;
     if (pitchRange != null) this.pitchRange = pitchRange;
@@ -66,6 +72,7 @@ export class FaceTracker {
     if (blinkDebounce != null) this.blinkDebounce = blinkDebounce;
     if (mouthThreshold != null) this.mouthThreshold = mouthThreshold;
     if (mouthDebounce != null) this.mouthDebounce = mouthDebounce;
+    if (detectHz != null) this.detectHz = detectHz;
   }
 
   async init() {
@@ -123,7 +130,10 @@ export class FaceTracker {
 
   _loop(t) {
     if (!this.running) return;
-    if (this.video.readyState >= 2 && this.video.currentTime !== this.lastVideoTime) {
+    const now = performance.now();
+    const due = now - this._lastDetect >= 1000 / Math.max(1, this.detectHz);
+    if (due && this.video.readyState >= 2 && this.video.currentTime !== this.lastVideoTime) {
+      this._lastDetect = now;
       this.lastVideoTime = this.video.currentTime;
       this.lastDetectFrame = t;
       this.detectCount++;

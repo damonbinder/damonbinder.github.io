@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Blink — OG image generator</title>
+<style>
+  body { margin: 0; padding: 24px; background: #0b0d11; color: #e7e9ee;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  p { max-width: 1200px; font-size: 0.9rem; line-height: 1.5; color: #8a90a0; }
+  canvas { display: block; max-width: 100%; box-shadow: 0 0 0 1px #262b36; }
+</style>
+</head>
+<body>
+  <p>Regenerates <code>corridor/og.jpg</code> at 1200&times;630. Right-click the image
+     and save it over the existing file. Serve the project and open
+     <code>/corridor/tools/og.html</code> — opening it from the filesystem will not work,
+     because it imports the game as a module.</p>
+  <canvas id="og" width="1200" height="630"></canvas>
+
+<script type="module">
+import { CorridorGame } from "../game.js";
+
+// Renders the game's own view, then holds it well back behind the type. The
+// game is a flat-shaded raycaster with flat-colour enemies: it does not carry a
+// still on its own, and a link unfurl is only ~300px wide, where the type is
+// the only thing that survives. So the frame is atmosphere, not subject.
+const src = document.createElement("canvas");
+const g = new CorridorGame(src);
+g.wave = 8;
+g._spawnWave();
+
+// The bottom corridor, looking east — the longest sightline on the map (17.5u)
+// and the strongest perspective lines the renderer produces.
+g.player.x = 2.6; g.player.y = 14.5; g.player.angle = 0;
+const cast = [["normal", 6.0, -6], ["runner", 8.2, 5], ["triple", 10.5, -3], ["watcher", 12.6, 4]];
+g.enemies.forEach((en) => { en.alive = false; });
+cast.forEach(([type, dist, offDeg], i) => {
+  const a = g.player.angle + (offDeg * Math.PI) / 180;
+  const x = g.player.x + Math.cos(a) * dist;
+  const y = g.player.y + Math.sin(a) * dist;
+  if (g._isWall(x, y)) return; // the corridor is one tile wide; wide angles land in walls
+  const en = g.enemies[i];
+  if (!en) return;
+  en.type = type; en.x = x; en.y = y; en.alive = true;
+  en.frozen = false; en.hp = type === "triple" ? 3 : 1; en.hitFlash = 0;
+});
+g.weapon = "saber"; // the only bright accent the game has
+g._raycastAndProject();
+g.draw();
+
+const out = document.getElementById("og");
+const c = out.getContext("2d");
+c.fillStyle = "#0b0d11";
+c.fillRect(0, 0, 1200, 630);
+// Scale to cover the width, cropped so the horizon sits high and the blade runs
+// out of the bottom-right corner.
+c.globalAlpha = 0.52;
+c.drawImage(src, 0, 0, 960, 720, 0, -170, 1200, 900);
+c.globalAlpha = 1;
+const veil = c.createLinearGradient(0, 0, 900, 0);
+veil.addColorStop(0, "rgba(11,13,17,0.96)");
+veil.addColorStop(0.62, "rgba(11,13,17,0.6)");
+veil.addColorStop(1, "rgba(11,13,17,0.1)");
+c.fillStyle = veil;
+c.fillRect(0, 0, 1200, 630);
+
+const rx = 104, ry = 232, R = 30, gap = 10;
+c.strokeStyle = "#4ade80";
+c.lineWidth = 5;
+c.lineCap = "round";
+c.beginPath();
+c.moveTo(rx - R, ry); c.lineTo(rx - gap, ry);
+c.moveTo(rx + gap, ry); c.lineTo(rx + R, ry);
+c.moveTo(rx, ry - R); c.lineTo(rx, ry - gap);
+c.moveTo(rx, ry + gap); c.lineTo(rx, ry + R);
+c.stroke();
+
+c.fillStyle = "#e7e9ee";
+c.font = "700 112px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+c.letterSpacing = "6px";
+c.fillText("Blink", 76, 400);
+c.letterSpacing = "0px";
+c.fillStyle = "rgba(231,233,238,0.7)";
+c.font = "500 36px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+c.fillText("Look to aim. Blink to shoot.", 82, 462);
+</script>
+</body>
+</html>

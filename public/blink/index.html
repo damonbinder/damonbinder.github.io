@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blink</title>
+<!-- og:image and og:url must be absolute — link scrapers are not browsers and
+     mostly will not resolve a relative path. Change these two if the game ever
+     moves; everything else on the page is relative and travels fine. -->
+<!-- REMOVE BEFORE GOING PUBLIC. Here so an unlisted test deploy can't be
+     indexed if the URL leaks; left in, the game is permanently unfindable. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="A browser shooter you aim by looking and fire by blinking. Runs entirely on your own machine — no video is uploaded or stored." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Blink" />
+<meta property="og:description" content="A browser shooter you aim by looking and fire by blinking. Runs entirely on your own machine — no video is uploaded or stored." />
+<meta property="og:url" content="https://djbinder.com/blink/" />
+<meta property="og:image" content="https://djbinder.com/blink/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="A dark corridor with an enemy ahead and an energy blade held at the ready, captioned: look to aim, blink to shoot." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Blink</h1>
+    </header>
+
+    <div class="board">
+      <!-- Both backing stores are resized to RENDER_SCALE x this in JS; the
+           attributes just fix the aspect ratio before the module runs. -->
+      <canvas id="game" width="960" height="720"></canvas>
+      <canvas id="hud" width="960" height="720"></canvas>
+
+      <!-- Top-left, because the HUD's WAVE block there is one small number and
+           is nudged right to clear it; every other corner carries two lines. -->
+      <button id="settingsBtn" class="settings-btn" aria-label="Settings" title="Settings">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+
+      <div id="settingsPanel" class="settings-panel hidden">
+        <div class="settings-card">
+          <div class="settings-title">Settings</div>
+
+          <!-- Only this middle section scrolls, so the Done button stays put on
+               a short viewport — the hands control list is long enough to
+               overflow the card and was pushing it off the bottom. -->
+          <div class="settings-body">
+          <!-- The movement lines swap with the control scheme; main.js puts
+               mode-keys / mode-wheel / mode-thumb on the list when the panel
+               opens. Aiming, firing, weapon and pause are the same either way. -->
+          <ul id="controlsList" class="controls-list mode-keys">
+            <li><b>Look around</b> to aim.</li>
+            <li><b>Blink</b> to shoot.</li>
+            <li class="ctrl-keys"><b>WASD</b> or the <b>arrow keys</b> to move.</li>
+            <li class="ctrl-wheel"><b>Hold both hands up</b> like a steering wheel. Tilt it to strafe, raise or lower it to walk, and <b>open both palms</b> to stop dead.</li>
+            <li class="ctrl-wheel">Where you rest your hands is read off the blink that starts the game.</li>
+            <li class="ctrl-thumb"><b>Make a fist with your thumb out.</b> Thumb up walks forward, down or toward yourself backs up, left and right strafe.</li>
+            <li class="ctrl-keys"><b>Open your mouth</b>, or press <b>R</b>, to change weapon.</li>
+            <li class="ctrl-hands"><b>Open your mouth</b> to change weapon.</li>
+            <li><b>Space</b> to pause, and to restart once you're dead.</li>
+          </ul>
+
+          <label class="slider-row">
+            <span>Volume <span id="volumeVal">50</span>%</span>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50" />
+          </label>
+          <label class="slider-row">
+            <span>Blink sensitivity <span id="blinkSensVal">80</span>%</span>
+            <input type="range" id="blinkSensSlider" min="10" max="90" value="80" />
+          </label>
+          </div>
+
+          <button id="settingsClose" class="btn">Done</button>
+        </div>
+      </div>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-inner">
+          <div id="overlayTitle">Game over</div>
+          <div id="overlaySub">Press space to restart</div>
+          <!-- Space restarts with whatever you were already using; these are
+               only for switching. A hands-free player can still reach space. -->
+          <div id="restartChoice" class="choice-row hidden">
+            <button id="restartKeyboardBtn" class="btn">Keyboard</button>
+            <button id="restartHandsBtn" class="btn">Hands</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="startOverlay" class="overlay">
+        <div class="overlay-inner">
+          <!-- Said before the permission prompt, not after: "where does the
+               video go" is the first thing anyone asks of a webcam page, and
+               it's a poor answer once the browser has already asked. -->
+          <p id="startIntro" class="start-intro">
+            This game uses your webcam. Everything runs on your own machine —
+            no video is uploaded, recorded, or sent anywhere.
+          </p>
+          <div id="startChoice" class="choice-row">
+            <button id="startKeyboardBtn" class="btn">Keyboard</button>
+            <button id="startHandsBtn" class="btn">Hands</button>
+          </div>
+          <div id="startPrompt" class="start-prompt hidden">Blink to start</div>
+          <!-- Without this, clicking Start looks identical whether it is
+               working, downloading 3MB slowly, or already dead. -->
+          <div id="startStatus" class="start-status hidden"></div>
+          <div id="startError" class="start-error hidden">
+            <p id="startErrorMsg"></p>
+            <button id="retryBtn" class="btn">Try again</button>
+          </div>
+          <div id="mobileNotice" class="mobile-notice hidden">
+            <b>Desktop only.</b> This one needs a webcam you're sitting in
+            front of, and a keyboard.
+          </div>
+          <div id="camError" class="cam-error hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score/health/ammo/weapon/wave are drawn on the canvas itself now; what
+         is left down here is calibration readout, so the whole strip is
+         debug-only and the default view is just the board. -->
+    <div class="hud debug-only">
+      <div class="stat gaze-stat debug-only">
+        <span class="label">Track</span>
+        <span id="trackState" class="value gaze-unknown">–</span>
+      </div>
+      <div class="stat debug-only">
+        <span class="label">Blinks</span>
+        <span id="blinkCount" class="value">0</span>
+      </div>
+      <div class="stat gaze-stat debug-only">
+        <span class="label">Mouth</span>
+        <span id="mouthState" class="value gaze-unknown">–</span>
+      </div>
+      <div class="stat debug-only">
+        <span class="label">Swings</span>
+        <span id="swingCount" class="value">0</span>
+      </div>
+      <div class="stat gaze-stat debug-only">
+        <span class="label">Hand</span>
+        <span id="handState" class="value gaze-unknown">–</span>
+      </div>
+      <div class="stat debug-only">
+        <span class="label">FPS</span>
+        <span id="perf" class="value">–</span>
+      </div>
+    </div>
+
+    <div class="panels debug-only">
+      <div class="panel camera-panel">
+        <div class="panel-title">Camera</div>
+        <div class="video-box">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="videoOverlay"></canvas>
+          <!-- Separate from videoOverlay: the face box is redrawn at video
+               rate and would erase the hand skeleton between hand frames. -->
+          <canvas id="handOverlay"></canvas>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="showCamera" checked />
+          Show camera preview
+        </label>
+      </div>
+
+      <div class="panel tuning-panel">
+        <div class="panel-title">Sensitivity</div>
+        <label class="slider-row">
+          <span>Look range (horizontal) <span id="yawVal">15</span>°</span>
+          <input type="range" id="yawSlider" min="10" max="60" value="15" />
+        </label>
+        <label class="slider-row">
+          <span>Look range (vertical) <span id="pitchVal">15</span>°</span>
+          <input type="range" id="pitchSlider" min="10" max="50" value="15" />
+        </label>
+        <label class="slider-row">
+          <span>Tracking smoothness <span id="smoothVal">60</span>%</span>
+          <input type="range" id="smoothSlider" min="2" max="60" value="60" />
+        </label>
+        <label class="slider-row">
+          <span>Blink threshold <span id="threshVal">20</span>%</span>
+          <input type="range" id="threshSlider" min="10" max="90" value="20" />
+        </label>
+        <label class="slider-row">
+          <span>Frames to confirm <span id="debounceVal">1</span></span>
+          <input type="range" id="debounceSlider" min="1" max="8" value="1" />
+        </label>
+        <label class="slider-row">
+          <span>Mouth-open threshold <span id="mouthThreshVal">35</span>%</span>
+          <input type="range" id="mouthThreshSlider" min="10" max="90" value="35" />
+        </label>
+        <label class="slider-row">
+          <span>Mouth frames to confirm <span id="mouthDebounceVal">1</span></span>
+          <input type="range" id="mouthDebounceSlider" min="1" max="8" value="1" />
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="invertX" checked />
+          Invert horizontal
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="invertY" />
+          Invert vertical
+        </label>
+        <label class="slider-row">
+          <span>Face detections per second <span id="faceHzVal">30</span></span>
+          <input type="range" id="faceHzSlider" min="8" max="30" value="30" />
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="invertHands" />
+          Invert hand left/right
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="debugToggle" />
+          Show debug scores
+        </label>
+        <div id="debugReadout" class="debug-readout hidden"></div>
+        <div class="fallback-row">
+          <button id="fallbackBtn" class="link-btn">No camera? Use mouse/click instead</button>
+        </div>
+      </div>
+
+      <!-- Needs both flags: ?debug=1 strips debug-only, ?hands=1 strips
+           hands-only, so the panel is hidden unless hand steering is
+           actually running. -->
+      <div class="panel hand-panel debug-only hands-only">
+        <div class="panel-title">Hand steering</div>
+        <label class="slider-row">
+          <span>Scheme</span>
+          <select id="handModeSelect">
+            <option value="wheel" selected>Steering wheel (two hands)</option>
+            <option value="thumb">Thumb direction (one hand)</option>
+          </select>
+        </label>
+        <div class="calibrate-row">
+          <button id="calibrateHands" class="link-btn"></button>
+          <span id="calibrateResult" class="calibrate-result"></span>
+        </div>
+        <!-- Not mode-specific: this is what hand steering costs in frame time,
+             at roughly 12ms of blocking inference per detection. -->
+        <label class="slider-row">
+          <span>Detections per second <span id="handHzVal">20</span></span>
+          <input type="range" id="handHzSlider" min="5" max="30" value="20" />
+        </label>
+
+        <div class="wheel-only">
+          <label class="toggle">
+            <input type="checkbox" id="handStopOpen" checked />
+            Open both palms to stop
+          </label>
+          <label class="slider-row">
+            <span>Tilt deadzone <span id="handTiltDeadVal">8</span>°</span>
+            <input type="range" id="handTiltDeadSlider" min="0" max="30" value="8" />
+          </label>
+          <label class="slider-row">
+            <span>Tilt for full strafe <span id="handTiltRangeVal">26</span>°</span>
+            <input type="range" id="handTiltRangeSlider" min="10" max="80" value="26" />
+          </label>
+          <label class="slider-row">
+            <span>Raise deadzone <span id="handRaiseDeadVal">5</span>%</span>
+            <input type="range" id="handRaiseDeadSlider" min="0" max="25" value="5" />
+          </label>
+          <label class="slider-row">
+            <span>Raise for full speed <span id="handRaiseRangeVal">12</span>%</span>
+            <input type="range" id="handRaiseRangeSlider" min="5" max="45" value="12" />
+          </label>
+          <label class="slider-row">
+            <span>Speed on leaving deadzone <span id="handMinSpeedVal">60</span>%</span>
+            <input type="range" id="handMinSpeedSlider" min="0" max="100" value="60" />
+          </label>
+        </div>
+
+        <div class="thumb-only">
+          <label class="slider-row">
+            <span>Angle offset <span id="handOffsetVal">0</span>°</span>
+            <input type="range" id="handOffsetSlider" min="-90" max="90" value="0" />
+          </label>
+          <label class="slider-row">
+            <span>Left/right sector <span id="handHorizVal">44</span>°</span>
+            <input type="range" id="handHorizSlider" min="15" max="70" value="44" />
+          </label>
+          <label class="slider-row">
+            <span>Up/down sector <span id="handVertVal">34</span>°</span>
+            <input type="range" id="handVertSlider" min="15" max="70" value="34" />
+          </label>
+          <label class="slider-row">
+            <span>Fingers curled <span id="handCurlVal">3</span>/4</span>
+            <input type="range" id="handCurlSlider" min="1" max="4" value="3" />
+          </label>
+          <label class="slider-row">
+            <span>Thumb clear of fist <span id="handOutVal">55</span>%</span>
+            <input type="range" id="handOutSlider" min="15" max="90" value="55" />
+          </label>
+          <label class="slider-row">
+            <span>Min thumb length <span id="handLenVal">22</span>%</span>
+            <input type="range" id="handLenSlider" min="5" max="60" value="22" />
+          </label>
+          <label class="slider-row">
+            <span>Thumb-at-me sensitivity <span id="handTowardVal">100</span>%</span>
+            <input type="range" id="handTowardSlider" min="30" max="300" value="100" />
+          </label>
+          <label class="slider-row">
+            <span>Frames to confirm <span id="handDebounceVal">1</span></span>
+            <input type="range" id="handDebounceSlider" min="1" max="8" value="1" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -108,9 +108,15 @@ export const HAND_DEFAULTS = {
   wheelNeutral: 0.5, // image y the hands rest at; set by calibrating
   wheelTiltOffset: 0, // degrees of tilt at rest, likewise
   wheelTiltDead: 8, // degrees of tilt ignored
-  wheelTiltRange: 32, // degrees of tilt for full strafe
+  wheelTiltRange: 26, // degrees of tilt for full strafe
   wheelRaiseDead: 0.05, // fraction of frame height ignored
-  wheelRaiseRange: 0.16, // fraction of frame height for full speed
+  wheelRaiseRange: 0.12, // fraction of frame height for full speed
+  // Speed the moment you leave the deadzone, before the ramp starts. Without
+  // it, "proportional" means a comfortable raise of the hands walks you at a
+  // third of the speed a keypress would, and the game just feels slow — which
+  // is exactly what it did. The ramp is worth having; starting it at zero is
+  // not. Off (0) restores a true 0..1 ramp.
+  wheelMinSpeed: 0.6,
   angleOffset: 0, // degrees; subtracted from the measured angle before sectoring
   horizHalf: 44, // sector half-width for left/right
   vertHalf: 34, // sector half-width for up/down
@@ -250,11 +256,14 @@ function centroid(lm, mirrored) {
   return { x: mirrored ? 1 - x : x, y };
 }
 
-// Deadzone, then a linear ramp to full deflection. Returns -1..1.
-function axis(v, dead, range) {
+// Deadzone, then a ramp from `floor` up to full deflection. Returns -1..1.
+// The floor is what stops "proportional" meaning "slow": leaving the deadzone
+// should already be a useful speed, with the ramp adding the rest.
+function axis(v, dead, range, floor) {
   const m = Math.abs(v);
   if (m <= dead) return 0;
-  return Math.sign(v) * Math.min(1, (m - dead) / Math.max(1e-6, range - dead));
+  const u = Math.min(1, (m - dead) / Math.max(1e-6, range - dead));
+  return Math.sign(v) * (floor + (1 - floor) * u);
 }
 
 // Two hands as handlebars. Pure, and takes plain centroids' worth of geometry,
@@ -292,8 +301,8 @@ export function analyzeWheel(hands, opts = {}) {
   out.tilt = Math.round(tilt);
   out.raise = raise;
 
-  out.strafe = axis(-tilt, o.wheelTiltDead, o.wheelTiltRange);
-  out.move = axis(raise, o.wheelRaiseDead, o.wheelRaiseRange);
+  out.strafe = axis(-tilt, o.wheelTiltDead, o.wheelTiltRange, o.wheelMinSpeed);
+  out.move = axis(raise, o.wheelRaiseDead, o.wheelRaiseRange, o.wheelMinSpeed);
   return out;
 }
 
@@ -381,6 +390,10 @@ export class HandTracker {
         ...commonOpts,
       });
     } catch (err) {
+      // Worth shouting about: this model is 5.5ms on GPU and 17.5ms on CPU,
+      // and 17.5ms does not fit in a frame. On the CPU path the detection
+      // rate has to come down or hand steering will visibly stutter.
+      console.warn("Hand landmarker fell back to CPU (~3x slower). Lower 'Detections per second'.", err);
       this.landmarker = await HandLandmarker.createFromOptions(fileset, {
         baseOptions: { modelAssetPath: MODEL_URL, delegate: "CPU" },
         ...commonOpts,

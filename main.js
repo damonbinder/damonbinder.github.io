@@ -43,6 +43,7 @@ const HAND_SLIDERS = [
   ["handTiltRangeSlider", "handTiltRangeVal", "wheelTiltRange", 1],
   ["handRaiseDeadSlider", "handRaiseDeadVal", "wheelRaiseDead", 0.01],
   ["handRaiseRangeSlider", "handRaiseRangeVal", "wheelRaiseRange", 0.01],
+  ["handMinSpeedSlider", "handMinSpeedVal", "wheelMinSpeed", 0.01],
   ["handOffsetSlider", "handOffsetVal", "angleOffset", 1],
   ["handHorizSlider", "handHorizVal", "horizHalf", 1],
   ["handVertSlider", "handVertVal", "vertHalf", 1],

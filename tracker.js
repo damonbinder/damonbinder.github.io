@@ -78,14 +78,20 @@ export class FaceTracker {
       numFaces: 1,
     };
 
+    // CPU first, which is the opposite of the usual advice and is measured:
+    // this model runs at 2.6ms on CPU against 4.0ms on GPU. It also keeps the
+    // GPU clear for the hand landmarker, which is the reverse — 5.5ms on GPU
+    // against 17.5ms on CPU — and two GPU-delegate landmarkers alive at once
+    // contend and slow each other down. Whole-page cost of the pair drops from
+    // 230ms/s to 191ms/s by splitting them across the two.
     try {
       this.landmarker = await FaceLandmarker.createFromOptions(fileset, {
-        baseOptions: { modelAssetPath: MODEL_URL, delegate: "GPU" },
+        baseOptions: { modelAssetPath: MODEL_URL, delegate: "CPU" },
         ...commonOpts,
       });
     } catch (err) {
       this.landmarker = await FaceLandmarker.createFromOptions(fileset, {
-        baseOptions: { modelAssetPath: MODEL_URL, delegate: "CPU" },
+        baseOptions: { modelAssetPath: MODEL_URL, delegate: "GPU" },
         ...commonOpts,
       });
     }

@@ -4,9 +4,15 @@ A first-person shooter in the browser, aimed by head movement and fired by
 blinking. Vanilla ES modules, canvas 2D, no build step — the whole game is the
 files in this folder, and it makes no third-party requests at runtime.
 
-Served at `djbinder.com/blink/`. This folder lives inside the website repo's
-`public/`, which Astro copies verbatim at build time, so **editing it here is
-deploying it**. Local dev is `npm run dev` from the repo root — note the dev
+The game lives at `public/blink/`, which Astro copies verbatim at build time,
+so **editing it there is deploying it** — it is served at `djbinder.com/blink/`.
+
+**These notes deliberately do not live beside it.** Everything under `public/`
+is published, and this file explains the things the game makes you discover:
+that watchers only advance while you are not looking at them, how the heal pad
+decays as a wave clears, the whole wave table. `/blink/CLAUDE.md` is exactly
+what a curious reader tries. Keep documentation here, in `docs/blink/`, and
+code there. Local dev is `npm run dev` from the repo root — note the dev
 server wants `/blink/index.html`; only production resolves the bare `/blink/`.
 
 It began as `corridor/` in a private repo of five webcam games, and its history

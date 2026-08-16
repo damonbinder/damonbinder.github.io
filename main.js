@@ -450,7 +450,28 @@ function beginGame() {
 function armBlinkStart() {
   awaitingStartBlink = true;
   startBtn.classList.add("hidden");
+  // In wheel mode the starting blink doubles as the calibration sample, so
+  // the prompt has to ask for the hands too. Whatever height and tilt the
+  // player is resting at when they blink becomes the neutral, which beats any
+  // default: the alternative is guessing where someone sits relative to their
+  // own webcam.
+  if (HANDS && handModeSelect.value === "wheel") {
+    startPrompt.textContent = "Hold your hands up, then blink to start";
+  }
   startPrompt.classList.remove("hidden");
+}
+
+// Deliberately never blocks the start. Hand tracking is loaded fire-and-forget
+// and can still be downloading, or can have failed outright, and neither is a
+// reason to leave someone stuck on the start screen — they just get the
+// default neutral and the panel's calibrate button.
+function calibrateWheelFromStart() {
+  if (!handTracker || handTracker.opts.mode !== "wheel") return;
+  const res = handTracker.calibrate();
+  // calibrate() returns null unless it actually saw two hands, so a player
+  // who blinked with their hands down keeps the previous neutral rather than
+  // having it set to their lap.
+  if (res) calibrateResult.textContent = `neutral ${res.neutral}, tilt ${res.tilt}°`;
 }
 
 async function startWithCamera() {
@@ -476,8 +497,11 @@ async function startWithCamera() {
   tracker.onBlink = () => {
     blinkCount++;
     blinkCountEl.textContent = blinkCount;
-    // The blink that starts the game shouldn't also be the first shot.
+    // The blink that starts the game shouldn't also be the first shot, and in
+    // wheel mode it's also the moment the player's resting hand position is
+    // sampled.
     if (awaitingStartBlink) {
+      calibrateWheelFromStart();
       beginGame();
       return;
     }

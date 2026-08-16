@@ -12,6 +12,8 @@ Astro rebuild — **live at [djbinder.com](https://djbinder.com) since 2026-07-1
 
 ## Post-launch follow-ups (non-blocking — edits auto-redeploy on push to `master`)
 
+- [ ] **Blink** — the webcam game at `public/blink/`, live but unlisted. Its own list is `docs/blink/TODO.md`; what's outstanding there is removing the `noindex` tag and linking to it from the site.
+
 - [ ] **Ancient Mediterranean era text** — final read-through by Damon. Open micro-decisions: "Mithaikos" vs "Mithaecus" spelling (essay vs citations); the "Dining Philosophers" gloss for *Deipnosophistae*.
 - [ ] **Two flagged recipes** — `lentils-with-greens` (Heidelberg entry number?) and `cabbage-salad` (confirm Mnesitheus-in-Oribasius, Cato cross-ref dropped).
 - [ ] **Hub — lead copy**: "I've cooked hundreds…" vs the 19 recipes currently visible publicly.

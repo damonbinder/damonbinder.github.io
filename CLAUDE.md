@@ -22,8 +22,13 @@ All content is in markdown/data files — **do not hardcode content inside `.ast
 | About page | `src/data/about.md` |
 | Home blurb + portrait | `src/pages/index.astro` — the blurb is inline here (it's part of the hero layout); photo at `public/face.jpg` |
 | Recipes | `src/content/recipes/*.md` (one file per recipe) + `src/data/sources/*.ts` (complete source texts) |
+| Blink (the game) | `public/blink/` — a self-contained static app, notes in `docs/blink/` |
 
 Note: the blog posts folder is still named `writing/` (leftover from before the section was renamed "Blog"). Renaming it to `blog/` is on the TODO.
+
+**Everything under `public/` is copied verbatim into the build and served.** That is what makes `public/blink/` work — vanilla ES modules, no Astro involvement, editing it *is* deploying it — and it is also why that game's `CLAUDE.md` and `TODO.md` live in `docs/blink/` instead of beside the code. They were briefly in `public/` and were live at `/blink/CLAUDE.md`, which spoiled mechanics the game is meant to make you discover. Don't put anything under `public/` that you wouldn't publish.
+
+**Blink is deliberately unlisted**: nothing links to it, and `public/blink/index.html` carries a `noindex` tag. Both are meant to come off together when it goes public — see `docs/blink/TODO.md`.
 
 ## Architecture
 

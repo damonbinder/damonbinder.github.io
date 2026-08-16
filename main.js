@@ -108,6 +108,7 @@ let handTracker = null;
 let handMove = 0;
 let handStrafe = 0;
 let lastHandReadout = "";
+let lastReadoutAt = 0;
 let started = false;
 let awaitingStartBlink = false;
 let lastFrameTime = 0;
@@ -627,8 +628,9 @@ async function startWithCamera() {
     reticleNX = nx;
     reticleNY = ny;
     game.setTurnDir(turnInputFromNX(reticleNX));
-    trackStateEl.textContent = hasFace ? "Tracking" : "Lost";
-    trackStateEl.className = `value ${hasFace ? "gaze-running" : "gaze-paused"}`;
+    // Only on change: this runs at the detection rate, and assigning className
+    // is a style recalc whether or not the value differs.
+    setStat(trackStateEl, hasFace ? "Tracking" : "Lost", hasFace ? "gaze-running" : "gaze-paused");
   };
   tracker.onBlink = () => {
     blinkCount++;
@@ -659,9 +661,15 @@ async function startWithCamera() {
   // this: talking or laughing at the wrong threshold will cycle your weapon.
   tracker.onDebug = ({ hasFace, yaw, pitch, nx, ny, left, right, blinking, jawOpen, mouthOpen }) => {
     game.setPlayerBlinking(blinking);
-    mouthStateEl.textContent = mouthOpen ? "Open" : "Closed";
-    mouthStateEl.className = `value ${mouthOpen ? "gaze-paused" : "gaze-running"}`;
+    setStat(mouthStateEl, mouthOpen ? "Open" : "Closed", mouthOpen ? "gaze-paused" : "gaze-running");
     if (!debugToggle.checked) return;
+    // Throttled hard. This fires at the face detection rate, and rewriting a
+    // multi-line textContent 24 times a second is a style recalc 24 times a
+    // second — enough to show up as jitter in the very numbers it is printing.
+    // Nothing here changes fast enough to be worth reading more often.
+    const nowMs = performance.now();
+    if (nowMs - lastReadoutAt < 250) return;
+    lastReadoutAt = nowMs;
     const fmt = (n) => (n == null ? "—" : n.toFixed(1));
     debugReadout.textContent =
       `face: ${hasFace ? "yes" : "no"}\n` +
@@ -704,6 +712,15 @@ async function startWithCamera() {
 // Read the whole panel at once. Doing it this way rather than pushing single
 // values on each input event means a tracker created *after* the sliders have
 // been touched still comes up with what's on screen.
+// Writes only when the value actually changed. These stats update at the
+// detection rate, and both textContent and className cost a style recalc on
+// every assignment regardless of whether anything differs.
+function setStat(el, text, cls) {
+  if (el.textContent !== text) el.textContent = text;
+  const full = `value ${cls}`;
+  if (el.className !== full) el.className = full;
+}
+
 function handOptionsFromPanel() {
   // Unchecked is the expected case: raw front-camera frames aren't mirrored,
   // so the sign flip is on by default. The checkbox is here because this is
@@ -746,10 +763,13 @@ async function startHandTracking() {
   handTracker.onSteer = applyHandSteer;
   handTracker.onUpdate = ({ mode, hasHand, handCount, direction, steer, info, seenPct, posePct, medianAngle }) => {
     const live = steer.move !== 0 || steer.strafe !== 0;
-    handStateEl.textContent = mode === "wheel"
-      ? info.stopped ? "STOP" : `${handCount}h ${steer.move.toFixed(1)}/${steer.strafe.toFixed(1)}`
-      : hasHand ? direction || "—" : "none";
-    handStateEl.className = `value ${live ? "gaze-running" : "gaze-unknown"}`;
+    setStat(
+      handStateEl,
+      mode === "wheel"
+        ? info.stopped ? "STOP" : `${handCount}h ${steer.move.toFixed(1)}/${steer.strafe.toFixed(1)}`
+        : hasHand ? direction || "—" : "none",
+      live ? "gaze-running" : "gaze-unknown",
+    );
     // Kept separate from the face tracker's readout below rather than merged
     // into it: this updates at the hand detection rate, that one at video rate.
     const head =

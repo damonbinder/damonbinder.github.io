@@ -329,6 +329,7 @@ export class HandTracker {
     this._pending = null;
     this._pendingStreak = 0;
     this._lastDetect = 0;
+    this.detectCount = 0; // for the debug perf readout
     // Rolling window over the last HISTORY detections, so the readout can
     // answer "is it seeing my hand at all" separately from "does it like the
     // pose" — which is the question a still frame can't settle.
@@ -427,6 +428,7 @@ export class HandTracker {
     const interval = 1000 / Math.max(1, this.opts.detectHz);
     if (!faceBusy && now - this._lastDetect >= interval && this.video.readyState >= 2) {
       this._lastDetect = now;
+      this.detectCount++;
       const result = this.landmarker.detectForVideo(this.video, now);
       this._handleResult(result);
     }

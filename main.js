@@ -30,6 +30,7 @@ const startPrompt = document.getElementById("startPrompt");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const blinkCountEl = document.getElementById("blinkCount");
+const perfEl = document.getElementById("perf");
 const handStateEl = document.getElementById("handState");
 const handOverlay = document.getElementById("handOverlay");
 const invertHandsBox = document.getElementById("invertHands");
@@ -325,10 +326,49 @@ function updateSmgAutoFire(dt) {
   }
 }
 
+// Frame-time instrumentation. The point of this is that a stutter can't be
+// diagnosed from a machine that isn't stuttering — the median tells you the
+// steady rate, `worst` tells you whether single frames are being blown (which
+// is what a stutter actually is, as opposed to a uniformly low rate), and the
+// detection counts say which model is spending the time.
+const FRAME_WINDOW = 180;
+const frameTimes = [];
+let perfSampledAt = 0;
+let perfFaceCount = 0;
+let perfHandCount = 0;
+let perfText = "";
+
+function samplePerf(t, dt) {
+  frameTimes.push(dt);
+  if (frameTimes.length > FRAME_WINDOW) frameTimes.shift();
+  if (t - perfSampledAt < 1000 || frameTimes.length < 10) return;
+  const elapsed = (t - perfSampledAt) / 1000;
+  perfSampledAt = t;
+  const sorted = [...frameTimes].sort((a, b) => a - b);
+  const median = sorted[sorted.length >> 1];
+  const face = tracker?.detectCount ?? 0;
+  const hand = handTracker?.detectCount ?? 0;
+  const faceRate = Math.round((face - perfFaceCount) / elapsed);
+  const handRate = Math.round((hand - perfHandCount) / elapsed);
+  perfFaceCount = face;
+  perfHandCount = hand;
+  // A frame over 20ms missed a 60Hz refresh; over 33ms it missed two.
+  const dropped = sorted.filter((x) => x > 20).length;
+  perfText =
+    `fps:   ${Math.round(1000 / median)}   frame ${median.toFixed(1)}ms ` +
+    `worst ${sorted[sorted.length - 1].toFixed(1)}ms   >20ms ${dropped}/${sorted.length}\n` +
+    `infer: face ${faceRate}/s  hand ${handRate}/s`;
+  perfEl.textContent = `${Math.round(1000 / median)}`;
+  // The tracker's own debug callback owns the readout when a camera is
+  // running; without one, nothing else would ever write this line.
+  if (!tracker && debugToggle.checked) debugReadout.textContent = perfText;
+}
+
 function loop(t) {
   requestAnimationFrame(loop);
   const dt = lastFrameTime ? t - lastFrameTime : 16;
   lastFrameTime = t;
+  if (DEBUG) samplePerf(t, dt);
   if (!started) return;
   // Clamp so a backgrounded/throttled tab can't fast-forward the player
   // through many physics steps (and through walls) in one jump.
@@ -535,7 +575,8 @@ async function startWithCamera() {
       `aim:   ${(nx * 100).toFixed(0)}%, ${(ny * 100).toFixed(0)}%\n` +
       `blink: L ${(left * 100).toFixed(0)}%  R ${(right * 100).toFixed(0)}%  ${blinking ? "BLINK" : ""}\n` +
       `mouth: ${(jawOpen * 100).toFixed(0)}%  ${mouthOpen ? "OPEN" : ""}` +
-      (lastHandReadout ? `\n${lastHandReadout}` : "");
+      (lastHandReadout ? `\n${lastHandReadout}` : "") +
+      (perfText ? `\n${perfText}` : "");
   };
 
   try {

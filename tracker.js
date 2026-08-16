@@ -49,6 +49,7 @@ export class FaceTracker {
     // else doing inference needs to know not to pile into the same frame —
     // see HandTracker.yieldTo.
     this.lastDetectFrame = -1;
+    this.detectCount = 0; // for the debug perf readout
     this._loop = this._loop.bind(this);
   }
 
@@ -125,6 +126,7 @@ export class FaceTracker {
     if (this.video.readyState >= 2 && this.video.currentTime !== this.lastVideoTime) {
       this.lastVideoTime = this.video.currentTime;
       this.lastDetectFrame = t;
+      this.detectCount++;
       const result = this.landmarker.detectForVideo(this.video, performance.now());
       this._handleResult(result);
     }

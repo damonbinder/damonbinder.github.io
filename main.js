@@ -42,6 +42,10 @@ const restartHandsBtn = document.getElementById("restartHandsBtn");
 const startPrompt = document.getElementById("startPrompt");
 const startIntro = document.getElementById("startIntro");
 const mobileNotice = document.getElementById("mobileNotice");
+const startStatus = document.getElementById("startStatus");
+const startError = document.getElementById("startError");
+const startErrorMsg = document.getElementById("startErrorMsg");
+const retryBtn = document.getElementById("retryBtn");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const blinkCountEl = document.getElementById("blinkCount");
@@ -736,7 +740,87 @@ function calibrateWheelFromStart() {
   if (res) calibrateResult.textContent = `neutral ${res.neutral}, tilt ${res.tilt}°`;
 }
 
+// Clicking Start is followed by several seconds of nothing — a module import,
+// a ~3MB model download, then a permission prompt — and all of that used to
+// look exactly like a page that had died. Progress and failure are one feature:
+// the flow that says what is happening is the flow that says what went wrong.
+const START_SLOW_MS = 4000;
+const START_TIMEOUT_MS = 20000;
+// Bumped per attempt so a slow init that resolves after its own timeout, or
+// after the player has already hit Try again, can't write over a newer one.
+let startAttempt = 0;
+
+function setStartStatus(text) {
+  startStatus.textContent = text || "";
+  startStatus.classList.toggle("hidden", !text);
+}
+
+// A hung download throws nothing at all, so without this it produces exactly
+// the dead screen this whole flow exists to remove.
+function withTimeout(promise, ms) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      const err = new Error(`timed out after ${ms}ms`);
+      err.name = "StartTimeoutError";
+      reject(err);
+    }, ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
+// Ordered with the phase check first, because a model failure is not about the
+// player's camera at all and sending them to their browser settings for it is
+// worse than saying nothing.
+function startErrorMessage(err) {
+  if (err?.phase === "model") {
+    return "Couldn't load the face tracking model (about 3MB). Check your connection, then try again.";
+  }
+  switch (err?.name) {
+    case "InsecureContextError":
+      return "Camera access needs a secure connection — this page has to be served over https.";
+    case "NotAllowedError":
+    case "SecurityError":
+      return "This game needs your camera. Allow it from the camera icon in your browser's address bar, then try again.";
+    case "NotFoundError":
+    case "DevicesNotFoundError":
+      return "No camera found. There's no way to play this one without a webcam.";
+    case "NotReadableError":
+    case "TrackStartError":
+      return "Your camera is already in use by another app. Close that, then try again.";
+    case "StartTimeoutError":
+      return "This is taking too long to start. Check your connection, then try again.";
+    default:
+      return "Couldn't start the camera. Try again, or check your browser's camera permissions for this site.";
+  }
+}
+
+function showStartError(err) {
+  setStartStatus(null);
+  startIntro.classList.add("hidden");
+  startErrorMsg.textContent = startErrorMessage(err);
+  startError.classList.remove("hidden");
+  if (DEBUG) {
+    camError.textContent = `${err?.phase || "?"} phase — ${err?.name || ""}: ${err?.message || err}`;
+    camError.classList.remove("hidden");
+  }
+}
+
+retryBtn.addEventListener("click", () => {
+  sound.resume(); // harmless if already open, and this is a real gesture
+  startWithCamera();
+});
+
 async function startWithCamera() {
+  const attempt = ++startAttempt;
+  startChoice.classList.add("hidden");
+  startError.classList.add("hidden");
+  camError.classList.add("hidden");
+  setStartStatus("Starting…");
+  const slowTimer = setTimeout(() => {
+    if (attempt === startAttempt) setStartStatus("Still loading — the face tracker is about 3MB.");
+  }, START_SLOW_MS);
+
   tracker = new FaceTracker(video, videoOverlay);
   tracker.setThresholds({
     yawRange: Number(yawSlider.value),
@@ -807,10 +891,22 @@ async function startWithCamera() {
       (perfText ? `\n${perfText}` : "");
   };
 
+  const pending = tracker;
+  pending.onPhase = (phase) => {
+    if (attempt !== startAttempt) return;
+    setStartStatus(phase === "model" ? "Loading face tracking…" : "Starting camera…");
+  };
+
   try {
-    camError.classList.add("hidden");
-    await tracker.init();
-    tracker.start();
+    await withTimeout(pending.init(), START_TIMEOUT_MS);
+    // A superseded attempt resolving late must neither take over the page nor
+    // leave a second camera stream open behind the one that did.
+    if (attempt !== startAttempt) {
+      pending.stop();
+      return;
+    }
+    setStartStatus(null);
+    pending.start();
     mouseAimActive = false;
     trackStateEl.textContent = "Tracking";
     trackStateEl.className = "value gaze-running";
@@ -821,14 +917,18 @@ async function startWithCamera() {
     if (handsEnabled) startHandTracking();
   } catch (err) {
     console.error("Camera/tracker init failed:", err);
+    // Releases the camera if the failure came after getUserMedia resolved, so
+    // a failed start can't leave the indicator light on.
+    pending.stop();
+    if (attempt !== startAttempt) return;
     tracker = null;
-    // Non-debug: no fallback control exists — aiming/firing needs the camera.
-    if (DEBUG) {
-      camError.textContent =
-        "Couldn't access the camera (" + (err?.message || err) + "). Continuing without it.";
-      camError.classList.remove("hidden");
-      continueWithoutCamera();
-    }
+    showStartError(err);
+    // ?debug=1 keeps its keyboard/mouse substitute so the game stays testable
+    // without a camera. It is deliberately *not* offered to players: aiming and
+    // firing are the camera, and a mouse version is a different game.
+    if (DEBUG) continueWithoutCamera();
+  } finally {
+    clearTimeout(slowTimer);
   }
 }
 

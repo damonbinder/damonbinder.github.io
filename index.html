@@ -92,6 +92,13 @@
             <button id="startHandsBtn" class="btn">Hands</button>
           </div>
           <div id="startPrompt" class="start-prompt hidden">Blink to start</div>
+          <!-- Without this, clicking Start looks identical whether it is
+               working, downloading 3MB slowly, or already dead. -->
+          <div id="startStatus" class="start-status hidden"></div>
+          <div id="startError" class="start-error hidden">
+            <p id="startErrorMsg"></p>
+            <button id="retryBtn" class="btn">Try again</button>
+          </div>
           <div id="mobileNotice" class="mobile-notice hidden">
             <b>Desktop only.</b> This one needs a webcam you're sitting in
             front of, and a keyboard.

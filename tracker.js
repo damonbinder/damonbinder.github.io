@@ -75,7 +75,24 @@ export class FaceTracker {
     if (detectHz != null) this.detectHz = detectHz;
   }
 
+  // Throws with `phase` set to "model" or "camera". The two fail for entirely
+  // different reasons and want entirely different advice — a blocked CDN and a
+  // denied permission are not the same problem — and from outside this method
+  // they are otherwise indistinguishable.
   async init() {
+    this._phase = "model";
+    try {
+      await this._initModel();
+      this._phase = "camera";
+      await this._initCamera();
+    } catch (err) {
+      err.phase = this._phase;
+      throw err;
+    }
+  }
+
+  async _initModel() {
+    this.onPhase?.("model");
     const { FilesetResolver, FaceLandmarker } = await import(CDN_BASE);
     const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
 
@@ -103,7 +120,19 @@ export class FaceTracker {
         ...commonOpts,
       });
     }
+  }
 
+  async _initCamera() {
+    this.onPhase?.("camera");
+    // Undefined rather than throwing a DOMException on an insecure origin, so
+    // this is the failure a plain-http deployment produces. Named explicitly
+    // because "camera didn't start" would send the player looking at their
+    // browser settings for a problem that is entirely on the server.
+    if (!navigator.mediaDevices?.getUserMedia) {
+      const err = new Error("Camera access requires a secure (https) context");
+      err.name = "InsecureContextError";
+      throw err;
+    }
     const stream = await navigator.mediaDevices.getUserMedia({
       video: { width: 480, height: 360, facingMode: "user" },
       audio: false,

@@ -253,6 +253,30 @@ canvas#hud {
 
 .start-intro.hidden { display: none; }
 
+.start-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.start-status.hidden { display: none; }
+
+.start-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 340px;
+}
+
+.start-error.hidden { display: none; }
+
+.start-error p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
 .mobile-notice {
   max-width: 320px;
   font-size: 0.9rem;

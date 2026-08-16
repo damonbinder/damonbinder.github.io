@@ -1,5 +1,6 @@
 import { CorridorGame, CORRIDOR_CONST } from "./game.js";
 import { FaceTracker } from "./tracker.js";
+import { HandTracker } from "./hands.js";
 import { SoundFX } from "./sound.js";
 
 // Units; proximity tension ramps up from this distance down to 0. Raised from
@@ -29,6 +30,8 @@ const startPrompt = document.getElementById("startPrompt");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const blinkCountEl = document.getElementById("blinkCount");
+const handStateEl = document.getElementById("handState");
+const invertHandsBox = document.getElementById("invertHands");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
 const swingCountEl = document.getElementById("swingCount");
@@ -60,9 +63,25 @@ if (DEBUG) {
   document.querySelectorAll(".debug-only").forEach((el) => el.classList.remove("debug-only"));
 }
 
+// Opt-in second camera signal: a thumb held out of a closed fist steers, in
+// whichever of the four directions it points. Gated behind a URL flag like the
+// tuning panel is, because it loads and runs a second MediaPipe model over
+// every frame of the same stream and there's no reason to charge that to
+// someone playing on the keyboard.
+const HANDS = new URLSearchParams(location.search).has("hands");
+const HAND_DIRS = {
+  up: { move: 1, strafe: 0 },
+  down: { move: -1, strafe: 0 },
+  left: { move: 0, strafe: -1 },
+  right: { move: 0, strafe: 1 },
+};
+
 const game = new CorridorGame(canvas);
 const sound = new SoundFX();
 let tracker = null;
+let handTracker = null;
+let handMove = 0;
+let handStrafe = 0;
 let started = false;
 let awaitingStartBlink = false;
 let lastFrameTime = 0;
@@ -302,12 +321,17 @@ requestAnimationFrame((t) => {
   loop(t);
 });
 
+// Keys and hand share one axis each, and a held key wins. Summing them instead
+// would let a thumb cancel a keypress out to a standstill, which is a confusing
+// thing to happen to someone who has just reached for the keyboard.
 function updateMoveDir() {
-  game.setMoveDir((forwardHeld ? 1 : 0) - (backHeld ? 1 : 0));
+  const keys = (forwardHeld ? 1 : 0) - (backHeld ? 1 : 0);
+  game.setMoveDir(keys !== 0 ? keys : handMove);
 }
 
 function updateStrafeDir() {
-  game.setStrafeDir((strafeRightHeld ? 1 : 0) - (strafeLeftHeld ? 1 : 0));
+  const keys = (strafeRightHeld ? 1 : 0) - (strafeLeftHeld ? 1 : 0);
+  game.setStrafeDir(keys !== 0 ? keys : handStrafe);
 }
 
 function fire() {
@@ -467,6 +491,10 @@ async function startWithCamera() {
     trackStateEl.textContent = "Tracking";
     trackStateEl.className = "value gaze-running";
     armBlinkStart();
+    // Not awaited: the hand model is a second few-megabyte download, and
+    // making the start prompt wait on it would be a visible stall for a mode
+    // that's fine to come online a moment late.
+    if (HANDS) startHandTracking();
   } catch (err) {
     console.error("Camera/tracker init failed:", err);
     tracker = null;
@@ -480,9 +508,47 @@ async function startWithCamera() {
   }
 }
 
+// Runs on the stream the FaceTracker has already opened, so it can only be
+// started once that has resolved. A failure here is non-fatal by design —
+// aiming and firing still work, you're just back on the keyboard to walk.
+function applyHandDirection(dir) {
+  const d = dir ? HAND_DIRS[dir] : null;
+  handMove = d ? d.move : 0;
+  handStrafe = d ? d.strafe : 0;
+  updateMoveDir();
+  updateStrafeDir();
+}
+
+async function startHandTracking() {
+  handTracker = new HandTracker(video);
+  // Unchecked is the expected case: raw front-camera frames aren't mirrored,
+  // so the sign flip is on by default. The checkbox is here because this is
+  // the one thing in the classifier that can't be verified without a camera.
+  handTracker.mirrored = !invertHandsBox.checked;
+  handTracker.onDirection = applyHandDirection;
+  handTracker.onUpdate = ({ hasHand, direction }) => {
+    handStateEl.textContent = hasHand ? (direction || "—") : "none";
+    handStateEl.className = `value ${direction ? "gaze-running" : "gaze-unknown"}`;
+  };
+  try {
+    await handTracker.init();
+    handTracker.start();
+  } catch (err) {
+    console.error("Hand tracker init failed:", err);
+    handTracker = null;
+    handStateEl.textContent = "failed";
+    handStateEl.className = "value gaze-paused";
+  }
+}
+
 function continueWithoutCamera() {
   tracker?.stop();
   tracker = null;
+  // No camera, no hands. Zero the axes as well as stopping the loop, or a
+  // direction committed just before the failure would stick.
+  handTracker?.stop();
+  handTracker = null;
+  applyHandDirection(null);
   cameraPanel.style.display = "none";
   trackStateEl.textContent = "off";
   trackStateEl.className = "value gaze-unknown";
@@ -532,6 +598,11 @@ bindSlider(mouthDebounceSlider, mouthDebounceVal, (v) => tracker?.setThresholds(
 invertXBox.addEventListener("change", () => tracker?.setThresholds({ invertX: invertXBox.checked }));
 invertYBox.addEventListener("change", () => tracker?.setThresholds({ invertY: invertYBox.checked }));
 
+invertHandsBox.addEventListener("change", () => {
+  if (handTracker) handTracker.mirrored = !invertHandsBox.checked;
+});
+
 window.addEventListener("beforeunload", () => {
   tracker?.stop();
+  handTracker?.stop();
 });

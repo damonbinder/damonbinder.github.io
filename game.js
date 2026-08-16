@@ -195,7 +195,13 @@ const STARTING_AMMO = 10;
 const AMMO_PER_PICKUP = 6;
 const MAX_AMMO_CAP = 20;
 const PICKUP_RANGE = 0.5;
-const PICKUP_RESPAWN_MS = 15000;
+// Crates come back at the start of each wave and not on a timer, so a wave's
+// ammo is a fixed budget: STARTING_AMMO once, then AMMO_PER_PICKUP per crate
+// per wave, against MAX_AMMO_CAP carried at any moment. The 15s respawn this
+// replaced meant a long wave could be farmed off one crate indefinitely, which
+// made running dry a matter of patience rather than a decision. It also puts
+// the ammo crates on the same footing as the heal pad and the SMG, neither of
+// which respawns on a timer either.
 const AMMO_SPAWNS = readLayout("a");
 
 const RANGED_PREFERRED_DIST = 3.5; // shooters try to hover around this range
@@ -442,7 +448,7 @@ export class CorridorGame {
     this.score = 0;
     this.health = PLAYER_MAX_HP;
     this.ammo = STARTING_AMMO;
-    this.pickups = AMMO_SPAWNS.map(([x, y]) => ({ x, y, active: true, respawnTimer: 0 }));
+    this.pickups = AMMO_SPAWNS.map(([x, y]) => ({ x, y, active: true }));
     this.projectiles = [];
     this.weapon = "pistol";
     this.smgAmmo = 0;
@@ -483,6 +489,9 @@ export class CorridorGame {
   }
 
   _spawnWave() {
+    // Every crate is back on the floor for the new wave, drained or not.
+    for (const pk of this.pickups) pk.active = true;
+
     const types = composeWave(this.wave);
     const count = types.length;
     // Closest spawn points that are still a safe distance away, rather than
@@ -752,15 +761,10 @@ export class CorridorGame {
     this._stepProjectiles(dt, stepMs);
 
     for (const pk of this.pickups) {
-      if (!pk.active) {
-        pk.respawnTimer -= stepMs;
-        if (pk.respawnTimer <= 0) pk.active = true;
-        continue;
-      }
+      if (!pk.active) continue;
       const dist = Math.hypot(pk.x - this.player.x, pk.y - this.player.y);
       if (dist < PICKUP_RANGE) {
         pk.active = false;
-        pk.respawnTimer = PICKUP_RESPAWN_MS;
         this.ammo = Math.min(MAX_AMMO_CAP, this.ammo + AMMO_PER_PICKUP);
         this.onAmmoPickup?.();
         // Deliberately does *not* switch you off the saber — walking over a

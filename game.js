@@ -43,11 +43,11 @@ const LAYOUT = [
   "#....e.a..e...e....#",
   "####################",
 ];
-// Note there are deliberately about twice as many spawn points as the
-// largest wave (10). The nearest-but-safe selection can only do its job if
-// it has candidates to reject — with barely more points than enemies a late
-// wave takes almost all of them, distant ones included, and the pacing
-// benefit disappears.
+// 24 `e` markers against LATE_WAVE_MAX_ENEMIES of 16. The nearest-but-safe
+// selection can only do its job if it has candidates to reject — with barely
+// more points than enemies a late wave takes almost all of them, distant ones
+// included, and the pacing benefit disappears. A 16-enemy wave already reaches
+// 15.8 units out, so this margin is thin: add markers before adding enemies.
 
 const MAP_W = LAYOUT[0].length;
 const MAP_H = LAYOUT.length;

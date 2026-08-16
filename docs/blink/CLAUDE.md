@@ -751,16 +751,19 @@ questions:
 Hand tracking starts as soon as the tracker is live, *before* the blink that
 starts the game, so the whole panel can be checked from the start screen.
 
-**The two landmarkers must never run inference in the same animation frame.**
-`detectForVideo` is *synchronous on the main thread*, which is the thread
-`requestAnimationFrame` runs on, so it is not a background cost — it is
-subtracted directly from the frame budget. Measured in-browser on the CPU
-delegate, feeding each model a canvas:
+**Both landmarkers now run in workers, and that is the fix everything below
+was working towards.** `detectForVideo` is *synchronous on the main thread* —
+the thread `requestAnimationFrame` runs on — so it is not a background cost but
+a subtraction from the frame budget. The notes here describe the era when they
+shared that thread, and are kept because they are what the fallback paths still
+do and why the delegate split is what it is.
 
-`HandTracker` therefore stands down for any frame the face tracker has already
-spent — `yieldTo` against `FaceTracker.lastDetectFrame`, comparing rAF
-timestamps so "same frame" is exact rather than a heuristic. It costs one
-frame of latency on the hand input.
+When they did share it, `HandTracker` stood down for any frame the face tracker
+had already spent — `yieldTo` against `FaceTracker.lastDetectFrame`, comparing
+rAF timestamps so "same frame" was exact rather than heuristic, at a cost of one
+frame of latency on the hand input. **`lastDetectFrame` is now set only on the
+face tracker's inline fallback**, so `yieldTo` correctly does nothing when the
+worker is running and there is nothing on this thread to collide with.
 
 **The two models take opposite delegates, and this is measured rather than
 conventional.** Both alive at once, interleaved, feeding each a canvas:
@@ -814,6 +817,24 @@ The main-thread path is kept as a fallback and is what `yieldTo` still exists
 for. `detectHz` remains the dial for what hand steering costs, and has a
 slider — it matters much more on the fallback path than in the worker.
 
+**The face model followed it into `face-worker.js`**, on the same pattern:
+classic worker, dynamic `import()`, one frame in flight, `createImageBitmap`
+on the main thread and nothing else. Two things differ from the hand worker.
+Only a *summary* crosses back — the 4x4 transform, three blendshape scores, and
+a face bounding box — because shipping all 478 landmarks so the caller could
+derive that box would be ~100x the payload for the same four numbers; the
+fallback runs the same reduction inline (`summariseResult`) so `_handleResult`
+never knows which path produced it, and the two must be kept in step. And it
+costs about a frame of latency on **blink-to-fire**, which in this game is the
+whole control scheme rather than a walking input. That trade was made
+deliberately: 24-30 calls a second at ~2.6ms each is roughly a third of every
+frame it lands in on a 120Hz panel.
+
+Both paths are worth testing after any change here, and the fallback is the one
+that rots unnoticed. Overriding `window.Worker` to throw *after* page load but
+*before* the start click forces it, since the worker is constructed at click
+time.
+
 **There is a frame-time readout under `?debug=1`, and it exists because a
 stutter cannot be diagnosed from a machine that isn't stuttering.** Two
 separate sessions were spent guessing at a reported stutter that no
@@ -851,8 +872,9 @@ Three things follow from it, all of them in the code now:
   the render interval, not the refresh interval, or capping the rate would
   halve the speed of the game — measured identical at 30/60/120/144Hz.
 - **The face model has a `detectHz` cap too**, defaulting to 30. Uncapped it
-  ran at the camera's frame rate, and at ~8ms a call that is a missed refresh
-  every single time on a 120Hz panel.
+  ran at the camera's frame rate, and back when it ran inline that was a missed
+  refresh every single time on a 120Hz panel. In the worker it now sets how
+  often a `createImageBitmap` happens, and how fresh aim and blink are.
 - Both rates have sliders, because the trade against aim smoothness and blink
   latency is a matter of taste and hardware, not something to hard-code.
 
@@ -1098,6 +1120,9 @@ stubbing `navigator.mediaDevices` to reject with each name in turn.
   The `main.js` render loop clamps `dt` to 100ms before calling it, so a
   backgrounded tab can't fast-forward through many steps at once (and through
   walls).
+- **Both models run in workers.** `face-worker.js` and `hands-worker.js`, each
+  a classic worker doing nothing but inference. The main thread pays for a
+  `createImageBitmap` and nothing else. Both keep an inline fallback.
 - **Two trackers, deliberately separate.** `tracker.js` wraps
   `FaceLandmarker` and pulls all three signals this game needs — head
   yaw/pitch to aim, `eyeBlinkLeft`/`Right` to fire, `jawOpen` to switch weapon

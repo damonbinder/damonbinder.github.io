@@ -1,7 +1,8 @@
 # Blink — TODO
 
-Deployed, unlisted, at **djbinder.com/blink/**. This folder is inside the
-website repo's `public/`, so editing it is deploying it.
+Deployed, unlisted, at **djbinder.com/blink/**. The game is in `public/blink/`,
+so editing it there is deploying it; these notes sit outside `public/` on
+purpose, because everything in it is served.
 
 ## Needed before it goes public
 
@@ -22,14 +23,9 @@ website repo's `public/`, so editing it is deploying it.
 
 ## Worth doing, not blocking
 
-- [ ] **Move the face model into a worker.** The last synchronous inference on
-      the main thread: ~24-30 calls a second at ~2.6ms each, against an 8.3ms
-      frame budget on a 120Hz display. The hand model already moved and that
-      fixed the large stutter; this is what is left of the small one. Costs
-      roughly one frame of blink-to-fire latency, which is why it hasn't been
-      done — that is a real trade, not an oversight.
-- [ ] **Photosensitivity note on the start screen.** Full-screen red damage
-      flashes and the green heal pulse.
+- [x] ~~Move the face model into a worker.~~ Done — `face-worker.js`. Both
+      paths tested; the frame-time readout under `?debug=1` is how to confirm
+      it helped on a real machine, which the sandbox can't.
 - [ ] **The other four games fail silently without a camera**, and none of them
       states the privacy position. The privacy copy is twist-safe and could be
       lifted across as-is; the failure UI would need porting.
@@ -49,3 +45,5 @@ website repo's `public/`, so editing it is deploying it.
   the straggler tail rather than the pressure.
 - **HP scaling on late waves.** Makes sponges, and with ammo now a fixed
   per-wave budget it would press on the same constraint twice.
+- **A photosensitivity warning.** Flashing is expected of the genre and obvious
+  from the first wave; a notice would be noise.

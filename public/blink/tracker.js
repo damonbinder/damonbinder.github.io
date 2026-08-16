@@ -1,10 +1,10 @@
-// Vendored under corridor/vendor/ rather than fetched from jsdelivr and
-// Google, for three reasons in descending order of weight. The start screen
-// promises nothing is sent anywhere, and two third-party requests hand every
-// visitor's IP to someone else. A blocked or down CDN is otherwise the single
-// likeliest way this fails for a stranger. And corridor/ is meant to drop onto
-// a site as a self-contained folder. Resolved against import.meta.url so the
-// paths hold wherever that folder is mounted.
+// Vendored under vendor/ rather than fetched from jsdelivr and Google, for
+// three reasons in descending order of weight. The start screen promises
+// nothing is sent anywhere, and two third-party requests hand every visitor's
+// IP to someone else. A blocked or down CDN is otherwise the single likeliest
+// way this fails for a stranger. And this folder is meant to drop onto a site
+// self-contained. Resolved against import.meta.url so the paths hold wherever
+// it is mounted.
 const VENDOR = new URL("./vendor/", import.meta.url).href;
 const VISION_BUNDLE = `${VENDOR}tasks-vision/vision_bundle.mjs`;
 const WASM_DIR = `${VENDOR}tasks-vision/wasm`;
@@ -23,7 +23,9 @@ export class FaceTracker {
     this.video = videoEl;
     this.overlay = overlayCanvas;
     this.overlayCtx = overlayCanvas.getContext("2d");
-    this.landmarker = null;
+    this.landmarker = null;   // main-thread fallback only
+    this.worker = null;
+    this._inFlight = false;
     this.running = false;
 
     this.hasFace = false;
@@ -53,15 +55,16 @@ export class FaceTracker {
     this.onDebug = null;
     this.lastVideoTime = -1;
     // Cap on detections per second. Uncapped it runs at the camera's frame
-    // rate, and each call is several milliseconds of blocking main-thread
-    // work — on a 120Hz display that is a missed refresh every time. Lower it
-    // to buy frames back, at the cost of aim smoothness and blink latency.
+    // rate. This mattered much more before inference moved into a worker,
+    // when each call was several blocking milliseconds on the render thread;
+    // it now mostly trades aim smoothness and blink latency against the cost
+    // of a createImageBitmap per detection.
     this.detectHz = 30;
     this._lastDetect = 0;
-    // The rAF timestamp of the last frame this actually ran inference on.
-    // detectForVideo is synchronous and blocks the main thread, so anything
-    // else doing inference needs to know not to pile into the same frame —
-    // see HandTracker.yieldTo.
+    // The rAF timestamp of the last frame this ran inference on *inline*.
+    // Only the fallback path sets it: detectForVideo blocks the main thread,
+    // so HandTracker.yieldTo needs to know not to pile into the same frame.
+    // With the worker running there is nothing here to collide with.
     this.lastDetectFrame = -1;
     this.detectCount = 0; // for the debug perf readout
     this._loop = this._loop.bind(this);
@@ -99,8 +102,59 @@ export class FaceTracker {
     }
   }
 
+  // Inference runs in a worker when the browser allows it: detectForVideo is
+  // synchronous, and ~2.6ms a call at 24-30/s is a third of a frame on a 120Hz
+  // display, spent on the thread that also renders. Falls back to the main
+  // thread if the worker can't start, which is what yieldTo still exists for.
   async _initModel() {
     this.onPhase?.("model");
+    try {
+      await this._initWorker();
+      return;
+    } catch (err) {
+      console.warn("Face worker unavailable, falling back to main thread:", err);
+      this.worker = null;
+    }
+    await this._initInline();
+  }
+
+  _initWorker() {
+    return new Promise((resolve, reject) => {
+      // Classic worker deliberately — see the note at the top of the worker.
+      const worker = new Worker(new URL("./face-worker.js", import.meta.url));
+      const timeout = setTimeout(() => {
+        worker.terminate();
+        reject(new Error("worker init timed out"));
+      }, 20000);
+      worker.onmessage = (e) => {
+        if (e.data.type === "ready") {
+          clearTimeout(timeout);
+          this.worker = worker;
+          // Past init, every message is a detection result.
+          worker.onmessage = (ev) => {
+            if (ev.data.type !== "result") return;
+            this._inFlight = false;
+            if (!ev.data.payload) return;
+            this.detectCount++;
+            this._handleResult(ev.data.payload);
+          };
+          resolve();
+        } else if (e.data.type === "failed") {
+          clearTimeout(timeout);
+          worker.terminate();
+          reject(new Error(e.data.error));
+        }
+      };
+      worker.onerror = (err) => {
+        clearTimeout(timeout);
+        worker.terminate();
+        reject(err);
+      };
+      worker.postMessage({ type: "init" });
+    });
+  }
+
+  async _initInline() {
     const { FilesetResolver, FaceLandmarker } = await import(VISION_BUNDLE);
     const fileset = await FilesetResolver.forVisionTasks(WASM_DIR);
 
@@ -161,6 +215,9 @@ export class FaceTracker {
 
   stop() {
     this.running = false;
+    this.worker?.terminate();
+    this.worker = null;
+    this._inFlight = false;
     const stream = this.video.srcObject;
     if (stream) stream.getTracks().forEach((t) => t.stop());
   }
@@ -172,42 +229,58 @@ export class FaceTracker {
     if (due && this.video.readyState >= 2 && this.video.currentTime !== this.lastVideoTime) {
       this._lastDetect = now;
       this.lastVideoTime = this.video.currentTime;
-      this.lastDetectFrame = t;
-      this.detectCount++;
-      const result = this.landmarker.detectForVideo(this.video, performance.now());
-      this._handleResult(result);
+      if (this.worker) {
+        this._detectInWorker();
+      } else {
+        // lastDetectFrame is only meaningful on this path: it tells HandTracker
+        // not to pile a second synchronous inference into the same frame. With
+        // the worker running there is nothing on this thread to collide with.
+        this.lastDetectFrame = t;
+        this.detectCount++;
+        this._handleResult(summariseResult(this.landmarker.detectForVideo(this.video, performance.now())));
+      }
     }
     requestAnimationFrame(this._loop);
   }
 
-  _handleResult(result) {
+  // At most one frame in flight. Queueing instead would show up as aim
+  // drifting further behind the longer you play, and as firing lagging too.
+  _detectInWorker() {
+    if (this._inFlight) return;
+    this._inFlight = true;
+    const ts = performance.now();
+    createImageBitmap(this.video).then(
+      (bitmap) => {
+        if (!this.worker || !this.running) {
+          bitmap.close();
+          this._inFlight = false;
+          return;
+        }
+        this.worker.postMessage({ type: "frame", bitmap, ts }, [bitmap]);
+      },
+      () => { this._inFlight = false; },
+    );
+  }
+
+  // Takes the summarised shape in both paths — see summariseResult below — so
+  // everything from here down is identical whether inference ran in the worker
+  // or on this thread.
+  _handleResult({ matrix, hasFace, hasShapes, left, right, jawOpen, box }) {
     this.overlayCtx.clearRect(0, 0, this.overlay.width, this.overlay.height);
 
-    const matrixInfo = result.facialTransformationMatrixes?.[0];
-    const landmarks = result.faceLandmarks?.[0];
-    this.hasFace = !!matrixInfo && !!landmarks;
+    this.hasFace = hasFace;
 
     let yaw = null;
     let pitch = null;
     if (this.hasFace) {
-      ({ yaw, pitch } = anglesFromMatrix(matrixInfo.data));
+      ({ yaw, pitch } = anglesFromMatrix(matrix));
       const targetX = clamp(0.5 + (this.invertX ? -1 : 1) * (yaw / this.yawRange) * 0.5, 0, 1);
       const targetY = clamp(0.5 + (this.invertY ? -1 : 1) * (pitch / this.pitchRange) * 0.5, 0, 1);
       this.nx += (targetX - this.nx) * this.smoothing;
       this.ny += (targetY - this.ny) * this.smoothing;
     }
 
-    const shapes = result.faceBlendshapes?.[0]?.categories;
-    let left = 0;
-    let right = 0;
-    let jawOpen = 0;
-    if (shapes) {
-      for (const c of shapes) {
-        if (c.categoryName === "eyeBlinkLeft") left = c.score;
-        else if (c.categoryName === "eyeBlinkRight") right = c.score;
-        else if (c.categoryName === "jawOpen") jawOpen = c.score;
-      }
-    }
+    const shapes = hasShapes;
     const eyesClosed = !!shapes && left > this.blinkThreshold && right > this.blinkThreshold;
     if (eyesClosed) {
       this.closedStreak++;
@@ -238,7 +311,7 @@ export class FaceTracker {
       this.mouthOpen = false;
     }
 
-    if (landmarks) this._drawFaceBox(landmarks);
+    if (box) this._drawFaceBox(box);
 
     this.onUpdate?.({ hasFace: this.hasFace, nx: this.nx, ny: this.ny });
     this.onDebug?.({
@@ -247,10 +320,37 @@ export class FaceTracker {
     });
   }
 
-  _drawFaceBox(landmarks) {
+  _drawFaceBox({ minX, maxX, minY, maxY }) {
     const ctx = this.overlayCtx;
     const w = this.overlay.width;
     const h = this.overlay.height;
+    ctx.strokeStyle = this.blinking ? "#f87171" : "#4ade80";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(minX * w, minY * h, (maxX - minX) * w, (maxY - minY) * h);
+  }
+}
+
+// The main-thread fallback produces the same shape the worker posts back, so
+// _handleResult never has to know which path it came from. Kept in step with
+// summarise() in face-worker.js.
+function summariseResult(result) {
+  const matrix = result.facialTransformationMatrixes?.[0]?.data;
+  const landmarks = result.faceLandmarks?.[0];
+  const shapes = result.faceBlendshapes?.[0]?.categories;
+
+  let left = 0;
+  let right = 0;
+  let jawOpen = 0;
+  if (shapes) {
+    for (const c of shapes) {
+      if (c.categoryName === "eyeBlinkLeft") left = c.score;
+      else if (c.categoryName === "eyeBlinkRight") right = c.score;
+      else if (c.categoryName === "jawOpen") jawOpen = c.score;
+    }
+  }
+
+  let box = null;
+  if (landmarks) {
     let minX = 1;
     let maxX = 0;
     let minY = 1;
@@ -261,10 +361,10 @@ export class FaceTracker {
       if (p.y < minY) minY = p.y;
       if (p.y > maxY) maxY = p.y;
     }
-    ctx.strokeStyle = this.blinking ? "#f87171" : "#4ade80";
-    ctx.lineWidth = 2;
-    ctx.strokeRect(minX * w, minY * h, (maxX - minX) * w, (maxY - minY) * h);
+    box = { minX, maxX, minY, maxY };
   }
+
+  return { matrix: matrix ? Array.from(matrix) : null, hasFace: !!matrix && !!landmarks, hasShapes: !!shapes, left, right, jawOpen, box };
 }
 
 // `m` is MediaPipe's 4x4 facial transformation matrix. Only the magnitude of

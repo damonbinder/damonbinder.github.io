@@ -146,6 +146,10 @@ canvas#hud {
    the card past its max-height. */
 .settings-body {
   overflow-y: auto;
+  /* Explicit, not redundant: a box with overflow-y set and overflow-x left at
+     visible computes overflow-x to auto, which was putting a horizontal
+     scrollbar along the bottom of the card. */
+  overflow-x: hidden;
   min-height: 0;
 }
 
@@ -162,11 +166,14 @@ canvas#hud {
 /* The keyboard line is the default, so a list with no mode class at all still
    reads correctly rather than losing its movement line entirely. */
 .controls-list .ctrl-wheel,
-.controls-list .ctrl-thumb { display: none; }
+.controls-list .ctrl-thumb,
+.controls-list .ctrl-hands { display: none; }
 .controls-list.mode-wheel .ctrl-keys,
 .controls-list.mode-thumb .ctrl-keys { display: none; }
 .controls-list.mode-wheel .ctrl-wheel,
-.controls-list.mode-thumb .ctrl-thumb { display: list-item; }
+.controls-list.mode-thumb .ctrl-thumb,
+.controls-list.mode-wheel .ctrl-hands,
+.controls-list.mode-thumb .ctrl-hands { display: list-item; }
 
 .settings-note {
   margin: -2px 0 16px;
@@ -365,6 +372,9 @@ canvas#hud {
 
 .slider-row input[type="range"] {
   width: 100%;
+  /* Range inputs carry a 2px UA margin, which at width:100% puts them 2px past
+     their container and made the settings card overflow horizontally. */
+  margin: 0;
 }
 
 .debug-readout {

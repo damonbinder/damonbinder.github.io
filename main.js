@@ -365,7 +365,6 @@ const VOLUME_KEY = "corridor-volume";
 const BLINK_SENS_KEY = "corridor-blink-sens";
 
 let settingsOpen = false;
-let settingsPausedGame = false;
 
 function applyVolume(pct) {
   volumeVal.textContent = String(pct);
@@ -405,8 +404,7 @@ function openSettings() {
   syncControlsList();
   // Reuse manualPause rather than inventing a second notion of "stopped" — it
   // already gates physics, audio, and input everywhere they need gating.
-  settingsPausedGame = started && game.alive && !manualPause;
-  if (settingsPausedGame) {
+  if (started && game.alive) {
     manualPause = true;
     refreshPauseOverlay();
   }
@@ -417,11 +415,11 @@ function closeSettings() {
   if (!settingsOpen) return;
   settingsOpen = false;
   settingsPanel.classList.add("hidden");
-  if (settingsPausedGame) {
-    settingsPausedGame = false;
-    manualPause = false;
-    refreshPauseOverlay();
-  }
+  // Deliberately leaves the game paused. Closing the panel shouldn't drop you
+  // straight back into a live wave with enemies already on top of you, and in
+  // hands mode you need a moment to get your hands back up first. The pause
+  // overlay takes over from here and space resumes when you're ready.
+  refreshPauseOverlay();
 }
 
 settingsBtn.addEventListener("click", () => (settingsOpen ? closeSettings() : openSettings()));
@@ -560,7 +558,9 @@ requestAnimationFrame((t) => {
 
 // Keys and hand share one axis each, and a held key wins. Summing them instead
 // would let a thumb cancel a keypress out to a standstill, which is a confusing
-// thing to happen to someone who has just reached for the keyboard.
+// thing to happen to someone who has just reached for the keyboard. In hands
+// mode the movement keys never fire at all (see the keydown handler), so this
+// only ever resolves in the hand's favour there.
 function updateMoveDir() {
   const keys = (forwardHeld ? 1 : 0) - (backHeld ? 1 : 0);
   game.setMoveDir(keys !== 0 ? keys : handMove);
@@ -585,19 +585,25 @@ window.addEventListener("keydown", (e) => {
     return;
   }
   const key = e.key.toLowerCase();
-  if (["arrowup", "w"].includes(key)) {
+  // Hands mode is hands only: walking and the weapon cycle come off the camera,
+  // so the keys that duplicate them are dead. Space is the deliberate exception
+  // — pause and restart have no gesture, and a player mid-run can reach the
+  // spacebar without being able to find a button. Note keyup is *not* gated, so
+  // a key held across a scheme switch still clears its flag.
+  const handKeys = handsEnabled;
+  if (!handKeys && ["arrowup", "w"].includes(key)) {
     forwardHeld = true;
     updateMoveDir();
-  } else if (["arrowdown", "s"].includes(key)) {
+  } else if (!handKeys && ["arrowdown", "s"].includes(key)) {
     backHeld = true;
     updateMoveDir();
-  } else if (["arrowleft", "a"].includes(key)) {
+  } else if (!handKeys && ["arrowleft", "a"].includes(key)) {
     strafeLeftHeld = true;
     updateStrafeDir();
-  } else if (["arrowright", "d"].includes(key)) {
+  } else if (!handKeys && ["arrowright", "d"].includes(key)) {
     strafeRightHeld = true;
     updateStrafeDir();
-  } else if (key === "r" && started) {
+  } else if (key === "r" && started && !handKeys) {
     game.toggleWeapon();
   } else if (key === " ") {
     // Space restarts once you've died, and pauses/resumes any other time.

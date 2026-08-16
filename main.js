@@ -268,9 +268,27 @@ function renderStats() {
   hudCtx.shadowBlur = 0;
 }
 
+// Top centre, on the canvas, because the readout below the board is
+// unreadable while playing — this game turns you when you look away from the
+// screen, so a panel under it may as well not exist. The four corners are
+// taken by the real HUD and the viewmodel owns the bottom centre; the top
+// centre is the one free strip.
+function renderPerf() {
+  if (!perfText) return;
+  hudCtx.shadowColor = "rgba(0,0,0,0.9)";
+  hudCtx.shadowBlur = 4;
+  hudCtx.font = "600 8px ui-monospace, SFMono-Regular, Menlo, monospace";
+  hudCtx.fillStyle = "rgba(231,233,238,0.8)";
+  hudCtx.textAlign = "center";
+  hudCtx.textBaseline = "alphabetic";
+  perfText.split("\n").forEach((line, i) => hudCtx.fillText(line, WIDTH / 2, 15 + i * 11));
+  hudCtx.shadowBlur = 0;
+}
+
 function renderHud() {
   hudCtx.setTransform(RENDER_SCALE, 0, 0, RENDER_SCALE, 0, 0);
   hudCtx.clearRect(0, 0, WIDTH, HEIGHT);
+  if (DEBUG) renderPerf();
   if (!started) return;
   renderStats();
   const px = reticleNX * WIDTH;
@@ -337,10 +355,21 @@ let perfSampledAt = 0;
 let perfFaceCount = 0;
 let perfHandCount = 0;
 let perfText = "";
+// Never decays, unlike the rolling window. The rolling numbers are gone by the
+// time you've finished flinching at a stutter, so the thing you actually want
+// to read afterwards is the worst frame of the whole session.
+let perfWorstEver = 0;
+let perfDroppedEver = 0;
 
 function samplePerf(t, dt) {
   frameTimes.push(dt);
   if (frameTimes.length > FRAME_WINDOW) frameTimes.shift();
+  // Ignore the first few frames and any gap big enough to be a tab switch or
+  // the initial model download rather than a stutter.
+  if (started && dt < 500) {
+    if (dt > perfWorstEver) perfWorstEver = dt;
+    if (dt > 20) perfDroppedEver++;
+  }
   if (t - perfSampledAt < 1000 || frameTimes.length < 10) return;
   const elapsed = (t - perfSampledAt) / 1000;
   perfSampledAt = t;
@@ -355,9 +384,10 @@ function samplePerf(t, dt) {
   // A frame over 20ms missed a 60Hz refresh; over 33ms it missed two.
   const dropped = sorted.filter((x) => x > 20).length;
   perfText =
-    `fps:   ${Math.round(1000 / median)}   frame ${median.toFixed(1)}ms ` +
+    `fps ${Math.round(1000 / median)}   frame ${median.toFixed(1)}ms   ` +
     `worst ${sorted[sorted.length - 1].toFixed(1)}ms   >20ms ${dropped}/${sorted.length}\n` +
-    `infer: face ${faceRate}/s  hand ${handRate}/s`;
+    `session worst ${perfWorstEver.toFixed(1)}ms   dropped ${perfDroppedEver}   ` +
+    `infer face ${faceRate}/s hand ${handRate}/s`;
   perfEl.textContent = `${Math.round(1000 / median)}`;
   // The tracker's own debug callback owns the readout when a camera is
   // running; without one, nothing else would ever write this line.

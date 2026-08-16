@@ -86,6 +86,18 @@ function dist3(a, b) {
   return Math.hypot(a.x - b.x, a.y - b.y, (a.z ?? 0) - (b.z ?? 0));
 }
 
+// How many of the four non-thumb fingers are curled. "Curled" is the fingertip
+// having come back closer to the wrist than its own middle joint, which holds
+// however the hand is rotated — the whole gesture set is one pose rotated, so
+// a y-coordinate comparison would only ever work for thumbs-up.
+function curledCount(lm) {
+  let n = 0;
+  for (const [tip, pip] of FINGERS) {
+    if (dist(lm[tip], lm[WRIST]) < dist(lm[pip], lm[WRIST])) n++;
+  }
+  return n;
+}
+
 // The minimum thumb-vector length, again as a ratio of palm length.
 // Everything the classifier can be tuned by, all live-adjustable from the
 // hand panel under ?hands=1&debug=1. Defaults are the shipped values.
@@ -116,6 +128,16 @@ export const HAND_DEFAULTS = {
   wheelTiltRange: 26, // degrees of tilt for full strafe
   wheelRaiseDead: 0.05, // fraction of frame height ignored
   wheelRaiseRange: 0.12, // fraction of frame height for full speed
+  // Show both palms flat and everything stops, whatever the wheel is doing.
+  // Getting back to exactly neutral to stand still is fiddly and needs a
+  // glance down; a flat hand is unmistakable and needs none. It also means
+  // the wheel is *gripped* — steer with fists, stop with open hands — which
+  // is why an open hand can be given this job without stealing a pose that
+  // ordinary steering uses.
+  wheelStopOnOpenPalms: true,
+  // Curled fingers at or below this count reads as an open hand. 1 rather
+  // than 0 so a hand that hasn't quite flattened still stops you.
+  wheelOpenMaxCurled: 1,
   // Speed the moment you leave the deadzone, before the ramp starts. Without
   // it, "proportional" means a comfortable raise of the hands walks you at a
   // third of the speed a keypress would, and the game just feels slow — which
@@ -174,9 +196,7 @@ export function analyzeThumb(lm, opts = {}) {
   // Curled means the fingertip has come back closer to the wrist than its own
   // middle joint. That comparison holds however the hand is rotated, which
   // matters here precisely because the whole gesture set *is* one pose rotated.
-  for (const [tip, pip] of FINGERS) {
-    if (dist(lm[tip], lm[WRIST]) < dist(lm[pip], lm[WRIST])) out.curled++;
-  }
+  out.curled = curledCount(lm);
   out.thumbOut = dist3(lm[THUMB_TIP], lm[INDEX_MCP]) / scale;
 
   const vx = lm[THUMB_TIP].x - lm[THUMB_MCP].x;
@@ -277,7 +297,7 @@ export function analyzeWheel(hands, opts = {}) {
   const o = { ...HAND_DEFAULTS, ...opts };
   const out = {
     move: 0, strafe: 0, reason: null, tilt: null, raise: null, hands: hands?.length || 0,
-    left: null, right: null,
+    left: null, right: null, openPalms: 0, stopped: false,
   };
   if (!hands || hands.length < 2) {
     out.reason = hands?.length === 1 ? "need both hands" : "no hands";
@@ -306,8 +326,20 @@ export function analyzeWheel(hands, opts = {}) {
   out.tilt = Math.round(tilt);
   out.raise = raise;
 
+  // Computed before the stop check rather than instead of it, so the debug
+  // readout still shows what the wheel would have done.
   out.strafe = axis(-tilt, o.wheelTiltDead, o.wheelTiltRange, o.wheelMinSpeed);
   out.move = axis(raise, o.wheelRaiseDead, o.wheelRaiseRange, o.wheelMinSpeed);
+
+  // Both hands, not either: one hand relaxing mid-turn shouldn't brake, and
+  // requiring both keeps it a deliberate gesture.
+  out.openPalms = hands.filter((lm) => curledCount(lm) <= o.wheelOpenMaxCurled).length;
+  if (o.wheelStopOnOpenPalms && out.openPalms >= 2) {
+    out.stopped = true;
+    out.reason = "stop (open palms)";
+    out.move = 0;
+    out.strafe = 0;
+  }
   return out;
 }
 

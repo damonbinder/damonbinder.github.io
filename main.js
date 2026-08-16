@@ -34,6 +34,7 @@ const perfEl = document.getElementById("perf");
 const handStateEl = document.getElementById("handState");
 const handOverlay = document.getElementById("handOverlay");
 const invertHandsBox = document.getElementById("invertHands");
+const handStopOpenBox = document.getElementById("handStopOpen");
 const calibrateHandsBtn = document.getElementById("calibrateHands");
 const calibrateResult = document.getElementById("calibrateResult");
 // [slider, label, key, scale] — scale converts the integer slider to the
@@ -544,9 +545,33 @@ function restart() {
   overlay.classList.add("hidden");
 }
 
+// Playing this hands-free means going minutes without a keypress or a mouse
+// move, which is exactly what the OS reads as "idle" — so the display sleeps
+// mid-game. The Wake Lock API is the supported way to say otherwise. It is
+// dropped automatically whenever the tab is hidden, so it has to be taken
+// again on the way back rather than once at startup.
+let wakeLock = null;
+
+async function requestWakeLock() {
+  if (wakeLock || !navigator.wakeLock) return;
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeLock.addEventListener("release", () => { wakeLock = null; });
+  } catch (err) {
+    // Unsupported, or refused because the document isn't visible. Not worth
+    // surfacing: the game plays fine, the screen just dims eventually.
+    wakeLock = null;
+  }
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && started) requestWakeLock();
+});
+
 function beginGame() {
   if (started) return;
   started = true;
+  requestWakeLock();
   awaitingStartBlink = false;
   perfSettleAt = performance.now() + PERF_SETTLE_MS;
   startOverlay.classList.add("hidden");
@@ -683,7 +708,11 @@ function handOptionsFromPanel() {
   // Unchecked is the expected case: raw front-camera frames aren't mirrored,
   // so the sign flip is on by default. The checkbox is here because this is
   // the one thing in the classifier that can't be verified without a camera.
-  const opts = { mirrored: !invertHandsBox.checked, mode: handModeSelect.value };
+  const opts = {
+    mirrored: !invertHandsBox.checked,
+    mode: handModeSelect.value,
+    wheelStopOnOpenPalms: handStopOpenBox.checked,
+  };
   for (const [slider, , key, scale] of HAND_SLIDERS) {
     opts[key] = Number(document.getElementById(slider).value) * scale;
   }
@@ -718,7 +747,7 @@ async function startHandTracking() {
   handTracker.onUpdate = ({ mode, hasHand, handCount, direction, steer, info, seenPct, posePct, medianAngle }) => {
     const live = steer.move !== 0 || steer.strafe !== 0;
     handStateEl.textContent = mode === "wheel"
-      ? `${handCount}h ${steer.move.toFixed(1)}/${steer.strafe.toFixed(1)}`
+      ? info.stopped ? "STOP" : `${handCount}h ${steer.move.toFixed(1)}/${steer.strafe.toFixed(1)}`
       : hasHand ? direction || "—" : "none";
     handStateEl.className = `value ${live ? "gaze-running" : "gaze-unknown"}`;
     // Kept separate from the face tracker's readout below rather than merged
@@ -733,7 +762,8 @@ async function startHandTracking() {
         `tilt:  ${info.tilt == null ? "—" : `${info.tilt}°`}  ` +
         `(dead ${o.wheelTiltDead}°, full ${o.wheelTiltRange}°)\n` +
         `raise: ${info.raise == null ? "—" : info.raise.toFixed(3)}  ` +
-        `neutral y ${o.wheelNeutral.toFixed(3)}  tilt zero ${Math.round(o.wheelTiltOffset)}°`
+        `neutral y ${o.wheelNeutral.toFixed(3)}  tilt zero ${Math.round(o.wheelTiltOffset)}°\n` +
+        `open:  ${info.openPalms}/2 palms${info.stopped ? "   STOPPED" : ""}`
       : head +
         `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
         // depth negative means the thumb tip is nearer the camera than its
@@ -779,6 +809,7 @@ function continueWithoutCamera() {
 startBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   sound.resume(); // must happen synchronously in this gesture handler (autoplay policy)
+  requestWakeLock(); // likewise wants a real gesture behind it on some browsers
   startWithCamera();
 });
 
@@ -823,9 +854,9 @@ for (const [slider, label] of HAND_SLIDERS) {
   });
 }
 
-invertHandsBox.addEventListener("change", () => {
-  handTracker?.setOptions(handOptionsFromPanel());
-});
+for (const box of [invertHandsBox, handStopOpenBox]) {
+  box.addEventListener("change", () => handTracker?.setOptions(handOptionsFromPanel()));
+}
 
 // One held gesture beats seven sliders: thumbs-up is the easiest pose to hold
 // steady, so calibrating off it rotates the frame by however far this person's

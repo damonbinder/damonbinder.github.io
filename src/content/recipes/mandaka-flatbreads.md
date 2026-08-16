@@ -14,10 +14,10 @@ tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads
 order: 1005
-status: draft
+status: published
 ---
 
-These are thin, pale wheat flatbreads enriched with milk and ghee. They are closer to soft rotis than to leavened bread.
+This thin flatbread is the ancestor of modern *manda roti*, also called *rumali roti*.
 
 ## Ingredients
 
@@ -33,14 +33,6 @@ These are thin, pale wheat flatbreads enriched with milk and ghee. They are clos
 1. Mix the wheat flour and salt. Rub in the ghee, then add the milk and enough water to form a soft dough.  
 2. Knead for 8–10 minutes in a wide bowl, slapping and stretching the dough rather than only pushing it, until it is smooth and glossy. Cover and rest for 30 minutes.  
 3. Divide into 8 balls. Grease the palms lightly and dust each ball with rice flour.  
-4. Stretch each ball into a thin round about 18 cm across by passing it from hand to hand and turning it. A rolling pin does the same job less faithfully.  
+4. Press each ball out between your palms to start, then, as it gets bigger, press out the edge and rotate it. Aim to get it as thin as you can. A rolling pin does the same job less faithfully.  
 5. Cook on the crown of a very hot dry griddle for 30–45 seconds per side, removing it while still pale and pliable.  
 6. Stack the breads in groups of four and cover with cloth until serving.
-
-**Notes**
-
-* The flour is sifted — the bran taken out with a sieve — and the target is stated outright: *maṇḍakas* smooth and as lustrous as white silk, off the griddle before they colour. Wholemeal atta will not give that. A white flour will. The wheat itself is washed and sun-dried white before it is milled.  
-* The dough is beaten with the flat of the hands (*karāsphālaiḥ*) in a large wooden vessel, and the breads are stretched between the hands rather than rolled. The chapter reserves the rolling stone (*peṣaṇī*) for the *polikās* three verses later, so the contrast is deliberate; hand-stretching is also what builds the extensibility a bread this thin needs.  
-* *Kharpara-mastaka* is the crown of the earthen griddle, so a convex surface — the arrangement an inverted *tava* gives for *rumālī roṭī*.  
-* The doneness cue is negative: off the griddle before blackness appears. The next recipe reverses it, since the ember-baked breads are said to be at their best once they have taken on a little blackness.  
-* Stacking in fours is 1381a–b, which the source text prints at the head of the next recipe.

@@ -66,6 +66,9 @@
         <div class="video-box">
           <video id="video" autoplay playsinline muted></video>
           <canvas id="videoOverlay"></canvas>
+          <!-- Separate from videoOverlay: the face box is redrawn at video
+               rate and would erase the hand skeleton between hand frames. -->
+          <canvas id="handOverlay"></canvas>
         </div>
         <label class="toggle">
           <input type="checkbox" id="showCamera" checked />

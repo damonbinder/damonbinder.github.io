@@ -31,6 +31,7 @@ const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const blinkCountEl = document.getElementById("blinkCount");
 const handStateEl = document.getElementById("handState");
+const handOverlay = document.getElementById("handOverlay");
 const invertHandsBox = document.getElementById("invertHands");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
@@ -82,6 +83,7 @@ let tracker = null;
 let handTracker = null;
 let handMove = 0;
 let handStrafe = 0;
+let lastHandReadout = "";
 let started = false;
 let awaitingStartBlink = false;
 let lastFrameTime = 0;
@@ -466,9 +468,17 @@ async function startWithCamera() {
     // single edge-triggered shot, so the two don't both fire on one blink.
     if (game.weapon !== "smg") fire();
   };
-  // jawOpen/mouthOpen no longer drive anything — melee moved onto the
-  // blink along with the guns — but the tracker still reports them, and the
-  // readout is kept so the signal stays calibratable if it's ever used again.
+  // Opening your mouth cycles the weapon, the same job R does. jawOpen went
+  // unused when melee moved off the mouth and onto the blink; switching is
+  // what it's actually suited to, being deliberate and held, where firing
+  // wants the involuntary gesture. Fires on the open edge only, so holding
+  // your mouth open cycles once rather than spinning through the slots.
+  tracker.onMouthOpen = () => {
+    if (!started || !game.alive || manualPause) return;
+    game.toggleWeapon();
+  };
+  // The mouth threshold and debounce sliders in the tuning panel exist for
+  // this: talking or laughing at the wrong threshold will cycle your weapon.
   tracker.onDebug = ({ hasFace, yaw, pitch, nx, ny, left, right, blinking, jawOpen, mouthOpen }) => {
     game.setPlayerBlinking(blinking);
     mouthStateEl.textContent = mouthOpen ? "Open" : "Closed";
@@ -480,7 +490,8 @@ async function startWithCamera() {
       `yaw:   ${fmt(yaw)}°  pitch: ${fmt(pitch)}°\n` +
       `aim:   ${(nx * 100).toFixed(0)}%, ${(ny * 100).toFixed(0)}%\n` +
       `blink: L ${(left * 100).toFixed(0)}%  R ${(right * 100).toFixed(0)}%  ${blinking ? "BLINK" : ""}\n` +
-      `mouth: ${(jawOpen * 100).toFixed(0)}%  ${mouthOpen ? "OPEN" : ""}`;
+      `mouth: ${(jawOpen * 100).toFixed(0)}%  ${mouthOpen ? "OPEN" : ""}` +
+      (lastHandReadout ? `\n${lastHandReadout}` : "");
   };
 
   try {
@@ -520,15 +531,22 @@ function applyHandDirection(dir) {
 }
 
 async function startHandTracking() {
-  handTracker = new HandTracker(video);
+  handTracker = new HandTracker(video, handOverlay);
   // Unchecked is the expected case: raw front-camera frames aren't mirrored,
   // so the sign flip is on by default. The checkbox is here because this is
   // the one thing in the classifier that can't be verified without a camera.
   handTracker.mirrored = !invertHandsBox.checked;
   handTracker.onDirection = applyHandDirection;
-  handTracker.onUpdate = ({ hasHand, direction }) => {
-    handStateEl.textContent = hasHand ? (direction || "—") : "none";
+  handTracker.onUpdate = ({ hasHand, direction, raw, info, seenPct, posePct }) => {
+    handStateEl.textContent = hasHand ? direction || "—" : "none";
     handStateEl.className = `value ${direction ? "gaze-running" : "gaze-unknown"}`;
+    // Kept separate from the face tracker's readout below rather than merged
+    // into it: this updates at DETECT_INTERVAL_MS, that one at video rate.
+    lastHandReadout =
+      `hand:  ${hasHand ? "yes" : "no"}   seen ${seenPct}%  pose ${posePct}%\n` +
+      `dir:   ${direction || "—"}  (raw ${raw || "—"})${info.reason ? `  ${info.reason}` : ""}\n` +
+      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
+      `len ${info.len.toFixed(2)}  ang ${info.angle == null ? "—" : `${info.angle}°`}`;
   };
   try {
     await handTracker.init();

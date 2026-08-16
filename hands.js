@@ -306,7 +306,7 @@ export class HandTracker {
   constructor(videoEl, overlayCanvas = null) {
     this.video = videoEl;
     // Its own canvas rather than the face tracker's: that one is cleared and
-    // redrawn at video rate, and this runs at DETECT_INTERVAL_MS, so sharing
+    // redrawn at video rate, and this runs at the hand detection rate, so sharing
     // one would just erase the skeleton between hand frames.
     this.overlay = overlayCanvas;
     this.overlayCtx = overlayCanvas ? overlayCanvas.getContext("2d") : null;

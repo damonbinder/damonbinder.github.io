@@ -611,7 +611,7 @@ async function startHandTracking() {
       : hasHand ? direction || "—" : "none";
     handStateEl.className = `value ${live ? "gaze-running" : "gaze-unknown"}`;
     // Kept separate from the face tracker's readout below rather than merged
-    // into it: this updates at DETECT_INTERVAL_MS, that one at video rate.
+    // into it: this updates at the hand detection rate, that one at video rate.
     const head =
       `hands: ${handCount}   seen ${seenPct}%  usable ${posePct}%` +
       `${info.reason ? `   ${info.reason}` : ""}\n` +

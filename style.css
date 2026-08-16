@@ -243,6 +243,25 @@ canvas#hud {
    display rule to swap in place while the overlay is still showing. */
 .choice-row.hidden { display: none; }
 
+.start-intro {
+  margin: 0 0 4px;
+  max-width: 340px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.start-intro.hidden { display: none; }
+
+.mobile-notice {
+  max-width: 320px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.mobile-notice.hidden { display: none; }
+
 .start-prompt {
   margin-top: 8px;
   font-size: 1.3rem;

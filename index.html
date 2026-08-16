@@ -80,11 +80,22 @@
 
       <div id="startOverlay" class="overlay">
         <div class="overlay-inner">
+          <!-- Said before the permission prompt, not after: "where does the
+               video go" is the first thing anyone asks of a webcam page, and
+               it's a poor answer once the browser has already asked. -->
+          <p id="startIntro" class="start-intro">
+            This game uses your webcam. Everything runs on your own machine —
+            no video is uploaded, recorded, or sent anywhere.
+          </p>
           <div id="startChoice" class="choice-row">
             <button id="startKeyboardBtn" class="btn">Keyboard</button>
             <button id="startHandsBtn" class="btn">Hands</button>
           </div>
           <div id="startPrompt" class="start-prompt hidden">Blink to start</div>
+          <div id="mobileNotice" class="mobile-notice hidden">
+            <b>Desktop only.</b> This one needs a webcam you're sitting in
+            front of, and a keyboard.
+          </div>
           <div id="camError" class="cam-error hidden"></div>
         </div>
       </div>

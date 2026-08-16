@@ -40,6 +40,8 @@ const restartChoice = document.getElementById("restartChoice");
 const restartKeyboardBtn = document.getElementById("restartKeyboardBtn");
 const restartHandsBtn = document.getElementById("restartHandsBtn");
 const startPrompt = document.getElementById("startPrompt");
+const startIntro = document.getElementById("startIntro");
+const mobileNotice = document.getElementById("mobileNotice");
 const camError = document.getElementById("camError");
 const fallbackBtn = document.getElementById("fallbackBtn");
 const blinkCountEl = document.getElementById("blinkCount");
@@ -706,6 +708,8 @@ function beginGame() {
 function armBlinkStart() {
   awaitingStartBlink = true;
   startChoice.classList.add("hidden");
+  // The camera is granted and running by now, so the note has done its job.
+  startIntro.classList.add("hidden");
   // In wheel mode the starting blink doubles as the calibration sample, so
   // the prompt has to ask for the hands too. Whatever height and tilt the
   // player is resting at when they blink becomes the neutral, which beats any
@@ -1060,6 +1064,18 @@ handModeSelect.addEventListener("change", () => {
   applyHandSteer({ move: 0, strafe: 0 }); // don't carry a held input across a scheme change
 });
 syncHandPanelToMode();
+
+// A capability test rather than a UA sniff: a phone or tablet has no fine
+// pointer, while a laptop has one even when its screen is also a touchscreen.
+// A narrow window on a desktop is deliberately *not* caught — that's a real
+// player who can resize, and turning them away would be worse than a cramped
+// layout. With the choice row hidden there is nothing to click, so the camera
+// is never requested on a device that couldn't use it anyway.
+if (!window.matchMedia("(any-pointer: fine)").matches) {
+  startChoice.classList.add("hidden");
+  startIntro.classList.add("hidden");
+  mobileNotice.classList.remove("hidden");
+}
 
 window.addEventListener("beforeunload", () => {
   tracker?.stop();

@@ -89,7 +89,24 @@ function dist3(a, b) {
 // treating the symptom — it makes every direction sloppier to buy back the
 // one that's being stolen.
 export const HAND_DEFAULTS = {
+  // "wheel" or "thumb". The wheel exists because thumb *angle* is the fragile
+  // signal in all of this — a small, low-contrast feature the model estimates
+  // poorly at webcam resolution — whereas a hand's centroid is the most
+  // reliable number it produces. The wheel uses nothing but two centroids.
+  mode: "wheel",
   mirrored: true,
+
+  // --- steering wheel ---
+  // Hands held like handlebars: tilt the line between them to strafe, raise or
+  // lower both to move. Both axes are proportional rather than on/off, which
+  // costs nothing (setMoveDir takes a fraction) and is most of why this feels
+  // different from the thumb.
+  wheelNeutral: 0.5, // image y the hands rest at; set by calibrating
+  wheelTiltOffset: 0, // degrees of tilt at rest, likewise
+  wheelTiltDead: 8, // degrees of tilt ignored
+  wheelTiltRange: 32, // degrees of tilt for full strafe
+  wheelRaiseDead: 0.05, // fraction of frame height ignored
+  wheelRaiseRange: 0.16, // fraction of frame height for full speed
   angleOffset: 0, // degrees; subtracted from the measured angle before sectoring
   horizHalf: 44, // sector half-width for left/right
   vertHalf: 34, // sector half-width for up/down
@@ -205,6 +222,77 @@ export function classifyThumb(lm, opts = {}) {
   return analyzeThumb(lm, opts).direction;
 }
 
+// Each thumb direction as a movement vector, so both modes hand the same shape
+// back and nothing downstream has to know which one is running.
+const STEER_FOR = {
+  up: { move: 1, strafe: 0 },
+  down: { move: -1, strafe: 0 },
+  left: { move: 0, strafe: -1 },
+  right: { move: 0, strafe: 1 },
+};
+
+// Mean of all 21 landmarks, in the player's own frame: x increases to their
+// right, y is still image-down. The average over the whole hand is steadier
+// than any single landmark, which is the entire appeal of the wheel.
+function centroid(lm, mirrored) {
+  let x = 0;
+  let y = 0;
+  for (const p of lm) {
+    x += p.x;
+    y += p.y;
+  }
+  x /= lm.length;
+  y /= lm.length;
+  return { x: mirrored ? 1 - x : x, y };
+}
+
+// Deadzone, then a linear ramp to full deflection. Returns -1..1.
+function axis(v, dead, range) {
+  const m = Math.abs(v);
+  if (m <= dead) return 0;
+  return Math.sign(v) * Math.min(1, (m - dead) / Math.max(1e-6, range - dead));
+}
+
+// Two hands as handlebars. Pure, and takes plain centroids' worth of geometry,
+// so it can be exercised against synthetic hands exactly like analyzeThumb.
+export function analyzeWheel(hands, opts = {}) {
+  const o = { ...HAND_DEFAULTS, ...opts };
+  const out = {
+    move: 0, strafe: 0, reason: null, tilt: null, raise: null, hands: hands?.length || 0,
+    left: null, right: null,
+  };
+  if (!hands || hands.length < 2) {
+    out.reason = hands?.length === 1 ? "need both hands" : "no hands";
+    return out;
+  }
+
+  // Sorted in the player's frame, so [0] is whichever hand is on their left
+  // however the camera is mirrored — the model's own handedness label isn't
+  // needed and isn't trusted.
+  const pts = hands.map((lm) => centroid(lm, o.mirrored)).sort((a, b) => a.x - b.x);
+  const [L, R] = pts;
+  out.left = L;
+  out.right = R;
+
+  const dx = R.x - L.x;
+  if (Math.abs(dx) < 1e-4) {
+    out.reason = "hands overlapping";
+    return out;
+  }
+  // Positive tilt is the right hand held higher. A wheel turned clockwise —
+  // right hand down — steers right, hence the negation below.
+  const tilt = (Math.atan2(L.y - R.y, dx) * 180) / Math.PI - o.wheelTiltOffset;
+  // y is image-down, so subtracting from the neutral makes raising the hands
+  // positive.
+  const raise = o.wheelNeutral - (L.y + R.y) / 2;
+  out.tilt = Math.round(tilt);
+  out.raise = raise;
+
+  out.strafe = axis(-tilt, o.wheelTiltDead, o.wheelTiltRange);
+  out.move = axis(raise, o.wheelRaiseDead, o.wheelRaiseRange);
+  return out;
+}
+
 // Runs a HandLandmarker over the *same* video element and MediaStream the
 // FaceTracker already opened, so there's one camera and one preview between
 // them. It deliberately doesn't touch getUserMedia or the stream's tracks:
@@ -223,7 +311,8 @@ export class HandTracker {
     this.opts = { ...HAND_DEFAULTS };
 
     this.hasHand = false;
-    this.direction = null; // the committed, debounced direction
+    this.steer = { move: 0, strafe: 0 };
+    this.direction = null; // thumb mode only: the committed, debounced direction
     this._pending = null;
     this._pendingStreak = 0;
     this._lastDetect = 0;
@@ -232,8 +321,8 @@ export class HandTracker {
     // pose" — which is the question a still frame can't settle.
     this._history = [];
 
-    this.onDirection = null; // (direction | null) — fires only on change
-    this.onUpdate = null; // ({hasHand, direction, raw, info, seenPct, posePct})
+    this.onSteer = null; // ({move, strafe}) — both modes, -1..1 per axis
+    this.onUpdate = null; // everything the debug readout shows
     this._loop = this._loop.bind(this);
   }
 
@@ -241,27 +330,43 @@ export class HandTracker {
     Object.assign(this.opts, patch);
   }
 
-  // Rotate the decision frame so the pose being held right now reads as
-  // `dir` exactly. One gesture, held for a second or two, corrects the bias
-  // in all four directions — which is the whole reason for tracking a median
-  // of the *uncorrected* angle rather than the sectored one.
-  calibrateTo(dir) {
+  // Whatever is being held right now becomes the zero. In thumb mode that
+  // rotates the decision frame so the held pose reads as `dir` exactly, which
+  // corrects the bias in all four directions at once. In wheel mode it takes
+  // the resting height and resting tilt together, since nobody holds two
+  // hands at exactly the same height and an uncorrected tilt is a permanent
+  // drift to one side.
+  calibrate(dir = "up") {
+    if (this.opts.mode === "wheel") {
+      const raise = this._median("raise");
+      const tilt = this._median("tilt");
+      if (raise == null || tilt == null) return null;
+      // Both are medians of *already corrected* values, so they accumulate
+      // onto the current settings rather than replacing them.
+      this.opts.wheelNeutral -= raise;
+      this.opts.wheelTiltOffset += tilt;
+      return { neutral: +this.opts.wheelNeutral.toFixed(3), tilt: Math.round(this.opts.wheelTiltOffset) };
+    }
     const axis = SECTORS.find((s) => s.dir === dir)?.axis;
     const median = this.medianRawAngle();
     if (axis == null || median == null) return null;
     this.opts.angleOffset = Math.round(wrapDeg(median - axis));
-    return this.opts.angleOffset;
+    return { offset: this.opts.angleOffset };
+  }
+
+  _median(key) {
+    const a = this._history.map((h) => h[key]).filter((v) => v != null).sort((p, q) => p - q);
+    return a.length ? a[a.length >> 1] : null;
   }
 
   medianRawAngle() {
-    const a = this._history.map((h) => h.rawAngle).filter((v) => v != null).sort((p, q) => p - q);
-    return a.length ? a[a.length >> 1] : null;
+    return this._median("rawAngle");
   }
 
   async init() {
     const { FilesetResolver, HandLandmarker } = await import(CDN_BASE);
     const fileset = await FilesetResolver.forVisionTasks(`${CDN_BASE}/wasm`);
-    const commonOpts = { runningMode: "VIDEO", numHands: 1 };
+    const commonOpts = { runningMode: "VIDEO", numHands: 2 };
     try {
       this.landmarker = await HandLandmarker.createFromOptions(fileset, {
         baseOptions: { modelAssetPath: MODEL_URL, delegate: "GPU" },
@@ -282,7 +387,8 @@ export class HandTracker {
 
   stop() {
     this.running = false;
-    this._commit(null);
+    this.direction = null;
+    this._commit({ move: 0, strafe: 0 });
     this.overlayCtx?.clearRect(0, 0, this.overlay.width, this.overlay.height);
   }
 
@@ -298,32 +404,50 @@ export class HandTracker {
   }
 
   _handleResult(result) {
-    const lm = result.landmarks?.[0];
-    this.hasHand = !!lm;
-    const info = analyzeThumb(lm, this.opts);
-    const raw = info.direction;
+    const hands = result.landmarks || [];
+    this.hasHand = hands.length > 0;
+    const wheel = this.opts.mode === "wheel";
+    const info = wheel ? analyzeWheel(hands, this.opts) : analyzeThumb(hands[0], this.opts);
 
-    if (raw === this._pending) {
-      this._pendingStreak++;
+    let steer;
+    if (wheel) {
+      // Continuous axes, so there's nothing to debounce — the deadzones do
+      // that job, and a debounce here would just add lag to a live input.
+      steer = { move: info.move, strafe: info.strafe };
+      this.direction = null;
     } else {
-      this._pending = raw;
-      this._pendingStreak = 1;
+      const raw = info.direction;
+      if (raw === this._pending) {
+        this._pendingStreak++;
+      } else {
+        this._pending = raw;
+        this._pendingStreak = 1;
+      }
+      if (this._pendingStreak >= this.opts.debounce) this.direction = raw;
+      steer = STEER_FOR[this.direction] || { move: 0, strafe: 0 };
     }
-    if (this._pendingStreak >= this.opts.debounce) this._commit(raw);
+    this._commit(steer);
 
-    this._history.push({ seen: this.hasHand, pose: !!raw, rawAngle: info.rawAngle });
+    this._history.push({
+      seen: this.hasHand,
+      pose: wheel ? hands.length >= 2 : !!info.direction,
+      rawAngle: wheel ? null : info.rawAngle,
+      tilt: wheel ? info.tilt : null,
+      raise: wheel ? info.raise : null,
+    });
     if (this._history.length > HISTORY) this._history.shift();
     const n = this._history.length || 1;
     const pct = (k) => Math.round((this._history.filter((h) => h[k]).length / n) * 100);
-    // Median rather than mean, and over every frame that got as far as having
-    // an angle at all: a live angle jitters too much to read off while holding
-    // a pose, and reading it off is what calibration is.
-    const medianAngle = this.medianRawAngle();
 
-    if (this.overlayCtx) this._draw(lm, raw);
+    if (this.overlayCtx) this._draw(hands, info, wheel);
     this.onUpdate?.({
-      hasHand: this.hasHand, direction: this.direction, raw, info,
-      seenPct: pct("seen"), posePct: pct("pose"), medianAngle,
+      hasHand: this.hasHand, handCount: hands.length, mode: this.opts.mode,
+      direction: this.direction, steer: this.steer, info,
+      seenPct: pct("seen"), posePct: pct("pose"),
+      // Median rather than mean, over every frame that got far enough to have
+      // a value: the live number jitters too much to read off while holding a
+      // pose, and reading it off is what calibration is.
+      medianAngle: this.medianRawAngle(),
     });
   }
 
@@ -332,7 +456,7 @@ export class HandTracker {
   // tracked but the pose is rejected, so a glance answers which of the two is
   // going wrong. The thumb vector is drawn thicker because it's the one the
   // direction is taken from.
-  _draw(lm, raw) {
+  _draw(hands, info, wheel) {
     const ctx = this.overlayCtx;
     const w = this.video.videoWidth || this.overlay.width;
     const h = this.video.videoHeight || this.overlay.height;
@@ -341,36 +465,64 @@ export class HandTracker {
       this.overlay.height = h;
     }
     ctx.clearRect(0, 0, w, h);
-    if (!lm) return;
 
-    const color = raw ? "#4ade80" : "#fbbf24";
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    for (const [a, b] of HAND_BONES) {
-      ctx.moveTo(lm[a].x * w, lm[a].y * h);
-      ctx.lineTo(lm[b].x * w, lm[b].y * h);
-    }
-    ctx.stroke();
+    const live = wheel ? info.move !== 0 || info.strafe !== 0 : !!info.direction;
+    const color = live ? "#4ade80" : "#fbbf24";
 
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(lm[THUMB_MCP].x * w, lm[THUMB_MCP].y * h);
-    ctx.lineTo(lm[THUMB_TIP].x * w, lm[THUMB_TIP].y * h);
-    ctx.stroke();
-
-    ctx.fillStyle = color;
-    for (const p of lm) {
+    for (const lm of hands) {
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(p.x * w, p.y * h, 2.5, 0, Math.PI * 2);
-      ctx.fill();
+      for (const [a, b] of HAND_BONES) {
+        ctx.moveTo(lm[a].x * w, lm[a].y * h);
+        ctx.lineTo(lm[b].x * w, lm[b].y * h);
+      }
+      ctx.stroke();
+      ctx.fillStyle = color;
+      for (const p of lm) {
+        ctx.beginPath();
+        ctx.arc(p.x * w, p.y * h, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      if (!wheel) {
+        // The thumb vector is the one the direction is read from, so it gets
+        // to be the thick line.
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(lm[THUMB_MCP].x * w, lm[THUMB_MCP].y * h);
+        ctx.lineTo(lm[THUMB_TIP].x * w, lm[THUMB_TIP].y * h);
+        ctx.stroke();
+      }
+    }
+
+    // The bar between the two centroids and the neutral line it's judged
+    // against: between them they show both axes at once, which is a good deal
+    // easier to read than two numbers.
+    if (wheel && info.left && info.right) {
+      const toImg = (p) => ({ x: (this.opts.mirrored ? 1 - p.x : p.x) * w, y: p.y * h });
+      const a = toImg(info.left);
+      const b = toImg(info.right);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+
+      ctx.strokeStyle = "rgba(231,233,238,0.45)";
+      ctx.lineWidth = 1;
+      ctx.setLineDash([6, 5]);
+      ctx.beginPath();
+      ctx.moveTo(0, this.opts.wheelNeutral * h);
+      ctx.lineTo(w, this.opts.wheelNeutral * h);
+      ctx.stroke();
+      ctx.setLineDash([]);
     }
   }
 
-  _commit(direction) {
-    if (direction === this.direction) return;
-    this.direction = direction;
-    this.onDirection?.(direction);
+  _commit({ move, strafe }) {
+    if (move === this.steer.move && strafe === this.steer.strafe) return;
+    this.steer = { move, strafe };
+    this.onSteer?.(this.steer);
   }
 }

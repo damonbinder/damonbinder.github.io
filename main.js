@@ -38,6 +38,10 @@ const calibrateResult = document.getElementById("calibrateResult");
 // [slider, label, key, scale] — scale converts the integer slider to the
 // option's units, so the percentage sliders read as percentages.
 const HAND_SLIDERS = [
+  ["handTiltDeadSlider", "handTiltDeadVal", "wheelTiltDead", 1],
+  ["handTiltRangeSlider", "handTiltRangeVal", "wheelTiltRange", 1],
+  ["handRaiseDeadSlider", "handRaiseDeadVal", "wheelRaiseDead", 0.01],
+  ["handRaiseRangeSlider", "handRaiseRangeVal", "wheelRaiseRange", 0.01],
   ["handOffsetSlider", "handOffsetVal", "angleOffset", 1],
   ["handHorizSlider", "handHorizVal", "horizHalf", 1],
   ["handVertSlider", "handVertVal", "vertHalf", 1],
@@ -47,6 +51,7 @@ const HAND_SLIDERS = [
   ["handTowardSlider", "handTowardVal", "towardDominance", 0.01],
   ["handDebounceSlider", "handDebounceVal", "debounce", 1],
 ];
+const handModeSelect = document.getElementById("handModeSelect");
 const trackStateEl = document.getElementById("trackState");
 const mouthStateEl = document.getElementById("mouthState");
 const swingCountEl = document.getElementById("swingCount");
@@ -78,21 +83,17 @@ if (DEBUG) {
   document.querySelectorAll(".debug-only").forEach((el) => el.classList.remove("debug-only"));
 }
 
-// Opt-in second camera signal: a thumb held out of a closed fist steers, in
-// whichever of the four directions it points. Gated behind a URL flag like the
-// tuning panel is, because it loads and runs a second MediaPipe model over
-// every frame of the same stream and there's no reason to charge that to
-// someone playing on the keyboard.
-const HANDS = new URLSearchParams(location.search).has("hands");
+// Opt-in second camera signal that walks the player — two hands held like
+// handlebars, or a thumb pointed in one of four directions. Gated behind a URL
+// flag like the tuning panel is, because it loads and runs a second MediaPipe
+// model over every frame of the same stream and there's no reason to charge
+// that to someone playing on the keyboard. `?hands=wheel` or `?hands=thumb`
+// picks a scheme; a bare `?hands=1` takes the panel's default.
+const HANDS_PARAM = new URLSearchParams(location.search).get("hands");
+const HANDS = HANDS_PARAM != null;
 if (HANDS) {
   document.querySelectorAll(".hands-only").forEach((el) => el.classList.remove("hands-only"));
 }
-const HAND_DIRS = {
-  up: { move: 1, strafe: 0 },
-  down: { move: -1, strafe: 0 },
-  left: { move: 0, strafe: -1 },
-  right: { move: 0, strafe: 1 },
-};
 
 const game = new CorridorGame(canvas);
 const sound = new SoundFX();
@@ -546,17 +547,28 @@ function handOptionsFromPanel() {
   // Unchecked is the expected case: raw front-camera frames aren't mirrored,
   // so the sign flip is on by default. The checkbox is here because this is
   // the one thing in the classifier that can't be verified without a camera.
-  const opts = { mirrored: !invertHandsBox.checked };
+  const opts = { mirrored: !invertHandsBox.checked, mode: handModeSelect.value };
   for (const [slider, , key, scale] of HAND_SLIDERS) {
     opts[key] = Number(document.getElementById(slider).value) * scale;
   }
   return opts;
 }
 
-function applyHandDirection(dir) {
-  const d = dir ? HAND_DIRS[dir] : null;
-  handMove = d ? d.move : 0;
-  handStrafe = d ? d.strafe : 0;
+// Only one scheme's controls are worth showing at a time, and the calibrate
+// button means a different thing in each.
+function syncHandPanelToMode() {
+  const wheel = handModeSelect.value === "wheel";
+  document.querySelector(".wheel-only").style.display = wheel ? "" : "none";
+  document.querySelector(".thumb-only").style.display = wheel ? "none" : "";
+  calibrateHandsBtn.textContent = wheel
+    ? "Hold both hands level, then click to calibrate"
+    : "Hold thumb UP, then click to calibrate";
+  calibrateResult.textContent = "";
+}
+
+function applyHandSteer({ move, strafe }) {
+  handMove = move;
+  handStrafe = strafe;
   updateMoveDir();
   updateStrafeDir();
 }
@@ -564,28 +576,37 @@ function applyHandDirection(dir) {
 async function startHandTracking() {
   handTracker = new HandTracker(video, handOverlay);
   handTracker.setOptions(handOptionsFromPanel());
-  handTracker.onDirection = applyHandDirection;
-  handTracker.onUpdate = ({ hasHand, direction, raw, info, seenPct, posePct, medianAngle }) => {
-    handStateEl.textContent = hasHand ? direction || "—" : "none";
-    handStateEl.className = `value ${direction ? "gaze-running" : "gaze-unknown"}`;
+  handTracker.onSteer = applyHandSteer;
+  handTracker.onUpdate = ({ mode, hasHand, handCount, direction, steer, info, seenPct, posePct, medianAngle }) => {
+    const live = steer.move !== 0 || steer.strafe !== 0;
+    handStateEl.textContent = mode === "wheel"
+      ? `${handCount}h ${steer.move.toFixed(1)}/${steer.strafe.toFixed(1)}`
+      : hasHand ? direction || "—" : "none";
+    handStateEl.className = `value ${live ? "gaze-running" : "gaze-unknown"}`;
     // Kept separate from the face tracker's readout below rather than merged
     // into it: this updates at DETECT_INTERVAL_MS, that one at video rate.
-    lastHandReadout =
-      `hand:  ${hasHand ? "yes" : "no"}   seen ${seenPct}%  pose ${posePct}%\n` +
-      `dir:   ${direction || "—"}  (raw ${raw || "—"})${info.reason ? `  ${info.reason}` : ""}\n` +
-      `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
-      // depth negative means the thumb tip is nearer the camera than its
-      // knuckle, i.e. aimed at you
-      `len ${info.len.toFixed(2)}  depth ${info.depth.toFixed(2)}\n` +
-      // The median is the one to read off while holding a pose; the live angle
-      // jitters several degrees a frame and is unreadable.
-      // Raw is the number calibration works off; corrected is what the
-      // sectors actually judge. Showing only one of them makes the offset
-      // slider look like it's doing nothing.
-      `angle: raw ${info.rawAngle == null ? "—" : `${info.rawAngle}°`}  ` +
-      `median ${medianAngle == null ? "—" : `${medianAngle}°`}  ` +
-      `corrected ${info.angle == null ? "—" : `${info.angle}°`}\n` +
-      `axes:  right 0, up 90, left 180, down -90`;
+    const head =
+      `hands: ${handCount}   seen ${seenPct}%  usable ${posePct}%` +
+      `${info.reason ? `   ${info.reason}` : ""}\n` +
+      `steer: move ${steer.move.toFixed(2)}  strafe ${steer.strafe.toFixed(2)}\n`;
+    const o = handTracker.opts;
+    lastHandReadout = mode === "wheel"
+      ? head +
+        `tilt:  ${info.tilt == null ? "—" : `${info.tilt}°`}  ` +
+        `(dead ${o.wheelTiltDead}°, full ${o.wheelTiltRange}°)\n` +
+        `raise: ${info.raise == null ? "—" : info.raise.toFixed(3)}  ` +
+        `neutral y ${o.wheelNeutral.toFixed(3)}  tilt zero ${Math.round(o.wheelTiltOffset)}°`
+      : head +
+        `pose:  curled ${info.curled}/4  out ${info.thumbOut.toFixed(2)}  ` +
+        // depth negative means the thumb tip is nearer the camera than its
+        // knuckle, i.e. aimed at you
+        `len ${info.len.toFixed(2)}  depth ${info.depth.toFixed(2)}\n` +
+        // Raw is what calibration works off; corrected is what the sectors
+        // judge. Showing only one makes the offset slider look inert.
+        `angle: raw ${info.rawAngle == null ? "—" : `${info.rawAngle}°`}  ` +
+        `median ${medianAngle == null ? "—" : `${medianAngle}°`}  ` +
+        `corrected ${info.angle == null ? "—" : `${info.angle}°`}\n` +
+        `axes:  right 0, up 90, left 180, down -90`;
   };
   try {
     await handTracker.init();
@@ -605,7 +626,7 @@ function continueWithoutCamera() {
   // direction committed just before the failure would stick.
   handTracker?.stop();
   handTracker = null;
-  applyHandDirection(null);
+  applyHandSteer({ move: 0, strafe: 0 });
   cameraPanel.style.display = "none";
   trackStateEl.textContent = "off";
   trackStateEl.className = "value gaze-unknown";
@@ -672,16 +693,30 @@ invertHandsBox.addEventListener("change", () => {
 // hand and camera placement sit from where the classifier assumed, and all
 // four directions move together.
 calibrateHandsBtn.addEventListener("click", () => {
-  const offset = handTracker?.calibrateTo("up");
-  if (offset == null) {
-    calibrateResult.textContent = handTracker ? "no thumb seen" : "hands not running";
+  const res = handTracker?.calibrate("up");
+  if (res == null) {
+    calibrateResult.textContent = handTracker ? "nothing held to calibrate from" : "hands not running";
     return;
   }
-  const el = document.getElementById("handOffsetSlider");
-  el.value = String(offset);
-  document.getElementById("handOffsetVal").textContent = String(offset);
-  calibrateResult.textContent = `offset ${offset}°`;
+  if (res.offset != null) {
+    // The thumb offset has a slider of its own, so keep the two in step.
+    const el = document.getElementById("handOffsetSlider");
+    el.value = String(res.offset);
+    document.getElementById("handOffsetVal").textContent = String(res.offset);
+    calibrateResult.textContent = `offset ${res.offset}°`;
+  } else {
+    calibrateResult.textContent = `neutral ${res.neutral}, tilt ${res.tilt}°`;
+  }
 });
+
+if (HANDS_PARAM === "wheel" || HANDS_PARAM === "thumb") handModeSelect.value = HANDS_PARAM;
+
+handModeSelect.addEventListener("change", () => {
+  syncHandPanelToMode();
+  handTracker?.setOptions(handOptionsFromPanel());
+  applyHandSteer({ move: 0, strafe: 0 }); // don't carry a held input across a scheme change
+});
+syncHandPanelToMode();
 
 window.addEventListener("beforeunload", () => {
   tracker?.stop();

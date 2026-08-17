@@ -1130,8 +1130,9 @@ dead. Two rules come out of it:
   node already returns early on a null `ctx`, so that guard is the whole fix.
   Anything else called synchronously from a gesture handler owes the same care.
 - **The unsupported-browser gate runs before the pointer gate**, on
-  `typeof WebAssembly === "undefined"`. It hides the mode buttons and explains,
-  naming Lockdown Mode as the usual cause. WebAssembly is the cheapest of the
+  `typeof WebAssembly === "undefined"`. It hides the mode buttons and says
+  WebAssembly is switched off, without naming a cause. WebAssembly is the
+  cheapest of the
   four to test and the least likely to be absent for any other reason; testing
   `getUserMedia` instead would be wrong, since that is also missing on an
   insecure origin and has its own message.

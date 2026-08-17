@@ -277,14 +277,16 @@ canvas#hud {
   color: var(--text);
 }
 
-.mobile-notice {
+/* Shared by the two "you can't play this here" notices that replace the mode
+   buttons outright: no fine pointer, and no WebAssembly. */
+.start-notice {
   max-width: 320px;
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text);
 }
 
-.mobile-notice.hidden { display: none; }
+.start-notice.hidden { display: none; }
 
 .start-prompt {
   margin-top: 8px;

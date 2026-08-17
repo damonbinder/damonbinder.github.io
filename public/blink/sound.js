@@ -70,7 +70,16 @@ export class SoundFX {
 
   resume() {
     if (!this.ctx) {
-      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      // Safari's Lockdown Mode switches Web Audio off, so both constructors
+      // are undefined there. This runs as the *first* statement of the Start
+      // click handler, so an unguarded `new undefined()` threw before the
+      // handler could hide anything or report anything — every button on the
+      // start screen read as simply dead. Playing silently is a fine outcome;
+      // taking the page down with it is not. Every method that touches a node
+      // already returns early on a null ctx, so this guard is the whole fix.
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return;
+      this.ctx = new Ctor();
       this.masterGain = this.ctx.createGain();
       this.masterGain.gain.value = this.volume;
       // Limiter on the bus. The proximity drone is sustained and now runs

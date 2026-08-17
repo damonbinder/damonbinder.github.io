@@ -42,6 +42,7 @@ const restartHandsBtn = document.getElementById("restartHandsBtn");
 const startPrompt = document.getElementById("startPrompt");
 const startIntro = document.getElementById("startIntro");
 const mobileNotice = document.getElementById("mobileNotice");
+const unsupportedNotice = document.getElementById("unsupportedNotice");
 const startStatus = document.getElementById("startStatus");
 const startError = document.getElementById("startError");
 const startErrorMsg = document.getElementById("startErrorMsg");
@@ -1167,13 +1168,25 @@ handModeSelect.addEventListener("change", () => {
 });
 syncHandPanelToMode();
 
-// A capability test rather than a UA sniff: a phone or tablet has no fine
-// pointer, while a laptop has one even when its screen is also a touchscreen.
-// A narrow window on a desktop is deliberately *not* caught — that's a real
-// player who can resize, and turning them away would be worse than a cramped
-// layout. With the choice row hidden there is nothing to click, so the camera
-// is never requested on a device that couldn't use it anyway.
-if (!window.matchMedia("(any-pointer: fine)").matches) {
+// Checked before the pointer test, because it is the more specific answer for
+// anyone it catches. Safari's Lockdown Mode turns off WebAssembly, WebGL, Web
+// Audio and getUserMedia together — which is every dependency this game has,
+// so there is nothing to degrade to and no point letting them click Start and
+// fail four times over. WebAssembly is the cheapest of the four to test and
+// the least likely to be missing for any other reason; without it MediaPipe
+// cannot load at all. Testing getUserMedia instead would be wrong here: it is
+// also absent on an insecure origin, which has its own message.
+if (typeof WebAssembly === "undefined") {
+  startChoice.classList.add("hidden");
+  startIntro.classList.add("hidden");
+  unsupportedNotice.classList.remove("hidden");
+} else if (!window.matchMedia("(any-pointer: fine)").matches) {
+  // A capability test rather than a UA sniff: a phone or tablet has no fine
+  // pointer, while a laptop has one even when its screen is also a
+  // touchscreen. A narrow window on a desktop is deliberately *not* caught —
+  // that's a real player who can resize, and turning them away would be worse
+  // than a cramped layout. With the choice row hidden there is nothing to
+  // click, so the camera is never requested on a device that couldn't use it.
   startChoice.classList.add("hidden");
   startIntro.classList.add("hidden");
   mobileNotice.classList.remove("hidden");

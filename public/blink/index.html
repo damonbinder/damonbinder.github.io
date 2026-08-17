@@ -116,9 +116,14 @@
             <p id="startErrorMsg"></p>
             <button id="retryBtn" class="btn">Try again</button>
           </div>
-          <div id="mobileNotice" class="mobile-notice hidden">
+          <div id="mobileNotice" class="start-notice hidden">
             <b>Desktop only.</b> This one needs a webcam you're sitting in
             front of, and a keyboard.
+          </div>
+          <div id="unsupportedNotice" class="start-notice hidden">
+            <b>This browser can't run it.</b> Blink needs WebAssembly, and it's
+            switched off here. The usual cause is Safari's Lockdown Mode —
+            turning that off for this site and reloading should do it.
           </div>
           <div id="camError" class="cam-error hidden"></div>
         </div>

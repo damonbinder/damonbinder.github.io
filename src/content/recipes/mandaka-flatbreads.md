@@ -9,7 +9,7 @@ translation: >-
   The fine wheat flour, mixed with a little ghee, joined with salt, and made into a lump with milk and water, he should knead in a very large wooden vessel with slaps of the hands. When it has been kneaded and has turned smooth and glossy, he should form it into balls; and with palms smeared with fat, the balls dusted dry with rice flour, he should spread those balls out by passing and turning them with the hands. Spread broad, the *maṇḍaka*s are smooth, of a lustre equal to white silk. He who knows this should lay them carefully on the crown of a heated earthenware griddle, and should take them off quickly once they are cooked, before any blackness arises.
 related:
   - ember-baked-angarapolika-and-griddle-polika
-  - sohala-and-pahalika-fried-breads
+  - sohala-fried-bread
 tradition: Indian
 category: Grains
 subcategory: Rice, pulses, grains & breads

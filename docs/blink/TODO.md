@@ -1,8 +1,8 @@
 # Blink — TODO
 
-Deployed, unlisted, at **djbinder.com/blink/**. The game is in `public/blink/`,
-so editing it there is deploying it; these notes sit outside `public/` on
-purpose, because everything in it is served.
+Public at **djbinder.com/blink/**, and linked from the Projects page. The
+game is in `public/blink/`, so editing it there is deploying it; these notes
+sit outside `public/` on purpose, because everything in it is served.
 
 ## What this is for
 
@@ -26,18 +26,19 @@ What follows from that:
   progression, more systems. They cost the thing that makes it worth sending to
   someone.
 
-## Needed before it goes public
+## Needed before it went public — all done
 
-- [ ] **Remove `<meta name="robots" content="noindex, nofollow">` from
-      `index.html`.** It is there so an unlisted test deploy can't be
-      indexed if the URL leaks. Left in, the game is permanently unfindable —
-      this is the one item that fails silently and only shows up months later.
+- [x] ~~Remove `<meta name="robots" content="noindex, nofollow">` from
+      `index.html`.~~ Gone on 2026-08-22. It was there so an unlisted test
+      deploy couldn't be indexed if the URL leaked, and left in it would have
+      made the game permanently unfindable — the one item here that fails
+      silently and only shows up months later.
 - [x] ~~Deploy it.~~ Done, and all three conditions verified against the live
       site: GitHub Pages serves it over HTTPS, gzips the wasm (8.3MB down to
       2.6MB over the wire), and `og.jpg` resolves at the absolute URL baked
       into the OG tags.
-- [ ] **Add a link to it from the site**, whenever it stops being unlisted.
-      Right now nothing points here, which is the whole reason it is private.
+- [x] ~~Add a link to it from the site~~, done 2026-08-22 — it is an entry in
+      `src/data/projects.ts` and so appears on the Projects page.
 - [x] ~~Get one other person to play it.~~ Damon's wife played it on
       2026-08-16 and it worked for her. That is the shipped blink threshold
       registering on a second face — the single thing most likely to have been

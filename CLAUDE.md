@@ -28,7 +28,7 @@ Note: the blog posts folder is still named `writing/` (leftover from before the 
 
 **Everything under `public/` is copied verbatim into the build and served.** That is what makes `public/blink/` work — vanilla ES modules, no Astro involvement, editing it *is* deploying it — and it is also why that game's `CLAUDE.md` and `TODO.md` live in `docs/blink/` instead of beside the code. They were briefly in `public/` and were live at `/blink/CLAUDE.md`, which spoiled mechanics the game is meant to make you discover. Don't put anything under `public/` that you wouldn't publish.
 
-**Blink is deliberately unlisted**: nothing links to it, and `public/blink/index.html` carries a `noindex` tag. Both are meant to come off together when it goes public — see `docs/blink/TODO.md`.
+**Blink is public as of 2026-08-22**: it is an entry in `src/data/projects.ts`, and the `noindex` tag that kept the unlisted deploy out of search results is gone from `public/blink/index.html`. Those two were always meant to come off together.
 
 ## Architecture
 

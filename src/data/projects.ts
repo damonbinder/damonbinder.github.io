@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Blink',
+    blurb:
+      'A browser shooter you aim by looking and fire by blinking.',
+    date: 'August 2026',
+    href: '/blink/',
+  },
+  {
     title: 'The Indo-European Family Tree',
     blurb:
       'An interactive, time-calibrated tree of the Indo-European languages.',

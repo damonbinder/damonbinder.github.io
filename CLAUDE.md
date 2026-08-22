@@ -32,7 +32,7 @@ Note: the blog posts folder is still named `writing/` (leftover from before the 
 
 ## Architecture
 
-- **Blog is a unified "river"**: native posts (in `src/content/writing/`) plus link-posts pulled at build time by `src/loaders/external.ts` and merged in `src/lib/river.ts`. Sources: Defenses in Depth (author-filtered RSS) and Random Lives (HTML scrape). Podcasts are native link-post `.md` files. The internal content-collection name is `writing` (not user-facing).
+- **Blog is a unified "river"**: native posts (in `src/content/writing/`) plus link-posts pulled at build time by `src/loaders/external.ts` and merged in `src/lib/river.ts`. Sources: Defenses in Depth and Random Lives, both HTML scrapes (see "External facts"). Podcasts are native link-post `.md` files. The internal content-collection name is `writing` (not user-facing).
 - **Layout**: `src/layouts/Base.astro`. It takes a `wide` prop — wide pages (`home`, `research`, recipe source pages) use a 58rem measure; the rest (Blog, Projects, Books, About, individual recipe pages) use a 44rem reading measure (`--measure` in `src/styles/global.css`).
 - **Nav** (in `src/components/Header.astro`): Blog · Projects · About. Books and Physics research are reached from the home page "Other stuff" column, deliberately **not** in the nav. The "Damon Binder" site-title is hidden on the home page (redundant with the hero).
 - **Math**: `remark-math` + `rehype-katex`, rendered at build time; KaTeX CSS imported in `Base.astro`. Use `$$…$$` for display math.
@@ -65,7 +65,7 @@ Damon's personal collection of historical recipes he's actually cooked — class
 
 ## External facts
 
-- **Defenses in Depth** — Damon's Ghost blog at defensesindepth.bio. Multi-author; the loader reads the author feed (`/author/damon/rss/`) and also filters by `dc:creator` = "Damon Binder".
+- **Defenses in Depth** — Damon's blog at defensesindepth.bio. Multi-author. It was on Ghost and moved to Jekyll in August 2026, which killed the author feed the loader used (`/author/damon/rss/`, now a 404). There is no per-author feed on the new site and the site-wide `/feed.xml` is capped at 15 posts across all authors, so the loader scrapes his author page, `/authors/damon-binder/`, which lists all of them unpaginated. It skips posts titled `Linkpost: …`: the blog runs its own link-posts, and Damon carries the same links here as native link-posts pointing at the article rather than at the DiD wrapper page.
 - **Random Lives** — deployed at random-lives.github.io/random-lives, a separate GitHub org (Jekyll, no RSS feed yet → the loader scrapes its `/blog/` index).
 
 ## Deploy

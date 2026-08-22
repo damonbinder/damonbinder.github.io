@@ -75,172 +75,49 @@ function slugFromUrl(url: string): string {
     return url;
   }
 }
-
 // --- Defenses in Depth --------------------------------------------------------
-// Read from two places at once, because neither is sufficient alone and the
-// history here is that a single silent source can empty the river.
+// One author-scoped RSS feed, which exists specifically so that this file does
+// not have to scrape anything. It carries every one of Damon's posts, uncapped,
+// in a format that a redesign of the blog cannot disturb.
 //
-//   The author page, `/authors/damon-binder/`, lists every one of his posts,
-//   but only as HTML — a redesign of the card markup breaks it.
-//
-//   `/feed.xml` is RSS, so it survives any redesign, but it holds only the 15
-//   most recent posts across all authors. Filtering it to Damon yields his
-//   recent ones and drops the rest, and it loses one more each time a
-//   co-author publishes.
-//
-// So take the union. Between them, the page supplies the back catalogue and
-// the feed supplies a machine-readable floor, and it takes both breaking at
-// once to lose everything. The feed also acts as a canary: anything it lists
-// that the scrape missed means the markup moved, which is reported rather
-// than absorbed. (Ghost's `/author/damon/rss/`, which this replaces, 404'd
-// for who knows how long without anyone noticing.)
-const DID_ORIGIN = 'https://defensesindepth.bio';
-const DID_AUTHOR_PAGE = `${DID_ORIGIN}/authors/damon-binder/`;
-const DID_FEED = `${DID_ORIGIN}/feed.xml`;
+// It was added to defensesindepth.bio in August 2026 to end a run of exactly
+// that problem. This first read Ghost's `/author/damon/rss/`; the migration to
+// Jekyll dropped it, and the 404 emptied the river of every post here without
+// failing a build. The replacement scraped the author page's HTML, which worked
+// but would have broken the next time the card markup moved.
+const DID_FEED = 'https://defensesindepth.bio/authors/damon-binder/feed.xml';
 const DID_AUTHOR = 'Damon Binder';
-// The author page is one page today. If the blog ever grows enough to
-// paginate it, follow the chain rather than silently keeping page one.
-const DID_MAX_PAGES = 25;
 
-// The blog runs its own link-posts, titled "Linkpost: …". Damon carries those
-// same links here as native link-posts pointing at the article itself, so
-// pulling them in would list each one twice — once via the real URL, once via
-// the wrapper page.
-function isDidLinkpost(title: string): boolean {
-  return /^Linkpost:/i.test(title);
-}
-
-function didPost(link: string, title: string, date: string, excerpt?: string): RawPost {
-  const abs = new URL(link, DID_ORIGIN).href;
-  return {
-    id: `did/${slugFromUrl(abs)}`,
-    title,
-    date,
-    excerpt: excerpt || undefined,
-    external: abs,
-    source: 'Defenses in Depth',
-  };
-}
-
-// One page of `post-card` articles.
-function parseDidCards(html: string): RawPost[] {
-  const out: RawPost[] = [];
-  const articles = html.matchAll(
-    /<article class="post-card">([\s\S]*?)<\/article>/g,
-  );
-  for (const [, block] of articles) {
-    const link = block.match(/class="post-card-title">\s*<a href="([^"]+)"/)?.[1];
-    const title = block.match(/class="post-card-title">\s*<a[^>]*>([\s\S]*?)<\/a>/)?.[1];
-    const dateStr = block.match(/<time datetime="([^"]+)"/)?.[1];
-    const excerpt = block.match(/class="post-card-excerpt">([\s\S]*?)<\/div>/)?.[1];
-    const creator = block.match(/class="post-card-author">([\s\S]*?)<\/a>/)?.[1];
-    if (!link || !title) continue;
-    if (creator && decode(creator) !== DID_AUTHOR) continue; // guard against guest posts
-    const clean = decode(title);
-    if (isDidLinkpost(clean)) continue;
-    out.push(
-      didPost(
-        link,
-        clean,
-        dateStr ? new Date(dateStr).toISOString() : new Date(0).toISOString(),
-        excerpt ? decode(excerpt) : undefined,
-      ),
-    );
-  }
-  return out;
-}
-
-// A `rel="next"` link, or failing that any link deeper into the author's own
-// paginated pages. Returns null at the end of the chain.
-function didNextPage(html: string, current: string): string | null {
-  const rel =
-    html.match(/<a[^>]+rel="next"[^>]*href="([^"]+)"/)?.[1] ??
-    html.match(/<a[^>]+href="([^"]+)"[^>]*rel="next"/)?.[1];
-  const href =
-    rel ?? html.match(/href="([^"]*\/authors\/damon-binder\/page\/?\d+\/?)"/)?.[1];
-  if (!href) return null;
-  const abs = new URL(href, current).href;
-  return abs === current ? null : abs;
-}
-
-async function fetchDidAuthorPage(): Promise<RawPost[]> {
-  const byUrl = new Map<string, RawPost>();
-  const visited = new Set<string>();
-  let url: string | null = DID_AUTHOR_PAGE;
-  while (url && !visited.has(url) && visited.size < DID_MAX_PAGES) {
-    visited.add(url);
-    const html: string | null = await fetchText(url);
-    if (!html) break;
-    for (const p of parseDidCards(html)) byUrl.set(p.external, p);
-    url = didNextPage(html, url);
-  }
-  return [...byUrl.values()];
-}
-
-async function fetchDidFeed(): Promise<RawPost[]> {
+async function fetchDefensesInDepth(): Promise<SourceResult> {
   const xml = await fetchText(DID_FEED);
-  if (!xml) return [];
+  if (!xml) return { posts: [], errors: [] };
   const parser = new XMLParser({ ignoreAttributes: true, trimValues: true });
   const items = parser.parse(xml)?.rss?.channel?.item;
   const list = Array.isArray(items) ? items : items ? [items] : [];
-  const out: RawPost[] = [];
+  const posts: RawPost[] = [];
   for (const it of list) {
+    // The feed is author-scoped already; this only catches it being pointed
+    // somewhere else by mistake.
     const creator = it['dc:creator'] ? String(it['dc:creator']).trim() : '';
-    if (creator !== DID_AUTHOR) continue; // the feed is site-wide, so this one matters
+    if (creator && creator !== DID_AUTHOR) continue;
     const link = String(it.link ?? '');
     if (!link) continue;
     const title = decode(String(it.title ?? 'Untitled'));
-    if (isDidLinkpost(title)) continue;
-    out.push(
-      didPost(
-        link,
-        title,
-        new Date(String(it.pubDate ?? '')).toISOString(),
-        it.description ? decode(String(it.description)) : undefined,
-      ),
-    );
+    // The blog runs its own link-posts, titled "Linkpost: …". Damon carries
+    // those same links here as native link-posts pointing at the article
+    // itself, so taking these as well would list each one twice — once via the
+    // real URL and once via the wrapper page.
+    if (/^Linkpost:/i.test(title)) continue;
+    posts.push({
+      id: `did/${slugFromUrl(link)}`,
+      title,
+      date: new Date(String(it.pubDate ?? '')).toISOString(),
+      excerpt: it.description ? decode(String(it.description)) : undefined,
+      external: link,
+      source: 'Defenses in Depth',
+    });
   }
-  return out;
-}
-
-async function fetchDefensesInDepth(): Promise<SourceResult> {
-  const [scraped, feed] = await Promise.all([
-    fetchDidAuthorPage(),
-    fetchDidFeed(),
-  ]);
-  const errors: string[] = [];
-
-  // Prefer the scraped entry where both have a post: same fields, but the
-  // author page is the source that carries the whole history, so keeping its
-  // copy means one consistent shape rather than a mix.
-  const byUrl = new Map<string, RawPost>();
-  for (const p of feed) byUrl.set(p.external, p);
-  for (const p of scraped) byUrl.set(p.external, p);
-
-  if (feed.length === 0) {
-    // Not data loss on its own — the author page carries everything — but it
-    // means the cross-check below is no longer watching anything.
-    errors.push(
-      `${DID_FEED} yielded no posts by ${DID_AUTHOR}. The river still has whatever the author page returned, but the feed is no longer available as a check on it.`,
-    );
-  }
-
-  if (scraped.length === 0 && feed.length > 0) {
-    errors.push(
-      `The author page ${DID_AUTHOR_PAGE} yielded no posts while the feed yielded ${feed.length}. Its markup has almost certainly changed — parseDidCards needs updating, and until it is, only the posts still in the feed will appear.`,
-    );
-  } else {
-    const missing = feed.filter((p) => !scraped.some((s) => s.external === p.external));
-    if (missing.length > 0) {
-      errors.push(
-        `The feed lists ${missing.length} post(s) the author-page scrape missed: ${missing
-          .map((p) => p.external)
-          .join(', ')}. The page markup has probably drifted.`,
-      );
-    }
-  }
-
-  return { posts: [...byUrl.values()], errors };
+  return { posts, errors: [] };
 }
 
 // --- Random Lives (Jekyll blog, no feed — read the blog index) ---------------

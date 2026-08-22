@@ -184,6 +184,15 @@ canvas#hud {
 
 .settings-card .btn { width: 100%; }
 
+/* Last thing in the scrolling body, deliberately not between it and the Done
+   button: that button is pinned, and a line above it eats the space it needs
+   on a short viewport. */
+.settings-credit {
+  margin: 18px 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 .overlay {
   position: absolute;
   inset: 0;

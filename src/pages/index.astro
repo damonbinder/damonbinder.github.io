@@ -4,7 +4,6 @@ import { getRiver } from '../lib/river.ts';
 import { projects } from '../data/projects.ts';
 
 const posts = (await getRiver()).slice(0, 3);
-const featured = projects.slice(0, 3);
 ---
 <Base wide description="Damon Binder — AI safety, writing, and side projects.">
   <section class="intro">
@@ -37,7 +36,7 @@ const featured = projects.slice(0, 3);
 
     <section class="home-col">
       <h2><a href="/projects/">Projects</a></h2>
-      {featured.map((proj) => (
+      {projects.map((proj) => (
         <div class="home-col-item">
           {proj.href ? <a href={proj.href}>{proj.title}</a> : <span>{proj.title}</span>}
           <p class="muted">{proj.blurb}</p>

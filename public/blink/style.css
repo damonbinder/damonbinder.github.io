@@ -188,7 +188,7 @@ canvas#hud {
    button: that button is pinned, and a line above it eats the space it needs
    on a short viewport. */
 .settings-credit {
-  margin: 18px 0 0;
+  margin: 18px 0;
   font-size: 0.75rem;
   color: var(--muted);
 }

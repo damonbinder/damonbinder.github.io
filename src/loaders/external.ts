@@ -1,9 +1,10 @@
 import type { Loader } from 'astro/loaders';
 import { XMLParser } from 'fast-xml-parser';
 
-// What a source reports back: the posts it found, plus anything the build
-// should shout about. Sources never throw — a dead source degrades the river
-// rather than failing the build — so problems travel as messages instead.
+// What a source reports back: the posts it found, plus anything wrong with how
+// it found them. A source never throws — it reports, so that one dead source
+// does not mask what the others would have said. `externalLoader` collects
+// every problem and then fails the build once, with all of them listed.
 interface SourceResult {
   posts: RawPost[];
   errors: string[];
@@ -30,18 +31,40 @@ function decode(s: string): string {
     .trim();
 }
 
+// Retry the transient failures — a connection reset, a 502 from a CDN, a
+// source mid-deploy — because a missed fetch now fails the build, and a build
+// that fails on a blip trains you to ignore the mail it sends. A 404 or other
+// 4xx is an answer, not a blip, so it is taken at face value.
+const FETCH_ATTEMPTS = 3;
+const FETCH_BACKOFF_MS = 500;
+
 async function fetchText(url: string): Promise<string | null> {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      console.error(`[external-posts] ${url} — HTTP ${res.status}`);
-      return null;
+  for (let attempt = 1; attempt <= FETCH_ATTEMPTS; attempt++) {
+    const last = attempt === FETCH_ATTEMPTS;
+    try {
+      const res = await fetch(url);
+      if (res.ok) return await res.text();
+      if (res.status < 500) {
+        console.error(`[external-posts] ${url} — HTTP ${res.status}`);
+        return null;
+      }
+      if (last) {
+        console.error(
+          `[external-posts] ${url} — HTTP ${res.status} after ${FETCH_ATTEMPTS} attempts`,
+        );
+        return null;
+      }
+    } catch (err) {
+      if (last) {
+        console.error(
+          `[external-posts] ${url} — ${err} (after ${FETCH_ATTEMPTS} attempts)`,
+        );
+        return null;
+      }
     }
-    return await res.text();
-  } catch (err) {
-    console.error(`[external-posts] ${url} — ${err}`);
-    return null;
+    await new Promise((r) => setTimeout(r, FETCH_BACKOFF_MS * attempt));
   }
+  return null;
 }
 
 function slugFromUrl(url: string): string {
@@ -250,15 +273,19 @@ async function fetchRandomLives(): Promise<SourceResult> {
   return { posts: out, errors: [] };
 }
 
-// Aggregates all external link-post sources into one collection.
+// Aggregates all external link-post sources into one collection, and fails the
+// build if any of them looks broken.
 //
-// A source failing is non-fatal — the build still succeeds offline, and a
-// broken source degrades the river rather than taking the site down. The cost
-// of that choice is that breakage is invisible unless something says so, which
-// is exactly how the Ghost feed disappearing in August 2026 emptied the river
-// of every Defenses in Depth post while the daily deploy kept reporting
-// success. So anything that looks like breakage is logged at error level,
-// where it shows up in the Actions run for the deploy that shipped it.
+// Failing is the point. This used to log the problem and carry on, which meant
+// the Ghost feed disappearing in August 2026 emptied the river of every
+// Defenses in Depth post while the daily cron kept deploying and kept
+// reporting success — the breakage was discoverable only by reading the log of
+// a run that said it passed, so nobody found it by anything but eye.
+//
+// Throwing here fails the GitHub Actions run, which sends mail. And because
+// Pages keeps serving the last successful deployment, a failed build leaves
+// the site up and correct rather than replacing it with one that is missing
+// posts. Deploying nothing beats deploying a river with holes in it.
 export function externalLoader(): Loader {
   return {
     name: 'external-posts',
@@ -280,13 +307,23 @@ export function externalLoader(): Loader {
           .map((s, i) => `${s.label}: ${results[i].posts.length}`)
           .join(', ')}.`,
       );
+
+      const problems: string[] = [];
       for (const [i, s] of sources.entries()) {
         if (results[i].posts.length === 0) {
-          logger.error(
-            `${s.label} returned no posts. Either the site is unreachable or its markup changed — the blog river is now missing that source entirely.`,
+          problems.push(
+            `${s.label} returned no posts — the site is unreachable or its markup changed.`,
           );
         }
-        for (const err of results[i].errors) logger.error(`${s.label}: ${err}`);
+        for (const err of results[i].errors) problems.push(`${s.label}: ${err}`);
+      }
+      if (problems.length > 0) {
+        for (const p of problems) logger.error(p);
+        throw new Error(
+          `External post sources are broken, so this build was stopped rather than shipped:\n` +
+            problems.map((p) => `  - ${p}`).join('\n') +
+            `\nThe live site keeps serving the last good deploy until this is fixed.`,
+        );
       }
     },
   };

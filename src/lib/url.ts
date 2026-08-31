@@ -26,6 +26,12 @@ export function safeHttpUrl(value: string, base?: string): string | null {
   return SAFE_PROTOCOLS.has(url.protocol) ? url.href : null;
 }
 
+// The same rule as a yes/no, for validating a value that is already in hand —
+// the schema backstop in src/content.config.ts. Note that it keeps the caller's
+// string rather than the normalized one; that is fine where it is used, because
+// the loader normalizes every URL it stores and a hand-written link post's URL
+// is Damon's own. Anything reading a URL out of a third party should call
+// `safeHttpUrl` and store what it returns.
 export function isSafeHttpUrl(value: string): boolean {
   return safeHttpUrl(value) !== null;
 }

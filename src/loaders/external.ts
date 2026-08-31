@@ -72,11 +72,28 @@ async function fetchText(url: string): Promise<string | null> {
 // not the kind of thing either of these sources produces by accident, so it is
 // reported as a broken source and stops the build rather than being dropped
 // quietly: if a feed starts handing out `javascript:` URLs, that is worth mail.
-// The offending value is truncated because it is attacker-controlled text going
-// into a log.
-function unsafeLinkError(kind: string, raw: string): string {
-  const shown = raw.length > 120 ? `${raw.slice(0, 120)}…` : raw;
-  return `${kind} is not an http(s) URL, so it was dropped: ${JSON.stringify(shown)}`;
+//
+// One message for the lot, with a few examples. These values are text a broken
+// or hostile source chose, on its way into a build log, so both how many are
+// shown and how long each one is are capped.
+const SHOWN_UNSAFE_LINKS = 3;
+const UNSAFE_LINK_CHARS = 120;
+
+function unsafeLinkErrors(kind: string, links: string[]): string[] {
+  if (links.length === 0) return [];
+  const shown = links
+    .slice(0, SHOWN_UNSAFE_LINKS)
+    .map((l) =>
+      JSON.stringify(
+        l.length > UNSAFE_LINK_CHARS ? `${l.slice(0, UNSAFE_LINK_CHARS)}…` : l,
+      ),
+    );
+  const more = links.length - shown.length;
+  return [
+    `${kind} with a non-http(s) URL were dropped (${links.length}): ` +
+      shown.join(', ') +
+      (more > 0 ? `, and ${more} more` : ''),
+  ];
 }
 
 function slugFromUrl(url: string): string {
@@ -107,7 +124,7 @@ async function fetchDefensesInDepth(): Promise<SourceResult> {
   const items = parser.parse(xml)?.rss?.channel?.item;
   const list = Array.isArray(items) ? items : items ? [items] : [];
   const posts: RawPost[] = [];
-  const errors: string[] = [];
+  const unsafe: string[] = [];
   for (const it of list) {
     // The feed is author-scoped already; this only catches it being pointed
     // somewhere else by mistake.
@@ -115,17 +132,18 @@ async function fetchDefensesInDepth(): Promise<SourceResult> {
     if (creator && creator !== DID_AUTHOR) continue;
     const rawLink = String(it.link ?? '').trim();
     if (!rawLink) continue;
-    const link = safeHttpUrl(rawLink);
-    if (!link) {
-      errors.push(unsafeLinkError("a feed item's <link>", rawLink));
-      continue;
-    }
     const title = decode(String(it.title ?? 'Untitled'));
     // The blog runs its own link-posts, titled "Linkpost: …". Damon carries
     // those same links here as native link-posts pointing at the article
     // itself, so taking these as well would list each one twice — once via the
-    // real URL and once via the wrapper page.
+    // real URL and once via the wrapper page. Dropped before the link is
+    // looked at, so an item this file ignores anyway cannot fail a build.
     if (/^Linkpost:/i.test(title)) continue;
+    const link = safeHttpUrl(rawLink);
+    if (!link) {
+      unsafe.push(rawLink);
+      continue;
+    }
     posts.push({
       id: `did/${slugFromUrl(link)}`,
       title,
@@ -135,7 +153,7 @@ async function fetchDefensesInDepth(): Promise<SourceResult> {
       source: 'Defenses in Depth',
     });
   }
-  return { posts, errors };
+  return { posts, errors: unsafeLinkErrors('Feed items', unsafe) };
 }
 
 // --- Random Lives (Jekyll blog, no feed — read the blog index) ---------------
@@ -146,7 +164,7 @@ async function fetchRandomLives(): Promise<SourceResult> {
   const html = await fetchText(RL_BLOG);
   if (!html) return { posts: [], errors: [] };
   const out: RawPost[] = [];
-  const errors: string[] = [];
+  const unsafe: string[] = [];
   const articles = html.matchAll(
     /<article class="blog-preview">([\s\S]*?)<\/article>/g,
   );
@@ -161,7 +179,7 @@ async function fetchRandomLives(): Promise<SourceResult> {
     // to be checked.
     const abs = safeHttpUrl(link, RL_ORIGIN);
     if (!abs) {
-      errors.push(unsafeLinkError("a scraped post's href", link));
+      unsafe.push(link);
       continue;
     }
     out.push({
@@ -173,7 +191,7 @@ async function fetchRandomLives(): Promise<SourceResult> {
       source: 'Random Lives',
     });
   }
-  return { posts: out, errors };
+  return { posts: out, errors: unsafeLinkErrors('Scraped posts', unsafe) };
 }
 
 // Aggregates all external link-post sources into one collection, and fails the

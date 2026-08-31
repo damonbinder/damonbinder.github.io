@@ -2,6 +2,17 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 import { externalLoader } from './loaders/external.ts';
+import { isSafeHttpUrl } from './lib/url.ts';
+
+// A link post's `external` is rendered as an `<a href>`, so the scheme has to
+// be one a browser will merely navigate. `.url()` alone is not that check —
+// `javascript:alert(1)` is a URL zod happily accepts. The loader already
+// rejects these at the source; this is the backstop that keeps any future
+// source (or a hand-written link post) from reintroducing the problem.
+const externalUrl = z
+  .string()
+  .url()
+  .refine(isSafeHttpUrl, { message: 'must be an http(s) URL' });
 
 // Native posts written here. Set `external` + `source` to turn one into a
 // hand-made link post; otherwise it renders on its own page.
@@ -11,7 +22,7 @@ const writing = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string().optional(),
-    external: z.string().url().optional(),
+    external: externalUrl.optional(),
     source: z.string().optional(),
     draft: z.boolean().default(false),
   }),
@@ -25,7 +36,7 @@ const links = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string().optional(),
-    external: z.string().url(),
+    external: externalUrl,
     source: z.string(),
   }),
 });

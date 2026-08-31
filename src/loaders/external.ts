@@ -1,5 +1,6 @@
 import type { Loader } from 'astro/loaders';
 import { XMLParser } from 'fast-xml-parser';
+import { safeHttpUrl } from '../lib/url.ts';
 
 // What a source reports back: the posts it found, plus anything wrong with how
 // it found them. A source never throws — it reports, so that one dead source
@@ -67,6 +68,17 @@ async function fetchText(url: string): Promise<string | null> {
   return null;
 }
 
+// A link that is not http(s) is never rendered — see `safeHttpUrl`. It is also
+// not the kind of thing either of these sources produces by accident, so it is
+// reported as a broken source and stops the build rather than being dropped
+// quietly: if a feed starts handing out `javascript:` URLs, that is worth mail.
+// The offending value is truncated because it is attacker-controlled text going
+// into a log.
+function unsafeLinkError(kind: string, raw: string): string {
+  const shown = raw.length > 120 ? `${raw.slice(0, 120)}…` : raw;
+  return `${kind} is not an http(s) URL, so it was dropped: ${JSON.stringify(shown)}`;
+}
+
 function slugFromUrl(url: string): string {
   try {
     const parts = new URL(url).pathname.replace(/\/+$/, '').split('/');
@@ -95,13 +107,19 @@ async function fetchDefensesInDepth(): Promise<SourceResult> {
   const items = parser.parse(xml)?.rss?.channel?.item;
   const list = Array.isArray(items) ? items : items ? [items] : [];
   const posts: RawPost[] = [];
+  const errors: string[] = [];
   for (const it of list) {
     // The feed is author-scoped already; this only catches it being pointed
     // somewhere else by mistake.
     const creator = it['dc:creator'] ? String(it['dc:creator']).trim() : '';
     if (creator && creator !== DID_AUTHOR) continue;
-    const link = String(it.link ?? '');
-    if (!link) continue;
+    const rawLink = String(it.link ?? '').trim();
+    if (!rawLink) continue;
+    const link = safeHttpUrl(rawLink);
+    if (!link) {
+      errors.push(unsafeLinkError("a feed item's <link>", rawLink));
+      continue;
+    }
     const title = decode(String(it.title ?? 'Untitled'));
     // The blog runs its own link-posts, titled "Linkpost: …". Damon carries
     // those same links here as native link-posts pointing at the article
@@ -117,7 +135,7 @@ async function fetchDefensesInDepth(): Promise<SourceResult> {
       source: 'Defenses in Depth',
     });
   }
-  return { posts, errors: [] };
+  return { posts, errors };
 }
 
 // --- Random Lives (Jekyll blog, no feed — read the blog index) ---------------
@@ -128,6 +146,7 @@ async function fetchRandomLives(): Promise<SourceResult> {
   const html = await fetchText(RL_BLOG);
   if (!html) return { posts: [], errors: [] };
   const out: RawPost[] = [];
+  const errors: string[] = [];
   const articles = html.matchAll(
     /<article class="blog-preview">([\s\S]*?)<\/article>/g,
   );
@@ -137,7 +156,14 @@ async function fetchRandomLives(): Promise<SourceResult> {
     const dateStr = block.match(/class="blog-date">([^<]+)</)?.[1];
     const excerpt = block.match(/class="blog-excerpt">([\s\S]*?)<\/p>/)?.[1];
     if (!link || !title) continue;
-    const abs = new URL(link, RL_ORIGIN).href;
+    // Resolving against the origin only fills in a relative href; an absolute
+    // one keeps whatever scheme the scraped page wrote, so the result still has
+    // to be checked.
+    const abs = safeHttpUrl(link, RL_ORIGIN);
+    if (!abs) {
+      errors.push(unsafeLinkError("a scraped post's href", link));
+      continue;
+    }
     out.push({
       id: `rl/${slugFromUrl(abs)}`,
       title: decode(title),
@@ -147,7 +173,7 @@ async function fetchRandomLives(): Promise<SourceResult> {
       source: 'Random Lives',
     });
   }
-  return { posts: out, errors: [] };
+  return { posts: out, errors };
 }
 
 // Aggregates all external link-post sources into one collection, and fails the

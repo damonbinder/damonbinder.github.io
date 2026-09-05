@@ -1,5 +1,5 @@
 ---
-title: Gourd
+title: Gourd with *Laser*
 source: Apicius 3.4.1
 work: Apicius
 originalLang: Latin
@@ -19,6 +19,7 @@ translation: >-
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 113
+status: published
 ---
 
 ## Ingredients
@@ -29,10 +30,10 @@ order: 113
 * ½ tsp asafoetida  
 * ½ tsp dried rue  
 * 3 Tb red wine vinegar  
-* 1 Tb liquamen  
+* 1 Tb fish sauce  
 * 1 Tb *defrutum*
 
 ## Method
 
-1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a dutch oven  
+1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a dutch oven.  
 2. Mix the remaining ingredients together, then pour over the squash. Bring to a simmer and cook for a few minutes, sprinkle with pepper, and serve. 

@@ -8,12 +8,13 @@ original: >-
   condimenta uiridia: mentam apium coriandrum puleium caroetam mel uinum
   liquamen oleum et acetum.
 translation: >-
-  Gourds with chicken another way: [take] hard-fleshed peaches, pepper,
-  caraway, cumin, *silphium*, and green seasonings: mint, celery, coriander,
-  pennyroyal, carrot, honey, wine, fish sauce, oil, and vinegar.
+  Gourds with chicken another way: [take] hard-fleshed peaches, truffles,
+  pepper, caraway, cumin, and *silphium*; green seasonings: mint, celery,
+  coriander, and pennyroyal; date, honey, wine, fish sauce, oil, and vinegar.
 category: Poultry
 subcategory: Chicken
 order: 80
+status: published
 ---
 
 ## Ingredients

@@ -13,6 +13,7 @@ translation: >-
 category: Vegetables
 subcategory: Unclassified
 order: 126
+status: published
 ---
 
 ## Ingredients
@@ -24,4 +25,4 @@ order: 126
 * White wine
 
 ## Method
-Trim any old leaves from the leak and clean out any dirt, then cut into thick slices.  Place the leek into salted water, and a little olive oil, and boil for several minutes until cooked, then remove and strain any excess liquid. Dress with a little more olive oil, fish sauce, and white wine, then serve. 
+Trim any old leaves from the leek and clean out any dirt, then cut into thick slices.  Place the leek into salted water, and a little olive oil, and boil for several minutes until cooked, then remove and strain any excess liquid. Dress with a little more olive oil, fish sauce, and white wine, then serve. 

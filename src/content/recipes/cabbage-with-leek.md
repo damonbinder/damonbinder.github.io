@@ -13,6 +13,7 @@ translation: >-
 category: Vegetables
 subcategory: Cabbage
 order: 120
+status: published
 ---
 
 ## Ingredients
@@ -29,7 +30,7 @@ order: 120
 
 ## Method
 
-1. Preheat oven to 180C/350F  
+1. Preheat oven to 180C/350F.  
 2. Chop the cabbage and leek into large strips. Add to a large dutch oven along with the olive oil, and fry on high heat until the cabbage begins to brown.  
 3. Add the remaining ingredients to the dutch oven, stir, and bring to a simmer.   
 4. Put on the lid and place in the oven. Cook covered for 45 minutes, then remove the lid and cook uncovered for another 25 minutes. Remove from the oven and serve.

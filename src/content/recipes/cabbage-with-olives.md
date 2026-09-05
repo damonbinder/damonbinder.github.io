@@ -12,6 +12,7 @@ translation: >-
 category: Vegetables
 subcategory: Cabbage
 order: 121
+status: published
 ---
 
 ## Ingredients
@@ -25,5 +26,5 @@ order: 121
 
 ## Method
 
-1. Add the green olives and cabbage to a wok or frying pan along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
-2. Add the fish sauce, white wine, olive oil, and cumin to the wok. Cook for a further minute or two until most of the liquid has evaporated.
+1. Add the green olives and cabbage to a large frying pan or wok along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
+2. Add the fish sauce, white wine, olive oil, and cumin to the frying pan. Cook for a further minute or two until most of the liquid has evaporated.

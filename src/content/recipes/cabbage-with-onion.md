@@ -12,7 +12,10 @@ translation: >-
 category: Vegetables
 subcategory: Cabbage
 order: 119
+status: published
 ---
+
+Curiously, this recipe calls for no salt. I suggest adding fish sauce, as appears in essentially every other recipe in the book.
 
 ## Ingredients
 
@@ -27,10 +30,5 @@ order: 119
 
 ## Method
 
-1. Add the cabbage and onion to a wok or frying pan along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
-2. Add the remaining ingredients to the wok, toss everything together, then serve.
-
-**Notes**
-
-* The original recipe doesn’t call for fish sauce, or indeed any source of salt, which appears to be an omission.   
-* Recipe 3.9.3 is very similar, as is 3.9.1a above.
+1. Add the cabbage and onion to a large frying pan or wok along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
+2. Add the remaining ingredients to the frying pan, toss everything together, then serve.

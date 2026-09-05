@@ -16,7 +16,10 @@ translation: >-
 category: Vegetables
 subcategory: Unclassified
 order: 124
+status: published
 ---
+
+Varro (116–27 BC) was a Roman scholar who wrote on an enormous range of subjects, from farming to the Latin language. Most of his work is now lost.
 
 ## Ingredients
 

@@ -15,6 +15,7 @@ translation: >-
 category: Seafood
 subcategory: Unclassified
 order: 104
+status: published
 ---
 
 ## Ingredients

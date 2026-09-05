@@ -12,6 +12,7 @@ translation: >-
 category: Vegetables
 subcategory: Cabbage
 order: 122
+status: published
 ---
 
 ## Ingredients
@@ -28,7 +29,7 @@ order: 122
 
 ## Method
 
-3. Heat 250 ml of water in a small saucepan. Add the semolina, pine nuts, along with a generous pinch of salt. Cook until thick, stirring frequently to prevent sticking.  
-4. While the semolina is cooking, add the cabbage to a wok or frying pan along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
-5. Add the fish sauce, white wine, olive oil, and cumin to the wok. Cook for a further minute or two until most of the liquid has evaporated.  
-6. Place the cabbage into a serving dish, and sprinkle with the coriander leaves. Pour over the semolina, then sprinkle on raisins, and serve.
+1. Heat 250 ml of water in a small saucepan. Add the semolina, pine nuts, along with a generous pinch of salt. Cook until thick, stirring frequently to prevent sticking.  
+2. While the semolina is cooking, add the cabbage to a large frying pan or wok along with about 100 ml of water. Cook for 5 or so minutes, until the cabbage is tender and the water has evaporated.  
+3. Add the fish sauce, white wine, olive oil, and cumin to the frying pan. Cook for a further minute or two until most of the liquid has evaporated.  
+4. Place the cabbage into a serving dish, and sprinkle with the coriander leaves. Pour over the semolina, then sprinkle on raisins, and serve.

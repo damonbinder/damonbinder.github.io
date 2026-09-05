@@ -11,13 +11,14 @@ translation: >-
 category: Vegetables
 subcategory: Unclassified
 order: 128
+status: published
 ---
 
 ## Ingredients
 
 * A large bundle of chard leaves  
 * 1 Tb olive oil  
-* 1 tsp Djon mustard   
+* 1 tsp Dijon mustard   
 * 1 tsp vinegar  
 * Salt
 

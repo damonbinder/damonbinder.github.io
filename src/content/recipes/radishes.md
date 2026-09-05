@@ -11,6 +11,7 @@ translation: >-
 category: Vegetables
 subcategory: Salads
 order: 112
+status: published
 ---
 
 ## Ingredients
@@ -20,4 +21,4 @@ order: 112
 * ½ tsp black peppercorns
 
 ## Method
-Slice the radishes. Ground the pepper corns with the fish sauce in a mortar and pestle, drizzle over the radishes, and serve.
+Slice the radishes. Grind the peppercorns with the fish sauce in a mortar and pestle, drizzle over the radishes, and serve.

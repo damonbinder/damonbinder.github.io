@@ -14,12 +14,13 @@ translation: >-
 category: Vegetables
 subcategory: Unclassified
 order: 131
+status: published
 ---
 
 ## Ingredients
 
 * 1 head of celery  
-* 1 onions, peeled and cut in half  
+* 1 onion, peeled and cut in half  
 * 1 tsp baking soda  
 * ½ tsp ground pepper  
 * ½ tsp dried lovage  
@@ -32,5 +33,5 @@ order: 131
 
 1. Place the celery, onion, and baking soda in a large saucepan. Cover in water, bring to the boil, and then simmer for 15 minutes.  
 2. Drain the water from the saucepan, then leave the celery and onions to cool for a few minutes.  
-3. Place the celery and onions into a food processor along with the remaining ingredients and puree  
-4. Pour the puree into a saucepan. Bring gently to heat for a few minutes, then serve
+3. Place the celery and onions into a food processor along with the remaining ingredients and puree.  
+4. Pour the puree into a saucepan. Bring gently to heat for a few minutes, then serve.

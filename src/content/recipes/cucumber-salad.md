@@ -12,6 +12,7 @@ translation: >-
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 116
+status: published
 ---
 
 ## Ingredients
@@ -26,9 +27,4 @@ order: 116
 
 ## Method
 
-1. Arrange the cucumber slices in a shallow dish. Combine the other ingredients together and pour over the cucumber. Cover the dish with cling wrap and leave in the fridge for a couple of hours.
-
-**Notes**
-
-* The recipe calls for either *passum* or honey. If using honey rather than passum add 2 Tb honey  
-* The recipe itself states that adding *silphium* is optional, so you can omit this if you like
+Arrange the cucumber slices in a shallow dish. Combine the other ingredients together and pour over the cucumber. Cover the dish with cling wrap and leave in the fridge for a couple of hours.

@@ -19,6 +19,7 @@ translation: >-
 category: Vegetables
 subcategory: Gourds, Cucumbers, and Melons
 order: 115
+status: published
 ---
 
 ## Ingredients
@@ -39,6 +40,6 @@ order: 115
 ## Method
 
 1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a baking dish.  
-2. Place the dates in a bowl along with a little water, and microwave for a minute. Place a food processor along with the pine nuts, and blend into a coarse paste.  
+2. Place the dates in a bowl along with a little water, and microwave for a minute. Place in a food processor along with the pine nuts, and blend into a coarse paste.  
 3. Add the remaining ingredients to the food processor, and blend together.  
 4. Pour the sauce over the squash, then cover with a lid or foil. Place in a preheated oven at 180 C / 350 F for 15 minutes, or until reheated. Season with pepper and serve.

@@ -1,9 +1,9 @@
 ---
-import { catSlug, showingDrafts } from '../lib/recipes.ts';
+import { catSlug, showingDrafts, inlineText } from '../lib/recipes.ts';
 
 interface Props { list: any[]; work: string }
 const { list, work } = Astro.props;
-const em = (s: string) => s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const em = inlineText;
 ---
 <ol class="source-list">
   {list.map((r) => (

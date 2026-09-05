@@ -13,6 +13,24 @@ export const catSlug = (s: string) =>
 
 export { sections };
 
+// Inline text out of recipe frontmatter — `title`, `original`, `translation`,
+// `privateNote` — is injected with `set:html` so that *asterisks* around a loan
+// word can render as italics. That also handed the browser every other angle
+// bracket in the field as markup, and editions mark an editor's supplement to
+// the text with angle brackets: `<oleum modicum>` was dropped silently, and
+// `<a little oil>` opened an anchor that ran to the end of the paragraph and
+// took the rest of the translation's color with it. So escape the field first,
+// then put back the two things that are meant to be markup — the emphasis, and
+// the one deliberate line break, in Apicius 1.29's doubled sauce.
+export function inlineText(s?: string): string {
+  return (s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/&lt;br\s*\/?&gt;/g, '<br>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
 // Drafts are visible in local dev (our private "working version") and in any
 // build with SHOW_DRAFTS=1; the public production build ships only `published`.
 export const showingDrafts =

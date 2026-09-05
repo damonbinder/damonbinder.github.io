@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { render } from 'astro:content';
-import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry, showingDrafts } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry, showingDrafts, inlineText } from '../../../lib/recipes.ts';
 
 export async function getStaticPaths() {
   const recipes = await getRecipes();
@@ -45,7 +45,7 @@ const langCode = { Latin: 'la', Greek: 'grc', Sanskrit: 'sa' }[d.originalLang ??
 // Foreign untranslated terms are italicised with *asterisks* in the source text
 // and translation strings; render those as emphasis. stripEm gives the
 // plain-text form for the <title> tag and other markup-free contexts.
-const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const em = inlineText;
 const stripEm = (s?: string) => (s ?? '').replace(/\*/g, '');
 
 // Meta description: the recipe's intro paragraph (prose above the first
@@ -84,7 +84,7 @@ const metaDescription = introPara
         {d.original && (
           <div class="og">
             <span class="og-label">{d.originalLang ?? 'Original'}</span>
-            <p lang={langCode} set:html={`<em>${d.original}</em>`}></p>
+            <p lang={langCode} set:html={`<em>${em(d.original)}</em>`}></p>
           </div>
         )}
         {d.translation && (

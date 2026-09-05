@@ -2,7 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import SourceRecipeBrowser from '../../../components/SourceRecipeBrowser.astro';
 import { render } from 'astro:content';
-import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry } from '../../../lib/recipes.ts';
+import { getRecipes, catSlug, pageOf, displayName, compareCitations, getSourceEntry, inlineText } from '../../../lib/recipes.ts';
 import { sourceTexts } from '../../../data/sources/index.ts';
 
 export async function getStaticPaths() {
@@ -27,7 +27,7 @@ const period = sourceEntry?.data.period;
 // column only when there's actual prose, so date-only entries don't leave an
 // empty column.
 const Blurb = sourceEntry?.body?.trim() ? (await render(sourceEntry)).Content : undefined;
-const em = (s?: string) => (s ?? '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const em = inlineText;
 const escAttr = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -137,7 +137,9 @@ const textEntries = (fullText ?? []).map((entry) => {
   {Blurb ? (
     <div class="source-grid">
       <div class="blurb"><Blurb /></div>
-      <SourceRecipeBrowser list={list} work={work} />
+      <div class="recipes">
+        <div class="recipes-scroll"><SourceRecipeBrowser list={list} work={work} /></div>
+      </div>
     </div>
   ) : (
     <SourceRecipeBrowser list={list} work={work} />
@@ -203,7 +205,24 @@ const textEntries = (fullText ?? []).map((entry) => {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     gap: 3rem;
-    align-items: start;
+    /* The list is capped at the blurb's height (see .recipes), so the column
+       has to stretch to the row instead of shrinking to its content. */
+    align-items: stretch;
+  }
+
+  /* A source can run to seventy recipes, which pushes the full text thousands
+     of pixels below the fold. Cap the list at whatever height the blurb
+     happens to be and scroll it there. The row is sized by the blurb alone
+     because the scroller is out of flow and contributes no height of its own;
+     the floor keeps a short blurb from leaving a three-line window. */
+  .recipes { position: relative; min-height: 24rem; }
+  .recipes-scroll {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    /* Keep the scrollbar off the draft tags. */
+    padding-right: 0.5rem;
   }
   .blurb { font-size: 1.05rem; line-height: 1.65; }
   .blurb :global(p) { margin: 0 0 1rem; }
@@ -211,6 +230,10 @@ const textEntries = (fullText ?? []).map((entry) => {
 
   @media (max-width: 780px) {
     .source-grid { grid-template-columns: 1fr; gap: 2rem; }
+    /* Stacked there is nothing to align to and no height to save: let the list
+       run at its full length. */
+    .recipes { position: static; min-height: 0; }
+    .recipes-scroll { position: static; overflow: visible; padding-right: 0; }
   }
 
   .full-text { margin-top: 3rem; }

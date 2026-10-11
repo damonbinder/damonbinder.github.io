@@ -1,5 +1,5 @@
 ---
-title: Khara-Khaṇḍa Salted Fish
+title: '*Khara-Khaṇḍa* Salted Fish'
 source: Mānasollāsa 3.13.1533–1534
 work: Mānasollāsa
 originalLang: Sanskrit

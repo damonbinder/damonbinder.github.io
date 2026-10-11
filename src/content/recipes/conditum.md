@@ -1,5 +1,5 @@
 ---
-title: Conditum
+title: '*Conditum*'
 source: Oribasius, Medical Collections 5.33i
 work: Oribasius
 category: Beverages

@@ -1,5 +1,5 @@
 ---
-title: Sauced Bhaditraka
+title: Sauced *Bhaditraka*
 source: Mānasollāsa 3.13.1466–1468
 work: Mānasollāsa
 originalLang: Sanskrit

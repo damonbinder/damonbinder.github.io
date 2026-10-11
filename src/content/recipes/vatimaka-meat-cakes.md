@@ -1,5 +1,5 @@
 ---
-title: Vaṭimaka Meat Cakes
+title: '*Vaṭimaka* Meat Cakes'
 source: Mānasollāsa 3.13.1486–1487
 work: Mānasollāsa
 originalLang: Sanskrit

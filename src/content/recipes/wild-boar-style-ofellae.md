@@ -1,5 +1,5 @@
 ---
-title: Wild-Boar Style Ofellae
+title: Wild-Boar Style *Ofellae*
 source: Apicius 7.4.3
 work: Apicius
 originalLang: Latin
@@ -32,13 +32,13 @@ order: 33
 * ½ tsp ground pepper  
 * 90 g honey  
 * 45 ml fish sauce  
-* 2 tsp cornstarch, made into a slurry
+* 2 tsp starch, made into a slurry
 
 ## Method
 
 1. Preheat the oven to 200C. Roast the pork belly in the oven until well done, about 1 hr. Once pork belly is cooked, remove from the oven and allow to rest for 20 minutes  
 2. Slice the pork into bite-sized pieces, and add to a frying pan along with the spices, the honey, the fish sauce, and 30 ml of water. Bring to a boil and cook for a few minutes.  
-3. Add the cornstarch slurry and stir for a couple minutes, until thicken. Remove from heat, and serve the meat coated in sauce
+3. Add the starch slurry and stir for a couple minutes, until thicken. Remove from heat, and serve the meat coated in sauce
 
 **Notes**
 

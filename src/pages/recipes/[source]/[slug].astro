@@ -79,7 +79,32 @@ const metaDescription = introPara
       {d.tradition && <span>{d.tradition}</span>}
     </p>
 
-    {(d.original || d.translation) && (
+    {d.passages ? (
+      <div class="original">
+        {d.passages.some((x) => x.original) && (
+          <div class="og">
+            <span class="og-label">{d.originalLang ?? 'Original'}</span>
+            {d.passages.filter((x) => x.original).map((x) => (
+              <div class="passage">
+                <span class="passage-cite">{x.source}</span>
+                <p lang={langCode} set:html={`<em>${em(x.original)}</em>`}></p>
+              </div>
+            ))}
+          </div>
+        )}
+        {d.passages.some((x) => x.translation) && (
+          <div class="og">
+            <span class="og-label">English</span>
+            {d.passages.filter((x) => x.translation).map((x) => (
+              <div class="passage">
+                <span class="passage-cite">{x.source}</span>
+                <p set:html={em(x.translation)}></p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ) : (d.original || d.translation) && (
       <div class="original">
         {d.original && (
           <div class="og">
@@ -197,6 +222,15 @@ const metaDescription = introPara
     margin-bottom: 0.5rem;
   }
   .og p { margin: 0; font-size: 0.98rem; line-height: 1.6; }
+  .passage + .passage { margin-top: 0.9rem; }
+  .passage-cite {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
 
   /* Recipe body — Ingredients / Method / Notes as clean section labels. */
   .recipe-body :global(h2) {

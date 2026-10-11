@@ -1,5 +1,5 @@
 ---
-title: Meatballs in hydrogarum
+title: Meatballs in *hydrogarum*
 source: Apicius 2.2.1/2
 work: Apicius
 originalLang: Latin

@@ -1,5 +1,5 @@
 ---
-title: Spiced Sour Vaṭakas
+title: Spiced Sour *Vaṭakas*
 source: Mānasollāsa 3.13.1405cd–1408ab
 work: Mānasollāsa
 originalLang: Sanskrit

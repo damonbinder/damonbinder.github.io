@@ -1,5 +1,5 @@
 ---
-title: Libum
+title: '*Libum*'
 source: Cato, De agricultura 75
 work: Cato
 category: Dessert

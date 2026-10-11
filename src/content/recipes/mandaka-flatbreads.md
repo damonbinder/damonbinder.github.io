@@ -1,5 +1,5 @@
 ---
-title: Maṇḍaka Flatbreads
+title: '*Maṇḍaka* Flatbreads'
 source: Mānasollāsa 3.13.1376–1380
 work: Mānasollāsa
 originalLang: Sanskrit

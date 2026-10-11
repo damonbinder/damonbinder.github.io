@@ -37,10 +37,10 @@ order: 146
 * ½ tsp pennyroyal  
 * 1 tsp of rue, chopped  
 * ½ tsp asafoetida  
-* 1 Tb cornstarch, made into a slurry
+* 1 Tb starch, made into a slurry
 
 ## Method
 
 1. Rinse the lentils in cold water, then place in a saucepan with 800 ml of water. Bring to a simmer, then add the leeks and coriander leaves and cook covered until the lentils are mushy, about 45 minutes.  
-2. Add all other ingredients except the cornstarch. Taste and adjust seasoning as required.  
-3. Add the cornstarch slurry and allow to thicken for another minute, then serve with a little extra olive oil and pepper drizzled on top.
+2. Add all other ingredients except the starch. Taste and adjust seasoning as required.  
+3. Add the starch slurry and allow to thicken for another minute, then serve with a little extra olive oil and pepper drizzled on top.

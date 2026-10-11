@@ -1,5 +1,5 @@
 ---
-title: Fruit Pānaka with Milk-Whey Base
+title: Fruit *Pānaka* with Milk-Whey Base
 source: Mānasollāsa 3.13.1581–1584
 work: Mānasollāsa
 originalLang: Sanskrit

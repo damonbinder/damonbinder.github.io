@@ -1,5 +1,5 @@
 ---
-title: Patina of Sardines
+title: '*Patina* of Sardines'
 source: Apicius 4.2.30
 work: Apicius
 originalLang: Latin
@@ -14,11 +14,12 @@ translation: >-
 category: Seafood
 subcategory: Unclassified
 order: 96
+status: published
 ---
 
 ## Ingredients
 
-* 5 whole sardines (about 450g)  
+* About 450 g of small fish like anchovies or sardines (I used 5 whole sardines)  
 * 30 ml olive oil  
 * ½ brown onion, finely chopped or pulvarized  
 * 200 ml white wine  
@@ -27,11 +28,11 @@ order: 96
 * 1 tsp dried oregano  
 * ½ tsp lovage  
 * ½ tsp pepper  
-* 1 Tb cornstarch, made into a slurry
+* 1 Tb starch, made into a slurry
 
 ## Method
 
-1. Preheat the oven to 200 C / 400 F. Place the sardines in the oven and bake for 15 minutes, or until cooked through.  
-2. While the sardines are cooking, heat the olive oil in a large frying pan. Add the onions and cook for 5 minutes, until translucent.  
+1. Preheat the oven to 200 C / 400 F. Place the fish in the oven and bake for 15 minutes, or until cooked through.  
+2. While the fish are cooking, heat the olive oil in a large frying pan. Add the onions and cook for 5 minutes, until translucent.  
 3. Add the remaining ingredients to the frying pan, and simmer for 5 minutes.  
-4. Once the sardines are cooked, gut them and add them to the frying pan and bring back to a simmer. Add the cornstarch slurry, allow to thicken for a minute, and serve.
+4. Once the fish are cooked, gut them and add them to the frying pan and bring back to a simmer. Add the starch slurry, allow to thicken for a minute, and serve.

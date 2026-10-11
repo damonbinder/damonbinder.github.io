@@ -1,5 +1,5 @@
 ---
-title: Lucretian Patella
+title: Lucretian *Patella*
 source: Apicius 4.2.25
 work: Apicius
 originalLang: Latin
@@ -19,6 +19,7 @@ translation: >-
 category: Seafood
 subcategory: Unclassified
 order: 97
+status: published
 ---
 
 ## Ingredients
@@ -38,8 +39,3 @@ order: 97
 2. When ready to cook, place the onions in a frying pan along with the fish sauce, olive oil, and 2 Tb of water. Cook for about 5 minutes or until the onions are translucent.  
 3. Drain the salted fish and place in the frying pan, and cook until the fish is almost done.  
 4. Add the remaining ingredients to the frying pan. Mix everything together for a few minutes, then taste and adjust seasonings if needed. Remove from the heat and serve.
-
-**Notes**
-
-* I haven’t yet worked out how long to soak salt fish, my first attempt was too salty  
-* Apicius 4.2.24 gives a similar recipe for salt fish

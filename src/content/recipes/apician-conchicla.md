@@ -1,5 +1,5 @@
 ---
-title: Apician Conchicla
+title: Apician *Conchicla*
 source: Apicius 5.4.2
 work: Apicius
 originalLang: Latin

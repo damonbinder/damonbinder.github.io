@@ -1,5 +1,5 @@
 ---
-title: Oxyporium
+title: '*Oxyporium*'
 source: Apicius 1.32
 work: Apicius
 originalLang: Latin

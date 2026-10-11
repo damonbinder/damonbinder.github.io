@@ -1,5 +1,5 @@
 ---
-title: Oxyporium
+title: '*Oxyporium*'
 source: Columella, De re rustica 12.59e
 work: Columella
 category: Vegetables

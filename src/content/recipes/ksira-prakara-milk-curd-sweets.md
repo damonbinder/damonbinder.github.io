@@ -1,5 +1,5 @@
 ---
-title: Kṣīra-Prakāra Milk-Curd Sweets
+title: '*Kṣīra-Prakāra* Milk-Curd Sweets'
 source: Mānasollāsa 3.13.1408cd–1411ab
 work: Mānasollāsa
 originalLang: Sanskrit

@@ -1,5 +1,5 @@
 ---
-title: Pañcavarṇī Five-Colored Offal Stew
+title: '*Pañcavarṇī* Five-Colored Offal Stew'
 source: Mānasollāsa 3.13.1488–1491
 work: Mānasollāsa
 originalLang: Sanskrit

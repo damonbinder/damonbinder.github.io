@@ -28,9 +28,9 @@ status: published
 * 15 ml fish sauce  
 * 15 ml olive oil  
 * Generous grind of black pepper  
-* 1 Tb cornstarch, made into a slurry
+* 1 Tb starch, made into a slurry
 
 ## Method
 
 1. Boil the mussels until cooked. If they are in their shell, once cooked remove them from the shells.   
-2. Place the mussel meat in a saucepan along with celery seed, rue, pepper, honey, *passum*, fish sauce, and olive oil. Bring to a simmer, then add the cornstarch slurry and cook until the sauce thickens. 
+2. Place the mussel meat in a saucepan along with celery seed, rue, pepper, honey, *passum*, fish sauce, and olive oil. Bring to a simmer, then add the starch slurry and cook until the sauce thickens. 

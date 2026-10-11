@@ -1,5 +1,5 @@
 ---
-title: Cheese Patina
+title: Cheese *Patina*
 source: Apicius 7.11.7
 work: Apicius
 originalLang: Latin

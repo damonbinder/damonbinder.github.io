@@ -1,5 +1,5 @@
 ---
-title: Dadhi Curd from Reduced Milk
+title: '*Dadhi* Curd from Reduced Milk'
 source: Mānasollāsa 3.13.1568–1570
 work: Mānasollāsa
 originalLang: Sanskrit

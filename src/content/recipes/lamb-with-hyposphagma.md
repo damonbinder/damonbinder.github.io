@@ -1,5 +1,5 @@
 ---
-title: Lamb with Hyposphagma
+title: Lamb with *Hyposphagma*
 source: Erasistratus, in Athenaeus 516c
 work: Athenaeus
 category: Meat

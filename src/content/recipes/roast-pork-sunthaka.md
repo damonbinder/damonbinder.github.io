@@ -1,5 +1,5 @@
 ---
-title: Roast Pork Śuṇṭhaka
+title: Roast Pork *Śuṇṭhaka*
 source: Mānasollāsa 3.13.1433–1434
 work: Mānasollāsa
 originalLang: Sanskrit

@@ -1,5 +1,5 @@
 ---
-title: Gastris
+title: '*Gastris*'
 source: Chrysippus of Tyana, in Athenaeus 647
 work: Chrysippus of Tyana
 category: Dessert

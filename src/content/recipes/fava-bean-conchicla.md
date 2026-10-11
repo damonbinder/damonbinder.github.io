@@ -1,5 +1,5 @@
 ---
-title: Fava Bean Conchicla
+title: Fava Bean *Conchicla*
 source: Apicius 5.4.1
 work: Apicius
 originalLang: Latin

@@ -1,5 +1,5 @@
 ---
-title: Savoury *Veṣṭikā*
+title: Savory *Veṣṭikā*
 source: Mānasollāsa 3.13.1391–1392ab
 work: Mānasollāsa
 originalLang: Sanskrit

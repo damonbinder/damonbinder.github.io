@@ -1,5 +1,5 @@
 ---
-title: Chicken Tractogalatus
+title: Chicken *Tractogalatus*
 source: Apicius 6.8.13
 work: Apicius
 originalLang: Latin
@@ -43,14 +43,14 @@ order: 78
 * ½ tsp dried lovage  
 * 1 tsp dried oregano  
 * 2 Tb *defrutum*  
-* 2 Tb cornstarch, mixed with water into a slurry
+* 2 Tb starch, mixed with water into a slurry
 
 ## Method
 
 1. Add the white wine, fish sauce, onion, coriander leaves, and olive oil to a large saucepan and bring to a simmer. Add the chicken thighs and simmer for about 25 minutes, or until the chicken is cooked through.  
 2. Add the milk, semolina, and 2 Tb honey to a separate saucepan, along with a couple pinches of salt. Heat and stir until it becomes very thick, being careful not to let it burn.  
 3. Once the chicken is cooked, remove from the cooking liquor. Cover in the semolina mixture and place onto a serving dish. Add the rest of the semolina around the chicken.  
-4. Prepare the sauce by adding the lovage, oregano, generous ground pepper, *defrutum*, final 2 Tb honey, and 200 ml of the chicken cooking liquor to another saucepan. Bring to a boil, then add the cornstarch slurry to thicken.  
+4. Prepare the sauce by adding the lovage, oregano, generous ground pepper, *defrutum*, final 2 Tb honey, and 200 ml of the chicken cooking liquor to another saucepan. Bring to a boil, then add the starch slurry to thicken.  
 5. Pour the thickened sauce over the chicken and semolina, then serve.
 
 **Notes**

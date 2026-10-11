@@ -1,5 +1,5 @@
 ---
-title: Lucanicae
+title: '*Lucanicae*'
 source: Apicius 2.4
 work: Apicius
 originalLang: Latin

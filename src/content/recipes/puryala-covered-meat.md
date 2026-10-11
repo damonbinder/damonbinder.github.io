@@ -1,5 +1,5 @@
 ---
-title: Puryala Chicken
+title: '*Puryala* Chicken'
 source: Mānasollāsa 3.13.1457–1461
 work: Mānasollāsa
 originalLang: Sanskrit

@@ -1,5 +1,5 @@
 ---
-title: Baked Fish ala Mithaecus
+title: Baked Fish à la Mithaecus
 source: Mithaecus, in Athenaeus 325f
 work: Athenaeus
 category: Seafood

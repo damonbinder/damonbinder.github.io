@@ -1,5 +1,5 @@
 ---
-title: Buffalo-Milk Pāyasa
+title: Buffalo-Milk *Pāyasa*
 source: Mānasollāsa 3.13.1373–1375
 work: Mānasollāsa
 originalLang: Sanskrit

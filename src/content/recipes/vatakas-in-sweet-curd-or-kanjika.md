@@ -1,5 +1,5 @@
 ---
-title: Vaṭakas in Sweet Curd or Kāñjika
+title: '*Vaṭakas* in Sweet Curd or *Kāñjika*'
 source: Mānasollāsa 3.13.1403cd–1405ab
 work: Mānasollāsa
 originalLang: Sanskrit

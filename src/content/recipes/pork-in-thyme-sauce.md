@@ -14,7 +14,7 @@ translation: >-
   and boil it with salt and dill, dipping it repeatedly in cold water so that it
   stays white. Then take fresh herbs, thyme, a little pennyroyal, and hard-boiled
   eggs finely chopped; scatter all this over it, and dress it with a pint of
-  fish sauce, a pound of oil, and a pound of raisin wine, and serve it so.
+  fish sauce, a pound of oil, and a pound of *passum*, and serve it so.
 related:
   - pork-in-coriander-sauce
   - pork-unococto

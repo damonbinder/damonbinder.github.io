@@ -1,5 +1,5 @@
 ---
-title: Śikhariṇī Sweet Strained Curd
+title: '*Śikhariṇī* Sweet Strained Curd'
 source: Mānasollāsa 3.13.1574
 work: Mānasollāsa
 originalLang: Sanskrit

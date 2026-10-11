@@ -1,5 +1,5 @@
 ---
-title: Matian Minutal
+title: Matian *Minutal*
 source: Apicius 4.3.4
 work: Apicius
 originalLang: Latin
@@ -24,7 +24,10 @@ translation: >-
 category: Meat
 subcategory: Minutals
 order: 28
+status: published
 ---
+
+This recipe calls for Matian apples, a variety named after either Gaius Matius, a friend of Cicero and Caesar, or his son, a friend of Augustus. The latter is usually identified with the author of a cookbook mentioned by Columella that sadly does not survive. It's unclear whether the dish is named after the apples, after Matius himself, or both. The Spanish word for apple, *manzana*, derives from the name of these apples (*mala Matiana*).
 
 ## Ingredients
 
@@ -43,7 +46,7 @@ order: 28
 * 2 tsp ground coriander  
 * 1½ tsp dried mint  
 * ½  tsp asafoetida  
-* 2 Tb cornflour, mixed into a slurry
+* 2 Tb starch, mixed into a slurry
 
 ## Method
 
@@ -51,8 +54,4 @@ order: 28
 2. Form the minced beef into small meatballs.   
 3. Place the stock, fish sauce, leeks, coriander leaf, meatballs, and pork to a dutch oven. Bring to a simmer, then cover and cook for 20 minutes.  
 4. Core and dice the apples, then add them to the dutch oven. Cook for a further 20 minutes.  
-5. Add the cumin, coriander, asafoetida, pepper, and mint to the dish, along with the honey, *defrutum*, and vinegar. Stir and taste, adjusting seasoning as desired. Add the cornflour slurry and stir for a few minutes to thicken, then serve.
-
-**Notes**
-
-* This recipe is named after a variety of apples, which in turn were named after either Gaius Matius, a friend of Cicero and Caesar, or his son, a friend of Augustus.
+5. Add the cumin, coriander, asafoetida, pepper, and mint to the dish, along with the honey, *defrutum*, and vinegar. Stir and taste, adjusting seasoning as desired. Add the starch slurry and stir for a few minutes to thicken, then serve.

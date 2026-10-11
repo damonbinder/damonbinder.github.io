@@ -1,5 +1,5 @@
 ---
-title: Ghṛta-Karkaṭa Crabs in Ghee
+title: '*Ghṛta-Karkaṭa* Crabs in Ghee'
 source: Mānasollāsa 3.13.1540–1542
 work: Mānasollāsa
 originalLang: Sanskrit

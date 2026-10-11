@@ -1,5 +1,5 @@
 ---
-title: Patina of Pears
+title: '*Patina* of Pears'
 source: Apicius 4.2.35
 work: Apicius
 originalLang: Latin
@@ -14,6 +14,7 @@ translation: >-
 category: Dessert
 subcategory: Sweet Patinas
 order: 178
+status: published
 ---
 
 ## Ingredients

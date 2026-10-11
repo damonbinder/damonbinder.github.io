@@ -1,5 +1,5 @@
 ---
-title: Bhūṣikā
+title: '*Bhūṣikā*'
 source: Mānasollāsa 3.13.1478–1481
 work: Mānasollāsa
 originalLang: Sanskrit

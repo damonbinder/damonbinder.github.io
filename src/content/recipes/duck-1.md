@@ -33,7 +33,7 @@ order: 83
 * ½ tsp asafoetida  
 * 2 tbsp honey  
 * 1 tbsp red wine vinegar  
-* 2 tsp cornstarch mixed with water into a slurry
+* 2 tsp starch mixed with water into a slurry
 
 ## Method
 
@@ -42,6 +42,6 @@ order: 83
 3. Remove the duck and place it in a dutch oven along with the fish sauce, olive oil, and bundle of coriander and oregano. Cover and place in the oven to bake for about 45 minutes.  
 4. Check on the duck, and brush with 2 Tb of *defrutum*. Return to the oven and cook for another 30 minutes, or until the duck is cooked through.  
 5. Remove the duck from the dutch oven and place somewhere to rest. Also remove and discard the herb bundle.  
-6. Skim any excess fat from the dutch oven, then add the remaining ingredients except for the cornstarch slurry. Bring to a gentle simmer, taste and adjust as needed.  
-7. Add the cornstarch slurry to the sauce and gentle cook until thickened.   
+6. Skim any excess fat from the dutch oven, then add the remaining ingredients except for the starch slurry. Bring to a gentle simmer, taste and adjust as needed.  
+7. Add the starch slurry to the sauce and gentle cook until thickened.   
 8. Carve the duck, place back into the sauce to gently warm, and serve.

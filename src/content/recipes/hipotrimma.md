@@ -1,5 +1,5 @@
 ---
-title: Hypotrimma
+title: '*Hypotrimma*'
 source: Apicius 1.33
 work: Apicius
 originalLang: Latin

@@ -1,5 +1,5 @@
 ---
-title: Mūṣaka-Style Sour Roast
+title: '*Mūṣaka*-Style Sour Roast'
 source: Mānasollāsa 3.13.1543–1547
 work: Mānasollāsa
 originalLang: Sanskrit

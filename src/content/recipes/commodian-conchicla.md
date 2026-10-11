@@ -1,5 +1,5 @@
 ---
-title: Commodian Conchicla
+title: Commodian *Conchicla*
 source: Apicius 5.4.4
 work: Apicius
 originalLang: Latin

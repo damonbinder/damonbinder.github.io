@@ -1,5 +1,5 @@
 ---
-title: Sala Cattabia
+title: '*Sala Cattabia*'
 source: Apicius 4.1.3
 work: Apicius
 originalLang: Latin
@@ -14,6 +14,7 @@ translation: >-
   serve.
 category: Dips and Relishes
 order: 2
+status: published
 ---
 
 ## Ingredients

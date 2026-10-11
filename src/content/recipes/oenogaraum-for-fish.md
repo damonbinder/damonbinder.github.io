@@ -1,5 +1,5 @@
 ---
-title: Oenogaraum for fish
+title: '*Oenogarum* for fish'
 source: Apicius 10.2.17/18
 work: Apicius
 originalLang: Latin
@@ -27,4 +27,4 @@ order: 91
 * Ground pepper
 
 ## Method
-Place the ingredient into a small saucepan, mix together, and gently bring to heat. Thicken with a little cornstarch if desired.
+Place the ingredient into a small saucepan, mix together, and gently bring to heat. Thicken with a little starch if desired.

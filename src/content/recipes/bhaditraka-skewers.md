@@ -1,5 +1,5 @@
 ---
-title: Bhaditraka Skewers
+title: '*Bhaditraka* Skewers'
 source: Mānasollāsa 3.13.1462–1465
 work: Mānasollāsa
 originalLang: Sanskrit

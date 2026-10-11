@@ -24,12 +24,12 @@ order: 136
 * 1 Tb honey  
 * 2 tsp olive oil  
 * 60 ml water  
-* 1 tsp cornstarch, made into a slurry
+* 1 tsp starch, made into a slurry
 
 ## Method
 
 1. Peel and cut the taro into large cubes. Place in boiling water and cook for 12–15 minutes, or until cooked but not too mushy, then drain.   
-2. Mix the remaining ingredients in a small saucepan and bring to a gentle simmer. Add the cornstarch to thicken, then pour over the taro and serve.
+2. Mix the remaining ingredients in a small saucepan and bring to a gentle simmer. Add the starch to thicken, then pour over the taro and serve.
 
 **Notes**
 

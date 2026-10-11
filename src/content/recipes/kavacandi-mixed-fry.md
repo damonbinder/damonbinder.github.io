@@ -1,5 +1,5 @@
 ---
-title: Kavacandī Mixed Fry
+title: '*Kavacandī* Mixed Fry'
 source: Mānasollāsa 3.13.1453–1456
 work: Mānasollāsa
 originalLang: Sanskrit

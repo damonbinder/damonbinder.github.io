@@ -1,5 +1,5 @@
 ---
-title: Maṇḍalī Blood Sausage
+title: '*Maṇḍalī* Blood Sausage'
 source: Mānasollāsa 3.13.1494–1498
 work: Mānasollāsa
 originalLang: Sanskrit

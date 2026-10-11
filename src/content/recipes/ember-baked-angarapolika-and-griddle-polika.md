@@ -1,5 +1,5 @@
 ---
-title: Ember-Baked Aṅgārapolikā and Griddle Polikā
+title: Ember-Baked *Aṅgārapolikā* and Griddle *Polikā*
 source: Mānasollāsa 3.13.1381–1383
 work: Mānasollāsa
 originalLang: Sanskrit

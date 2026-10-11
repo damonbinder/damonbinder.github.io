@@ -1,5 +1,5 @@
 ---
-title: Majjikā Sweet Spiced Buttermilk
+title: '*Majjikā* Sweet Spiced Buttermilk'
 source: Mānasollāsa 3.13.1573
 work: Mānasollāsa
 originalLang: Sanskrit

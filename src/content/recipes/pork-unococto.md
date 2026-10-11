@@ -12,7 +12,7 @@ original: >-
 translation: >-
   Pig *unocoto*: take the pig, dress it, and cook it in oil and fish sauce. As
   it cooks, grind together in the mortar pepper, rue, bay berry, fish sauce,
-  raisin wine or reduced must, and old wine; grind it all together. Season it
+  *passum* or reduced must, and old wine; grind it all together. Season it
   and pour it into a bronze pan. Put the pig into that sauce and cook it
   through; and when you take it up, thicken with starch, then transfer it to a
   serving dish and serve.

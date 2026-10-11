@@ -55,6 +55,14 @@ const recipes = defineCollection({
     originalLang: z.string().optional(),   // "Latin" | "Greek" | "Sanskrit" | …
     original: z.string().optional(),      // original-language source text
     translation: z.string().optional(),   // fresh English translation (Claude)
+    // A recipe built from more than one passage of its source: each passage's
+    // text, kept apart and labelled with its own citation. Used instead of
+    // original/translation.
+    passages: z.array(z.object({
+      source: z.string(),
+      original: z.string().optional(),
+      translation: z.string().optional(),
+    })).optional(),
     related: z.array(z.string()).default([]),   // slugs of related recipes
     // Tag facets (browse axes)
     tradition: z.string().optional(),      // "Roman" | "Greek"

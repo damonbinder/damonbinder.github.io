@@ -1,5 +1,5 @@
 ---
-title: Kandaulos
+title: '*Kandaulos*'
 source: Hegesippus of Tarentum, in Athenaeus 516d–517a
 work: Athenaeus
 category: Meat

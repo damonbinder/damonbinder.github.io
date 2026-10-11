@@ -1,5 +1,5 @@
 ---
-title: Pork Oxyzomo
+title: Pork *Oxyzomo*
 source: Vinidarius 24
 work: Vinidarius
 originalLang: Latin

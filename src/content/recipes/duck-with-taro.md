@@ -39,7 +39,7 @@ status: draft
 * 120 ml honey
 * 60 ml vinegar
 * 30 ml olive oil
-* 2 tsp cornstarch, made into a slurry with a little water
+* 2 tsp starch, made into a slurry with a little water
 
 **For the taro:**
 
@@ -51,6 +51,6 @@ status: draft
 2. On the day, take the duck out 30–60 minutes before roasting to come toward room temperature. Preheat the oven to 175°C (350°F) and roast breast-up for 55 minutes, then flip breast-down and roast for a further 45 minutes, pouring off any rendered fat partway through.
 3. Flip back breast-up and increase the oven to 220–230°C (425–450°F). Roast for a further 15 minutes, until the skin is crisp and a thermometer in the thigh reads 74°C (165°F). Rest for 10–15 minutes before carving.
 4. Peel the taro and slice into rounds. Boil in salted water until just tender, then drain.
-5. Combine the pepper, lovage, oregano, fish sauce, honey, vinegar, and oil in a saucepan and bring to a boil. Stir in the cornstarch slurry and cook until thickened.
+5. Combine the pepper, lovage, oregano, fish sauce, honey, vinegar, and oil in a saucepan and bring to a boil. Stir in the starch slurry and cook until thickened.
 6. Toss the drained taro through the sauce to coat and warm through.
 7. Carve the duck onto a platter, spoon the taro and sauce over it, and serve.

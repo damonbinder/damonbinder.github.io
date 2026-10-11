@@ -1,5 +1,5 @@
 ---
-title: Mushroom Patina
+title: Mushroom *Patina*
 source: Apicius 7.13.6
 work: Apicius
 originalLang: Latin

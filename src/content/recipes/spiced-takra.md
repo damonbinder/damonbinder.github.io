@@ -1,5 +1,5 @@
 ---
-title: Spiced Takra
+title: Spiced *Takra*
 source: Mānasollāsa 3.13.1571–1572
 work: Mānasollāsa
 originalLang: Sanskrit

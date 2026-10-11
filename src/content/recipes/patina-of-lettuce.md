@@ -1,5 +1,5 @@
 ---
-title: Patina of Lettuce
+title: '*Patina* of Lettuce'
 source: Apicius 4.2.3
 work: Apicius
 originalLang: Latin
@@ -12,6 +12,7 @@ translation: >-
 category: Eggs and Patinas
 subcategory: Vegetable Patinas
 order: 10
+status: published
 ---
 
 ## Ingredients

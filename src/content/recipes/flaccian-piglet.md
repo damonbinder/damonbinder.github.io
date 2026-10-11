@@ -14,7 +14,7 @@ translation: >-
   Flaccian piglet: dress the piglet in the manner of a wild boar, sprinkle
   with salt, and put it in the oven. While it cooks, put into a mortar pepper,
   lovage, caraway, celery seed, root of *laser*, fresh rue, and grind; moisten
-  with fish sauce, temper with wine and raisin wine, and put into a pot; let
+  with fish sauce, temper with wine and *passum*, and put into a pot; let
   it boil with a little oil; bind with starch. Anoint the cooked piglet down
   to the bones, grind celery seed to a powder, sprinkle it on, and serve.
 category: Meat
@@ -35,13 +35,13 @@ order: 37
 * 100 ml wine  
 * 100 ml *passum*  
 * 2 Tb olive oil  
-* 1 Tb cornstarch, made into a slurry
+* 1 Tb starch, made into a slurry
 
 ## Method
 
 1. Preheat the oven to 325 F / 160 C. Generously salt the meat and then roast for 1.5 hours, or until cooked through. Take out to rest while you prepare the sauce.  
 2. Add all of the remaining ingredients, barring only the starch and half the celery seed, to a saucepan. Bring to the boil then simmer for 5 minutes.  
-3. Add the cornstarch slurry and continue to cook until thickened. Place the meat on a serving dish and pour the sauce over, then sprinkle on the remaining celery seed and serve.
+3. Add the starch slurry and continue to cook until thickened. Place the meat on a serving dish and pour the sauce over, then sprinkle on the remaining celery seed and serve.
 
 **Notes**
 

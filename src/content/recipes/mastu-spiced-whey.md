@@ -1,5 +1,5 @@
 ---
-title: Mastu Spiced Whey
+title: '*Mastu* Spiced Whey'
 source: Mānasollāsa 3.13.1575
 work: Mānasollāsa
 originalLang: Sanskrit

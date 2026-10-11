@@ -1,5 +1,5 @@
 ---
-title: Patina of Sole
+title: '*Patina* of Sole'
 source: Apicius 4.2.28
 work: Apicius
 originalLang: Latin
@@ -17,7 +17,10 @@ translation: >-
 category: Eggs and Patinas
 subcategory: Fish Patinas
 order: 17
+status: published
 ---
+
+This *patina* of sole has a suspiciously similar counterpart in [Vinidarius 19](/recipes/vinidarius/patina-of-sole-1/).
 
 ## Ingredients
 
@@ -34,9 +37,4 @@ order: 17
 
 1. Place the sole fillets in a frying pan along with the fish sauce, olive oil, and white wine. Gently bring to heat and poach the sole fillets until they are cooked through, then remove from heat and allow to cool.  
 2. Whisk together the eggs, lovage, and oregano along with a generous grind of black pepper. Pour over the sole and gently mix so that the eggs and cooking liquor combine.  
-3. Place the frying pan back over the heat and cook gently until the egg mixture is set. If you like, once the egg mixture is mostly cooked you can place the frying pan under the broiler to set the top. 
-
-**Notes**
-
-* As an alternative to cooking the *patina* over the stove, you can cook it in the oven, see reconstruction of Vinidarius 19  
-* This recipe and 4.2.27 in Apicius, along with V.13 and V.19 in Vindarius, are all clearly variants
+3. Place the frying pan back over the heat and cook gently until the egg mixture is set. If you like, once the egg mixture is mostly cooked you can place the frying pan under the broiler to set the top.

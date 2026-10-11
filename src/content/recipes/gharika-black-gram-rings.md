@@ -1,5 +1,5 @@
 ---
-title: Ghārikā Black-Gram Rings
+title: '*Ghārikā* Black-Gram Rings'
 source: Mānasollāsa 3.13.1401cd–1403ab
 work: Mānasollāsa
 originalLang: Sanskrit

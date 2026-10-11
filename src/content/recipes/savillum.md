@@ -1,5 +1,5 @@
 ---
-title: Savillum
+title: '*Savillum*'
 source: Cato, De agricultura 84
 work: Cato
 category: Dessert

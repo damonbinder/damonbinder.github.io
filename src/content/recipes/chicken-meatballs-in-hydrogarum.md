@@ -1,5 +1,5 @@
 ---
-title: Chicken meatballs in hydrogarum
+title: Chicken meatballs in *hydrogarum*
 source: Apicius 2.2.4
 work: Apicius
 originalLang: Latin

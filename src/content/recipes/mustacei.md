@@ -1,5 +1,5 @@
 ---
-title: Mustacei
+title: '*Mustacei*'
 source: Cato, De agricultura 121
 work: Cato
 category: Grains

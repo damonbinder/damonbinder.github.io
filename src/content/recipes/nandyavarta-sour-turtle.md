@@ -1,5 +1,5 @@
 ---
-title: Nandyāvarta Sour Turtle
+title: '*Nandyāvarta* Sour Turtle'
 source: Mānasollāsa 3.13.1537–1539
 work: Mānasollāsa
 originalLang: Sanskrit

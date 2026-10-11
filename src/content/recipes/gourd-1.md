@@ -33,10 +33,10 @@ status: published
 * 1½  Tb red wine vinegar  
 * 1 Tb fish sauce  
 * ½ Tb olive oil  
-* 2 tsp cornstarch
+* 2 tsp starch
 
 ## Method
 
 1. Cut the squash into large pieces then boil until *al dente*. Remove from the water and place in a dutch oven.  
-2. Mix together all other ingredients except the cornstarch slurry and pour over the squash. Bring to a simmer and cook for a few minutes.  
-3. Add the cornstarch slurry. Thicken for a couple minutes, sprinkle with pepper, and serve.
+2. Mix together all other ingredients except the starch slurry and pour over the squash. Bring to a simmer and cook for a few minutes.  
+3. Add the starch slurry. Thicken for a couple minutes, sprinkle with pepper, and serve.

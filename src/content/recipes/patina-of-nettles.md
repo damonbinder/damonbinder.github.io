@@ -1,5 +1,5 @@
 ---
-title: Patina of Nettles
+title: '*Patina* of Nettles'
 source: Apicius 4.2.36
 work: Apicius
 originalLang: Latin
@@ -22,6 +22,7 @@ translation: >-
 category: Eggs and Patinas
 subcategory: Vegetable Patinas
 order: 12
+status: published
 ---
 
 ## Ingredients

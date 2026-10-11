@@ -1,5 +1,5 @@
 ---
-title: Varṣolaka Spiced Milk-Sugar Balls
+title: '*Varṣolaka* Spiced Milk-Sugar Balls'
 source: Mānasollāsa 3.13.1411cd–1417ab
 work: Mānasollāsa
 originalLang: Sanskrit

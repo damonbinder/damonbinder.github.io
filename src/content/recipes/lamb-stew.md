@@ -27,11 +27,11 @@ order: 46
 * 45 ml fish sauce  
 * 1 Tb olive oil  
 * 300 ml white wine  
-* 1 Tb cornstarch, made into a slurry
+* 1 Tb starch, made into a slurry
 
 ## Method
 
 1. Heat the olive in a medium-size dutch oven. Add the diced lamb and brown.  
 2. Add the onion to the dutch oven and continue to cook until translucent  
-3. Add the remaining ingredients, except for the cornstarch. Bring to a boil and then simmer gently for 1 hour, or until the meat is tender  
-4. Add the cornstarch. Increase the heat and stir until thickened, then serve.
+3. Add the remaining ingredients, except for the starch. Bring to a boil and then simmer gently for 1 hour, or until the meat is tender  
+4. Add the starch. Increase the heat and stir until thickened, then serve.

@@ -1,5 +1,5 @@
 ---
-title: Itrion
+title: '*Itrion*'
 source: Athenaeus
 work: Athenaeus
 category: Dessert

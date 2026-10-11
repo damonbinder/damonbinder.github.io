@@ -1,5 +1,5 @@
 ---
-title: Globi
+title: '*Globi*'
 source: Cato, De agricultura 79
 work: Cato
 category: Dessert

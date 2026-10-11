@@ -1,5 +1,5 @@
 ---
-title: Apician Ofellae
+title: Apician *Ofellae*
 source: Apicius 7.4.2
 work: Apicius
 originalLang: Latin

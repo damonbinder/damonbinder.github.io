@@ -1,5 +1,5 @@
 ---
-title: Roast Lamb Shoulder with Spiced Zōmos
+title: Roast Lamb Shoulder with Spiced *Zōmos*
 source: Hierophilus, January 1
 work: Hierophilus
 category: Meat
@@ -17,7 +17,7 @@ order: 54
 * ½ tsp ground cinnamon  
 * ⅛–¼ tsp ground spikenard, to taste  
 * ¼ tsp caraway seeds, lightly crushed  
-* 1 Tb  cornstarch mixed with 15 mL cold water to make a slurr
+* 1 Tb  starch mixed with 15 mL cold water to make a slurr
 
 ## Method
 
@@ -26,5 +26,5 @@ order: 54
 3. Roast & baste. Roast for 90–120 min, basting every 20 min with the wine–salt mixture, until the thickest part reaches 70–75 °C (for slicing).  
 4. Lift the lamb to a board and rest 15 min. Spoon off most surface fat from the pan. Set the pan over medium heat; add 200 mL wine, scraping up the fond.  
 5. Stir in pepper, cinnamon, spikenard, and caraway. Simmer 2–4 min until aromatic and reduced to a lively, thin jus. Taste and adjust if needed.  
-6. Whisk in the cornstarch slurry; simmer 30–60 s until glossy and lightly nappant. Strain if you want a perfectly smooth finish.  
+6. Whisk in the starch slurry; simmer 30–60 s until glossy and lightly nappant. Strain if you want a perfectly smooth finish.  
 7. Slice the lamb across the grain. Spoon the hot spiced *zōmos* over the meat and send the rest to table.

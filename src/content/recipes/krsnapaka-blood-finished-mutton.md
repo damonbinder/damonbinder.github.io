@@ -1,5 +1,5 @@
 ---
-title: Kṛṣṇapāka Blood-Finished Mutton
+title: '*Kṛṣṇapāka* Blood-Finished Mutton'
 source: Mānasollāsa 3.13.1469–1475
 work: Mānasollāsa
 originalLang: Sanskrit

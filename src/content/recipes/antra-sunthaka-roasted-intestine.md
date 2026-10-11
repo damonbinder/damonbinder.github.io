@@ -1,5 +1,5 @@
 ---
-title: Antra-Śuṇṭhaka Roasted Intestine
+title: '*Antra-Śuṇṭhaka* Roasted Intestine'
 source: Mānasollāsa 3.13.1492–1493
 work: Mānasollāsa
 originalLang: Sanskrit

@@ -1,5 +1,5 @@
 ---
-title: Sohalā Fried Bread
+title: '*Sohalā* Fried Bread'
 source: Mānasollāsa 3.13.1384–1385ab
 work: Mānasollāsa
 originalLang: Sanskrit

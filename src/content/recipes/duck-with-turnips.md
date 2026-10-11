@@ -46,7 +46,7 @@ order: 85
 * 3 tsp coriander seed, ground  
 * ½ tsp asafoetida  
 * 2 tbsp red wine vinegar  
-* 1½  Tb cornstarch mixed with water into a slurry
+* 1½  Tb starch mixed with water into a slurry
 
 ## Method
 
@@ -55,5 +55,5 @@ order: 85
 11. Remove the duck from the pot and reserve the stock for later. Clean out the dutch oven and then place the duck back inside.  
 12. Add the olive oil, fish sauce, leak, and coriander to the dutch oven, then add the cooked turnips on top. Cover and simmer on low heat for about 45 minutes, or until everything is cooked. Drizzle the *defrutum* over the duck mid-way through the cooking.  
 13. While the duck is cooking, combine the ground pepper, cumin, coriander seed, and asafoetida with the vinegar. Add 400 ml of the reserved stock, first skimming off the fat  
-14. Once the duck is cooked, remove and discard the leek and coriander. Pour over the sauce, then bring to a simmer. Taste and adjust the sauce as needed, then add the cornstarch slurry to thicken the sauce.  
+14. Once the duck is cooked, remove and discard the leek and coriander. Pour over the sauce, then bring to a simmer. Taste and adjust the sauce as needed, then add the starch slurry to thicken the sauce.  
 15. Remove the duck, turnips, and sauce to a serving platter. Carve the duck and serve with the turnip and sauce.

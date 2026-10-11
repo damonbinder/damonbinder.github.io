@@ -1,5 +1,5 @@
 ---
-title: Catillus Ornatus
+title: '*Catillus Ornatus*'
 source: Chrysippus of Tyana, in Athenaeus 647
 work: Chrysippus of Tyana
 category: Grains

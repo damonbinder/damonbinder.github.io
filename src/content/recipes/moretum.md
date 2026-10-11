@@ -1,5 +1,5 @@
 ---
-title: Moretum
+title: '*Moretum*'
 source: Pseudo-Virgil, Moretum
 work: Pseudo-Virgil
 category: Dips and Relishes

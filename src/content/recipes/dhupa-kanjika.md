@@ -1,5 +1,5 @@
 ---
-title: Dhūpa-Kāñjika
+title: '*Dhūpa-Kāñjika*'
 source: Mānasollāsa 3.13.1580
 work: Mānasollāsa
 originalLang: Sanskrit

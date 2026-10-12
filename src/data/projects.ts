@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Universal Timeline',
+    blurb:
+      'The history of the universe on one zoomable axis.',
+    date: 'October 2026',
+    href: '/timeline/',
+  },
+  {
     title: 'Blink',
     blurb:
       'A browser shooter you aim by looking and fire by blinking.',

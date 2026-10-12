@@ -36,7 +36,7 @@ const posts = (await getRiver()).slice(0, 3);
 
     <section class="home-col">
       <h2><a href="/projects/">Projects</a></h2>
-      {projects.map((proj) => (
+      {projects.filter((proj) => !proj.otherStuff).map((proj) => (
         <div class="home-col-item">
           {proj.href ? <a href={proj.href}>{proj.title}</a> : <span>{proj.title}</span>}
           <p class="muted">{proj.blurb}</p>
@@ -58,6 +58,12 @@ const posts = (await getRiver()).slice(0, 3);
         <a href="/research/">Physics research</a>
         <p class="muted">My PhD dissertation and earlier physics work.</p>
       </div>
+      {projects.filter((proj) => proj.otherStuff).map((proj) => (
+        <div class="home-col-item">
+          {proj.href ? <a href={proj.href}>{proj.title}</a> : <span>{proj.title}</span>}
+          <p class="muted">{proj.blurb}</p>
+        </div>
+      ))}
     </section>
   </div>
 </Base>

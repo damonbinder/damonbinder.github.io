@@ -5,6 +5,9 @@ export interface Project {
   blurb: string;
   date: string; // display string, e.g. "January 2026" or "2016–2018"
   href?: string; // live URL; omit if not yet deployed
+  // On the home page, list under "Other stuff" (after Physics research) instead of
+  // Projects. The Projects page lists it either way.
+  otherStuff?: boolean;
 }
 
 export const projects: Project[] = [
@@ -49,5 +52,6 @@ export const projects: Project[] = [
       'A collection of interactive physics simulations that run in your browser.',
     date: '2016–2018',
     href: '/simulations/',
+    otherStuff: true,
   },
 ];
